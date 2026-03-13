@@ -354,7 +354,19 @@ The calibration window is the first sixty to ninety seconds of any interaction. 
 High-Yield Baseline Signals
 Breathing rate: visible in shoulders and chest. Speech rhythm: connected vs. fragmented. Eye movement pattern. Self-touch frequency: a reliable stress-load indicator, not a deception indicator. These together form the baseline you are departing from.
 The Five Cs
-Context · Clusters · Congruence · Calibration · Change. Apply all five before acting on any behavioral signal. A single isolated cue is not a read. It is background data.
+Context · Clusters · Congruence · Consistency · Culture. Apply all five before acting on any behavioral signal. A single isolated cue is not a read. It is background data.
+
+Context — What environment is the behavior occurring in? The same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier. Context determines meaning. Always.
+
+Clusters — Are multiple signals pointing the same direction? One signal is noise. Three co-occurring behaviors multiply each other's diagnostic weight. A cluster is a pattern. Never act on a single signal.
+
+Congruence — Does the body match the words? When the body says one thing and the words say another, the body is telling the truth. Incongruence is your most reliable signal.
+
+Consistency — How does this compare to their baseline? Compare what you are seeing to that individual's personal baseline. Not a generic chart. Deviation from their baseline is the data point. Without baseline, every read is a projection.
+
+Culture — What are the background norms? Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another. Calibrate before concluding.
+
+Apply the Five Cs as a chain, not a checklist. Most weak readings fail because they skip this chain. They treat behavior like a vending machine. Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.
 Reading Deviation
 Once you have a baseline, deviation is the signal. A person who normally speaks in smooth, connected phrases who suddenly fragments their syntax is processing something more carefully. A person whose baseline includes relaxed open posture who crosses their arms at a specific question has registered something. A person who maintains easy eye contact who breaks it and looks down has encountered an emotional stimulus. None of these deviations tell you the specific content of the internal state. All of them tell you that an internal state worth tracking is active.
 The mistake is trying to read too much too fast. One or two high-yield indicators tracked with real depth will outperform a scattered attempt to catch everything. You are following a trail, not building a spreadsheet. Stay on the trail. When it pauses, hold position. When it moves, follow it.

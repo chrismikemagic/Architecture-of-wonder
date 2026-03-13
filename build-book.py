@@ -138,6 +138,87 @@ PATTERN_INTERRUPTS = [
     {'number': '5', 'unit': 'FILTERS', 'text': 'Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.', 'source': 'The Architecture of Wonder', 'wyajd': ''},
 ]
 
+# ═══════════════════════════════════════════════════════════
+# THE FIVE Cs FRAMEWORK — Injected at beginning of Chapter 7
+# ═══════════════════════════════════════════════════════════
+
+FIVE_CS_HTML = '''
+<div class="five-cs-framework">
+  <div class="five-cs-header">
+    <div class="five-cs-title">THE FIVE C\u2019s OF BEHAVIORAL READING</div>
+    <div class="five-cs-subtitle">The architecture without which individual signals are noise</div>
+  </div>
+
+  <div class="five-cs-grid">
+    <div class="five-cs-card" data-c="context">
+      <div class="c-tab">CONTEXT</div>
+      <div class="c-body">
+        <div class="c-question">What environment?</div>
+        <p class="c-desc">Same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier.</p>
+        <p class="c-rule">Context determines meaning. Always.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="clusters">
+      <div class="c-tab">CLUSTERS</div>
+      <div class="c-body">
+        <div class="c-question">Multiple signals?</div>
+        <p class="c-desc">One signal is noise. Three co-occurring behaviors multiply each other\u2019s diagnostic weight. A cluster is a pattern.</p>
+        <p class="c-rule">Never act on a single signal.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="congruence">
+      <div class="c-tab">CONGRUENCE</div>
+      <div class="c-body">
+        <div class="c-question">Body = words?</div>
+        <p class="c-desc">When the body says one thing and the words say another, the body is telling the truth. Not by confronting it\u2009\u2014\u2009by creating a frame where the truth can emerge voluntarily.</p>
+        <p class="c-rule">Incongruence is your most reliable signal.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="consistency">
+      <div class="c-tab">CONSISTENCY</div>
+      <div class="c-body">
+        <div class="c-question">Their baseline?</div>
+        <p class="c-desc">Compare what you are seeing to that individual\u2019s personal baseline. Not a generic chart. Deviation from their baseline is the data point.</p>
+        <p class="c-rule">Without baseline, every read is a projection.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="culture">
+      <div class="c-tab">CULTURE</div>
+      <div class="c-body">
+        <div class="c-question">Background norms?</div>
+        <p class="c-desc">Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another.</p>
+        <p class="c-rule">Calibrate before concluding.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="five-cs-chain">
+    <div class="chain-label">APPLY AS A CHAIN \u2014 NOT A CHECKLIST</div>
+    <div class="chain-flow">
+      <span class="chain-pill" data-c="context">Context</span>
+      <span class="chain-arrow">\u203a</span>
+      <span class="chain-pill" data-c="clusters">Clusters</span>
+      <span class="chain-arrow">\u203a</span>
+      <span class="chain-pill" data-c="congruence">Congruence</span>
+      <span class="chain-arrow">\u203a</span>
+      <span class="chain-pill" data-c="consistency">Consistency</span>
+      <span class="chain-arrow">\u203a</span>
+      <span class="chain-pill" data-c="culture">Culture</span>
+      <span class="chain-arrow">\u203a</span>
+      <span class="chain-pill chain-read">READ</span>
+    </div>
+    <p class="chain-note">Most weak readings fail because they skip this chain. They treat behavior like a vending machine.</p>
+    <p class="chain-note-gold">Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</p>
+  </div>
+</div>
+
+<div class="section-break">\u00b7 \u00b7 \u00b7</div>
+'''
+
 
 # ═══════════════════════════════════════════════════════════
 # TYPOGRAPHIC UTILITIES
@@ -498,6 +579,49 @@ def process_paragraph(text, part_num=1):
     return f'<p>{t}</p>'
 
 
+def is_tier_definition(text):
+    """Detect T1-T4 tier definition lines like 'T1 — Physical Evidence'."""
+    stripped = text.strip()
+    m = re.match(r'^T([1-4])\s*[\u2014\u2013\-]+\s*(.+)$', stripped)
+    return m
+
+def gen_tier_card(tier_num, tier_name, body_text):
+    """Generate a textbook-style tier definition card."""
+    tier_class = f't{tier_num}-block'
+    badge_class = f't{tier_num}'
+    return f'''<div class="tier-block {tier_class}">
+  <div class="tier-header">
+    <span class="badge {badge_class}">T{tier_num}</span>
+    <span class="tier-name">{escape(tier_name)}</span>
+  </div>
+  <div class="tier-body"><p>{escape(body_text)}</p></div>
+</div>'''
+
+def gen_concept_box(title, body_lines, highlight=''):
+    """Generate a concept callout box (textbook-style)."""
+    body_html = ''.join(f'<p>{escape(line)}</p>' for line in body_lines if line.strip())
+    highlight_html = f'<p class="concept-highlight">{escape(highlight)}</p>' if highlight else ''
+    return f'''<div class="concept-box">
+  <div class="concept-label">KEY CONCEPT</div>
+  <div class="concept-title">{escape(title)}</div>
+  <div class="concept-body">{body_html}{highlight_html}</div>
+</div>'''
+
+def gen_context_card(label, body_text):
+    """Generate a context application card (Stage, Strolling, etc)."""
+    return f'''<div class="context-card">
+  <div class="context-label">{escape(label.upper())}</div>
+  <p>{escape(body_text)}</p>
+</div>'''
+
+def gen_error_card(label, body_text):
+    """Generate an observer error card."""
+    return f'''<div class="error-card">
+  <div class="error-label">{escape(label.upper())}</div>
+  <p>{escape(body_text)}</p>
+</div>'''
+
+
 def build_chapter_body(section, global_para_count):
     """Build the full body of a chapter with all design elements."""
     content = section.get('content', [])
@@ -528,6 +652,10 @@ def build_chapter_body(section, global_para_count):
     else:
         parts.append(f'<p>{first}</p>')
 
+    # ── FIVE Cs FRAMEWORK — inject at beginning of Chapter 7 ──
+    if chapter_num == 7:
+        parts.append(FIVE_CS_HTML)
+
     # Track for element insertion
     total = len(paragraphs)
     spotlight_done = False
@@ -536,9 +664,105 @@ def build_chapter_body(section, global_para_count):
     pi_count = 0
     pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
-    for i, para in enumerate(paragraphs[1:], 1):
+    i = 1
+    while i < len(paragraphs):
+        para = paragraphs[i]
         global_para_count += 1
         stripped = para.strip()
+
+        # ── TIER DEFINITION CARDS ──
+        tier_match = is_tier_definition(stripped)
+        if tier_match:
+            tier_num = tier_match.group(1)
+            tier_name = tier_match.group(2).strip()
+            # Next paragraph is the body
+            body = ''
+            if i + 1 < len(paragraphs):
+                body = paragraphs[i + 1].strip()
+                i += 1
+                global_para_count += 1
+            parts.append(gen_tier_card(tier_num, tier_name, body))
+            i += 1
+            continue
+
+        # ── CONCEPT CALLOUT BOXES ──
+        # Three-Signal Rule, Foundation: Baseline First, etc.
+        concept_triggers = {
+            'The Three-Signal Rule': 'CORE RULE',
+            'The Foundation: Baseline First': 'FOUNDATION',
+            'The Leakage Window': 'KEY CONCEPT',
+            'High-Yield Baseline Signals': 'KEY CONCEPT',
+        }
+        matched_concept = None
+        for trigger, label in concept_triggers.items():
+            if stripped == trigger or stripped.startswith(trigger):
+                matched_concept = (trigger, label)
+                break
+
+        if matched_concept:
+            concept_title = matched_concept[0]
+            # Collect following paragraphs as body (until next section header or break)
+            body_lines = []
+            highlight = ''
+            j = i + 1
+            while j < len(paragraphs):
+                next_stripped = paragraphs[j].strip()
+                if is_section_header(next_stripped) or is_section_break(next_stripped) or is_tier_definition(next_stripped):
+                    break
+                if not next_stripped:
+                    j += 1
+                    continue
+                body_lines.append(next_stripped)
+                j += 1
+                global_para_count += 1
+                # Cap at 3 body paragraphs for the callout
+                if len(body_lines) >= 3:
+                    break
+            # Use last line as highlight if it's short and punchy
+            if body_lines and len(body_lines[-1]) < 120:
+                highlight = body_lines.pop()
+            parts.append(gen_concept_box(concept_title, body_lines, highlight))
+            i = j
+            continue
+
+        # ── CONTEXT APPLICATION CARDS ──
+        context_triggers = ['Stage Context', 'Strolling Context']
+        matched_context = None
+        for trigger in context_triggers:
+            if stripped == trigger:
+                matched_context = trigger
+                break
+
+        if matched_context:
+            body = ''
+            if i + 1 < len(paragraphs):
+                body = paragraphs[i + 1].strip()
+                i += 1
+                global_para_count += 1
+            parts.append(gen_context_card(matched_context, body))
+            i += 1
+            continue
+
+        # ── COMMON OBSERVER ERRORS ──
+        error_triggers = [
+            'Acting on a Single Signal.',
+            'Ignoring the Baseline.',
+            'Confirmation Bias.',
+            'Cultural Projection.',
+            'Conflating Observation with Lie Detection.',
+        ]
+        matched_error = None
+        for trigger in error_triggers:
+            if stripped.startswith(trigger):
+                matched_error = trigger.rstrip('.')
+                break
+
+        if matched_error:
+            # The rest of the line after the trigger is the body
+            body = stripped[len(matched_error) + 1:].strip() if len(stripped) > len(matched_error) + 1 else ''
+            parts.append(gen_error_card(matched_error, body))
+            i += 1
+            continue
 
         # Pattern interrupt every ~45 paragraphs
         if i > 0 and i % 45 == 0 and pi_count < 2:
@@ -557,6 +781,7 @@ def build_chapter_body(section, global_para_count):
                (len(stripped) < 200 and len(stripped) > 35 and any(kw in stripped.lower() for kw in ['principle', 'key', 'rule', 'fundamental', 'critical', 'essential', 'never', 'always', 'the real', 'the most important', 'is not', 'does not', 'cannot'])):
                 parts.append(gen_spotlight(escape(stripped)))
                 spotlight_done = True
+                i += 1
                 continue
 
         # Pull quote: find a strong short statement at ~55-75%
@@ -565,11 +790,14 @@ def build_chapter_body(section, global_para_count):
                 if any(kw in stripped.lower() for kw in ['is not', 'is the', 'that is', 'the real', 'the most', 'every ', 'never ', 'always ']):
                     parts.append(gen_pull_quote(stripped))
                     pull_quote_done = True
+                    i += 1
                     continue
 
         processed = process_paragraph(para, part_num)
         if processed:
             parts.append(processed)
+
+        i += 1
 
     # Key read
     kr = KEY_READS.get(chapter_key, '')
@@ -866,6 +1094,87 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 /* ═══ FIVE Cs ═══ */
 .five-c{font-variant:small-caps;font-weight:600;letter-spacing:.5px}
 
+/* ═══ TIER DEFINITION CARDS ═══ */
+.tier-block{
+  margin:1.8em 0;padding:0;break-inside:avoid;
+  border-radius:5px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.15);
+}
+.tier-block .tier-header{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 18px;
+}
+.tier-block .tier-header .badge{font-size:.6rem;padding:3px 10px;border-radius:8px}
+.tier-block .tier-header .tier-name{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:1px;
+}
+.tier-block .tier-body{
+  padding:12px 18px 16px;font-size:.92rem;line-height:1.6;
+  background:var(--cream);
+}
+.tier-block .tier-body p{text-indent:0!important;margin-bottom:0}
+.tier-block.t1-block .tier-header{background:rgba(201,168,76,.1)}
+.tier-block.t1-block .tier-name{color:var(--gold)}
+.tier-block.t1-block{border-color:rgba(201,168,76,.3)}
+.tier-block.t2-block .tier-header{background:rgba(26,143,168,.08)}
+.tier-block.t2-block .tier-name{color:var(--blue)}
+.tier-block.t2-block{border-color:rgba(26,143,168,.25)}
+.tier-block.t3-block .tier-header{background:rgba(138,154,181,.06)}
+.tier-block.t3-block .tier-name{color:var(--gray-blue)}
+.tier-block.t3-block{border-color:rgba(138,154,181,.2)}
+.tier-block.t4-block .tier-header{background:rgba(58,74,92,.06)}
+.tier-block.t4-block .tier-name{color:var(--dim)}
+.tier-block.t4-block{border-color:rgba(58,74,92,.2)}
+
+/* ═══ CONCEPT CALLOUT BOX ═══ */
+.concept-box{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-left:4px solid var(--gold);border-radius:0 5px 5px 0;
+  padding:20px 24px;margin:2em 0;break-inside:avoid;
+}
+.concept-box .concept-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:4px;
+}
+.concept-box .concept-title{
+  font-family:var(--sans);font-size:.88rem;font-weight:700;
+  color:#fff;margin-bottom:10px;letter-spacing:.5px;
+}
+.concept-box .concept-body{
+  color:var(--gray-blue);font-size:.88rem;line-height:1.6;
+}
+.concept-box .concept-body p{text-indent:0!important;text-align:left!important;color:var(--gray-blue);margin-bottom:.5em}
+.concept-box .concept-highlight{
+  color:var(--gold);font-weight:600;font-style:italic;
+  margin-top:8px;font-size:.85rem;
+}
+
+/* ═══ CONTEXT CARD (Stage/Strolling/etc) ═══ */
+.context-card{
+  border:1px solid rgba(201,168,76,.2);border-radius:5px;
+  padding:14px 18px;margin:1.2em 0;break-inside:avoid;
+  background:rgba(201,168,76,.03);
+}
+.context-card .context-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:2px;color:var(--gold);margin-bottom:6px;
+}
+.context-card p{text-indent:0!important;font-size:.9rem;margin-bottom:0}
+
+/* ═══ ERROR/WARNING CARD ═══ */
+.error-card{
+  border-left:3px solid var(--red);
+  padding:10px 16px;margin:1em 0;
+  background:rgba(168,48,48,.03);border-radius:0 4px 4px 0;
+  break-inside:avoid;
+}
+.error-card .error-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:2px;color:var(--red);margin-bottom:4px;
+}
+.error-card p{text-indent:0!important;font-size:.9rem;margin-bottom:0}
+
 /* ═══ SPOTLIGHT BOX ═══ */
 .spotlight-box{
   background:linear-gradient(135deg,var(--navy),var(--navy2));
@@ -1003,6 +1312,71 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
   max-width:380px;text-align:center;line-height:1.65;margin:18px 0;
 }
 .hidden-text{color:rgba(255,255,255,.06);font-style:italic;font-size:.68rem;margin-top:35px}
+
+/* ═══ FIVE Cs FRAMEWORK ═══ */
+.five-cs-framework{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:6px;padding:32px 28px;margin:2.5em 0;
+  break-inside:avoid;
+}
+.five-cs-header{text-align:center;margin-bottom:24px}
+.five-cs-title{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);margin-bottom:6px;
+}
+.five-cs-subtitle{font-size:.72rem;color:var(--gray-blue);font-style:italic}
+
+.five-cs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:24px}
+@media(max-width:768px){.five-cs-grid{grid-template-columns:1fr;gap:8px}}
+
+.five-cs-card{border-radius:4px;overflow:hidden}
+.c-tab{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:2px;text-align:center;padding:7px 4px;
+}
+.c-body{padding:12px 10px;background:rgba(13,30,48,.8);border-top:2px solid transparent}
+.c-question{font-size:.7rem;font-weight:700;color:#fff;margin-bottom:6px}
+.c-desc{font-size:.65rem;color:var(--gray-blue);line-height:1.5;margin-bottom:8px;text-indent:0!important;text-align:left!important}
+.c-rule{font-size:.62rem;font-style:italic;margin:0;text-indent:0!important;text-align:left!important}
+
+/* Card colors — each C gets its own accent */
+[data-c="context"] .c-tab{background:rgba(168,48,48,.2);color:#A83030}
+[data-c="context"] .c-body{border-top-color:#A83030}
+[data-c="context"] .c-rule{color:#A83030}
+
+[data-c="clusters"] .c-tab{background:rgba(232,200,112,.12);color:#E8C870}
+[data-c="clusters"] .c-body{border-top-color:#E8C870}
+[data-c="clusters"] .c-rule{color:#E8C870}
+
+[data-c="congruence"] .c-tab{background:rgba(26,143,168,.12);color:var(--blue)}
+[data-c="congruence"] .c-body{border-top-color:var(--blue)}
+[data-c="congruence"] .c-rule{color:var(--blue)}
+
+[data-c="consistency"] .c-tab{background:rgba(107,82,160,.12);color:var(--purple)}
+[data-c="consistency"] .c-body{border-top-color:var(--purple)}
+[data-c="consistency"] .c-rule{color:var(--purple)}
+
+[data-c="culture"] .c-tab{background:rgba(201,168,76,.1);color:var(--gold)}
+[data-c="culture"] .c-body{border-top-color:var(--gold)}
+[data-c="culture"] .c-rule{color:var(--gold)}
+
+/* Chain flow */
+.five-cs-chain{text-align:center;margin-top:20px}
+.chain-label{font-family:var(--sans);font-size:.62rem;font-weight:700;color:#fff;letter-spacing:1.5px;margin-bottom:14px}
+.chain-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chain-pill{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  padding:4px 12px;border-radius:12px;
+}
+[data-c="context"].chain-pill{background:rgba(168,48,48,.18);color:#A83030}
+[data-c="clusters"].chain-pill{background:rgba(232,200,112,.12);color:#E8C870}
+[data-c="congruence"].chain-pill{background:rgba(26,143,168,.12);color:var(--blue)}
+[data-c="consistency"].chain-pill{background:rgba(107,82,160,.12);color:var(--purple)}
+[data-c="culture"].chain-pill{background:rgba(201,168,76,.1);color:var(--gold)}
+.chain-read{background:rgba(255,255,255,.08);color:#fff}
+.chain-arrow{color:var(--dim);font-size:.8rem}
+.chain-note{font-size:.65rem;color:var(--gray-blue);margin:0 0 4px;text-indent:0!important;text-align:center!important}
+.chain-note-gold{font-size:.65rem;color:var(--gold);font-style:italic;margin:0;text-indent:0!important;text-align:center!important}
 
 /* ═══ COLOR TEMP SHIFTS ═══ */
 [data-part="1"] .section-header,[data-part="2"] .section-header{border-bottom-color:var(--blue)}

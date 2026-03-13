@@ -160,6 +160,87 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 /* ═══ FIVE Cs ═══ */
 .five-c{font-variant:small-caps;font-weight:600;letter-spacing:.5px}
 
+/* ═══ TIER DEFINITION CARDS ═══ */
+.tier-block{
+  margin:1.8em 0;padding:0;break-inside:avoid;
+  border-radius:5px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.15);
+}
+.tier-block .tier-header{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 18px;
+}
+.tier-block .tier-header .badge{font-size:.6rem;padding:3px 10px;border-radius:8px}
+.tier-block .tier-header .tier-name{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:1px;
+}
+.tier-block .tier-body{
+  padding:12px 18px 16px;font-size:.92rem;line-height:1.6;
+  background:var(--cream);
+}
+.tier-block .tier-body p{text-indent:0!important;margin-bottom:0}
+.tier-block.t1-block .tier-header{background:rgba(201,168,76,.1)}
+.tier-block.t1-block .tier-name{color:var(--gold)}
+.tier-block.t1-block{border-color:rgba(201,168,76,.3)}
+.tier-block.t2-block .tier-header{background:rgba(26,143,168,.08)}
+.tier-block.t2-block .tier-name{color:var(--blue)}
+.tier-block.t2-block{border-color:rgba(26,143,168,.25)}
+.tier-block.t3-block .tier-header{background:rgba(138,154,181,.06)}
+.tier-block.t3-block .tier-name{color:var(--gray-blue)}
+.tier-block.t3-block{border-color:rgba(138,154,181,.2)}
+.tier-block.t4-block .tier-header{background:rgba(58,74,92,.06)}
+.tier-block.t4-block .tier-name{color:var(--dim)}
+.tier-block.t4-block{border-color:rgba(58,74,92,.2)}
+
+/* ═══ CONCEPT CALLOUT BOX ═══ */
+.concept-box{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-left:4px solid var(--gold);border-radius:0 5px 5px 0;
+  padding:20px 24px;margin:2em 0;break-inside:avoid;
+}
+.concept-box .concept-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:4px;
+}
+.concept-box .concept-title{
+  font-family:var(--sans);font-size:.88rem;font-weight:700;
+  color:#fff;margin-bottom:10px;letter-spacing:.5px;
+}
+.concept-box .concept-body{
+  color:var(--gray-blue);font-size:.88rem;line-height:1.6;
+}
+.concept-box .concept-body p{text-indent:0!important;text-align:left!important;color:var(--gray-blue);margin-bottom:.5em}
+.concept-box .concept-highlight{
+  color:var(--gold);font-weight:600;font-style:italic;
+  margin-top:8px;font-size:.85rem;
+}
+
+/* ═══ CONTEXT CARD (Stage/Strolling/etc) ═══ */
+.context-card{
+  border:1px solid rgba(201,168,76,.2);border-radius:5px;
+  padding:14px 18px;margin:1.2em 0;break-inside:avoid;
+  background:rgba(201,168,76,.03);
+}
+.context-card .context-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:2px;color:var(--gold);margin-bottom:6px;
+}
+.context-card p{text-indent:0!important;font-size:.9rem;margin-bottom:0}
+
+/* ═══ ERROR/WARNING CARD ═══ */
+.error-card{
+  border-left:3px solid var(--red);
+  padding:10px 16px;margin:1em 0;
+  background:rgba(168,48,48,.03);border-radius:0 4px 4px 0;
+  break-inside:avoid;
+}
+.error-card .error-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:2px;color:var(--red);margin-bottom:4px;
+}
+.error-card p{text-indent:0!important;font-size:.9rem;margin-bottom:0}
+
 /* ═══ SPOTLIGHT BOX ═══ */
 .spotlight-box{
   background:linear-gradient(135deg,var(--navy),var(--navy2));
@@ -297,6 +378,71 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
   max-width:380px;text-align:center;line-height:1.65;margin:18px 0;
 }
 .hidden-text{color:rgba(255,255,255,.06);font-style:italic;font-size:.68rem;margin-top:35px}
+
+/* ═══ FIVE Cs FRAMEWORK ═══ */
+.five-cs-framework{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:6px;padding:32px 28px;margin:2.5em 0;
+  break-inside:avoid;
+}
+.five-cs-header{text-align:center;margin-bottom:24px}
+.five-cs-title{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);margin-bottom:6px;
+}
+.five-cs-subtitle{font-size:.72rem;color:var(--gray-blue);font-style:italic}
+
+.five-cs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:24px}
+@media(max-width:768px){.five-cs-grid{grid-template-columns:1fr;gap:8px}}
+
+.five-cs-card{border-radius:4px;overflow:hidden}
+.c-tab{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:2px;text-align:center;padding:7px 4px;
+}
+.c-body{padding:12px 10px;background:rgba(13,30,48,.8);border-top:2px solid transparent}
+.c-question{font-size:.7rem;font-weight:700;color:#fff;margin-bottom:6px}
+.c-desc{font-size:.65rem;color:var(--gray-blue);line-height:1.5;margin-bottom:8px;text-indent:0!important;text-align:left!important}
+.c-rule{font-size:.62rem;font-style:italic;margin:0;text-indent:0!important;text-align:left!important}
+
+/* Card colors — each C gets its own accent */
+[data-c="context"] .c-tab{background:rgba(168,48,48,.2);color:#A83030}
+[data-c="context"] .c-body{border-top-color:#A83030}
+[data-c="context"] .c-rule{color:#A83030}
+
+[data-c="clusters"] .c-tab{background:rgba(232,200,112,.12);color:#E8C870}
+[data-c="clusters"] .c-body{border-top-color:#E8C870}
+[data-c="clusters"] .c-rule{color:#E8C870}
+
+[data-c="congruence"] .c-tab{background:rgba(26,143,168,.12);color:var(--blue)}
+[data-c="congruence"] .c-body{border-top-color:var(--blue)}
+[data-c="congruence"] .c-rule{color:var(--blue)}
+
+[data-c="consistency"] .c-tab{background:rgba(107,82,160,.12);color:var(--purple)}
+[data-c="consistency"] .c-body{border-top-color:var(--purple)}
+[data-c="consistency"] .c-rule{color:var(--purple)}
+
+[data-c="culture"] .c-tab{background:rgba(201,168,76,.1);color:var(--gold)}
+[data-c="culture"] .c-body{border-top-color:var(--gold)}
+[data-c="culture"] .c-rule{color:var(--gold)}
+
+/* Chain flow */
+.five-cs-chain{text-align:center;margin-top:20px}
+.chain-label{font-family:var(--sans);font-size:.62rem;font-weight:700;color:#fff;letter-spacing:1.5px;margin-bottom:14px}
+.chain-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chain-pill{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  padding:4px 12px;border-radius:12px;
+}
+[data-c="context"].chain-pill{background:rgba(168,48,48,.18);color:#A83030}
+[data-c="clusters"].chain-pill{background:rgba(232,200,112,.12);color:#E8C870}
+[data-c="congruence"].chain-pill{background:rgba(26,143,168,.12);color:var(--blue)}
+[data-c="consistency"].chain-pill{background:rgba(107,82,160,.12);color:var(--purple)}
+[data-c="culture"].chain-pill{background:rgba(201,168,76,.1);color:var(--gold)}
+.chain-read{background:rgba(255,255,255,.08);color:#fff}
+.chain-arrow{color:var(--dim);font-size:.8rem}
+.chain-note{font-size:.65rem;color:var(--gray-blue);margin:0 0 4px;text-indent:0!important;text-align:center!important}
+.chain-note-gold{font-size:.65rem;color:var(--gold);font-style:italic;margin:0;text-indent:0!important;text-align:center!important}
 
 /* ═══ COLOR TEMP SHIFTS ═══ */
 [data-part="1"] .section-header,[data-part="2"] .section-header{border-bottom-color:var(--blue)}
@@ -751,6 +897,82 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <article class="chapter-body" data-part="2">
 <header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 7 — BEHAVIORAL PROFILING IN REAL TIME</span></header>
 <p class="first-para"><span class="drop-cap">W</span>hat you are actually noticing when you know something is off. And how to formalize that knowing into a deployable system.</p>
+
+<div class="five-cs-framework">
+  <div class="five-cs-header">
+    <div class="five-cs-title">THE FIVE C’s OF BEHAVIORAL READING</div>
+    <div class="five-cs-subtitle">The architecture without which individual signals are noise</div>
+  </div>
+
+  <div class="five-cs-grid">
+    <div class="five-cs-card" data-c="context">
+      <div class="c-tab">CONTEXT</div>
+      <div class="c-body">
+        <div class="c-question">What environment?</div>
+        <p class="c-desc">Same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier.</p>
+        <p class="c-rule">Context determines meaning. Always.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="clusters">
+      <div class="c-tab">CLUSTERS</div>
+      <div class="c-body">
+        <div class="c-question">Multiple signals?</div>
+        <p class="c-desc">One signal is noise. Three co-occurring behaviors multiply each other’s diagnostic weight. A cluster is a pattern.</p>
+        <p class="c-rule">Never act on a single signal.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="congruence">
+      <div class="c-tab">CONGRUENCE</div>
+      <div class="c-body">
+        <div class="c-question">Body = words?</div>
+        <p class="c-desc">When the body says one thing and the words say another, the body is telling the truth. Not by confronting it — by creating a frame where the truth can emerge voluntarily.</p>
+        <p class="c-rule">Incongruence is your most reliable signal.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="consistency">
+      <div class="c-tab">CONSISTENCY</div>
+      <div class="c-body">
+        <div class="c-question">Their baseline?</div>
+        <p class="c-desc">Compare what you are seeing to that individual’s personal baseline. Not a generic chart. Deviation from their baseline is the data point.</p>
+        <p class="c-rule">Without baseline, every read is a projection.</p>
+      </div>
+    </div>
+
+    <div class="five-cs-card" data-c="culture">
+      <div class="c-tab">CULTURE</div>
+      <div class="c-body">
+        <div class="c-question">Background norms?</div>
+        <p class="c-desc">Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another.</p>
+        <p class="c-rule">Calibrate before concluding.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="five-cs-chain">
+    <div class="chain-label">APPLY AS A CHAIN — NOT A CHECKLIST</div>
+    <div class="chain-flow">
+      <span class="chain-pill" data-c="context">Context</span>
+      <span class="chain-arrow">›</span>
+      <span class="chain-pill" data-c="clusters">Clusters</span>
+      <span class="chain-arrow">›</span>
+      <span class="chain-pill" data-c="congruence">Congruence</span>
+      <span class="chain-arrow">›</span>
+      <span class="chain-pill" data-c="consistency">Consistency</span>
+      <span class="chain-arrow">›</span>
+      <span class="chain-pill" data-c="culture">Culture</span>
+      <span class="chain-arrow">›</span>
+      <span class="chain-pill chain-read">READ</span>
+    </div>
+    <p class="chain-note">Most weak readings fail because they skip this chain. They treat behavior like a vending machine.</p>
+    <p class="chain-note-gold">Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</p>
+  </div>
+</div>
+
+<div class="section-break">· · ·</div>
+
 <div class="felt-before">
   <div class="felt-icon">◉</div>
   <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
@@ -762,46 +984,92 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <p>The difference between guessing and reading is triangulation. A single signal has twenty possible explanations. Three signals pointing the same direction have one.</p>
 <h3 class="section-header">The Evidence Framework: T1–T4</h3>
 <p>Every signal you will encounter in behavioral performance carries an implicit confidence rating. Practitioners who do not distinguish between them overclaim on weak evidence and under-use strong evidence in equal measure. The following tiers create precision where there would otherwise be habit.</p>
-<h3 class="section-header">T1 — Physical Evidence</h3>
-<p>Read directly from the body or belongings. Objective, stable, highly reliable. Shoe wear, belt notch wear, callus distribution. Very few alternative explanations. A <span class="badge t1">T1</span> read is your anchor. Lead with it whenever you have one.</p>
-<p><span class="badge t2">T2</span> — Research-Backed</p>
-<p>Supported by published behavioral science. Eye contact willingness, blink rate shifts, foot direction. Reliability is high when combined with <span class="badge t1">T1</span> anchors. These are the workhorses of behavioral reading — use them in clusters.</p>
-<h3 class="section-header">T3 — Field-Tested Pattern</h3>
-<p>Observed consistently across thousands of performance and training hours. Not yet formally validated in peer-reviewed research. Use to add nuance to reads already grounded in <span class="badge t1">T1</span> and <span class="badge t2">T2</span>. Never lead with a <span class="badge t3">T3</span> alone.</p>
-<p><span class="badge t4">T4</span> — Experimental</p>
-<p>Weak or disputed research support. Documented in the <span class="badge t4">T4</span> Appendix. Know what they claim. Know why the claim does not hold. The practitioner who cites <span class="badge t4">T4</span> signals in consulting contexts is a credibility risk.</p>
-<h3 class="section-header">The Three-Signal Rule</h3>
-<p>One signal is a guess. Three signals pointing the same way is a read you can stake your reputation on.</p>
-<p>This is the most important habit in this system. Any single signal can be explained by cold temperature, a bad night, medication, or a passing mood. Three signals pointing the same direction cannot. The professional observer notices one signal and immediately, deliberately, looks for two more. In a stage context, where a volunteer walks toward you for five seconds and stands with you for minutes, three confirming signals are achievable before your first word. Use all three.</p>
-<h3 class="section-header">Stage Context</h3>
-<p>Wait for three. Three confirming signals are achievable before your first word to a volunteer. A read built on one signal is a guess with good delivery.</p>
-<h3 class="section-header">Strolling Context</h3>
-<p>Act on one strong <span class="badge t1">T1</span>. In a 90-second walkaround set you cannot wait. A single strong physical read, calluses, belt wear, shoe condition, is enough to open with confidence. Read as you go. Course-correct fast.</p>
+<div class="tier-block t1-block">
+  <div class="tier-header">
+    <span class="badge t1">T1</span>
+    <span class="tier-name">Physical Evidence</span>
+  </div>
+  <div class="tier-body"><p>Read directly from the body or belongings. Objective, stable, highly reliable. Shoe wear, belt notch wear, callus distribution. Very few alternative explanations. A T1 read is your anchor. Lead with it whenever you have one.</p></div>
+</div>
+<div class="tier-block t2-block">
+  <div class="tier-header">
+    <span class="badge t2">T2</span>
+    <span class="tier-name">Research-Backed</span>
+  </div>
+  <div class="tier-body"><p>Supported by published behavioral science. Eye contact willingness, blink rate shifts, foot direction. Reliability is high when combined with T1 anchors. These are the workhorses of behavioral reading — use them in clusters.</p></div>
+</div>
+<div class="tier-block t3-block">
+  <div class="tier-header">
+    <span class="badge t3">T3</span>
+    <span class="tier-name">Field-Tested Pattern</span>
+  </div>
+  <div class="tier-body"><p>Observed consistently across thousands of performance and training hours. Not yet formally validated in peer-reviewed research. Use to add nuance to reads already grounded in T1 and T2. Never lead with a T3 alone.</p></div>
+</div>
+<div class="tier-block t4-block">
+  <div class="tier-header">
+    <span class="badge t4">T4</span>
+    <span class="tier-name">Experimental</span>
+  </div>
+  <div class="tier-body"><p>Weak or disputed research support. Documented in the T4 Appendix. Know what they claim. Know why the claim does not hold. The practitioner who cites T4 signals in consulting contexts is a credibility risk.</p></div>
+</div>
+<div class="concept-box">
+  <div class="concept-label">KEY CONCEPT</div>
+  <div class="concept-title">The Three-Signal Rule</div>
+  <div class="concept-body"><p>One signal is a guess. Three signals pointing the same way is a read you can stake your reputation on.</p><p>This is the most important habit in this system. Any single signal can be explained by cold temperature, a bad night, medication, or a passing mood. Three signals pointing the same direction cannot. The professional observer notices one signal and immediately, deliberately, looks for two more. In a stage context, where a volunteer walks toward you for five seconds and stands with you for minutes, three confirming signals are achievable before your first word. Use all three.</p></div>
+</div>
+<div class="context-card">
+  <div class="context-label">STAGE CONTEXT</div>
+  <p>Wait for three. Three confirming signals are achievable before your first word to a volunteer. A read built on one signal is a guess with good delivery.</p>
+</div>
+<div class="context-card">
+  <div class="context-label">STROLLING CONTEXT</div>
+  <p>Act on one strong T1. In a 90-second walkaround set you cannot wait. A single strong physical read, calluses, belt wear, shoe condition, is enough to open with confidence. Read as you go. Course-correct fast.</p>
+</div>
 <h3 class="section-header">Common Observer Errors</h3>
-<p>Acting on a Single Signal. One behavior tells you almost nothing. Wait for three consistent signals. This is the most common error and the fastest to fix.</p>
-<p>Ignoring the Baseline. A signal only has meaning relative to that person&#x27;s own normal. Spend the first thirty to sixty seconds establishing how someone looks when nothing is happening. Then read the deviation.</p>
-<p>Confirmation Bias. Once a first impression forms, the brain finds confirming evidence and discards contradiction. After forming a read, actively look for the signal that would disprove it.</p>
-<p>Cultural Projection. Eye contact norms, personal space, and emotional expressiveness vary significantly across cultures. Calibrate against the specific room you are in, never against an assumed universal baseline.</p>
+<div class="error-card">
+  <div class="error-label">ACTING ON A SINGLE SIGNAL</div>
+  <p>One behavior tells you almost nothing. Wait for three consistent signals. This is the most common error and the fastest to fix.</p>
+</div>
+<div class="error-card">
+  <div class="error-label">IGNORING THE BASELINE</div>
+  <p>A signal only has meaning relative to that person&#x27;s own normal. Spend the first thirty to sixty seconds establishing how someone looks when nothing is happening. Then read the deviation.</p>
+</div>
+<div class="error-card">
+  <div class="error-label">CONFIRMATION BIAS</div>
+  <p>Once a first impression forms, the brain finds confirming evidence and discards contradiction. After forming a read, actively look for the signal that would disprove it.</p>
+</div>
+<div class="error-card">
+  <div class="error-label">CULTURAL PROJECTION</div>
+  <p>Eye contact norms, personal space, and emotional expressiveness vary significantly across cultures. Calibrate against the specific room you are in, never against an assumed universal baseline.</p>
+</div>
 <h3 class="section-header">Cultural Calibration in Practice</h3>
 <p>The single-paragraph warning above deserves expansion, because cultural miscalibration in a live reading is not merely embarrassing. It is the fastest way to lose a room that was otherwise available to you.</p>
 <p>Eye Contact. In Western corporate contexts, sustained eye contact is a confidence signal. In many East Asian, Middle Eastern, and Indigenous cultural contexts, sustained direct eye contact with a higher-status person is a challenge signal, not a confidence signal. A volunteer who avoids your gaze may be showing you respect, not anxiety. Reading it as low confidence and selecting accordingly is a misread with visible consequences.</p>
 <p>Personal Space. The conversational distance that feels natural in Northern Europe and North America is noticeably larger than in Latin American, Southern European, and Middle Eastern cultural contexts. A volunteer who stands closer than your baseline expects is not necessarily an I-type seeking connection. They may simply be standing at the distance their culture considers normal. Adjust your spatial reads to the room you are in, not the room you are from.</p>
 <p>Emotional Expressiveness. Cultures vary dramatically in the social permission granted for visible emotional response. A Japanese corporate audience that appears flat is not unengaged. They are engaged according to a different display rule. An Italian audience that appears overwhelmed may simply be responding at their cultural baseline. DISC profiles must be calibrated against the expressive norms of the specific population in the room, not against an assumed universal.</p>
+<p>Touch and Compliance. Physical anchoring, shoulder touches, and handshakes carry fundamentally different meanings across cultural contexts. What registers as warmth in one culture registers as presumption in another. In mixed-culture rooms, default to less physical contact until you have read the specific norms present.</p>
+<p>The practical rule: when working an international room or a culturally diverse audience, extend your baseline-building window. Spend the first two to three minutes reading the room’s cultural display rules before you commit to behavioral reads based on individual signals. The signals are still valid. The interpretation must be calibrated to the cultural context they are occurring in.</p>
+<div class="error-card">
+  <div class="error-label">CONFLATING OBSERVATION WITH LIE DETECTION</div>
+  <p>This framework is built for personality and behavioral reads, not deception detection. Research consistently shows even trained professionals perform near chance levels at detecting lies from behavior alone. Keep these domains separate.</p>
+</div>
+<div class="concept-box">
+  <div class="concept-label">KEY CONCEPT</div>
+  <div class="concept-title">The Foundation: Baseline First</div>
+  <div class="concept-body"><p>Every behavioral read is only as good as the baseline it departs from. A baseline is a behavioral norm: the specific way this person, in this context, looks, moves, sounds, and holds themselves when they are not processing anything significant. It is not a generic human norm. It is their norm. And you cannot detect deviation from a baseline you have not established.</p><p>The calibration window is the first sixty to ninety seconds of any interaction. Use it entirely for baseline-building. Ask about the event, the venue, directions. Low-stakes, no performance pressure. Watch how they speak when nothing is at stake. Their baseline behavior is the most honest version you will see.</p></div>
+</div>
+<div class="concept-box">
+  <div class="concept-label">KEY CONCEPT</div>
+  <div class="concept-title">High-Yield Baseline Signals</div>
+  <div class="concept-body"><p>Breathing rate: visible in shoulders and chest. Speech rhythm: connected vs. fragmented. Eye movement pattern. Self-touch frequency: a reliable stress-load indicator, not a deception indicator. These together form the baseline you are departing from.</p></div>
+</div>
 <aside class="wyajd">
   <div class="wyajd-bar"></div>
   <p class="wyajd-text">You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01 — handedness indicator. You just demonstrated it without thinking.</p>
 </aside>
-<p>Touch and Compliance. Physical anchoring, shoulder touches, and handshakes carry fundamentally different meanings across cultural contexts. What registers as warmth in one culture registers as presumption in another. In mixed-culture rooms, default to less physical contact until you have read the specific norms present.</p>
-<p>The practical rule: when working an international room or a culturally diverse audience, extend your baseline-building window. Spend the first two to three minutes reading the room’s cultural display rules before you commit to behavioral reads based on individual signals. The signals are still valid. The interpretation must be calibrated to the cultural context they are occurring in.</p>
-<p>Conflating Observation with Lie Detection. This framework is built for personality and behavioral reads, not deception detection. Research consistently shows even trained professionals perform near chance levels at detecting lies from behavior alone. Keep these domains separate.</p>
-<h3 class="section-header">The Foundation: Baseline First</h3>
-<p>Every behavioral read is only as good as the baseline it departs from. A baseline is a behavioral norm: the specific way this person, in this context, looks, moves, sounds, and holds themselves when they are not processing anything significant. It is not a generic human norm. It is their norm. And you cannot detect deviation from a baseline you have not established.</p>
-<p>The calibration window is the first sixty to ninety seconds of any interaction. Use it entirely for baseline-building. Ask about the event, the venue, directions. Low-stakes, no performance pressure. Watch how they speak when nothing is at stake. Their baseline behavior is the most honest version you will see.</p>
-<h3 class="section-header">High-Yield Baseline Signals</h3>
-<p>Breathing rate: visible in shoulders and chest. Speech rhythm: connected vs. fragmented. Eye movement pattern. Self-touch frequency: a reliable stress-load indicator, not a deception indicator. These together form the baseline you are departing from.</p>
 <h3 class="section-header">The Five Cs</h3>
-<p><span class="five-c">Context</span> · <span class="five-c">Clusters</span> · <span class="five-c">Congruence</span> · Calibration · Change. Apply all five before acting on any behavioral signal. A single isolated cue is not a read. It is background data.</p>
-<h3 class="section-header">Reading Deviation</h3>
+<p><span class="five-c">Context</span> · <span class="five-c">Clusters</span> · <span class="five-c">Congruence</span> · <span class="five-c">Consistency</span> · <span class="five-c">Culture</span>. Apply all five before acting on any behavioral signal. A single isolated cue is not a read. It is background data.</p>
+<p><span class="five-c">Context</span> — What environment is the behavior occurring in? The same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier. Context determines meaning. Always.</p>
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
@@ -813,10 +1081,19 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
     <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
+<p><span class="five-c">Clusters</span> — Are multiple signals pointing the same direction? One signal is noise. Three co-occurring behaviors multiply each other&#x27;s diagnostic weight. A cluster is a pattern. Never act on a single signal.</p>
+<p><span class="five-c">Congruence</span> — Does the body match the words? When the body says one thing and the words say another, the body is telling the truth. Incongruence is your most reliable signal.</p>
+<p><span class="five-c">Consistency</span> — How does this compare to their baseline? Compare what you are seeing to that individual&#x27;s personal baseline. Not a generic chart. Deviation from their baseline is the data point. Without baseline, every read is a projection.</p>
+<p><span class="five-c">Culture</span> — What are the background norms? Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another. Calibrate before concluding.</p>
+<p>Apply the Five Cs as a chain, not a checklist. Most weak readings fail because they skip this chain. They treat behavior like a vending machine. Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</p>
+<h3 class="section-header">Reading Deviation</h3>
 <p>Once you have a baseline, deviation is the signal. A person who normally speaks in smooth, connected phrases who suddenly fragments their syntax is processing something more carefully. A person whose baseline includes relaxed open posture who crosses their arms at a specific question has registered something. A person who maintains easy eye contact who breaks it and looks down has encountered an emotional stimulus. None of these deviations tell you the specific content of the internal state. All of them tell you that an internal state worth tracking is active.</p>
 <p>The mistake is trying to read too much too fast. One or two high-yield indicators tracked with real depth will outperform a scattered attempt to catch everything. You are following a trail, not building a spreadsheet. Stay on the trail. When it pauses, hold position. When it moves, follow it.</p>
-<h3 class="section-header">The Leakage Window</h3>
-<p>The gap between what someone manages to express and what they actually feel. Most people manage their face, voice, and words with moderate skill. Very few manage their hands, their breathing rate, or their micro-expressions during genuine stress. The leakage window is where the honest signal lives.</p>
+<div class="concept-box">
+  <div class="concept-label">KEY CONCEPT</div>
+  <div class="concept-title">The Leakage Window</div>
+  <div class="concept-body"><p>The gap between what someone manages to express and what they actually feel. Most people manage their face, voice, and words with moderate skill. Very few manage their hands, their breathing rate, or their micro-expressions during genuine stress. The leakage window is where the honest signal lives.</p></div>
+</div>
 <h3 class="section-header">Eye Movement and the Baseline Principle</h3>
 <p>The behavioral observation tradition associated with NLP proposed that eye movement direction could reliably indicate whether a person was accessing a visual memory, constructing a visual image, or processing an auditory or kinesthetic experience. This model became widely taught and widely applied. Controlled testing of this specific claim has not found consistent support. Research by Richard Wiseman and colleagues (2012, PLOS ONE) directly tested whether the predicted eye-movement patterns were observable. The predicted relationships did not hold reliably.</p>
 <p>This does not undermine the broader observational framework. The observation that someone is looking somewhere different from their baseline, and tracking what prompted that shift, remains valuable. The deviation from baseline is the signal. Chase Hughes makes exactly this distinction: the baseline-deviation approach is what works, and it is what field practitioners actually use. Track where this person&#x27;s eyes go when they are not actively managing their presentation. That is the signal worth following.</p>
@@ -890,12 +1167,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">3</div>
+    <div class="pi-unit">SIGNALS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
-    
+    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
+    <p class="pi-source">The Five Cs — Clusters</p>
+    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
   </div>
 </section>
 <p>Social confidence (rate 1–8)</p>
@@ -946,11 +1223,11 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">5</div>
-    <div class="pi-unit">FILTERS</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
-    <p class="pi-source">The Architecture of Wonder</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
     
   </div>
 </section>
@@ -1422,12 +1699,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
+    
   </div>
 </section>
 <p>S-Type — Stage/Strolling</p>
@@ -1577,11 +1854,11 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">5</div>
-    <div class="pi-unit">FILTERS</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
-    <p class="pi-source">The Architecture of Wonder</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
     
   </div>
 </section>
@@ -1764,12 +2041,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">7</div>
-    <div class="pi-unit">EXPRESSIONS</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
-    <p class="pi-source">Ekman & Friesen, 1971</p>
-    
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <p>Surrounding those pyramidal neurons are inhibitory interneurons, especially GABAergic cells that help control timing, synchrony, and gain. These interneurons help determine which signals are amplified and which are suppressed. A hypnotic suggestion that narrows attention likely depends on this kind of local inhibitory sculpting. Irrelevant competing signals are dampened while the selected representation is stabilized. That is how a person becomes less distracted by alternative interpretations and more absorbed in the suggested one.</p>
@@ -2592,12 +2869,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">3</div>
+    <div class="pi-unit">SIGNALS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
-    
+    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
+    <p class="pi-source">The Five Cs — Clusters</p>
+    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
   </div>
 </section>
 <h3 class="section-header">Scripted Revelation</h3>
@@ -2721,12 +2998,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
+    
   </div>
 </section>
 <h3 class="section-header">Movement for Resets</h3>
@@ -2779,12 +3056,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">7</div>
-    <div class="pi-unit">EXPRESSIONS</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
-    <p class="pi-source">Ekman & Friesen, 1971</p>
-    
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <p>The only context where explaining your framework serves the performance.</p>
@@ -3101,12 +3378,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">7</div>
-    <div class="pi-unit">EXPRESSIONS</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
-    <p class="pi-source">Ekman & Friesen, 1971</p>
-    
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <p>Let the moment land before you move. After a strong reveal, the audience needs three to five seconds of unmanaged silence. Not performance silence. Genuine space. The emotion needs time to complete its arc. A performer who rushes past the landing is truncating the neurological process that converts surprise into memory.</p>
@@ -3257,12 +3534,12 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">7</div>
-    <div class="pi-unit">EXPRESSIONS</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
-    <p class="pi-source">Ekman & Friesen, 1971</p>
-    
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <p>You do not need to memorize the entire BTE. You need a notation habit: a shorthand that lets you track what you are seeing in real time and review it after the interaction.</p>
