@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="'Georgia', 'Garamond', serif">
+  <defs>
+    <linearGradient id="darkBgM" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TWO-PAGE SPREAD: MARGINALIA SYSTEM (GREENE MODEL)  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Page backgrounds — warm cream -->
+  <rect x="0" y="0" width="600" height="800" fill="#F5F0E8"/>   <!-- Verso (left) -->
+  <rect x="600" y="0" width="600" height="800" fill="#F5F0E8"/> <!-- Recto (right) -->
+
+  <!-- Spine/gutter indicator -->
+  <line x1="600" y1="0" x2="600" y2="800" stroke="#D8D0C4" stroke-width="2"/>
+
+  <!-- ═══════════ VERSO (LEFT PAGE) ═══════════ -->
+
+  <!-- Running header — verso shows book title -->
+  <text x="45" y="30" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">THE ARCHITECTURE OF WONDER</text>
+  <text x="555" y="30" text-anchor="end" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">126</text>
+  <line x1="45" y1="38" x2="555" y2="38" stroke="#D8D0C4" stroke-width="0.5"/>
+
+  <!-- Marginalia zone — LEFT side of verso page (outer margin) -->
+  <!-- War stories in gold, sans-serif light -->
+  <g opacity="0.85">
+    <text x="28" y="80" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">I once walked into a</text>
+    <text x="28" y="92" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">boardroom where every</text>
+    <text x="28" y="104" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">chair was identical — but</text>
+    <text x="28" y="116" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">one had been adjusted</text>
+    <text x="28" y="128" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">two inches higher than</text>
+    <text x="28" y="140" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">the rest. That was the</text>
+    <text x="28" y="152" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">CEO's seat.</text>
+    <text x="28" y="170" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="7" font-weight="300">— Field note, 2019</text>
+  </g>
+
+  <!-- Body text block — main teaching content -->
+  <g>
+    <!-- CR margin icon -->
+    <g transform="translate(148, 66)">
+      <circle cx="8" cy="5" r="3.5" fill="none" stroke="#1A8FA8" stroke-width="0.5" opacity="0.5"/>
+      <path d="M2,14 Q2,9 8,9 Q14,9 14,14" fill="none" stroke="#1A8FA8" stroke-width="0.5" opacity="0.5"/>
+    </g>
+
+    <text x="170" y="75" fill="#2A2520" font-size="10.5">The corporate boardroom is a stage. Every seat</text>
+    <text x="170" y="91" fill="#2A2520" font-size="10.5">placement is a choice. The person who arrives first</text>
+    <text x="170" y="107" fill="#2A2520" font-size="10.5">and chooses the seat facing the door has told you</text>
+    <text x="170" y="123" fill="#2A2520" font-size="10.5">something before they have said a word.</text>
+
+    <text x="170" y="155" fill="#2A2520" font-size="10.5">This is Observation #60: Chair choice in a room</text>
+    <!-- T2 badge inline -->
+    <rect x="460" y="144" width="24" height="13" rx="6.5" fill="#1A8FA8"/>
+    <text x="472" y="154" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T2</text>
+    <text x="490" y="155" fill="#2A2520" font-size="10.5">.</text>
+
+    <text x="170" y="171" fill="#2A2520" font-size="10.5">Security, status, or social strategy. Run it through</text>
+    <text x="170" y="187" fill="#2A2520" font-size="10.5">the Five Cs before concluding — context changes</text>
+    <text x="170" y="203" fill="#2A2520" font-size="10.5">everything. In a therapy office, the same choice</text>
+    <text x="170" y="219" fill="#2A2520" font-size="10.5">signals vulnerability, not dominance.</text>
+  </g>
+
+  <!-- Second marginalia note — cross-reference in steel blue -->
+  <g opacity="0.85">
+    <text x="28" y="220" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300">See also #58 (how</text>
+    <text x="28" y="232" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300">quickly they sit) and</text>
+    <text x="28" y="244" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300">#59 (moving objects</text>
+    <text x="28" y="256" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300">before sitting). These</text>
+    <text x="28" y="268" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300">three form a powerful</text>
+    <text x="28" y="280" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300">territorial cluster.</text>
+  </g>
+
+  <!-- Section break -->
+  <text x="350" y="255" text-anchor="middle" fill="#C9A84C" font-size="10">· · ·</text>
+
+  <!-- Section header -->
+  <text x="170" y="290" fill="#2A2520" font-family="'Montserrat', 'Calibri', sans-serif" font-size="12" font-weight="700" letter-spacing="1">READING THE ROOM BEFORE YOU ENTER</text>
+  <rect x="170" y="298" width="60" height="2" fill="#C9A84C"/>
+
+  <!-- AM margin icon -->
+  <g transform="translate(148, 310)">
+    <path d="M3,8 L13,8 M10,4 L14,8 L10,12" fill="none" stroke="#A83030" stroke-width="0.5" opacity="0.5"/>
+  </g>
+
+  <text x="170" y="325" fill="#2A2520" font-size="10.5">The strongest signal in any room is the one no one</text>
+  <text x="170" y="341" fill="#2A2520" font-size="10.5">expects you to notice. Most people walk into a</text>
+  <text x="170" y="357" fill="#2A2520" font-size="10.5">meeting and immediately focus on faces. They miss</text>
+  <text x="170" y="373" fill="#2A2520" font-size="10.5">the architecture — the seating arrangement, the</text>
+  <text x="170" y="389" fill="#2A2520" font-size="10.5">temperature of the handshakes, the timing of who</text>
+  <text x="170" y="405" fill="#2A2520" font-size="10.5">looked at whom when you walked in.</text>
+
+  <!-- Third marginalia — practitioner shortcut -->
+  <g opacity="0.85">
+    <text x="28" y="340" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">Practitioner shortcut:</text>
+    <text x="28" y="354" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">Arrive early. Watch</text>
+    <text x="28" y="368" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">people choose their</text>
+    <text x="28" y="382" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">seats. That ten-second</text>
+    <text x="28" y="396" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">window tells you more</text>
+    <text x="28" y="410" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">than an hour of</text>
+    <text x="28" y="424" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic">conversation.</text>
+  </g>
+
+  <!-- Spotlight box — Von Restorff -->
+  <rect x="160" y="430" width="385" height="80" rx="4" fill="url(#darkBgM)"/>
+  <rect x="160" y="430" width="4" height="80" fill="#C9A84C"/>
+  <text x="182" y="455" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2" font-weight="700">KEY PRINCIPLE</text>
+  <text x="182" y="478" fill="#FFFFFF" font-size="11" font-style="italic">"The room reads you before you read it. Arrive</text>
+  <text x="182" y="496" fill="#FFFFFF" font-size="11" font-style="italic">knowing that — and you have already won."</text>
+
+  <!-- Continuing text -->
+  <text x="170" y="540" fill="#2A2520" font-size="10.5">Observation #47 — Environmental scanning</text>
+  <text x="170" y="556" fill="#2A2520" font-size="10.5">behavior — is one of the most reliable indicators</text>
+  <!-- T2 badge -->
+  <rect x="170" y="568" width="24" height="13" rx="6.5" fill="#1A8FA8"/>
+  <text x="182" y="578" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T2</text>
+  <text x="200" y="578" fill="#2A2520" font-size="10.5">of security-awareness mindset. The person</text>
+  <text x="170" y="594" fill="#2A2520" font-size="10.5">who scans exits upon entering is either trained</text>
+  <text x="170" y="610" fill="#2A2520" font-size="10.5">or anxious. The Five Cs will tell you which.</text>
+
+  <!-- Footer -->
+  <text x="300" y="770" text-anchor="middle" fill="#D8D0C4" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="2">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+
+  <!-- ═══════════ RECTO (RIGHT PAGE) ═══════════ -->
+
+  <!-- Running header — recto shows chapter info -->
+  <text x="645" y="30" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">CHAPTER 14  —  STORIES FROM THE FIELD</text>
+  <text x="1155" y="30" text-anchor="end" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">127</text>
+  <line x1="645" y1="38" x2="1155" y2="38" stroke="#D8D0C4" stroke-width="0.5"/>
+
+  <!-- Body text — recto page -->
+  <text x="660" y="75" fill="#2A2520" font-size="10.5">There is a difference between watching and seeing.</text>
+  <text x="660" y="91" fill="#2A2520" font-size="10.5">Everyone in the room is watching. They are watching</text>
+  <text x="660" y="107" fill="#2A2520" font-size="10.5">presentations, watching the clock, watching their</text>
+  <text x="660" y="123" fill="#2A2520" font-size="10.5">phones. Seeing is different. Seeing is deliberate.</text>
+  <text x="660" y="139" fill="#2A2520" font-size="10.5">Seeing requires the Five Cs.</text>
+
+  <!-- VS margin icon on recto — outer margin (right side) -->
+  <g transform="translate(1140, 66)">
+    <path d="M2,8 L5,4 L7,12 L9,2 L11,14 L13,5 L15,10" fill="none" stroke="#6B52A0" stroke-width="0.5" opacity="0.5"/>
+  </g>
+
+  <!-- Recto marginalia — right outer margin -->
+  <g opacity="0.85">
+    <text x="1090" y="80" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">The best readers</text>
+    <text x="1090" y="92" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">I've trained all</text>
+    <text x="1090" y="104" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">say the same</text>
+    <text x="1090" y="116" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">thing: "I stopped</text>
+    <text x="1090" y="128" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">trying to be</text>
+    <text x="1090" y="140" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">impressive and</text>
+    <text x="1090" y="152" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">started trying</text>
+    <text x="1090" y="164" fill="#C9A84C" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" font-style="italic" text-anchor="end">to be observant."</text>
+  </g>
+
+  <!-- Pull quote — RECTO PAGE (preferred placement) -->
+  <line x1="720" y1="185" x2="1020" y2="185" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  <text x="870" y="220" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="15" font-weight="600" font-style="italic">"Seeing is deliberate.</text>
+  <text x="870" y="244" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="15" font-weight="600" font-style="italic">Seeing requires</text>
+  <text x="870" y="268" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="15" font-weight="600" font-style="italic">the Five Cs."</text>
+  <line x1="720" y1="290" x2="1020" y2="290" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Continuing body text after pull quote -->
+  <text x="660" y="330" fill="#2A2520" font-size="10.5">Consider what happens when you stop looking at</text>
+  <text x="660" y="346" fill="#2A2520" font-size="10.5">faces and start looking at hands. Observation #29:</text>
+  <text x="660" y="362" fill="#2A2520" font-size="10.5">Scar and callus distribution</text>
+  <!-- T1 badge -->
+  <rect x="885" y="351" width="24" height="13" rx="6.5" fill="#C9A84C"/>
+  <text x="897" y="361" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T1</text>
+  <text x="915" y="362" fill="#2A2520" font-size="10.5">. Hands tell</text>
+
+  <text x="660" y="378" fill="#2A2520" font-size="10.5">stories that mouths never will. Calluses on the</text>
+  <text x="660" y="394" fill="#2A2520" font-size="10.5">fingertips of a guitar player. On the heel of the palm</text>
+  <text x="660" y="410" fill="#2A2520" font-size="10.5">of someone who works with tools. On the knuckles</text>
+  <text x="660" y="426" fill="#2A2520" font-size="10.5">of someone who trains in combat sports.</text>
+
+  <!-- BP margin icon -->
+  <g transform="translate(1140, 340)">
+    <ellipse cx="8" cy="8" rx="5" ry="3.5" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+    <circle cx="8" cy="8" r="1.8" fill="#C9A84C" opacity="0.5"/>
+  </g>
+
+  <!-- Recto marginalia — cross-reference -->
+  <g opacity="0.85">
+    <text x="1090" y="350" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" text-anchor="end">Callus mapping is</text>
+    <text x="1090" y="362" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" text-anchor="end">one of the most</text>
+    <text x="1090" y="374" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" text-anchor="end">underused T1 tools.</text>
+    <text x="1090" y="386" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" text-anchor="end">See Chapter 7 for</text>
+    <text x="1090" y="398" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" text-anchor="end">cold reading</text>
+    <text x="1090" y="410" fill="#1A8FA8" font-family="'Helvetica Neue', 'Calibri', sans-serif" font-size="8" font-weight="300" text-anchor="end">applications.</text>
+  </g>
+
+  <!-- "What You Just Did" moment on recto -->
+  <g transform="translate(660, 460)">
+    <rect x="-5" y="-5" width="3" height="55" fill="#C9A84C" opacity="0.6"/>
+    <text x="15" y="8" fill="#2A2520" font-size="10.5" font-style="italic">Look at your own hands right now. What do</text>
+    <text x="15" y="24" fill="#2A2520" font-size="10.5" font-style="italic">your calluses say about you? That is</text>
+    <text x="15" y="40" fill="#2A2520" font-size="10.5" font-style="italic">Observation #29 applied to yourself.</text>
+  </g>
+
+  <!-- More body text -->
+  <text x="660" y="545" fill="#2A2520" font-size="10.5">The hands-first approach is counterintuitive.</text>
+  <text x="660" y="561" fill="#2A2520" font-size="10.5">We are wired to look at faces — Observation #56,</text>
+  <text x="660" y="577" fill="#2A2520" font-size="10.5">eyebrow expressiveness, is one of the first things</text>
+  <text x="660" y="593" fill="#2A2520" font-size="10.5">the brain processes. But faces are also the most</text>
+  <text x="660" y="609" fill="#2A2520" font-size="10.5">curated surface. People practice their faces. They</text>
+  <text x="660" y="625" fill="#2A2520" font-size="10.5">do not practice their hands.</text>
+
+  <!-- Chapter Key Read closer on recto -->
+  <line x1="720" y1="680" x2="1020" y2="680" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  <text x="870" y="710" text-anchor="middle" fill="#C9A84C" font-size="11" font-style="italic" font-weight="600">The face is the performance. The hands are the truth.</text>
+  <line x1="720" y1="725" x2="1020" y2="725" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Footer -->
+  <text x="900" y="770" text-anchor="middle" fill="#D8D0C4" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="2">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+
+  <!-- ═══════════ ANNOTATIONS ═══════════ -->
+
+  <!-- Design system labels -->
+  <rect x="0" y="785" width="1200" height="15" fill="#080F1A"/>
+  <text x="100" y="795" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1">GREENE-MODEL MARGINALIA SPREAD  |  DUAL READING PATH  |  GOLD = FIELD STORIES  |  BLUE = CROSS-REFERENCES  |  BODY = SERIF  |  MARGINS = SANS-SERIF LIGHT</text>
+</svg>
