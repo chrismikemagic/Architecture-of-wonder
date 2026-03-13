@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 680" font-family="Calibri, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="680" fill="url(#bgGrad6)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">DISC IN REAL TIME</text>
+  <line x1="280" y1="55" x2="520" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">Reading personality in the first thirty seconds</text>
+
+  <!-- D-Type -->
+  <rect x="40" y="95" width="350" height="240" rx="6" fill="#0D1E30" stroke="#A83030" stroke-width="2"/>
+  <rect x="40" y="95" width="350" height="36" rx="6" fill="#A83030" opacity="0.15"/>
+  <rect x="40" y="125" width="350" height="1" fill="#A83030" opacity="0.3"/>
+  <text x="60" y="118" fill="#A83030" font-size="24" font-weight="bold">D</text>
+  <text x="90" y="118" fill="#FFFFFF" font-size="14" font-weight="bold">DIRECT</text>
+  <text x="350" y="118" text-anchor="end" fill="#A83030" font-size="10">Fast · Decisive · Results</text>
+
+  <text x="60" y="152" fill="#FFFFFF" font-size="10" font-weight="bold">SIGNALS</text>
+  <text x="60" y="170" fill="#8A9AB5" font-size="9.5">Fast walking · Forward lean</text>
+  <text x="60" y="185" fill="#8A9AB5" font-size="9.5">Direct unbroken eye contact · Speaks first</text>
+
+  <text x="60" y="210" fill="#FFFFFF" font-size="10" font-weight="bold">ON STAGE</text>
+  <text x="60" y="228" fill="#8A9AB5" font-size="9.5">Skip the warm-up. Lead with precision.</text>
+  <text x="60" y="243" fill="#8A9AB5" font-size="9.5">A dead-accurate specific wins them.</text>
+
+  <text x="60" y="268" fill="#FFFFFF" font-size="10" font-weight="bold">VOLUNTEER STRATEGY</text>
+  <text x="60" y="286" fill="#C9A84C" font-size="9.5">Precision is currency. One specific,</text>
+  <text x="60" y="301" fill="#C9A84C" font-size="9.5">accurate observation delivered with directness.</text>
+
+  <!-- I-Type -->
+  <rect x="410" y="95" width="350" height="240" rx="6" fill="#0D1E30" stroke="#E8C870" stroke-width="2"/>
+  <rect x="410" y="95" width="350" height="36" rx="6" fill="#E8C870" opacity="0.12"/>
+  <rect x="410" y="125" width="350" height="1" fill="#E8C870" opacity="0.3"/>
+  <text x="430" y="118" fill="#E8C870" font-size="24" font-weight="bold">I</text>
+  <text x="455" y="118" fill="#FFFFFF" font-size="14" font-weight="bold">INFLUENTIAL</text>
+  <text x="720" y="118" text-anchor="end" fill="#E8C870" font-size="10">Expressive · Social · Enthusiastic</text>
+
+  <text x="430" y="152" fill="#FFFFFF" font-size="10" font-weight="bold">SIGNALS</text>
+  <text x="430" y="170" fill="#8A9AB5" font-size="9.5">Open posture · Frequent smiling</text>
+  <text x="430" y="185" fill="#8A9AB5" font-size="9.5">Immediate humor response · Forward lean</text>
+
+  <text x="430" y="210" fill="#FFFFFF" font-size="10" font-weight="bold">ON STAGE</text>
+  <text x="430" y="228" fill="#8A9AB5" font-size="9.5">Ideal reactor. Their enthusiasm gives</text>
+  <text x="430" y="243" fill="#8A9AB5" font-size="9.5">the room permission to feel the same.</text>
+
+  <text x="430" y="268" fill="#FFFFFF" font-size="10" font-weight="bold">VOLUNTEER STRATEGY</text>
+  <text x="430" y="286" fill="#C9A84C" font-size="9.5">Give them a visible, valued role.</text>
+  <text x="430" y="301" fill="#C9A84C" font-size="9.5">Not just a subject — a collaborator.</text>
+
+  <!-- S-Type -->
+  <rect x="40" y="355" width="350" height="240" rx="6" fill="#0D1E30" stroke="#1A8FA8" stroke-width="2"/>
+  <rect x="40" y="355" width="350" height="36" rx="6" fill="#1A8FA8" opacity="0.12"/>
+  <rect x="40" y="385" width="350" height="1" fill="#1A8FA8" opacity="0.3"/>
+  <text x="60" y="378" fill="#1A8FA8" font-size="24" font-weight="bold">S</text>
+  <text x="90" y="378" fill="#FFFFFF" font-size="14" font-weight="bold">STEADY</text>
+  <text x="350" y="378" text-anchor="end" fill="#1A8FA8" font-size="10">Calm · Cooperative · Supportive</text>
+
+  <text x="60" y="412" fill="#FFFFFF" font-size="10" font-weight="bold">SIGNALS</text>
+  <text x="60" y="430" fill="#8A9AB5" font-size="9.5">Minimal movement · Settled posture</text>
+  <text x="60" y="445" fill="#8A9AB5" font-size="9.5">Relaxed shoulders · Unhurried speech</text>
+
+  <text x="60" y="470" fill="#FFFFFF" font-size="10" font-weight="bold">ON STAGE</text>
+  <text x="60" y="488" fill="#8A9AB5" font-size="9.5">Best for imagination routines where</text>
+  <text x="60" y="503" fill="#8A9AB5" font-size="9.5">quiet cooperation matters most.</text>
+
+  <text x="60" y="528" fill="#FFFFFF" font-size="10" font-weight="bold">VOLUNTEER STRATEGY</text>
+  <text x="60" y="546" fill="#C9A84C" font-size="9.5">Patience is the asset. A slightly slower</text>
+  <text x="60" y="561" fill="#C9A84C" font-size="9.5">pace with warm framing produces engagement.</text>
+
+  <!-- C-Type -->
+  <rect x="410" y="355" width="350" height="240" rx="6" fill="#0D1E30" stroke="#6B52A0" stroke-width="2"/>
+  <rect x="410" y="355" width="350" height="36" rx="6" fill="#6B52A0" opacity="0.12"/>
+  <rect x="410" y="385" width="350" height="1" fill="#6B52A0" opacity="0.3"/>
+  <text x="430" y="378" fill="#6B52A0" font-size="24" font-weight="bold">C</text>
+  <text x="460" y="378" fill="#FFFFFF" font-size="14" font-weight="bold">CONSCIENTIOUS</text>
+  <text x="720" y="378" text-anchor="end" fill="#6B52A0" font-size="10">Analytical · Precise · Detail</text>
+
+  <text x="430" y="412" fill="#FFFFFF" font-size="10" font-weight="bold">SIGNALS</text>
+  <text x="430" y="430" fill="#8A9AB5" font-size="9.5">Balanced posture · Measured speech</text>
+  <text x="430" y="445" fill="#8A9AB5" font-size="9.5">Deliberate pauses · Careful object handling</text>
+
+  <text x="430" y="470" fill="#FFFFFF" font-size="10" font-weight="bold">ON STAGE</text>
+  <text x="430" y="488" fill="#8A9AB5" font-size="9.5">Analyzes in real time. Slow-burn effects.</text>
+  <text x="430" y="503" fill="#8A9AB5" font-size="9.5">Needs coherence before compliance.</text>
+
+  <text x="430" y="528" fill="#FFFFFF" font-size="10" font-weight="bold">VOLUNTEER STRATEGY</text>
+  <text x="430" y="546" fill="#C9A84C" font-size="9.5">Logic must precede compliance. Build</text>
+  <text x="430" y="561" fill="#C9A84C" font-size="9.5">internal logic before the payoff.</text>
+
+  <!-- Blends note -->
+  <rect x="200" y="615" width="400" height="36" rx="4" fill="#C9A84C" opacity="0.08"/>
+  <text x="400" y="630" text-anchor="middle" fill="#C9A84C" font-size="10" font-weight="bold">KEY BLENDS: D/C (Leadership) · I/S (People-focused) · D/I (Performer) · C/S (Deep reactor)</text>
+  <text x="400" y="645" text-anchor="middle" fill="#8A9AB5" font-size="9">Most real people are blends. The most interesting reads happen in the middle of the map.</text>
+
+  <!-- Footer -->
+  <text x="400" y="672" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>
