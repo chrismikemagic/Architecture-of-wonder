@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" font-family="Calibri, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="700" fill="url(#bgGrad5)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">KEY RESEARCH FINDINGS</text>
+  <line x1="260" y1="55" x2="540" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">The neuroscience underlying performance architecture</text>
+
+  <!-- Stat 1: 11M bits -->
+  <rect x="40" y="95" width="345" height="120" rx="6" fill="#0D1E30" stroke="#1A8FA8" stroke-width="1.5"/>
+  <rect x="40" y="95" width="6" height="120" rx="3" fill="#1A8FA8"/>
+  <text x="70" y="130" fill="#1A8FA8" font-size="42" font-weight="bold">11M</text>
+  <text x="225" y="122" fill="#8A9AB5" font-size="10">bits of sensory data processed</text>
+  <text x="225" y="138" fill="#8A9AB5" font-size="10">per second by the human brain</text>
+  <text x="70" y="180" fill="#FFFFFF" font-size="14" font-weight="bold">50</text>
+  <text x="100" y="180" fill="#8A9AB5" font-size="10">bits reach conscious awareness</text>
+  <text x="70" y="200" fill="#3A4A5C" font-size="9">The salience network decides what makes the cut</text>
+
+  <!-- Stat 2: 1/25th second -->
+  <rect x="415" y="95" width="345" height="120" rx="6" fill="#0D1E30" stroke="#E8C870" stroke-width="1.5"/>
+  <rect x="415" y="95" width="6" height="120" rx="3" fill="#E8C870"/>
+  <text x="445" y="135" fill="#E8C870" font-size="34" font-weight="bold">1/25s</text>
+  <text x="570" y="122" fill="#8A9AB5" font-size="10">Maximum duration of a</text>
+  <text x="570" y="138" fill="#8A9AB5" font-size="10">micro-expression</text>
+  <text x="445" y="170" fill="#FFFFFF" font-size="11">Faster than conscious suppression</text>
+  <text x="445" y="200" fill="#3A4A5C" font-size="9">Ekman (1960s–1990s)  |  7 universal emotions</text>
+
+  <!-- Stat 3: 60-90 seconds -->
+  <rect x="40" y="240" width="345" height="120" rx="6" fill="#0D1E30" stroke="#6B52A0" stroke-width="1.5"/>
+  <rect x="40" y="240" width="6" height="120" rx="3" fill="#6B52A0"/>
+  <text x="70" y="278" fill="#6B52A0" font-size="34" font-weight="bold">60–90s</text>
+  <text x="235" y="268" fill="#8A9AB5" font-size="10">Calibration window for</text>
+  <text x="235" y="284" fill="#8A9AB5" font-size="10">establishing behavioral baseline</text>
+  <text x="70" y="318" fill="#FFFFFF" font-size="11">Neutral social interaction</text>
+  <text x="70" y="345" fill="#3A4A5C" font-size="9">Without a baseline, deviation carries no signal</text>
+
+  <!-- Stat 4: Schultz 1997 -->
+  <rect x="415" y="240" width="345" height="120" rx="6" fill="#0D1E30" stroke="#A83030" stroke-width="1.5"/>
+  <rect x="415" y="240" width="6" height="120" rx="3" fill="#A83030"/>
+  <text x="445" y="270" fill="#A83030" font-size="14" font-weight="bold">SCHULTZ (1997)</text>
+  <text x="445" y="296" fill="#FFFFFF" font-size="12">Dopamine neurons fire at the</text>
+  <text x="445" y="314" fill="#FFFFFF" font-size="12"><tspan font-weight="bold" fill="#E8C870">cue</tspan> that predicts reward, not</text>
+  <text x="445" y="332" fill="#FFFFFF" font-size="12">the reward itself</text>
+  <text x="445" y="348" fill="#3A4A5C" font-size="9">Published in Science</text>
+
+  <!-- Stat 5: Gorilla experiment -->
+  <rect x="40" y="385" width="345" height="120" rx="6" fill="#0D1E30" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+  <rect x="40" y="385" width="6" height="120" rx="3" fill="#FFFFFF" opacity="0.6"/>
+  <text x="70" y="423" fill="#FFFFFF" font-size="42" font-weight="bold">50%</text>
+  <text x="200" y="415" fill="#8A9AB5" font-size="10">of participants failed to</text>
+  <text x="200" y="431" fill="#8A9AB5" font-size="10">notice the gorilla</text>
+  <text x="70" y="463" fill="#FFFFFF" font-size="11">Inattentional Blindness</text>
+  <text x="70" y="490" fill="#3A4A5C" font-size="9">Simons &amp; Chabris (1999)  |  Selective attention</text>
+
+  <!-- Stat 6: Forer effect -->
+  <rect x="415" y="385" width="345" height="120" rx="6" fill="#0D1E30" stroke="#C9A84C" stroke-width="1.5"/>
+  <rect x="415" y="385" width="6" height="120" rx="3" fill="#C9A84C"/>
+  <text x="445" y="423" fill="#C9A84C" font-size="42" font-weight="bold">90%</text>
+  <text x="595" y="415" fill="#8A9AB5" font-size="10">rated a generic personality</text>
+  <text x="595" y="431" fill="#8A9AB5" font-size="10">description as "highly accurate"</text>
+  <text x="445" y="463" fill="#FFFFFF" font-size="11">The Forer/Barnum Effect</text>
+  <text x="445" y="490" fill="#3A4A5C" font-size="9">Forer (1948)  |  Context does the work</text>
+
+  <!-- Stat 7: Thin Slicing -->
+  <rect x="40" y="530" width="345" height="120" rx="6" fill="#0D1E30" stroke="#1A8FA8" stroke-width="1.5"/>
+  <rect x="40" y="530" width="6" height="120" rx="3" fill="#1A8FA8"/>
+  <text x="70" y="568" fill="#1A8FA8" font-size="34" font-weight="bold">6 sec</text>
+  <text x="195" y="558" fill="#8A9AB5" font-size="10">Clips as short as 6 seconds</text>
+  <text x="195" y="574" fill="#8A9AB5" font-size="10">produced accurate predictions</text>
+  <text x="70" y="608" fill="#FFFFFF" font-size="11">Thin Slicing</text>
+  <text x="70" y="635" fill="#3A4A5C" font-size="9">Ambady &amp; Rosenthal (1992)  |  Psychological Bulletin</text>
+
+  <!-- Stat 8: DRS threshold -->
+  <rect x="415" y="530" width="345" height="120" rx="6" fill="#0D1E30" stroke="#6B52A0" stroke-width="1.5"/>
+  <rect x="415" y="530" width="6" height="120" rx="3" fill="#6B52A0"/>
+  <text x="445" y="568" fill="#6B52A0" font-size="42" font-weight="bold">11+</text>
+  <text x="570" y="558" fill="#8A9AB5" font-size="10">DRS points across a behavioral</text>
+  <text x="570" y="574" fill="#8A9AB5" font-size="10">cluster signals likely deception</text>
+  <text x="445" y="608" fill="#FFFFFF" font-size="11">Deception Rating Scale Threshold</text>
+  <text x="445" y="635" fill="#3A4A5C" font-size="9">BTE System  |  Chase Hughes (2012–2022)</text>
+
+  <!-- Footer -->
+  <text x="400" y="685" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>

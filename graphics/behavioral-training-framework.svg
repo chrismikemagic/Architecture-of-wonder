@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="Calibri, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bgGrad8)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">THE FOUR-STAGE TRAINING ARC</text>
+  <line x1="240" y1="55" x2="560" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">Experience first. Explanation second. Always.</text>
+
+  <!-- Stage 1: EXPERIENCE -->
+  <rect x="40" y="100" width="170" height="280" rx="6" fill="#0D1E30" stroke="#A83030" stroke-width="2"/>
+  <circle cx="125" cy="135" r="22" fill="#A83030" opacity="0.15" stroke="#A83030" stroke-width="1.5"/>
+  <text x="125" y="141" text-anchor="middle" fill="#A83030" font-size="18" font-weight="bold">01</text>
+
+  <text x="125" y="175" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="bold">EXPERIENCE</text>
+  <line x1="60" y1="185" x2="190" y2="185" stroke="#A83030" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="60" y="208" fill="#8A9AB5" font-size="9">Create a direct, visceral</text>
+  <text x="60" y="222" fill="#8A9AB5" font-size="9">encounter with the concept.</text>
+  <text x="60" y="242" fill="#8A9AB5" font-size="9">Make it impossible to</text>
+  <text x="60" y="256" fill="#8A9AB5" font-size="9">simply observe</text>
+  <text x="60" y="270" fill="#8A9AB5" font-size="9">intellectually.</text>
+
+  <rect x="55" y="290" width="150" height="30" rx="3" fill="#A83030" opacity="0.08"/>
+  <text x="130" y="304" text-anchor="middle" fill="#A83030" font-size="8" font-weight="bold">GOAL</text>
+  <text x="130" y="316" text-anchor="middle" fill="#8A9AB5" font-size="8">Emotional response</text>
+
+  <text x="125" y="355" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">NEUROBIOLOGICAL</text>
+  <text x="125" y="368" text-anchor="middle" fill="#8A9AB5" font-size="8">Amygdala activation</text>
+  <text x="125" y="380" text-anchor="middle" fill="#8A9AB5" font-size="8">Hippocampal tagging</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="215" y1="240" x2="225" y2="240" stroke="#C9A84C" stroke-width="1.5"/>
+  <polygon points="223,236 231,240 223,244" fill="#C9A84C"/>
+
+  <!-- Stage 2: REFLECTION -->
+  <rect x="230" y="100" width="170" height="280" rx="6" fill="#0D1E30" stroke="#E8C870" stroke-width="2"/>
+  <circle cx="315" cy="135" r="22" fill="#E8C870" opacity="0.12" stroke="#E8C870" stroke-width="1.5"/>
+  <text x="315" y="141" text-anchor="middle" fill="#E8C870" font-size="18" font-weight="bold">02</text>
+
+  <text x="315" y="175" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="bold">REFLECTION</text>
+  <line x1="250" y1="185" x2="380" y2="185" stroke="#E8C870" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="250" y="208" fill="#8A9AB5" font-size="9">Guide structured reflection</text>
+  <text x="250" y="222" fill="#8A9AB5" font-size="9">on what just occurred.</text>
+  <text x="250" y="242" fill="#8A9AB5" font-size="9">What did they notice?</text>
+  <text x="250" y="256" fill="#8A9AB5" font-size="9">What did they miss?</text>
+  <text x="250" y="270" fill="#8A9AB5" font-size="9">What assumptions drove it?</text>
+
+  <rect x="245" y="290" width="150" height="30" rx="3" fill="#E8C870" opacity="0.08"/>
+  <text x="320" y="304" text-anchor="middle" fill="#E8C870" font-size="8" font-weight="bold">GOAL</text>
+  <text x="320" y="316" text-anchor="middle" fill="#8A9AB5" font-size="8">Convert experience to data</text>
+
+  <text x="315" y="355" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">NEUROBIOLOGICAL</text>
+  <text x="315" y="368" text-anchor="middle" fill="#8A9AB5" font-size="8">Prefrontal engagement</text>
+  <text x="315" y="380" text-anchor="middle" fill="#8A9AB5" font-size="8">Memory consolidation</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="405" y1="240" x2="415" y2="240" stroke="#C9A84C" stroke-width="1.5"/>
+  <polygon points="413,236 421,240 413,244" fill="#C9A84C"/>
+
+  <!-- Stage 3: FRAMEWORK -->
+  <rect x="420" y="100" width="170" height="280" rx="6" fill="#0D1E30" stroke="#1A8FA8" stroke-width="2"/>
+  <circle cx="505" cy="135" r="22" fill="#1A8FA8" opacity="0.12" stroke="#1A8FA8" stroke-width="1.5"/>
+  <text x="505" y="141" text-anchor="middle" fill="#1A8FA8" font-size="18" font-weight="bold">03</text>
+
+  <text x="505" y="175" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">FRAMEWORK</text>
+  <line x1="440" y1="185" x2="570" y2="185" stroke="#1A8FA8" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="440" y="208" fill="#8A9AB5" font-size="9">Introduce the neurobiology</text>
+  <text x="440" y="222" fill="#8A9AB5" font-size="9">that explains the experience.</text>
+  <text x="440" y="242" fill="#8A9AB5" font-size="9">The framework now has</text>
+  <text x="440" y="256" fill="#8A9AB5" font-size="9">an emotional anchor.</text>
+  <text x="440" y="270" fill="#8A9AB5" font-size="9">It sticks.</text>
+
+  <rect x="435" y="290" width="150" height="30" rx="3" fill="#1A8FA8" opacity="0.08"/>
+  <text x="510" y="304" text-anchor="middle" fill="#1A8FA8" font-size="8" font-weight="bold">GOAL</text>
+  <text x="510" y="316" text-anchor="middle" fill="#8A9AB5" font-size="8">Conceptual understanding</text>
+
+  <text x="505" y="355" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">NEUROBIOLOGICAL</text>
+  <text x="505" y="368" text-anchor="middle" fill="#8A9AB5" font-size="8">Schema formation</text>
+  <text x="505" y="380" text-anchor="middle" fill="#8A9AB5" font-size="8">Emotional anchoring</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="595" y1="240" x2="605" y2="240" stroke="#C9A84C" stroke-width="1.5"/>
+  <polygon points="603,236 611,240 603,244" fill="#C9A84C"/>
+
+  <!-- Stage 4: APPLICATION -->
+  <rect x="610" y="100" width="170" height="280" rx="6" fill="#0D1E30" stroke="#6B52A0" stroke-width="2"/>
+  <circle cx="695" cy="135" r="22" fill="#6B52A0" opacity="0.12" stroke="#6B52A0" stroke-width="1.5"/>
+  <text x="695" y="141" text-anchor="middle" fill="#6B52A0" font-size="18" font-weight="bold">04</text>
+
+  <text x="695" y="175" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">APPLICATION</text>
+  <line x1="630" y1="185" x2="760" y2="185" stroke="#6B52A0" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="630" y="208" fill="#8A9AB5" font-size="9">Define the specific behavioral</text>
+  <text x="630" y="222" fill="#8A9AB5" font-size="9">change the insight calls for.</text>
+  <text x="630" y="242" fill="#8A9AB5" font-size="9">Create immediate practice</text>
+  <text x="630" y="256" fill="#8A9AB5" font-size="9">so the new behavior has</text>
+  <text x="630" y="270" fill="#8A9AB5" font-size="9">its first success now.</text>
+
+  <rect x="625" y="290" width="150" height="30" rx="3" fill="#6B52A0" opacity="0.08"/>
+  <text x="700" y="304" text-anchor="middle" fill="#6B52A0" font-size="8" font-weight="bold">GOAL</text>
+  <text x="700" y="316" text-anchor="middle" fill="#8A9AB5" font-size="8">Behavioral change</text>
+
+  <text x="695" y="355" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">NEUROBIOLOGICAL</text>
+  <text x="695" y="368" text-anchor="middle" fill="#8A9AB5" font-size="8">Motor pattern encoding</text>
+  <text x="695" y="380" text-anchor="middle" fill="#8A9AB5" font-size="8">Procedural memory</text>
+
+  <!-- Key insight -->
+  <rect x="150" y="410" width="500" height="40" rx="4" fill="#C9A84C" opacity="0.08"/>
+  <text x="400" y="427" text-anchor="middle" fill="#C9A84C" font-size="10" font-weight="bold">Knowledge without belief does not change behavior.</text>
+  <text x="400" y="443" text-anchor="middle" fill="#8A9AB5" font-size="9">The experience IS the learning moment. The explanation provides the framework.</text>
+
+  <!-- Footer -->
+  <text x="400" y="475" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>
