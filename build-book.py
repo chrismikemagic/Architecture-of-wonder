@@ -1,53 +1,40 @@
 #!/usr/bin/env python3
 """
-The Architecture of Wonder — Book Design Generator
-Converts the manuscript into a fully designed HTML book implementing
-the complete design specification.
+The Architecture of Wonder — Book Design Generator v2
+Converts the manuscript into a fully designed HTML book.
+
+Fixes from v1:
+- Typographic (curly) quotes throughout
+- Title Case section headers properly detected
+- Running headers on body pages
+- Section breaks (· · ·) properly detected
+- "What You Have Felt Before" motif styled distinctly
+- Pull quotes generated from strong passages
+- Field Notes styled as reference cards
+- Better spotlight box content selection
+- TOC with dotted leaders and proper spacing
+- Fixed text-indent issues
+- Proper front matter ordering
+- Better paragraph flow and spacing
 """
 
 import re
-import html
+import html as html_module
 import os
+import textwrap
 
 # ═══════════════════════════════════════════════════════════
-# CONFIGURATION — Design System Constants
+# CONFIGURATION
 # ═══════════════════════════════════════════════════════════
 
-COLORS = {
-    'navy_dark': '#080F1A',
-    'navy_light': '#0D1E30',
-    'gold': '#C9A84C',
-    'steel_blue': '#1A8FA8',
-    'cream': '#F5F0E8',
-    'red': '#A83030',
-    'purple': '#6B52A0',
-    'text_gray_blue': '#8A9AB5',
-    'dim_gray': '#3A4A5C',
-    'body_text': '#2A2520',
-    'rule_color': '#D8D0C4',
-}
-
-# Part-to-color-temperature mapping
-PART_COLORS = {
-    1: {'accent': '#1A8FA8', 'accent2': '#C9A84C', 'temp': 'cool'},
-    2: {'accent': '#1A8FA8', 'accent2': '#C9A84C', 'temp': 'cool'},
-    3: {'accent': '#7A9A6C', 'accent2': '#C9A84C', 'temp': 'transitional'},
-    4: {'accent': '#C9A84C', 'accent2': '#1A8FA8', 'temp': 'warm'},
-    5: {'accent': '#C9A84C', 'accent2': '#A83030', 'temp': 'warm'},
-    6: {'accent': '#C9A84C', 'accent2': '#6B52A0', 'temp': 'deep_warm'},
-    7: {'accent': '#D4A030', 'accent2': '#C9A84C', 'temp': 'deep_warm'},
-    8: {'accent': '#D4A030', 'accent2': '#C9A84C', 'temp': 'deep_warm'},
-}
-
-# Hook lines for chapters (from chapter-template.md)
 HOOK_LINES = {
     'INTRODUCTION': '"What you are about to read was designed to demonstrate its own content. Every page is a performance."',
     'CHAPTER 1': '"Reality is not what happens. It is what they remember happening."',
-    'CHAPTER 2': '"Your audience\'s brain is deciding what matters before you open your mouth."',
+    'CHAPTER 2': '"Your audience\u2019s brain is deciding what matters before you open your mouth."',
     'CHAPTER 3': '"The moment before the reveal is worth more than the reveal itself."',
     'CHAPTER 4': '"Dopamine does not reward the outcome. It rewards the anticipation."',
     'CHAPTER 5': '"Attention is not given. It is taken."',
-    'CHAPTER 6': '"Authority is not claimed. It is perceived — in the first 250 milliseconds."',
+    'CHAPTER 6': '"Authority is not claimed. It is perceived\u2009\u2014\u2009in the first 250 milliseconds."',
     'CHAPTER 7': '"Every person who walks toward you is already broadcasting."',
     'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
     'CHAPTER 9': '"Four styles. One conversation. The read starts before anyone speaks."',
@@ -86,7 +73,6 @@ HOOK_LINES = {
     'GLOSSARY': '"The language shapes the thinking. Know the words."',
 }
 
-# Key reads (chapter closers)
 KEY_READS = {
     'CHAPTER 1': 'Design the memory, and you design the experience.',
     'CHAPTER 2': 'Salience is not what you show. It is what they cannot ignore.',
@@ -131,36 +117,104 @@ KEY_READS = {
     'CHAPTER 41': 'Go see what others miss.',
 }
 
-# Observation references to detect and badge
-OBSERVATION_REFS = re.compile(r'Observation\s+#(\d+)', re.IGNORECASE)
-TIER_REFS = re.compile(r'\b(T1|T2|T3|T4)\b')
-
-# "What You Just Did" moments to insert (chapter number -> text)
 WHAT_YOU_JUST_DID = {
-    3: "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat — even though the threat is not real. Observation, applied to yourself.",
-    7: "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01 — handedness indicator. You just demonstrated it without thinking.",
+    3: "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat\u2009\u2014\u2009even though the threat is not real. Observation, applied to yourself.",
+    7: "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01\u2009\u2014\u2009handedness indicator. You just demonstrated it without thinking.",
     10: "If you skipped ahead to this chapter because the title interested you more than the previous one, that is salience at work. Your brain prioritized novelty over sequence. Chapter Two explained why.",
     15: "Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.",
     21: "You just turned to this chapter. Before reading a word, you formed an impression of its length by glancing at the page count. That is thin-slicing applied to a book. You do this with people too.",
-    28: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect — your brain prioritized the visually distinct element. Chapter Two taught you this. The book just demonstrated it.",
-    36: "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect — your brain knows it is close to the end and is already preparing to consolidate what it has learned.",
+    28: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Two taught you this. The book just demonstrated it.",
+    36: "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect\u2009\u2014\u2009your brain knows it is close to the end and is already preparing to consolidate.",
 }
 
-# Pattern interrupt statistics
 PATTERN_INTERRUPTS = [
-    {'number': '250', 'unit': 'MILLISECONDS', 'text': 'The time it takes your brain to form a first impression of a stranger.', 'source': 'Willis & Todorov, 2006 — Psychological Science', 'wyajd': 'You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.'},
-    {'number': '40%', 'unit': 'INCREASE IN TRUST', 'text': 'The boost in perceived credibility when text is set in a highly readable font.', 'source': 'Processing Fluency Research, Cognitive Psychology', 'wyajd': 'The font you are reading right now was chosen for this reason. You trusted this book before you evaluated a single argument.'},
-    {'number': '7', 'unit': 'EXPRESSIONS', 'text': 'The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.', 'source': 'Ekman & Friesen, 1971', 'wyajd': 'Your face made at least two of them while reading this page.'},
-    {'number': '60,000×', 'unit': 'FASTER', 'text': 'The speed at which the brain processes color compared to text.', 'source': 'Visual Cognition Research', 'wyajd': 'The gold accent on this page reached your brain before the words did.'},
-    {'number': '3', 'unit': 'SIGNALS', 'text': 'The minimum number of co-occurring behavioral signals required to form a reliable pattern.', 'source': 'The Five Cs — Clusters', 'wyajd': 'One signal is noise. Two is coincidence. Three is a read.'},
-    {'number': '1/5', 'unit': 'OF A SECOND', 'text': 'The duration of a micro-expression. Blink and you miss it. But your limbic system does not.', 'source': 'Ekman, 2003', 'wyajd': ''},
-    {'number': '85%', 'unit': 'OF DECISIONS', 'text': 'The percentage of consumer choices where color is cited as the primary factor.', 'source': 'Color Psychology in Marketing, 2024', 'wyajd': 'The cover of this book was designed with this statistic in mind.'},
+    {'number': '250', 'unit': 'MILLISECONDS', 'text': 'The time it takes your brain to form a first impression of a stranger.', 'source': 'Willis & Todorov, 2006', 'wyajd': 'You formed yours of this page in less time than that. What did you notice first\u2009\u2014\u2009the number, or the word? That is salience at work.'},
+    {'number': '40%', 'unit': 'INCREASE IN TRUST', 'text': 'The boost in perceived credibility when text is set in a highly readable font.', 'source': 'Processing Fluency Research', 'wyajd': 'The font you are reading right now was chosen for this reason.'},
+    {'number': '7', 'unit': 'EXPRESSIONS', 'text': 'The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.', 'source': 'Ekman & Friesen, 1971', 'wyajd': ''},
+    {'number': '60,000\u00d7', 'unit': 'FASTER', 'text': 'The speed at which the brain processes color compared to text.', 'source': 'Visual Cognition Research', 'wyajd': 'The gold accent on this page reached your brain before the words did.'},
+    {'number': '3', 'unit': 'SIGNALS', 'text': 'The minimum number of co-occurring behavioral signals required to form a reliable pattern.', 'source': 'The Five Cs\u2009\u2014\u2009Clusters', 'wyajd': 'One signal is noise. Two is coincidence. Three is a read.'},
+    {'number': '\u2159', 'unit': 'OF A SECOND', 'text': 'The duration of a micro-expression. Blink and you miss it. But your limbic system does not.', 'source': 'Ekman, 2003', 'wyajd': ''},
+    {'number': '85%', 'unit': 'OF DECISIONS', 'text': 'The percentage of consumer choices where color is cited as the primary factor.', 'source': 'Color Psychology Research', 'wyajd': ''},
     {'number': '5', 'unit': 'FILTERS', 'text': 'Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.', 'source': 'The Architecture of Wonder', 'wyajd': ''},
 ]
 
 
+# ═══════════════════════════════════════════════════════════
+# TYPOGRAPHIC UTILITIES
+# ═══════════════════════════════════════════════════════════
+
+def smart_quotes(text):
+    """Convert straight quotes to typographic curly quotes and em dashes."""
+    # Em dashes
+    text = text.replace(' -- ', '\u2009\u2014\u2009')
+    text = text.replace('--', '\u2014')
+    # Double quotes - use lambda to avoid regex escape issues
+    text = re.sub(r'"(\w)', lambda m: '\u201c' + m.group(1), text)  # opening
+    text = re.sub(r'(\w)"', lambda m: m.group(1) + '\u201d', text)  # closing
+    text = text.replace('"', '\u201d')  # remaining (likely closing)
+    # Single quotes / apostrophes
+    text = re.sub(r"'(\w)", lambda m: '\u2019' + m.group(1), text)  # apostrophe
+    text = re.sub(r"(\w)'", lambda m: m.group(1) + '\u2019', text)  # apostrophe
+    text = re.sub(r"\s'", lambda m: ' \u2018', text)  # opening single
+    # Ellipsis
+    text = text.replace('...', '\u2026')
+    return text
+
+
+def escape(text):
+    """HTML escape then apply smart typography."""
+    if not text:
+        return ''
+    t = html_module.escape(text)
+    t = smart_quotes(t)
+    return t
+
+
+def is_section_header(text):
+    """Detect if a line is a section header (Title Case or ALL CAPS, short)."""
+    stripped = text.strip()
+    if not stripped or len(stripped) > 120 or len(stripped) < 4:
+        return False
+    # Skip lines that look like regular sentences
+    if stripped.endswith('.') and len(stripped) > 60:
+        return False
+    # ALL CAPS headers
+    if stripped.isupper() and not stripped.startswith('CHAPTER') and not stripped.startswith('PART'):
+        return True
+    # Title Case headers (short, no period at end, most words capitalized)
+    words = stripped.rstrip(':').split()
+    if len(words) > 12:
+        return False
+    if stripped.endswith('.'):
+        return False
+    # Count capitalized words (excluding small conjunctions)
+    small_words = {'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'vs.', 'vs', 'is', 'not'}
+    cap_count = sum(1 for w in words if w[0].isupper() or w.lower() in small_words)
+    if cap_count >= len(words) * 0.7 and len(words) >= 2 and len(stripped) < 65:
+        # Additional check: shouldn't start with common sentence patterns
+        if not stripped.startswith(('There ', 'This ', 'That ', 'It ', 'You ', 'We ', 'I ', 'If ', 'When ', 'Most ', 'Some ', 'The audience', 'The brain', 'The key', 'Consider ', 'Notice ', 'Make ', 'Seconds ')):
+            return True
+    return False
+
+
+def is_section_break(text):
+    """Detect section break markers."""
+    stripped = text.strip()
+    return stripped in ('· · ·', '···', '• • •', '* * *', '---', '***', '- - -', '\u2022 \u2022 \u2022')
+
+
+def is_what_you_have_felt(text):
+    """Detect the recurring chapter motif."""
+    stripped = text.strip()
+    return stripped.lower().startswith('what you have felt before') or stripped == 'What You Have Felt Before'
+
+
+# ═══════════════════════════════════════════════════════════
+# PARSER
+# ═══════════════════════════════════════════════════════════
+
 def parse_manuscript(filepath):
-    """Parse the manuscript text into structured sections."""
+    """Parse the manuscript into structured sections."""
     with open(filepath, 'r', encoding='utf-8') as f:
         text = f.read()
 
@@ -168,18 +222,16 @@ def parse_manuscript(filepath):
     sections = []
     current_section = None
     current_part = 0
-    chapter_count = 0
 
     i = 0
     while i < len(lines):
         line = lines[i].strip()
 
-        # Detect PART headers
+        # Detect PART headers (standalone line)
         part_match = re.match(r'^PART\s+(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT)\s*$', line)
-        if part_match:
+        if part_match and i > 55:  # Skip TOC
             part_names = {'ONE':1,'TWO':2,'THREE':3,'FOUR':4,'FIVE':5,'SIX':6,'SEVEN':7,'EIGHT':8}
             current_part = part_names.get(part_match.group(1), current_part)
-            # Next line is part subtitle
             subtitle = ''
             if i+1 < len(lines) and lines[i+1].strip():
                 subtitle = lines[i+1].strip()
@@ -193,15 +245,13 @@ def parse_manuscript(filepath):
                 'content': [],
                 'chapter_key': f'PART {part_match.group(1)}'
             }
-            i += 2  # skip subtitle
+            i += 2
             continue
 
         # Detect CHAPTER headers
         chapter_match = re.match(r'^CHAPTER\s+(\d+)\s*$', line)
-        if chapter_match:
+        if chapter_match and i > 55:
             chapter_num = int(chapter_match.group(1))
-            chapter_count += 1
-            # Next line is chapter title
             title = ''
             if i+1 < len(lines) and lines[i+1].strip():
                 title = lines[i+1].strip()
@@ -216,13 +266,12 @@ def parse_manuscript(filepath):
                 'chapter_key': f'CHAPTER {chapter_num}'
             }
             i += 2
-            # Skip the separator line
-            if i < len(lines) and '────' in lines[i]:
+            if i < len(lines) and '\u2500' in lines[i]:
                 i += 1
             continue
 
-        # Detect INTRODUCTION
-        if line == 'INTRODUCTION' and i > 106:  # Skip TOC entries
+        # Detect INTRODUCTION (after TOC)
+        if line == 'INTRODUCTION' and i > 106:
             subtitle = ''
             if i+1 < len(lines) and lines[i+1].strip():
                 subtitle = lines[i+1].strip()
@@ -239,37 +288,7 @@ def parse_manuscript(filepath):
             i += 2
             continue
 
-        # Detect GLOSSARY
-        if line.startswith('GLOSSARY'):
-            if current_section:
-                sections.append(current_section)
-            current_section = {
-                'type': 'glossary',
-                'chapter_num': 99,
-                'part_num': 9,
-                'title': 'Scientific, Behavioral, and Performance Terms',
-                'content': [],
-                'chapter_key': 'GLOSSARY'
-            }
-            i += 1
-            continue
-
-        # Detect ABOUT THE AUTHOR
-        if line == 'ABOUT THE AUTHOR':
-            if current_section:
-                sections.append(current_section)
-            current_section = {
-                'type': 'about',
-                'chapter_num': 100,
-                'part_num': 9,
-                'title': 'About the Author',
-                'content': [],
-                'chapter_key': 'ABOUT'
-            }
-            i += 1
-            continue
-
-        # Detect ACKNOWLEDGMENTS
+        # Detect ACKNOWLEDGMENTS (early in file)
         if line == 'ACKNOWLEDGMENTS' and i < 50:
             if current_section:
                 sections.append(current_section)
@@ -284,22 +303,55 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Skip TOC and front matter title page content (before line 107)
-        if i < 107 and current_section is None:
+        # Detect GLOSSARY
+        if line.startswith('GLOSSARY') and i > 2000:
+            if current_section:
+                sections.append(current_section)
+            current_section = {
+                'type': 'glossary',
+                'chapter_num': 99,
+                'part_num': 9,
+                'title': 'Glossary',
+                'content': [],
+                'chapter_key': 'GLOSSARY'
+            }
+            i += 1
+            continue
+
+        # Detect ABOUT THE AUTHOR
+        if line == 'ABOUT THE AUTHOR' and i > 2000:
+            if current_section:
+                sections.append(current_section)
+            current_section = {
+                'type': 'about',
+                'chapter_num': 100,
+                'part_num': 9,
+                'title': 'About the Author',
+                'content': [],
+                'chapter_key': 'ABOUT'
+            }
+            i += 1
+            continue
+
+        # Skip early front matter before ACKNOWLEDGMENTS
+        if i < 34 and current_section is None:
+            i += 1
+            continue
+
+        # Skip TOC block
+        if i >= 57 and i <= 107 and current_section is None:
             i += 1
             continue
 
         # Skip separator lines
-        if '────' in line:
+        if '\u2500' in line:
             i += 1
             continue
 
-        # Add content to current section
+        # Add content
         if current_section is not None:
-            # Skip the repeated TOC block
             if line.startswith('TABLE OF CONTENTS'):
-                # Skip until we hit the separator
-                while i < len(lines) and '────' not in lines[i]:
+                while i < len(lines) and '\u2500' not in lines[i]:
                     i += 1
                 i += 1
                 continue
@@ -313,1221 +365,795 @@ def parse_manuscript(filepath):
     return sections
 
 
-def escape(text):
-    """HTML escape text."""
-    return html.escape(text) if text else ''
+# ═══════════════════════════════════════════════════════════
+# HTML GENERATORS
+# ═══════════════════════════════════════════════════════════
+
+def gen_chapter_opener(section):
+    ch_num = section.get('chapter_num', 0)
+    part_num = section.get('part_num', 0)
+    title = section.get('title', '')
+    chapter_key = section.get('chapter_key', '')
+    hook = HOOK_LINES.get(chapter_key, '')
+
+    part_names = {0:'',1:'PART ONE',2:'PART TWO',3:'PART THREE',4:'PART FOUR',
+                  5:'PART FIVE',6:'PART SIX',7:'PART SEVEN',8:'PART EIGHT'}
+    part_label = part_names.get(part_num, '')
+
+    if ch_num > 0:
+        ch_display = f'{ch_num:02d}'
+    else:
+        ch_display = '\u2726'  # diamond for intro
+
+    return f'''<section class="chapter-opener" data-part="{part_num}">
+  <div class="opener-content">
+    <div class="part-label">{escape(part_label)}</div>
+    <div class="gold-line"></div>
+    <div class="chapter-number">{ch_display}</div>
+    <h1 class="chapter-title">{escape(title.upper())}</h1>
+    <div class="gold-line thin"></div>
+    <div class="hook-line">{hook}</div>
+  </div>
+</section>'''
+
+
+def gen_part_opener(section):
+    part_num = section.get('part_num', 0)
+    subtitle = section.get('subtitle', '')
+    part_names = {1:'ONE',2:'TWO',3:'THREE',4:'FOUR',5:'FIVE',6:'SIX',7:'SEVEN',8:'EIGHT'}
+    return f'''<section class="part-opener" data-part="{part_num}">
+  <div class="part-opener-content">
+    <div class="part-number">PART {part_names.get(part_num, "")}</div>
+    <div class="gold-line wide"></div>
+    <h1 class="part-title">{escape(subtitle)}</h1>
+  </div>
+</section>'''
+
+
+def gen_pattern_interrupt(data):
+    wyajd = ''
+    if data.get('wyajd'):
+        wyajd = f'<p class="pi-wyajd">{data["wyajd"]}</p>'
+    return f'''<section class="pattern-interrupt">
+  <div class="pi-content">
+    <div class="gold-line"></div>
+    <div class="pi-number">{data["number"]}</div>
+    <div class="pi-unit">{data["unit"]}</div>
+    <div class="gold-line"></div>
+    <p class="pi-text">{data["text"]}</p>
+    <p class="pi-source">{data["source"]}</p>
+    {wyajd}
+  </div>
+</section>'''
+
+
+def gen_spotlight(text):
+    return f'''<aside class="spotlight-box">
+  <div class="spotlight-label">KEY PRINCIPLE</div>
+  <p class="spotlight-text">{text}</p>
+</aside>'''
+
+
+def gen_key_read(text):
+    return f'''<div class="key-read">
+  <div class="kr-rule"></div>
+  <p class="kr-text">{escape(text)}</p>
+  <div class="kr-rule"></div>
+</div>'''
+
+
+def gen_wyajd(text):
+    return f'''<aside class="wyajd">
+  <div class="wyajd-bar"></div>
+  <p class="wyajd-text">{text}</p>
+</aside>'''
+
+
+def gen_pull_quote(text):
+    return f'''<blockquote class="pull-quote">
+  <p>{escape(text)}</p>
+</blockquote>'''
+
+
+def gen_what_you_have_felt():
+    return '''<div class="felt-before">
+  <div class="felt-icon">\u25C9</div>
+  <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
+</div>'''
 
 
 def process_paragraph(text, part_num=1):
-    """Process a paragraph, adding tier badges, observation refs, etc."""
-    if not text.strip():
+    """Process a single paragraph with inline design elements."""
+    stripped = text.strip()
+    if not stripped:
         return ''
 
-    t = escape(text.strip())
+    # Section breaks
+    if is_section_break(stripped):
+        return '<div class="section-break">\u00b7 \u00b7 \u00b7</div>'
 
-    # Add tier badges
-    def tier_badge(m):
-        tier = m.group(1)
-        if tier == 'T1':
-            return f'<span class="tier-badge t1">T1</span>'
-        elif tier == 'T2':
-            return f'<span class="tier-badge t2">T2</span>'
-        elif tier == 'T3':
-            return f'<span class="tier-badge t3">T3</span>'
-        elif tier == 'T4':
-            return f'<span class="tier-badge t4">T4</span>'
-        return m.group(0)
+    # "What You Have Felt Before" motif
+    if is_what_you_have_felt(stripped):
+        return gen_what_you_have_felt()
 
-    t = TIER_REFS.sub(tier_badge, t)
+    # Section headers
+    if is_section_header(stripped):
+        return f'<h3 class="section-header">{escape(stripped)}</h3>'
 
-    # Bold observation references
+    t = escape(stripped)
+
+    # Tier badges
+    t = re.sub(r'\bT1\b', '<span class="badge t1">T1</span>', t)
+    t = re.sub(r'\bT2\b', '<span class="badge t2">T2</span>', t)
+    t = re.sub(r'\bT3\b', '<span class="badge t3">T3</span>', t)
+    t = re.sub(r'\bT4\b', '<span class="badge t4">T4</span>', t)
+
+    # Observation references
     t = re.sub(r'Observation\s+#(\d+)', r'<span class="obs-ref">Observation #\1</span>', t, flags=re.IGNORECASE)
 
-    # Detect section headers (all-caps lines, short)
-    stripped = text.strip()
-    if stripped.isupper() and len(stripped) < 100 and len(stripped) > 3 and not stripped.startswith('CHAPTER') and not stripped.startswith('PART'):
-        return f'<h3 class="section-header">{t}</h3>'
-
-    # Detect sub-headers (Title Case lines that are short)
-    if len(stripped) < 80 and not stripped[0].islower() and stripped.endswith((':',)) and len(stripped.split()) < 12:
-        return f'<h4 class="sub-header">{t}</h4>'
+    # Five Cs references
+    for c_word in ['Context', 'Clusters', 'Congruence', 'Consistency', 'Culture']:
+        t = re.sub(rf'\b({c_word})\b(?=[^<]*(?:<|$))', rf'<span class="five-c">\1</span>', t, count=1)
 
     return f'<p>{t}</p>'
 
 
-def generate_chapter_opener(section):
-    """Generate the dark chapter opener page."""
-    ch_type = section['type']
-    part_num = section.get('part_num', 0)
-    chapter_num = section.get('chapter_num', 0)
-    title = section.get('title', '')
-    chapter_key = section.get('chapter_key', '')
-
-    part_names = {0:'', 1:'PART ONE', 2:'PART TWO', 3:'PART THREE', 4:'PART FOUR',
-                  5:'PART FIVE', 6:'PART SIX', 7:'PART SEVEN', 8:'PART EIGHT'}
-    part_label = part_names.get(part_num, '')
-
-    hook = HOOK_LINES.get(chapter_key, '')
-
-    if ch_type == 'chapter' and chapter_num > 0:
-        ch_display = f'{chapter_num:02d}'
-        ch_label = f'CHAPTER {chapter_num}'
-    elif ch_type == 'chapter' and chapter_num == 0:
-        ch_display = '00'
-        ch_label = 'INTRODUCTION'
-    else:
-        return ''
-
-    return f'''
-    <div class="chapter-opener" data-part="{part_num}">
-        <div class="opener-content">
-            <div class="part-label">{escape(part_label)}</div>
-            <div class="gold-line"></div>
-            <div class="chapter-number">{ch_display}</div>
-            <div class="chapter-title">{escape(title.upper())}</div>
-            <div class="gold-line thin"></div>
-            <div class="hook-line">{hook}</div>
-        </div>
-    </div>
-    '''
-
-
-def generate_part_opener(section):
-    """Generate the dark part opener spread."""
-    part_num = section.get('part_num', 0)
-    subtitle = section.get('subtitle', '')
-    part_names = {1:'ONE', 2:'TWO', 3:'THREE', 4:'FOUR', 5:'FIVE', 6:'SIX', 7:'SEVEN', 8:'EIGHT'}
-    part_name = part_names.get(part_num, '')
-
-    return f'''
-    <div class="part-opener" data-part="{part_num}">
-        <div class="part-opener-content">
-            <div class="part-number">PART {part_name}</div>
-            <div class="gold-line wide"></div>
-            <div class="part-title">{escape(subtitle)}</div>
-        </div>
-    </div>
-    '''
-
-
-def generate_pattern_interrupt(interrupt_data):
-    """Generate a full-bleed dark pattern interrupt page."""
-    return f'''
-    <div class="pattern-interrupt">
-        <div class="pi-content">
-            <div class="gold-line"></div>
-            <div class="pi-number">{interrupt_data['number']}</div>
-            <div class="pi-unit">{interrupt_data['unit']}</div>
-            <div class="gold-line"></div>
-            <div class="pi-text">{escape(interrupt_data['text'])}</div>
-            <div class="pi-source">{escape(interrupt_data['source'])}</div>
-            {f'<div class="pi-wyajd">{escape(interrupt_data["wyajd"])}</div>' if interrupt_data.get('wyajd') else ''}
-        </div>
-    </div>
-    '''
-
-
-def generate_what_you_just_did(text):
-    """Generate a What You Just Did moment."""
-    return f'''
-    <div class="what-you-just-did">
-        <div class="wyajd-bar"></div>
-        <p class="wyajd-text">{escape(text)}</p>
-    </div>
-    '''
-
-
-def generate_key_read(text):
-    """Generate the chapter-closing key read."""
-    return f'''
-    <div class="key-read">
-        <div class="kr-rule"></div>
-        <p class="kr-text">{escape(text)}</p>
-        <div class="kr-rule"></div>
-    </div>
-    '''
-
-
-def generate_spotlight_box(text):
-    """Generate a Von Restorff spotlight box."""
-    return f'''
-    <div class="spotlight-box">
-        <div class="spotlight-label">KEY PRINCIPLE</div>
-        <p class="spotlight-text">{text}</p>
-    </div>
-    '''
-
-
-def build_chapter_body(section, paragraph_count_global):
-    """Build the body content of a chapter with all design elements inserted."""
+def build_chapter_body(section, global_para_count):
+    """Build the full body of a chapter with all design elements."""
     content = section.get('content', [])
     chapter_num = section.get('chapter_num', 0)
     part_num = section.get('part_num', 0)
     chapter_key = section.get('chapter_key', '')
+    title = section.get('title', '')
 
-    body_html = []
-    paragraphs = []
-
-    # Collect non-empty paragraphs
-    for line in content:
-        if line.strip():
-            paragraphs.append(line)
-
+    parts = []
+    paragraphs = [line for line in content if line.strip()]
     if not paragraphs:
-        return '', paragraph_count_global
+        return '', global_para_count
 
-    # Process first paragraph with drop cap
-    first_para = escape(paragraphs[0].strip())
-    if len(first_para) > 1:
-        drop_letter = first_para[0]
-        rest = first_para[1:]
-        body_html.append(f'<p class="first-para"><span class="drop-cap">{drop_letter}</span>{rest}</p>')
+    # Running header
+    if chapter_num > 0:
+        header_text = f'CHAPTER {chapter_num}\u2003\u2014\u2003{title.upper()}'
+    elif chapter_num == 0:
+        header_text = 'INTRODUCTION'
     else:
-        body_html.append(f'<p>{first_para}</p>')
+        header_text = title.upper()
 
-    # Track paragraph count for pattern interrupt insertion
-    para_count = 1
-    spotlight_inserted = False
-    wyajd_inserted = False
-    interrupt_idx = paragraph_count_global % len(PATTERN_INTERRUPTS)
+    parts.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(header_text)}</span></header>')
 
-    for i, para in enumerate(paragraphs[1:], start=1):
-        para_count += 1
-        paragraph_count_global += 1
+    # First paragraph with drop cap
+    first = escape(paragraphs[0].strip())
+    if len(first) > 2:
+        parts.append(f'<p class="first-para"><span class="drop-cap">{first[0]}</span>{first[1:]}</p>')
+    else:
+        parts.append(f'<p>{first}</p>')
 
-        # Insert pattern interrupt every ~40 paragraphs (approximately 8-12 pages)
-        if para_count > 0 and para_count % 40 == 0:
-            pi = PATTERN_INTERRUPTS[interrupt_idx % len(PATTERN_INTERRUPTS)]
-            body_html.append(generate_pattern_interrupt(pi))
-            interrupt_idx += 1
+    # Track for element insertion
+    total = len(paragraphs)
+    spotlight_done = False
+    wyajd_done = False
+    pull_quote_done = False
+    pi_count = 0
+    pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
-        # Insert spotlight box at ~30% through chapter (once per chapter)
-        if not spotlight_inserted and para_count > len(paragraphs) * 0.3 and para_count < len(paragraphs) * 0.5:
-            # Find a good quote-like paragraph
-            stripped = para.strip()
-            if (stripped.startswith('"') or stripped.startswith("'") or
-                ('principle' in stripped.lower()) or ('key' in stripped.lower()) or
-                (len(stripped) < 200 and len(stripped) > 30)):
-                body_html.append(generate_spotlight_box(escape(stripped)))
-                spotlight_inserted = True
+    for i, para in enumerate(paragraphs[1:], 1):
+        global_para_count += 1
+        stripped = para.strip()
+
+        # Pattern interrupt every ~45 paragraphs
+        if i > 0 and i % 45 == 0 and pi_count < 2:
+            parts.append(gen_pattern_interrupt(PATTERN_INTERRUPTS[pi_idx % len(PATTERN_INTERRUPTS)]))
+            pi_idx += 1
+            pi_count += 1
+
+        # "What You Just Did" at ~65% through chapter
+        if not wyajd_done and chapter_num in WHAT_YOU_JUST_DID and i > total * 0.6:
+            parts.append(gen_wyajd(WHAT_YOU_JUST_DID[chapter_num]))
+            wyajd_done = True
+
+        # Spotlight box: find a good quote-like line at ~20-55% through
+        if not spotlight_done and i > total * 0.2 and i < total * 0.55:
+            if (stripped.startswith(('\u201c', '"', '\u2018')) and len(stripped) < 250 and len(stripped) > 30) or \
+               (len(stripped) < 200 and len(stripped) > 35 and any(kw in stripped.lower() for kw in ['principle', 'key', 'rule', 'fundamental', 'critical', 'essential', 'never', 'always', 'the real', 'the most important', 'is not', 'does not', 'cannot'])):
+                parts.append(gen_spotlight(escape(stripped)))
+                spotlight_done = True
                 continue
 
-        # Insert "What You Just Did" moment if available for this chapter
-        if not wyajd_inserted and chapter_num in WHAT_YOU_JUST_DID and para_count > len(paragraphs) * 0.6:
-            body_html.append(generate_what_you_just_did(WHAT_YOU_JUST_DID[chapter_num]))
-            wyajd_inserted = True
+        # Pull quote: find a strong short statement at ~55-75%
+        if not pull_quote_done and i > total * 0.55 and i < total * 0.75:
+            if len(stripped) < 120 and len(stripped) > 30 and not is_section_header(stripped) and not is_section_break(stripped):
+                if any(kw in stripped.lower() for kw in ['is not', 'is the', 'that is', 'the real', 'the most', 'every ', 'never ', 'always ']):
+                    parts.append(gen_pull_quote(stripped))
+                    pull_quote_done = True
+                    continue
 
-        # Process regular paragraph
         processed = process_paragraph(para, part_num)
         if processed:
-            body_html.append(processed)
+            parts.append(processed)
 
-    # Add key read at end
-    key_read = KEY_READS.get(chapter_key, '')
-    if key_read:
-        body_html.append(generate_key_read(key_read))
+    # Key read
+    kr = KEY_READS.get(chapter_key, '')
+    if kr:
+        parts.append(gen_key_read(kr))
 
-    return '\n'.join(body_html), paragraph_count_global
+    return '\n'.join(parts), global_para_count
 
 
-def generate_meta_reveal():
-    """Generate the complete meta reveal section."""
-    return '''
-    <div class="chapter-opener meta-reveal-opener" data-part="6">
-        <div class="opener-content">
-            <div class="part-label">THE STANDING OVATION</div>
-            <div class="gold-line"></div>
-            <div class="chapter-number meta-number">✦</div>
-            <div class="chapter-title">THE META REVEAL</div>
-            <div class="gold-line thin"></div>
-            <div class="hook-line">"This is the part where I tell you what I did."</div>
-        </div>
-    </div>
+# ═══════════════════════════════════════════════════════════
+# META REVEAL
+# ═══════════════════════════════════════════════════════════
 
-    <div class="chapter-body meta-reveal-body">
-        <p class="first-para"><span class="drop-cap">Y</span>ou have been reading a book that demonstrated its own content on every page.</p>
+META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
+  <div class="opener-content">
+    <div class="part-label">THE STANDING OVATION</div>
+    <div class="gold-line"></div>
+    <div class="chapter-number">\u2726</div>
+    <h1 class="chapter-title">THE META REVEAL</h1>
+    <div class="gold-line thin"></div>
+    <div class="hook-line">\u201cThis is the part where I tell you what I did.\u201d</div>
+  </div>
+</section>
 
-        <p>Not metaphorically. Literally. Every surface of this object — the cover you picked up, the pages you turned, the colors that caught your eye, the sentences that stuck — was designed using the same behavioral architecture this book teaches you to build.</p>
+<article class="chapter-body meta-body">
+  <header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>THE META REVEAL</span></header>
 
-        <p>Let me show you.</p>
+  <p class="first-para"><span class="drop-cap">Y</span>ou have been reading a book that demonstrated its own content on every page.</p>
 
-        <div class="section-break">· · ·</div>
+  <p>Not metaphorically. Literally. Every surface of this object\u2009\u2014\u2009the cover you picked up, the pages you turned, the colors that caught your eye, the sentences that stuck\u2009\u2014\u2009was designed using the same behavioral architecture this book teaches you to build.</p>
 
-        <h3 class="section-header meta-header">THE COVER</h3>
+  <p>Let me show you.</p>
 
-        <p>You picked up this book and felt it before you read it. The soft-touch matte lamination created a tactile first impression — people react to texture before processing text. Your fingers registered quality before your eyes registered the title.</p>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <p>Then there was the title itself: embossed, raised from the surface, finished in spot UV that caught the light differently than the matte background. If you tilted the book, you may have noticed a hidden line of text on the back cover, visible only at certain angles. If you found it, you already demonstrated the first lesson in this book: <span class="gold-inline">the trained eye sees what others miss.</span></p>
+  <h3 class="section-header meta-header">The Cover</h3>
 
-        <p>If you didn't find it, go back now. Tilt the cover in the light. It's there.</p>
+  <p>You picked up this book and felt it before you read it. The soft-touch matte lamination created a tactile first impression\u2009\u2014\u2009people react to texture before processing text. Your fingers registered quality before your eyes registered the title.</p>
 
-        <p>That is <span class="gold-inline">observation</span>. That is what this book is about.</p>
+  <p>Then there was the title itself: embossed, raised from the surface, finished in spot UV that caught the light differently than the matte background. If you tilted the book, you may have noticed a hidden line of text on the back cover, visible only at certain angles. If you found it, you already demonstrated the first lesson: <em class="gold">the trained eye sees what others miss.</em></p>
 
-        <div class="section-break">· · ·</div>
+  <p>If you didn\u2019t find it, go back now. Tilt the cover in the light. It\u2019s there.</p>
 
-        <h3 class="section-header meta-header">THE COLOR ARC</h3>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <p>Did you notice that the accents in this book changed temperature as you read? Parts One and Two used cool steel blues — clinical, analytical, cerebral. The colors said: <em>you are learning.</em> By Part Three, golds began appearing alongside the blues. By Parts Four and Five, gold dominated — warm, authoritative, confident. The colors said: <em>you are applying.</em> By Parts Six and Seven, deep golds and ambers took over entirely. The colors said: <em>you have arrived.</em></p>
+  <h3 class="section-header meta-header">The Color Arc</h3>
 
-        <p>You did not notice this consciously. Research confirms that color shifts signal mood transitions and identity changes without conscious awareness. The brain processes color <span class="gold-inline">sixty thousand times faster than text</span>. Your emotional arc through this book was primed by the palette before a single argument landed.</p>
+  <p>Did you notice that the accents in this book changed temperature as you read? Parts One and Two used cool steel blues\u2009\u2014\u2009clinical, analytical, cerebral. The colors said: <em>you are learning.</em> By Parts Four and Five, gold dominated\u2009\u2014\u2009warm, authoritative. The colors said: <em>you are applying.</em> By Parts Six and Seven, deep golds and ambers took over. The colors said: <em>you have arrived.</em></p>
 
-        <p>That is <span class="gold-inline">behavioral priming</span>. Chapter Two taught you how it works. This book applied it to you.</p>
+  <p>You did not notice this consciously. The brain processes color <em class="gold">sixty thousand times faster than text</em>. Your emotional arc was primed by the palette before a single argument landed.</p>
 
-        <div class="section-break">· · ·</div>
+  <p>That is <em class="gold">behavioral priming</em>.</p>
 
-        <h3 class="section-header meta-header">THE TYPOGRAPHY</h3>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <p>The body text you've been reading — Garamond, set at eleven points on a warm cream background — was chosen because research shows that easier-to-read fonts increase perceived trustworthiness by up to <span class="gold-inline">forty percent</span>. You felt this book was credible before you decided it was credible. Processing fluency: the smoother the reading experience, the more the reader trusts the content.</p>
+  <h3 class="section-header meta-header">The Typography</h3>
 
-        <p>The chapter titles — geometric, sans-serif, all-caps, widely letterspaced — created a visual contrast that signaled "announcement" before each chapter. Your brain registered a shift from conversation to declaration. The rhythm of serif body text and sans-serif titles trained your expectations: <em>here comes something important.</em></p>
+  <p>The body text you\u2019ve been reading was chosen because research shows that easier-to-read fonts increase perceived trustworthiness by up to <em class="gold">forty percent</em>. You felt this book was credible before you decided it was credible. That is processing fluency.</p>
 
-        <div class="section-break">· · ·</div>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <h3 class="section-header meta-header">THE CHAPTER OPENERS</h3>
+  <h3 class="section-header meta-header">The Chapter Openers</h3>
 
-        <p>Every chapter opened with a single provocative sentence on a dark page. Not a summary. Not an overview. A hook.</p>
+  <p>Every chapter opened with a single provocative sentence on a dark page. Not a summary. A hook.</p>
 
-        <p class="standalone-quote">"Every person who walks toward you is already broadcasting."</p>
-        <p class="standalone-quote">"The boardroom is the most dangerous stage you will ever work."</p>
-        <p class="standalone-quote">"The walk to the stage is the performance."</p>
+  <blockquote class="pull-quote"><p>\u201cEvery person who walks toward you is already broadcasting.\u201d</p></blockquote>
+  <blockquote class="pull-quote"><p>\u201cThe boardroom is the most dangerous stage you will ever work.\u201d</p></blockquote>
 
-        <p>That is the <span class="gold-inline">serial position effect — primacy</span>. Your brain encodes the first item in a sequence more deeply than anything that follows. Those opening lines anchored your understanding of every chapter before you chose to engage with the content.</p>
+  <p>That is the <em class="gold">serial position effect\u2009\u2014\u2009primacy</em>. Your brain encoded those first sentences before you chose to engage.</p>
 
-        <div class="section-break">· · ·</div>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <h3 class="section-header meta-header">THE KEY READS</h3>
+  <h3 class="section-header meta-header">The Key Reads</h3>
 
-        <p>Every chapter closed with a single sentence in gold, set between thin lines with generous whitespace.</p>
+  <p>Every chapter closed with a single sentence in gold, set between thin lines.</p>
 
-        <p class="standalone-quote">"The read is never one signal. The read is the chain."</p>
-        <p class="standalone-quote">"The face is the performance. The hands are the truth."</p>
-        <p class="standalone-quote">"Tension is not the enemy. Boredom is."</p>
+  <blockquote class="pull-quote"><p>\u201cThe read is never one signal. The read is the chain.\u201d</p></blockquote>
+  <blockquote class="pull-quote"><p>\u201cTension is not the enemy. Boredom is.\u201d</p></blockquote>
 
-        <p>That is the <span class="gold-inline">serial position effect — recency</span>. The last item in a sequence stays in working memory. Those closing lines were planted as seeds. They are the sentences you will remember from this book long after you forget the supporting details.</p>
+  <p>That is <em class="gold">serial position\u2009\u2014\u2009recency</em>. The last thing in working memory is the thing that stays.</p>
 
-        <div class="section-break">· · ·</div>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <h3 class="section-header meta-header">THE PATTERN INTERRUPTS</h3>
+  <h3 class="section-header meta-header">The Pattern Interrupts</h3>
 
-        <p>Every eight to twelve pages, the layout changed. A full-bleed dark page with a single gold statistic. A sidebar that shifted the column width. A case study in a different format.</p>
+  <p>Every eight to twelve pages, the layout changed. A full-bleed dark page with a single gold statistic. Those were <em class="gold">the Von Restorff effect</em>\u2009\u2014\u2009the isolation effect. You remember them because they were different.</p>
 
-        <p>Those were <span class="gold-inline">pattern interrupts — the Von Restorff effect</span>, also known as the isolation effect. When multiple similar items are present, the one that differs is most likely to be remembered. You remember those dark pages. You remember the 250-milliseconds statistic.</p>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <div class="section-break">· · ·</div>
+  <h3 class="section-header meta-header">The Design Summary</h3>
 
-        <h3 class="section-header meta-header">THE MARGIN ICONS</h3>
+  <div class="meta-summary">
+    <div class="meta-row"><span class="gold">Gold accents</span><span class="meta-label">Salience Architecture</span></div>
+    <div class="meta-row"><span class="gold">Cool-to-warm color arc</span><span class="meta-label">Behavioral Priming</span></div>
+    <div class="meta-row"><span class="gold">Chapter hooks</span><span class="meta-label">Serial Position \u2014 Primacy</span></div>
+    <div class="meta-row"><span class="gold">Key reads</span><span class="meta-label">Serial Position \u2014 Recency</span></div>
+    <div class="meta-row"><span class="gold">Dark pages &amp; shifted layouts</span><span class="meta-label">Von Restorff Isolation</span></div>
+    <div class="meta-row"><span class="gold">Margin icons</span><span class="meta-label">Repetitive Priming</span></div>
+    <div class="meta-row"><span class="gold">Readable fonts on cream</span><span class="meta-label">Processing Fluency (+40%)</span></div>
+    <div class="meta-row"><span class="gold">Spot UV hidden text</span><span class="meta-label">The Observation Test</span></div>
+    <div class="meta-row"><span class="gold">Edge color gradient</span><span class="meta-label">Progressive Identity Shift</span></div>
+  </div>
 
-        <p>From the early chapters onward, small icons appeared alongside the text: an eye for Baseline/Physical observations. A profile silhouette for Character Reading. A waveform for Verbal/Social. An arrow for Action/Motivation.</p>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
-        <p>By the midpoint, you were processing those icons without reading them. The icons trained your <span class="gold-inline">pattern recognition through repetitive priming</span> — repeated exposure building unconscious associations.</p>
+  <div class="meta-finale">
+    <p class="finale-1">This book was not just written.</p>
+    <p class="finale-2">It was designed to read you while you read it.</p>
+    <p class="finale-3">And now you know how.</p>
+  </div>
 
-        <div class="section-break">· · ·</div>
-
-        <h3 class="section-header meta-header">THE DESIGN SUMMARY</h3>
-
-        <div class="meta-summary">
-            <div class="meta-item"><span class="gold-inline">Gold accents</span> — <span class="meta-label">Salience Architecture</span></div>
-            <div class="meta-item"><span class="gold-inline">Cool-to-warm color arc</span> — <span class="meta-label">Behavioral Priming</span></div>
-            <div class="meta-item"><span class="gold-inline">Chapter hooks</span> — <span class="meta-label">Serial Position — Primacy</span></div>
-            <div class="meta-item"><span class="gold-inline">Key reads</span> — <span class="meta-label">Serial Position — Recency</span></div>
-            <div class="meta-item"><span class="gold-inline">Dark pages</span> — <span class="meta-label">Von Restorff Isolation</span></div>
-            <div class="meta-item"><span class="gold-inline">Margin icons</span> — <span class="meta-label">Repetitive Priming</span></div>
-            <div class="meta-item"><span class="gold-inline">Readable fonts on cream</span> — <span class="meta-label">Processing Fluency (+40% trust)</span></div>
-            <div class="meta-item"><span class="gold-inline">Spot UV hidden text</span> — <span class="meta-label">The Observation Test</span></div>
-            <div class="meta-item"><span class="gold-inline">Edge color gradient</span> — <span class="meta-label">Progressive Identity Shift</span></div>
-        </div>
-
-        <div class="section-break">· · ·</div>
-
-        <div class="meta-finale">
-            <p class="finale-line">This book was not just written.</p>
-            <p class="finale-line finale-main">It was designed to read you while you read it.</p>
-            <p class="finale-line finale-close">And now you know how.</p>
-        </div>
-    </div>
-    '''
-
-
-def generate_css():
-    """Generate the complete CSS stylesheet."""
-    return '''
-/* ═══════════════════════════════════════════════════════ */
-/* THE ARCHITECTURE OF WONDER — Design System CSS         */
-/* ═══════════════════════════════════════════════════════ */
-
-/* ── FONTS ── */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
-
-/* ── RESET & BASE ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-    --navy-dark: #080F1A;
-    --navy-light: #0D1E30;
-    --gold: #C9A84C;
-    --gold-dim: rgba(201, 168, 76, 0.4);
-    --steel-blue: #1A8FA8;
-    --cream: #F5F0E8;
-    --red: #A83030;
-    --purple: #6B52A0;
-    --text-gray-blue: #8A9AB5;
-    --dim-gray: #3A4A5C;
-    --body-text: #2A2520;
-    --rule-color: #D8D0C4;
-    --font-serif: 'EB Garamond', 'Georgia', 'Garamond', serif;
-    --font-sans: 'Montserrat', 'Calibri', 'Helvetica Neue', sans-serif;
-}
-
-html {
-    font-size: 11pt;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-    font-family: var(--font-serif);
-    color: var(--body-text);
-    background: var(--cream);
-    line-height: 1.55;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* ── PRINT STYLES ── */
-@page {
-    size: 6in 9in;
-    margin: 0.75in 1in 0.7in 0.7in;
-}
-
-@media print {
-    body { background: white; }
-    .chapter-opener, .part-opener, .pattern-interrupt { page-break-before: always; page-break-after: always; }
-    .chapter-body { page-break-before: avoid; }
-    .key-read { page-break-inside: avoid; }
-    .spotlight-box { page-break-inside: avoid; }
-    .no-print { display: none; }
-}
-
-/* ── FRONT MATTER ── */
-.front-cover {
-    background: linear-gradient(180deg, var(--navy-dark), var(--navy-light));
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-    page-break-after: always;
-}
-
-.front-cover .author-name {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    letter-spacing: 6px;
-    color: var(--text-gray-blue);
-    font-weight: 300;
-    margin-bottom: 40px;
-}
-
-.front-cover .book-title {
-    font-family: var(--font-sans);
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 5px;
-    color: var(--gold);
-    text-align: center;
-    line-height: 1.3;
-    margin-bottom: 30px;
-    text-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
-}
-
-.front-cover .book-subtitle {
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    color: var(--text-gray-blue);
-    font-weight: 300;
-    text-align: center;
-    line-height: 1.6;
-}
-
-.front-cover .gold-rule {
-    width: 200px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-    margin: 25px 0;
-}
-
-.front-cover .icon-row {
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
-    opacity: 0.3;
-}
-
-.front-cover .icon-row span {
-    font-family: var(--font-sans);
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    color: var(--gold);
-}
-
-.tagline {
-    font-family: var(--font-sans);
-    font-size: 0.55rem;
-    letter-spacing: 5px;
-    color: var(--dim-gray);
-    margin-top: 40px;
-}
-
-/* ── CHAPTER OPENER ── */
-.chapter-opener {
-    background: linear-gradient(180deg, var(--navy-dark), var(--navy-light));
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-    page-break-before: always;
-    page-break-after: always;
-}
-
-.opener-content {
-    text-align: center;
-    max-width: 520px;
-}
-
-.part-label {
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
-    letter-spacing: 8px;
-    color: var(--dim-gray);
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
-.chapter-number {
-    font-family: var(--font-sans);
-    font-size: 4.5rem;
-    font-weight: 200;
-    color: var(--gold);
-    letter-spacing: 3px;
-    margin: 20px 0;
-    text-shadow: 0 0 30px rgba(201, 168, 76, 0.1);
-}
-
-.meta-number {
-    font-size: 3rem;
-    text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
-}
-
-.chapter-title {
-    font-family: var(--font-sans);
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 5px;
-    color: #FFFFFF;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.gold-line {
-    width: 160px;
-    height: 1px;
-    margin: 15px auto;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-}
-
-.gold-line.wide { width: 220px; }
-.gold-line.thin { height: 0.5px; opacity: 0.6; }
-
-.hook-line {
-    font-family: var(--font-serif);
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--text-gray-blue);
-    line-height: 1.6;
-    margin-top: 20px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ── PART OPENER ── */
-.part-opener {
-    background: linear-gradient(180deg, var(--navy-dark), var(--navy-light));
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-    page-break-before: always;
-    page-break-after: always;
-}
-
-.part-opener-content {
-    text-align: center;
-}
-
-.part-number {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    letter-spacing: 10px;
-    color: var(--dim-gray);
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-
-.part-title {
-    font-family: var(--font-sans);
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: var(--gold);
-    line-height: 1.4;
-    text-shadow: 0 0 40px rgba(201, 168, 76, 0.1);
-}
-
-/* ── CHAPTER BODY ── */
-.chapter-body {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 60px 40px 80px;
-    background: var(--cream);
-}
-
-.chapter-body p {
-    margin-bottom: 1em;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
-.chapter-body .first-para {
-    text-indent: 0;
-}
-
-.chapter-body p + p {
-    text-indent: 1.5em;
-}
-
-.chapter-body p:has(+ .section-break),
-.chapter-body .section-break + p,
-.chapter-body h3 + p,
-.chapter-body h4 + p,
-.chapter-body .spotlight-box + p,
-.chapter-body .what-you-just-did + p,
-.chapter-body .pattern-interrupt + p {
-    text-indent: 0;
-}
-
-/* ── DROP CAP ── */
-.drop-cap {
-    float: left;
-    font-family: var(--font-sans);
-    font-size: 3.3rem;
-    font-weight: 400;
-    color: var(--gold);
-    line-height: 0.8;
-    padding-right: 8px;
-    padding-top: 6px;
-}
-
-/* ── SECTION HEADERS ── */
-.section-header {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--body-text);
-    margin: 2.5em 0 1em;
-    padding-bottom: 6px;
-    border-bottom: 2px solid var(--gold);
-    display: inline-block;
-}
-
-.meta-header {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-}
-
-.sub-header {
-    font-family: var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--body-text);
-    margin: 2em 0 0.8em;
-}
-
-/* ── SECTION BREAK ── */
-.section-break {
-    text-align: center;
-    color: var(--gold);
-    font-size: 1rem;
-    letter-spacing: 8px;
-    margin: 2em 0;
-}
-
-/* ── TIER BADGES ── */
-.tier-badge {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: 0.55rem;
-    font-weight: 700;
-    padding: 1px 8px;
-    border-radius: 8px;
-    vertical-align: middle;
-    margin: 0 2px;
-    letter-spacing: 0.5px;
-}
-
-.tier-badge.t1 { background: var(--gold); color: var(--navy-dark); }
-.tier-badge.t2 { background: var(--steel-blue); color: #FFFFFF; }
-.tier-badge.t3 { background: transparent; color: var(--text-gray-blue); border: 1px solid var(--text-gray-blue); }
-.tier-badge.t4 { background: transparent; color: var(--dim-gray); border: 1px dashed var(--dim-gray); }
-
-/* ── OBSERVATION REFERENCES ── */
-.obs-ref {
-    color: var(--gold);
-    font-weight: 600;
-}
-
-/* ── GOLD INLINE ── */
-.gold-inline {
-    color: var(--gold);
-    font-weight: 600;
-}
-
-/* ── SPOTLIGHT BOX (VON RESTORFF) ── */
-.spotlight-box {
-    background: linear-gradient(135deg, var(--navy-dark), var(--navy-light));
-    border-left: 4px solid var(--gold);
-    border-radius: 4px;
-    padding: 24px 28px;
-    margin: 2em 0;
-}
-
-.spotlight-label {
-    font-family: var(--font-sans);
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--gold);
-    margin-bottom: 12px;
-}
-
-.spotlight-text {
-    font-style: italic;
-    color: #FFFFFF;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* ── PATTERN INTERRUPT ── */
-.pattern-interrupt {
-    background: linear-gradient(180deg, #060B14, var(--navy-light));
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-    page-break-before: always;
-    page-break-after: always;
-}
-
-.pi-content {
-    text-align: center;
-    max-width: 480px;
-}
-
-.pi-number {
-    font-family: var(--font-sans);
-    font-size: 5.5rem;
-    font-weight: 200;
-    color: var(--gold);
-    text-shadow: 0 0 30px rgba(201, 168, 76, 0.2);
-    letter-spacing: 3px;
-}
-
-.pi-unit {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    letter-spacing: 4px;
-    color: var(--gold);
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
-.pi-text {
-    font-style: italic;
-    color: var(--text-gray-blue);
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin: 25px 0 15px;
-}
-
-.pi-source {
-    font-size: 0.65rem;
-    color: var(--dim-gray);
-    margin-bottom: 30px;
-}
-
-.pi-wyajd {
-    color: #FFFFFF;
-    font-style: italic;
-    font-size: 0.78rem;
-    margin-top: 30px;
-    line-height: 1.5;
-}
-
-.pi-wyajd::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 15px;
-    opacity: 0.4;
-}
-
-/* ── WHAT YOU JUST DID ── */
-.what-you-just-did {
-    display: flex;
-    gap: 16px;
-    margin: 2em 0;
-    padding: 16px 0 16px 20px;
-}
-
-.wyajd-bar {
-    width: 3px;
-    background: var(--gold);
-    opacity: 0.6;
-    flex-shrink: 0;
-    border-radius: 2px;
-}
-
-.wyajd-text {
-    font-style: italic;
-    color: var(--body-text);
-    font-size: 0.9rem;
-    line-height: 1.55;
-    margin: 0 !important;
-    text-indent: 0 !important;
-}
-
-/* ── KEY READ (CHAPTER CLOSER) ── */
-.key-read {
-    margin: 3em auto 2em;
-    max-width: 400px;
-    text-align: center;
-}
-
-.kr-rule {
-    width: 200px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.4;
-    margin: 0 auto;
-}
-
-.kr-text {
-    font-style: italic;
-    color: var(--gold);
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.5;
-    padding: 20px 10px;
-    margin: 0;
-    text-indent: 0 !important;
-}
-
-/* ── PULL QUOTE ── */
-.pull-quote {
-    text-align: center;
-    margin: 2.5em auto;
-    max-width: 420px;
-    padding: 0 20px;
-}
-
-.pull-quote p {
-    font-family: var(--font-sans);
-    font-size: 1.05rem;
-    font-weight: 600;
-    font-style: italic;
-    color: var(--gold);
-    line-height: 1.5;
-    text-indent: 0 !important;
-    text-align: center !important;
-}
-
-.standalone-quote {
-    text-align: center !important;
-    font-style: italic;
-    color: var(--gold) !important;
-    font-weight: 500;
-    margin: 1em 0 !important;
-    text-indent: 0 !important;
-}
-
-/* ── META REVEAL SPECIFIC ── */
-.meta-reveal-body {
-    max-width: 640px;
-}
-
-.meta-summary {
-    margin: 2em 0;
-}
-
-.meta-item {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-    font-size: 0.9rem;
-}
-
-.meta-label {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    color: var(--dim-gray);
-    text-transform: uppercase;
-}
-
-.meta-finale {
-    text-align: center;
-    margin: 4em 0;
-    padding: 40px 20px;
-}
-
-.finale-line {
-    color: var(--gold);
-    font-size: 1.1rem;
-    font-style: italic;
-    margin: 1.5em 0 !important;
-    text-indent: 0 !important;
-    text-align: center !important;
-}
-
-.finale-main {
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
-}
-
-.finale-close {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-style: normal;
-    margin-top: 2em !important;
-}
-
-/* ── RUNNING HEADER ── */
-.running-header {
-    font-family: var(--font-sans);
-    font-size: 0.55rem;
-    letter-spacing: 2px;
-    color: var(--text-gray-blue);
-    padding: 10px 0;
-    margin-bottom: 10px;
-    border-bottom: 0.5px solid var(--rule-color);
-    display: flex;
-    justify-content: space-between;
-}
-
-/* ── FOOTER ── */
-.page-footer {
-    font-family: var(--font-sans);
-    font-size: 0.5rem;
-    letter-spacing: 3px;
-    color: var(--dim-gray);
-    text-align: center;
-    padding: 30px 0 10px;
-    margin-top: 40px;
-}
-
-/* ── GLOSSARY ── */
-.glossary-body p {
-    margin-bottom: 0.6em;
-    font-size: 0.9rem;
-}
-
-/* ── FRONT MATTER / ACKNOWLEDGMENTS ── */
-.front-matter-body {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-.front-matter-body h2 {
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-/* ── RESPONSIVE (for screen reading) ── */
-@media screen and (max-width: 768px) {
-    .chapter-body, .front-matter-body { padding: 30px 20px; }
-    .chapter-number { font-size: 3.5rem; }
-    .chapter-title { font-size: 1rem; letter-spacing: 3px; }
-    .book-title { font-size: 2rem; }
-    .pi-number { font-size: 4rem; }
-}
-
-/* ── COLOR TEMPERATURE SHIFTS ── */
-/* Parts 1-2: Cool accents */
-[data-part="1"] .chapter-title,
-[data-part="2"] .chapter-title { color: #E8E8EE; }
-
-[data-part="1"] .section-header,
-[data-part="2"] .section-header { border-bottom-color: var(--steel-blue); }
-
-/* Parts 3: Transitional */
-[data-part="3"] .section-header { border-bottom-color: #7A9A6C; }
-
-/* Parts 4-5: Warm gold */
-/* Default gold styling applies */
-
-/* Parts 6-7-8: Deep warm */
-[data-part="6"] .spotlight-box,
-[data-part="7"] .spotlight-box,
-[data-part="8"] .spotlight-box {
-    border-left-color: #D4A030;
-}
-
-[data-part="7"] .chapter-number,
-[data-part="8"] .chapter-number {
-    color: #D4A030;
-}
-
-/* ── TOC ── */
-.toc {
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    page-break-after: always;
-}
-
-.toc h2 {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 3em;
-}
-
-.toc-part {
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--dim-gray);
-    margin: 2em 0 0.5em;
-    padding-top: 1em;
-    border-top: 1px solid var(--rule-color);
-}
-
-.toc-chapter {
-    font-size: 0.85rem;
-    color: var(--body-text);
-    padding: 4px 0 4px 20px;
-}
-
-.toc-chapter .ch-num {
-    color: var(--gold);
-    font-weight: 600;
-    margin-right: 6px;
-}
-''';
-
-
-def generate_toc(sections):
-    """Generate a styled table of contents."""
-    html_parts = ['<div class="toc"><h2>TABLE OF CONTENTS</h2>']
-    current_part = -1
-
-    part_subtitles = {}
+  <div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>
+</article>'''
+
+
+# ═══════════════════════════════════════════════════════════
+# TOC GENERATOR
+# ═══════════════════════════════════════════════════════════
+
+def gen_toc(sections):
+    parts = ['<nav class="toc"><h2>Contents</h2><div class="toc-list">']
     for s in sections:
         if s['type'] == 'part':
-            part_subtitles[s['part_num']] = s.get('subtitle', '')
-
-    for s in sections:
-        if s['type'] == 'part':
-            html_parts.append(f'<div class="toc-part">{escape(s["title"])} — {escape(s.get("subtitle", ""))}</div>')
+            parts.append(f'<div class="toc-part">{escape(s["title"])}<span class="toc-sub">{escape(s.get("subtitle",""))}</span></div>')
         elif s['type'] == 'chapter':
             ch = s.get('chapter_num', 0)
-            if ch == 0:
-                html_parts.append(f'<div class="toc-chapter"><span class="ch-num">INTRO</span> {escape(s["title"])}</div>')
-            else:
-                html_parts.append(f'<div class="toc-chapter"><span class="ch-num">{ch}.</span> {escape(s["title"])}</div>')
+            num = 'Intro' if ch == 0 else str(ch)
+            parts.append(f'<div class="toc-ch"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></div>')
         elif s['type'] == 'glossary':
-            html_parts.append(f'<div class="toc-part">GLOSSARY</div>')
+            parts.append('<div class="toc-part">Glossary</div>')
         elif s['type'] == 'about':
-            html_parts.append(f'<div class="toc-part">ABOUT THE AUTHOR</div>')
+            parts.append('<div class="toc-part">About the Author</div>')
+    parts.append('</div></nav>')
+    return '\n'.join(parts)
 
-    html_parts.append('</div>')
-    return '\n'.join(html_parts)
 
+# ═══════════════════════════════════════════════════════════
+# CSS
+# ═══════════════════════════════════════════════════════════
+
+CSS = r'''
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#080F1A; --navy2:#0D1E30;
+  --gold:#C9A84C; --gold-dim:rgba(201,168,76,.35);
+  --blue:#1A8FA8; --cream:#F5F0E8;
+  --red:#A83030; --purple:#6B52A0;
+  --gray-blue:#8A9AB5; --dim:#3A4A5C;
+  --body-color:#2A2520; --rule:#D8D0C4;
+  --serif:'EB Garamond','Georgia','Garamond',serif;
+  --sans:'Montserrat','Calibri','Helvetica Neue',sans-serif;
+}
+
+html{font-size:11.5pt;-webkit-font-smoothing:antialiased}
+body{font-family:var(--serif);color:var(--body-color);background:var(--cream);line-height:1.6;overflow-x:hidden}
+
+/* ═══ PRINT ═══ */
+@page{size:6in 9in;margin:.72in .95in .68in .72in}
+@media print{
+  body{background:#fff}
+  .chapter-opener,.part-opener,.pattern-interrupt{break-before:page;break-after:page}
+  .key-read,.spotlight-box{break-inside:avoid}
+}
+
+/* ═══ COVER ═══ */
+.cover{
+  background:linear-gradient(180deg,var(--navy),var(--navy2));
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:60px 40px;
+  break-after:page;
+}
+.cover .author{font-family:var(--sans);font-size:.7rem;letter-spacing:7px;color:var(--gray-blue);font-weight:300}
+.cover .title{
+  font-family:var(--sans);font-size:2.6rem;font-weight:700;
+  letter-spacing:5px;color:var(--gold);text-align:center;line-height:1.35;
+  margin:30px 0;text-shadow:0 0 50px rgba(201,168,76,.12);
+}
+.cover .subtitle{font-family:var(--sans);font-size:.68rem;letter-spacing:4px;color:var(--gray-blue);font-weight:300;text-align:center;line-height:1.7}
+.cover .rule{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:22px 0}
+.cover .icons{display:flex;gap:28px;margin-top:35px;opacity:.3}
+.cover .icons span{font-family:var(--sans);font-size:.55rem;letter-spacing:2px;color:var(--gold)}
+.cover .tagline{font-family:var(--sans);font-size:.52rem;letter-spacing:6px;color:var(--dim);margin-top:35px}
+
+/* ═══ CHAPTER OPENER ═══ */
+.chapter-opener{
+  background:linear-gradient(180deg,var(--navy),var(--navy2));
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:60px 40px;break-before:page;break-after:page;
+}
+.opener-content{text-align:center;max-width:500px}
+.part-label{font-family:var(--sans);font-size:.65rem;letter-spacing:8px;color:var(--dim);font-weight:300;margin-bottom:18px}
+.chapter-number{
+  font-family:var(--sans);font-size:4.2rem;font-weight:200;
+  color:var(--gold);letter-spacing:3px;margin:18px 0;
+  text-shadow:0 0 35px rgba(201,168,76,.1);
+}
+.chapter-title{
+  font-family:var(--sans);font-size:1.05rem;font-weight:700;
+  letter-spacing:5px;color:#fff;line-height:1.55;margin-bottom:14px;
+}
+.gold-line{width:140px;height:1px;margin:14px auto;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+.gold-line.wide{width:200px}
+.gold-line.thin{height:.5px;opacity:.6}
+.hook-line{
+  font-family:var(--serif);font-size:.82rem;font-style:italic;
+  color:var(--gray-blue);line-height:1.65;margin-top:18px;max-width:380px;margin-left:auto;margin-right:auto;
+}
+
+/* ═══ PART OPENER ═══ */
+.part-opener{
+  background:linear-gradient(180deg,var(--navy),var(--navy2));
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:60px 40px;break-before:page;break-after:page;
+}
+.part-opener-content{text-align:center}
+.part-number{font-family:var(--sans);font-size:.75rem;letter-spacing:10px;color:var(--dim);font-weight:300;margin-bottom:28px}
+.part-title{
+  font-family:var(--sans);font-size:1.7rem;font-weight:700;
+  letter-spacing:6px;color:var(--gold);line-height:1.4;
+  text-shadow:0 0 45px rgba(201,168,76,.1);
+}
+
+/* ═══ CHAPTER BODY ═══ */
+.chapter-body{
+  max-width:620px;margin:0 auto;
+  padding:50px 36px 70px;background:var(--cream);
+}
+.chapter-body p{margin-bottom:.95em;text-align:justify;hyphens:auto}
+.chapter-body p+p{text-indent:1.4em}
+.chapter-body .first-para,
+.chapter-body h3+p, .chapter-body h4+p,
+.chapter-body .section-break+p,
+.chapter-body .spotlight-box+p,
+.chapter-body .wyajd+p,
+.chapter-body .pull-quote+p,
+.chapter-body .pattern-interrupt+p,
+.chapter-body .felt-before+p,
+.chapter-body .key-read+p{text-indent:0}
+
+/* ═══ RUNNING HEADER ═══ */
+.running-header{
+  font-family:var(--sans);font-size:.5rem;letter-spacing:2.5px;
+  color:var(--gray-blue);display:flex;justify-content:space-between;
+  padding-bottom:8px;margin-bottom:28px;
+  border-bottom:.5px solid var(--rule);
+}
+
+/* ═══ DROP CAP ═══ */
+.drop-cap{
+  float:left;font-family:var(--sans);font-size:3.2em;font-weight:400;
+  color:var(--gold);line-height:.82;padding:5px 10px 0 0;
+}
+
+/* ═══ SECTION HEADER ═══ */
+.section-header{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:1.5px;color:var(--body-color);
+  margin:2.2em 0 .85em;padding-bottom:5px;
+  border-bottom:2px solid var(--gold);display:inline-block;
+}
+.meta-header{color:var(--gold)}
+
+/* ═══ SECTION BREAK ═══ */
+.section-break{text-align:center;color:var(--gold);font-size:1rem;letter-spacing:10px;margin:2.2em 0}
+
+/* ═══ "WHAT YOU HAVE FELT BEFORE" ═══ */
+.felt-before{
+  text-align:center;margin:2.8em 0 1.5em;padding:18px 0;
+  border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
+}
+.felt-icon{color:var(--gold);font-size:1.1rem;margin-bottom:6px}
+.felt-label{
+  font-family:var(--sans);font-size:.62rem;font-weight:600;
+  letter-spacing:4px;color:var(--gold);margin:0;
+}
+
+/* ═══ TIER BADGES ═══ */
+.badge{
+  display:inline-block;font-family:var(--sans);font-size:.5rem;
+  font-weight:700;padding:1px 7px;border-radius:7px;
+  vertical-align:middle;margin:0 2px;letter-spacing:.5px;
+}
+.badge.t1{background:var(--gold);color:var(--navy)}
+.badge.t2{background:var(--blue);color:#fff}
+.badge.t3{background:transparent;color:var(--gray-blue);border:1px solid var(--gray-blue)}
+.badge.t4{background:transparent;color:var(--dim);border:1px dashed var(--dim)}
+
+/* ═══ OBSERVATION REF ═══ */
+.obs-ref{color:var(--gold);font-weight:600}
+
+/* ═══ FIVE Cs ═══ */
+.five-c{font-variant:small-caps;font-weight:600;letter-spacing:.5px}
+
+/* ═══ SPOTLIGHT BOX ═══ */
+.spotlight-box{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-left:4px solid var(--gold);border-radius:4px;
+  padding:22px 26px;margin:2.2em 0;
+}
+.spotlight-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:10px;
+}
+.spotlight-text{font-style:italic;color:#fff;font-size:.95rem;line-height:1.6;margin:0}
+
+/* ═══ PULL QUOTE ═══ */
+.pull-quote{
+  text-align:center;margin:2.5em auto;max-width:400px;padding:20px 10px;
+  border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
+}
+.pull-quote p{
+  font-family:var(--sans);font-size:1rem;font-weight:600;
+  font-style:italic;color:var(--gold);line-height:1.5;
+  text-indent:0!important;text-align:center!important;margin:0;
+}
+
+/* ═══ PATTERN INTERRUPT ═══ */
+.pattern-interrupt{
+  background:linear-gradient(180deg,#060B14,var(--navy2));
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:60px 40px;break-before:page;break-after:page;
+}
+.pi-content{text-align:center;max-width:440px}
+.pi-number{
+  font-family:var(--sans);font-size:5rem;font-weight:200;
+  color:var(--gold);text-shadow:0 0 35px rgba(201,168,76,.18);letter-spacing:3px;
+}
+.pi-unit{font-family:var(--sans);font-size:.72rem;letter-spacing:4px;color:var(--gold);font-weight:300;margin-bottom:18px}
+.pi-text{font-style:italic;color:var(--gray-blue);font-size:.82rem;line-height:1.65;margin:22px 0 12px}
+.pi-source{font-size:.6rem;color:var(--dim);margin-bottom:25px}
+.pi-wyajd{
+  color:#fff;font-style:italic;font-size:.75rem;margin-top:28px;line-height:1.55;
+  border-top:1px solid rgba(201,168,76,.25);padding-top:18px;
+}
+
+/* ═══ WHAT YOU JUST DID ═══ */
+.wyajd{display:flex;gap:14px;margin:2.2em 0;padding:14px 0 14px 18px}
+.wyajd-bar{width:3px;background:var(--gold);opacity:.6;flex-shrink:0;border-radius:2px}
+.wyajd-text{font-style:italic;font-size:.88rem;line-height:1.55;margin:0;text-indent:0!important}
+
+/* ═══ KEY READ ═══ */
+.key-read{margin:3em auto 1.5em;max-width:380px;text-align:center}
+.kr-rule{width:180px;height:1px;background:var(--gold);opacity:.35;margin:0 auto}
+.kr-text{
+  font-style:italic;color:var(--gold);font-size:.92rem;
+  font-weight:600;line-height:1.55;padding:18px 8px;margin:0;text-indent:0!important;
+}
+
+/* ═══ GOLD / META ═══ */
+.gold,em.gold{color:var(--gold);font-weight:600;font-style:normal}
+
+.meta-summary{margin:2em 0}
+.meta-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:9px 0;border-bottom:1px solid rgba(201,168,76,.12);font-size:.88rem;
+}
+.meta-label{font-family:var(--sans);font-size:.58rem;letter-spacing:2px;color:var(--dim);text-transform:uppercase}
+
+.meta-finale{text-align:center;margin:4.5em 0;padding:45px 20px}
+.finale-1{color:var(--gold);font-size:1.08rem;font-style:italic;margin:0 0 2em!important;text-indent:0!important;text-align:center!important}
+.finale-2{
+  color:var(--gold);font-size:1.18rem;font-style:italic;font-weight:600;
+  margin:0 0 2.5em!important;text-indent:0!important;text-align:center!important;
+  text-shadow:0 0 25px rgba(201,168,76,.12);
+}
+.finale-3{
+  font-family:var(--sans);font-size:1.05rem;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+  margin:0!important;text-indent:0!important;text-align:center!important;
+}
+
+/* ═══ PAGE FOOTER ═══ */
+.page-footer{
+  font-family:var(--sans);font-size:.45rem;letter-spacing:3.5px;
+  color:var(--dim);text-align:center;padding:28px 0 8px;margin-top:35px;
+}
+
+/* ═══ TOC ═══ */
+.toc{max-width:480px;margin:0 auto;padding:60px 36px;break-after:page}
+.toc h2{
+  font-family:var(--sans);font-size:.85rem;font-weight:700;
+  letter-spacing:7px;color:var(--gold);text-align:center;margin-bottom:3em;text-transform:uppercase;
+}
+.toc-list{list-style:none}
+.toc-part{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:3px;color:var(--dim);margin:2em 0 .3em;
+  padding-top:1em;border-top:1px solid var(--rule);
+}
+.toc-sub{display:block;font-weight:400;letter-spacing:1px;font-size:.58rem;color:var(--gray-blue);margin-top:2px}
+.toc-ch{
+  display:flex;align-items:baseline;padding:5px 0 5px 16px;font-size:.82rem;
+}
+.toc-num{color:var(--gold);font-weight:600;min-width:32px;flex-shrink:0}
+.toc-title{flex-shrink:0}
+.toc-dots{
+  flex-grow:1;margin:0 8px;
+  border-bottom:1px dotted var(--rule);min-width:20px;
+}
+
+/* ═══ FRONT MATTER ═══ */
+.front-matter{max-width:520px;margin:0 auto;padding:60px 36px;break-before:page}
+.front-matter h2{
+  font-family:var(--sans);font-size:1rem;font-weight:700;
+  letter-spacing:5px;color:var(--gold);text-align:center;margin-bottom:2.5em;
+}
+.front-matter p{margin-bottom:.9em;font-size:.92rem;line-height:1.6}
+
+/* ═══ DEFINITIONS PAGE ═══ */
+.definitions{
+  max-width:440px;margin:0 auto;padding:100px 36px 60px;
+  text-align:center;break-before:page;break-after:page;
+}
+.def-word{font-family:var(--sans);font-size:.85rem;letter-spacing:5px;color:var(--dim);margin-bottom:6px}
+.def-phonetic{font-size:.72rem;color:var(--gray-blue);margin-bottom:3px}
+.def-pos{font-size:.72rem;color:var(--dim);font-style:italic;margin-bottom:14px}
+.def-meaning{font-size:.88rem;line-height:1.65;max-width:380px;margin:0 auto 50px}
+
+/* ═══ BACK COVER ═══ */
+.back-cover{
+  background:linear-gradient(180deg,var(--navy),var(--navy2));
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:60px 40px;
+  break-before:page;
+}
+.back-blurb{
+  color:var(--gray-blue);font-style:italic;font-size:.78rem;
+  max-width:380px;text-align:center;line-height:1.65;margin:18px 0;
+}
+.hidden-text{color:rgba(255,255,255,.06);font-style:italic;font-size:.68rem;margin-top:35px}
+
+/* ═══ COLOR TEMP SHIFTS ═══ */
+[data-part="1"] .section-header,[data-part="2"] .section-header{border-bottom-color:var(--blue)}
+[data-part="1"] .felt-before,[data-part="2"] .felt-before{border-color:rgba(26,143,168,.25)}
+[data-part="1"] .felt-label,[data-part="2"] .felt-label{color:var(--blue)}
+[data-part="7"] .chapter-number,[data-part="8"] .chapter-number{color:#D4A030}
+[data-part="7"] .spotlight-box,[data-part="8"] .spotlight-box{border-left-color:#D4A030}
+[data-part="7"] .section-header,[data-part="8"] .section-header{border-bottom-color:#D4A030}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px){
+  .chapter-body,.front-matter{padding:28px 18px}
+  .chapter-number{font-size:3.2rem}
+  .chapter-title{font-size:.9rem;letter-spacing:3px}
+  .cover .title{font-size:1.9rem}
+  .pi-number{font-size:3.5rem}
+}
+'''
+
+
+# ═══════════════════════════════════════════════════════════
+# MAIN BUILDER
+# ═══════════════════════════════════════════════════════════
 
 def build_book(manuscript_path, output_path):
-    """Build the complete designed HTML book."""
     print("Parsing manuscript...")
     sections = parse_manuscript(manuscript_path)
     print(f"Found {len(sections)} sections")
 
-    css = generate_css()
-
-    html_parts = [f'''<!DOCTYPE html>
+    html = [f'''<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Architecture of Wonder — Decode Behavior</title>
-    <style>{css}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Architecture of Wonder \u2014 Decode Behavior</title>
+<style>{CSS}</style>
 </head>
 <body>
 ''']
 
     # ── FRONT COVER ──
-    html_parts.append('''
-    <div class="front-cover">
-        <div class="author-name">C H R I S &nbsp; M I C H A E L</div>
-        <div class="gold-rule"></div>
-        <div class="book-title">THE<br>ARCHITECTURE<br>OF WONDER</div>
-        <div class="gold-rule"></div>
-        <div class="book-subtitle">THE BEHAVIORAL SCIENCE OF<br>PERFORMANCE &amp; PERCEPTION</div>
-        <div class="gold-rule"></div>
-        <div class="icon-row">
-            <span>BP</span>
-            <span>CR</span>
-            <span>VS</span>
-            <span>AM</span>
-        </div>
-        <div class="tagline">D E C O D E &nbsp; B E H A V I O R</div>
-    </div>
-    ''')
+    html.append('''<section class="cover">
+  <div class="author">C H R I S \u2003 M I C H A E L</div>
+  <div class="rule"></div>
+  <div class="title">THE<br>ARCHITECTURE<br>OF WONDER</div>
+  <div class="rule"></div>
+  <div class="subtitle">A BEHAVIORAL GUIDE TO ATTENTION,<br>SUGGESTION, AND ASTONISHMENT</div>
+  <div class="rule"></div>
+  <div class="icons"><span>BP</span><span>CR</span><span>VS</span><span>AM</span></div>
+  <div class="tagline">D E C O D E \u2003 B E H A V I O R</div>
+</section>''')
 
-    # ── DEFINITIONS PAGE ──
-    html_parts.append('''
-    <div class="chapter-body" style="page-break-before: always; padding-top: 120px;">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <p style="font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 4px; color: var(--dim-gray); margin-bottom: 30px;">wonder</p>
-            <p style="font-size: 0.75rem; color: var(--text-gray-blue); margin-bottom: 5px;">/ˈwʌndər/</p>
-            <p style="font-size: 0.75rem; color: var(--dim-gray); margin-bottom: 15px; font-style: italic;">noun</p>
-            <p style="max-width: 400px; margin: 0 auto 50px; font-size: 0.9rem; line-height: 1.6;">A feeling of surprise mingled with admiration, caused by something beautiful, unexpected, unfamiliar, or inexplicable. The state of being open to what cannot yet be explained.</p>
+    # ── DEFINITIONS ──
+    html.append('''<section class="definitions">
+  <p class="def-word">wonder</p>
+  <p class="def-phonetic">/\u02c8w\u028cnd\u0259r/</p>
+  <p class="def-pos">noun</p>
+  <p class="def-meaning">A feeling of surprise mingled with admiration, caused by something beautiful, unexpected, unfamiliar, or inexplicable. The state of being open to what cannot yet be explained.</p>
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
+  <p class="def-word">architecture</p>
+  <p class="def-phonetic">/\u02c8\u0251\u02d0rk\u026atekt\u0283\u0259r/</p>
+  <p class="def-pos">noun</p>
+  <p class="def-meaning">The complex or carefully designed structure of something. The deliberate arrangement of elements to produce a specific experience in the person who moves through it.</p>
+</section>''')
 
-            <div class="section-break">· · ·</div>
+    # ── TOC ──
+    html.append(gen_toc(sections))
 
-            <p style="font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 4px; color: var(--dim-gray); margin-bottom: 30px;">architecture</p>
-            <p style="font-size: 0.75rem; color: var(--text-gray-blue); margin-bottom: 5px;">/ˈɑːrkɪtektʃər/</p>
-            <p style="font-size: 0.75rem; color: var(--dim-gray); margin-bottom: 15px; font-style: italic;">noun</p>
-            <p style="max-width: 400px; margin: 0 auto 50px; font-size: 0.9rem; line-height: 1.6;">The complex or carefully designed structure of something. The deliberate arrangement of elements to produce a specific experience in the person who moves through it.</p>
-        </div>
-    </div>
-    ''')
-
-    # ── TABLE OF CONTENTS ──
-    html_parts.append(generate_toc(sections))
-
-    # ── BOOK CONTENT ──
-    paragraph_count = 0
+    # ── CONTENT ──
+    global_para = 0
 
     for section in sections:
-        sec_type = section['type']
+        stype = section['type']
+        part_num = section.get('part_num', 0)
 
-        if sec_type == 'front_matter':
-            # Acknowledgments
-            html_parts.append('<div class="front-matter-body" style="page-break-before: always;">')
-            html_parts.append(f'<h2>{escape(section["title"].upper())}</h2>')
+        if stype == 'front_matter':
+            html.append(f'<section class="front-matter"><h2>{escape(section["title"].upper())}</h2>')
             for para in section['content']:
                 if para.strip():
-                    html_parts.append(f'<p>{escape(para.strip())}</p>')
-            html_parts.append('</div>')
+                    html.append(f'<p>{escape(para.strip())}</p>')
+            html.append('</section>')
 
-        elif sec_type == 'part':
-            # Part opener
-            html_parts.append(generate_part_opener(section))
-            # Part content (Field Notes, NPM, etc.)
-            if section['content']:
-                html_parts.append(f'<div class="chapter-body" data-part="{section["part_num"]}">')
-                for para in section['content']:
-                    processed = process_paragraph(para, section['part_num'])
+        elif stype == 'part':
+            html.append(gen_part_opener(section))
+            # Part body content (Field Notes, NPM)
+            content_paras = [p for p in section['content'] if p.strip()]
+            if content_paras:
+                html.append(f'<article class="chapter-body" data-part="{part_num}">')
+                html.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
+                for para in content_paras:
+                    processed = process_paragraph(para, part_num)
                     if processed:
-                        html_parts.append(processed)
-                html_parts.append('</div>')
+                        html.append(processed)
+                html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
+                html.append('</article>')
 
-        elif sec_type == 'chapter':
-            # Chapter opener
-            html_parts.append(generate_chapter_opener(section))
-            # Chapter body
-            html_parts.append(f'<div class="chapter-body" data-part="{section["part_num"]}">')
-            body, paragraph_count = build_chapter_body(section, paragraph_count)
-            html_parts.append(body)
-            html_parts.append('<div class="page-footer">THE ARCHITECTURE OF WONDER &nbsp;|&nbsp; DECODE BEHAVIOR</div>')
-            html_parts.append('</div>')
+        elif stype == 'chapter':
+            html.append(gen_chapter_opener(section))
+            html.append(f'<article class="chapter-body" data-part="{part_num}">')
+            body, global_para = build_chapter_body(section, global_para)
+            html.append(body)
+            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
+            html.append('</article>')
 
-        elif sec_type == 'glossary':
-            html_parts.append(generate_chapter_opener({
-                'type': 'chapter', 'chapter_num': 0, 'part_num': 9,
-                'title': 'Glossary', 'chapter_key': 'GLOSSARY'
+        elif stype == 'glossary':
+            html.append(gen_chapter_opener({
+                'type':'chapter','chapter_num':0,'part_num':9,
+                'title':'Glossary','chapter_key':'GLOSSARY'
             }))
-            html_parts.append('<div class="chapter-body glossary-body">')
+            html.append('<article class="chapter-body">')
+            html.append('<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>GLOSSARY</span></header>')
             for para in section['content']:
                 if para.strip():
-                    html_parts.append(f'<p>{escape(para.strip())}</p>')
-            html_parts.append('</div>')
+                    html.append(f'<p>{escape(para.strip())}</p>')
+            html.append('</article>')
 
-        elif sec_type == 'about':
-            html_parts.append('<div class="chapter-body" style="page-break-before: always;">')
-            html_parts.append('<h3 class="section-header" style="display: block; text-align: center;">ABOUT THE AUTHOR</h3>')
+        elif stype == 'about':
+            html.append('<article class="chapter-body" style="break-before:page">')
+            html.append('<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>ABOUT THE AUTHOR</span></header>')
+            html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
             for para in section['content']:
                 if para.strip():
-                    html_parts.append(f'<p>{escape(para.strip())}</p>')
-            html_parts.append('</div>')
+                    html.append(f'<p>{escape(para.strip())}</p>')
+            html.append('</article>')
 
     # ── META REVEAL ──
-    html_parts.append(generate_meta_reveal())
+    html.append(META_REVEAL_HTML)
 
     # ── BACK COVER ──
-    html_parts.append('''
-    <div class="front-cover" style="page-break-before: always;">
-        <div class="gold-rule"></div>
-        <div class="book-title" style="font-size: 1.8rem;">THE ARCHITECTURE<br>OF WONDER</div>
-        <div class="gold-rule"></div>
-        <p style="color: var(--text-gray-blue); font-style: italic; font-size: 0.8rem; max-width: 400px; text-align: center; line-height: 1.6; margin: 20px 0;">
-            Every design decision in this book demonstrates the psychology it teaches.
-            The colors, the typography, the layout, the pattern interrupts — all of it
-            was engineered using the same behavioral architecture you just learned to build.
-        </p>
-        <div class="gold-rule"></div>
-        <p style="color: rgba(255,255,255,0.08); font-style: italic; font-size: 0.7rem; margin-top: 40px;">
-            You're already reading people. You just proved it.
-        </p>
-        <div class="tagline" style="margin-top: 60px;">D E C O D E &nbsp; B E H A V I O R</div>
-    </div>
-    ''')
+    html.append('''<section class="back-cover">
+  <div class="rule" style="width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:22px 0"></div>
+  <div class="title" style="font-family:var(--sans);font-size:1.6rem;font-weight:700;letter-spacing:5px;color:var(--gold);text-align:center;margin:18px 0">THE ARCHITECTURE<br>OF WONDER</div>
+  <div class="rule" style="width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:22px 0"></div>
+  <p class="back-blurb">Every design decision in this book demonstrates the psychology it teaches. The colors, the typography, the layout, the pattern interrupts\u2009\u2014\u2009all of it was engineered using the same behavioral architecture you just learned to build.</p>
+  <div class="rule" style="width:120px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:18px 0"></div>
+  <p class="hidden-text">You\u2019re already reading people. You just proved it.</p>
+  <div class="tagline" style="font-family:var(--sans);font-size:.5rem;letter-spacing:6px;color:var(--dim);margin-top:50px">D E C O D E \u2003 B E H A V I O R</div>
+</section>''')
 
-    html_parts.append('</body></html>')
+    html.append('</body></html>')
 
-    full_html = '\n'.join(html_parts)
-
+    full = '\n'.join(html)
     with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(full_html)
+        f.write(full)
 
     print(f"Book written to {output_path}")
-    print(f"File size: {len(full_html):,} characters")
-    return len(full_html)
+    print(f"Size: {len(full):,} chars ({len(full)//1024} KB)")
 
 
 if __name__ == '__main__':
-    manuscript = '/home/user/Architecture-of-wonder/manuscript-extracted.txt'
-    output = '/home/user/Architecture-of-wonder/Architecture-of-Wonder-DESIGNED.html'
-    build_book(manuscript, output)
+    build_book(
+        '/home/user/Architecture-of-wonder/manuscript-extracted.txt',
+        '/home/user/Architecture-of-wonder/Architecture-of-Wonder-DESIGNED.html'
+    )
