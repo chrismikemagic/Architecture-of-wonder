@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" font-family="'Georgia', 'Garamond', serif">
+  <defs>
+    <linearGradient id="coverBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050A12"/>
+      <stop offset="100%" stop-color="#0A1520"/>
+    </linearGradient>
+    <linearGradient id="goldSheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8943F"/>
+      <stop offset="40%" stop-color="#D4B55A"/>
+      <stop offset="60%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A8882F"/>
+    </linearGradient>
+    <linearGradient id="spotUvSheen" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="emboss">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
+      <feOffset in="blur" dx="1" dy="1" result="offsetBlur"/>
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+    </filter>
+    <filter id="goldGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FRONT COVER                             -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Dark base — soft-touch matte lamination -->
+  <rect width="600" height="900" fill="url(#coverBg)"/>
+
+  <!-- Subtle texture overlay to suggest matte finish -->
+  <rect width="600" height="900" fill="url(#spotUvSheen)" opacity="0.3"/>
+
+  <!-- Design annotation: SOFT-TOUCH MATTE LAMINATION -->
+  <rect x="10" y="10" width="200" height="20" rx="3" fill="#C9A84C" opacity="0.15"/>
+  <text x="15" y="24" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1" opacity="0.8">SOFT-TOUCH MATTE LAMINATION</text>
+
+  <!-- Thin decorative lines — gold, very subtle -->
+  <line x1="80" y1="180" x2="520" y2="180" stroke="#C9A84C" stroke-width="0.3" opacity="0.4"/>
+
+  <!-- Author name — upper portion -->
+  <text x="300" y="160" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="12" letter-spacing="6" font-weight="300">CHRIS MIKE MAGIC</text>
+
+  <!-- Main title — EMBOSSED + SPOT UV -->
+  <text x="300" y="310" text-anchor="middle" fill="url(#goldSheen)" font-family="'Montserrat', 'Calibri', sans-serif" font-size="38" font-weight="700" letter-spacing="4" filter="url(#emboss)">THE</text>
+  <text x="300" y="370" text-anchor="middle" fill="url(#goldSheen)" font-family="'Montserrat', 'Calibri', sans-serif" font-size="38" font-weight="700" letter-spacing="4" filter="url(#emboss)">ARCHITECTURE</text>
+  <text x="300" y="430" text-anchor="middle" fill="url(#goldSheen)" font-family="'Montserrat', 'Calibri', sans-serif" font-size="38" font-weight="700" letter-spacing="4" filter="url(#emboss)">OF WONDER</text>
+
+  <!-- Spot UV indicator overlay on title -->
+  <rect x="100" y="278" width="400" height="170" rx="4" fill="url(#spotUvSheen)" opacity="0.5"/>
+
+  <!-- Design annotation: SPOT UV + EMBOSS -->
+  <rect x="420" y="290" width="120" height="16" rx="3" fill="#C9A84C" opacity="0.15"/>
+  <text x="425" y="302" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="6" letter-spacing="1" opacity="0.8">SPOT UV + EMBOSS</text>
+
+  <!-- Thin gold line under title -->
+  <line x1="180" y1="455" x2="420" y2="455" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Subtitle -->
+  <text x="300" y="495" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="11" letter-spacing="3" font-weight="300">THE BEHAVIORAL SCIENCE OF</text>
+  <text x="300" y="515" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="11" letter-spacing="3" font-weight="300">PERFORMANCE &amp; PERCEPTION</text>
+
+  <!-- Thin line -->
+  <line x1="80" y1="560" x2="520" y2="560" stroke="#C9A84C" stroke-width="0.3" opacity="0.4"/>
+
+  <!-- Observation icons as subtle decorative elements -->
+  <g transform="translate(210, 580)" opacity="0.3">
+    <!-- BP eye -->
+    <ellipse cx="12" cy="8" rx="7" ry="5" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+    <circle cx="12" cy="8" r="2.5" fill="#C9A84C"/>
+  </g>
+  <g transform="translate(260, 580)" opacity="0.3">
+    <!-- CR profile -->
+    <circle cx="12" cy="5" r="4" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+    <path d="M4,16 Q4,10 12,10 Q20,10 20,16" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+  </g>
+  <g transform="translate(310, 580)" opacity="0.3">
+    <!-- VS waveform -->
+    <path d="M2,8 L5,4 L7,12 L9,2 L11,14 L13,5 L15,10 L18,8" fill="none" stroke="#C9A84C" stroke-width="0.6"/>
+  </g>
+  <g transform="translate(360, 580)" opacity="0.3">
+    <!-- AM arrow -->
+    <path d="M4,8 L18,8 M14,3 L19,8 L14,13" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+  </g>
+
+  <!-- DECODE BEHAVIOR tagline -->
+  <text x="300" y="620" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="4">DECODE BEHAVIOR</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- BACK COVER — SPOT UV HIDDEN MESSAGE     -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Separator indicating back cover zone -->
+  <line x1="0" y1="680" x2="600" y2="680" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+  <rect x="230" y="672" width="140" height="16" fill="#050A12"/>
+  <text x="300" y="684" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">BACK COVER ZONE</text>
+
+  <!-- Hidden message — rendered in near-invisible spot UV simulation -->
+  <!-- In production: this is SPOT UV ONLY on matte background — invisible until tilted -->
+  <rect x="100" y="730" width="400" height="50" rx="4" fill="url(#spotUvSheen)" opacity="0.15"/>
+
+  <text x="300" y="752" text-anchor="middle" fill="#FFFFFF" opacity="0.08" font-family="'Georgia', 'Garamond', serif" font-size="11" font-style="italic">You're already reading people. You just proved it.</text>
+
+  <!-- Design annotation -->
+  <rect x="100" y="790" width="400" height="40" rx="4" fill="none" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="4,2" opacity="0.4"/>
+  <text x="300" y="808" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1" opacity="0.8">SPOT UV HIDDEN TEXT — VISIBLE ONLY BY TOUCH OR TILTING IN LIGHT</text>
+  <text x="300" y="822" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="6" opacity="0.6">Clear gloss coating on matte background. Reader discovers by feel or reflected light.</text>
+
+  <!-- Edge printing indicator -->
+  <rect x="594" y="0" width="6" height="128" fill="#6B7B8F" opacity="0.4"/>
+  <rect x="594" y="128" width="6" height="128" fill="#1A8FA8" opacity="0.3"/>
+  <rect x="594" y="256" width="6" height="96" fill="#8A9070" opacity="0.3"/>
+  <rect x="594" y="352" width="6" height="128" fill="#C9A84C" opacity="0.3"/>
+  <rect x="594" y="480" width="6" height="96" fill="#D4A030" opacity="0.3"/>
+  <rect x="594" y="576" width="6" height="104" fill="#B8882F" opacity="0.3"/>
+
+  <!-- Edge printing annotation -->
+  <text x="586" y="340" text-anchor="end" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="6" letter-spacing="1" opacity="0.5" transform="rotate(-90, 586, 340)">FORE-EDGE THUMB INDEX — 7 PARTS</text>
+
+  <!-- Footer -->
+  <text x="300" y="880" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">COVER DESIGN CONCEPT  |  THE ARCHITECTURE OF WONDER</text>
+</svg>
