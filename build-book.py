@@ -465,6 +465,36 @@ def parse_manuscript(filepath):
 # HTML GENERATORS
 # ═══════════════════════════════════════════════════════════
 
+
+
+# ── SVG margin icons ──
+def _svg_bp():
+    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>'
+def _svg_cr():
+    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>'
+def _svg_vs():
+    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+def _svg_am():
+    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+
+def _opener_legend():
+    return (
+        '<div class="opener-legend">'
+        '<div class="tier-row">'
+        '<span class="badge t1">T1</span>'
+        '<span class="badge t2">T2</span>'
+        '<span class="badge t3">T3</span>'
+        '<span class="badge t4">T4</span>'
+        '</div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div>'
+        '<div class="icon-row">'
+        f'<span class="icon-item">{_svg_bp()}<span class="icon-code bp">BP</span></span>'
+        f'<span class="icon-item">{_svg_cr()}<span class="icon-code cr">CR</span></span>'
+        f'<span class="icon-item">{_svg_vs()}<span class="icon-code vs">VS</span></span>'
+        f'<span class="icon-item">{_svg_am()}<span class="icon-code am">AM</span></span>'
+        '</div><div class="legend-label">OBSERVATION CATEGORIES</div>'
+        '</div>'
+    )
+
 def gen_chapter_opener(section):
     ch_num = section.get('chapter_num', 0)
     part_num = section.get('part_num', 0)
@@ -481,6 +511,7 @@ def gen_chapter_opener(section):
     else:
         ch_display = '\u2726'  # diamond for intro
 
+    legend = _opener_legend()
     return f'''<section class="chapter-opener" data-part="{part_num}">
   <div class="opener-content">
     <div class="part-label">{escape(part_label)}</div>
@@ -489,6 +520,7 @@ def gen_chapter_opener(section):
     <h1 class="chapter-title">{escape(title.upper())}</h1>
     <div class="gold-line thin"></div>
     <div class="hook-line">{hook}</div>
+    {legend}
   </div>
 </section>'''
 
@@ -595,7 +627,18 @@ def process_paragraph(text, part_num=1):
     for c_word in ['Context', 'Clusters', 'Congruence', 'Consistency', 'Culture']:
         t = re.sub(rf'\b({c_word})\b(?=[^<]*(?:<|$))', rf'<span class="five-c">\1</span>', t, count=1)
 
-    return f'<p>{t}</p>'
+    # Inline margin icon — float into outer margin
+    icon_html = ''
+    tl = stripped.lower()
+    if any(w in tl for w in ['posture', 'stance', 'shoe', 'handedness', 'physical', 'body language', 'clothing', 'gait', 'grip']):
+        icon_html = _svg_bp()
+    elif any(w in tl for w in ['personality', 'character', 'profile', 'behavioral style', 'disc', 'introvert', 'extrovert']):
+        icon_html = _svg_cr()
+    elif any(w in tl for w in ['verbal', 'speech', 'words', 'vocal', 'tone of voice', 'language pattern', 'phrasing']):
+        icon_html = _svg_vs()
+    elif any(w in tl for w in ['motivation', 'compliance', 'action', 'decision', 'drive', 'goal-oriented', 'directive']):
+        icon_html = _svg_am()
+    return f'<p>{icon_html}{t}</p>' 
 
 
 def is_tier_definition(text):
@@ -969,7 +1012,7 @@ def gen_toc(sections):
 # ═══════════════════════════════════════════════════════════
 
 CSS = r'''
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -980,7 +1023,7 @@ CSS = r'''
   --red:#A83030; --purple:#6B52A0;
   --gray-blue:#8A9AB5; --dim:#3A4A5C;
   --body-color:#2A2520; --rule:#D8D0C4;
-  --serif:'EB Garamond','Georgia','Garamond',serif;
+  --serif:'Cormorant Garamond','Georgia','Times New Roman',serif;
   --sans:'Montserrat','Calibri','Helvetica Neue',sans-serif;
 }
 
@@ -988,11 +1031,16 @@ html{font-size:11.5pt;-webkit-font-smoothing:antialiased}
 body{font-family:var(--serif);color:var(--body-color);background:var(--cream);line-height:1.6;overflow-x:hidden}
 
 /* ═══ PRINT ═══ */
-@page{size:6in 9in;margin:.72in .95in .68in .72in}
+@page{size:6in 9in;margin:20mm 25mm 18mm 18mm}
+@page :left{margin-left:25mm;margin-right:18mm}
+@page :right{margin-left:18mm;margin-right:25mm}
+body{counter-reset:page}
+.chapter-body,.front-matter{counter-increment:page}
 @media print{
   body{background:#fff}
   .chapter-opener,.part-opener,.pattern-interrupt{break-before:page;break-after:page}
-  .key-read,.spotlight-box{break-inside:avoid}
+  .key-read,.spotlight-box,.tier-block,.concept-box{break-inside:avoid}
+  h3.section-header{break-after:avoid}
 }
 
 /* ═══ COVER ═══ */
@@ -1072,11 +1120,13 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 
 /* ═══ RUNNING HEADER ═══ */
 .running-header{
-  font-family:var(--sans);font-size:.5rem;letter-spacing:2.5px;
-  color:var(--gray-blue);display:flex;justify-content:space-between;
+  font-family:var(--sans);font-size:.48rem;letter-spacing:2.5px;
+  color:var(--gray-blue);display:flex;justify-content:space-between;align-items:baseline;
   padding-bottom:8px;margin-bottom:28px;
   border-bottom:.5px solid var(--rule);
 }
+.running-header span:first-child{font-weight:300;opacity:.7}
+.running-header span:last-child{font-weight:500}
 
 /* ═══ DROP CAP ═══ */
 .drop-cap{
@@ -1408,13 +1458,61 @@ body{font-family:var(--serif);color:var(--body-color);background:var(--cream);li
 .chain-note{font-size:.65rem;color:var(--gray-blue);margin:0 0 4px;text-indent:0!important;text-align:center!important}
 .chain-note-gold{font-size:.65rem;color:var(--gold);font-style:italic;margin:0;text-indent:0!important;text-align:center!important}
 
-/* ═══ COLOR TEMP SHIFTS ═══ */
+/* ═══ COLOR TEMPERATURE ARC (cool blue → warm gold) ═══ */
+/* Parts 1-2: Clinical steel blue */
 [data-part="1"] .section-header,[data-part="2"] .section-header{border-bottom-color:var(--blue)}
 [data-part="1"] .felt-before,[data-part="2"] .felt-before{border-color:rgba(26,143,168,.25)}
 [data-part="1"] .felt-label,[data-part="2"] .felt-label{color:var(--blue)}
-[data-part="7"] .chapter-number,[data-part="8"] .chapter-number{color:#D4A030}
-[data-part="7"] .spotlight-box,[data-part="8"] .spotlight-box{border-left-color:#D4A030}
-[data-part="7"] .section-header,[data-part="8"] .section-header{border-bottom-color:#D4A030}
+[data-part="1"] .obs-ref,[data-part="2"] .obs-ref{color:var(--blue)}
+/* Part 3: Transitional — blue-gold blend */
+[data-part="3"] .section-header{border-bottom-color:#8BAAB8}
+[data-part="3"] .chapter-number{color:#B8A060}
+/* Parts 4-5: Applied gold — mastery */
+[data-part="4"] .key-read .kr-text,[data-part="5"] .key-read .kr-text{color:#C9A84C}
+[data-part="4"] .chapter-number,[data-part="5"] .chapter-number{color:var(--gold)}
+/* Parts 6-7: Authority — deep warm gold */
+[data-part="6"] .section-header,[data-part="7"] .section-header{border-bottom-color:#D4A030}
+[data-part="6"] .chapter-number,[data-part="7"] .chapter-number{color:#D4A030}
+[data-part="6"] .spotlight-box,[data-part="7"] .spotlight-box{border-left-color:#D4A030}
+[data-part="6"] .key-read .kr-text,[data-part="7"] .key-read .kr-text{color:#D4A030}
+/* Part 8: Full command — amber */
+[data-part="8"] .section-header{border-bottom-color:#C8901A}
+[data-part="8"] .chapter-number{color:#C8901A}
+[data-part="8"] .spotlight-box{border-left-color:#C8901A}
+[data-part="8"] .key-read .kr-text{color:#C8901A}
+
+/* ═══ CHAPTER OPENER LEGEND ═══ */
+.opener-legend{
+  margin-top:40px;padding-top:22px;
+  border-top:1px solid rgba(201,168,76,.18);
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+}
+.opener-legend .tier-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+.opener-legend .icon-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.opener-legend .legend-label{
+  font-family:var(--sans);font-size:.42rem;letter-spacing:3px;
+  color:var(--dim);text-transform:uppercase;margin-top:4px;
+}
+.icon-item{display:flex;align-items:center;gap:5px}
+.icon-item svg{opacity:.7}
+.icon-item .icon-code{
+  font-family:var(--sans);font-size:.42rem;font-weight:700;
+  letter-spacing:1.5px;
+}
+.icon-item .icon-code.bp{color:var(--gold)}
+.icon-item .icon-code.cr{color:var(--blue)}
+.icon-item .icon-code.vs{color:var(--purple)}
+.icon-item .icon-code.am{color:var(--red)}
+
+/* ═══ INLINE MARGIN ICONS ═══ */
+.margin-icon{
+  float:right;clear:right;
+  margin:0 -18px 4px 12px;
+  opacity:.55;width:18px;height:18px;
+}
+@media print{
+  .margin-icon{margin-right:-22px}
+}
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:768px){
