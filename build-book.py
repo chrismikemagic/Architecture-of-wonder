@@ -734,6 +734,44 @@ def gen_bte_signal(name, code, drs, description):
     )
 
 
+def gen_radar_category(num, name, signals_text):
+    """Render a Six-Category Radar entry as a styled card with signal chips."""
+    raw_parts = [p.strip() for p in signals_text.split(' · ')]
+    if raw_parts and raw_parts[0].startswith('Signals: '):
+        raw_parts[0] = raw_parts[0][len('Signals: '):]
+    signals = []
+    insight = ''
+    for part in raw_parts:
+        m = re.match(r'^(.+?)\s*\[(T[1-4])\][.]?\s*(.*)$', part)
+        if m:
+            sig_name = m.group(1).strip().rstrip('.')
+            tier = m.group(2)
+            remainder = m.group(3).strip()
+            signals.append((sig_name, tier))
+            if remainder:
+                insight = remainder
+        elif signals:
+            insight = (insight + ' ' + part).strip() if insight else part
+    chip_html = ''.join(
+        f'<span class="rc-signal rc-{tier.lower()}">'
+        f'<span class="rc-name">{escape(sig_name)}</span>'
+        f'<span class="badge {tier.lower()}">{tier}</span>'
+        f'</span>'
+        for sig_name, tier in signals
+    )
+    insight_html = f'<p class="rc-insight">{escape(insight)}</p>' if insight else ''
+    return (
+        f'<div class="radar-category">'
+        f'<div class="rc-header">'
+        f'<span class="rc-num">{escape(num)}</span>'
+        f'<span class="rc-title">{escape(name)}</span>'
+        f'</div>'
+        f'<div class="rc-signals">{chip_html}</div>'
+        f'{insight_html}'
+        f'</div>'
+    )
+
+
 def gen_wyajd(text):
     return f'''<aside class="wyajd">
   <div class="wyajd-bar"></div>
@@ -949,9 +987,8 @@ def build_chapter_body(section, global_para_count):
     else:
         parts.append(f'<p>{first}</p>')
 
-    # ── FIVE Cs FRAMEWORK — inject at beginning of Chapter 7 ──
-    if chapter_num == 7:
-        parts.append(FIVE_CS_HTML)
+    # ── FIVE Cs FRAMEWORK — injected inline after first mention (see loop below) ──
+    five_cs_injected = False
 
     # Track for element insertion
     total = len(paragraphs)
@@ -988,6 +1025,17 @@ def build_chapter_body(section, global_para_count):
                     parts.append(gen_observation_table(rows))
                     i = j
                     continue
+
+        # ── SIX-CATEGORY RADAR CARDS ──
+        # Pattern: "01 — Category Name" followed by "signal [T#] · signal [T#] ... Insight."
+        radar_m = re.match(r'^(\d{2}) — (.+)$', stripped)
+        if radar_m and i + 1 < len(paragraphs):
+            next_para = paragraphs[i + 1].strip()
+            if ' · ' in next_para and '[T' in next_para:
+                parts.append(gen_radar_category(radar_m.group(1), radar_m.group(2), next_para))
+                i += 2
+                global_para_count += 2
+                continue
 
         # ── BTE CLUSTER SIGNAL ENTRIES ──
         # Pattern: "Signal Name (Code). DRS X.X. Description."
@@ -1133,6 +1181,11 @@ def build_chapter_body(section, global_para_count):
         processed = process_paragraph(para, part_num)
         if processed:
             parts.append(processed)
+
+        # ── FIVE Cs GRAPHIC — inject after first "Context. Clusters. Congruence..." sentence ──
+        if not five_cs_injected and stripped == 'Context. Clusters. Congruence. Consistency. Culture.':
+            parts.append(FIVE_CS_HTML)
+            five_cs_injected = True
 
         # ── FIGURE INJECTION — after section headers ──
         if is_section_header(stripped):
@@ -1778,6 +1831,50 @@ body{counter-reset:page}
 .bte-desc{
   font-size:.72rem;color:var(--gray-blue);
   line-height:1.5;margin:0;
+  text-indent:0!important;text-align:left!important;
+}
+/* ── SIX-CATEGORY RADAR ── */
+.radar-category{
+  background:linear-gradient(135deg,rgba(8,15,26,.85),rgba(13,30,48,.95));
+  border:1px solid rgba(26,143,168,.25);
+  border-left:3px solid var(--blue);
+  border-radius:6px;
+  padding:14px 18px;
+  margin:1.2em 0;
+  break-inside:avoid;
+}
+.rc-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid rgba(26,143,168,.2);
+}
+.rc-num{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  color:var(--blue);letter-spacing:.1em;
+  background:rgba(26,143,168,.15);
+  padding:2px 7px;border-radius:3px;
+}
+.rc-title{
+  font-family:var(--sans);font-size:.75rem;font-weight:700;
+  letter-spacing:.08em;color:#fff;text-transform:uppercase;
+}
+.rc-signals{
+  display:flex;flex-wrap:wrap;gap:5px 7px;margin-bottom:8px;
+}
+.rc-signal{
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:3px;padding:3px 7px;
+}
+.rc-name{
+  font-size:.7rem;color:rgba(255,255,255,.85);
+}
+.rc-insight{
+  margin:6px 0 0;font-size:.78rem;color:var(--gray-blue);
+  font-style:italic;line-height:1.55;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:7px;
   text-indent:0!important;text-align:left!important;
 }
 .bte-application{
