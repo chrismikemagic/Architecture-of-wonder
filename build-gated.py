@@ -184,26 +184,17 @@ GATE_JS = """
     }
   }
 
-  function showBook(data, skipAnimation) {
+  function showBook(data) {
     personalize(data.firstName);
 
-    if (skipAnimation) {
-      content.classList.add('visible');
-      overlay.style.display = 'none';
-      return;
-    }
-
-    // Phase 1: Fade out the form box
     var box = document.getElementById('gate-box');
     var nameReveal = document.getElementById('name-reveal');
     var revealText = document.getElementById('reveal-name-text');
-
     revealText.textContent = 'Chris Michael';
-    box.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-    box.style.opacity = '0';
-    box.style.transform = 'scale(0.95)';
 
-    setTimeout(function() {
+    var boxVisible = box.style.display !== 'none';
+
+    function startReveal() {
       box.style.display = 'none';
 
       // Phase 2: Name appears with pulse
@@ -223,7 +214,18 @@ GATE_JS = """
           overlay.style.display = 'none';
         }, 700);
       }, 1800);
-    }, 450);
+    }
+
+    if (boxVisible) {
+      // Phase 1: Fade out the form box first
+      box.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      box.style.opacity = '0';
+      box.style.transform = 'scale(0.95)';
+      setTimeout(startReveal, 450);
+    } else {
+      // Box already hidden (returning reader) — go straight to reveal
+      startReveal();
+    }
   }
 
   // Check localStorage for returning readers
@@ -231,7 +233,9 @@ GATE_JS = """
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) {}
 
   if (saved && saved.firstName && saved.email) {
-    showBook(saved, true);
+    // Hide the form box immediately, then play the animation
+    document.getElementById('gate-box').style.display = 'none';
+    showBook(saved);
   }
 
   form.addEventListener('submit', function(e) {
