@@ -618,9 +618,16 @@ def process_paragraph(text, part_num=1):
     if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
         return gen_performer_note()
 
-    # Section headers
+    # Section headers — 3 visual styles based on word count
     if is_section_header(stripped):
-        return f'<h3 class="section-header">{escape(stripped)}</h3>'
+        wc = len(stripped.split())
+        if wc <= 3:
+            sh_cls = 'sh-label'
+        elif wc <= 7:
+            sh_cls = 'sh-standard'
+        else:
+            sh_cls = 'sh-section'
+        return f'<h3 class="section-header {sh_cls}">{escape(stripped)}</h3>'
 
     t = escape(stripped)
 
@@ -1144,13 +1151,53 @@ body{counter-reset:page}
   color:var(--gold);line-height:.82;padding:5px 10px 0 0;
 }
 
-/* ═══ SECTION HEADER ═══ */
+/* ═══ SECTION HEADERS — 3 visual styles ═══ */
+
+/* Base (fallback) */
 .section-header{
-  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  font-family:var(--sans);font-size:.76rem;font-weight:700;
   letter-spacing:1.5px;color:var(--body-color);
+  display:inline-block;
   margin:2.2em 0 .85em;padding-bottom:5px;
-  border-bottom:2px solid var(--gold);display:inline-block;
+  border-bottom:2px solid var(--gold);
 }
+
+/* Style A — short label (1-3 words): centered, gold, wide-spaced, flanking rules */
+.section-header.sh-label{
+  display:block;text-align:center;text-transform:uppercase;
+  font-size:.6rem;font-weight:700;letter-spacing:5px;
+  color:var(--gold);
+  border:none;padding:0;
+  margin:2.8em 0 1.2em;
+}
+.section-header.sh-label::before,
+.section-header.sh-label::after{
+  content:'';display:block;
+  width:50px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
+  margin:7px auto;
+}
+
+/* Style B — medium section (4-7 words): standard left-align, bottom border */
+.section-header.sh-standard{
+  display:inline-block;
+  font-size:.76rem;font-weight:700;letter-spacing:1.5px;
+  color:var(--body-color);
+  border-bottom:2px solid var(--gold);
+  padding-bottom:5px;
+  margin:2.2em 0 .85em;
+}
+
+/* Style C — long descriptive (8+ words): full-width, left border only */
+.section-header.sh-section{
+  display:block;
+  font-size:.73rem;font-weight:600;letter-spacing:.8px;
+  color:var(--body-color);
+  border:none;border-left:3px solid var(--gold);
+  padding:.35em 0 .35em 14px;
+  margin:2.5em 0 .9em;
+}
+
 .meta-header{color:var(--gold)}
 
 /* ═══ SECTION BREAK ═══ */
@@ -1470,23 +1517,35 @@ body{counter-reset:page}
 
 /* ═══ COLOR TEMPERATURE ARC (cool blue → warm gold) ═══ */
 /* Parts 1-2: Clinical steel blue */
-[data-part="1"] .section-header,[data-part="2"] .section-header{border-bottom-color:var(--blue)}
+[data-part="1"] .section-header.sh-standard,[data-part="2"] .section-header.sh-standard{border-bottom-color:var(--blue)}
+[data-part="1"] .section-header.sh-section,[data-part="2"] .section-header.sh-section{border-left-color:var(--blue)}
+[data-part="1"] .section-header.sh-label,[data-part="2"] .section-header.sh-label{color:var(--blue)}
+[data-part="1"] .section-header.sh-label::before,[data-part="1"] .section-header.sh-label::after,
+[data-part="2"] .section-header.sh-label::before,[data-part="2"] .section-header.sh-label::after{
+  background:linear-gradient(90deg,transparent,rgba(26,143,168,.3),transparent)
+}
 [data-part="1"] .felt-before,[data-part="2"] .felt-before{border-color:rgba(26,143,168,.25)}
 [data-part="1"] .felt-label,[data-part="2"] .felt-label{color:var(--blue)}
 [data-part="1"] .obs-ref,[data-part="2"] .obs-ref{color:var(--blue)}
 /* Part 3: Transitional — blue-gold blend */
-[data-part="3"] .section-header{border-bottom-color:#8BAAB8}
+[data-part="3"] .section-header.sh-standard{border-bottom-color:#8BAAB8}
+[data-part="3"] .section-header.sh-section{border-left-color:#8BAAB8}
+[data-part="3"] .section-header.sh-label{color:#9BA870}
 [data-part="3"] .chapter-number{color:#B8A060}
 /* Parts 4-5: Applied gold — mastery */
 [data-part="4"] .key-read .kr-text,[data-part="5"] .key-read .kr-text{color:#C9A84C}
 [data-part="4"] .chapter-number,[data-part="5"] .chapter-number{color:var(--gold)}
 /* Parts 6-7: Authority — deep warm gold */
-[data-part="6"] .section-header,[data-part="7"] .section-header{border-bottom-color:#D4A030}
+[data-part="6"] .section-header.sh-standard,[data-part="7"] .section-header.sh-standard{border-bottom-color:#D4A030}
+[data-part="6"] .section-header.sh-section,[data-part="7"] .section-header.sh-section{border-left-color:#D4A030}
+[data-part="6"] .section-header.sh-label,[data-part="7"] .section-header.sh-label{color:#D4A030}
 [data-part="6"] .chapter-number,[data-part="7"] .chapter-number{color:#D4A030}
 [data-part="6"] .spotlight-box,[data-part="7"] .spotlight-box{border-left-color:#D4A030}
 [data-part="6"] .key-read .kr-text,[data-part="7"] .key-read .kr-text{color:#D4A030}
 /* Part 8: Full command — amber */
-[data-part="8"] .section-header{border-bottom-color:#C8901A}
+[data-part="8"] .section-header.sh-standard{border-bottom-color:#C8901A}
+[data-part="8"] .section-header.sh-section{border-left-color:#C8901A}
+[data-part="8"] .section-header.sh-label{color:#C8901A}
 [data-part="8"] .chapter-number{color:#C8901A}
 [data-part="8"] .spotlight-box{border-left-color:#C8901A}
 [data-part="8"] .key-read .kr-text{color:#C8901A}
