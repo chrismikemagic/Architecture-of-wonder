@@ -122,7 +122,7 @@ GATE_HTML = """
       <input type="email" id="gate-email" name="email" placeholder="Email address" required autocomplete="email">
       <button type="submit">Read the Draft</button>
     </form>
-    <div class="gate-note">Your name personalizes the reading experience.<br>No spam. Just the book.</div>
+
   </div>
 </div>
 """
