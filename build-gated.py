@@ -117,9 +117,9 @@ GATE_HTML = """
     <div class="gate-subtitle">BEHAVIORAL PROFILING &middot; AUDIENCE PSYCHOLOGY &middot; PERFORMANCE CRAFT</div>
     <div class="gate-rule"></div>
     <div class="gate-desc">Read the unreleased draft. Enter your name and email to get access.</div>
-    <form id="gate-form">
-      <input type="text" id="gate-name" placeholder="First name" required autocomplete="given-name">
-      <input type="email" id="gate-email" placeholder="Email address" required autocomplete="email">
+    <form id="gate-form" name="readers" method="POST" data-netlify="true">
+      <input type="text" id="gate-name" name="name" placeholder="First name" required autocomplete="given-name">
+      <input type="email" id="gate-email" name="email" placeholder="Email address" required autocomplete="email">
       <button type="submit">Read the Draft</button>
     </form>
     <div class="gate-note">Your name personalizes the reading experience.<br>No spam. Just the book.</div>
@@ -172,6 +172,15 @@ GATE_JS = """
 
     var data = { firstName: firstName, email: email, ts: new Date().toISOString() };
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+
+    // Submit to Netlify Forms
+    var formData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    }).catch(function() {});
+
     showBook(data);
   });
 })();
