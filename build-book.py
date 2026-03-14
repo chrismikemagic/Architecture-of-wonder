@@ -1557,7 +1557,9 @@ def build_book(manuscript_path, output_path):
 
 
 if __name__ == '__main__':
+    import os as _os
+    _base = _os.path.dirname(_os.path.abspath(__file__))
     build_book(
-        '/home/user/Architecture-of-wonder/manuscript-extracted.txt',
-        '/home/user/Architecture-of-wonder/Architecture-of-Wonder-DESIGNED.html'
+        _os.path.join(_base, 'manuscript-extracted.txt'),
+        _os.path.join(_base, 'Architecture-of-Wonder-DESIGNED.html')
     )
