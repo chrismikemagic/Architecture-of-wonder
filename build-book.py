@@ -1571,7 +1571,12 @@ CSS = r'''
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: no-preference) {
+  html{scroll-behavior:smooth}
+}
+@media (pointer: coarse) {
+  html{scroll-behavior:auto}
+}
 
 :root{
   --navy:#080F1A; --navy2:#0D1E30;

@@ -222,7 +222,7 @@ GATE_JS = """
         unlockScroll();
         overlay.style.animation = 'zoomThrough 1s cubic-bezier(.4,0,.2,1) forwards';
         setTimeout(function() {
-          overlay.style.display = 'none';
+          overlay.remove();
         }, 1000);
       }, 3200);
     }
