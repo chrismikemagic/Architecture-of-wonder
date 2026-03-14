@@ -145,7 +145,7 @@ GATE_CSS = """
 }
 /* ═══ SCROLL LOCK + CONTENT ═══ */
 html.gate-locked { overflow: hidden; scroll-behavior: auto; }
-html.gate-locked body { overflow: hidden; position: fixed; width: 100%; }
+html.gate-locked body { overflow: hidden; }
 #book-content { display: none; }
 #book-content.visible { display: block; }
 """
