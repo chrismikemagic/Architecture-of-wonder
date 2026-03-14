@@ -36,8 +36,9 @@ GATE_CSS = """
   display: flex; align-items: center; justify-content: center;
   flex-direction: column; gap: 20px;
   opacity: 0; z-index: 2;
+  pointer-events: none;
 }
-#name-reveal.active { opacity: 1; }
+#name-reveal.active { opacity: 1; pointer-events: auto; }
 #name-reveal .reveal-logo {
   width: 260px; max-width: 70vw; height: auto;
   filter: drop-shadow(0 4px 24px rgba(0,0,0,.55))
