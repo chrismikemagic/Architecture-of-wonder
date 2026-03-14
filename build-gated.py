@@ -143,6 +143,9 @@ GATE_CSS = """
   font-family: var(--sans); font-size: .46rem; letter-spacing: 1px;
   color: rgba(58,74,92,.8); margin-top: 18px; line-height: 1.7;
 }
+/* ═══ SCROLL LOCK + CONTENT ═══ */
+html.gate-locked { overflow: hidden; scroll-behavior: auto; }
+html.gate-locked body { overflow: hidden; position: fixed; width: 100%; }
 #book-content { display: none; }
 #book-content.visible { display: block; }
 """
@@ -177,6 +180,14 @@ GATE_JS = """
   var content = document.getElementById('book-content');
   var form = document.getElementById('gate-form');
 
+  // Lock scroll while gate is visible
+  document.documentElement.classList.add('gate-locked');
+
+  function unlockScroll() {
+    document.documentElement.classList.remove('gate-locked');
+    window.scrollTo(0, 0);
+  }
+
   function personalize(name) {
     var spans = document.querySelectorAll('.reader-name');
     for (var i = 0; i < spans.length; i++) {
@@ -196,31 +207,32 @@ GATE_JS = """
     function startReveal() {
       box.style.display = 'none';
 
-      // Phase 2: Logo appears with pulse
+      // Phase 2: Logo appears with pulse (slowed)
       nameReveal.classList.add('active');
-      revealLogo.style.animation = 'pulseIn 0.8s cubic-bezier(.22,.68,.36,1.2) forwards';
+      revealLogo.style.animation = 'pulseIn 1.4s cubic-bezier(.22,.68,.36,1.2) forwards';
 
       // Phase 3: Tagline fades in
       setTimeout(function() {
-        nameReveal.querySelector('.reveal-tagline').style.animation = 'tagFade 0.5s ease forwards';
-      }, 600);
+        nameReveal.querySelector('.reveal-tagline').style.animation = 'tagFade 0.8s ease forwards';
+      }, 1100);
 
-      // Phase 4: Zoom through
+      // Phase 4: Hold, then zoom through
       setTimeout(function() {
         content.classList.add('visible');
-        overlay.style.animation = 'zoomThrough 0.7s cubic-bezier(.4,0,.2,1) forwards';
+        unlockScroll();
+        overlay.style.animation = 'zoomThrough 1s cubic-bezier(.4,0,.2,1) forwards';
         setTimeout(function() {
           overlay.style.display = 'none';
-        }, 700);
-      }, 1800);
+        }, 1000);
+      }, 3200);
     }
 
     if (boxVisible) {
       // Phase 1: Fade out the form box first
-      box.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      box.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       box.style.opacity = '0';
       box.style.transform = 'scale(0.95)';
-      setTimeout(startReveal, 450);
+      setTimeout(startReveal, 650);
     } else {
       // Box already hidden (returning reader) — go straight to reveal
       startReveal();
