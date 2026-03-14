@@ -2893,7 +2893,7 @@ def build_book(manuscript_path, output_path):
       </tr>
       <tr>
         <td class="tt-badge-cell"><span class="badge t4">T4</span></td>
-        <td><div class="tt-name">Experimental</div><div class="tt-desc">Insufficient evidence for real-world reliance. Documented in the appendix with the research that informed their removal.</div><div class="tt-ex">NLP eye-accessing cues, specific micro-expression duration claims</div></td>
+        <td><div class="tt-name">Field-Used, Evidence-Disputed</div><div class="tt-desc">Limited or contested formal research support. Widely used by experienced practitioners. Hold as context, not anchor.</div><div class="tt-ex">NLP eye-movement direction, lower eyelid tension, hair part direction</div></td>
       </tr>
     </table>
   </div>

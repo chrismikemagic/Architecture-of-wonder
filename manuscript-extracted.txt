@@ -523,9 +523,9 @@ T3 — Field-Tested Pattern
 
 Observed consistently across thousands of performance and training hours. These have not yet been formally validated in peer-reviewed research, but they are useful for adding nuance to reads already grounded in T1 and T2. Just do not lead with a T3 on its own.
 
-T4 — Experimental
+T4 — Field-Used, Evidence-Disputed
 
-Weak or disputed research support. Documented in the T4 Appendix. Know what they claim. Know why the claim does not hold. The practitioner who cites T4 signals in consulting contexts is a credibility risk. The performer who builds a routine around a T4 signal is building on sand.
+Limited or contested formal research support, but widely used by experienced practitioners across behavioral science, interrogation, and performance. Know what each signal claims. Know what the research found. Hold them differently from T1 and T2 — not as anchors, but as context. They are documented separately in the T4 Reference section with full notes on both the claim and the evidence record.
 
 The Three-Signal Rule
 
@@ -578,7 +578,7 @@ The 80-Signal System
 Eighty observable signals organized by evidential tier. And the six-category radar that makes them deployable in real time.
 ────────────────────────────────────────────────────────────────────────────────
 Browsing this chapter first is the right approach. You will recognize most of these signals. What training adds is not the ability to see them. You are already seeing them. It adds speed, deliberate combination, and the confidence to commit to what you observe before you have talked yourself out of it.
-T4 signals have been removed from this table and documented in the T4 Appendix. Everything in this table has evidential weight. Use codes: BP = Behavioral Profiling · CR = Cold Reading · VS = Volunteer Selection · AM = Audience Management.
+The signals in this table carry documented evidential weight. T4 signals — widely used in practice but without formal peer-review support — are documented separately in the T4 Reference section. Use codes: BP = Behavioral Profiling · CR = Cold Reading · VS = Volunteer Selection · AM = Audience Management.
 
 #
 OBSERVATION
@@ -986,8 +986,8 @@ Confidence, authority, and social comfort
 T2
 AM/VS
 
-T4 Signals Removed
-NLP eye movement direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction, finger length ratios, ear shape personality claims, skull or face-shape character reading, and handwriting slant analysis are documented in the T4 Appendix with the research that informed their removal. Know what they claim. Know why the claim is weak. Do not build real reads on them.
+T4 Reference Signals
+NLP eye movement direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction, finger length ratios, ear shape personality claims, skull or face-shape character reading, and handwriting slant analysis are documented in the T4 Reference section with full notes on the claim and the evidence record. Know what they claim. Know the evidence status. Use them with precision, not abandon.
 The Six-Category Radar
 Eighty signals become usable when organized into six dimensions. Categories 01 and 02 are baseline reads: assess once, anchor early. Categories 03–06 are live reads: update continuously as the interaction moves. Build fluency in each category individually, then read all six simultaneously.
 01 — Appearance
@@ -2771,10 +2771,17 @@ Superscript numbers in the text (e.g. amygdala²) refer to entries in this gloss
 19.  Suggestibility    Receptiveness to ideas, suggestions, and framings offered by others. Distinct from hypnotic responsiveness, which requires specific trait absorption. General suggestibility predicts almost nothing about hypnotic responsiveness.
 · · ·
 APPENDIX A1
-T4 Signal Review: The Evidence Record
-Four signals removed from the working system, with the research that informed their removal
-The following four signals are widely taught in behavioral performance and NLP-derived training contexts. Each carries a claim that sounds specific and usable. Each has also been subjected to controlled research that found the claim did not hold up in the way practitioners assumed. They are documented here. Not to discard the observational tradition that produced them, but to be precise about what the evidence actually supports.
-The T4 designation in this system does not mean 'false.' It means: the specific claim has not been supported in the form it is typically taught, and a practitioner who deploys it with confidence in a professional context is carrying unnecessary credibility risk. Read what the research found. Make your own judgment about how to hold the signal.
+T4 Signal Reference
+Widely-used signals with limited or disputed formal research support — and what the evidence actually says
+The following signals are taught across behavioral performance, NLP training, interrogation practice, and cold reading traditions. Each carries a specific claim. Each has also been examined by controlled research that found the claim does not hold up in the precise form it is typically taught.
+
+T4 does not mean false. It does not mean useless. It means: the formal evidence record is incomplete, contested, or negative in the specific form the signal is usually taught — and a practitioner who treats it with the same confidence as a T1 or T2 signal is overextending their credibility.
+
+That said, these signals are used by some of the most respected practitioners in this field. Joe Navarro, whose career as an FBI counterintelligence agent produced What Every BODY Is Saying, works extensively with behavioral clusters that include patterns outside the peer-reviewed mainstream. Greg Hartley, trained as an Army interrogator and co-author of I Can Read You Like a Book, draws on decades of operational evidence that formal research has not yet tested. Chase Hughes, one of the most rigorous behavioral scientists working in applied contexts today, teaches signal systems built on operational pattern recognition alongside formally validated research. Ian Rowland's work in cold reading and behavioral performance rests on thousands of hours of observed human response — a form of evidence the laboratory has not caught up to. Scott Rouse, Lena Sisco, and others working in high-stakes behavioral analysis all use pattern libraries built from field experience that predate and often exceed the academic literature.
+
+I use these signals. Not as anchors. Not as standalone reads. But as context layers — the way you use peripheral vision. I have watched NLP eye-movement deviation signal that something is being processed differently, even when the directional map is wrong. I have used the principle behind lower eyelid tension as a cluster contributor, not a standalone tell. I have taught performers to notice the hair part and face-shape signals not as personality keys but as social investment indicators. None of these are reads I would stake a corporate briefing on in isolation. All of them have added signal value in the room.
+
+The distinction that matters is not whether to use them. It is how to hold them. The T4 signals below are documented with both the original claim and what the research found. Read both. Then decide how they fit your practice.
 SIGNAL 1 — NLP Eye Movement Direction
 THE CLAIM: Eye movement direction reliably indicates whether a person is accessing a visual memory (up-right), constructing a visual image (up-left), accessing an auditory memory (horizontal-right), or experiencing a kinesthetic state (down-right). This map allows a trained observer to detect the cognitive process a person is currently engaged in.
 
@@ -2799,9 +2806,10 @@ THE CLAIM: Hair parted on the left projects strength and logic, associated with 
 THE RESEARCH: This claim does not appear in any peer-reviewed behavioral science literature. It originates primarily in a self-published 1999 book. No controlled studies have examined whether hair part direction correlates with personality traits in ways that generalize beyond individual styling choices. The claim that hair part direction encodes meaningful personality information is not supported by any tier of behavioral evidence currently available.
 
 WHAT REMAINS VALID: Nothing in this specific claim is supported. Hair styling choices do carry social information, formality, cultural context, investment in appearance, but the directional claim is unsupported at any evidential level. Do not use it in any professional or performance context where credibility is a concern.
-The practitioner who knows why T4 signals are T4 is a more credible practitioner than one who has simply been told not to use them. The evidence record exists. It is accessible. The performers most worth taking seriously in this field are the ones whose confidence is calibrated to what they can actually defend.
-A Note on What Gets Better
-The removal of T4 signals is not a loss. It is a precision upgrade. Every signal that stays in the working system is a signal you can use in a corporate briefing room, at a conference presentation, in front of an audience that includes credentialed professionals, without blinking. That is worth more than a longer list.
+The practitioner who knows why T4 signals are T4 is a more credible practitioner than one who has simply been told not to use them. The evidence record exists. It is accessible. The performers most worth taking seriously in this field are the ones whose confidence is calibrated — who know what tier they are operating in at every moment, and hold each signal accordingly.
+
+A Note on Holding T4 Signals Well
+T4 signals are not worthless. They are unverified in the precise form they are typically taught. That is a different thing. The professional who ignores them entirely is leaving signal value on the table. The professional who treats them like T1 reads is building on ground that can shift under cross-examination. The useful position is in between: use T4 signals as context contributors, cluster validators, and directional indicators. Never as the sole basis for a read. Always with the awareness that you are working in a zone where the evidence is thin. The performers who do this well — and there are many — are not operating carelessly. They are operating with calibrated confidence. That is a learnable skill.
 · · ·
 · · ·
 
