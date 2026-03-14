@@ -673,6 +673,67 @@ def gen_key_read(text):
 </div>'''
 
 
+def gen_observation_table(rows):
+    """Render the 80-observation table as a styled HTML table."""
+    use_colors = {'BP':'#C9A84C','CR':'#1A8FA8','VS':'#6B52A0','AM':'#A83030'}
+    header = (
+        '<div class="obs-table-wrap">'
+        '<div class="obs-table-header">'
+        '<span class="obs-th obs-num">#</span>'
+        '<span class="obs-th obs-name">OBSERVATION</span>'
+        '<span class="obs-th obs-what">WHAT IT TELLS YOU</span>'
+        '<span class="obs-th obs-tier">TIER</span>'
+        '<span class="obs-th obs-use">USE</span>'
+        '</div>'
+    )
+    body_rows = []
+    for num, obs, what, tier, use in rows:
+        # Tier badge
+        tier_cls = tier.lower().replace(' ','') if tier else 'unk'
+        tier_badge = f'<span class="badge {tier_cls}">{tier}</span>' if tier else ''
+        # Use badges (may be "BP/CR" etc)
+        use_parts = use.replace('/',' ').split()
+        use_html = ' '.join(
+            f'<span class="use-badge" style="color:{use_colors.get(u,"#8A9AB5")};">{u}</span>'
+            for u in use_parts
+        )
+        row_class = 'obs-row-alt' if int(num) % 2 == 0 else 'obs-row'
+        body_rows.append(
+            f'<div class="obs-row-wrap {row_class}">' +
+            f'<span class="obs-num-cell">{num}</span>' +
+            f'<span class="obs-name-cell">{escape(obs)}</span>' +
+            f'<span class="obs-what-cell">{escape(what)}</span>' +
+            f'<span class="obs-tier-cell">{tier_badge}</span>' +
+            f'<span class="obs-use-cell">{use_html}</span>' +
+            '</div>'
+        )
+    return header + ''.join(body_rows) + '</div>'
+
+
+def gen_bte_signal(name, code, drs, description):
+    """Render a single BTE signal entry as a styled card."""
+    try:
+        drs_val = float(drs)
+    except ValueError:
+        drs_val = 0
+    if drs_val >= 3.0:
+        drs_color = '#A83030'
+    elif drs_val >= 2.0:
+        drs_color = '#C9A84C'
+    else:
+        drs_color = '#8A9AB5'
+    return (
+        '<div class="bte-signal">' +
+        '<div class="bte-signal-head">' +
+        f'<span class="bte-name">{escape(name)}</span>' +
+        f'<span class="bte-code">{escape(code)}</span>' +
+        f'<span class="bte-drs" style="color:{drs_color}">DRS {drs}</span>' +
+        '</div>' +
+        f'<p class="bte-desc">{escape(description)}</p>' +
+        '</div>'
+    )
+
+
 def gen_wyajd(text):
     return f'''<aside class="wyajd">
   <div class="wyajd-bar"></div>
@@ -905,6 +966,46 @@ def build_chapter_body(section, global_para_count):
         para = paragraphs[i]
         global_para_count += 1
         stripped = para.strip()
+
+        # ── OBSERVATION TABLE (flat 5-column format from DOCX) ──
+        if stripped == '#' and i + 4 < len(paragraphs):
+            next4 = [paragraphs[i+j].strip() for j in range(1, 5)]
+            if next4 == ['OBSERVATION', 'WHAT IT TELLS YOU', 'TIER', 'USE']:
+                rows = []
+                j = i + 5
+                while j + 4 < len(paragraphs):
+                    num = paragraphs[j].strip()
+                    if not re.match(r'^\d{1,2}$', num):
+                        break
+                    obs  = paragraphs[j+1].strip()
+                    what = paragraphs[j+2].strip()
+                    tier = paragraphs[j+3].strip()
+                    use  = paragraphs[j+4].strip()
+                    rows.append((num, obs, what, tier, use))
+                    j += 5
+                if rows:
+                    global_para_count += len(rows) * 5 + 5
+                    parts.append(gen_observation_table(rows))
+                    i = j
+                    continue
+
+        # ── BTE CLUSTER SIGNAL ENTRIES ──
+        # Pattern: "Signal Name (Code). DRS X.X. Description."
+        # or:      "Signal Name (Code) — DRS X.X. Description."
+        bte_m = re.match(
+            r'^([A-Z][A-Za-z ]+)\s*\(([A-Z][a-z]{0,4})\)[.\s—-]+DRS\s+([\d.]+)[.\s]+(.+)$',
+            stripped
+        )
+        if bte_m:
+            parts.append(gen_bte_signal(
+                bte_m.group(1).strip(),
+                bte_m.group(2).strip(),
+                bte_m.group(3).strip(),
+                bte_m.group(4).strip()
+            ))
+            i += 1
+            global_para_count += 1
+            continue
 
         # ── TIER DEFINITION CARDS ──
         tier_match = is_tier_definition(stripped)
@@ -1593,6 +1694,105 @@ body{counter-reset:page}
 .def-phonetic{font-size:.72rem;color:var(--gray-blue);margin-bottom:3px}
 .def-pos{font-size:.72rem;color:var(--dim);font-style:italic;margin-bottom:14px}
 .def-meaning{font-size:.88rem;line-height:1.65;max-width:380px;margin:0 auto 50px}
+
+/* ═══ OBSERVATION TABLE ═══ */
+.obs-table-wrap{
+  margin:2em 0;font-size:.72rem;
+  background:var(--navy2);border-radius:5px;overflow:hidden;
+  break-inside:auto;
+}
+.obs-table-header{
+  display:grid;
+  grid-template-columns:28px 1fr 1fr 40px 52px;
+  gap:0 10px;
+  background:rgba(201,168,76,.1);
+  padding:8px 14px;
+  border-bottom:1px solid rgba(201,168,76,.2);
+}
+.obs-th{
+  font-family:var(--sans);font-size:.48rem;font-weight:700;
+  letter-spacing:2px;color:var(--gold);text-transform:uppercase;
+}
+.obs-row-wrap,.obs-row-alt{
+  display:grid;
+  grid-template-columns:28px 1fr 1fr 40px 52px;
+  gap:0 10px;align-items:center;
+  padding:6px 14px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.obs-row-alt{background:rgba(255,255,255,.02)}
+.obs-num-cell{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  color:var(--gold);opacity:.7;
+}
+.obs-name-cell{
+  font-family:var(--sans);font-size:.65rem;font-weight:500;
+  color:#fff;line-height:1.3;
+}
+.obs-what-cell{
+  font-size:.65rem;color:var(--gray-blue);line-height:1.3;
+  text-indent:0!important;text-align:left!important;
+}
+.obs-tier-cell{text-align:center}
+.obs-use-cell{
+  font-family:var(--sans);font-size:.5rem;font-weight:700;
+  letter-spacing:.5px;
+}
+.use-badge{display:inline-block;margin-right:2px}
+
+/* ═══ BTE SIGNAL CARDS ═══ */
+.bte-signal{
+  display:grid;grid-template-columns:1fr;
+  padding:10px 16px;margin:0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  background:rgba(13,30,48,.5);
+}
+.bte-cluster-wrap{
+  background:var(--navy2);border-radius:5px;
+  margin:1.6em 0;overflow:hidden;
+  break-inside:auto;
+}
+.bte-cluster-header{
+  padding:12px 16px;
+  border-bottom:1px solid rgba(201,168,76,.15);
+}
+.bte-cluster-name{
+  font-family:var(--sans);font-size:.68rem;font-weight:700;
+  letter-spacing:2px;color:var(--gold);margin-bottom:3px;
+}
+.bte-cluster-desc{font-size:.72rem;color:var(--gray-blue);font-style:italic}
+.bte-signal-head{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:4px;
+}
+.bte-name{
+  font-family:var(--sans);font-size:.7rem;font-weight:700;color:#fff;
+}
+.bte-code{
+  font-family:var(--sans);font-size:.58rem;font-weight:600;
+  color:var(--dim);letter-spacing:1px;
+}
+.bte-drs{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:.5px;margin-left:auto;flex-shrink:0;
+}
+.bte-desc{
+  font-size:.72rem;color:var(--gray-blue);
+  line-height:1.5;margin:0;
+  text-indent:0!important;text-align:left!important;
+}
+.bte-application{
+  padding:12px 16px;background:rgba(201,168,76,.04);
+  border-top:1px solid rgba(201,168,76,.12);
+}
+.bte-app-label{
+  font-family:var(--sans);font-size:.48rem;font-weight:700;
+  letter-spacing:2.5px;color:var(--gold);margin-bottom:5px;
+  text-transform:uppercase;
+}
+.bte-app-text{
+  font-size:.72rem;color:var(--gray-blue);line-height:1.55;
+  margin:0;text-indent:0!important;text-align:left!important;
+}
 
 /* ═══ BACK COVER ═══ */
 .back-cover{

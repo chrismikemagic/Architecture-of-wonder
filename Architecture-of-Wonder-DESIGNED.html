@@ -413,6 +413,105 @@ body{counter-reset:page}
 .def-pos{font-size:.72rem;color:var(--dim);font-style:italic;margin-bottom:14px}
 .def-meaning{font-size:.88rem;line-height:1.65;max-width:380px;margin:0 auto 50px}
 
+/* ═══ OBSERVATION TABLE ═══ */
+.obs-table-wrap{
+  margin:2em 0;font-size:.72rem;
+  background:var(--navy2);border-radius:5px;overflow:hidden;
+  break-inside:auto;
+}
+.obs-table-header{
+  display:grid;
+  grid-template-columns:28px 1fr 1fr 40px 52px;
+  gap:0 10px;
+  background:rgba(201,168,76,.1);
+  padding:8px 14px;
+  border-bottom:1px solid rgba(201,168,76,.2);
+}
+.obs-th{
+  font-family:var(--sans);font-size:.48rem;font-weight:700;
+  letter-spacing:2px;color:var(--gold);text-transform:uppercase;
+}
+.obs-row-wrap,.obs-row-alt{
+  display:grid;
+  grid-template-columns:28px 1fr 1fr 40px 52px;
+  gap:0 10px;align-items:center;
+  padding:6px 14px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.obs-row-alt{background:rgba(255,255,255,.02)}
+.obs-num-cell{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  color:var(--gold);opacity:.7;
+}
+.obs-name-cell{
+  font-family:var(--sans);font-size:.65rem;font-weight:500;
+  color:#fff;line-height:1.3;
+}
+.obs-what-cell{
+  font-size:.65rem;color:var(--gray-blue);line-height:1.3;
+  text-indent:0!important;text-align:left!important;
+}
+.obs-tier-cell{text-align:center}
+.obs-use-cell{
+  font-family:var(--sans);font-size:.5rem;font-weight:700;
+  letter-spacing:.5px;
+}
+.use-badge{display:inline-block;margin-right:2px}
+
+/* ═══ BTE SIGNAL CARDS ═══ */
+.bte-signal{
+  display:grid;grid-template-columns:1fr;
+  padding:10px 16px;margin:0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  background:rgba(13,30,48,.5);
+}
+.bte-cluster-wrap{
+  background:var(--navy2);border-radius:5px;
+  margin:1.6em 0;overflow:hidden;
+  break-inside:auto;
+}
+.bte-cluster-header{
+  padding:12px 16px;
+  border-bottom:1px solid rgba(201,168,76,.15);
+}
+.bte-cluster-name{
+  font-family:var(--sans);font-size:.68rem;font-weight:700;
+  letter-spacing:2px;color:var(--gold);margin-bottom:3px;
+}
+.bte-cluster-desc{font-size:.72rem;color:var(--gray-blue);font-style:italic}
+.bte-signal-head{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:4px;
+}
+.bte-name{
+  font-family:var(--sans);font-size:.7rem;font-weight:700;color:#fff;
+}
+.bte-code{
+  font-family:var(--sans);font-size:.58rem;font-weight:600;
+  color:var(--dim);letter-spacing:1px;
+}
+.bte-drs{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:.5px;margin-left:auto;flex-shrink:0;
+}
+.bte-desc{
+  font-size:.72rem;color:var(--gray-blue);
+  line-height:1.5;margin:0;
+  text-indent:0!important;text-align:left!important;
+}
+.bte-application{
+  padding:12px 16px;background:rgba(201,168,76,.04);
+  border-top:1px solid rgba(201,168,76,.12);
+}
+.bte-app-label{
+  font-family:var(--sans);font-size:.48rem;font-weight:700;
+  letter-spacing:2.5px;color:var(--gold);margin-bottom:5px;
+  text-transform:uppercase;
+}
+.bte-app-text{
+  font-size:.72rem;color:var(--gray-blue);line-height:1.55;
+  margin:0;text-indent:0!important;text-align:left!important;
+}
+
 /* ═══ BACK COVER ═══ */
 .back-cover{
   background:linear-gradient(180deg,var(--navy),var(--navy2));
@@ -1454,437 +1553,11 @@ body{counter-reset:page}
 
 <p>Browsing this chapter first is the right approach. You will recognize most of these signals. What training adds is not the ability to see them. You are already seeing them. It adds speed, deliberate combination, and the confidence to commit to what you observe before you have talked yourself out of it.</p>
 <p><span class="badge t4">T4</span> signals have been removed from this table and documented in the <span class="badge t4">T4</span> Appendix. Everything in this table has evidential weight. Use codes: BP = Behavioral Profiling · CR = Cold Reading · VS = Volunteer Selection · AM = Audience Management.</p>
-<p>#</p>
-<h3 class="section-header sh-label">OBSERVATION</h3>
-<h3 class="section-header sh-standard">WHAT IT TELLS YOU</h3>
-<h3 class="section-header sh-label">TIER</h3>
-<p>USE</p>
-<p>01</p>
-<p>Phone pocket side</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Handedness indicator</p>
-<p><span class="badge t1">T1</span></p>
-<p>BP</p>
-<p>02</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Shoe sole wear direction</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Gait and stance pattern</p>
-<p><span class="badge t1">T1</span></p>
-<p>BP</p>
-<p>03</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Clothing condition vs. posture</p>
-<p>Self-image investment</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>04</p>
-<p>Thumbs outside pockets</p>
-<p>Confidence signal</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>05</p>
-<p>Thumbs inside pockets</p>
-<p>Comfort, reservation, or self-containment</p>
-<p><span class="badge t3">T3</span></p>
-<p>VS</p>
-<p>06</p>
-<p>Time since last haircut</p>
-<p>Grooming priority</p>
-<p><span class="badge t1">T1</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>07</p>
-<p>Fingernail condition</p>
-<p>Care level; occupational signals</p>
-<p><span class="badge t1">T1</span></p>
-<p>BP</p>
-<p>08</p>
-<p>Eye contact willingness</p>
-<section class="pattern-interrupt">
-  <div class="pi-content">
-    <div class="gold-line"></div>
-    <div class="pi-number">60,000×</div>
-    <div class="pi-unit">FASTER</div>
-    <div class="gold-line"></div>
-    <p class="pi-text">The speed at which the brain processes color compared to text.</p>
-    <p class="pi-source">Visual Cognition Research</p>
-    <p class="pi-wyajd">The gold accent on this page reached your brain before the words did.</p>
-  </div>
-</section>
-<p>Social confidence (rate 1–8)</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>09</p>
-<p>Foot direction in conversation</p>
-<p>Genuine interest vs. exit orientation</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/VS</h3>
-<p>10</p>
-<p>Speed of moving out of the way</p>
-<p>Social deference level</p>
-<p><span class="badge t2">T2</span></p>
-<p>AM</p>
-<p>11</p>
-<p>Blink rate change when speaking</p>
-<p>Stress or confidence shift</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>12</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Shoelace condition</p>
-<p>Attention to personal detail</p>
-<p><span class="badge t1">T1</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>13</p>
-<p>Wrinkles behind knees</p>
-<p>Extended seated-time indicator</p>
-<p><span class="badge t1">T1</span></p>
-<p>BP</p>
-<p>14</p>
-<p>Fidgeting level in public</p>
-<p>Social comfort baseline</p>
-<p><span class="badge t2">T2</span></p>
-<p>VS</p>
-<p>15</p>
-<p>Leg crossing direction</p>
-<p>Spatial orientation and comfort</p>
-<p><span class="badge t3">T3</span></p>
-<p>BP</p>
-<p>16</p>
-<p>Bag contact with feet</p>
-<p>Security orientation</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>17</p>
-<p>Permanence of facial wrinkles</p>
-<section class="pattern-interrupt">
-  <div class="pi-content">
-    <div class="gold-line"></div>
-    <div class="pi-number">3</div>
-    <div class="pi-unit">SIGNALS</div>
-    <div class="gold-line"></div>
-    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
-    <p class="pi-source">The Five Cs — Clusters</p>
-    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
-  </div>
-</section>
-<p>Dominant lifetime emotional baseline</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>18</p>
-<p>Phone placed face-down</p>
-<p>Privacy orientation</p>
-<p><span class="badge t3">T3</span></p>
-<p>BP</p>
-<p>19</p>
-<p>Watch set ahead / exact / behind</p>
-<p>Relationship with time</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>20</p>
-<p>Pen or phone in breast pocket</p>
-<p>Preparedness habit</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>21</p>
-<p>Eye contact break to swallow</p>
-<p>Social anxiety indicator</p>
-<p><span class="badge t2">T2</span></p>
-<p>VS</p>
-<p>22</p>
-<p>Own vs. others’ object handling</p>
-<p>Boundary respect level</p>
-<p><span class="badge t2">T2</span></p>
-<p>AM</p>
-<p>23</p>
-<p>Tie tightness and alignment</p>
-<p>Conformity vs. individuality</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>24</p>
-<p>Nail biting vs. trimmed nails</p>
-<p>Anxiety self-regulation pattern</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/BP</h3>
-<p>25</p>
-<p>Cuticle picking: new vs. habitual</p>
-<p>Chronic vs. acute stress</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>26</p>
-<p>Belt notch wear pattern</p>
-<p>Recent weight change</p>
-<p><span class="badge t1">T1</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>27</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Shoe lacing consistency</p>
-<p>Attention to personal detail</p>
-<p><span class="badge t1">T1</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>28</p>
-<p>Trouser rear cuff wear</p>
-<p>Movement and footwear patterns</p>
-<p><span class="badge t1">T1</span></p>
-<p>BP</p>
-<p>29</p>
-<p>Scar and callus distribution</p>
-<p>Hand dominance; occupation signals</p>
-<p><span class="badge t1">T1</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>30</p>
-<p>Long blink while speaking</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>Social discomfort signal</p>
-<p><span class="badge t3">T3</span></p>
-<p>VS</p>
-<p>31</p>
-<p>Forehead wrinkle curve upward</p>
-<p>Possible agreeableness cue, use cautiously</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">CR/VS</h3>
-<p>32</p>
-<p>Inside cheek or lip biting</p>
-<p>Self-soothing; anxiety signal</p>
-<p><span class="badge t3">T3</span></p>
-<p>VS</p>
-<p>33</p>
-<p>Knuckle orientation at rest</p>
-<p>Professional conditioning signal</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>34</p>
-<p>Tattoo placement and visibility</p>
-<p>Identity; subculture; expression style</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>35</p>
-<p>Privacy screen on device</p>
-<p>Security or confidentiality mindset</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>36</p>
-<p>Latest technology model</p>
-<p>Status signaling</p>
-<p><span class="badge t3">T3</span></p>
-<p>BP</p>
-<p>37</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Pinky distance from fingers</p>
-<p>Possible motor-conditioning cue</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>38</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>Cuff dirt or discoloration</p>
-<p>Frequent travel or repeated garment use</p>
-<p><span class="badge t1">T1</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>39</p>
-<p>Teeth condition</p>
-<p>Socioeconomic and care-history clues</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>40</p>
-<p>Face scrunch + deep breath</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Explosive reaction tendency</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>41</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Phone grip style</p>
-<p>Device familiarity and usage frequency</p>
-<p><span class="badge t3">T3</span></p>
-<p>BP</p>
-<p>42</p>
-<p>Notification response speed</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>Urgency-driven personality</p>
-<p><span class="badge t3">T3</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>43</p>
-<p>Walking speed vs. crowd</p>
-<p>Energy level; goal orientation</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>44</p>
-<p>Resting shoulder tension</p>
-<p>Chronic stress indicator</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>45</p>
-<p>Head tilt when listening</p>
-<p>Active engagement and social interest</p>
-<p><span class="badge t2">T2</span></p>
-<p>VS</p>
-<p>46</p>
-<p>Weight distribution at rest</p>
-<p>Postural confidence level</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>47</p>
-<p>Environmental scanning behavior</p>
-<p>Security-awareness mindset</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/AM</h3>
-<p>48</p>
-<p>Micro-grooming during conversation</p>
-<p>Self-consciousness or social anxiety</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>49</p>
-<p>Breathing depth in conversation</p>
-<p>Cognitive load and stress level</p>
-<p><span class="badge t2">T2</span></p>
-<p>VS</p>
-<p>50</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Humor reaction timing</p>
-<p>Social processing speed</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>51</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Vocal volume calibration</p>
-<p>Social awareness vs. self-focus</p>
-<p><span class="badge t2">T2</span></p>
-<p>AM</p>
-<p>52</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Conversational distance preference</p>
+<div class="obs-table-wrap"><div class="obs-table-header"><span class="obs-th obs-num">#</span><span class="obs-th obs-name">OBSERVATION</span><span class="obs-th obs-what">WHAT IT TELLS YOU</span><span class="obs-th obs-tier">TIER</span><span class="obs-th obs-use">USE</span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">01</span><span class="obs-name-cell">Phone pocket side</span><span class="obs-what-cell">Handedness indicator</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">02</span><span class="obs-name-cell">Shoe sole wear direction</span><span class="obs-what-cell">Gait and stance pattern</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">03</span><span class="obs-name-cell">Clothing condition vs. posture</span><span class="obs-what-cell">Self-image investment</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">04</span><span class="obs-name-cell">Thumbs outside pockets</span><span class="obs-what-cell">Confidence signal</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">05</span><span class="obs-name-cell">Thumbs inside pockets</span><span class="obs-what-cell">Comfort, reservation, or self-containment</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">06</span><span class="obs-name-cell">Time since last haircut</span><span class="obs-what-cell">Grooming priority</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">07</span><span class="obs-name-cell">Fingernail condition</span><span class="obs-what-cell">Care level; occupational signals</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">08</span><span class="obs-name-cell">Eye contact willingness</span><span class="obs-what-cell">Social confidence (rate 1–8)</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">09</span><span class="obs-name-cell">Foot direction in conversation</span><span class="obs-what-cell">Genuine interest vs. exit orientation</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">10</span><span class="obs-name-cell">Speed of moving out of the way</span><span class="obs-what-cell">Social deference level</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">11</span><span class="obs-name-cell">Blink rate change when speaking</span><span class="obs-what-cell">Stress or confidence shift</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">12</span><span class="obs-name-cell">Shoelace condition</span><span class="obs-what-cell">Attention to personal detail</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">13</span><span class="obs-name-cell">Wrinkles behind knees</span><span class="obs-what-cell">Extended seated-time indicator</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">14</span><span class="obs-name-cell">Fidgeting level in public</span><span class="obs-what-cell">Social comfort baseline</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">15</span><span class="obs-name-cell">Leg crossing direction</span><span class="obs-what-cell">Spatial orientation and comfort</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">16</span><span class="obs-name-cell">Bag contact with feet</span><span class="obs-what-cell">Security orientation</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">17</span><span class="obs-name-cell">Permanence of facial wrinkles</span><span class="obs-what-cell">Dominant lifetime emotional baseline</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">18</span><span class="obs-name-cell">Phone placed face-down</span><span class="obs-what-cell">Privacy orientation</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">19</span><span class="obs-name-cell">Watch set ahead / exact / behind</span><span class="obs-what-cell">Relationship with time</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">20</span><span class="obs-name-cell">Pen or phone in breast pocket</span><span class="obs-what-cell">Preparedness habit</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">21</span><span class="obs-name-cell">Eye contact break to swallow</span><span class="obs-what-cell">Social anxiety indicator</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">22</span><span class="obs-name-cell">Own vs. others’ object handling</span><span class="obs-what-cell">Boundary respect level</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">23</span><span class="obs-name-cell">Tie tightness and alignment</span><span class="obs-what-cell">Conformity vs. individuality</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">24</span><span class="obs-name-cell">Nail biting vs. trimmed nails</span><span class="obs-what-cell">Anxiety self-regulation pattern</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">25</span><span class="obs-name-cell">Cuticle picking: new vs. habitual</span><span class="obs-what-cell">Chronic vs. acute stress</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">26</span><span class="obs-name-cell">Belt notch wear pattern</span><span class="obs-what-cell">Recent weight change</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">27</span><span class="obs-name-cell">Shoe lacing consistency</span><span class="obs-what-cell">Attention to personal detail</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">28</span><span class="obs-name-cell">Trouser rear cuff wear</span><span class="obs-what-cell">Movement and footwear patterns</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">29</span><span class="obs-name-cell">Scar and callus distribution</span><span class="obs-what-cell">Hand dominance; occupation signals</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">30</span><span class="obs-name-cell">Long blink while speaking</span><span class="obs-what-cell">Social discomfort signal</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">31</span><span class="obs-name-cell">Forehead wrinkle curve upward</span><span class="obs-what-cell">Possible agreeableness cue, use cautiously</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">32</span><span class="obs-name-cell">Inside cheek or lip biting</span><span class="obs-what-cell">Self-soothing; anxiety signal</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">33</span><span class="obs-name-cell">Knuckle orientation at rest</span><span class="obs-what-cell">Professional conditioning signal</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">34</span><span class="obs-name-cell">Tattoo placement and visibility</span><span class="obs-what-cell">Identity; subculture; expression style</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">35</span><span class="obs-name-cell">Privacy screen on device</span><span class="obs-what-cell">Security or confidentiality mindset</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">36</span><span class="obs-name-cell">Latest technology model</span><span class="obs-what-cell">Status signaling</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">37</span><span class="obs-name-cell">Pinky distance from fingers</span><span class="obs-what-cell">Possible motor-conditioning cue</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">38</span><span class="obs-name-cell">Cuff dirt or discoloration</span><span class="obs-what-cell">Frequent travel or repeated garment use</span><span class="obs-tier-cell"><span class="badge t1">T1</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">39</span><span class="obs-name-cell">Teeth condition</span><span class="obs-what-cell">Socioeconomic and care-history clues</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">40</span><span class="obs-name-cell">Face scrunch + deep breath</span><span class="obs-what-cell">Explosive reaction tendency</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">41</span><span class="obs-name-cell">Phone grip style</span><span class="obs-what-cell">Device familiarity and usage frequency</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">42</span><span class="obs-name-cell">Notification response speed</span><span class="obs-what-cell">Urgency-driven personality</span><span class="obs-tier-cell"><span class="badge t3">T3</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">43</span><span class="obs-name-cell">Walking speed vs. crowd</span><span class="obs-what-cell">Energy level; goal orientation</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">44</span><span class="obs-name-cell">Resting shoulder tension</span><span class="obs-what-cell">Chronic stress indicator</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">45</span><span class="obs-name-cell">Head tilt when listening</span><span class="obs-what-cell">Active engagement and social interest</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">46</span><span class="obs-name-cell">Weight distribution at rest</span><span class="obs-what-cell">Postural confidence level</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">47</span><span class="obs-name-cell">Environmental scanning behavior</span><span class="obs-what-cell">Security-awareness mindset</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">48</span><span class="obs-name-cell">Micro-grooming during conversation</span><span class="obs-what-cell">Self-consciousness or social anxiety</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">49</span><span class="obs-name-cell">Breathing depth in conversation</span><span class="obs-what-cell">Cognitive load and stress level</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">50</span><span class="obs-name-cell">Humor reaction timing</span><span class="obs-what-cell">Social processing speed</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">51</span><span class="obs-name-cell">Vocal volume calibration</span><span class="obs-what-cell">Social awareness vs. self-focus</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">52</span><span class="obs-name-cell">Conversational distance preference</span><span class="obs-what-cell">Intimacy and trust baseline</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">53</span><span class="obs-name-cell">Face touching during thinking</span><span class="obs-what-cell">Cognitive engagement style</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">54</span><span class="obs-name-cell">Postural symmetry</span><span class="obs-what-cell">Physical training background</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">55</span><span class="obs-name-cell">Ear redness in conversation</span><span class="obs-what-cell">Emotional arousal indicator</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">56</span><span class="obs-name-cell">Eyebrow expressiveness</span><span class="obs-what-cell">Emotional reactivity level</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">57</span><span class="obs-name-cell">Handshake pressure and timing</span><span class="obs-what-cell">Assertiveness, social calibration</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">58</span><span class="obs-name-cell">How quickly they sit after entering</span><span class="obs-what-cell">Territorial confidence or deference</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">59</span><span class="obs-name-cell">Whether they move objects before sitting</span><span class="obs-what-cell">Environmental control tendency</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">60</span><span class="obs-name-cell">Chair choice in a room</span><span class="obs-what-cell">Security, status, or social strategy</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">61</span><span class="obs-name-cell">Coat placement</span><span class="obs-what-cell">Comfort horizon and expected duration</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">62</span><span class="obs-name-cell">Drink placement</span><span class="obs-what-cell">Territorial awareness and caution</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">63</span><span class="obs-name-cell">How they hold a glass or cup while listening</span><span class="obs-what-cell">Comfort vs. self-protection</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">64</span><span class="obs-name-cell">Whether they mirror pace or tone</span><span class="obs-what-cell">Rapport tendency or strategic adaptation</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">65</span><span class="obs-name-cell">Response lag before answering personal questions</span><span class="obs-what-cell">Filtering, caution, or internal editing</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">66</span><span class="obs-name-cell">Speed of agreeing to small requests</span><span class="obs-what-cell">Compliance baseline</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">67</span><span class="obs-name-cell">How often they interrupt</span><span class="obs-what-cell">Dominance, impulsivity, or anxiety</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">68</span><span class="obs-name-cell">Whether they finish others’ sentences</span><span class="obs-what-cell">Control tendency or high-pattern anticipation</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">69</span><span class="obs-name-cell">Repetition of key phrases</span><span class="obs-what-cell">Identity anchors and personal values</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">70</span><span class="obs-name-cell">Pronoun use: “I,” “we,” “they”</span><span class="obs-what-cell">Self-focus, affiliation, or distancing</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">71</span><span class="obs-name-cell">How they react to being contradicted</span><span class="obs-what-cell">Ego threat threshold</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">72</span><span class="obs-name-cell">Speed of smile disappearance</span><span class="obs-what-cell">Politeness vs. genuine emotional carryover</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">73</span><span class="obs-name-cell">Delay before laughter after others laugh</span><span class="obs-what-cell">Social dependence vs. independent processing</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">74</span><span class="obs-name-cell">Whether they ask permission before moving</span><span class="obs-what-cell">Rule adherence and hierarchy sensitivity</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#C9A84C;">BP</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">75</span><span class="obs-name-cell">How they handle mistakes publicly</span><span class="obs-what-cell">Shame tolerance and recovery style</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">76</span><span class="obs-name-cell">Whether they explain simple choices unprompted</span><span class="obs-what-cell">Need for justification or fear of misread</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#1A8FA8;">CR</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">77</span><span class="obs-name-cell">Speed of returning gaze after looking away</span><span class="obs-what-cell">Confidence recovery and social resilience</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">78</span><span class="obs-name-cell">Whether they turn whole body or only head</span><span class="obs-what-cell">Engagement level and physical openness</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#6B52A0;">VS</span> <span class="use-badge" style="color:#A83030;">AM</span></span></div><div class="obs-row-wrap obs-row"><span class="obs-num-cell">79</span><span class="obs-name-cell">Object straightening / alignment behavior</span><span class="obs-what-cell">Order need and control preference</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#C9A84C;">BP</span> <span class="use-badge" style="color:#1A8FA8;">CR</span></span></div><div class="obs-row-wrap obs-row-alt"><span class="obs-num-cell">80</span><span class="obs-name-cell">How quickly they reclaim silence after speaking</span><span class="obs-what-cell">Confidence, authority, and social comfort</span><span class="obs-tier-cell"><span class="badge t2">T2</span></span><span class="obs-use-cell"><span class="use-badge" style="color:#A83030;">AM</span> <span class="use-badge" style="color:#6B52A0;">VS</span></span></div></div>
 <aside class="wyajd">
   <div class="wyajd-bar"></div>
   <p class="wyajd-text">You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01 — handedness indicator. You just demonstrated it without thinking.</p>
 </aside>
-<p>Intimacy and trust baseline</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>53</p>
-<p>Face touching during thinking</p>
-<p>Cognitive engagement style</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>54</p>
-<p>Postural symmetry</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Physical training background</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>55</p>
-<p>Ear redness in conversation</p>
-<p>Emotional arousal indicator</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>56</p>
-<p>Eyebrow expressiveness</p>
-<p>Emotional reactivity level</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>57</p>
-<p>Handshake pressure and timing</p>
-<p>Assertiveness, social calibration</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/VS</h3>
-<p>58</p>
-<p>How quickly they sit after entering</p>
-<p>Territorial confidence or deference</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/AM</h3>
-<p>59</p>
-<p>Whether they move objects before sitting</p>
-<p>Environmental control tendency</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>60</p>
-<p>Chair choice in a room</p>
-<p>Security, status, or social strategy</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/AM</h3>
-<p>61</p>
-<p>Coat placement</p>
-<p>Comfort horizon and expected duration</p>
-<p><span class="badge t2">T2</span></p>
-<p>BP</p>
-<p>62</p>
-<p>Drink placement</p>
-<p>Territorial awareness and caution</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>63</p>
-<p>How they hold a glass or cup while listening</p>
-<p>Comfort vs. self-protection</p>
-<p><span class="badge t2">T2</span></p>
-<p>VS</p>
-<p>64</p>
-<p>Whether they mirror pace or tone</p>
-<p>Rapport tendency or strategic adaptation</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/VS</h3>
-<p>65</p>
-<p>Response lag before answering personal questions</p>
-<p>Filtering, caution, or internal editing</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/VS</h3>
-<p>66</p>
-<p>Speed of agreeing to small requests</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Compliance baseline</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/VS</h3>
-<p>67</p>
-<p>How often they interrupt</p>
-<p>Dominance, impulsivity, or anxiety</p>
-<p><span class="badge t2">T2</span></p>
-<p>AM</p>
-<p>68</p>
-<p>Whether they finish others’ sentences</p>
-<p>Control tendency or high-pattern anticipation</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/CR</h3>
-<p>69</p>
-<p>Repetition of key phrases</p>
-<p>Identity anchors and personal values</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/BP</h3>
-<p>70</p>
-<p>Pronoun use: “I,” “we,” “they”</p>
-<p>Self-focus, affiliation, or distancing</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/AM</h3>
-<p>71</p>
-<p>How they react to being contradicted</p>
-<p>Ego threat threshold</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>72</p>
-<p>Speed of smile disappearance</p>
-<p>Politeness vs. genuine emotional carryover</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>73</p>
-<p>Delay before laughter after others laugh</p>
-<p>Social dependence vs. independent processing</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>74</p>
-<p>Whether they ask permission before moving</p>
-<p>Rule adherence and hierarchy sensitivity</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/BP</h3>
-<p>75</p>
-<p>How they handle mistakes publicly</p>
-<p>Shame tolerance and recovery style</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/CR</h3>
-<p>76</p>
-<p>Whether they explain simple choices unprompted</p>
-<p>Need for justification or fear of misread</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">CR/VS</h3>
-<p>77</p>
-<p>Speed of returning gaze after looking away</p>
-<p>Confidence recovery and social resilience</p>
-<p><span class="badge t2">T2</span></p>
-<p>VS</p>
-<p>78</p>
-<p>Whether they turn whole body or only head</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Engagement level and physical openness</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">VS/AM</h3>
-<p>79</p>
-<p>Object straightening / alignment behavior</p>
-<p>Order need and control preference</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">BP/CR</h3>
-<p>80</p>
-<p>How quickly they reclaim silence after speaking</p>
-<p>Confidence, authority, and social comfort</p>
-<p><span class="badge t2">T2</span></p>
-<h3 class="section-header sh-label">AM/VS</h3>
 <h3 class="section-header sh-label">T4 Signals Removed</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>NLP eye movement direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction, finger length ratios, ear shape personality claims, skull or face-shape character reading, and handwriting slant analysis are documented in the <span class="badge t4">T4</span> Appendix with the research that informed their removal. Know what they claim. Know why the claim is weak. Do not build real reads on them.</p>
 <h3 class="section-header sh-label">The Six-Category Radar</h3>
@@ -2043,11 +1716,11 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
     
   </div>
 </section>
@@ -2213,12 +1886,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">3</div>
-    <div class="pi-unit">SIGNALS</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
-    <p class="pi-source">The Five Cs — Clusters</p>
-    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
+    
   </div>
 </section>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Memory and action-selection systems finish the job. The hippocampus compares the present person against hundreds or thousands of prior spectators and volunteers, producing a confidence-weighted output: this person is similar to the ones who went well. Or: this person carries a signal that has historically meant difficulty. The basal ganglia help translate that output into the felt certainty of selection: the sense that this is the person, now, before you have articulated why.</p>
@@ -2405,12 +2078,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">5</div>
-    <div class="pi-unit">FILTERS</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
-    <p class="pi-source">The Architecture of Wonder</p>
-    
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <p>Surrounding those pyramidal neurons are inhibitory interneurons, especially GABAergic cells that help control timing, synchrony, and gain. These interneurons help determine which signals are amplified and which are suppressed. A hypnotic suggestion that narrows attention likely depends on this kind of local inhibitory sculpting. Irrelevant competing signals are dampened while the selected representation is stabilized. That is how a person becomes less distracted by alternative interpretations and more absorbed in the suggested one.</p>
@@ -3257,11 +2930,11 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">⅙</div>
-    <div class="pi-unit">OF A SECOND</div>
+    <div class="pi-number">85%</div>
+    <div class="pi-unit">OF DECISIONS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
-    <p class="pi-source">Ekman, 2003</p>
+    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
+    <p class="pi-source">Color Psychology Research</p>
     
   </div>
 </section>
@@ -3388,12 +3061,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">250</div>
-    <div class="pi-unit">MILLISECONDS</div>
+    <div class="pi-number">40%</div>
+    <div class="pi-unit">INCREASE IN TRUST</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
-    <p class="pi-source">Willis & Todorov, 2006</p>
-    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
+    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
+    <p class="pi-source">Processing Fluency Research</p>
+    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
   </div>
 </section>
 <h3 class="section-header sh-label">Movement for Resets</h3>
@@ -3446,12 +3119,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">7</div>
+    <div class="pi-unit">EXPRESSIONS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
+    <p class="pi-source">Ekman & Friesen, 1971</p>
+    
   </div>
 </section>
 <p>The only context where explaining your framework serves the performance.</p>
@@ -3780,12 +3453,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">7</div>
+    <div class="pi-unit">EXPRESSIONS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
+    <p class="pi-source">Ekman & Friesen, 1971</p>
+    
   </div>
 </section>
 <p>Let the moment land before you move. After a strong reveal, the audience needs three to five seconds of unmanaged silence. Not performance silence. Genuine space. The emotion needs time to complete its arc. A performer who rushes past the landing is truncating the neurological process that converts surprise into memory.</p>
@@ -3902,30 +3575,27 @@ body{counter-reset:page}
 <p>For the performer, the full BTE is a reference library. In practice, three clusters cover the majority of what you will encounter on stage and in close-up work.</p>
 <h3 class="section-header sh-standard">Cluster One: Engagement Retreat</h3>
 <p>The body is withdrawing. They have not said no, but their limbic system already has.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Ankle Lock (Bi). DRS 2.0. Emotional restraint. Holding back a reaction or a concern. The feet are locked, the body is bracing.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Torso Tilt Away (Tlt). DRS 1.5. Physical distancing. The brain is seeking exit without verbalizing it. The torso turns before the person is consciously aware of wanting to leave.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Arm Barrier (Bar). DRS 2.0. Protective posture. A threat signal has been detected in the interaction. The arms close across the body.</p>
-<aside class="spotlight-box">
-  <div class="spotlight-label">KEY PRINCIPLE</div>
-  <p class="spotlight-text">Object Barrier (Ob) — DRS 1.5. Using an object as a shield — a phone, a glass, a program, a bag held in front of the body. Unconscious, reliable, and almost never managed.</p>
-</aside>
-<p>Gaze Withdrawal (Wd). DRS 2.0. Attention moving away. The person is processing a concern, evaluating an exit, or managing an internal state they do not want visible.</p>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Ankle Lock</span><span class="bte-code">Bi</span><span class="bte-drs" style="color:#8A9AB5">DRS 2.0.</span></div><p class="bte-desc">Emotional restraint. Holding back a reaction or a concern. The feet are locked, the body is bracing.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Torso Tilt Away</span><span class="bte-code">Tlt</span><span class="bte-drs" style="color:#8A9AB5">DRS 1.5.</span></div><p class="bte-desc">Physical distancing. The brain is seeking exit without verbalizing it. The torso turns before the person is consciously aware of wanting to leave.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Arm Barrier</span><span class="bte-code">Bar</span><span class="bte-drs" style="color:#8A9AB5">DRS 2.0.</span></div><p class="bte-desc">Protective posture. A threat signal has been detected in the interaction. The arms close across the body.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Object Barrier</span><span class="bte-code">Ob</span><span class="bte-drs" style="color:#8A9AB5">DRS 1.5.</span></div><p class="bte-desc">Using an object as a shield — a phone, a glass, a program, a bag held in front of the body. Unconscious, reliable, and almost never managed.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Gaze Withdrawal</span><span class="bte-code">Wd</span><span class="bte-drs" style="color:#8A9AB5">DRS 2.0.</span></div><p class="bte-desc">Attention moving away. The person is processing a concern, evaluating an exit, or managing an internal state they do not want visible.</p></div>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Performance Application: When two or more retreat signals appear in a volunteer, do not push harder. The limbic system is in conflict-avoidance mode. Reframe the interaction. Create safety. Lower the stakes of their participation. &quot;You don&#x27;t have to do anything you don&#x27;t want to. Just stay with me for a moment.&quot; Retreat signals are information, not failure. They tell you the volunteer&#x27;s nervous system needs something different from what you are currently providing.</p>
 <h3 class="section-header sh-label">Cluster Two: Evaluation</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>They are evaluating. Not resisting. This is the most important signal cluster to recognize correctly, because the untrained performer will read evaluation as resistance and change course at precisely the moment they should hold still.</p>
-<p>Lip Compress (Lc). DRS 2.0. Withholding a response. Something is being processed but not yet released. The lips press together briefly.</p>
-<p>Head Tilt (Tlt) — DRS 1.5. Cognitive engagement. The brain is actively processing information. The head tilts to one side — a reliable indicator that evaluation is underway.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Chin Stroke (Cs). DRS 1.5. Deliberation. A decision is being weighed. The hand moves to the chin and rests.</p>
-<p>Finger Steeple (St) — DRS 2.5. High cognitive confidence. An opinion or judgment is forming. The fingertips press together. This is not a stress signal — it is a processing signal.</p>
-<p>Brow Narrow (Bn) — DRS 1.5. Scrutiny. Something needs clarification. The brows draw together slightly — not in anger, in focus.</p>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Lip Compress</span><span class="bte-code">Lc</span><span class="bte-drs" style="color:#8A9AB5">DRS 2.0.</span></div><p class="bte-desc">Withholding a response. Something is being processed but not yet released. The lips press together briefly.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Head Tilt</span><span class="bte-code">Tlt</span><span class="bte-drs" style="color:#8A9AB5">DRS 1.5.</span></div><p class="bte-desc">Cognitive engagement. The brain is actively processing information. The head tilts to one side — a reliable indicator that evaluation is underway.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Chin Stroke</span><span class="bte-code">Cs</span><span class="bte-drs" style="color:#8A9AB5">DRS 1.5.</span></div><p class="bte-desc">Deliberation. A decision is being weighed. The hand moves to the chin and rests.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Finger Steeple</span><span class="bte-code">St</span><span class="bte-drs" style="color:#8A9AB5">DRS 2.5.</span></div><p class="bte-desc">High cognitive confidence. An opinion or judgment is forming. The fingertips press together. This is not a stress signal — it is a processing signal.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Brow Narrow</span><span class="bte-code">Bn</span><span class="bte-drs" style="color:#8A9AB5">DRS 1.5.</span></div><p class="bte-desc">Scrutiny. Something needs clarification. The brows draw together slightly — not in anger, in focus.</p></div>
 <p>Performance Application: Evaluation clusters mean the prefrontal cortex is engaged. In a sales context, this is a buying signal. On stage, it is an engagement signal. The audience member or volunteer who is evaluating is doing so because they are invested enough to process what is happening rather than passively consuming it. Do not fill the silence. Do not offer explanation. Let them finish the calculation. The read that lands after a visible evaluation period carries ten times the weight of one that lands on an audience that was not tracking carefully.</p>
 <h3 class="section-header sh-standard">Cluster Three: Certainty Drop</h3>
 <p>High DRS territory. Something has changed. The behavioral shift is sharp enough to indicate that a new variable has entered the person&#x27;s processing. Something that disrupted whatever they were previously settled on.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Jaw Clench (Jc). DRS 3.5. Very high stress indicator. An unspoken reaction is being physically suppressed. The masseter muscle tightens visibly.</p>
-<p>Swallow Spike (Sw). DRS 3.0. Sudden stress activation. A topic, a word, or a moment just triggered the autonomic nervous system. The swallow is involuntary and visible.</p>
-<p>Digit Flex (Df). DRS 2.5. Micro-tension in the hands. A suppressed stress response leaking through the extremities. The fingers flex or curl slightly.</p>
-<p>Throat Clasp (Thc). DRS 3.5. One of the highest-weight signals in the BTE. The hand moves to the throat in a grasping or touching motion. Extreme stress, a difficult truth being confronted, or a significant emotional activation.</p>
-<p>Freeze (Fz). DRS 3.0. Total behavioral inhibition. The person stops moving entirely. The brain is processing a significant threat or surprise and has temporarily suspended all motor output.</p>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Jaw Clench</span><span class="bte-code">Jc</span><span class="bte-drs" style="color:#8A9AB5">DRS 3.5.</span></div><p class="bte-desc">Very high stress indicator. An unspoken reaction is being physically suppressed. The masseter muscle tightens visibly.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Swallow Spike</span><span class="bte-code">Sw</span><span class="bte-drs" style="color:#8A9AB5">DRS 3.0.</span></div><p class="bte-desc">Sudden stress activation. A topic, a word, or a moment just triggered the autonomic nervous system. The swallow is involuntary and visible.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Digit Flex</span><span class="bte-code">Df</span><span class="bte-drs" style="color:#8A9AB5">DRS 2.5.</span></div><p class="bte-desc">Micro-tension in the hands. A suppressed stress response leaking through the extremities. The fingers flex or curl slightly.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Throat Clasp</span><span class="bte-code">Thc</span><span class="bte-drs" style="color:#8A9AB5">DRS 3.5.</span></div><p class="bte-desc">One of the highest-weight signals in the BTE. The hand moves to the throat in a grasping or touching motion. Extreme stress, a difficult truth being confronted, or a significant emotional activation.</p></div>
+<div class="bte-signal"><div class="bte-signal-head"><span class="bte-name">Freeze</span><span class="bte-code">Fz</span><span class="bte-drs" style="color:#8A9AB5">DRS 3.0.</span></div><p class="bte-desc">Total behavioral inhibition. The person stops moving entirely. The brain is processing a significant threat or surprise and has temporarily suspended all motor output.</p></div>
 <p>Performance Application: DRS 3.0+ clusters indicate the hypothalamic-pituitary-adrenal axis is activated. The volunteer is experiencing genuine stress. In performance, this means you have hit something real. The question is what you do with it. Pushing through a certainty drop will break trust and may cause genuine distress. Slowing down (lowering your voice, softening your frame, giving the person space to process) converts the moment from a threat into a connection. &quot;I can see something just landed. You don&#x27;t have to tell me what it is. I just want you to know I noticed.&quot; That sentence, delivered with genuine warmth after a visible certainty drop, may be the most powerful moment in your show.</p>
 <h3 class="section-header sh-standard">The Five C&#x27;s of Behavioral Reading</h3>
 <p>Before you read a single BTE signal, five principles govern everything. These are not guidelines. They are the architecture without which individual signals are noise.</p>
@@ -3938,12 +3608,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">7</div>
+    <div class="pi-unit">EXPRESSIONS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
+    <p class="pi-source">Ekman & Friesen, 1971</p>
+    
   </div>
 </section>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>You do not need to memorize the entire BTE. You need a notation habit: a shorthand that lets you track what you are seeing in real time and review it after the interaction.</p>
