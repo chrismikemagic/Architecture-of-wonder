@@ -4357,6 +4357,8 @@ body{counter-reset:page}
     var email = document.getElementById('gate-email').value.trim();
     if (!firstName || !email) return;
 
+    // Use only the first name if they typed a full name
+    firstName = firstName.split(/\s+/)[0];
     // Capitalize first letter
     firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
 
