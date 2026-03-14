@@ -122,6 +122,15 @@ If you position as someone who detects lies, you've made an undeliverable promis
 ### The DOCX is the master, everything else is generated
 Edit the DOCX. Run the build script. The HTML is output, not source. Never edit the HTML directly — your changes will be overwritten.
 
+### Images live in two places
+Figures are embedded in the DOCX (so they're visible in Word/Docs) AND referenced in the `FIGURES` dict in `build-book.py` (so they render in the HTML). Both must be updated when adding a figure. The text extraction step does not carry images — only the build script's `FIGURES` map handles that.
+
+### Never edit downstream files directly
+The `manuscript-extracted.txt` and `Architecture-of-Wonder-DESIGNED.html` are generated output. Edits to these files will be lost on the next extract/build cycle. Always edit upstream: DOCX for prose, `build-book.py` for design elements and figures.
+
+### Chapter numbering: parser vs. TOC
+The `parse_manuscript()` function assigns chapter numbers sequentially as it encounters `CHAPTER` headings in the text. This can differ from the TOC numbering in the designed HTML (which accounts for parts, introduction, etc.). When referencing chapters in config dicts (FIGURES, HOOK_LINES, etc.), always use the parser's numbering. Run the parser with debug output if unsure.
+
 ### When adding content, find position markers first
 Before inserting into the DOCX, search for known text (chapter titles, part headers) to find the exact position. Don't rely on remembered positions — they shift with every edit.
 

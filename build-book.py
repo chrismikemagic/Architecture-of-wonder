@@ -139,6 +139,21 @@ PATTERN_INTERRUPTS = [
 ]
 
 # ═══════════════════════════════════════════════════════════
+# FIGURES — Images injected after specific section headers
+# ═══════════════════════════════════════════════════════════
+
+FIGURES = {
+    # Key: "CHAPTER <num>:<section header text>" → figure data
+    # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
+    'CHAPTER 10:The Seven Expressions': {
+        'src': 'resources/metv-images/seven-universal-expressions.png',
+        'alt': 'The seven universal facial expressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
+        'caption': 'Figure 10.1 \u2014 The seven universal expressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'rights': 'Author-owned photograph',
+    },
+}
+
+# ═══════════════════════════════════════════════════════════
 # THE FIVE Cs FRAMEWORK — Injected at beginning of Chapter 7
 # ═══════════════════════════════════════════════════════════
 
@@ -549,6 +564,10 @@ def process_paragraph(text, part_num=1):
     if not stripped:
         return ''
 
+    # Skip figure captions extracted from DOCX (handled by FIGURES config)
+    if re.match(r'^Figure\s+\d+\.\d+\s*[\u2014\-]', stripped):
+        return ''
+
     # Section breaks
     if is_section_break(stripped):
         return '<div class="section-break">\u00b7 \u00b7 \u00b7</div>'
@@ -796,6 +815,17 @@ def build_chapter_body(section, global_para_count):
         processed = process_paragraph(para, part_num)
         if processed:
             parts.append(processed)
+
+        # ── FIGURE INJECTION — after section headers ──
+        if is_section_header(stripped):
+            fig_key = f'{chapter_key}:{stripped}'
+            if fig_key in FIGURES:
+                fig = FIGURES[fig_key]
+                parts.append(f'<div class="book-figure" style="text-align:center;margin:2em 0;">')
+                parts.append(f'  <img src="{fig["src"]}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
+                if fig.get('caption'):
+                    parts.append(f'  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">{fig["caption"]}</p>')
+                parts.append(f'</div>')
 
         i += 1
 
