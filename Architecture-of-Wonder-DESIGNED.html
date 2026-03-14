@@ -542,6 +542,70 @@ body{counter-reset:page}
   padding-top:7px;
   text-indent:0!important;text-align:left!important;
 }
+/* ── VOLUNTEER TYPE CARDS ── */
+.volunteer-card{
+  background:linear-gradient(135deg,rgba(8,15,26,.85),rgba(13,30,48,.95));
+  border-left:3px solid var(--vc-color,var(--gold));
+  border-radius:6px;
+  padding:14px 18px;
+  margin:.9em 0;
+  break-inside:avoid;
+}
+.vc-header{
+  margin-bottom:9px;padding-bottom:7px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.vc-name{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.07em;color:var(--vc-color,var(--gold));
+  text-transform:uppercase;
+}
+.vc-desc{
+  font-size:.8rem;color:rgba(255,255,255,.85);
+  line-height:1.55;margin:0 0 9px;
+  text-indent:0!important;text-align:left!important;
+}
+.vc-signals{display:flex;flex-wrap:wrap;gap:5px 6px;margin-bottom:9px}
+.vc-chip{
+  display:inline-block;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:3px;padding:2px 8px;
+  font-size:.7rem;color:rgba(255,255,255,.75);
+}
+.vc-meta{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:8px;display:flex;gap:16px;flex-wrap:wrap;
+}
+.vc-works,.vc-avoid{font-size:.75rem;color:var(--gray-blue);line-height:1.45}
+.vc-meta-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-right:3px;
+}
+.vc-works .vc-meta-label{color:var(--blue)}
+.vc-avoid .vc-meta-label{color:#A83030}
+/* ── VOLUNTEER SELECTION MATRIX ── */
+.vm-cell{
+  background:rgba(13,30,48,.9);
+  border:1px solid rgba(255,255,255,.07);
+  border-top:2px solid var(--vm-color,var(--gold));
+  border-radius:4px;
+  padding:12px 14px;
+  margin:.5em 0;
+  break-inside:avoid;
+}
+.vm-heading{
+  font-family:var(--sans);font-size:.7rem;font-weight:600;
+  color:#fff;margin-bottom:3px;
+}
+.vm-rec{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  color:var(--vm-color,var(--gold));letter-spacing:.04em;margin-bottom:6px;
+}
+.vm-body{
+  font-size:.75rem;color:var(--gray-blue);line-height:1.5;
+  margin:0;text-indent:0!important;text-align:left!important;
+}
 .bte-application{
   padding:12px 16px;background:rgba(201,168,76,.04);
   border-top:1px solid rgba(201,168,76,.12);
@@ -1978,30 +2042,19 @@ body{counter-reset:page}
 <p>What happened was a cortisol event. The volunteer&#x27;s nervous system passed a threshold, their psychological availability dropped, and they stopped being a co-author in the performance and became a person trying to manage the experience of being on stage. The audience read this shift before they processed it consciously. Manage the volunteer&#x27;s neurological state, and you manage the room&#x27;s.</p>
 <h3 class="section-header sh-label">Seven Volunteer Types</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>Most volunteer failures are selection failures. The right read in the wrong hands produces nothing. The right person amplifies everything. These seven profiles cover the full range of what walks toward your stage. Each with a different strategy, a different set of signals, and a different set of effects that fit them best.</p>
-<h3 class="section-header sh-label">The Supporter</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>The audience member who wants you to succeed. Already leaning forward, already nodding, already sharing the experience with the people beside them. Leans forward with open posture throughout · Nods frequently (not just when prompted · Smiles before anything has earned it · Moves toward the invitation before it is fully delivered. Works best for: suggestion, imagination effects, emotional peak moments, anything requiring visible audience reaction. Avoid for: nothing) this is the ideal volunteer for most routines. Select immediately. This person does half the work for you.</p>
-<h3 class="section-header sh-label">The Performer</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Wants to be part of the show. Not as a participant but as a character. More animated than necessary, already performing. Will help you. Will also try to take the stage. Expressive theatrical gestures · Already making the room laugh · Posture opens wider when watched · Occupies more physical space than others nearby. Works best for: demonstrations with a collaborative structure. Avoid for: effects requiring silence or quiet cooperation. Give them a role, not a task.</p>
-<h3 class="section-header sh-label">The Challenger</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Skeptical by nature, not by choice. Arms crossed or hands clasped · Leaning back while others lean forward · Analytical, still expression. Watching without reacting · Checks the room&#x27;s reaction before committing to their own. Works best for: predictions, undeniable effects where their final conversion carries social proof weight for the entire audience. Avoid for: suggestion-based effects where their resistance becomes visible. Address them early. Frame the invitation as a test designed for exactly the kind of person who does not believe it.</p>
-<h3 class="section-header sh-label">The Anxious Volunteer</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Wants to participate but fears embarrassing themselves. Visible nervous laughter when approached · Hands cover mouth or face when surprised · Looks for reassurance from nearby friends · Blink rate increase when center of attention. Works best for: short, success-guaranteed interactions. Avoid for: any long on-stage sequence where extended attention amplifies anxiety. Give them explicit permission to succeed: &#x27;This one is going to work for you. I can already tell.&#x27; Then make sure it does.</p>
-<h3 class="section-header sh-label">The Analytical Volunteer</h3>
-<p>Processes everything before committing. Deliberate, measured response to everything · Asks clarifying questions before participating · Minimal facial movement during observation · Head tilts slightly. Actively processing. Works best for: slow-burn reveals, prediction-based effects, anything that rewards patience. Avoid for: rapid-fire or emotionally-paced effects. They become your most powerful endorsement if you earn it. Pace to their processing speed.</p>
-<h3 class="section-header sh-label">The Emotional Volunteer</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Reacts fully and authentically. Every expression visible to the room. Not performing (just feels everything in real time. Immediate visible reactions to unexpected moments · Covers mouth when surprised) authentically · Eyes well up during personal reveals · Leans to share reactions with neighbors. Works best for: personal readings, life readings, emotional peak demonstrations. Any effect where the subject&#x27;s reaction IS the effect. Protect this volunteer. Their reaction is the show. Never rush through a moment when they are still feeling it.</p>
-<h3 class="section-header sh-label">The Reserved Volunteer</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>This person is quiet, contained, and not demonstratively engaged — but not disinterested either. They are just private. Minimal facial movement throughout · Very little postural adjustment · Responds slowly and deliberately · Does not look around the room. Works best for: close-up work where intimacy matters more than visible reaction. Avoid for: large stage moments where the audience needs to see a reaction. Acknowledge their reserve directly: &#x27;You&#x27;re not the type to show what you&#x27;re thinking. That&#x27;s actually more interesting to me.&#x27; Then mean it.</p>
+<div class="volunteer-card" style="--vc-color:#1A8FA8"><div class="vc-header"><span class="vc-name">The Supporter</span></div><p class="vc-desc">The audience member who wants you to succeed. Already leaning forward, already nodding, already sharing the experience with the people beside them.</p><div class="vc-signals"><span class="vc-chip">Leans forward with open posture throughout</span><span class="vc-chip">Nods frequently (not just when prompted</span><span class="vc-chip">Smiles before anything has earned it</span><span class="vc-chip">Moves toward the invitation before it is fully delivered</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> suggestion, imagination effects, emotional peak moments, anything requiring visible audience reaction</div><div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> nothing) this is the ideal volunteer for most routines. Select immediately. This person does half the work for you</div></div></div>
+<div class="volunteer-card" style="--vc-color:#C9A84C"><div class="vc-header"><span class="vc-name">The Performer</span></div><p class="vc-desc">Wants to be part of the show. Not as a participant but as a character. More animated than necessary, already performing. Will help you. Will also try to take the stage.</p><div class="vc-signals"><span class="vc-chip">Expressive theatrical gestures</span><span class="vc-chip">Already making the room laugh</span><span class="vc-chip">Posture opens wider when watched</span><span class="vc-chip">Occupies more physical space than others nearby</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> demonstrations with a collaborative structure</div><div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> effects requiring silence or quiet cooperation. Give them a role, not a task</div></div></div>
+<div class="volunteer-card" style="--vc-color:#A83030"><div class="vc-header"><span class="vc-name">The Challenger</span></div><p class="vc-desc">Skeptical by nature, not by choice.</p><div class="vc-signals"><span class="vc-chip">Arms crossed or hands clasped</span><span class="vc-chip">Leaning back while others lean forward</span><span class="vc-chip">Analytical, still expression. Watching without reacting</span><span class="vc-chip">Checks the room&#x27;s reaction before committing to their own</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> predictions, undeniable effects where their final conversion carries social proof weight for the entire audience</div><div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> suggestion-based effects where their resistance becomes visible. Address them early. Frame the invitation as a test designed for exactly the kind of person who does not believe it</div></div></div>
+<div class="volunteer-card" style="--vc-color:#6B52A0"><div class="vc-header"><span class="vc-name">The Anxious Volunteer</span></div><p class="vc-desc">Wants to participate but fears embarrassing themselves.</p><div class="vc-signals"><span class="vc-chip">Visible nervous laughter when approached</span><span class="vc-chip">Hands cover mouth or face when surprised</span><span class="vc-chip">Looks for reassurance from nearby friends</span><span class="vc-chip">Blink rate increase when center of attention</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> short, success-guaranteed interactions</div><div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> any long on-stage sequence where extended attention amplifies anxiety. Give them explicit permission to succeed: &#x27;This one is going to work for you. I can already tell.&#x27; Then make sure it does</div></div></div>
+<div class="volunteer-card" style="--vc-color:#8BAAB8"><div class="vc-header"><span class="vc-name">The Analytical Volunteer</span></div><p class="vc-desc">Processes everything before committing.</p><div class="vc-signals"><span class="vc-chip">Deliberate, measured response to everything</span><span class="vc-chip">Asks clarifying questions before participating</span><span class="vc-chip">Minimal facial movement during observation</span><span class="vc-chip">Head tilts slightly. Actively processing</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> slow-burn reveals, prediction-based effects, anything that rewards patience</div><div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> rapid-fire or emotionally-paced effects. They become your most powerful endorsement if you earn it. Pace to their processing speed</div></div></div>
+<div class="volunteer-card" style="--vc-color:#D4A030"><div class="vc-header"><span class="vc-name">The Emotional Volunteer</span></div><p class="vc-desc">Reacts fully and authentically. Every expression visible to the room. Not performing (just feels everything in real time.</p><div class="vc-signals"><span class="vc-chip">Immediate visible reactions to unexpected moments</span><span class="vc-chip">Covers mouth when surprised) authentically</span><span class="vc-chip">Eyes well up during personal reveals</span><span class="vc-chip">Leans to share reactions with neighbors</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> personal readings, life readings, emotional peak demonstrations. Any effect where the subject&#x27;s reaction IS the effect. Protect this volunteer. Their reaction is the show. Never rush through a moment when they are still feeling it</div></div></div>
+<div class="volunteer-card" style="--vc-color:#3A6B8A"><div class="vc-header"><span class="vc-name">The Reserved Volunteer</span></div><p class="vc-desc">This person is quiet, contained, and not demonstratively engaged — but not disinterested either. They are just private.</p><div class="vc-signals"><span class="vc-chip">Minimal facial movement throughout</span><span class="vc-chip">Very little postural adjustment</span><span class="vc-chip">Responds slowly and deliberately</span><span class="vc-chip">Does not look around the room</span></div><div class="vc-meta"><div class="vc-works"><span class="vc-meta-label">Works best for</span> close-up work where intimacy matters more than visible reaction</div><div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> large stage moments where the audience needs to see a reaction. Acknowledge their reserve directly: &#x27;You&#x27;re not the type to show what you&#x27;re thinking. That&#x27;s actually more interesting to me.&#x27; Then mean it</div></div></div>
 <h3 class="section-header sh-standard">The Volunteer Selection Matrix</h3>
 <p>Rate every potential volunteer on two independent dimensions: confidence and suggestibility. These are not the same dimension. A highly confident person can be entirely resistant to suggestion. A quiet person can be extraordinarily responsive. Map them separately. Select accordingly.</p>
-<h3 class="section-header sh-standard">High Confidence + High Suggestibility</h3>
-<p>BEST CHOICE. Supporter or Performer type. Select now. Reacts visibly, carries the effect, amplifies the room&#x27;s response automatically.</p>
-<h3 class="section-header sh-standard">High Confidence + Low Suggestibility</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>USE FOR UNDENIABLE EFFECTS. Challenger type. Their resistance becomes your proof. Use for predictions and demonstrations with no out. Win them and the room converts completely.</p>
-<h3 class="section-header sh-standard">Low Confidence + High Suggestibility</h3>
-<p>USE FOR CLOSE-UP. Anxious, Emotional, or Reserved type. Ideal in intimate settings. May go too quiet for a large stage moment. Pair with a Supporter for stage work.</p>
-<h3 class="section-header sh-standard">Low Confidence + Low Suggestibility</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>SKIP OR REDIRECT. High probability of silence where reaction should be. Find someone else. Graciously and quickly. The graceful redirect is its own performance skill.</p>
+<div class="vm-cell" style="--vm-color:#1A8FA8"><div class="vm-heading">High Confidence + High Suggestibility</div><div class="vm-rec">BEST CHOICE</div><p class="vm-body">Supporter or Performer type. Select now. Reacts visibly, carries the effect, amplifies the room&#x27;s response automatically.</p></div>
+<div class="vm-cell" style="--vm-color:#A83030"><div class="vm-heading">High Confidence + Low Suggestibility</div><div class="vm-rec">USE FOR UNDENIABLE EFFECTS</div><p class="vm-body">Challenger type. Their resistance becomes your proof. Use for predictions and demonstrations with no out. Win them and the room converts completely.</p></div>
+<div class="vm-cell" style="--vm-color:#6B52A0"><div class="vm-heading">Low Confidence + High Suggestibility</div><div class="vm-rec">USE FOR CLOSE-UP</div><p class="vm-body">Anxious, Emotional, or Reserved type. Ideal in intimate settings. May go too quiet for a large stage moment. Pair with a Supporter for stage work.</p></div>
+<div class="vm-cell" style="--vm-color:#5A5A72"><div class="vm-heading">Low Confidence + Low Suggestibility</div><div class="vm-rec">SKIP OR REDIRECT</div><p class="vm-body">High probability of silence where reaction should be. Find someone else. Graciously and quickly. The graceful redirect is its own performance skill.</p></div>
 <h3 class="section-header sh-standard">Recovering from a Bad Selection</h3>
 <p>It happens to every performer. The wrong person is on stage. The sequence is not working. You have three options. And the one you choose in the next ten seconds determines how the next twenty minutes feel.</p>
 <h3 class="section-header sh-standard">Redirect to the Room</h3>
@@ -2212,12 +2265,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">40%</div>
+    <div class="pi-unit">INCREASE IN TRUST</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
-    
+    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
+    <p class="pi-source">Processing Fluency Research</p>
+    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
   </div>
 </section>
 <p>Surrounding those pyramidal neurons are inhibitory interneurons, especially GABAergic cells that help control timing, synchrony, and gain. These interneurons help determine which signals are amplified and which are suppressed. A hypnotic suggestion that narrows attention likely depends on this kind of local inhibitory sculpting. Irrelevant competing signals are dampened while the selected representation is stabilized. That is how a person becomes less distracted by alternative interpretations and more absorbed in the suggested one.</p>
@@ -3058,12 +3111,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">3</div>
-    <div class="pi-unit">SIGNALS</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
-    <p class="pi-source">The Five Cs — Clusters</p>
-    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
+    
   </div>
 </section>
 <h3 class="section-header sh-label">Scripted Revelation</h3>
@@ -3189,12 +3242,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">⅙</div>
-    <div class="pi-unit">OF A SECOND</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
-    <p class="pi-source">Ekman, 2003</p>
-    
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <h3 class="section-header sh-label">Movement for Resets</h3>
@@ -3247,12 +3300,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">40%</div>
+    <div class="pi-unit">INCREASE IN TRUST</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
-    
+    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
+    <p class="pi-source">Processing Fluency Research</p>
+    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
   </div>
 </section>
 <p>The only context where explaining your framework serves the performance.</p>
@@ -3581,12 +3634,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">40%</div>
+    <div class="pi-unit">INCREASE IN TRUST</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
-    
+    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
+    <p class="pi-source">Processing Fluency Research</p>
+    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
   </div>
 </section>
 <p>Let the moment land before you move. After a strong reveal, the audience needs three to five seconds of unmanaged silence. Not performance silence. Genuine space. The emotion needs time to complete its arc. A performer who rushes past the landing is truncating the neurological process that converts surprise into memory.</p>
@@ -3736,12 +3789,12 @@ body{counter-reset:page}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">40%</div>
+    <div class="pi-unit">INCREASE IN TRUST</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
-    
+    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
+    <p class="pi-source">Processing Fluency Research</p>
+    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
   </div>
 </section>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>You do not need to memorize the entire BTE. You need a notation habit: a shorthand that lets you track what you are seeing in real time and review it after the interaction.</p>

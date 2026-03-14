@@ -866,6 +866,104 @@ def gen_radar_category(num, name, signals_text):
     )
 
 
+_VOLUNTEER_COLORS = {
+    'The Supporter':           '#1A8FA8',
+    'The Performer':           '#C9A84C',
+    'The Challenger':          '#A83030',
+    'The Anxious Volunteer':   '#6B52A0',
+    'The Analytical Volunteer':'#8BAAB8',
+    'The Emotional Volunteer': '#D4A030',
+    'The Reserved Volunteer':  '#3A6B8A',
+}
+
+def gen_volunteer_card(name, body):
+    """Render a volunteer type as a styled profile card."""
+    color = _VOLUNTEER_COLORS.get(name, 'var(--gold)')
+    works = ''
+    avoid = ''
+    desc = body
+
+    if 'Works best for:' in body:
+        desc_raw, _, rest = body.partition('Works best for:')
+        if 'Avoid for:' in rest:
+            works_text, _, avoid_rest = rest.partition('Avoid for:')
+            works = works_text.strip().rstrip('.')
+            avoid = avoid_rest.strip()
+        else:
+            works = rest.strip()
+        desc = desc_raw.strip()
+
+    # Extract signals: split on ' · ' — description is sentences before the signal chain
+    signals = []
+    description = desc
+    if ' · ' in desc:
+        raw = desc.split(' · ')
+        first = raw[0]
+        last_dot = first.rfind('. ')
+        if last_dot >= 0:
+            description = first[:last_dot + 1].strip()
+            first_sig = first[last_dot + 2:].strip()
+        else:
+            description = ''
+            first_sig = first.strip()
+        signals = [s.strip().rstrip('.') for s in [first_sig] + raw[1:] if s.strip()]
+
+    chip_html = (
+        '<div class="vc-signals">' +
+        ''.join(f'<span class="vc-chip">{escape(s)}</span>' for s in signals) +
+        '</div>'
+    ) if signals else ''
+
+    meta_html = ''
+    if works or avoid:
+        meta_html = '<div class="vc-meta">'
+        if works:
+            meta_html += f'<div class="vc-works"><span class="vc-meta-label">Works best for</span> {escape(works.strip(". "))}</div>'
+        if avoid:
+            meta_html += f'<div class="vc-avoid"><span class="vc-meta-label">Avoid for</span> {escape(avoid.strip(". "))}</div>'
+        meta_html += '</div>'
+
+    desc_html = f'<p class="vc-desc">{escape(description)}</p>' if description else ''
+
+    return (
+        f'<div class="volunteer-card" style="--vc-color:{color}">'
+        f'<div class="vc-header"><span class="vc-name">{escape(name)}</span></div>'
+        f'{desc_html}{chip_html}{meta_html}'
+        f'</div>'
+    )
+
+
+def gen_volunteer_matrix_entry(heading, body):
+    """Render one cell of the confidence×suggestibility matrix."""
+    # Determine color by position keywords
+    h = heading.lower()
+    if 'high' in h and h.count('high') == 2:
+        color = '#1A8FA8'   # HH: best
+    elif 'high confidence' in h:
+        color = '#A83030'   # HL: challenger
+    elif 'low suggestibility' in h and 'low confidence' in h:
+        color = '#5A5A72'   # LL: skip
+    else:
+        color = '#6B52A0'   # LH: anxious/reserved
+
+    # Extract ALL-CAPS recommendation from body start
+    rec = ''
+    body_rest = body
+    if '. ' in body:
+        first, _, rest = body.partition('. ')
+        if first == first.upper() and len(first) > 2:
+            rec = first
+            body_rest = rest
+
+    return (
+        f'<div class="vm-cell" style="--vm-color:{color}">'
+        f'<div class="vm-heading">{escape(heading)}</div>'
+        f'<div class="vm-rec">{escape(rec)}</div>'
+        f'<p class="vm-body">{escape(body_rest)}</p>'
+        f'</div>'
+    )
+
+
 def gen_wyajd(text):
     return f'''<aside class="wyajd">
   <div class="wyajd-bar"></div>
@@ -1121,6 +1219,23 @@ def build_chapter_body(section, global_para_count):
                     parts.append(gen_observation_table(rows))
                     i = j
                     continue
+
+        # ── VOLUNTEER TYPE CARDS ──
+        if stripped in _VOLUNTEER_COLORS and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_volunteer_card(stripped, body_para))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── VOLUNTEER SELECTION MATRIX ENTRIES ──
+        vm_m = re.match(r'^(High|Low) Confidence \+ (High|Low) Suggestibility$', stripped)
+        if vm_m and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_volunteer_matrix_entry(stripped, body_para))
+            i += 2
+            global_para_count += 2
+            continue
 
         # ── SIX-CATEGORY RADAR CARDS ──
         # Pattern: "01 — Category Name" followed by "signal [T#] · signal [T#] ... Insight."
@@ -1977,6 +2092,70 @@ body{counter-reset:page}
   border-top:1px solid rgba(255,255,255,.06);
   padding-top:7px;
   text-indent:0!important;text-align:left!important;
+}
+/* ── VOLUNTEER TYPE CARDS ── */
+.volunteer-card{
+  background:linear-gradient(135deg,rgba(8,15,26,.85),rgba(13,30,48,.95));
+  border-left:3px solid var(--vc-color,var(--gold));
+  border-radius:6px;
+  padding:14px 18px;
+  margin:.9em 0;
+  break-inside:avoid;
+}
+.vc-header{
+  margin-bottom:9px;padding-bottom:7px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.vc-name{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.07em;color:var(--vc-color,var(--gold));
+  text-transform:uppercase;
+}
+.vc-desc{
+  font-size:.8rem;color:rgba(255,255,255,.85);
+  line-height:1.55;margin:0 0 9px;
+  text-indent:0!important;text-align:left!important;
+}
+.vc-signals{display:flex;flex-wrap:wrap;gap:5px 6px;margin-bottom:9px}
+.vc-chip{
+  display:inline-block;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:3px;padding:2px 8px;
+  font-size:.7rem;color:rgba(255,255,255,.75);
+}
+.vc-meta{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:8px;display:flex;gap:16px;flex-wrap:wrap;
+}
+.vc-works,.vc-avoid{font-size:.75rem;color:var(--gray-blue);line-height:1.45}
+.vc-meta-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-right:3px;
+}
+.vc-works .vc-meta-label{color:var(--blue)}
+.vc-avoid .vc-meta-label{color:#A83030}
+/* ── VOLUNTEER SELECTION MATRIX ── */
+.vm-cell{
+  background:rgba(13,30,48,.9);
+  border:1px solid rgba(255,255,255,.07);
+  border-top:2px solid var(--vm-color,var(--gold));
+  border-radius:4px;
+  padding:12px 14px;
+  margin:.5em 0;
+  break-inside:avoid;
+}
+.vm-heading{
+  font-family:var(--sans);font-size:.7rem;font-weight:600;
+  color:#fff;margin-bottom:3px;
+}
+.vm-rec{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  color:var(--vm-color,var(--gold));letter-spacing:.04em;margin-bottom:6px;
+}
+.vm-body{
+  font-size:.75rem;color:var(--gray-blue);line-height:1.5;
+  margin:0;text-indent:0!important;text-align:left!important;
 }
 .bte-application{
   padding:12px 16px;background:rgba(201,168,76,.04);

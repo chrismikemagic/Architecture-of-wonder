@@ -23,6 +23,11 @@ This file is cumulative — each session appends to it.
 **Why:** Plan implementation — created `docs/10-editing-session-log.md` and `export-pdf.py`.
 **Pattern/Lesson:** Editing surface is `manuscript-extracted.txt`. All edits flow through the Edit tool → `python build-book.py` → `Architecture-of-Wonder-DESIGNED.html`. DOCX is archive only.
 
+### 2026-03-14 — Seven Volunteer Types Formatting + DISC Size Fix
+**Change:** Added `gen_volunteer_card()` and `gen_volunteer_matrix_entry()` to `build-book.py`. All 7 volunteer type profiles (The Supporter through The Reserved Volunteer) now render as dark profile cards with: type name badge in distinct color, description, signal chips, and Works best for / Avoid for labels. The 4 Volunteer Selection Matrix entries render as colored cells with recommendation and body. DISC SVG scaled up to 800×620 with larger fonts throughout.
+**Why:** User said "this all needs better formatting" about the Seven Volunteer Types section. DISC graphic was too small to read.
+**Pattern/Lesson:** Chris wants structured card treatment for any named-type catalog. Consistent visual pattern: dark card, colored left accent, chips for signal lists, labeled metadata for strategic guidance.
+
 ### 2026-03-14 — DISC Quadrant Chart
 **Change:** Added `DISC_HTML` constant to `build-book.py` with inline SVG quadrant chart (2×2 grid: D=red, I=gold, C=purple, S=blue). Chart injects before the first "D — DIRECT" entry in Chapter 8. Shows axis labels (Fast/Slow, Task/People), on-stage strategy, and key signals per quadrant. Created `design-reference/graphics/disc-quadrant.svg`.
 **Why:** User wanted a chart or graphic for the DISC profile section.
