@@ -727,11 +727,22 @@ def gen_part_opener(section):
     part_num = section.get('part_num', 0)
     subtitle = section.get('subtitle', '')
     part_names = {1:'ONE',2:'TWO',3:'THREE',4:'FOUR',5:'FIVE',6:'SIX',7:'SEVEN',8:'EIGHT'}
+    # Part description overrides (mentalism-relevant rewrites)
+    _PART_DESCS = {
+        1: 'The neurobiology of performance. Predictive processing, salience, cortisol, dopamine, attention, authority, and credibility\u2009\u2014\u2009the mechanisms every mentalist exploits whether they know it or not.',
+    }
+    # Pull the first content paragraph as the part description
+    desc = ''
+    content_paras = [p.strip() for p in section.get('content', []) if p.strip()]
+    desc_text = _PART_DESCS.get(part_num, content_paras[0] if content_paras else '')
+    if desc_text:
+        desc = f'<p class="part-desc">{escape(desc_text)}</p>'
     return f'''<section class="part-opener" data-part="{part_num}">
   <div class="part-opener-content">
     <div class="part-number">PART {part_names.get(part_num, "")}</div>
     <div class="gold-line wide"></div>
     <h1 class="part-title">{escape(subtitle)}</h1>
+    {desc}
   </div>
 </section>'''
 
@@ -1645,6 +1656,11 @@ body{counter-reset:page}
   font-family:var(--sans);font-size:1.7rem;font-weight:700;
   letter-spacing:6px;color:var(--gold);line-height:1.4;
   text-shadow:0 0 45px rgba(201,168,76,.1);
+}
+.part-desc{
+  font-family:var(--serif);font-size:.92rem;font-style:italic;
+  color:rgba(245,240,232,.5);line-height:1.7;
+  max-width:380px;margin:20px auto 0;letter-spacing:.3px;
 }
 
 /* ═══ CHAPTER BODY ═══ */
@@ -2607,8 +2623,8 @@ def build_book(manuscript_path, output_path):
 
         elif stype == 'part':
             html.append(gen_part_opener(section))
-            # Part body content (Field Notes, NPM)
-            content_paras = [p for p in section['content'] if p.strip()]
+            # Part body content (Field Notes, NPM) — skip first para (used as part desc in opener)
+            content_paras = [p for p in section['content'] if p.strip()][1:]
             if content_paras:
                 html.append(f'<article class="chapter-body" data-part="{part_num}">')
                 html.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
