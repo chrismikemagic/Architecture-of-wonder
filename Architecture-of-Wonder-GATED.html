@@ -909,6 +909,44 @@ body{counter-reset:page}
 #gate-overlay.fade-out {
   opacity: 0; pointer-events: none;
 }
+
+/* ═══ PULSE & ZOOM ANIMATION ═══ */
+#name-reveal {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  opacity: 0; z-index: 2;
+}
+#name-reveal.active { opacity: 1; }
+#name-reveal .reveal-name {
+  font-family: var(--sans); font-size: 3.2rem; font-weight: 700;
+  letter-spacing: 6px; text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 0 60px rgba(201,168,76,.4), 0 0 120px rgba(201,168,76,.15);
+  transform: scale(0.8);
+  animation: none;
+}
+#name-reveal .reveal-tagline {
+  font-family: var(--serif); font-size: 1rem;
+  color: rgba(245,240,232,.5); font-style: italic;
+  letter-spacing: 1px; opacity: 0;
+}
+
+@keyframes pulseIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  40% { transform: scale(1.08); opacity: 1; }
+  55% { transform: scale(0.97); }
+  70% { transform: scale(1.03); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes tagFade {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomThrough {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(12); opacity: 0; }
+}
 #gate-box {
   position: relative;
   text-align: center; max-width: 460px; width: 90%;
@@ -1005,6 +1043,10 @@ body{counter-reset:page}
       <button type="submit">Read the Draft</button>
     </form>
 
+  </div>
+  <div id="name-reveal">
+    <div class="reveal-name" id="reveal-name-text"></div>
+    <div class="reveal-tagline">is about to see everything.</div>
   </div>
 </div>
 
@@ -4334,13 +4376,46 @@ body{counter-reset:page}
     }
   }
 
-  function showBook(data) {
+  function showBook(data, skipAnimation) {
     personalize(data.firstName);
-    content.classList.add('visible');
-    overlay.classList.add('fade-out');
-    setTimeout(function() {
+
+    if (skipAnimation) {
+      content.classList.add('visible');
       overlay.style.display = 'none';
-    }, 600);
+      return;
+    }
+
+    // Phase 1: Fade out the form box
+    var box = document.getElementById('gate-box');
+    var nameReveal = document.getElementById('name-reveal');
+    var revealText = document.getElementById('reveal-name-text');
+
+    revealText.textContent = data.firstName;
+    box.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    box.style.opacity = '0';
+    box.style.transform = 'scale(0.95)';
+
+    setTimeout(function() {
+      box.style.display = 'none';
+
+      // Phase 2: Name appears with pulse
+      nameReveal.classList.add('active');
+      revealText.style.animation = 'pulseIn 0.8s cubic-bezier(.22,.68,.36,1.2) forwards';
+
+      // Phase 3: Tagline fades in
+      setTimeout(function() {
+        nameReveal.querySelector('.reveal-tagline').style.animation = 'tagFade 0.5s ease forwards';
+      }, 600);
+
+      // Phase 4: Zoom through
+      setTimeout(function() {
+        content.classList.add('visible');
+        overlay.style.animation = 'zoomThrough 0.7s cubic-bezier(.4,0,.2,1) forwards';
+        setTimeout(function() {
+          overlay.style.display = 'none';
+        }, 700);
+      }, 1800);
+    }, 450);
   }
 
   // Check localStorage for returning readers
@@ -4348,7 +4423,7 @@ body{counter-reset:page}
   try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) {}
 
   if (saved && saved.firstName && saved.email) {
-    showBook(saved);
+    showBook(saved, true);
   }
 
   form.addEventListener('submit', function(e) {
