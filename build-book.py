@@ -145,10 +145,10 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 10:The Seven Expressions': {
+    'CHAPTER 10:7 Universal Microexpressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
-        'alt': 'The seven universal facial expressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 10.1 \u2014 The seven universal expressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
+        'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
 }
@@ -480,9 +480,9 @@ def is_section_header(text):
         return False
     if stripped.endswith('.'):
         return False
-    # Count capitalized words (excluding small conjunctions)
+    # Count capitalized words (excluding small conjunctions); digits count as title tokens
     small_words = {'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'vs.', 'vs', 'is', 'not'}
-    cap_count = sum(1 for w in words if w[0].isupper() or w.lower() in small_words)
+    cap_count = sum(1 for w in words if w[0].isupper() or w[0].isdigit() or w.lower() in small_words)
     if cap_count >= len(words) * 0.7 and len(words) >= 2 and len(stripped) < 65:
         # Additional check: shouldn't start with common sentence patterns
         if not stripped.startswith(('There ', 'This ', 'That ', 'It ', 'You ', 'We ', 'I ', 'If ', 'When ', 'Most ', 'Some ', 'The audience', 'The brain', 'The key', 'Consider ', 'Notice ', 'Make ', 'Seconds ')):
