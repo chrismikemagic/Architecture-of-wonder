@@ -14,8 +14,7 @@ import os
 import re
 
 SOURCE = "Architecture-of-Wonder-DESIGNED.html"
-OUTPUT_DIR = "site"
-OUTPUT = os.path.join(OUTPUT_DIR, "index.html")
+OUTPUT = "Architecture-of-Wonder-GATED.html"
 
 # ── Gate overlay + personalization JS ──────────────────────────────
 GATE_CSS = """
@@ -232,7 +231,6 @@ def build():
         html = html.replace("</body>", "</div>\n" + GATE_JS + "\n</body>", 1)
 
     # 5. Write output
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT, "w", encoding="utf-8") as f:
         f.write(html)
 
