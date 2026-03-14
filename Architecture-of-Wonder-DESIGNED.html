@@ -750,6 +750,81 @@ a.toc-ch:hover{opacity:.7}
 /* ═══ FIVE Cs FRAMEWORK ═══ */
 .five-cs-graphic{margin:20px 0 0;line-height:0}
 .disc-chart{margin:1.8em 0;break-inside:avoid}
+/* ── DISC TYPE CARDS ── */
+.disc-type-card{
+  border-left:3px solid var(--disc-color,var(--gold));
+  background:linear-gradient(135deg,rgba(8,15,26,.85),rgba(13,30,48,.95));
+  border-radius:6px;padding:14px 18px;margin:.9em 0;break-inside:avoid;
+}
+.disc-type-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.disc-letter{
+  font-family:var(--sans);font-size:1.6rem;font-weight:700;
+  color:var(--disc-color,var(--gold));line-height:1;
+  width:36px;text-align:center;flex-shrink:0;
+}
+.disc-name{
+  font-family:var(--sans);font-size:.8rem;font-weight:700;
+  letter-spacing:.1em;color:#fff;text-transform:uppercase;
+}
+.disc-traits{display:flex;flex-wrap:wrap;gap:5px 6px;margin-bottom:10px}
+.disc-trait{
+  display:inline-block;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:3px;padding:2px 9px;
+  font-size:.72rem;color:rgba(255,255,255,.8);
+}
+.disc-onstage{
+  background:rgba(255,255,255,.04);
+  border-left:2px solid var(--disc-color,var(--gold));
+  border-radius:0 4px 4px 0;
+  padding:7px 12px;margin-bottom:10px;
+  font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.5;
+}
+.disc-onstage-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--disc-color,var(--gold));margin-right:6px;
+}
+.disc-sigs{display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:6px}
+.disc-sig{
+  display:inline-block;
+  font-size:.68rem;color:var(--disc-color,var(--gold));
+  border:1px solid var(--disc-color,var(--gold));
+  border-radius:10px;padding:1px 8px;
+  opacity:.8;
+}
+/* ── DISC BLEND CARDS ── */
+.disc-blend-card{
+  border-top:2px solid;
+  border-image:linear-gradient(90deg,var(--blend-color1),var(--blend-color2)) 1;
+  background:rgba(13,30,48,.9);
+  border-radius:0 0 5px 5px;
+  padding:12px 16px;margin:.7em 0;break-inside:avoid;
+}
+.disc-blend-header{margin-bottom:8px}
+.disc-blend-name{
+  font-family:var(--sans);font-size:.75rem;font-weight:700;
+  letter-spacing:.08em;color:#fff;
+}
+.disc-blend-desc{
+  font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.55;
+  margin:0 0 8px;text-indent:0!important;text-align:left!important;
+}
+.disc-strategy{
+  font-size:.75rem;color:var(--gray-blue);
+  margin-top:8px;padding-top:7px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.disc-strategy-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);margin-right:5px;
+}
 /* ── VIDEO EMBEDS ── */
 .video-embed{margin:2em 0;break-inside:avoid}
 .video-label{
@@ -1088,13 +1163,13 @@ a.toc-ch:hover{opacity:.7}
 <a href="#chapter-22" class="toc-ch"><span class="toc-num">22</span><span class="toc-title">Audio as Architecture</span><span class="toc-dots"></span></a>
 <a href="#chapter-23" class="toc-ch"><span class="toc-num">23</span><span class="toc-title">Making the Room Say Yes</span><span class="toc-dots"></span></a>
 <a href="#chapter-24" class="toc-ch"><span class="toc-num">24</span><span class="toc-title">The Authority Frame</span><span class="toc-dots"></span></a>
-<a href="#chapter-25" class="toc-ch"><span class="toc-num">25</span><span class="toc-title">Building a Career, Not a Calendar</span><span class="toc-dots"></span></a>
-<a href="#chapter-26" class="toc-ch"><span class="toc-num">26</span><span class="toc-title">The Intro Video</span><span class="toc-dots"></span></a>
-<a href="#chapter-27" class="toc-ch"><span class="toc-num">27</span><span class="toc-title">Turning Observation into Performance</span><span class="toc-dots"></span></a>
-<a href="#chapter-28" class="toc-ch"><span class="toc-num">28</span><span class="toc-title">Insight Demonstrations</span><span class="toc-dots"></span></a>
-<a href="#chapter-29" class="toc-ch"><span class="toc-num">29</span><span class="toc-title">Method Invisibility</span><span class="toc-dots"></span></a>
-<a href="#chapter-30" class="toc-ch"><span class="toc-num">30</span><span class="toc-title">Patter, Rhythm, and Silence</span><span class="toc-dots"></span></a>
+<a href="#chapter-25" class="toc-ch"><span class="toc-num">25</span><span class="toc-title">Turning Observation into Performance</span><span class="toc-dots"></span></a>
+<a href="#chapter-26" class="toc-ch"><span class="toc-num">26</span><span class="toc-title">Insight Demonstrations</span><span class="toc-dots"></span></a>
+<a href="#chapter-27" class="toc-ch"><span class="toc-num">27</span><span class="toc-title">Method Invisibility</span><span class="toc-dots"></span></a>
+<a href="#chapter-28" class="toc-ch"><span class="toc-num">28</span><span class="toc-title">Patter, Rhythm, and Silence</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART SEVEN<span class="toc-sub">The Business Brain</span></div>
+<a href="#chapter-29" class="toc-ch"><span class="toc-num">29</span><span class="toc-title">Building a Career, Not a Calendar</span><span class="toc-dots"></span></a>
+<a href="#chapter-30" class="toc-ch"><span class="toc-num">30</span><span class="toc-title">The Intro Video</span><span class="toc-dots"></span></a>
 <a href="#chapter-31" class="toc-ch"><span class="toc-num">31</span><span class="toc-title">Where Bookings Are Actually Won</span><span class="toc-dots"></span></a>
 <a href="#chapter-32" class="toc-ch"><span class="toc-num">32</span><span class="toc-title">Introductions, Bios, and Testimonials</span><span class="toc-dots"></span></a>
 <a href="#chapter-33" class="toc-ch"><span class="toc-num">33</span><span class="toc-title">The Language of Authority</span><span class="toc-dots"></span></a>
@@ -1940,117 +2015,16 @@ a.toc-ch:hover{opacity:.7}
 <header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 8 — THE FOUR PERSONALITIES THAT CHANGE EVERY READ</span></header>
 <p class="first-para"><span class="drop-cap">R</span>eading personality in the first thirty seconds. And deploying that read to change how every subsequent moment lands.</p>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>DISC is a communication style model, not a clinical personality diagnosis. It groups observable behavior into four patterns that are immediately useful for predicting how someone will respond to you on stage, across a table, or in the first thirty seconds of a walkaround encounter. The value is not in the label. It is in the adjustment it produces in how you open, how you pace, and what you ask them to do.</p>
-
-<div class="disc-chart">
-  <div class="disc-graphic">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" font-family="Montserrat, sans-serif">
-  <defs>
-    <linearGradient id="bgDisc" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#080F1A"/>
-      <stop offset="100%" stop-color="#0D1E30"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="620" fill="url(#bgDisc)" rx="8"/>
-
-  <!-- Title -->
-  <text x="400" y="36" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="700">THE DISC COMMUNICATION STYLES</text>
-  <line x1="180" y1="49" x2="620" y2="49" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
-  <text x="400" y="66" text-anchor="middle" fill="#8A9AB5" font-size="11">Read the style. Adjust the approach. Before you speak.</text>
-
-  <!-- Axis labels -->
-  <text x="400" y="88" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="2">FAST-PACED · DECISIVE</text>
-  <text x="400" y="594" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="2">SLOW-PACED · DELIBERATE</text>
-  <text x="42" y="348" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="2" transform="rotate(-90 42 348)">TASK-FOCUSED</text>
-  <text x="758" y="348" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="2" transform="rotate(90 758 348)">PEOPLE-FOCUSED</text>
-
-  <!-- Crosshairs -->
-  <line x1="60" y1="346" x2="740" y2="346" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <line x1="400" y1="96" x2="400" y2="580" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-
-  <!-- ── D: top-left (Fast + Task) ── -->
-  <rect x="62" y="98" width="334" height="244" rx="5" fill="#A83030" fill-opacity="0.10" stroke="#A83030" stroke-width="1" stroke-opacity="0.4"/>
-  <circle cx="108" cy="138" r="24" fill="#A83030" fill-opacity="0.22"/>
-  <text x="108" y="146" text-anchor="middle" fill="#A83030" font-size="24" font-weight="700">D</text>
-  <text x="145" y="132" fill="#FFFFFF" font-size="14" font-weight="700">DIRECT</text>
-  <text x="145" y="150" fill="#8A9AB5" font-size="11">Fast · Decisive · Results-focused</text>
-  <line x1="76" y1="165" x2="384" y2="165" stroke="#A83030" stroke-width="0.5" stroke-opacity="0.4"/>
-  <text x="76" y="184" fill="#8A9AB5" font-size="10" font-weight="600">ON STAGE</text>
-  <text x="76" y="201" fill="#FFFFFF" font-size="10.5">Skip the warm-up. Lead with precision.</text>
-  <text x="76" y="218" fill="#FFFFFF" font-size="10.5">One dead-accurate specific wins them.</text>
-  <text x="76" y="241" fill="#A83030" font-size="10" font-style="italic">Fast walk · Forward lean · Direct eye contact</text>
-  <text x="76" y="257" fill="#A83030" font-size="10" font-style="italic">Speaks first · Occupies space</text>
-  <text x="76" y="328" fill="#A83030" font-size="11" font-weight="700">PRECISION IS CURRENCY</text>
-
-  <!-- ── I: top-right (Fast + People) ── -->
-  <rect x="404" y="98" width="334" height="244" rx="5" fill="#C9A84C" fill-opacity="0.08" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.4"/>
-  <circle cx="450" cy="138" r="24" fill="#C9A84C" fill-opacity="0.18"/>
-  <text x="450" y="146" text-anchor="middle" fill="#C9A84C" font-size="24" font-weight="700">I</text>
-  <text x="487" y="132" fill="#FFFFFF" font-size="14" font-weight="700">INFLUENTIAL</text>
-  <text x="487" y="150" fill="#8A9AB5" font-size="11">Expressive · Social · Enthusiastic</text>
-  <line x1="418" y1="165" x2="726" y2="165" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.4"/>
-  <text x="418" y="184" fill="#8A9AB5" font-size="10" font-weight="600">ON STAGE</text>
-  <text x="418" y="201" fill="#FFFFFF" font-size="10.5">Ideal reactor. Give them a visible role.</text>
-  <text x="418" y="218" fill="#FFFFFF" font-size="10.5">Their enthusiasm gives the room permission.</text>
-  <text x="418" y="241" fill="#C9A84C" font-size="10" font-style="italic">Open posture · Frequent smiling</text>
-  <text x="418" y="257" fill="#C9A84C" font-size="10" font-style="italic">Immediate humor response · Forward lean</text>
-  <text x="418" y="328" fill="#C9A84C" font-size="11" font-weight="700">REACTION IS THE EFFECT</text>
-
-  <!-- ── C: bottom-left (Slow + Task) ── -->
-  <rect x="62" y="350" width="334" height="228" rx="5" fill="#6B52A0" fill-opacity="0.10" stroke="#6B52A0" stroke-width="1" stroke-opacity="0.4"/>
-  <circle cx="108" cy="390" r="24" fill="#6B52A0" fill-opacity="0.22"/>
-  <text x="108" y="398" text-anchor="middle" fill="#6B52A0" font-size="24" font-weight="700">C</text>
-  <text x="145" y="384" fill="#FFFFFF" font-size="14" font-weight="700">CONSCIENTIOUS</text>
-  <text x="145" y="402" fill="#8A9AB5" font-size="11">Analytical · Precise · Detail-oriented</text>
-  <line x1="76" y1="417" x2="384" y2="417" stroke="#6B52A0" stroke-width="0.5" stroke-opacity="0.4"/>
-  <text x="76" y="436" fill="#8A9AB5" font-size="10" font-weight="600">ON STAGE</text>
-  <text x="76" y="453" fill="#FFFFFF" font-size="10.5">Logic must precede compliance.</text>
-  <text x="76" y="470" fill="#FFFFFF" font-size="10.5">Slow-burn reveals. Avoid rapid-fire.</text>
-  <text x="76" y="493" fill="#6B52A0" font-size="10" font-style="italic">Balanced posture · Measured speech</text>
-  <text x="76" y="509" fill="#6B52A0" font-size="10" font-style="italic">Deliberate pauses · Careful object handling</text>
-  <text x="76" y="562" fill="#6B52A0" font-size="11" font-weight="700">BUILD COHERENCE FIRST</text>
-
-  <!-- ── S: bottom-right (Slow + People) ── -->
-  <rect x="404" y="350" width="334" height="228" rx="5" fill="#1A8FA8" fill-opacity="0.08" stroke="#1A8FA8" stroke-width="1" stroke-opacity="0.4"/>
-  <circle cx="450" cy="390" r="24" fill="#1A8FA8" fill-opacity="0.18"/>
-  <text x="450" y="398" text-anchor="middle" fill="#1A8FA8" font-size="24" font-weight="700">S</text>
-  <text x="487" y="384" fill="#FFFFFF" font-size="14" font-weight="700">STEADY</text>
-  <text x="487" y="402" fill="#8A9AB5" font-size="11">Calm · Cooperative · Supportive</text>
-  <line x1="418" y1="417" x2="726" y2="417" stroke="#1A8FA8" stroke-width="0.5" stroke-opacity="0.4"/>
-  <text x="418" y="436" fill="#8A9AB5" font-size="10" font-weight="600">ON STAGE</text>
-  <text x="418" y="453" fill="#FFFFFF" font-size="10.5">Cooperates without resistance.</text>
-  <text x="418" y="470" fill="#FFFFFF" font-size="10.5">Slow the pace. Warm, clear framing.</text>
-  <text x="418" y="493" fill="#1A8FA8" font-size="10" font-style="italic">Minimal movement · Relaxed shoulders</text>
-  <text x="418" y="509" fill="#1A8FA8" font-size="10" font-style="italic">Settled posture · Unhurried speech</text>
-  <text x="418" y="562" fill="#1A8FA8" font-size="11" font-weight="700">PATIENCE IS THE ASSET</text>
-
-  <!-- Center badge -->
-  <rect x="372" y="332" width="56" height="28" rx="4" fill="#0D1E30" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="400" y="350" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="1">DISC</text>
-
-  <!-- Footer -->
-  <text x="400" y="610" text-anchor="middle" fill="#3A4A5C" font-size="9">THE ARCHITECTURE OF WONDER  |  CHAPTER 8: THE FOUR PERSONALITIES</text>
-</svg>
-  </div>
-</div>
-
-<h3 class="section-header sh-label">D — DIRECT</h3>
-<p>Fast · Decisive · Results-focused · Dislikes hesitation. On stage: Skip the warm-up. Lead with precision. A vague read loses them instantly. A dead-accurate specific wins them for the entire show. Signals: Fast walking · Forward lean · Direct unbroken eye contact · Speaks first.</p>
-<h3 class="section-header sh-label">I — INFLUENTIAL</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Expressive · Social · Enthusiastic · Wants to be part of the story. On stage: Ideal reactor. Their visible enthusiasm gives the room permission to feel the same thing. Select immediately for effects requiring emotional amplification. Signals: Open posture · Frequent smiling · Immediate humor response · Forward lean.</p>
-<h3 class="section-header sh-label">S — STEADY</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Calm · Cooperative · Supportive · Dislikes conflict and rapid change. On stage: Cooperates without resistance. Best for imagination routines where quiet cooperation matters more than visible reaction. Signals: Minimal movement · Settled posture · Relaxed shoulders · Unhurried speech.</p>
-<h3 class="section-header sh-label">C — CONSCIENTIOUS</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Analytical · Precise · Detail-oriented · Processes before committing. On stage: Analyzes in real time. Needs coherence before compliance. Slow-burn effects work. Avoid rapid-fire routines. Signals: Balanced posture · Measured speech · Deliberate pauses · Careful object handling.</p>
+<div class="disc-type-card" style="--disc-color:#A83030"><div class="disc-type-header"><span class="disc-letter">D</span><span class="disc-name">DIRECT</span></div><div class="disc-traits"><span class="disc-trait">Fast</span><span class="disc-trait">Decisive</span><span class="disc-trait">Results-focused</span><span class="disc-trait">Dislikes hesitation</span></div><div class="disc-onstage"><span class="disc-onstage-label">On Stage</span> Skip the warm-up. Lead with precision. A vague read loses them instantly. A dead-accurate specific wins them for the entire show</div><div class="disc-sigs"><span class="disc-sig">Fast walking</span><span class="disc-sig">Forward lean</span><span class="disc-sig">Direct unbroken eye contact</span><span class="disc-sig">Speaks first</span></div></div>
+<div class="disc-type-card" style="--disc-color:#C9A84C"><div class="disc-type-header"><span class="disc-letter">I</span><span class="disc-name">INFLUENTIAL</span></div><div class="disc-traits"><span class="disc-trait">Expressive</span><span class="disc-trait">Social</span><span class="disc-trait">Enthusiastic</span><span class="disc-trait">Wants to be part of the story</span></div><div class="disc-onstage"><span class="disc-onstage-label">On Stage</span> Ideal reactor. Their visible enthusiasm gives the room permission to feel the same thing. Select immediately for effects requiring emotional amplification</div><div class="disc-sigs"><span class="disc-sig">Open posture</span><span class="disc-sig">Frequent smiling</span><span class="disc-sig">Immediate humor response</span><span class="disc-sig">Forward lean</span></div></div>
+<div class="disc-type-card" style="--disc-color:#1A8FA8"><div class="disc-type-header"><span class="disc-letter">S</span><span class="disc-name">STEADY</span></div><div class="disc-traits"><span class="disc-trait">Calm</span><span class="disc-trait">Cooperative</span><span class="disc-trait">Supportive</span><span class="disc-trait">Dislikes conflict and rapid change</span></div><div class="disc-onstage"><span class="disc-onstage-label">On Stage</span> Cooperates without resistance. Best for imagination routines where quiet cooperation matters more than visible reaction</div><div class="disc-sigs"><span class="disc-sig">Minimal movement</span><span class="disc-sig">Settled posture</span><span class="disc-sig">Relaxed shoulders</span><span class="disc-sig">Unhurried speech</span></div></div>
+<div class="disc-type-card" style="--disc-color:#6B52A0"><div class="disc-type-header"><span class="disc-letter">C</span><span class="disc-name">CONSCIENTIOUS</span></div><div class="disc-traits"><span class="disc-trait">Analytical</span><span class="disc-trait">Precise</span><span class="disc-trait">Detail-oriented</span><span class="disc-trait">Processes before committing</span></div><div class="disc-onstage"><span class="disc-onstage-label">On Stage</span> Analyzes in real time. Needs coherence before compliance. Slow-burn effects work. Avoid rapid-fire routines</div><div class="disc-sigs"><span class="disc-sig">Balanced posture</span><span class="disc-sig">Measured speech</span><span class="disc-sig">Deliberate pauses</span><span class="disc-sig">Careful object handling</span></div></div>
 <h3 class="section-header sh-label">Reading DISC Blends</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>Most real people are not clean types. The most interesting reads happen in the middle of the map. When signals from two DISC styles appear simultaneously, you are reading a blend. And blends require specific adjustments that neither pure type would suggest.</p>
-<h3 class="section-header sh-label">D/C Blend</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>High-drive and highly analytical. Will comply. But only once they have decided you are credible. Most common in senior leadership and technical roles. Will not fake enthusiasm. Signals: Fast walk + deliberate conversational pauses + careful object handling. Strategy: Lead with precision. One dead-accurate specific wins them completely.</p>
-<h3 class="section-header sh-label">I/S Blend</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Warm, expressive, genuinely people-focused. Easiest volunteer to work with. Risk: they react enthusiastically to almost anything. Calibrate what counts as genuine. Signals: Open posture + immediate expressiveness + head tilts frequently. Strategy: Use for effects requiring visible emotional response.</p>
-<h3 class="section-header sh-label">D/I Blend</h3>
-<p>Confident, high-energy, competitive. The natural Performer volunteer. Wants to succeed and be seen. Best asset when channeled. Most complex management challenge when not. Signals: Occupies space + animated gestures + immediately comfortable center-stage. Strategy: Give them a role, not a task. Frame as collaboration.</p>
-<h3 class="section-header sh-label">C/S Blend</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Methodical, quiet, nearly unreadable in normal social interaction. Least expressive type. But capable of the deepest reaction when genuinely moved. Signals: Very little movement + minimal expression + looks at hands when thinking. Strategy: A C/S volunteer who goes wide-eyed is the most powerful moment in your show.</p>
+<div class="disc-blend-card" style="--blend-color1:#A83030;--blend-color2:#6B52A0"><div class="disc-blend-header"><span class="disc-blend-name">D/C</span></div><p class="disc-blend-desc">High-drive and highly analytical. Will comply. But only once they have decided you are credible. Most common in senior leadership and technical roles. Will not fake enthusiasm.</p><div class="disc-sigs"><span class="disc-sig">Fast walk</span><span class="disc-sig">deliberate conversational pauses</span><span class="disc-sig">careful object handling</span></div><div class="disc-strategy"><span class="disc-strategy-label">Strategy</span> Lead with precision. One dead-accurate specific wins them completely.</div></div>
+<div class="disc-blend-card" style="--blend-color1:#C9A84C;--blend-color2:#1A8FA8"><div class="disc-blend-header"><span class="disc-blend-name">I/S</span></div><p class="disc-blend-desc">Warm, expressive, genuinely people-focused. Easiest volunteer to work with. Risk: they react enthusiastically to almost anything. Calibrate what counts as genuine.</p><div class="disc-sigs"><span class="disc-sig">Open posture</span><span class="disc-sig">immediate expressiveness</span><span class="disc-sig">head tilts frequently</span></div><div class="disc-strategy"><span class="disc-strategy-label">Strategy</span> Use for effects requiring visible emotional response.</div></div>
+<div class="disc-blend-card" style="--blend-color1:#A83030;--blend-color2:#C9A84C"><div class="disc-blend-header"><span class="disc-blend-name">D/I</span></div><p class="disc-blend-desc">Confident, high-energy, competitive. The natural Performer volunteer. Wants to succeed and be seen. Best asset when channeled. Most complex management challenge when not.</p><div class="disc-sigs"><span class="disc-sig">Occupies space</span><span class="disc-sig">animated gestures</span><span class="disc-sig">immediately comfortable center-stage</span></div><div class="disc-strategy"><span class="disc-strategy-label">Strategy</span> Give them a role, not a task. Frame as collaboration.</div></div>
+<div class="disc-blend-card" style="--blend-color1:#6B52A0;--blend-color2:#1A8FA8"><div class="disc-blend-header"><span class="disc-blend-name">C/S</span></div><p class="disc-blend-desc">Methodical, quiet, nearly unreadable in normal social interaction. Least expressive type. But capable of the deepest reaction when genuinely moved.</p><div class="disc-sigs"><span class="disc-sig">Very little movement</span><span class="disc-sig">minimal expression</span><span class="disc-sig">looks at hands when thinking</span></div><div class="disc-strategy"><span class="disc-strategy-label">Strategy</span> A C/S volunteer who goes wide-eyed is the most powerful moment in your show.</div></div>
 <h3 class="section-header sh-standard">DISC and Volunteer Strategy</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>The most important application of DISC in performance is not the read itself. It is the adjustment. Two performers observing the same volunteer and arriving at the same DISC read will produce entirely different results based on whether they adjust their approach accordingly.</p>
 <p>For the D-type: precision is currency. The opening line that is too warm, too general, or too slow loses them before anything has started. One specific, accurate observation delivered with directness earns immediate attention and maintains it.</p>
@@ -3134,93 +3108,14 @@ a.toc-ch:hover{opacity:.7}
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
     <div class="chapter-number">25</div>
-    <h1 class="chapter-title">BUILDING A CAREER, NOT A CALENDAR</h1>
+    <h1 class="chapter-title">TURNING OBSERVATION INTO PERFORMANCE</h1>
     <div class="gold-line thin"></div>
     <div class="hook-line">"Authority is not claimed. It is perceived."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="6">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 25 — BUILDING A CAREER, NOT A CALENDAR</span></header>
-<p class="first-para"><span class="drop-cap">M</span>ost performers have one conversation with a client before the show and one after. This is the minimum viable relationship.</p>
-<p>The best rebooking I ever earned happened because of a phone call I almost did not make. Two weeks before a financial services event, I called the client contact to ask about something I had noticed on their company&#x27;s quarterly report: a reorganization that meant half the audience would be meeting new team members for the first time. That single detail reshaped my entire show design. I opened with a demonstration about first impressions that had the room leaning in before the first minute was over, because it was about them, that night, in that room. The client told me afterward that the call was the moment she knew she had made the right hire. She has booked me four times since. The show was good. The relationship was the reason it kept going.</p>
-<p>Most performers have one conversation with a client before the show and one after. The contract, and then the thank-you. This is the minimum viable relationship, and it produces minimum viable positioning. Clients who have had three conversations with a performer before the event perceive that performer as more invested, more professional, and more valuable. Even when the actual performance is identical. The conversations are not overhead. They are the product.</p>
-<h3 class="section-header sh-label">The Multi-Touch Model</h3>
-<h3 class="section-header sh-label">Discovery Call</h3>
-<p>The initial booking conversation. Goal: understand the event, the audience, and what success looks like to this specific client. Listen more than you talk. The intelligence gathered here shapes every subsequent touchpoint.</p>
-<h3 class="section-header sh-label">Customization Meeting</h3>
-<p>A focused conversation around specific customization: who is the most outspoken person in the room, who would surprise everyone if selected, what has happened recently in the organization that the audience will still be processing. This call signals that your preparation is specific, not generic.</p>
-<h3 class="section-header sh-label">Site Visit</h3>
-<p>When possible, see the space before the show. Walk the room. Understand the sightlines, the audio environment, the flow of the evening. A performer who has been in the room before the audience has an advantage that cannot be replicated.</p>
-<h3 class="section-header sh-label">Post-Show Architecture</h3>
-<p>Most performers treat the show as the end of the engagement. The highest-earning performers treat it as the midpoint. The post-show communication window, the twenty-four hours after the event, is among the highest-leverage moments in the entire client relationship, because the limbic system is still running the emotional ledger. What happens in that window shapes how the memory of the engagement gets encoded, and that encoding determines whether you get re-booked, referred, and described as essential rather than good.</p>
-<h3 class="section-header sh-label">The Memory Window</h3>
-<p>The 24 hours after the show are the highest-leverage period in the relationship. The limbic system is still running the emotional ledger. What you do in that window shapes how the entire engagement gets encoded.</p>
-<h3 class="section-header sh-label">The Referral Condition</h3>
-<p>People refer performers to protect their own reputation. They refer someone they would stake their professional credibility on. Build the relationship completely, before, during, and after, and the referral becomes a natural extension of the relationship, not an ask.</p>
-<div class="section-break">· · ·</div>
-<div class="key-read">
-  <div class="kr-rule"></div>
-  <p class="kr-text">The frame precedes the content. Always.</p>
-  <div class="kr-rule"></div>
-</div>
-<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
-</article>
-<section class="chapter-opener" id="chapter-26" data-part="6">
-  <div class="opener-content">
-    <div class="part-label">PART SIX</div>
-    <div class="gold-line"></div>
-    <div class="chapter-number">26</div>
-    <h1 class="chapter-title">THE INTRO VIDEO</h1>
-    <div class="gold-line thin"></div>
-    <div class="hook-line">"Your career is a performance with a very long run."</div>
-    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
-  </div>
-</section>
-<article class="chapter-body" data-part="6">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 26 — THE INTRO VIDEO</span></header>
-<p class="first-para"><span class="drop-cap">T</span>he live host introduction is the single most unreliable variable in a corporate performance. Solve it.</p>
-<p>I once watched a host introduce me as “a magician who does tricks with your mind.” The room laughed. I spent the first three minutes climbing out of a hole someone else dug. That was the last time I left the introduction to chance. The live host introduction is the single most unreliable variable in a corporate performance, and it determines the cognitive state of the room when you begin.</p>
-<p>A professionally produced sixty to ninety second intro video solves this problem entirely. It plays before you enter, it establishes the specific credibility most relevant to this audience, it creates genuine anticipation, and it arrives in the client&#x27;s language, referencing their company, their event, their people, rather than in generic performer biography language.</p>
-<h3 class="section-header sh-label">Intro Video Formula</h3>
-<p>60–90 seconds. Credibility specific to this audience. Anticipation through outcome language. Company reference to trigger automatic attention. Close on the moment they will enter.</p>
-<h3 class="section-header sh-label">Examples in Practice</h3>
-<aside class="spotlight-box">
-  <div class="spotlight-label">KEY PRINCIPLE</div>
-  <p class="spotlight-text">Three versions of the same concept at different production levels. All three work. The difference is not quality — it is context.</p>
-</aside>
-<div class="video-embed"><div class="video-label">Example 1 — Minimal Production</div><div class="video-frame-wrap"><iframe src="https://drive.google.com/file/d/1xMHBgiWPc_R7pwpsnOCa2S4qUzxJDaKD/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe></div><p class="video-caption">Captions, voiceover, and a company graphic. No video editing required. This version can be produced in an afternoon and customized per client using the same template. Proof that production value is not the variable.</p></div>
-<div class="video-embed"><div class="video-label">Example 2 — Fully Produced</div><div class="video-frame-wrap"><iframe src="https://drive.google.com/file/d/1pUVN3Si5_F5PSwIfYTOhMlm7oY_cr27M/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe></div><p class="video-caption">The same formula with full video editing, b-roll, and post-production. This version is used for flagship corporate engagements where the client&#x27;s event budget and expectations call for a higher production match.</p></div>
-<div class="video-embed"><div class="video-label">Example 3 — Corporate Gameshow Format</div><div class="video-frame-wrap"><iframe src="https://drive.google.com/file/d/1-BIbMIxvEiRp61J44knjUdcQGh-sy4nd/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe></div><p class="video-caption">A client-specific version produced for a gameshow hosting engagement. Note how the framing shifts entirely — the credibility, the language, the energy — to match the specific context. Same structure. Different room.</p></div>
-<h3 class="section-header sh-label">Timing Note</h3>
-<p>The video ends. There is a beat of silence. Then you enter. That silence is part of the design. Do not fill it.</p>
-<h3 class="section-header sh-label">The Pre-Entry Architecture</h3>
-<p>The five minutes before you enter the room are not dead time. They are the last window you have to manage your own state, confirm the operational details, and set the conditions for a clean entry. A well-designed pre-entry protocol removes every variable that could create a moment of hesitation at entry. Hesitation that the audience will read and interpret, accurately, as something being slightly wrong.</p>
-<h3 class="section-header sh-label">Pre-Entry Checklist</h3>
-<p>AV briefed on sequence. Client connection made. Own state confirmed. Threshold detail checked. Entry cue known. Remove every variable that creates hesitation.</p>
-<h3 class="section-header sh-label">The Threshold Rule</h3>
-<p>Do not pause at the entry. Walk in as if you have been there before. Because you have, in your preparation. The audience reads hesitation at the threshold as uncertainty about belonging. The room is yours. Enter it that way.</p>
-<div class="section-break">· · ·</div>
-<div class="key-read">
-  <div class="kr-rule"></div>
-  <p class="kr-text">Advance the system, not the ego.</p>
-  <div class="kr-rule"></div>
-</div>
-<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
-</article>
-<section class="chapter-opener" id="chapter-27" data-part="6">
-  <div class="opener-content">
-    <div class="part-label">PART SIX</div>
-    <div class="gold-line"></div>
-    <div class="chapter-number">27</div>
-    <h1 class="chapter-title">TURNING OBSERVATION INTO PERFORMANCE</h1>
-    <div class="gold-line thin"></div>
-    <div class="hook-line">"They have already decided before you walk on stage."</div>
-    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
-  </div>
-</section>
-<article class="chapter-body" data-part="6">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 27 — TURNING OBSERVATION INTO PERFORMANCE</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 25 — TURNING OBSERVATION INTO PERFORMANCE</span></header>
 <p class="first-para"><span class="drop-cap">T</span>he gap between seeing and saying, and the five structural moves that close it.</p>
 <p>At a private dinner in London, I watched a mentalist spend three minutes reading a volunteer with extraordinary accuracy. He caught every signal: the wedding ring tan line, the callused fingertips, the way she held her wine glass with her left hand despite being right-handed. He saw everything. And then he said, &#x27;I sense you have recently experienced a change.&#x27; The room was polite. It should have been electric. He had the observation. He did not have the translation. The gap between seeing and saying is where most behavioral reads die.</p>
 <p>Observation is not performance. Most mentalists who struggle with behavioral reads are not struggling with observation. They are struggling with translation. They see the signal clearly. They do not know how to convert it into something that lands on stage as impossible rather than merely interesting.</p>
@@ -3261,24 +3156,24 @@ a.toc-ch:hover{opacity:.7}
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">You are not what you do. You are what they remember you doing.</p>
+  <p class="kr-text">The frame precedes the content. Always.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-28" data-part="6">
+<section class="chapter-opener" id="chapter-26" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">28</div>
+    <div class="chapter-number">26</div>
     <h1 class="chapter-title">INSIGHT DEMONSTRATIONS</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"The signal is data. The statement is performance. The gap between them is skill."</div>
+    <div class="hook-line">"Your career is a performance with a very long run."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="6">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 28 — INSIGHT DEMONSTRATIONS</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 26 — INSIGHT DEMONSTRATIONS</span></header>
 <p class="first-para"><span class="drop-cap">S</span>ix frameworks for life readings built from signal clusters — not guesswork.</p>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Last year at a financial services event, I told a woman I had never met that she had changed careers deliberately, not gradually, and that the thing she left behind still shaped how she made decisions. She went still. Then her eyes filled. Her colleague said, “How could you possibly know that?” I knew it because her shoes cost four hundred dollars and her watch was a fifteen-dollar Timex. The mismatch was the signal. Insight demonstrations are behavioral reads structured as revelations about how a person lives. The difference between a generic cold reading and an insight demonstration is always the signal. And the willingness to commit to what it actually says.</p>
 <p>These demonstrations are not compliments dressed as insights. The most powerful reading is often the one that names something the subject has never said out loud. Something that cost them something. Done right, they do not feel like tricks. They feel like being seen by someone who was paying attention when no one else was.</p>
@@ -3309,10 +3204,6 @@ a.toc-ch:hover{opacity:.7}
 <p>Inference: Two people in a group carry a relationship dynamic that is visible in their orientation toward each other. Foot direction, eye contact checks, and postural mirroring are the most reliable signals. This read is about what is between them, not either of them individually.</p>
 <h3 class="section-header sh-label">Scripted Revelation</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>&#x27;There&#x27;s something between the two of you that hasn&#x27;t been said yet. Not a conflict. Something more like a decision that one of you has already made and the other one hasn&#x27;t been told about. I don&#x27;t think either of you is fully comfortable right now with where that is.&#x27;</p>
-<aside class="wyajd">
-  <div class="wyajd-bar"></div>
-  <p class="wyajd-text">Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect — your brain prioritized the visually distinct element. Chapter Two taught you this. The book just demonstrated it.</p>
-</aside>
 <p>Opener</p>
 <p>&#x27;You two know each other outside of tonight.&#x27; Watch which of them answers and how quickly.</p>
 <p>When This Read Misses: If they do not know each other, the orientation signals still indicate something. Pivot to: ‘Then there’s something else happening. You’ve been calibrating to each other since you sat down. That’s interesting.’ Reframe the read as real-time social dynamics rather than prior relationship.</p>
@@ -3328,11 +3219,11 @@ a.toc-ch:hover{opacity:.7}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">7</div>
-    <div class="pi-unit">EXPRESSIONS</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
-    <p class="pi-source">Ekman & Friesen, 1971</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
     
   </div>
 </section>
@@ -3344,24 +3235,24 @@ a.toc-ch:hover{opacity:.7}
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">The signal is the data. The statement is the art. Never confuse the two.</p>
+  <p class="kr-text">Advance the system, not the ego.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-29" data-part="6">
+<section class="chapter-opener" id="chapter-27" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">29</div>
+    <div class="chapter-number">27</div>
     <h1 class="chapter-title">METHOD INVISIBILITY</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"The best insight demonstration looks like telepathy and works like science."</div>
+    <div class="hook-line">"They have already decided before you walk on stage."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="6">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 29 — METHOD INVISIBILITY</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 27 — METHOD INVISIBILITY</span></header>
 <p class="first-para"><span class="drop-cap">T</span>he goal is not to hide things from the audience. It is to build a performance the audience cannot trace even while watching everything.</p>
 <p>Method invisibility is not misdirection. Misdirection asks you to make someone look away. Method invisibility is the art of building a performance in which looking directly at what is happening tells you nothing about how it works. The audience sees everything. The sequence is inexplicable anyway.</p>
 <h3 class="section-header sh-standard">Separate Method from Payoff</h3>
@@ -3390,24 +3281,24 @@ a.toc-ch:hover{opacity:.7}
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">The best insight feels impossible because it is grounded in what is actually there.</p>
+  <p class="kr-text">You are not what you do. You are what they remember you doing.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-30" data-part="6">
+<section class="chapter-opener" id="chapter-28" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">30</div>
+    <div class="chapter-number">28</div>
     <h1 class="chapter-title">PATTER, RHYTHM, AND SILENCE</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"Method invisibility is not misdirection. It is architecture."</div>
+    <div class="hook-line">"The signal is data. The statement is performance. The gap between them is skill."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="6">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 30 — PATTER, RHYTHM, AND SILENCE</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 28 — PATTER, RHYTHM, AND SILENCE</span></header>
 <p class="first-para"><span class="drop-cap">T</span>he words are not the performance. The timing between the words is the performance.</p>
 <p>A performer with perfect reads and poor timing is less effective than a performer with good reads and perfect timing. Timing is learnable. This is the chapter where you learn it.</p>
 <p>When to Slow Down</p>
@@ -3459,12 +3350,12 @@ a.toc-ch:hover{opacity:.7}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">60,000×</div>
-    <div class="pi-unit">FASTER</div>
+    <div class="pi-number">85%</div>
+    <div class="pi-unit">OF DECISIONS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The speed at which the brain processes color compared to text.</p>
-    <p class="pi-source">Visual Cognition Research</p>
-    <p class="pi-wyajd">The gold accent on this page reached your brain before the words did.</p>
+    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
+    <p class="pi-source">Color Psychology Research</p>
+    
   </div>
 </section>
 <h3 class="section-header sh-label">Movement for Resets</h3>
@@ -3480,6 +3371,10 @@ a.toc-ch:hover{opacity:.7}
 <h3 class="section-header sh-label">NOTES</h3>
 <h3 class="section-header sh-label">STROLLING / WALKAROUND</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="badge t1">T1</span> cold reads · Social role read · 90-second behavioral profile</p>
+<aside class="wyajd">
+  <div class="wyajd-bar"></div>
+  <p class="wyajd-text">Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect — your brain prioritized the visually distinct element. Chapter Two taught you this. The book just demonstrated it.</p>
+</aside>
 <p><span class="badge t1">T1</span> opener on whoever is present. Act on one or two strong signals.</p>
 <p>Soft hit + one strong hit</p>
 <p>No pre-selection. Read whoever is in front of you. Leave at the peak.</p>
@@ -3517,12 +3412,12 @@ a.toc-ch:hover{opacity:.7}
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">3</div>
-    <div class="pi-unit">SIGNALS</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
-    <p class="pi-source">The Five Cs — Clusters</p>
-    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
+    
   </div>
 </section>
 <p>The only context where explaining your framework serves the performance.</p>
@@ -3534,7 +3429,7 @@ a.toc-ch:hover{opacity:.7}
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">If they are looking for the method, the architecture failed.</p>
+  <p class="kr-text">The signal is the data. The statement is the art. Never confuse the two.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
@@ -3544,9 +3439,88 @@ a.toc-ch:hover{opacity:.7}
     <div class="part-number">PART SEVEN</div>
     <div class="gold-line wide"></div>
     <h1 class="part-title">The Business Brain</h1>
-    <p class="part-desc">Where bookings are actually won, how authority is built before you walk in the room, and the complete Decode Behavior framework for the performing professional.</p>
+    <p class="part-desc">Where bookings are actually won, how authority is built before you walk in the room, and the complete business architecture for the performing professional.</p>
   </div>
 </section>
+<section class="chapter-opener" id="chapter-29" data-part="7">
+  <div class="opener-content">
+    <div class="part-label">PART SEVEN</div>
+    <div class="gold-line"></div>
+    <div class="chapter-number">29</div>
+    <h1 class="chapter-title">BUILDING A CAREER, NOT A CALENDAR</h1>
+    <div class="gold-line thin"></div>
+    <div class="hook-line">"The best insight demonstration looks like telepathy and works like science."</div>
+    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
+  </div>
+</section>
+<article class="chapter-body" data-part="7">
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 29 — BUILDING A CAREER, NOT A CALENDAR</span></header>
+<p class="first-para"><span class="drop-cap">M</span>ost performers have one conversation with a client before the show and one after. This is the minimum viable relationship.</p>
+<p>The best rebooking I ever earned happened because of a phone call I almost did not make. Two weeks before a financial services event, I called the client contact to ask about something I had noticed on their company&#x27;s quarterly report: a reorganization that meant half the audience would be meeting new team members for the first time. That single detail reshaped my entire show design. I opened with a demonstration about first impressions that had the room leaning in before the first minute was over, because it was about them, that night, in that room. The client told me afterward that the call was the moment she knew she had made the right hire. She has booked me four times since. The show was good. The relationship was the reason it kept going.</p>
+<p>Most performers have one conversation with a client before the show and one after. The contract, and then the thank-you. This is the minimum viable relationship, and it produces minimum viable positioning. Clients who have had three conversations with a performer before the event perceive that performer as more invested, more professional, and more valuable. Even when the actual performance is identical. The conversations are not overhead. They are the product.</p>
+<h3 class="section-header sh-label">The Multi-Touch Model</h3>
+<h3 class="section-header sh-label">Discovery Call</h3>
+<p>The initial booking conversation. Goal: understand the event, the audience, and what success looks like to this specific client. Listen more than you talk. The intelligence gathered here shapes every subsequent touchpoint.</p>
+<h3 class="section-header sh-label">Customization Meeting</h3>
+<p>A focused conversation around specific customization: who is the most outspoken person in the room, who would surprise everyone if selected, what has happened recently in the organization that the audience will still be processing. This call signals that your preparation is specific, not generic.</p>
+<h3 class="section-header sh-label">Site Visit</h3>
+<p>When possible, see the space before the show. Walk the room. Understand the sightlines, the audio environment, the flow of the evening. A performer who has been in the room before the audience has an advantage that cannot be replicated.</p>
+<h3 class="section-header sh-label">Post-Show Architecture</h3>
+<p>Most performers treat the show as the end of the engagement. The highest-earning performers treat it as the midpoint. The post-show communication window, the twenty-four hours after the event, is among the highest-leverage moments in the entire client relationship, because the limbic system is still running the emotional ledger. What happens in that window shapes how the memory of the engagement gets encoded, and that encoding determines whether you get re-booked, referred, and described as essential rather than good.</p>
+<h3 class="section-header sh-label">The Memory Window</h3>
+<p>The 24 hours after the show are the highest-leverage period in the relationship. The limbic system is still running the emotional ledger. What you do in that window shapes how the entire engagement gets encoded.</p>
+<h3 class="section-header sh-label">The Referral Condition</h3>
+<p>People refer performers to protect their own reputation. They refer someone they would stake their professional credibility on. Build the relationship completely, before, during, and after, and the referral becomes a natural extension of the relationship, not an ask.</p>
+<div class="section-break">· · ·</div>
+<div class="key-read">
+  <div class="kr-rule"></div>
+  <p class="kr-text">The best insight feels impossible because it is grounded in what is actually there.</p>
+  <div class="kr-rule"></div>
+</div>
+<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
+</article>
+<section class="chapter-opener" id="chapter-30" data-part="7">
+  <div class="opener-content">
+    <div class="part-label">PART SEVEN</div>
+    <div class="gold-line"></div>
+    <div class="chapter-number">30</div>
+    <h1 class="chapter-title">THE INTRO VIDEO</h1>
+    <div class="gold-line thin"></div>
+    <div class="hook-line">"Method invisibility is not misdirection. It is architecture."</div>
+    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
+  </div>
+</section>
+<article class="chapter-body" data-part="7">
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 30 — THE INTRO VIDEO</span></header>
+<p class="first-para"><span class="drop-cap">T</span>he live host introduction is the single most unreliable variable in a corporate performance. Solve it.</p>
+<p>I once watched a host introduce me as &quot;a magician who does tricks with your mind.&quot; The room laughed. I spent the first three minutes climbing out of a hole someone else dug. That was the last time I left the introduction to chance. The live host introduction is the single most unreliable variable in a corporate performance, and it determines the cognitive state of the room when you begin.</p>
+<p>A professionally produced sixty to ninety second intro video solves this problem entirely. It plays before you enter, it establishes the specific credibility most relevant to this audience, it creates genuine anticipation, and it arrives in the client&#x27;s language, referencing their company, their event, their people, rather than in generic performer biography language.</p>
+<h3 class="section-header sh-label">Intro Video Formula</h3>
+<p>60–90 seconds. Credibility specific to this audience. Anticipation through outcome language. Company reference to trigger automatic attention. Close on the moment they will enter.</p>
+<h3 class="section-header sh-label">Examples in Practice</h3>
+<aside class="spotlight-box">
+  <div class="spotlight-label">KEY PRINCIPLE</div>
+  <p class="spotlight-text">Three versions of the same concept at different production levels. All three work. The difference is not quality — it is context.</p>
+</aside>
+<div class="video-embed"><div class="video-label">Example 1 — Minimal Production</div><div class="video-frame-wrap"><iframe src="https://drive.google.com/file/d/1xMHBgiWPc_R7pwpsnOCa2S4qUzxJDaKD/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe></div><p class="video-caption">Captions, voiceover, and a company graphic. No video editing required. This version can be produced in an afternoon and customized per client using the same template. Proof that production value is not the variable.</p></div>
+<div class="video-embed"><div class="video-label">Example 2 — Fully Produced</div><div class="video-frame-wrap"><iframe src="https://drive.google.com/file/d/1pUVN3Si5_F5PSwIfYTOhMlm7oY_cr27M/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe></div><p class="video-caption">The same formula with full video editing, b-roll, and post-production. This version is used for flagship corporate engagements where the client&#x27;s event budget and expectations call for a higher production match.</p></div>
+<div class="video-embed"><div class="video-label">Example 3 — Corporate Gameshow Format</div><div class="video-frame-wrap"><iframe src="https://drive.google.com/file/d/1-BIbMIxvEiRp61J44knjUdcQGh-sy4nd/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe></div><p class="video-caption">A client-specific version produced for a gameshow hosting engagement. Note how the framing shifts entirely — the credibility, the language, the energy — to match the specific context. Same structure. Different room.</p></div>
+<h3 class="section-header sh-label">Timing Note</h3>
+<p>The video ends. There is a beat of silence. Then you enter. That silence is part of the design. Do not fill it.</p>
+<h3 class="section-header sh-label">The Pre-Entry Architecture</h3>
+<p>The five minutes before you enter the room are not dead time. They are the last window you have to manage your own state, confirm the operational details, and set the conditions for a clean entry. A well-designed pre-entry protocol removes every variable that could create a moment of hesitation at entry. Hesitation that the audience will read and interpret, accurately, as something being slightly wrong.</p>
+<h3 class="section-header sh-label">Pre-Entry Checklist</h3>
+<p>AV briefed on sequence. Client connection made. Own state confirmed. Threshold detail checked. Entry cue known. Remove every variable that creates hesitation.</p>
+<h3 class="section-header sh-label">The Threshold Rule</h3>
+<p>Do not pause at the entry. Walk in as if you have been there before. Because you have, in your preparation. The audience reads hesitation at the threshold as uncertainty about belonging. The room is yours. Enter it that way.</p>
+<div class="section-break">· · ·</div>
+<div class="key-read">
+  <div class="kr-rule"></div>
+  <p class="kr-text">If they are looking for the method, the architecture failed.</p>
+  <div class="kr-rule"></div>
+</div>
+<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
+</article>
 <section class="chapter-opener" id="chapter-31" data-part="7">
   <div class="opener-content">
     <div class="part-label">PART SEVEN</div>
@@ -3572,19 +3546,19 @@ a.toc-ch:hover{opacity:.7}
 <p>People refer performers to protect their own reputation. They refer someone they trust to make them look smart for the referral. Build trust the whole way through, not just onstage, and the referrals follow without asking.</p>
 <h3 class="section-header sh-standard">The Seven Items on the Limbic Ledger</h3>
 <p>The Limbic Ledger is not a metaphor. It is a description of how emotional memory actually works: not as a neutral record of events, but as a continuously updated evaluation of how an experience, and the person responsible for it, made you feel. The client&#x27;s limbic system has been running this assessment from the moment they first encountered you. The performance is one data point. Here are the others.</p>
-<h3 class="section-header sh-standard">1. The First Email</h3>
+<h3 class="section-header sh-standard">1 — The First Email</h3>
 <p>The first point of contact establishes the frame. An email that reads as professional, unhurried, and specific to their situation tells the limbic system: this person is a peer. An email that reads as eager, overly accommodating, or template-issued tells it: this is a vendor. The frame is established before you have demonstrated anything about your performance. It is almost impossible to fully override in the room.</p>
-<h3 class="section-header sh-standard">2. The Response Lag</h3>
+<h3 class="section-header sh-standard">2 — The Response Lag</h3>
 <p>How long you take to respond to a booking inquiry is a signal, whether you intend it to be or not. Same-day response signals availability in the wrong direction. Two-to-three business days signals that you are working at a level where requests come in.</p>
-<h3 class="section-header sh-standard">3. The Pre-Show Conversation</h3>
+<h3 class="section-header sh-standard">3 — The Pre-Show Conversation</h3>
 <p>What you ask about before the show tells the client what you think matters. Performers who ask only about logistics are signaling that the logistics are the professional concern. Performers who ask about the audience, the organizational context, the thing the client wants the room to walk away feeling: this tells the limbic system that the person they have hired is thinking about the same thing they are thinking about.</p>
-<h3 class="section-header sh-label">4. The Arrival</h3>
+<h3 class="section-header sh-standard">4 — The Arrival</h3>
 <p>How you arrive at the venue is observed before you have spoken to anyone. The performer who arrives unhurried, engages with staff naturally, and does not perform an air of importance broadcasts differently than the one who arrives harried or who navigates the building with visible anxiety.</p>
-<h3 class="section-header sh-standard">5. The Logistics Ease</h3>
+<h3 class="section-header sh-standard">5 — The Logistics Ease</h3>
 <p>Every logistical complication costs a small amount of limbic credit. Not because the complication is large, but because friction is always read by the nervous system as a signal about whether something is going to be easy or hard. The performer whose production requirements are clear, self-sufficient, and handled without drama scores on this item.</p>
-<h3 class="section-header sh-label">6. The Recovery</h3>
+<h3 class="section-header sh-standard">6 — The Recovery</h3>
 <p>Something will go wrong. A technical failure, a late start, a volunteer who does not cooperate as expected, a moment that does not land. The recovery is observed more carefully than the performance. A performer who handles the unexpected with genuine composure earns more from that moment than from any planned effect.</p>
-<h3 class="section-header sh-label">7. The Follow-Through</h3>
+<h3 class="section-header sh-standard">7 — The Follow-Through</h3>
 <p>What comes after the performance is the last item the limbic system scores, and it is the most differentiating. A specific, personal thank-you, naming something that happened in that room, tells the client that the attention you brought to the stage was not a performance. It was who you are.</p>
 <p>Seven items. The performance is assumed. The list is what surrounds the performance, and what determines whether the performance becomes a long professional relationship or a pleasant evening that is not quite repeated.</p>
 <div class="performer-note-header">
@@ -3893,7 +3867,7 @@ a.toc-ch:hover{opacity:.7}
 <p>You have watched someone walk into a room and change it. You do this not with volume or gesture or announcement. With presence. The room reorganized around them. Conversations adjusted. Attention shifted. The person did not ask for authority. They did not claim expertise. They simply arrived in a way that communicated: I am not uncertain about being here.</p>
 <p>That is Authority Architecture: the behavioral infrastructure that broadcasts status, competence, and trust before language has a chance to participate. It is not performance. It is the set of signals the limbic system reads as: this person is safe to follow.</p>
 <h3 class="section-header sh-standard">The Five Pillars of Authority</h3>
-<p>Chase Hughes identified five traits that constitute the architecture of perceived authority. You encountered these briefly in Chapter 25. Here is the complete framework. Each pillar examined in full depth with the self-assessment tool that lets you diagnose exactly where your authority signal is strongest and where it cracks under pressure.</p>
+<p>Chase Hughes identified five traits that constitute the architecture of perceived authority. You encountered these briefly in Chapter 29. Here is the complete framework. Each pillar examined in full depth with the self-assessment tool that lets you diagnose exactly where your authority signal is strongest and where it cracks under pressure.</p>
 <h3 class="section-header sh-label">Pillar One: Confidence</h3>
 <p>Walk in certain. Speak without seeking approval. The limbic system reads confidence as a proxy for competence. Before any evidence of competence has been presented.</p>
 <p>For the performer, confidence is not an internal state to be achieved. It is a behavioral signal to be broadcast. A performer who feels nervous but moves with deliberate certainty will be perceived as confident. A performer who feels confident but moves quickly and fills silence with chatter will be perceived as anxious. The signal is the behavior, not the feeling.</p>

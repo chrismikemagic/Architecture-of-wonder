@@ -108,7 +108,7 @@ The consent framework, the distress test, and where the line is drawn in perform
 PART FIVE  —  The Performance Arc
 Seven stages of the performance arc. The pre-show checklist. The four-layer Performance Architecture Framework.
 PART SIX  —  Presence and Perception
-The gap between skilled execution and genuine command. Walk-around, room energy, audio design, compliance engineering, and authority framing.
+The gap between skilled execution and genuine command. Walk-around, room energy, audio design, compliance engineering, authority framing, and the translation of observation into performance.
 Chapter 20  —  The Art of Strolling
 The 90-second set structure, the delayed discovery method, state architecture, and the exit principle.
 Chapter 21  —  When the Room Rises
@@ -119,20 +119,20 @@ Chapter 23  —  Making the Room Say Yes
 Environmental compliance, room layout, and why the dance floor of death is a design failure.
 Chapter 24  —  The Authority Frame
 How authority is broadcast through behavior, pace, and signal consistency before and during performance.
-Chapter 25  —  Building a Career, Not a Calendar
-Building a career architecture, not just a show calendar.
-Chapter 26  —  The Intro Video
-Solving the most unreliable variable in corporate performance.
-Chapter 27  —  Turning Observation into Performance
+Chapter 25  —  Turning Observation into Performance
 The five structural moves that convert observation into performance: opening read, layered read, soft hit, strong hit, and callback.
-Chapter 28  —  Insight Demonstrations
+Chapter 26  —  Insight Demonstrations
 Six frameworks for life readings built from signal clusters. Travel pattern, life pivot, hidden interest, relationship dynamic, social role, and self-image gap.
-Chapter 29  —  Method Invisibility
+Chapter 27  —  Method Invisibility
 Temporal separation, anti-backtracking architecture, and why looking directly at what is happening should tell you nothing.
-Chapter 30  —  Patter, Rhythm, and Silence
+Chapter 28  —  Patter, Rhythm, and Silence
 Timing, tempo, the recovery protocol, the performance decision matrix, and why silence is the loudest tool you have.
 PART SEVEN  —  The Business Brain
-Where bookings are actually won, how authority is built before you walk in the room, and the business of performing.
+Where bookings are actually won, how authority is built before you walk in the room, and the complete business architecture for the performing professional.
+Chapter 29  —  Building a Career, Not a Calendar
+Building a career architecture, not just a show calendar. The multi-touch model and the memory window.
+Chapter 30  —  The Intro Video
+Solving the most unreliable variable in corporate performance.
 Chapter 31  —  Where Bookings Are Actually Won
 The Limbic Ledger: seven items the client’s nervous system scores from first email to follow-through.
 Chapter 32  —  Introductions, Bios, and Testimonials
@@ -1817,55 +1817,6 @@ Congruence must hold across every touchpoint: communications, presentation, arri
 · · ·
 
 CHAPTER 25
-Building a Career, Not a Calendar
-Most performers have one conversation with a client before the show and one after. This is the minimum viable relationship.
-────────────────────────────────────────────────────────────────────────────────
-The best rebooking I ever earned happened because of a phone call I almost did not make. Two weeks before a financial services event, I called the client contact to ask about something I had noticed on their company's quarterly report: a reorganization that meant half the audience would be meeting new team members for the first time. That single detail reshaped my entire show design. I opened with a demonstration about first impressions that had the room leaning in before the first minute was over, because it was about them, that night, in that room. The client told me afterward that the call was the moment she knew she had made the right hire. She has booked me four times since. The show was good. The relationship was the reason it kept going.
-Most performers have one conversation with a client before the show and one after. The contract, and then the thank-you. This is the minimum viable relationship, and it produces minimum viable positioning. Clients who have had three conversations with a performer before the event perceive that performer as more invested, more professional, and more valuable. Even when the actual performance is identical. The conversations are not overhead. They are the product.
-The Multi-Touch Model
-Discovery Call
-The initial booking conversation. Goal: understand the event, the audience, and what success looks like to this specific client. Listen more than you talk. The intelligence gathered here shapes every subsequent touchpoint.
-Customization Meeting
-A focused conversation around specific customization: who is the most outspoken person in the room, who would surprise everyone if selected, what has happened recently in the organization that the audience will still be processing. This call signals that your preparation is specific, not generic.
-Site Visit
-When possible, see the space before the show. Walk the room. Understand the sightlines, the audio environment, the flow of the evening. A performer who has been in the room before the audience has an advantage that cannot be replicated.
-Post-Show Architecture
-Most performers treat the show as the end of the engagement. The highest-earning performers treat it as the midpoint. The post-show communication window, the twenty-four hours after the event, is among the highest-leverage moments in the entire client relationship, because the limbic system is still running the emotional ledger. What happens in that window shapes how the memory of the engagement gets encoded, and that encoding determines whether you get re-booked, referred, and described as essential rather than good.
-The Memory Window
-The 24 hours after the show are the highest-leverage period in the relationship. The limbic system is still running the emotional ledger. What you do in that window shapes how the entire engagement gets encoded.
-The Referral Condition
-People refer performers to protect their own reputation. They refer someone they would stake their professional credibility on. Build the relationship completely, before, during, and after, and the referral becomes a natural extension of the relationship, not an ask.
-· · ·
-
-CHAPTER 26
-The Intro Video
-The live host introduction is the single most unreliable variable in a corporate performance. Solve it.
-────────────────────────────────────────────────────────────────────────────────
-I once watched a host introduce me as “a magician who does tricks with your mind.” The room laughed. I spent the first three minutes climbing out of a hole someone else dug. That was the last time I left the introduction to chance. The live host introduction is the single most unreliable variable in a corporate performance, and it determines the cognitive state of the room when you begin.
-A professionally produced sixty to ninety second intro video solves this problem entirely. It plays before you enter, it establishes the specific credibility most relevant to this audience, it creates genuine anticipation, and it arrives in the client's language, referencing their company, their event, their people, rather than in generic performer biography language.
-Intro Video Formula
-60–90 seconds. Credibility specific to this audience. Anticipation through outcome language. Company reference to trigger automatic attention. Close on the moment they will enter.
-Examples in Practice
-
-Three versions of the same concept at different production levels. All three work. The difference is not quality — it is context.
-
-VIDEO EMBED :: 1xMHBgiWPc_R7pwpsnOCa2S4qUzxJDaKD :: Example 1 — Minimal Production :: Captions, voiceover, and a company graphic. No video editing required. This version can be produced in an afternoon and customized per client using the same template. Proof that production value is not the variable.
-
-VIDEO EMBED :: 1pUVN3Si5_F5PSwIfYTOhMlm7oY_cr27M :: Example 2 — Fully Produced :: The same formula with full video editing, b-roll, and post-production. This version is used for flagship corporate engagements where the client's event budget and expectations call for a higher production match.
-
-VIDEO EMBED :: 1-BIbMIxvEiRp61J44knjUdcQGh-sy4nd :: Example 3 — Corporate Gameshow Format :: A client-specific version produced for a gameshow hosting engagement. Note how the framing shifts entirely — the credibility, the language, the energy — to match the specific context. Same structure. Different room.
-
-Timing Note
-The video ends. There is a beat of silence. Then you enter. That silence is part of the design. Do not fill it.
-The Pre-Entry Architecture
-The five minutes before you enter the room are not dead time. They are the last window you have to manage your own state, confirm the operational details, and set the conditions for a clean entry. A well-designed pre-entry protocol removes every variable that could create a moment of hesitation at entry. Hesitation that the audience will read and interpret, accurately, as something being slightly wrong.
-Pre-Entry Checklist
-AV briefed on sequence. Client connection made. Own state confirmed. Threshold detail checked. Entry cue known. Remove every variable that creates hesitation.
-The Threshold Rule
-Do not pause at the entry. Walk in as if you have been there before. Because you have, in your preparation. The audience reads hesitation at the threshold as uncertainty about belonging. The room is yours. Enter it that way.
-· · ·
-
-CHAPTER 27
 Turning Observation into Performance
 The gap between seeing and saying, and the five structural moves that close it.
 ────────────────────────────────────────────────────────────────────────────────
@@ -1907,7 +1858,7 @@ Level 4: [Specific. Delivered once. Standing still.]
 Callback at close: 'When you walked in, I noticed your shoes. I knew then. Everything since has just been confirmation.'
 · · ·
 
-CHAPTER 28
+CHAPTER 26
 Insight Demonstrations
 Six frameworks for life readings built from signal clusters — not guesswork.
 ────────────────────────────────────────────────────────────────────────────────
@@ -1967,7 +1918,7 @@ Opener
 When This Read Misses: The self-image gap read depends on visible status mismatch signals. If the mismatch was misinterpreted, pivot to aspiration: ‘You’re aiming at something specific that most people in your current circle haven’t fully seen yet.’ Aspiration is nearly universal in high-achieving populations.
 · · ·
 
-CHAPTER 29
+CHAPTER 27
 Method Invisibility
 The goal is not to hide things from the audience. It is to build a performance the audience cannot trace even while watching everything.
 ────────────────────────────────────────────────────────────────────────────────
@@ -1997,7 +1948,7 @@ An audience that experienced something impossible will not remember how it was s
 After a strong reveal, the audience is feeling. You are not analyzing. Deliver the next beat while they are still in that state. It is the most protected moment in any performance.
 · · ·
 
-CHAPTER 30
+CHAPTER 28
 Patter, Rhythm, and Silence
 The words are not the performance. The timing between the words is the performance.
 ────────────────────────────────────────────────────────────────────────────────
@@ -2119,8 +2070,57 @@ I played a 400-person gala using the matrix row for intimate strolling. Wrong ro
 
 PART SEVEN
 The Business Brain
-Where bookings are actually won, how authority is built before you walk in the room, and the complete Decode Behavior framework for the performing professional.
+Where bookings are actually won, how authority is built before you walk in the room, and the complete business architecture for the performing professional.
 
+
+CHAPTER 29
+Building a Career, Not a Calendar
+Most performers have one conversation with a client before the show and one after. This is the minimum viable relationship.
+────────────────────────────────────────────────────────────────────────────────
+The best rebooking I ever earned happened because of a phone call I almost did not make. Two weeks before a financial services event, I called the client contact to ask about something I had noticed on their company's quarterly report: a reorganization that meant half the audience would be meeting new team members for the first time. That single detail reshaped my entire show design. I opened with a demonstration about first impressions that had the room leaning in before the first minute was over, because it was about them, that night, in that room. The client told me afterward that the call was the moment she knew she had made the right hire. She has booked me four times since. The show was good. The relationship was the reason it kept going.
+Most performers have one conversation with a client before the show and one after. The contract, and then the thank-you. This is the minimum viable relationship, and it produces minimum viable positioning. Clients who have had three conversations with a performer before the event perceive that performer as more invested, more professional, and more valuable. Even when the actual performance is identical. The conversations are not overhead. They are the product.
+The Multi-Touch Model
+Discovery Call
+The initial booking conversation. Goal: understand the event, the audience, and what success looks like to this specific client. Listen more than you talk. The intelligence gathered here shapes every subsequent touchpoint.
+Customization Meeting
+A focused conversation around specific customization: who is the most outspoken person in the room, who would surprise everyone if selected, what has happened recently in the organization that the audience will still be processing. This call signals that your preparation is specific, not generic.
+Site Visit
+When possible, see the space before the show. Walk the room. Understand the sightlines, the audio environment, the flow of the evening. A performer who has been in the room before the audience has an advantage that cannot be replicated.
+Post-Show Architecture
+Most performers treat the show as the end of the engagement. The highest-earning performers treat it as the midpoint. The post-show communication window, the twenty-four hours after the event, is among the highest-leverage moments in the entire client relationship, because the limbic system is still running the emotional ledger. What happens in that window shapes how the memory of the engagement gets encoded, and that encoding determines whether you get re-booked, referred, and described as essential rather than good.
+The Memory Window
+The 24 hours after the show are the highest-leverage period in the relationship. The limbic system is still running the emotional ledger. What you do in that window shapes how the entire engagement gets encoded.
+The Referral Condition
+People refer performers to protect their own reputation. They refer someone they would stake their professional credibility on. Build the relationship completely, before, during, and after, and the referral becomes a natural extension of the relationship, not an ask.
+· · ·
+
+CHAPTER 30
+The Intro Video
+The live host introduction is the single most unreliable variable in a corporate performance. Solve it.
+────────────────────────────────────────────────────────────────────────────────
+I once watched a host introduce me as "a magician who does tricks with your mind." The room laughed. I spent the first three minutes climbing out of a hole someone else dug. That was the last time I left the introduction to chance. The live host introduction is the single most unreliable variable in a corporate performance, and it determines the cognitive state of the room when you begin.
+A professionally produced sixty to ninety second intro video solves this problem entirely. It plays before you enter, it establishes the specific credibility most relevant to this audience, it creates genuine anticipation, and it arrives in the client's language, referencing their company, their event, their people, rather than in generic performer biography language.
+Intro Video Formula
+60–90 seconds. Credibility specific to this audience. Anticipation through outcome language. Company reference to trigger automatic attention. Close on the moment they will enter.
+Examples in Practice
+
+Three versions of the same concept at different production levels. All three work. The difference is not quality — it is context.
+
+VIDEO EMBED :: 1xMHBgiWPc_R7pwpsnOCa2S4qUzxJDaKD :: Example 1 — Minimal Production :: Captions, voiceover, and a company graphic. No video editing required. This version can be produced in an afternoon and customized per client using the same template. Proof that production value is not the variable.
+
+VIDEO EMBED :: 1pUVN3Si5_F5PSwIfYTOhMlm7oY_cr27M :: Example 2 — Fully Produced :: The same formula with full video editing, b-roll, and post-production. This version is used for flagship corporate engagements where the client's event budget and expectations call for a higher production match.
+
+VIDEO EMBED :: 1-BIbMIxvEiRp61J44knjUdcQGh-sy4nd :: Example 3 — Corporate Gameshow Format :: A client-specific version produced for a gameshow hosting engagement. Note how the framing shifts entirely — the credibility, the language, the energy — to match the specific context. Same structure. Different room.
+
+Timing Note
+The video ends. There is a beat of silence. Then you enter. That silence is part of the design. Do not fill it.
+The Pre-Entry Architecture
+The five minutes before you enter the room are not dead time. They are the last window you have to manage your own state, confirm the operational details, and set the conditions for a clean entry. A well-designed pre-entry protocol removes every variable that could create a moment of hesitation at entry. Hesitation that the audience will read and interpret, accurately, as something being slightly wrong.
+Pre-Entry Checklist
+AV briefed on sequence. Client connection made. Own state confirmed. Threshold detail checked. Entry cue known. Remove every variable that creates hesitation.
+The Threshold Rule
+Do not pause at the entry. Walk in as if you have been there before. Because you have, in your preparation. The audience reads hesitation at the threshold as uncertainty about belonging. The room is yours. Enter it that way.
+· · ·
 
 CHAPTER 31
 Where Bookings Are Actually Won
@@ -2137,19 +2137,19 @@ Referral Psychology
 People refer performers to protect their own reputation. They refer someone they trust to make them look smart for the referral. Build trust the whole way through, not just onstage, and the referrals follow without asking.
 The Seven Items on the Limbic Ledger
 The Limbic Ledger is not a metaphor. It is a description of how emotional memory actually works: not as a neutral record of events, but as a continuously updated evaluation of how an experience, and the person responsible for it, made you feel. The client's limbic system has been running this assessment from the moment they first encountered you. The performance is one data point. Here are the others.
-1. The First Email
+1 — The First Email
 The first point of contact establishes the frame. An email that reads as professional, unhurried, and specific to their situation tells the limbic system: this person is a peer. An email that reads as eager, overly accommodating, or template-issued tells it: this is a vendor. The frame is established before you have demonstrated anything about your performance. It is almost impossible to fully override in the room.
-2. The Response Lag
+2 — The Response Lag
 How long you take to respond to a booking inquiry is a signal, whether you intend it to be or not. Same-day response signals availability in the wrong direction. Two-to-three business days signals that you are working at a level where requests come in.
-3. The Pre-Show Conversation
+3 — The Pre-Show Conversation
 What you ask about before the show tells the client what you think matters. Performers who ask only about logistics are signaling that the logistics are the professional concern. Performers who ask about the audience, the organizational context, the thing the client wants the room to walk away feeling: this tells the limbic system that the person they have hired is thinking about the same thing they are thinking about.
-4. The Arrival
+4 — The Arrival
 How you arrive at the venue is observed before you have spoken to anyone. The performer who arrives unhurried, engages with staff naturally, and does not perform an air of importance broadcasts differently than the one who arrives harried or who navigates the building with visible anxiety.
-5. The Logistics Ease
+5 — The Logistics Ease
 Every logistical complication costs a small amount of limbic credit. Not because the complication is large, but because friction is always read by the nervous system as a signal about whether something is going to be easy or hard. The performer whose production requirements are clear, self-sufficient, and handled without drama scores on this item.
-6. The Recovery
+6 — The Recovery
 Something will go wrong. A technical failure, a late start, a volunteer who does not cooperate as expected, a moment that does not land. The recovery is observed more carefully than the performance. A performer who handles the unexpected with genuine composure earns more from that moment than from any planned effect.
-7. The Follow-Through
+7 — The Follow-Through
 What comes after the performance is the last item the limbic system scores, and it is the most differentiating. A specific, personal thank-you, naming something that happened in that room, tells the client that the attention you brought to the stage was not a performance. It was who you are.
 Seven items. The performance is assumed. The list is what surrounds the performance, and what determines whether the performance becomes a long professional relationship or a pleasant evening that is not quite repeated.
 Performer's Note
@@ -2396,7 +2396,7 @@ That is Authority Architecture: the behavioral infrastructure that broadcasts st
 
 The Five Pillars of Authority
 
-Chase Hughes identified five traits that constitute the architecture of perceived authority. You encountered these briefly in Chapter 25. Here is the complete framework. Each pillar examined in full depth with the self-assessment tool that lets you diagnose exactly where your authority signal is strongest and where it cracks under pressure.
+Chase Hughes identified five traits that constitute the architecture of perceived authority. You encountered these briefly in Chapter 29. Here is the complete framework. Each pillar examined in full depth with the self-assessment tool that lets you diagnose exactly where your authority signal is strongest and where it cracks under pressure.
 
 Pillar One: Confidence
 

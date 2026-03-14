@@ -816,6 +816,80 @@ def gen_observation_table(rows):
     return header + ''.join(body_rows) + '</div>'
 
 
+_DISC_COLORS = {
+    'D': '#A83030',
+    'I': '#C9A84C',
+    'S': '#1A8FA8',
+    'C': '#6B52A0',
+}
+
+def _parse_disc_body(body):
+    """Split 'Traits. On stage: ... Signals: ...' into parts."""
+    traits_raw = body
+    on_stage = ''
+    signals = []
+    if 'On stage:' in body or 'On Stage:' in body:
+        sep = 'On stage:' if 'On stage:' in body else 'On Stage:'
+        traits_raw, _, rest = body.partition(sep)
+        if 'Signals:' in rest:
+            on_stage_text, _, sigs_raw = rest.partition('Signals:')
+            on_stage = on_stage_text.strip().rstrip('.')
+            signals = [s.strip().rstrip('.') for s in sigs_raw.split(' · ') if s.strip()]
+        else:
+            on_stage = rest.strip()
+    traits = [t.strip().rstrip('.') for t in traits_raw.split(' · ') if t.strip()]
+    return traits, on_stage, signals
+
+def gen_disc_type_card(letter, name, body):
+    """Render a DISC type card (D/I/S/C) with traits, on-stage strategy, signals."""
+    color = _DISC_COLORS.get(letter, 'var(--gold)')
+    traits, on_stage, signals = _parse_disc_body(body)
+    trait_html = ''.join(f'<span class="disc-trait">{escape(t)}</span>' for t in traits)
+    sig_html = ''.join(f'<span class="disc-sig">{escape(s)}</span>' for s in signals)
+    on_stage_html = f'<div class="disc-onstage"><span class="disc-onstage-label">On Stage</span> {escape(on_stage)}</div>' if on_stage else ''
+    return (
+        f'<div class="disc-type-card" style="--disc-color:{color}">'
+        f'<div class="disc-type-header">'
+        f'<span class="disc-letter">{escape(letter)}</span>'
+        f'<span class="disc-name">{escape(name)}</span>'
+        f'</div>'
+        f'<div class="disc-traits">{trait_html}</div>'
+        f'{on_stage_html}'
+        f'<div class="disc-sigs">{sig_html}</div>'
+        f'</div>'
+    )
+
+def gen_disc_blend_card(blend, body):
+    """Render a DISC blend card (D/C, I/S, D/I, C/S)."""
+    letters = [c for c in blend if c in _DISC_COLORS]
+    color1 = _DISC_COLORS.get(letters[0], '#888') if letters else '#888'
+    color2 = _DISC_COLORS.get(letters[1], '#888') if len(letters) > 1 else color1
+    desc = body
+    signals = ''
+    strategy = ''
+    if 'Signals:' in body:
+        desc, _, rest = body.partition('Signals:')
+        if 'Strategy:' in rest:
+            signals, _, strategy = rest.partition('Strategy:')
+        else:
+            signals = rest
+    sig_html = ''.join(
+        f'<span class="disc-sig">{escape(s.strip().rstrip("."))}</span>'
+        for s in signals.split(' + ') if s.strip()
+    ) if signals else ''
+    strategy_html = f'<div class="disc-strategy"><span class="disc-strategy-label">Strategy</span> {escape(strategy.strip())}</div>' if strategy.strip() else ''
+    return (
+        f'<div class="disc-blend-card" style="--blend-color1:{color1};--blend-color2:{color2}">'
+        f'<div class="disc-blend-header">'
+        f'<span class="disc-blend-name">{escape(blend)}</span>'
+        f'</div>'
+        f'<p class="disc-blend-desc">{escape(desc.strip())}</p>'
+        f'<div class="disc-sigs">{sig_html}</div>'
+        f'{strategy_html}'
+        f'</div>'
+    )
+
+
 def gen_video_embed(file_id, label, caption):
     """Render a Google Drive video embed."""
     embed_url = f'https://drive.google.com/file/d/{file_id}/preview'
@@ -1245,6 +1319,24 @@ def build_chapter_body(section, global_para_count):
                     parts.append(gen_observation_table(rows))
                     i = j
                     continue
+
+        # ── DISC TYPE CARDS (D — DIRECT, I — INFLUENTIAL, etc.) ──
+        disc_type_m = re.match(r'^([DISC]) — ([A-Z]+)$', stripped)
+        if disc_type_m and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_disc_type_card(disc_type_m.group(1), disc_type_m.group(2), body_para))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── DISC BLEND CARDS (D/C Blend, I/S Blend, etc.) ──
+        disc_blend_m = re.match(r'^([DISC]/[DISC]) Blend$', stripped)
+        if disc_blend_m and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_disc_blend_card(disc_blend_m.group(1), body_para))
+            i += 2
+            global_para_count += 2
+            continue
 
         # ── VIDEO EMBEDS ──
         # Pattern: "VIDEO EMBED :: FILE_ID :: Label :: Caption"
@@ -2338,6 +2430,81 @@ a.toc-ch:hover{opacity:.7}
 /* ═══ FIVE Cs FRAMEWORK ═══ */
 .five-cs-graphic{margin:20px 0 0;line-height:0}
 .disc-chart{margin:1.8em 0;break-inside:avoid}
+/* ── DISC TYPE CARDS ── */
+.disc-type-card{
+  border-left:3px solid var(--disc-color,var(--gold));
+  background:linear-gradient(135deg,rgba(8,15,26,.85),rgba(13,30,48,.95));
+  border-radius:6px;padding:14px 18px;margin:.9em 0;break-inside:avoid;
+}
+.disc-type-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.disc-letter{
+  font-family:var(--sans);font-size:1.6rem;font-weight:700;
+  color:var(--disc-color,var(--gold));line-height:1;
+  width:36px;text-align:center;flex-shrink:0;
+}
+.disc-name{
+  font-family:var(--sans);font-size:.8rem;font-weight:700;
+  letter-spacing:.1em;color:#fff;text-transform:uppercase;
+}
+.disc-traits{display:flex;flex-wrap:wrap;gap:5px 6px;margin-bottom:10px}
+.disc-trait{
+  display:inline-block;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:3px;padding:2px 9px;
+  font-size:.72rem;color:rgba(255,255,255,.8);
+}
+.disc-onstage{
+  background:rgba(255,255,255,.04);
+  border-left:2px solid var(--disc-color,var(--gold));
+  border-radius:0 4px 4px 0;
+  padding:7px 12px;margin-bottom:10px;
+  font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.5;
+}
+.disc-onstage-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--disc-color,var(--gold));margin-right:6px;
+}
+.disc-sigs{display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:6px}
+.disc-sig{
+  display:inline-block;
+  font-size:.68rem;color:var(--disc-color,var(--gold));
+  border:1px solid var(--disc-color,var(--gold));
+  border-radius:10px;padding:1px 8px;
+  opacity:.8;
+}
+/* ── DISC BLEND CARDS ── */
+.disc-blend-card{
+  border-top:2px solid;
+  border-image:linear-gradient(90deg,var(--blend-color1),var(--blend-color2)) 1;
+  background:rgba(13,30,48,.9);
+  border-radius:0 0 5px 5px;
+  padding:12px 16px;margin:.7em 0;break-inside:avoid;
+}
+.disc-blend-header{margin-bottom:8px}
+.disc-blend-name{
+  font-family:var(--sans);font-size:.75rem;font-weight:700;
+  letter-spacing:.08em;color:#fff;
+}
+.disc-blend-desc{
+  font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.55;
+  margin:0 0 8px;text-indent:0!important;text-align:left!important;
+}
+.disc-strategy{
+  font-size:.75rem;color:var(--gray-blue);
+  margin-top:8px;padding-top:7px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.disc-strategy-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);margin-right:5px;
+}
 /* ── VIDEO EMBEDS ── */
 .video-embed{margin:2em 0;break-inside:avoid}
 .video-label{
