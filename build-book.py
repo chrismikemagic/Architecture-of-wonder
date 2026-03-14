@@ -583,6 +583,12 @@ def gen_pull_quote(text):
 </blockquote>'''
 
 
+def gen_performer_note():
+    return '''<div class="performer-note-header">
+  <span class="pn-label">Performer's Note</span>
+</div>'''
+
+
 def gen_what_you_have_felt():
     return '''<div class="felt-before">
   <div class="felt-icon">\u25C9</div>
@@ -607,6 +613,10 @@ def process_paragraph(text, part_num=1):
     # "What You Have Felt Before" motif
     if is_what_you_have_felt(stripped):
         return gen_what_you_have_felt()
+
+    # Performer's Note — distinct from section headers
+    if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
+        return gen_performer_note()
 
     # Section headers
     if is_section_header(stripped):
@@ -1480,6 +1490,25 @@ body{counter-reset:page}
 [data-part="8"] .chapter-number{color:#C8901A}
 [data-part="8"] .spotlight-box{border-left-color:#C8901A}
 [data-part="8"] .key-read .kr-text{color:#C8901A}
+
+/* ═══ PERFORMER'S NOTE ═══ */
+.performer-note-header{
+  display:flex;align-items:center;gap:10px;
+  margin:2.2em 0 .7em;
+  padding:10px 14px;
+  border-left:3px solid var(--blue);
+  background:rgba(26,143,168,.04);
+  border-radius:0 4px 4px 0;
+}
+.performer-note-header::before{
+  content:"✦";
+  font-size:.7rem;color:var(--blue);flex-shrink:0;opacity:.8;
+}
+.performer-note-header .pn-label{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:3px;color:var(--blue);text-transform:uppercase;
+  font-style:normal;
+}
 
 /* ═══ CHAPTER OPENER LEGEND ═══ */
 .opener-legend{
