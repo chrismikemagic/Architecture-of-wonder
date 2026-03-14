@@ -177,7 +177,7 @@ That is what this book is for.
 What You Have Felt Before
 You are watching someone perform something impossible. You cannot explain it. You are not quite sure whether you want to explain it (because part of you knows that if you understood how it worked, it would impact you differently. That particular feeling) the pleasure of an open question you do not entirely want to resolve. Is something specific and designable. Everyone can be made to feel this way. There are not people who just want to figure things out because that’s who they are. We are human and crave novelty, just as long as it is relevant and interesting to us.  It is not accidental. The performer who produces it is working on the same system that is experiencing it.
 What This Book Is
-Part One is the neuroscience of what your audience experiences. Part Two is what you observe in them and how you respond. Parts Three through Seven take those principles into field notes, corporate stages, performance craft, and the business of getting booked. The science is real. The application is immediate.
+Seven parts. Forty chapters. One argument: that behavioral science and performance craft are the same discipline approached from different directions. A full guide to how to use this book follows the introduction.
 
 
 
@@ -187,6 +187,73 @@ Part One is the neuroscience of what your audience experiences. Part Two is what
 A Note on Sources
 Where I cite scientific findings, I have tried to be accurate about what the research actually demonstrates and careful about distinguishing peer-reviewed evidence from practitioner frameworks developed through real-world use. Several chapters address areas such as behavioral profiling, cold reading, and compliance language, where some ideas are strongly supported in formal research while others are supported more by repeated operational success in performance, negotiation, communication, and observational practice than by tightly controlled laboratory study. I address those distinctions directly in the relevant chapters rather than overclaiming certainty or dismissing what falls outside narrow academic validation. In my line of work, many useful patterns are experienced consistently in the field even when they are difficult to isolate, measure, or study cleanly under laboratory conditions. That should not be taken to mean they are unreliable or unhelpful. In many cases, some of the most practically valuable behaviors are the ones the research base around them is still incomplete, debated, or less formalized. It is like dismissing a seasoned sailor’s knowledge of the water because he cannot recreate the ocean in a laboratory tank.
 Let’s begin
+· · ·
+
+
+HOW TO READ THIS BOOK
+
+This book is designed to be read straight through and used as a reference. Both modes are built in. Here is what you are working with.
+
+The Structure
+
+Seven parts, forty chapters. Each part builds on the last, but each chapter also stands alone as a working module. You will find the argument in the sequence and the tools in the individual chapters.
+
+Part One — The Architecture of Wonder covers the neuroscience: what is happening in the audience’s brain during a performance. Predictive processing, cortisol, dopamine, attention, social signal. You do not need a science background. You need to understand the mechanism so that everything that follows makes sense as design, not guesswork.
+
+Part Two — Reading the Room is the observation system. The Five Cs, the T1–T4 evidence tiers, the 80-signal catalog, DISC personality reading, micro-expressions, cold reading, and the volunteer selection framework. This is the diagnostic layer. Everything in the later parts depends on it.
+
+Part Three — Field Notes. Four engagements, four rooms, four different problems. The principles applied in practice before they are broken into technique.
+
+Part Four — The Performance Layer. Volunteer psychology, compliance architecture, the language of suggestion, anchoring, and the structural moves that turn behavioral reads into performance.
+
+Part Five — The Corporate Stage. How everything from Parts One through Four applies when the room is a boardroom, a conference hall, or a client meeting. The authority frame, the limbic drivers, and the business of making the work land.
+
+Part Six — The Business of Performance. Getting booked, staying booked, and understanding why most careers plateau before they should. The Limbic Ledger, the multi-touch model, the introduction architecture.
+
+Part Seven — Advanced Systems. The Performer’s Signal Dictionary, the DECODE framework, and the meta-architecture of the book itself.
+
+The Evidence Tiers
+
+Throughout the book, signals and claims are tagged with one of four evidence tiers. These are not decorations — they tell you how much weight to put on each claim.
+
+T1 — Physical Evidence
+Directly observable, documentable, and not subject to interpretation. Shoe resoling, cuff wear, notch patterns. The most reliable tier.
+
+T2 — Research-Backed
+Supported by peer-reviewed behavioral science. Can be found in the literature. High reliability when baseline is established.
+
+T3 — Field-Tested Pattern
+Consistent operational evidence from applied practice, but without the same formal laboratory support as T2. Reliable in the room. Hold accordingly.
+
+T4 — Experimental
+Insufficient evidence for real-world reliance. Documented in the appendix with the research that informed their removal.
+
+When a claim or signal appears without a tier, it is prose reasoning or framing — not a diagnostic claim.
+
+The Visual System
+
+This book uses a set of recurring visual elements. Each has a specific function.
+
+Key Reads — Gold-trimmed closing statements at the end of chapters. These are the one thing to carry out of the chapter. They are designed to be the last thing you read before you turn the page.
+
+Pattern Interrupts — Dark-background pullout pages. Quotes and principles formatted to stand out from the surrounding text. Their job is to break your reading rhythm at a moment of emphasis. The isolation effect is intentional.
+
+Signal Cards — Individual behavioral signals formatted as compact reference entries. Each includes the signal name, evidence tier, and what it tells you.
+
+Concept Boxes — Highlighted framework introductions. When a new system is introduced, it gets a box. These are the architectural anchors.
+
+Performer’s Notes — Italicized callout sections written directly to the performer. These are the practitioner layer — not theory, but application.
+
+Two Ways to Use It
+
+Read straight through once. Then use it as a reference. The early chapters will mean more the second time, because the later chapters will have given you context for why the early frameworks matter at the level they do.
+
+If you are returning to a specific system, the Reference section at the back collects every chart, matrix, and tool in a single location. You do not need to hunt through chapters to find the DISC quadrant or the Six-Category Radar mid-performance.
+
+A Note on the Evidence
+
+Not everything in this book is peer-reviewed science. Some of it is field evidence: patterns that have been tested repeatedly in high-stakes applied settings where being wrong has immediate consequences. That is a different category of evidence than a controlled study, and I have tried to be clear throughout about which category you are reading. The epistemology is in the details, not the chapter titles. When it matters, I tell you.
+
 · · ·
 
 

@@ -23,6 +23,11 @@ This file is cumulative — each session appends to it.
 **Why:** Plan implementation — created `docs/10-editing-session-log.md` and `export-pdf.py`.
 **Pattern/Lesson:** Editing surface is `manuscript-extracted.txt`. All edits flow through the Edit tool → `python build-book.py` → `Architecture-of-Wonder-DESIGNED.html`. DOCX is archive only.
 
+### 2026-03-14 — Expand and reposition How to Read This Book
+**Change:** Replaced the two-sentence "What This Book Is" in the Introduction with a pointer. Added a full "HOW TO READ THIS BOOK" section after the Introduction with: structural overview of all 7 parts, T1–T4 tier card definitions (using the existing tier card system), the visual element glossary (Key Reads, Pattern Interrupts, Signal Cards, Concept Boxes, Performer's Notes), two reading modes (linear vs. reference), and an epistemic note.
+**Why:** Chris wanted the How to Read section to have more detail and be positioned below the Acknowledgements and Introduction, not buried inside the intro.
+**Pattern/Lesson:** Front matter order: Why This Book → Acknowledgements → Introduction → How to Read This Book → Part One.
+
 ### 2026-03-14 — Seven Volunteer Types Formatting + DISC Size Fix
 **Change:** Added `gen_volunteer_card()` and `gen_volunteer_matrix_entry()` to `build-book.py`. All 7 volunteer type profiles (The Supporter through The Reserved Volunteer) now render as dark profile cards with: type name badge in distinct color, description, signal chips, and Works best for / Avoid for labels. The 4 Volunteer Selection Matrix entries render as colored cells with recommendation and body. DISC SVG scaled up to 800×620 with larger fonts throughout.
 **Why:** User said "this all needs better formatting" about the Seven Volunteer Types section. DISC graphic was too small to read.
