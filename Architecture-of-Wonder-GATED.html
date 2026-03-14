@@ -1023,15 +1023,14 @@ a.toc-ch:hover{opacity:.7}
 #name-reveal {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 12px;
+  flex-direction: column; gap: 20px;
   opacity: 0; z-index: 2;
 }
 #name-reveal.active { opacity: 1; }
-#name-reveal .reveal-name {
-  font-family: var(--sans); font-size: 3.2rem; font-weight: 700;
-  letter-spacing: 6px; text-transform: uppercase;
-  color: var(--gold);
-  text-shadow: 0 0 60px rgba(201,168,76,.4), 0 0 120px rgba(201,168,76,.15);
+#name-reveal .reveal-logo {
+  width: 260px; max-width: 70vw; height: auto;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,.55))
+          drop-shadow(0 0 80px rgba(201,168,76,.12));
   transform: scale(0.8);
   animation: none;
 }
@@ -1154,8 +1153,8 @@ a.toc-ch:hover{opacity:.7}
 
   </div>
   <div id="name-reveal">
-    <div class="reveal-name" id="reveal-name-text"></div>
-    <div class="reveal-tagline">is about to see everything.</div>
+    <img class="reveal-logo" id="reveal-logo" src="https://i.postimg.cc/Ghr5HTTC/w1000-n22219Jlqy-T2z-Qo-E.png" alt="Vanishing Inc">
+    <div class="reveal-tagline">presents</div>
   </div>
 </div>
 
@@ -4495,17 +4494,16 @@ a.toc-ch:hover{opacity:.7}
 
     var box = document.getElementById('gate-box');
     var nameReveal = document.getElementById('name-reveal');
-    var revealText = document.getElementById('reveal-name-text');
-    revealText.textContent = 'Chris Michael';
+    var revealLogo = document.getElementById('reveal-logo');
 
     var boxVisible = box.style.display !== 'none';
 
     function startReveal() {
       box.style.display = 'none';
 
-      // Phase 2: Name appears with pulse
+      // Phase 2: Logo appears with pulse
       nameReveal.classList.add('active');
-      revealText.style.animation = 'pulseIn 0.8s cubic-bezier(.22,.68,.36,1.2) forwards';
+      revealLogo.style.animation = 'pulseIn 0.8s cubic-bezier(.22,.68,.36,1.2) forwards';
 
       // Phase 3: Tagline fades in
       setTimeout(function() {
