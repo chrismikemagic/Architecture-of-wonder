@@ -198,7 +198,7 @@ GATE_JS = """
     var nameReveal = document.getElementById('name-reveal');
     var revealText = document.getElementById('reveal-name-text');
 
-    revealText.textContent = data.firstName;
+    revealText.textContent = 'Chris Michael';
     box.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     box.style.opacity = '0';
     box.style.transform = 'scale(0.95)';

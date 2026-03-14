@@ -709,7 +709,8 @@ def gen_chapter_opener(section):
         ch_display = '\u2726'  # diamond for intro
 
     legend = _opener_legend()
-    return f'''<section class="chapter-opener" data-part="{part_num}">
+    ch_id = f'chapter-{ch_num}'
+    return f'''<section class="chapter-opener" id="{ch_id}" data-part="{part_num}">
   <div class="opener-content">
     <div class="part-label">{escape(part_label)}</div>
     <div class="gold-line"></div>
@@ -1542,7 +1543,7 @@ def gen_toc(sections):
         elif s['type'] == 'chapter':
             ch = s.get('chapter_num', 0)
             num = 'Intro' if ch == 0 else str(ch)
-            parts.append(f'<div class="toc-ch"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></div>')
+            parts.append(f'<a href="#chapter-{ch}" class="toc-ch"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></a>')
         elif s['type'] == 'glossary':
             parts.append('<div class="toc-part">Glossary</div>')
         elif s['type'] == 'about':
@@ -1559,6 +1560,7 @@ CSS = r'''
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 :root{
   --navy:#080F1A; --navy2:#0D1E30;
@@ -1936,9 +1938,11 @@ body{counter-reset:page}
   padding-top:1em;border-top:1px solid var(--rule);
 }
 .toc-sub{display:block;font-weight:400;letter-spacing:1px;font-size:.58rem;color:var(--gray-blue);margin-top:2px}
-.toc-ch{
+a.toc-ch{
   display:flex;align-items:baseline;padding:5px 0 5px 16px;font-size:.82rem;
+  text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s;
 }
+a.toc-ch:hover{opacity:.7}
 .toc-num{color:var(--gold);font-weight:600;min-width:32px;flex-shrink:0}
 .toc-title{flex-shrink:0}
 .toc-dots{

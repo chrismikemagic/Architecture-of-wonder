@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 :root{
   --navy:#080F1A; --navy2:#0D1E30;
@@ -385,9 +386,11 @@ body{counter-reset:page}
   padding-top:1em;border-top:1px solid var(--rule);
 }
 .toc-sub{display:block;font-weight:400;letter-spacing:1px;font-size:.58rem;color:var(--gray-blue);margin-top:2px}
-.toc-ch{
+a.toc-ch{
   display:flex;align-items:baseline;padding:5px 0 5px 16px;font-size:.82rem;
+  text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s;
 }
+a.toc-ch:hover{opacity:.7}
 .toc-num{color:var(--gold);font-weight:600;min-width:32px;flex-shrink:0}
 .toc-title{flex-shrink:0}
 .toc-dots{
@@ -923,55 +926,55 @@ body{counter-reset:page}
   <p class="def-meaning">The complex or carefully designed structure of something. The deliberate arrangement of elements to produce a specific experience in the person who moves through it.</p>
 </section>
 <nav class="toc"><h2>Contents</h2><div class="toc-list">
-<div class="toc-ch"><span class="toc-num">Intro</span><span class="toc-title">On Being the Person Who Admits What They Do</span><span class="toc-dots"></span></div>
+<a href="#chapter-0" class="toc-ch"><span class="toc-num">Intro</span><span class="toc-title">On Being the Person Who Admits What They Do</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART ONE<span class="toc-sub">The Architecture of Wonder</span></div>
-<div class="toc-ch"><span class="toc-num">1</span><span class="toc-title">Designing for Reality</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">2</span><span class="toc-title">The Five Forces of Attention</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">3</span><span class="toc-title">Tension, Threat and the Window of Wonder</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">4</span><span class="toc-title">The Art of Anticipation</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">5</span><span class="toc-title">Attention as a Weapon</span><span class="toc-dots"></span></div>
+<a href="#chapter-1" class="toc-ch"><span class="toc-num">1</span><span class="toc-title">Designing for Reality</span><span class="toc-dots"></span></a>
+<a href="#chapter-2" class="toc-ch"><span class="toc-num">2</span><span class="toc-title">The Five Forces of Attention</span><span class="toc-dots"></span></a>
+<a href="#chapter-3" class="toc-ch"><span class="toc-num">3</span><span class="toc-title">Tension, Threat and the Window of Wonder</span><span class="toc-dots"></span></a>
+<a href="#chapter-4" class="toc-ch"><span class="toc-num">4</span><span class="toc-title">The Art of Anticipation</span><span class="toc-dots"></span></a>
+<a href="#chapter-5" class="toc-ch"><span class="toc-num">5</span><span class="toc-title">Attention as a Weapon</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART TWO<span class="toc-sub">Reading the Room</span></div>
-<div class="toc-ch"><span class="toc-num">6</span><span class="toc-title">Reading Body Language in Real Time</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">7</span><span class="toc-title">The 80-Signal System</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">8</span><span class="toc-title">The Four Personalities That Change Every Read</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">9</span><span class="toc-title">Cold Reading, Warm Reading, and Thin Slicing</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">10</span><span class="toc-title">The Micro-Expression Matrix</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">11</span><span class="toc-title">The Volunteer’s Brain</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">12</span><span class="toc-title">The Language of Yes</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">13</span><span class="toc-title">Closing the Barn Door</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">14</span><span class="toc-title">The Science of Hypnosis</span><span class="toc-dots"></span></div>
+<a href="#chapter-6" class="toc-ch"><span class="toc-num">6</span><span class="toc-title">Reading Body Language in Real Time</span><span class="toc-dots"></span></a>
+<a href="#chapter-7" class="toc-ch"><span class="toc-num">7</span><span class="toc-title">The 80-Signal System</span><span class="toc-dots"></span></a>
+<a href="#chapter-8" class="toc-ch"><span class="toc-num">8</span><span class="toc-title">The Four Personalities That Change Every Read</span><span class="toc-dots"></span></a>
+<a href="#chapter-9" class="toc-ch"><span class="toc-num">9</span><span class="toc-title">Cold Reading, Warm Reading, and Thin Slicing</span><span class="toc-dots"></span></a>
+<a href="#chapter-10" class="toc-ch"><span class="toc-num">10</span><span class="toc-title">The Micro-Expression Matrix</span><span class="toc-dots"></span></a>
+<a href="#chapter-11" class="toc-ch"><span class="toc-num">11</span><span class="toc-title">The Volunteer’s Brain</span><span class="toc-dots"></span></a>
+<a href="#chapter-12" class="toc-ch"><span class="toc-num">12</span><span class="toc-title">The Language of Yes</span><span class="toc-dots"></span></a>
+<a href="#chapter-13" class="toc-ch"><span class="toc-num">13</span><span class="toc-title">Closing the Barn Door</span><span class="toc-dots"></span></a>
+<a href="#chapter-14" class="toc-ch"><span class="toc-num">14</span><span class="toc-title">The Science of Hypnosis</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART THREE<span class="toc-sub">Field Notes</span></div>
 <div class="toc-part">PART FOUR<span class="toc-sub">The Corporate Stage</span></div>
-<div class="toc-ch"><span class="toc-num">15</span><span class="toc-title">Mentalism in the Boardroom</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">16</span><span class="toc-title">Why Most Training Fails</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">17</span><span class="toc-title">Stories from the Field</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">18</span><span class="toc-title">Influence Without Authority</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">19</span><span class="toc-title">The Ethics of Influence</span><span class="toc-dots"></span></div>
+<a href="#chapter-15" class="toc-ch"><span class="toc-num">15</span><span class="toc-title">Mentalism in the Boardroom</span><span class="toc-dots"></span></a>
+<a href="#chapter-16" class="toc-ch"><span class="toc-num">16</span><span class="toc-title">Why Most Training Fails</span><span class="toc-dots"></span></a>
+<a href="#chapter-17" class="toc-ch"><span class="toc-num">17</span><span class="toc-title">Stories from the Field</span><span class="toc-dots"></span></a>
+<a href="#chapter-18" class="toc-ch"><span class="toc-num">18</span><span class="toc-title">Influence Without Authority</span><span class="toc-dots"></span></a>
+<a href="#chapter-19" class="toc-ch"><span class="toc-num">19</span><span class="toc-title">The Ethics of Influence</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART FIVE<span class="toc-sub">The Performance Arc</span></div>
 <div class="toc-part">PART SIX<span class="toc-sub">Presence and Perception</span></div>
-<div class="toc-ch"><span class="toc-num">20</span><span class="toc-title">The Art of Strolling</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">21</span><span class="toc-title">When the Room Rises</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">22</span><span class="toc-title">Audio as Architecture</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">23</span><span class="toc-title">Making the Room Say Yes</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">24</span><span class="toc-title">The Authority Frame</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">25</span><span class="toc-title">Building a Career, Not a Calendar</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">26</span><span class="toc-title">The Intro Video</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">27</span><span class="toc-title">Turning Observation into Performance</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">28</span><span class="toc-title">Insight Demonstrations</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">29</span><span class="toc-title">Method Invisibility</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">30</span><span class="toc-title">Patter, Rhythm, and Silence</span><span class="toc-dots"></span></div>
+<a href="#chapter-20" class="toc-ch"><span class="toc-num">20</span><span class="toc-title">The Art of Strolling</span><span class="toc-dots"></span></a>
+<a href="#chapter-21" class="toc-ch"><span class="toc-num">21</span><span class="toc-title">When the Room Rises</span><span class="toc-dots"></span></a>
+<a href="#chapter-22" class="toc-ch"><span class="toc-num">22</span><span class="toc-title">Audio as Architecture</span><span class="toc-dots"></span></a>
+<a href="#chapter-23" class="toc-ch"><span class="toc-num">23</span><span class="toc-title">Making the Room Say Yes</span><span class="toc-dots"></span></a>
+<a href="#chapter-24" class="toc-ch"><span class="toc-num">24</span><span class="toc-title">The Authority Frame</span><span class="toc-dots"></span></a>
+<a href="#chapter-25" class="toc-ch"><span class="toc-num">25</span><span class="toc-title">Building a Career, Not a Calendar</span><span class="toc-dots"></span></a>
+<a href="#chapter-26" class="toc-ch"><span class="toc-num">26</span><span class="toc-title">The Intro Video</span><span class="toc-dots"></span></a>
+<a href="#chapter-27" class="toc-ch"><span class="toc-num">27</span><span class="toc-title">Turning Observation into Performance</span><span class="toc-dots"></span></a>
+<a href="#chapter-28" class="toc-ch"><span class="toc-num">28</span><span class="toc-title">Insight Demonstrations</span><span class="toc-dots"></span></a>
+<a href="#chapter-29" class="toc-ch"><span class="toc-num">29</span><span class="toc-title">Method Invisibility</span><span class="toc-dots"></span></a>
+<a href="#chapter-30" class="toc-ch"><span class="toc-num">30</span><span class="toc-title">Patter, Rhythm, and Silence</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART SEVEN<span class="toc-sub">The Business Brain</span></div>
-<div class="toc-ch"><span class="toc-num">31</span><span class="toc-title">Where Bookings Are Actually Won</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">32</span><span class="toc-title">Introductions, Bios, and Testimonials</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">33</span><span class="toc-title">The Language of Authority</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">34</span><span class="toc-title">Reading the Booking Room</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">35</span><span class="toc-title">From First Contact to Follow-Up</span><span class="toc-dots"></span></div>
+<a href="#chapter-31" class="toc-ch"><span class="toc-num">31</span><span class="toc-title">Where Bookings Are Actually Won</span><span class="toc-dots"></span></a>
+<a href="#chapter-32" class="toc-ch"><span class="toc-num">32</span><span class="toc-title">Introductions, Bios, and Testimonials</span><span class="toc-dots"></span></a>
+<a href="#chapter-33" class="toc-ch"><span class="toc-num">33</span><span class="toc-title">The Language of Authority</span><span class="toc-dots"></span></a>
+<a href="#chapter-34" class="toc-ch"><span class="toc-num">34</span><span class="toc-title">Reading the Booking Room</span><span class="toc-dots"></span></a>
+<a href="#chapter-35" class="toc-ch"><span class="toc-num">35</span><span class="toc-title">From First Contact to Follow-Up</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART EIGHT<span class="toc-sub">Behavioral Intelligence for the Stage</span></div>
-<div class="toc-ch"><span class="toc-num">36</span><span class="toc-title">What the Room Decides Before You Speak</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">37</span><span class="toc-title">Authority Architecture</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">38</span><span class="toc-title">The Performer’s Signal Dictionary</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">39</span><span class="toc-title">How Influence Actually Works</span><span class="toc-dots"></span></div>
-<div class="toc-ch"><span class="toc-num">40</span><span class="toc-title">Six Steps from Observation to Ovation</span><span class="toc-dots"></span></div>
+<a href="#chapter-36" class="toc-ch"><span class="toc-num">36</span><span class="toc-title">What the Room Decides Before You Speak</span><span class="toc-dots"></span></a>
+<a href="#chapter-37" class="toc-ch"><span class="toc-num">37</span><span class="toc-title">Authority Architecture</span><span class="toc-dots"></span></a>
+<a href="#chapter-38" class="toc-ch"><span class="toc-num">38</span><span class="toc-title">The Performer’s Signal Dictionary</span><span class="toc-dots"></span></a>
+<a href="#chapter-39" class="toc-ch"><span class="toc-num">39</span><span class="toc-title">How Influence Actually Works</span><span class="toc-dots"></span></a>
+<a href="#chapter-40" class="toc-ch"><span class="toc-num">40</span><span class="toc-title">Six Steps from Observation to Ovation</span><span class="toc-dots"></span></a>
 <div class="toc-part">Glossary</div>
 <div class="toc-part">About the Author</div>
 </div></nav>
@@ -995,7 +998,7 @@ body{counter-reset:page}
 <p>&quot;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&quot;</p>
 <p>— Chris Michael</p>
 </section>
-<section class="chapter-opener" data-part="0">
+<section class="chapter-opener" id="chapter-0" data-part="0">
   <div class="opener-content">
     <div class="part-label"></div>
     <div class="gold-line"></div>
@@ -1049,7 +1052,7 @@ body{counter-reset:page}
 <p>The neurobiology of performance. Predictive processing, salience, cortisol, dopamine, attention, authority, and credibility.</p>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="1">
+<section class="chapter-opener" id="chapter-1" data-part="1">
   <div class="opener-content">
     <div class="part-label">PART ONE</div>
     <div class="gold-line"></div>
@@ -1103,7 +1106,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="1">
+<section class="chapter-opener" id="chapter-2" data-part="1">
   <div class="opener-content">
     <div class="part-label">PART ONE</div>
     <div class="gold-line"></div>
@@ -1151,7 +1154,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="1">
+<section class="chapter-opener" id="chapter-3" data-part="1">
   <div class="opener-content">
     <div class="part-label">PART ONE</div>
     <div class="gold-line"></div>
@@ -1221,7 +1224,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="1">
+<section class="chapter-opener" id="chapter-4" data-part="1">
   <div class="opener-content">
     <div class="part-label">PART ONE</div>
     <div class="gold-line"></div>
@@ -1257,7 +1260,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="1">
+<section class="chapter-opener" id="chapter-5" data-part="1">
   <div class="opener-content">
     <div class="part-label">PART ONE</div>
     <div class="gold-line"></div>
@@ -1313,7 +1316,7 @@ body{counter-reset:page}
 <p>Behavioral profiling, cold reading, micro-expression detection, and the art of extracting information from a person before you have asked a single question.</p>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-6" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -1648,7 +1651,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-7" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -1704,7 +1707,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-8" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -1848,7 +1851,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-9" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -1972,7 +1975,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-10" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -1994,11 +1997,7 @@ body{counter-reset:page}
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>Genuine positive emotion activates two muscle groups in the face: the zygomatic major, which pulls the lip corners up, and the orbicularis oculi, which pulls the outer corner of the eye and produces the characteristic creasing around it. The second muscle, the one around the eye, does not respond to voluntary instruction. It activates automatically in response to genuine positive emotion, and in most people, it activates before the conscious smile arrives. A managed smile, produced to meet a social expectation, activates the lip movement without the eye involvement.</p>
 <h3 class="section-header sh-standard">The Science of Universality</h3>
 <p>The research of Paul Ekman (who offers an excellent entry level course that I recommend taking) and colleagues in the 1960s and 1970s proposed that a core set of facial expressions (happiness, sadness, fear, disgust, anger, surprise, and contempt) are universally recognized across cultures, including in populations without Western media exposure. This work became foundational to the field of micro-expression research and to a generation of practitioner training.</p>
-<h3 class="section-header sh-label">7 Universal Microexpressions</h3>
-<div class="book-figure" style="text-align:center;margin:2em 0;">
-  <img src="resources/metv-images/seven-universal-expressions.png" alt="The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt" style="max-width:100%;height:auto;" />
-  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">Figure 10.1 — The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.</p>
-</div>
+<h3 class="section-header sh-label">The Seven Expressions</h3>
 <p>Happiness · Sadness · Fear · Disgust · Anger · Surprise · Contempt. Observed consistently across multiple cultures and in congenitally blind individuals. The extent of universality across all cultural contexts remains an active area of scientific research.</p>
 <h3 class="section-header sh-label">The Duchenne Marker</h3>
 <p>Named for Guillaume Duchenne, who identified the orbicularis oculi as the muscle that distinguishes genuine from social smiling. The eye crease cannot be voluntarily produced in most people. If the eyes are not involved, the smile is managed.</p>
@@ -2020,7 +2019,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-11" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -2102,7 +2101,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-12" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -2157,7 +2156,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-13" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -2201,7 +2200,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="2">
+<section class="chapter-opener" id="chapter-14" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
@@ -2417,7 +2416,7 @@ body{counter-reset:page}
 <p>From keynote halls to boardrooms. Behavioral science applied to the professional performance context.</p>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="4">
+<section class="chapter-opener" id="chapter-15" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
@@ -2457,7 +2456,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="4">
+<section class="chapter-opener" id="chapter-16" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
@@ -2494,7 +2493,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="4">
+<section class="chapter-opener" id="chapter-17" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
@@ -2548,7 +2547,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="4">
+<section class="chapter-opener" id="chapter-18" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
@@ -2592,7 +2591,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="4">
+<section class="chapter-opener" id="chapter-19" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
@@ -2716,7 +2715,7 @@ body{counter-reset:page}
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>The gap between skilled execution and genuine command. Walk-around, room energy, audio design, compliance engineering, authority framing, and the architecture of a professional performance practice.</p>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-20" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2764,7 +2763,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-21" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2798,7 +2797,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-22" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2835,7 +2834,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-23" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2868,7 +2867,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-24" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2920,7 +2919,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-25" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2957,7 +2956,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-26" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -2991,7 +2990,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-27" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -3049,7 +3048,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-28" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -3132,7 +3131,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-29" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -3178,7 +3177,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="6">
+<section class="chapter-opener" id="chapter-30" data-part="6">
   <div class="opener-content">
     <div class="part-label">PART SIX</div>
     <div class="gold-line"></div>
@@ -3334,7 +3333,7 @@ body{counter-reset:page}
 <p>Where bookings are actually won, how authority is built before you walk in the room, and the complete Decode Behavior framework for the performing professional.</p>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="7">
+<section class="chapter-opener" id="chapter-31" data-part="7">
   <div class="opener-content">
     <div class="part-label">PART SEVEN</div>
     <div class="gold-line"></div>
@@ -3386,7 +3385,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="7">
+<section class="chapter-opener" id="chapter-32" data-part="7">
   <div class="opener-content">
     <div class="part-label">PART SEVEN</div>
     <div class="gold-line"></div>
@@ -3425,7 +3424,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="7">
+<section class="chapter-opener" id="chapter-33" data-part="7">
   <div class="opener-content">
     <div class="part-label">PART SEVEN</div>
     <div class="gold-line"></div>
@@ -3458,7 +3457,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="7">
+<section class="chapter-opener" id="chapter-34" data-part="7">
   <div class="opener-content">
     <div class="part-label">PART SEVEN</div>
     <div class="gold-line"></div>
@@ -3492,7 +3491,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="7">
+<section class="chapter-opener" id="chapter-35" data-part="7">
   <div class="opener-content">
     <div class="part-label">PART SEVEN</div>
     <div class="gold-line"></div>
@@ -3566,7 +3565,7 @@ body{counter-reset:page}
 <div class="section-break">· · ·</div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="8">
+<section class="chapter-opener" id="chapter-36" data-part="8">
   <div class="opener-content">
     <div class="part-label">PART EIGHT</div>
     <div class="gold-line"></div>
@@ -3659,7 +3658,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="8">
+<section class="chapter-opener" id="chapter-37" data-part="8">
   <div class="opener-content">
     <div class="part-label">PART EIGHT</div>
     <div class="gold-line"></div>
@@ -3725,7 +3724,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="8">
+<section class="chapter-opener" id="chapter-38" data-part="8">
   <div class="opener-content">
     <div class="part-label">PART EIGHT</div>
     <div class="gold-line"></div>
@@ -3815,7 +3814,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="8">
+<section class="chapter-opener" id="chapter-39" data-part="8">
   <div class="opener-content">
     <div class="part-label">PART EIGHT</div>
     <div class="gold-line"></div>
@@ -3878,7 +3877,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="8">
+<section class="chapter-opener" id="chapter-40" data-part="8">
   <div class="opener-content">
     <div class="part-label">PART EIGHT</div>
     <div class="gold-line"></div>
@@ -3943,7 +3942,7 @@ body{counter-reset:page}
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" data-part="9">
+<section class="chapter-opener" id="chapter-0" data-part="9">
   <div class="opener-content">
     <div class="part-label"></div>
     <div class="gold-line"></div>
