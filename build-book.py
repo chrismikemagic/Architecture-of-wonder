@@ -581,6 +581,21 @@ def parse_manuscript(filepath):
             i += 2
             continue
 
+        # Detect HOW TO READ THIS BOOK (front matter, after Introduction)
+        if line == 'HOW TO READ THIS BOOK' and i > 106:
+            if current_section:
+                sections.append(current_section)
+            current_section = {
+                'type': 'how_to_read',
+                'chapter_num': -1,
+                'part_num': 0,
+                'title': 'How to Read This Book',
+                'content': [],
+                'chapter_key': 'HOW TO READ'
+            }
+            i += 1
+            continue
+
         # Detect ACKNOWLEDGMENTS (early in file)
         if line == 'ACKNOWLEDGMENTS' and i < 50:
             if current_section:
@@ -2927,6 +2942,13 @@ def build_book(manuscript_path, output_path):
                         html.append(processed)
                 html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
                 html.append('</article>')
+
+        elif stype == 'how_to_read':
+            html.append('<article class="chapter-body how-to-read" data-part="0" style="break-before:page">')
+            body, global_para = build_chapter_body(section, global_para)
+            html.append(body)
+            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
+            html.append('</article>')
 
         elif stype == 'chapter':
             html.append(gen_chapter_opener(section))

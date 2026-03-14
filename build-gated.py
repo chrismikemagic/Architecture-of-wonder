@@ -220,11 +220,11 @@ GATE_JS = """
       setTimeout(function() {
         content.classList.add('visible');
         unlockScroll();
-        overlay.style.animation = 'zoomThrough 1s cubic-bezier(.4,0,.2,1) forwards';
+        overlay.style.animation = 'zoomThrough 2.2s cubic-bezier(.4,0,.2,1) forwards';
         setTimeout(function() {
           overlay.remove();
-        }, 1000);
-      }, 3200);
+        }, 2200);
+      }, 4000);
     }
 
     if (boxVisible) {
