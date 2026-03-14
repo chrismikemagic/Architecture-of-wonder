@@ -1050,16 +1050,16 @@ def gen_volunteer_card(name, body):
 
 def gen_volunteer_matrix_entry(heading, body):
     """Render one cell of the confidence×suggestibility matrix."""
-    # Determine color by position keywords
+    # Determine color by position keywords — warm amber/terracotta family
     h = heading.lower()
     if 'high' in h and h.count('high') == 2:
-        color = '#1A8FA8'   # HH: best
+        color = '#4BAA72'   # HH: best — green
     elif 'high confidence' in h:
-        color = '#A83030'   # HL: challenger
+        color = '#D4763B'   # HL: challenger — warm orange
     elif 'low suggestibility' in h and 'low confidence' in h:
-        color = '#5A5A72'   # LL: skip
+        color = '#7A6858'   # LL: skip — warm brown-gray
     else:
-        color = '#6B52A0'   # LH: anxious/reserved
+        color = '#C9A84C'   # LH: potential — amber gold
 
     # Extract ALL-CAPS recommendation from body start
     rec = ''
@@ -2119,14 +2119,14 @@ a.toc-ch:hover{opacity:.7}
 }
 .signal-key .sk-section{margin-bottom:2.5em}
 .signal-key .sk-section h3{
-  font-family:var(--sans);font-size:.62rem;font-weight:700;
-  letter-spacing:4px;color:var(--dim);text-transform:uppercase;
+  font-family:var(--sans);font-size:.68rem;font-weight:700;
+  letter-spacing:4px;color:rgba(138,154,181,.9);text-transform:uppercase;
   margin-bottom:.6em;padding-bottom:.5em;
   border-bottom:1px solid var(--rule);
 }
 .signal-key .sk-desc{
-  font-family:var(--serif);font-size:.85rem;color:rgba(245,240,232,.5);
-  line-height:1.6;margin-bottom:1.5em;
+  font-family:var(--serif);font-size:.88rem;color:rgba(245,240,232,.72);
+  line-height:1.65;margin-bottom:1.5em;
 }
 .signal-key .sk-grid{display:flex;flex-direction:column;gap:18px}
 .signal-key .sk-item{
@@ -2157,16 +2157,16 @@ a.toc-ch:hover{opacity:.7}
 .tier-table td{padding:11px 14px;vertical-align:top}
 .tier-table .tt-badge-cell{width:52px;padding-right:0;vertical-align:middle}
 .tier-table .tt-name{
-  font-family:var(--sans);font-size:.62rem;letter-spacing:2px;
-  font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:3px;
+  font-family:var(--sans);font-size:.67rem;letter-spacing:2px;
+  font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:4px;
 }
 .tier-table .tt-desc{
-  font-family:var(--serif);font-size:.78rem;color:rgba(245,240,232,.55);
-  line-height:1.5;
+  font-family:var(--serif);font-size:.85rem;color:rgba(245,240,232,.78);
+  line-height:1.6;
 }
 .tier-table .tt-ex{
-  font-family:var(--serif);font-style:italic;font-size:.72rem;
-  color:rgba(201,168,76,.55);margin-top:4px;
+  font-family:var(--serif);font-style:italic;font-size:.8rem;
+  color:rgba(201,168,76,.75);margin-top:5px;
 }
 
 /* ═══ FRONT MATTER ═══ */
@@ -2413,24 +2413,25 @@ a.toc-ch:hover{opacity:.7}
 .vc-avoid .vc-meta-label{color:#A83030}
 /* ── VOLUNTEER SELECTION MATRIX ── */
 .vm-cell{
-  background:rgba(13,30,48,.9);
-  border:1px solid rgba(255,255,255,.07);
-  border-top:2px solid var(--vm-color,var(--gold));
+  background:linear-gradient(135deg,rgba(30,18,8,.9),rgba(40,24,12,.95));
+  border:1px solid rgba(180,140,80,.12);
+  border-left:4px solid var(--vm-color,#C9A84C);
   border-radius:4px;
-  padding:12px 14px;
+  padding:14px 16px;
   margin:.5em 0;
   break-inside:avoid;
 }
 .vm-heading{
-  font-family:var(--sans);font-size:.7rem;font-weight:600;
-  color:#fff;margin-bottom:3px;
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(220,190,140,.6);margin-bottom:5px;
 }
 .vm-rec{
-  font-family:var(--sans);font-size:.72rem;font-weight:700;
-  color:var(--vm-color,var(--gold));letter-spacing:.04em;margin-bottom:6px;
+  font-family:var(--sans);font-size:.75rem;font-weight:700;
+  color:var(--vm-color,#C9A84C);letter-spacing:.04em;margin-bottom:7px;
 }
 .vm-body{
-  font-size:.75rem;color:var(--gray-blue);line-height:1.5;
+  font-size:.78rem;color:rgba(220,200,170,.75);line-height:1.55;
   margin:0;text-indent:0!important;text-align:left!important;
 }
 .bte-application{
