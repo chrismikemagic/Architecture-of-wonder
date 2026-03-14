@@ -160,70 +160,173 @@ FIGURES = {
 FIVE_CS_HTML = '''
 <div class="five-cs-framework">
   <div class="five-cs-header">
-    <div class="five-cs-title">THE FIVE C\u2019s OF BEHAVIORAL READING</div>
+    <div class="five-cs-title">THE FIVE C’s OF BEHAVIORAL READING</div>
     <div class="five-cs-subtitle">The architecture without which individual signals are noise</div>
   </div>
 
-  <div class="five-cs-grid">
-    <div class="five-cs-card" data-c="context">
-      <div class="c-tab">CONTEXT</div>
-      <div class="c-body">
-        <div class="c-question">What environment?</div>
-        <p class="c-desc">Same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier.</p>
-        <p class="c-rule">Context determines meaning. Always.</p>
-      </div>
-    </div>
+  <div class="five-cs-graphic">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Montserrat,Calibri,sans-serif" style="width:100%;height:auto;display:block;border-radius:6px;">
+  <defs>
+    <linearGradient id="bgGradA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
 
-    <div class="five-cs-card" data-c="clusters">
-      <div class="c-tab">CLUSTERS</div>
-      <div class="c-body">
-        <div class="c-question">Multiple signals?</div>
-        <p class="c-desc">One signal is noise. Three co-occurring behaviors multiply each other\u2019s diagnostic weight. A cluster is a pattern.</p>
-        <p class="c-rule">Never act on a single signal.</p>
-      </div>
-    </div>
+  <!-- Background -->
+  <rect width="800" height="380" fill="url(#bgGradA)" rx="8"/>
 
-    <div class="five-cs-card" data-c="congruence">
-      <div class="c-tab">CONGRUENCE</div>
-      <div class="c-body">
-        <div class="c-question">Body = words?</div>
-        <p class="c-desc">When the body says one thing and the words say another, the body is telling the truth. Not by confronting it\u2009\u2014\u2009by creating a frame where the truth can emerge voluntarily.</p>
-        <p class="c-rule">Incongruence is your most reliable signal.</p>
-      </div>
-    </div>
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">THE FIVE C's OF BEHAVIORAL READING</text>
+  <line x1="220" y1="55" x2="580" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">The architecture without which individual signals are noise</text>
 
-    <div class="five-cs-card" data-c="consistency">
-      <div class="c-tab">CONSISTENCY</div>
-      <div class="c-body">
-        <div class="c-question">Their baseline?</div>
-        <p class="c-desc">Compare what you are seeing to that individual\u2019s personal baseline. Not a generic chart. Deviation from their baseline is the data point.</p>
-        <p class="c-rule">Without baseline, every read is a projection.</p>
-      </div>
-    </div>
+  <!-- Tab-style layout -->
+  <!-- Tab 1: Context -->
+  <rect x="40" y="95" width="140" height="38" rx="4" fill="#A83030" opacity="0.2"/>
+  <text x="110" y="118" text-anchor="middle" fill="#A83030" font-size="12" font-weight="bold">CONTEXT</text>
+  <rect x="40" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#A83030" stroke-width="1"/>
+  <rect x="40" y="133" width="140" height="1" fill="#A83030"/>
+  <text x="55" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">What environment?</text>
+  <text x="55" y="172" fill="#8A9AB5" font-size="8.5">Same gesture means</text>
+  <text x="55" y="185" fill="#8A9AB5" font-size="8.5">different things in</text>
+  <text x="55" y="198" fill="#8A9AB5" font-size="8.5">different settings.</text>
+  <text x="55" y="218" fill="#A83030" font-size="8" font-style="italic">Context determines</text>
+  <text x="55" y="229" fill="#A83030" font-size="8" font-style="italic">meaning. Always.</text>
 
-    <div class="five-cs-card" data-c="culture">
-      <div class="c-tab">CULTURE</div>
-      <div class="c-body">
-        <div class="c-question">Background norms?</div>
-        <p class="c-desc">Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another.</p>
-        <p class="c-rule">Calibrate before concluding.</p>
-      </div>
-    </div>
+  <!-- Tab 2: Clusters -->
+  <rect x="192" y="95" width="140" height="38" rx="4" fill="#E8C870" opacity="0.15"/>
+  <text x="262" y="118" text-anchor="middle" fill="#E8C870" font-size="12" font-weight="bold">CLUSTERS</text>
+  <rect x="192" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#E8C870" stroke-width="1"/>
+  <rect x="192" y="133" width="140" height="1" fill="#E8C870"/>
+  <text x="207" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Multiple signals?</text>
+  <text x="207" y="172" fill="#8A9AB5" font-size="8.5">One signal is noise.</text>
+  <text x="207" y="185" fill="#8A9AB5" font-size="8.5">Three co-occurring</text>
+  <text x="207" y="198" fill="#8A9AB5" font-size="8.5">behaviors = a pattern.</text>
+  <text x="207" y="218" fill="#E8C870" font-size="8" font-style="italic">Never act on a</text>
+  <text x="207" y="229" fill="#E8C870" font-size="8" font-style="italic">single signal.</text>
+
+  <!-- Tab 3: Congruence -->
+  <rect x="344" y="95" width="140" height="38" rx="4" fill="#1A8FA8" opacity="0.15"/>
+  <text x="414" y="118" text-anchor="middle" fill="#1A8FA8" font-size="12" font-weight="bold">CONGRUENCE</text>
+  <rect x="344" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#1A8FA8" stroke-width="1"/>
+  <rect x="344" y="133" width="140" height="1" fill="#1A8FA8"/>
+  <text x="359" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Body = words?</text>
+  <text x="359" y="172" fill="#8A9AB5" font-size="8.5">When body says one</text>
+  <text x="359" y="185" fill="#8A9AB5" font-size="8.5">thing and words say</text>
+  <text x="359" y="198" fill="#8A9AB5" font-size="8.5">another: body is truth.</text>
+  <text x="359" y="218" fill="#1A8FA8" font-size="8" font-style="italic">Incongruence is your</text>
+  <text x="359" y="229" fill="#1A8FA8" font-size="8" font-style="italic">most reliable signal.</text>
+
+  <!-- Tab 4: Consistency -->
+  <rect x="496" y="95" width="140" height="38" rx="4" fill="#6B52A0" opacity="0.15"/>
+  <text x="566" y="118" text-anchor="middle" fill="#6B52A0" font-size="11" font-weight="bold">CONSISTENCY</text>
+  <rect x="496" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#6B52A0" stroke-width="1"/>
+  <rect x="496" y="133" width="140" height="1" fill="#6B52A0"/>
+  <text x="511" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Their baseline?</text>
+  <text x="511" y="172" fill="#8A9AB5" font-size="8.5">Compare to that</text>
+  <text x="511" y="185" fill="#8A9AB5" font-size="8.5">individual's personal</text>
+  <text x="511" y="198" fill="#8A9AB5" font-size="8.5">baseline. Not generic.</text>
+  <text x="511" y="218" fill="#6B52A0" font-size="8" font-style="italic">Deviation from their</text>
+  <text x="511" y="229" fill="#6B52A0" font-size="8" font-style="italic">baseline is the data.</text>
+
+  <!-- Tab 5: Culture -->
+  <rect x="648" y="95" width="120" height="38" rx="4" fill="#C9A84C" opacity="0.12"/>
+  <text x="708" y="118" text-anchor="middle" fill="#C9A84C" font-size="12" font-weight="bold">CULTURE</text>
+  <rect x="648" y="133" width="120" height="100" rx="0" fill="#0D1E30" stroke="#C9A84C" stroke-width="1"/>
+  <rect x="648" y="133" width="120" height="1" fill="#C9A84C"/>
+  <text x="663" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Background norms?</text>
+  <text x="663" y="172" fill="#8A9AB5" font-size="8.5">Eye contact, space,</text>
+  <text x="663" y="185" fill="#8A9AB5" font-size="8.5">expressiveness vary</text>
+  <text x="663" y="198" fill="#8A9AB5" font-size="8.5">significantly.</text>
+  <text x="663" y="218" fill="#C9A84C" font-size="8" font-style="italic">Calibrate before</text>
+  <text x="663" y="229" fill="#C9A84C" font-size="8" font-style="italic">concluding.</text>
+
+  <!-- Chain flow -->
+  <text x="400" y="268" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="bold">APPLY AS A CHAIN — NOT A CHECKLIST</text>
+
+  <rect x="55" y="285" width="96" height="26" rx="13" fill="#A83030" opacity="0.2"/>
+  <text x="103" y="302" text-anchor="middle" fill="#A83030" font-size="9" font-weight="bold">Context</text>
+  <text x="160" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
+
+  <rect x="173" y="285" width="96" height="26" rx="13" fill="#E8C870" opacity="0.15"/>
+  <text x="221" y="302" text-anchor="middle" fill="#E8C870" font-size="9" font-weight="bold">Clusters</text>
+  <text x="278" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
+
+  <rect x="291" y="285" width="110" height="26" rx="13" fill="#1A8FA8" opacity="0.15"/>
+  <text x="346" y="302" text-anchor="middle" fill="#1A8FA8" font-size="9" font-weight="bold">Congruence</text>
+  <text x="410" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
+
+  <rect x="423" y="285" width="110" height="26" rx="13" fill="#6B52A0" opacity="0.15"/>
+  <text x="478" y="302" text-anchor="middle" fill="#6B52A0" font-size="9" font-weight="bold">Consistency</text>
+  <text x="542" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
+
+  <rect x="555" y="285" width="96" height="26" rx="13" fill="#C9A84C" opacity="0.12"/>
+  <text x="603" y="302" text-anchor="middle" fill="#C9A84C" font-size="9" font-weight="bold">Culture</text>
+  <text x="660" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
+
+  <rect x="673" y="285" width="80" height="26" rx="13" fill="#FFFFFF" opacity="0.1"/>
+  <text x="713" y="302" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">READ</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="340" text-anchor="middle" fill="#8A9AB5" font-size="9">Most weak readings fail because they skip this chain. They treat behavior like a vending machine.</text>
+  <text x="400" y="355" text-anchor="middle" fill="#C9A84C" font-size="9" font-style="italic">Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</text>
+
+  <!-- Footer -->
+  <text x="400" y="375" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>
   </div>
 
+  <table class="five-cs-table">
+    <thead>
+      <tr>
+        <th>Filter</th>
+        <th>Key Question</th>
+        <th>The Rule</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="c-row" data-c="context">
+        <td class="c-name">Context</td>
+        <td class="c-q">What environment?</td>
+        <td class="c-rule-cell">Context determines meaning. Always.</td>
+      </tr>
+      <tr class="c-row" data-c="clusters">
+        <td class="c-name">Clusters</td>
+        <td class="c-q">Multiple signals?</td>
+        <td class="c-rule-cell">Never act on a single signal.</td>
+      </tr>
+      <tr class="c-row" data-c="congruence">
+        <td class="c-name">Congruence</td>
+        <td class="c-q">Body = words?</td>
+        <td class="c-rule-cell">Incongruence is your most reliable signal.</td>
+      </tr>
+      <tr class="c-row" data-c="consistency">
+        <td class="c-name">Consistency</td>
+        <td class="c-q">Their baseline?</td>
+        <td class="c-rule-cell">Without baseline, every read is a projection.</td>
+      </tr>
+      <tr class="c-row" data-c="culture">
+        <td class="c-name">Culture</td>
+        <td class="c-q">Background norms?</td>
+        <td class="c-rule-cell">Calibrate before concluding.</td>
+      </tr>
+    </tbody>
+  </table>
+
   <div class="five-cs-chain">
-    <div class="chain-label">APPLY AS A CHAIN \u2014 NOT A CHECKLIST</div>
+    <div class="chain-label">APPLY AS A CHAIN — NOT A CHECKLIST</div>
     <div class="chain-flow">
       <span class="chain-pill" data-c="context">Context</span>
-      <span class="chain-arrow">\u203a</span>
+      <span class="chain-arrow">›</span>
       <span class="chain-pill" data-c="clusters">Clusters</span>
-      <span class="chain-arrow">\u203a</span>
+      <span class="chain-arrow">›</span>
       <span class="chain-pill" data-c="congruence">Congruence</span>
-      <span class="chain-arrow">\u203a</span>
+      <span class="chain-arrow">›</span>
       <span class="chain-pill" data-c="consistency">Consistency</span>
-      <span class="chain-arrow">\u203a</span>
+      <span class="chain-arrow">›</span>
       <span class="chain-pill" data-c="culture">Culture</span>
-      <span class="chain-arrow">\u203a</span>
+      <span class="chain-arrow">›</span>
       <span class="chain-pill chain-read">READ</span>
     </div>
     <p class="chain-note">Most weak readings fail because they skip this chain. They treat behavior like a vending machine.</p>
@@ -231,7 +334,7 @@ FIVE_CS_HTML = '''
   </div>
 </div>
 
-<div class="section-break">\u00b7 \u00b7 \u00b7</div>
+<div class="section-break">· · ·</div>
 '''
 
 
@@ -1451,6 +1554,44 @@ body{counter-reset:page}
 .hidden-text{color:rgba(255,255,255,.06);font-style:italic;font-size:.68rem;margin-top:35px}
 
 /* ═══ FIVE Cs FRAMEWORK ═══ */
+.five-cs-graphic{margin:20px 0 0;line-height:0}
+
+/* Reference table */
+.five-cs-table{
+  width:100%;border-collapse:collapse;
+  margin:18px 0 0;font-size:.78rem;
+  background:var(--navy2);border-radius:4px;overflow:hidden;
+}
+.five-cs-table thead tr{background:rgba(201,168,76,.12)}
+.five-cs-table th{
+  font-family:var(--sans);font-size:.52rem;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);padding:9px 14px;text-align:left;
+  border-bottom:1px solid rgba(201,168,76,.2);
+}
+.five-cs-table td{
+  padding:9px 14px;color:var(--gray-blue);
+  font-size:.78rem;line-height:1.45;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  text-align:left!important;text-indent:0!important;
+}
+.five-cs-table .c-name{
+  font-family:var(--sans);font-weight:700;font-size:.7rem;
+  letter-spacing:1px;white-space:nowrap;
+}
+.five-cs-table .c-rule-cell{font-style:italic}
+.five-cs-table tr[data-c="context"] .c-name{color:#A83030}
+.five-cs-table tr[data-c="clusters"] .c-name{color:#E8C870}
+.five-cs-table tr[data-c="congruence"] .c-name{color:var(--blue)}
+.five-cs-table tr[data-c="consistency"] .c-name{color:var(--purple)}
+.five-cs-table tr[data-c="culture"] .c-name{color:var(--gold)}
+.five-cs-table tr[data-c="context"] .c-rule-cell{color:#A83030}
+.five-cs-table tr[data-c="clusters"] .c-rule-cell{color:#E8C870}
+.five-cs-table tr[data-c="congruence"] .c-rule-cell{color:var(--blue)}
+.five-cs-table tr[data-c="consistency"] .c-rule-cell{color:var(--purple)}
+.five-cs-table tr[data-c="culture"] .c-rule-cell{color:var(--gold)}
+
+/* ═══ FIVE Cs FRAMEWORK ═══ */
 .five-cs-framework{
   background:linear-gradient(135deg,var(--navy),var(--navy2));
   border-radius:6px;padding:32px 28px;margin:2.5em 0;
@@ -1573,19 +1714,20 @@ body{counter-reset:page}
 .opener-legend{
   margin-top:40px;padding-top:22px;
   border-top:1px solid rgba(201,168,76,.18);
-  display:flex;flex-direction:column;align-items:center;gap:14px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
 }
-.opener-legend .tier-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
-.opener-legend .icon-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.opener-legend .tier-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.opener-legend .icon-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
 .opener-legend .legend-label{
-  font-family:var(--sans);font-size:.42rem;letter-spacing:3px;
-  color:var(--dim);text-transform:uppercase;margin-top:4px;
+  font-family:var(--sans);font-size:.52rem;letter-spacing:3px;
+  color:var(--gray-blue);text-transform:uppercase;margin-top:2px;
 }
-.icon-item{display:flex;align-items:center;gap:5px}
-.icon-item svg{opacity:.7}
+.opener-legend .badge{font-size:.58rem;padding:2px 9px}
+.icon-item{display:flex;align-items:center;gap:7px}
+.icon-item svg{opacity:.75;width:20px;height:20px}
 .icon-item .icon-code{
-  font-family:var(--sans);font-size:.42rem;font-weight:700;
-  letter-spacing:1.5px;
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:2px;
 }
 .icon-item .icon-code.bp{color:var(--gold)}
 .icon-item .icon-code.cr{color:var(--blue)}
