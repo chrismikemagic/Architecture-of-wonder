@@ -406,6 +406,59 @@ a.toc-ch:hover{opacity:.7}
 }
 .front-matter p{margin-bottom:.9em;font-size:.92rem;line-height:1.6}
 
+/* ═══ ACKNOWLEDGMENT NAME GLOW ═══ */
+.ack-name{
+  color:var(--gold);
+  text-shadow:0 0 8px rgba(201,168,76,.35), 0 0 20px rgba(201,168,76,.15);
+}
+
+/* ═══ TITLE PAGE (after acknowledgments) ═══ */
+.title-page{
+  break-before:page;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;min-height:80vh;text-align:center;
+  padding:80px 36px;max-width:520px;margin:0 auto;
+}
+.title-page .tp-brand{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:6px;color:var(--dim);margin-bottom:40px;
+}
+.title-page .tp-title{
+  font-family:var(--sans);font-size:1.8rem;font-weight:700;
+  letter-spacing:5px;color:var(--gold);line-height:1.35;margin-bottom:12px;
+  text-shadow:0 0 40px rgba(201,168,76,.12);
+}
+.title-page .tp-subtitle{
+  font-family:var(--serif);font-size:.95rem;font-style:italic;
+  color:rgba(245,240,232,.55);line-height:1.6;margin-bottom:6px;
+}
+.title-page .tp-edition{
+  font-family:var(--sans);font-size:.5rem;font-weight:600;
+  letter-spacing:4px;color:var(--dim);margin-bottom:40px;
+}
+.title-page .tp-rule{
+  width:120px;height:1px;margin:0 auto 32px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);
+}
+.title-page .tp-author{
+  font-family:var(--sans);font-size:1rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);margin-bottom:8px;
+}
+.title-page .tp-roles{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:2px;
+  color:var(--gray-blue);line-height:1.8;margin-bottom:4px;
+}
+.title-page .tp-dots{
+  font-size:.7rem;color:var(--dim);margin:28px 0;letter-spacing:12px;
+}
+.title-page .tp-quote{
+  font-family:var(--serif);font-size:1rem;font-style:italic;
+  color:rgba(245,240,232,.6);line-height:1.7;max-width:400px;margin-bottom:8px;
+}
+.title-page .tp-attribution{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:3px;
+  color:var(--dim);font-weight:600;
+}
+
 /* ═══ DEFINITIONS PAGE ═══ */
 .definitions{
   max-width:440px;margin:0 auto;padding:100px 36px 60px;
@@ -980,23 +1033,26 @@ a.toc-ch:hover{opacity:.7}
 </div></nav>
 <section class="front-matter"><h2>ACKNOWLEDGMENTS</h2>
 <p>There are many people I owe thanks to, not only for helping shape this book, but for helping shape the path that led me to it.</p>
-<p>First, I want to thank my friend Zach Alexander. Over the years, Zach spent countless hours talking through these ideas with me and helping me find language for thoughts I had felt for a long time but had never fully known how to express. He was also one of the people who encouraged me to step into the intelligence field in the first place. Without that push, I may never have taken my first agency contract, and this book may never have existed in the form it does now.</p>
-<p>I am deeply grateful to Mike Gardner, Joe Navarro, Greg Hartley, Scott Rouse, Chris Edin, and Dr. Kasia Wezowski, whose teaching and guidance shaped the way I think about behavior, intelligence, and human communication. I also want to especially thank Tim Miller, Joe Navarro, and Nadia Ait for their mentorship, generosity, and willingness to answer questions and help guide me through important parts of my certification path.</p>
-<p>My thanks also go to Lena Sisco, who encouraged me at a time when I needed it. She told me not to listen to the people who believed a mentalist had no place in law enforcement or behavioral Training. That conversation stayed with me, and her words mattered more than she probably knows.</p>
-<p>I want to thank Kevin Hamdan, Philo, Jack Thomson, Tyler Reed, Anthem Flint, Michael Carroway, and TJ Tana for their friendship, insight, and encouragement. The conversations, late-night calls, shared excitement, and deep knowledge of entertainment all helped sharpen my thinking and strengthen my work as a performer.</p>
-<p>I also want to acknowledge Ian Rowland, Chase Hughes, Peter Turner, Fraser Parker, and Jerome Finley. Each, in different ways, influenced how I think about this subject and helped expand what I believed was possible. Much of the material here is inspired by Chase Hughes and I really recommend anyone with a fascination with the topic of behavior read his materials and support him.</p>
-<p>Finally, I want to thank my team at PROILLUSIONS, Ray and Pratik, I love you both. They have been more than teammates. They have been true friends and like brothers to me. Through PROILLUSIONS, they brought me deeper into the world of creating for and consulting with magicians, many of who I have dreamed of working for my whole life. They expanded my sense of what was possible. This book would not exist without them.</p>
+<p>First, I want to thank my friend <span class="ack-name">Zach Alexander</span>. Over the years, Zach spent countless hours talking through these ideas with me and helping me find language for thoughts I had felt for a long time but had never fully known how to express. He was also one of the people who encouraged me to step into the intelligence field in the first place. Without that push, I may never have taken my first agency contract, and this book may never have existed in the form it does now.</p>
+<p>I am deeply grateful to <span class="ack-name">Mike Gardner</span>, <span class="ack-name">Joe Navarro</span>, <span class="ack-name">Greg Hartley</span>, <span class="ack-name">Scott Rouse</span>, <span class="ack-name">Chris Edin</span>, and Dr. <span class="ack-name">Kasia Wezowski</span>, whose teaching and guidance shaped the way I think about behavior, intelligence, and human communication. I also want to especially thank <span class="ack-name">Tim Miller</span>, <span class="ack-name">Joe Navarro</span>, and <span class="ack-name">Nadia Ait</span> for their mentorship, generosity, and willingness to answer questions and help guide me through important parts of my certification path.</p>
+<p>My thanks also go to <span class="ack-name">Lena Sisco</span>, who encouraged me at a time when I needed it. She told me not to listen to the people who believed a mentalist had no place in law enforcement or behavioral Training. That conversation stayed with me, and her words mattered more than she probably knows.</p>
+<p>I want to thank <span class="ack-name">Kevin Hamdan</span>, <span class="ack-name">Philo</span>, <span class="ack-name">Jack Thomson</span>, <span class="ack-name">Tyler Reed</span>, <span class="ack-name">Anthem Flint</span>, <span class="ack-name">Michael Carroway</span>, and <span class="ack-name">TJ Tana</span> for their friendship, insight, and encouragement. The conversations, late-night calls, shared excitement, and deep knowledge of entertainment all helped sharpen my thinking and strengthen my work as a performer.</p>
+<p>I also want to acknowledge <span class="ack-name">Ian Rowland</span>, <span class="ack-name">Chase Hughes</span>, <span class="ack-name">Peter Turner</span>, <span class="ack-name">Fraser Parker</span>, and <span class="ack-name">Jerome Finley</span>. Each, in different ways, influenced how I think about this subject and helped expand what I believed was possible. Much of the material here is inspired by <span class="ack-name">Chase Hughes</span> and I really recommend anyone with a fascination with the topic of behavior read his materials and support him.</p>
+<p>Finally, I want to thank my team at PROILLUSIONS, <span class="ack-name">Ray</span> and <span class="ack-name">Pratik</span>, I love you both. They have been more than teammates. They have been true friends and like brothers to me. Through PROILLUSIONS, they brought me deeper into the world of creating for and consulting with magicians, many of who I have dreamed of working for my whole life. They expanded my sense of what was possible. This book would not exist without them.</p>
 <p>And to the PROILLUSIONS customers, you know who you are, many of you have become genuine friends, thank you. Your support and enthusiasm gave me a renewed sense of joy in performing and helped reconnect me with this art in a deeper way. For that, I am deeply grateful.</p>
-<p>DECODE BEHAVIOR</p>
-<p>THE ARCHITECTURE OF WONDER</p>
-<p>A Behavioral Guide to Attention, Suggestion, and Astonishment for Mentalists</p>
-<p>EXPANDED EDITION</p>
-<p>CHRIS MICHAEL</p>
-<p>Behavioral Strategist · Mentalist · Keynote Speaker</p>
-<p>Founder, Decode Behavior · Global Institute of Behavior</p>
-<p>· · ·</p>
-<p>&quot;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&quot;</p>
-<p>— Chris Michael</p>
+</section>
+<section class="title-page">
+  <div class="tp-brand">DECODE BEHAVIOR</div>
+  <div class="tp-title">THE ARCHITECTURE<br>OF WONDER</div>
+  <div class="tp-subtitle">A Behavioral Guide to Attention, Suggestion,<br>and Astonishment for Mentalists</div>
+  <div class="tp-edition">EXPANDED EDITION</div>
+  <div class="tp-rule"></div>
+  <div class="tp-author">CHRIS MICHAEL</div>
+  <div class="tp-roles">Behavioral Strategist &middot; Mentalist &middot; Keynote Speaker</div>
+  <div class="tp-roles">Founder, Decode Behavior &middot; Global Institute of Behavior</div>
+  <div class="tp-dots">&middot; &middot; &middot;</div>
+  <div class="tp-quote">&ldquo;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&rdquo;</div>
+  <div class="tp-attribution">&mdash; CHRIS MICHAEL</div>
 </section>
 <section class="chapter-opener" id="chapter-0" data-part="0">
   <div class="opener-content">

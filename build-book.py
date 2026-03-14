@@ -1958,6 +1958,59 @@ a.toc-ch:hover{opacity:.7}
 }
 .front-matter p{margin-bottom:.9em;font-size:.92rem;line-height:1.6}
 
+/* ═══ ACKNOWLEDGMENT NAME GLOW ═══ */
+.ack-name{
+  color:var(--gold);
+  text-shadow:0 0 8px rgba(201,168,76,.35), 0 0 20px rgba(201,168,76,.15);
+}
+
+/* ═══ TITLE PAGE (after acknowledgments) ═══ */
+.title-page{
+  break-before:page;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;min-height:80vh;text-align:center;
+  padding:80px 36px;max-width:520px;margin:0 auto;
+}
+.title-page .tp-brand{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:6px;color:var(--dim);margin-bottom:40px;
+}
+.title-page .tp-title{
+  font-family:var(--sans);font-size:1.8rem;font-weight:700;
+  letter-spacing:5px;color:var(--gold);line-height:1.35;margin-bottom:12px;
+  text-shadow:0 0 40px rgba(201,168,76,.12);
+}
+.title-page .tp-subtitle{
+  font-family:var(--serif);font-size:.95rem;font-style:italic;
+  color:rgba(245,240,232,.55);line-height:1.6;margin-bottom:6px;
+}
+.title-page .tp-edition{
+  font-family:var(--sans);font-size:.5rem;font-weight:600;
+  letter-spacing:4px;color:var(--dim);margin-bottom:40px;
+}
+.title-page .tp-rule{
+  width:120px;height:1px;margin:0 auto 32px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);
+}
+.title-page .tp-author{
+  font-family:var(--sans);font-size:1rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);margin-bottom:8px;
+}
+.title-page .tp-roles{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:2px;
+  color:var(--gray-blue);line-height:1.8;margin-bottom:4px;
+}
+.title-page .tp-dots{
+  font-size:.7rem;color:var(--dim);margin:28px 0;letter-spacing:12px;
+}
+.title-page .tp-quote{
+  font-family:var(--serif);font-size:1rem;font-style:italic;
+  color:rgba(245,240,232,.6);line-height:1.7;max-width:400px;margin-bottom:8px;
+}
+.title-page .tp-attribution{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:3px;
+  color:var(--dim);font-weight:600;
+}
+
 /* ═══ DEFINITIONS PAGE ═══ */
 .definitions{
   max-width:440px;margin:0 auto;padding:100px 36px 60px;
@@ -2512,10 +2565,45 @@ def build_book(manuscript_path, output_path):
 
         if stype == 'front_matter':
             html.append(f'<section class="front-matter"><h2>{escape(section["title"].upper())}</h2>')
-            for para in section['content']:
+            content = section['content']
+            # Find where the title page block starts (DECODE BEHAVIOR line)
+            tp_start = None
+            for ci, para in enumerate(content):
+                if para.strip() == 'DECODE BEHAVIOR':
+                    tp_start = ci
+                    break
+            ack_paras = content[:tp_start] if tp_start is not None else content
+            # Acknowledgment names to highlight
+            _ACK_NAMES = [
+                'Zach Alexander', 'Mike Gardner', 'Joe Navarro', 'Greg Hartley',
+                'Scott Rouse', 'Chris Edin', 'Kasia Wezowski', 'Tim Miller',
+                'Nadia Ait', 'Lena Sisco', 'Kevin Hamdan', 'Philo',
+                'Jack Thomson', 'Tyler Reed', 'Anthem Flint', 'Michael Carroway',
+                'TJ Tana', 'Ian Rowland', 'Chase Hughes', 'Peter Turner',
+                'Fraser Parker', 'Jerome Finley', 'Ray', 'Pratik',
+            ]
+            for para in ack_paras:
                 if para.strip():
-                    html.append(f'<p>{escape(para.strip())}</p>')
+                    t = escape(para.strip())
+                    for name in _ACK_NAMES:
+                        t = t.replace(escape(name), f'<span class="ack-name">{escape(name)}</span>')
+                    html.append(f'<p>{t}</p>')
             html.append('</section>')
+            # Render the title page block as a styled section
+            if tp_start is not None:
+                html.append('''<section class="title-page">
+  <div class="tp-brand">DECODE BEHAVIOR</div>
+  <div class="tp-title">THE ARCHITECTURE<br>OF WONDER</div>
+  <div class="tp-subtitle">A Behavioral Guide to Attention, Suggestion,<br>and Astonishment for Mentalists</div>
+  <div class="tp-edition">EXPANDED EDITION</div>
+  <div class="tp-rule"></div>
+  <div class="tp-author">CHRIS MICHAEL</div>
+  <div class="tp-roles">Behavioral Strategist &middot; Mentalist &middot; Keynote Speaker</div>
+  <div class="tp-roles">Founder, Decode Behavior &middot; Global Institute of Behavior</div>
+  <div class="tp-dots">&middot; &middot; &middot;</div>
+  <div class="tp-quote">&ldquo;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&rdquo;</div>
+  <div class="tp-attribution">&mdash; CHRIS MICHAEL</div>
+</section>''')
 
         elif stype == 'part':
             html.append(gen_part_opener(section))
