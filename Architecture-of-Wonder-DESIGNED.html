@@ -455,6 +455,24 @@ a.toc-ch:hover{opacity:.7}
   font-family:var(--serif);font-size:.82rem;color:rgba(245,240,232,.5);
   line-height:1.55;
 }
+/* ═══ COMPACT TIER TABLE ═══ */
+.tier-table{width:100%;border-collapse:collapse;margin:.5em 0 1.8em}
+.tier-table tr{border-bottom:1px solid rgba(138,154,181,.1)}
+.tier-table tr:last-child{border-bottom:none}
+.tier-table td{padding:11px 14px;vertical-align:top}
+.tier-table .tt-badge-cell{width:52px;padding-right:0;vertical-align:middle}
+.tier-table .tt-name{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:2px;
+  font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:3px;
+}
+.tier-table .tt-desc{
+  font-family:var(--serif);font-size:.78rem;color:rgba(245,240,232,.55);
+  line-height:1.5;
+}
+.tier-table .tt-ex{
+  font-family:var(--serif);font-style:italic;font-size:.72rem;
+  color:rgba(201,168,76,.55);margin-top:4px;
+}
 
 /* ═══ FRONT MATTER ═══ */
 .front-matter{max-width:520px;margin:0 auto;padding:60px 36px;break-before:page}
@@ -1191,12 +1209,24 @@ a.toc-ch:hover{opacity:.7}
   <div class="sk-section">
     <h3>Signal Confidence Tiers</h3>
     <p class="sk-desc">Every behavioral signal in this book is rated by evidential strength. The tier tells you how much weight to put behind a read.</p>
-    <div class="sk-grid">
-      <div class="sk-item"><span class="badge t1">T1</span><div class="sk-label">Physical Evidence</div><div class="sk-explain">Read directly from the body or belongings. Objective, stable, highly reliable. Shoe wear, belt notch wear, callus distribution. Lead with these whenever you have one.</div></div>
-      <div class="sk-item"><span class="badge t2">T2</span><div class="sk-label">Research-Backed</div><div class="sk-explain">Supported by published behavioral science. Eye contact, blink rate shifts, foot direction. Reliable in clusters. The workhorses of behavioral reading.</div></div>
-      <div class="sk-item"><span class="badge t3">T3</span><div class="sk-label">Field-Tested Pattern</div><div class="sk-explain">Observed consistently across thousands of hours but not yet formally validated. Useful for adding nuance to reads already grounded in T1 and T2.</div></div>
-      <div class="sk-item"><span class="badge t4">T4</span><div class="sk-label">Experimental</div><div class="sk-explain">Weak or disputed research support. Know what they claim. Know why the claim does not hold. Do not build routines on T4 signals.</div></div>
-    </div>
+    <table class="tier-table">
+      <tr>
+        <td class="tt-badge-cell"><span class="badge t1">T1</span></td>
+        <td><div class="tt-name">Physical Evidence</div><div class="tt-desc">Directly observable, documentable, and not subject to interpretation. The most reliable tier.</div><div class="tt-ex">Shoe resoling, cuff wear, belt notch wear, callus distribution</div></td>
+      </tr>
+      <tr>
+        <td class="tt-badge-cell"><span class="badge t2">T2</span></td>
+        <td><div class="tt-name">Research-Backed</div><div class="tt-desc">Supported by peer-reviewed behavioral science. High reliability when baseline is established.</div><div class="tt-ex">Eye contact shift, blink rate change, foot direction, postural lean</div></td>
+      </tr>
+      <tr>
+        <td class="tt-badge-cell"><span class="badge t3">T3</span></td>
+        <td><div class="tt-name">Field-Tested Pattern</div><div class="tt-desc">Consistent operational evidence from applied practice. Reliable in the room without formal laboratory support.</div><div class="tt-ex">Tonality drop at certainty, eye block before disclosure, breath-hold at decision</div></td>
+      </tr>
+      <tr>
+        <td class="tt-badge-cell"><span class="badge t4">T4</span></td>
+        <td><div class="tt-name">Experimental</div><div class="tt-desc">Insufficient evidence for real-world reliance. Documented in the appendix with the research that informed their removal.</div><div class="tt-ex">NLP eye-accessing cues, specific micro-expression duration claims</div></td>
+      </tr>
+    </table>
   </div>
 
   <div class="sk-section">
