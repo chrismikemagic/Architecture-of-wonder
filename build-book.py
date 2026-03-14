@@ -686,6 +686,46 @@ def gen_pull_quote(text):
 </blockquote>'''
 
 
+# Map C-word to data-c slug and brand color
+_FIVE_C_MAP = {
+    'Context':     ('context',     'What environment is the behavior occurring in?'),
+    'Clusters':    ('clusters',    'Are multiple signals pointing the same direction?'),
+    'Congruence':  ('congruence',  'Does the body match the words?'),
+    'Consistency': ('consistency', 'How does this compare to their baseline?'),
+    'Culture':     ('culture',     'What are the background norms?'),
+}
+
+def gen_five_c_entry(c_word, body_text):
+    slug, question = _FIVE_C_MAP[c_word]
+    opener = closer = ''
+    if c_word == 'Context':
+        opener = (
+            '<div class="five-cs-prose-chart">' +
+            '<div class="fcp-header">' +
+            '<div class="fcp-title">THE FIVE C’s IN PRACTICE</div>' +
+            '<div class="fcp-subtitle">Apply as a chain. Each filter builds on the last.</div>' +
+            '</div>'
+        )
+    if c_word == 'Culture':
+        closer = (
+            '<div class="fcp-footer">' +
+            '<span class="fcp-chain">Context › Clusters › Congruence › Consistency › Culture › READ</span>' +
+            '</div>' +
+            '</div>'
+        )
+    return (
+        opener +
+        f'<div class="five-c-entry" data-c="{slug}">' +
+        f'  <div class="fce-head">' +
+        f'    <span class="fce-name">{c_word}</span>' +
+        f'    <span class="fce-dash">—</span>' +
+        f'    <span class="fce-question">{escape(question)}</span>' +
+        f'  </div>' +
+        f'  <p class="fce-body">{escape(body_text)}</p>' +
+        f'</div>' +
+        closer
+    )
+
 def gen_performer_note():
     return '''<div class="performer-note-header">
   <span class="pn-label">Performer's Note</span>
@@ -716,6 +756,20 @@ def process_paragraph(text, part_num=1):
     # "What You Have Felt Before" motif
     if is_what_you_have_felt(stripped):
         return gen_what_you_have_felt()
+
+    # Five Cs prose entries: "Context — ...", "Clusters — ...", etc.
+    for c_word in ('Context', 'Clusters', 'Congruence', 'Consistency', 'Culture'):
+        prefix = c_word + ' — '
+        prefix_alt = c_word + ' - '
+        if stripped.startswith(prefix) or stripped.startswith(prefix_alt):
+            sep = prefix if stripped.startswith(prefix) else prefix_alt
+            rest = stripped[len(sep):]
+            # Strip the question sentence from the start of rest
+            _q, _, body = rest.partition('?')
+            body = body.strip()
+            if not body:
+                body = rest  # fallback: use full text if no question mark found
+            return gen_five_c_entry(c_word, body)
 
     # Performer's Note — distinct from section headers
     if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
@@ -1690,6 +1744,68 @@ body{counter-reset:page}
 [data-part="8"] .chapter-number{color:#C8901A}
 [data-part="8"] .spotlight-box{border-left-color:#C8901A}
 [data-part="8"] .key-read .kr-text{color:#C8901A}
+
+/* ═══ FIVE Cs PROSE CHART ═══ */
+.five-cs-prose-chart{
+  background:linear-gradient(160deg,var(--navy),var(--navy2));
+  border-radius:6px;margin:2.5em 0;
+  overflow:hidden;break-inside:avoid;
+}
+.fcp-header{
+  padding:20px 22px 14px;
+  border-bottom:1px solid rgba(201,168,76,.15);
+}
+.fcp-title{
+  font-family:var(--sans);font-size:.68rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);margin-bottom:4px;
+}
+.fcp-subtitle{
+  font-size:.7rem;color:var(--gray-blue);font-style:italic;
+}
+.fcp-footer{
+  padding:14px 22px;
+  border-top:1px solid rgba(201,168,76,.12);
+  text-align:center;
+}
+.fcp-chain{
+  font-family:var(--sans);font-size:.55rem;font-weight:600;
+  letter-spacing:1.5px;color:var(--dim);
+}
+.five-c-entry{
+  padding:14px 22px 14px 20px;
+  border-left:none;border-radius:0;margin:0;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  break-inside:avoid;
+}
+.five-c-entry:last-of-type{border-bottom:none}
+.five-c-entry .fce-head{
+  display:flex;align-items:baseline;gap:10px;
+  margin-bottom:8px;
+}
+.five-c-entry .fce-name{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:1.5px;flex-shrink:0;
+}
+.five-c-entry .fce-dash{color:var(--gray-blue);font-weight:300;flex-shrink:0}
+.five-c-entry .fce-question{
+  font-family:var(--sans);font-size:.7rem;font-weight:500;
+  color:#fff;letter-spacing:.3px;
+}
+.five-c-entry .fce-body{
+  font-family:var(--serif);font-size:.92rem;line-height:1.6;
+  color:var(--gray-blue);text-indent:0!important;text-align:left!important;margin:0;
+}
+/* Per-C colors */
+.five-c-entry[data-c="context"]{background:rgba(168,48,48,.07);border-left:3px solid #A83030}
+.five-c-entry[data-c="context"] .fce-name{color:#A83030}
+.five-c-entry[data-c="clusters"]{background:rgba(232,200,112,.06);border-left:3px solid #E8C870}
+.five-c-entry[data-c="clusters"] .fce-name{color:#E8C870}
+.five-c-entry[data-c="congruence"]{background:rgba(26,143,168,.07);border-left:3px solid var(--blue)}
+.five-c-entry[data-c="congruence"] .fce-name{color:var(--blue)}
+.five-c-entry[data-c="consistency"]{background:rgba(107,82,160,.07);border-left:3px solid var(--purple)}
+.five-c-entry[data-c="consistency"] .fce-name{color:var(--purple)}
+.five-c-entry[data-c="culture"]{background:rgba(201,168,76,.06);border-left:3px solid var(--gold)}
+.five-c-entry[data-c="culture"] .fce-name{color:var(--gold)}
 
 /* ═══ PERFORMER'S NOTE ═══ */
 .performer-note-header{

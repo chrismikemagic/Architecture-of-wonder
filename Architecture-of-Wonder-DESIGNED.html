@@ -564,6 +564,68 @@ body{counter-reset:page}
 [data-part="8"] .spotlight-box{border-left-color:#C8901A}
 [data-part="8"] .key-read .kr-text{color:#C8901A}
 
+/* ═══ FIVE Cs PROSE CHART ═══ */
+.five-cs-prose-chart{
+  background:linear-gradient(160deg,var(--navy),var(--navy2));
+  border-radius:6px;margin:2.5em 0;
+  overflow:hidden;break-inside:avoid;
+}
+.fcp-header{
+  padding:20px 22px 14px;
+  border-bottom:1px solid rgba(201,168,76,.15);
+}
+.fcp-title{
+  font-family:var(--sans);font-size:.68rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);margin-bottom:4px;
+}
+.fcp-subtitle{
+  font-size:.7rem;color:var(--gray-blue);font-style:italic;
+}
+.fcp-footer{
+  padding:14px 22px;
+  border-top:1px solid rgba(201,168,76,.12);
+  text-align:center;
+}
+.fcp-chain{
+  font-family:var(--sans);font-size:.55rem;font-weight:600;
+  letter-spacing:1.5px;color:var(--dim);
+}
+.five-c-entry{
+  padding:14px 22px 14px 20px;
+  border-left:none;border-radius:0;margin:0;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  break-inside:avoid;
+}
+.five-c-entry:last-of-type{border-bottom:none}
+.five-c-entry .fce-head{
+  display:flex;align-items:baseline;gap:10px;
+  margin-bottom:8px;
+}
+.five-c-entry .fce-name{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:1.5px;flex-shrink:0;
+}
+.five-c-entry .fce-dash{color:var(--gray-blue);font-weight:300;flex-shrink:0}
+.five-c-entry .fce-question{
+  font-family:var(--sans);font-size:.7rem;font-weight:500;
+  color:#fff;letter-spacing:.3px;
+}
+.five-c-entry .fce-body{
+  font-family:var(--serif);font-size:.92rem;line-height:1.6;
+  color:var(--gray-blue);text-indent:0!important;text-align:left!important;margin:0;
+}
+/* Per-C colors */
+.five-c-entry[data-c="context"]{background:rgba(168,48,48,.07);border-left:3px solid #A83030}
+.five-c-entry[data-c="context"] .fce-name{color:#A83030}
+.five-c-entry[data-c="clusters"]{background:rgba(232,200,112,.06);border-left:3px solid #E8C870}
+.five-c-entry[data-c="clusters"] .fce-name{color:#E8C870}
+.five-c-entry[data-c="congruence"]{background:rgba(26,143,168,.07);border-left:3px solid var(--blue)}
+.five-c-entry[data-c="congruence"] .fce-name{color:var(--blue)}
+.five-c-entry[data-c="consistency"]{background:rgba(107,82,160,.07);border-left:3px solid var(--purple)}
+.five-c-entry[data-c="consistency"] .fce-name{color:var(--purple)}
+.five-c-entry[data-c="culture"]{background:rgba(201,168,76,.06);border-left:3px solid var(--gold)}
+.five-c-entry[data-c="culture"] .fce-name{color:var(--gold)}
+
 /* ═══ PERFORMER'S NOTE ═══ */
 .performer-note-header{
   display:flex;align-items:center;gap:10px;
@@ -1083,11 +1145,11 @@ body{counter-reset:page}
 <h3 class="section-header sh-label">The Five Cs</h3>
 <p><span class="five-c">Context</span>. <span class="five-c">Clusters</span>. <span class="five-c">Congruence</span>. <span class="five-c">Consistency</span>. <span class="five-c">Culture</span>.</p>
 <p>If you are not observing through all five, you are not reading behavior. You are narrating noise.</p>
-<p><span class="five-c">Context</span> — What environment is the behavior occurring in? The same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier. Context determines meaning. Always.</p>
-<p><span class="five-c">Clusters</span> — Are multiple signals pointing the same direction? A single signal on its own is just noise — three co-occurring behaviors pointing the same direction multiply each other’s diagnostic weight and give you something you can actually act on.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="five-c">Congruence</span> — Does the body match the words? When the body says one thing and the words say another, the body is telling the truth. Incongruence is your most reliable signal. This is where your real reads will come from. A volunteer says “I’m fine” while their hands grip the armrest. A spectator says “I don’t believe in this stuff” while leaning forward with dilated pupils. The words are the performance. The body is the truth.</p>
-<p><span class="five-c">Consistency</span> — How does this compare to their baseline? Compare what you are seeing to that individual’s personal baseline. Not against a generic chart, but against what is normal for them. The deviation from their personal baseline is the data point, and without that baseline, every read is just projection.</p>
-<p><span class="five-c">Culture</span> — What are the background norms? Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another. Calibrate before concluding.</p>
+<div class="five-cs-prose-chart"><div class="fcp-header"><div class="fcp-title">THE FIVE C’s IN PRACTICE</div><div class="fcp-subtitle">Apply as a chain. Each filter builds on the last.</div></div><div class="five-c-entry" data-c="context">  <div class="fce-head">    <span class="fce-name">Context</span>    <span class="fce-dash">—</span>    <span class="fce-question">What environment is the behavior occurring in?</span>  </div>  <p class="fce-body">The same gesture means different things in different settings. Arms crossed at a cold outdoor show is thermoregulation. Arms crossed during a one-on-one reading is a barrier. Context determines meaning. Always.</p></div>
+<div class="five-c-entry" data-c="clusters">  <div class="fce-head">    <span class="fce-name">Clusters</span>    <span class="fce-dash">—</span>    <span class="fce-question">Are multiple signals pointing the same direction?</span>  </div>  <p class="fce-body">A single signal on its own is just noise — three co-occurring behaviors pointing the same direction multiply each other’s diagnostic weight and give you something you can actually act on.</p></div>
+<div class="five-c-entry" data-c="congruence">  <div class="fce-head">    <span class="fce-name">Congruence</span>    <span class="fce-dash">—</span>    <span class="fce-question">Does the body match the words?</span>  </div>  <p class="fce-body">When the body says one thing and the words say another, the body is telling the truth. Incongruence is your most reliable signal. This is where your real reads will come from. A volunteer says “I’m fine” while their hands grip the armrest. A spectator says “I don’t believe in this stuff” while leaning forward with dilated pupils. The words are the performance. The body is the truth.</p></div>
+<div class="five-c-entry" data-c="consistency">  <div class="fce-head">    <span class="fce-name">Consistency</span>    <span class="fce-dash">—</span>    <span class="fce-question">How does this compare to their baseline?</span>  </div>  <p class="fce-body">Compare what you are seeing to that individual’s personal baseline. Not against a generic chart, but against what is normal for them. The deviation from their personal baseline is the data point, and without that baseline, every read is just projection.</p></div>
+<div class="five-c-entry" data-c="culture">  <div class="fce-head">    <span class="fce-name">Culture</span>    <span class="fce-dash">—</span>    <span class="fce-question">What are the background norms?</span>  </div>  <p class="fce-body">Eye contact, personal space, and emotional expressiveness vary significantly across cultures. What registers as confidence in one culture registers as challenge in another. Calibrate before concluding.</p></div><div class="fcp-footer"><span class="fcp-chain">Context › Clusters › Congruence › Consistency › Culture › READ</span></div></div>
 <p>Apply the Five Cs as a chain, not a checklist. Most weak readings fail because they skip this chain. They treat behavior like a vending machine. Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</p>
 <h3 class="section-header sh-label">Reading Deviation</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Once you have a baseline, deviation is the signal. A person who normally speaks in smooth, connected phrases who suddenly fragments their syntax is processing something more carefully. A person whose baseline includes relaxed open posture who crosses their arms at a specific question has registered something. A person who maintains easy eye contact who breaks it and looks down has encountered an emotional stimulus. None of these deviations tell you the specific content of the internal state. All of them tell you that an internal state worth tracking is active.</p>
