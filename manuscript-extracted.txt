@@ -63,7 +63,7 @@ PART ONE  —  The Architecture of Wonder
 The neurobiology of performance. What is happening in the audience’s brain and how to design for it.
 Chapter 1  —  Designing for Reality
 Cognitive economy, metabolic efficiency, and predictive processing. The three properties of the brain that make wonder possible.
-Chapter 2  —  The Five Forces of Salience
+Chapter 2  —  The Five Forces of Attention
 Novelty, emotional relevance, social signal, unresolved uncertainty, and contrast. The five inputs the brain uses to decide what matters.
 Chapter 3  —  Tension, Threat and the Window of Wonder
 Cortisol, productive tension, and the six visible indicators that tell you where the room sits inside the window.
@@ -72,20 +72,20 @@ Dopamine fires during the build, not the reveal. Why most performers are timing 
 Chapter 5  —  Attention as a Weapon
 Inattentional blindness, change blindness, psychological marking, and why misdirection is a narrative problem, not a visual one.
 PART TWO  —  Reading the Room
-Behavioral profiling, cold reading, micro-expression detection, and the art of extracting information before a single question is asked.
-Chapter 6  —  Behavioral Profiling in Real Time
-The Five Cs, the T1–T4 evidence tiers, the Three-Signal Rule, baseline-first methodology, and the complete framework for reading behavior under pressure.
+Body language, cold reading, micro-expressions, and the art of extracting information before a single question is asked.
+Chapter 6  —  Reading Body Language in Real Time
+The Five Cs, the T1–T4 evidence tiers, the Three-Signal Rule, baseline-first methodology, and the complete framework for reading body language under pressure.
 Chapter 7  —  The 80-Signal System
 Eighty observable signals organized by evidential tier. The Six-Category Radar and the 10-Second Scan.
-Chapter 8  —  DISC in Real Time
+Chapter 8  —  Four Personalities in Thirty Seconds
 Four communication styles, six blends, and how to adjust your approach to each in the first thirty seconds.
 Chapter 9  —  Cold Reading, Warm Reading, and Thin Slicing
 The Forer effect, modality pacing, collocation analysis, and the honest account of what each technique is and is not.
-Chapter 10  —  The Micro-Expression Matrix
+Chapter 10  —  What the Face Gives Away
 The seven universal expressions, the Duchenne marker, the leakage hierarchy, and why clusters matter more than snapshots.
-Chapter 11  —  Volunteer Handling Through a Neural Lens
+Chapter 11  —  The Volunteer’s Brain
 Seven volunteer types, the cortisol contract, and how to manage neurological state on stage.
-Chapter 12  —  The Language of Compliance
+Chapter 12  —  The Language of Yes
 Pacing and leading, presupposition, yes sets, and the four degrees of certainty for delivering reads.
 Chapter 13  —  Closing the Barn Door
 Why the brain reduces impossibility to cheap explanations, and the specific language that closes the window before it opens.
@@ -97,7 +97,7 @@ PART FOUR  —  The Corporate Stage
 From keynote halls to boardrooms. Behavioral science applied to the professional performance context.
 Chapter 15  —  Mentalism in the Boardroom
 Executive audiences, the credibility sequence, and the real power map in any room.
-Chapter 16  —  The Behavioral Training Framework
+Chapter 16  —  Why Most Training Fails
 Experience before explanation. Why most corporate training fails and how the performer advantage changes the equation.
 Chapter 17  —  Stories from the Field
 Pentagon, technology, financial services, and healthcare. Four engagements, four different rooms, four different problems.
@@ -105,7 +105,7 @@ Chapter 18  —  Influence Without Authority
 Compliance vs. internalization, the self-attribution principle, and the reflection protocol.
 Chapter 19  —  The Ethics of Influence
 The consent framework, the distress test, and where the line is drawn in performance, training, and volunteer work.
-PART FIVE  —  The Neural Performance Model
+PART FIVE  —  The Performance Arc
 Seven stages of the performance arc. The pre-show checklist. The four-layer Performance Architecture Framework.
 PART SIX  —  Presence and Perception
 The gap between skilled execution and genuine command. Walk-around, room energy, audio design, compliance engineering, and authority framing.
@@ -115,15 +115,15 @@ Chapter 21  —  When the Room Rises
 Standing ovation mechanics, social contagion cascades, duration neglect, and the peak-end rule.
 Chapter 22  —  Audio as Architecture
 Pre-show, transition, and close-out sound design. What plays when you are not speaking is not logistics.
-Chapter 23  —  Compliance by Design
+Chapter 23  —  Making the Room Say Yes
 Environmental compliance, room layout, and why the dance floor of death is a design failure.
 Chapter 24  —  The Authority Frame
 How authority is broadcast through behavior, pace, and signal consistency before and during performance.
-Chapter 25  —  The Professional Advancement System
+Chapter 25  —  Building a Career, Not a Calendar
 Building a career architecture, not just a show calendar.
 Chapter 26  —  The Intro Video
 Solving the most unreliable variable in corporate performance.
-Chapter 27  —  Signal to Statement
+Chapter 27  —  Turning Observation into Performance
 The five structural moves that convert observation into performance: opening read, layered read, soft hit, strong hit, and callback.
 Chapter 28  —  Insight Demonstrations
 Six frameworks for life readings built from signal clusters. Travel pattern, life pivot, hidden interest, relationship dynamic, social role, and self-image gap.
@@ -141,19 +141,19 @@ Chapter 33  —  The Language of Authority
 Processing fluency, silence as signal, weak language patterns, and high-authority email structure.
 Chapter 34  —  Reading the Booking Room
 The discovery call as performance. Baseline-building, buying signals, and why you state the fee and stop.
-Chapter 35  —  The Decode Behavior Framework
+Chapter 35  —  From First Contact to Follow-Up
 Observe, position, match, decode, install. A complete behavioral model from first contact to final follow-up.
 PART EIGHT  —  Behavioral Intelligence for the Stage
 Corporate behavioral intelligence frameworks adapted for the mentalist’s stage. The science is identical. The application is sharper.
-Chapter 36  —  The FATE Model for Performers
+Chapter 36  —  What the Room Decides Before You Speak
 Focus, Authority, Tribe, Emotion. Four forces the limbic system evaluates before you speak, and how to control all four.
 Chapter 37  —  Authority Architecture
 The five pillars of authority, the Milgram findings applied to performance, and the self-assessment that tells you which pillars need building.
-Chapter 38  —  The Behavioral Table of Elements
+Chapter 38  —  The Performer’s Signal Dictionary
 The DRS system, three signal clusters (engagement retreat, evaluation, certainty drop), and the field notation system.
-Chapter 39  —  The Influence Equation
+Chapter 39  —  How Influence Actually Works
 Novelty plus authority equals influence. Compliance architecture, the critical compliance window, and five speech patterns that build authority.
-Chapter 40  —  The DECODE Framework for Live Performance
+Chapter 40  —  Six Steps from Observation to Ovation
 Six steps from observation to installation. Detect, engage, calibrate, observe, decode, elevate.
 GLOSSARY  —  Scientific, Behavioral, and Performance Terms
 Nineteen key terms with definitions grounded in the book’s specific usage.
@@ -229,7 +229,7 @@ How it hurts your performances: If the audience predicts the right category too 
 · · ·
 
 CHAPTER 2
-The Five Forces of Salience
+The Five Forces of Attention
 What makes the brain say this matters? Understanding the salience network is understanding attention itself.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
@@ -348,7 +348,7 @@ Behavioral profiling, cold reading, micro-expression detection, and the art of e
 
 
 CHAPTER 6
-Behavioral Profiling in Real Time
+Reading Body Language in Real Time
 What you are actually noticing when you know something is off. And how to formalize that knowing into a deployable system.
 ────────────────────────────────────────────────────────────────────────────────
 Body Language Is Mostly Bullshit
@@ -869,7 +869,7 @@ The 10-Second Scan is not a routine to perform out loud. It runs internally, inv
 · · ·
 
 CHAPTER 8
-DISC in Real Time
+Four Personalities in Thirty Seconds
 Reading personality in the first thirty seconds. And deploying that read to change how every subsequent moment lands.
 ────────────────────────────────────────────────────────────────────────────────
 DISC is a communication style model, not a clinical personality diagnosis. It groups observable behavior into four patterns that are immediately useful for predicting how someone will respond to you on stage, across a table, or in the first thirty seconds of a walkaround encounter. The value is not in the label. It is in the adjustment it produces in how you open, how you pace, and what you ask them to do.
@@ -984,7 +984,7 @@ Collocation is not a technique you announce. You do not say ‘I noticed you kee
 · · ·
 
 CHAPTER 10
-The Micro-Expression Matrix
+What the Face Gives Away
 Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
@@ -1006,7 +1006,7 @@ The practitioner error is reading a single expression and concluding too much fr
 · · ·
 
 CHAPTER 11
-Volunteer Handling Through a Neural Lens
+The Volunteer’s Brain
 The volunteer is not a prop. They are a co-author. And the most important casting decision in any show.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
@@ -1069,7 +1069,7 @@ After three genuine compliance responses, the participant has conditioned their 
 · · ·
 
 CHAPTER 12
-The Language of Compliance
+The Language of Yes
 Words are behavioral stimuli. Sequence, framing, and presupposition change what a request is before it arrives.
 ────────────────────────────────────────────────────────────────────────────────
 Two Categories of Knowledge
@@ -1316,7 +1316,7 @@ The moment you explain a principle before demonstrating it, you lose the emotion
 · · ·
 
 CHAPTER 16
-The Behavioral Training Framework
+Why Most Training Fails
 Most corporate training fails not because the content is wrong but because the learning architecture is misaligned with how the brain actually changes behavior.
 ────────────────────────────────────────────────────────────────────────────────
 Last year I walked into a room of forty senior managers who had just sat through ninety minutes of slides on influence and persuasion. They were polite. They were also checked out. Phones under the table, eyes glazing at each new bullet point. I had fifteen minutes. I spent the first three demonstrating, without explanation, that I had been reading the room's behavioral patterns since before the slides began. I named who had been skeptical, who had been genuinely engaged, and who had been performing engagement for the presenter's benefit. The room went completely still. A woman in the second row said, 'How long were you watching us?' I said, 'Since you walked in.' For the remaining twelve minutes I had the kind of attention that slides cannot buy. A year later, three of those managers independently told the client they still thought about that session. The slides from the first ninety minutes were never mentioned again.
@@ -1443,7 +1443,7 @@ If you have ever let a reading go further than you planned because the audience 
 
 
 PART FIVE
-The Neural Performance Model
+The Performance Arc
 A complete framework for designing, executing, and auditing performances through a behavioral lens. Seven stages. One arc. Designed to be used before and after every show.
 
 Seven Stages of the Performance Arc
@@ -1559,7 +1559,7 @@ Audiences unconsciously sync physiological state to music tempo. Pre-show music 
 · · ·
 
 CHAPTER 23
-Compliance by Design
+Making the Room Say Yes
 The dance floor of death is a design failure, not an audience failure.
 ────────────────────────────────────────────────────────────────────────────────
 The dance floor of death is the name performers give to the open space that forms in front of a stage when no one will move into it. It is one of the most reliable indicators that compliance has not been designed into the event architecture. The audience wants to engage. They have not been given a structure that makes engagement feel socially safe. So they stand back, and the space between you and them becomes a visible representation of the gap between intent and design.
@@ -1607,7 +1607,7 @@ Congruence must hold across every touchpoint: communications, presentation, arri
 · · ·
 
 CHAPTER 25
-The Professional Advancement System
+Building a Career, Not a Calendar
 Most performers have one conversation with a client before the show and one after. This is the minimum viable relationship.
 ────────────────────────────────────────────────────────────────────────────────
 The best rebooking I ever earned happened because of a phone call I almost did not make. Two weeks before a financial services event, I called the client contact to ask about something I had noticed on their company's quarterly report: a reorganization that meant half the audience would be meeting new team members for the first time. That single detail reshaped my entire show design. I opened with a demonstration about first impressions that had the room leaning in before the first minute was over, because it was about them, that night, in that room. The client told me afterward that the call was the moment she knew she had made the right hire. She has booked me four times since. The show was good. The relationship was the reason it kept going.
@@ -1646,7 +1646,7 @@ Do not pause at the entry. Walk in as if you have been there before. Because you
 · · ·
 
 CHAPTER 27
-Signal to Statement
+Turning Observation into Performance
 The gap between seeing and saying, and the five structural moves that close it.
 ────────────────────────────────────────────────────────────────────────────────
 At a private dinner in London, I watched a mentalist spend three minutes reading a volunteer with extraordinary accuracy. He caught every signal: the wedding ring tan line, the callused fingertips, the way she held her wine glass with her left hand despite being right-handed. He saw everything. And then he said, 'I sense you have recently experienced a change.' The room was polite. It should have been electric. He had the observation. He did not have the translation. The gap between seeing and saying is where most behavioral reads die.
@@ -1970,7 +1970,7 @@ The Right Question
 · · ·
 
 CHAPTER 35
-The Decode Behavior Framework
+From First Contact to Follow-Up
 A complete behavioral model for the performing professional, from first contact to final follow-up.
 ────────────────────────────────────────────────────────────────────────────────
 The Decode Behavior framework is a synthesis of the principles in this book applied specifically to the business of performing. It is not a sales system. It is a behavioral design system for creating the conditions in which the right clients find you, trust you, hire you, and return.
@@ -2022,7 +2022,7 @@ You operate under conditions that no corporate trainer, sales professional, or n
 This section adapts the full Behavioral Intelligence framework (the FATE Model, Authority Architecture, the Behavioral Table of Elements, the Influence Equation, and the DECODE Framework) for the mentalist's stage. The science is identical. The application is sharper. The margin for error is zero.
 · · ·
 CHAPTER 36
-The FATE Model for Performers
+What the Room Decides Before You Speak
 Four forces every audience evaluates before you speak — and how to control all four.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
@@ -2126,12 +2126,12 @@ The goal is not to score five on every pillar. The goal is to identify which pil
 The performer who audits these pillars honestly, and does the work to move the lowest one upward, will notice a change in how rooms respond before anything about their technical skill has changed. Authority is not a show skill. It is a life skill that shows up on stage.
 · · ·
 CHAPTER 38
-The Behavioral Table of Elements
+The Performer’s Signal Dictionary
 Every observable behavior. Catalogued, rated, and mapped. A performer's DRS field reference.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
 You are watching someone and you know something is wrong before they say anything. Not a dramatic tell: a subtle shift. Their posture changed. Their jaw tightened almost imperceptibly. Their hands, which had been open on the table, curled inward. You noticed it. You did not have language for it. You filed it as a feeling rather than an observation.
-The Behavioral Table of Elements gives you the language.
+The Performer’s Signal Dictionary gives you the language.
 Developed by Chase Hughes, the BTE is a cataloguing system for observable human behavior: a periodic table of nonverbal signals, each assigned a code, a body region, a stress weight, and a deception timeframe. In its original context, it serves intelligence professionals, interrogators, and behavioral analysts who need to track and score behavioral shifts in real time. For you, it is something more specific: a vocabulary for reading the room with precision that the audience experiences as impossible insight.
 How the BTE Works
 Every observable behavior in the system is catalogued with four data points:
@@ -2185,7 +2185,7 @@ C+. Comfort and agreement signals, green light.
 For performance, this notation system is most useful in pre-show observation, strolling work, and corporate mentalism where you have time to track individuals before selecting them. In a stage show, the notation runs internally: the trained observer is marking signals mentally rather than on paper, building a real-time behavioral map of the room.
 · · ·
 CHAPTER 39
-The Influence Equation
+How Influence Actually Works
 Novelty plus authority equals influence. And why compliance begins in the body before it reaches the mind.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
@@ -2213,7 +2213,7 @@ When novelty and authority operate simultaneously, the prefrontal cortex's skept
 This is why the opening of a performance is the most important behavioral architecture in the entire show. If novelty captures dopaminergic attention and authority activates compliance processing within the first thirty seconds, the audience enters the performance in a neurological state that is fundamentally different from the one they would occupy if they spent those thirty seconds evaluating whether the performer is credible.
 Design the opening to deliver both signals simultaneously. Not novelty first, then authority. Both at once. A performer who opens with unexplained specificity delivered in a slow, certain voice with deliberate movement is activating the full Influence Equation before the first effect has begun.
 Compliance Architecture
-The Influence Equation explains how the initial shift happens. Compliance architecture explains how it is maintained and deepened across the full arc of a performance.
+How Influence Actually Works explains how the initial shift happens. Compliance architecture explains how it is maintained and deepened across the full arc of a performance.
 Physical following creates mental following. People who follow you physically (who turn toward you when you move, who lean when you lean, who adjust their posture in response to yours) will follow you mentally. This is mirror neuron territory: physical compliance activates neural synchrony, and the brain begins processing the interaction as cooperative rather than adversarial.
 Establish physical compliance early. In the first two minutes of any interaction (whether with a volunteer on stage or a group during strolling work) create opportunities for the audience to follow you physically. Move and watch who follows. Gesture and note who mirrors. The people whose bodies are already tracking yours are the people whose minds will follow your direction.
 The critical compliance window. At the beginning of every interaction, there is a window, narrow and time-limited, to establish behavioral following. Miss it and you spend the rest of the performance working uphill against a nervous system that has settled into evaluation rather than compliance. The first sixty seconds of contact with any volunteer or audience group is the compliance window. Use it.
@@ -2228,7 +2228,7 @@ The status frame. "I am curious which direction you are leaning." This positions
 Strategic silence. After a proposal, a statement, or a reveal. Stop talking. Silence signals certainty. The performer who speaks and waits is communicating: I do not need your immediate validation, and I am comfortable with whatever happens in this space. That comfort is contagious.
 · · ·
 CHAPTER 40
-The DECODE Framework for Live Performance
+Six Steps from Observation to Ovation
 Six steps from observation to installation. Adapted from behavioral intelligence fieldwork for the mentalist's stage.
 ────────────────────────────────────────────────────────────────────────────────
 What You Have Felt Before
