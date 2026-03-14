@@ -19,6 +19,8 @@ Edit this file in Word, Google Docs, or any DOCX editor. All 40 chapters, glossa
 | Key reads (chapter closers) | build-book.py + design-reference/chapter-template.md | Yes — update both when changing |
 | Design specs | design-reference/design-specification.md | Reference only |
 | SVG graphics | design-reference/graphics/ | Reference — final graphics will be production files |
+| Book figures/photos | resources/metv-images/ | Yes — drop image files here |
+| Figure placement map | build-book.py (FIGURES dict) | Yes — Claude updates when you add/move figures |
 
 ### Updating the Meta Reveal
 When any design decision changes (new hook lines, different color choices, different chapter structure), the Meta Reveal chapter must be updated to match. The Meta Reveal explicitly references:
@@ -76,6 +78,7 @@ This produces `Architecture-of-Wonder-DESIGNED.html` with:
 - The full color arc (cool → warm)
 - Running headers and page numbers
 - The Meta Reveal with full dark treatment
+- Figures/photos injected at the correct locations (from `FIGURES` dict)
 
 ### Step 3: View and export
 Open `Architecture-of-Wonder-DESIGNED.html` in a browser. Print to PDF for the formatted version.
@@ -143,6 +146,34 @@ ET.register_namespace('r', 'http://schemas.openxmlformats.org/officeDocument/200
 
 ### Gotcha: Element positions shift after insertions/removals
 After inserting or removing elements, re-read `list(body)` before using position-based indexing again.
+
+---
+
+## Adding Figures and Photos
+
+### The workflow
+1. Prepare the image (Canva, Photoshop, camera, whatever you like)
+2. Save it to `resources/metv-images/` with a descriptive filename (e.g., `seven-universal-expressions.png`)
+3. Tell Claude where it goes (e.g., "put this after The Seven Expressions in Chapter 10")
+4. Claude will:
+   - Embed the image into the DOCX at the right position (visible when you open in Word/Docs)
+   - Add a `FIGURES` entry in `build-book.py` so the HTML build includes it
+   - Add a caption (which you can revise)
+
+### How it works technically
+- **In the DOCX:** Images are embedded as inline drawings in OOXML format (`word/media/`), with a relationship entry and content type. The image appears in Word/Google Docs.
+- **In the HTML build:** The `FIGURES` dictionary in `build-book.py` maps `"CHAPTER <num>:<section header>"` to figure data. After the build script renders a section header, it checks for a matching figure and injects the `<img>` tag with caption.
+- **Caption deduplication:** The build script skips extracted text lines matching `Figure X.X —` to avoid duplicate captions (one from DOCX extraction, one from the FIGURES config).
+
+### Important notes
+- The `CHAPTER <num>` in the FIGURES key uses the **parser's chapter number** (from `parse_manuscript()`), not the TOC number. These can differ. When in doubt, run the parser to check.
+- Always back up the DOCX before embedding images (`backups/` directory).
+- Image rights status is tracked in the `rights` field of each FIGURES entry.
+
+### Current figures
+| Figure | Chapter | Section | File | Rights |
+|--------|---------|---------|------|--------|
+| 10.1 | The Micro-Expression Matrix | The Seven Expressions | `seven-universal-expressions.png` | Author-owned |
 
 ---
 

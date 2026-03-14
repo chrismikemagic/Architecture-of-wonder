@@ -102,6 +102,22 @@
 
 ---
 
+## Figure Integration System
+
+**Decision:** Established a system for embedding photos/figures into the book, starting with the seven universal expressions photo in Chapter 10 (The Micro-Expression Matrix).
+
+**Approach:** Figures are managed through two parallel systems:
+1. Embedded in the DOCX via OOXML (visible in Word/Google Docs)
+2. Mapped in `build-book.py`'s `FIGURES` dictionary for HTML output
+
+**Why not just one?** The text extraction step strips images from the DOCX. The build script needs its own figure map to inject `<img>` tags into the HTML. The DOCX embedding ensures the author sees images while writing.
+
+**First figure:** Author-owned photograph of the seven universal facial expressions (Anger, Disgust, Fear, Happiness, Sadness, Surprise, Contempt), placed after "The Seven Expressions" section header.
+
+**Rights tracking:** Each FIGURES entry includes a `rights` field. Only author-owned or properly licensed images should be embedded.
+
+---
+
 ## Content Consolidation (Field Notes)
 
 **Decision:** Consolidated scattered neuroscience content into Part Three (Field Notes) as themed sections rather than numbered chapters. Topics: Attention and Prediction, Neurochemistry and Threat, Memory and Embodiment, Influence and Compliance, Salience and Framing, The Body as Signal.
