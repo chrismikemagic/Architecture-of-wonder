@@ -1966,6 +1966,54 @@ a.toc-ch:hover{opacity:.7}
   border-bottom:1px dotted var(--rule);min-width:20px;
 }
 
+/* ═══ SIGNAL KEY ═══ */
+.signal-key{
+  max-width:520px;margin:0 auto;padding:60px 36px;break-before:page;
+}
+.signal-key h2{
+  font-family:var(--sans);font-size:.85rem;font-weight:700;
+  letter-spacing:7px;color:var(--gold);text-align:center;
+  margin-bottom:1.5em;text-transform:uppercase;
+}
+.signal-key .sk-intro{
+  font-family:var(--serif);font-size:.9rem;font-style:italic;
+  color:rgba(245,240,232,.55);line-height:1.7;text-align:center;
+  margin-bottom:2.5em;
+}
+.signal-key .sk-section{margin-bottom:2.5em}
+.signal-key .sk-section h3{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:4px;color:var(--dim);text-transform:uppercase;
+  margin-bottom:.6em;padding-bottom:.5em;
+  border-bottom:1px solid var(--rule);
+}
+.signal-key .sk-desc{
+  font-family:var(--serif);font-size:.85rem;color:rgba(245,240,232,.5);
+  line-height:1.6;margin-bottom:1.5em;
+}
+.signal-key .sk-grid{display:flex;flex-direction:column;gap:18px}
+.signal-key .sk-item{
+  display:grid;grid-template-columns:60px 1fr;grid-template-rows:auto auto;
+  column-gap:16px;row-gap:2px;align-items:start;
+}
+.signal-key .sk-item .badge{
+  grid-row:1/3;align-self:center;justify-self:center;
+  font-size:.6rem;padding:3px 10px;
+}
+.signal-key .sk-item .sk-icon{
+  grid-row:1/3;align-self:center;justify-self:center;
+  display:flex;align-items:center;gap:6px;
+}
+.signal-key .sk-item .sk-icon svg{width:22px;height:22px;opacity:.8}
+.signal-key .sk-label{
+  font-family:var(--sans);font-size:.75rem;font-weight:600;
+  color:var(--gold);letter-spacing:1px;
+}
+.signal-key .sk-explain{
+  font-family:var(--serif);font-size:.82rem;color:rgba(245,240,232,.5);
+  line-height:1.55;
+}
+
 /* ═══ FRONT MATTER ═══ */
 .front-matter{max-width:520px;margin:0 auto;padding:60px 36px;break-before:page}
 .front-matter h2{
@@ -2571,6 +2619,34 @@ def build_book(manuscript_path, output_path):
 
     # ── TOC ──
     html.append(gen_toc(sections))
+
+    # ── SIGNAL KEY ──
+    html.append(f'''<section class="signal-key">
+  <h2>How to Read This Book</h2>
+  <p class="sk-intro">Every chapter opener in this book carries two rows of symbols. They are not decoration. They tell you what kind of evidence each chapter uses and what domain it applies to. Here is how to read them.</p>
+
+  <div class="sk-section">
+    <h3>Signal Confidence Tiers</h3>
+    <p class="sk-desc">Every behavioral signal in this book is rated by evidential strength. The tier tells you how much weight to put behind a read.</p>
+    <div class="sk-grid">
+      <div class="sk-item"><span class="badge t1">T1</span><div class="sk-label">Physical Evidence</div><div class="sk-explain">Read directly from the body or belongings. Objective, stable, highly reliable. Shoe wear, belt notch wear, callus distribution. Lead with these whenever you have one.</div></div>
+      <div class="sk-item"><span class="badge t2">T2</span><div class="sk-label">Research-Backed</div><div class="sk-explain">Supported by published behavioral science. Eye contact, blink rate shifts, foot direction. Reliable in clusters. The workhorses of behavioral reading.</div></div>
+      <div class="sk-item"><span class="badge t3">T3</span><div class="sk-label">Field-Tested Pattern</div><div class="sk-explain">Observed consistently across thousands of hours but not yet formally validated. Useful for adding nuance to reads already grounded in T1 and T2.</div></div>
+      <div class="sk-item"><span class="badge t4">T4</span><div class="sk-label">Experimental</div><div class="sk-explain">Weak or disputed research support. Know what they claim. Know why the claim does not hold. Do not build routines on T4 signals.</div></div>
+    </div>
+  </div>
+
+  <div class="sk-section">
+    <h3>Observation Categories</h3>
+    <p class="sk-desc">Each signal is tagged by its primary application domain. These codes appear as margin icons throughout the signal tables.</p>
+    <div class="sk-grid">
+      <div class="sk-item"><span class="sk-icon">{_svg_bp()}<span class="icon-code bp">BP</span></span><div class="sk-label">Behavioral Profiling</div><div class="sk-explain">Signals used to build a behavioral read on a person. Physical evidence, posture, grooming, belongings, and habitual patterns.</div></div>
+      <div class="sk-item"><span class="sk-icon">{_svg_cr()}<span class="icon-code cr">CR</span></span><div class="sk-label">Cold Reading</div><div class="sk-explain">Signals that support verbal reads and statements. The cues that let you tell someone what they are thinking before they say it.</div></div>
+      <div class="sk-item"><span class="sk-icon">{_svg_vs()}<span class="icon-code vs">VS</span></span><div class="sk-label">Volunteer Selection</div><div class="sk-explain">Signals that help you identify the right participant from a crowd. Who will play along, who will resist, who will make the moment land.</div></div>
+      <div class="sk-item"><span class="sk-icon">{_svg_am()}<span class="icon-code am">AM</span></span><div class="sk-label">Audience Management</div><div class="sk-explain">Signals that tell you how the room is responding. Energy, attention, resistance, compliance. Read these to steer the group.</div></div>
+    </div>
+  </div>
+</section>''')
 
     # ── CONTENT ──
     global_para = 0
