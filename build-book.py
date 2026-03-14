@@ -816,6 +816,20 @@ def gen_observation_table(rows):
     return header + ''.join(body_rows) + '</div>'
 
 
+def gen_video_embed(file_id, label, caption):
+    """Render a Google Drive video embed."""
+    embed_url = f'https://drive.google.com/file/d/{file_id}/preview'
+    return (
+        f'<div class="video-embed">'
+        f'<div class="video-label">{escape(label)}</div>'
+        f'<div class="video-frame-wrap">'
+        f'<iframe src="{embed_url}" allow="autoplay" allowfullscreen loading="lazy"></iframe>'
+        f'</div>'
+        f'<p class="video-caption">{escape(caption)}</p>'
+        f'</div>'
+    )
+
+
 def gen_bte_signal(name, code, drs, description):
     """Render a single BTE signal entry as a styled card."""
     try:
@@ -1231,6 +1245,17 @@ def build_chapter_body(section, global_para_count):
                     parts.append(gen_observation_table(rows))
                     i = j
                     continue
+
+        # ── VIDEO EMBEDS ──
+        # Pattern: "VIDEO EMBED :: FILE_ID :: Label :: Caption"
+        if stripped.startswith('VIDEO EMBED :: '):
+            parts_ve = stripped.split(' :: ', 3)
+            if len(parts_ve) == 4:
+                _, file_id, label, caption = parts_ve
+                parts.append(gen_video_embed(file_id.strip(), label.strip(), caption.strip()))
+                i += 1
+                global_para_count += 1
+                continue
 
         # ── VOLUNTEER TYPE CARDS ──
         if stripped in _VOLUNTEER_COLORS and i + 1 < len(paragraphs):
@@ -2313,6 +2338,26 @@ a.toc-ch:hover{opacity:.7}
 /* ═══ FIVE Cs FRAMEWORK ═══ */
 .five-cs-graphic{margin:20px 0 0;line-height:0}
 .disc-chart{margin:1.8em 0;break-inside:avoid}
+/* ── VIDEO EMBEDS ── */
+.video-embed{margin:2em 0;break-inside:avoid}
+.video-label{
+  font-family:var(--sans);font-size:.65rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
+}
+.video-frame-wrap{
+  position:relative;width:100%;padding-bottom:56.25%;
+  background:#000;border-radius:5px;overflow:hidden;
+}
+.video-frame-wrap iframe{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  border:none;
+}
+.video-caption{
+  font-size:.78rem;color:var(--gray-blue);font-style:italic;
+  margin-top:8px;line-height:1.5;
+  text-indent:0!important;text-align:left!important;
+}
 .disc-graphic{line-height:0}
 .disc-graphic svg{width:100%;height:auto;border-radius:6px;display:block}
 
