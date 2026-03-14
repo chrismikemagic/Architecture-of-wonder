@@ -337,6 +337,86 @@ FIVE_CS_HTML = '''
 <div class="section-break">· · ·</div>
 '''
 
+DISC_HTML = '''
+<div class="disc-chart">
+  <div class="disc-graphic">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 510" font-family="Montserrat, sans-serif">
+  <defs>
+    <linearGradient id="bgDisc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="510" fill="url(#bgDisc)" rx="8"/>
+  <text x="400" y="36" text-anchor="middle" fill="#C9A84C" font-size="12" letter-spacing="4" font-weight="700">THE DISC COMMUNICATION STYLES</text>
+  <line x1="200" y1="48" x2="600" y2="48" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="63" text-anchor="middle" fill="#8A9AB5" font-size="10">Read the style. Adjust the approach. Before you speak.</text>
+  <text x="400" y="84" text-anchor="middle" fill="#8A9AB5" font-size="8.5" letter-spacing="2">FAST-PACED · DECISIVE</text>
+  <text x="400" y="482" text-anchor="middle" fill="#8A9AB5" font-size="8.5" letter-spacing="2">SLOW-PACED · DELIBERATE</text>
+  <text x="44" y="290" text-anchor="middle" fill="#8A9AB5" font-size="8.5" letter-spacing="2" transform="rotate(-90 44 290)">TASK-FOCUSED</text>
+  <text x="756" y="290" text-anchor="middle" fill="#8A9AB5" font-size="8.5" letter-spacing="2" transform="rotate(90 756 290)">PEOPLE-FOCUSED</text>
+  <line x1="64" y1="284" x2="736" y2="284" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <line x1="400" y1="92" x2="400" y2="472" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="66" y="94" width="330" height="186" rx="4" fill="#A83030" fill-opacity="0.10" stroke="#A83030" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="107" cy="129" r="20" fill="#A83030" fill-opacity="0.22"/>
+  <text x="107" y="135" text-anchor="middle" fill="#A83030" font-size="20" font-weight="700">D</text>
+  <text x="138" y="126" fill="#FFFFFF" font-size="12" font-weight="700">DIRECT</text>
+  <text x="138" y="141" fill="#8A9AB5" font-size="9">Fast · Decisive · Results-focused</text>
+  <line x1="80" y1="154" x2="384" y2="154" stroke="#A83030" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="80" y="170" fill="#8A9AB5" font-size="8.5" font-weight="600">ON STAGE</text>
+  <text x="80" y="184" fill="#FFFFFF" font-size="8.5">Skip the warm-up. Lead with precision.</text>
+  <text x="80" y="197" fill="#FFFFFF" font-size="8.5">One dead-accurate specific wins them.</text>
+  <text x="80" y="213" fill="#A83030" font-size="8" font-style="italic">Fast walk · Forward lean · Direct eye contact</text>
+  <text x="80" y="225" fill="#A83030" font-size="8" font-style="italic">Speaks first · Occupies space · Minimal small talk</text>
+  <text x="80" y="237" fill="#A83030" font-size="8" font-style="italic">Interrupts when impatient</text>
+  <text x="80" y="270" fill="#A83030" font-size="9" font-weight="700">PRECISION IS CURRENCY</text>
+  <rect x="404" y="94" width="330" height="186" rx="4" fill="#C9A84C" fill-opacity="0.08" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="445" cy="129" r="20" fill="#C9A84C" fill-opacity="0.18"/>
+  <text x="445" y="135" text-anchor="middle" fill="#C9A84C" font-size="20" font-weight="700">I</text>
+  <text x="476" y="126" fill="#FFFFFF" font-size="12" font-weight="700">INFLUENTIAL</text>
+  <text x="476" y="141" fill="#8A9AB5" font-size="9">Expressive · Social · Enthusiastic</text>
+  <line x1="418" y1="154" x2="722" y2="154" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="418" y="170" fill="#8A9AB5" font-size="8.5" font-weight="600">ON STAGE</text>
+  <text x="418" y="184" fill="#FFFFFF" font-size="8.5">Ideal reactor. Give them a visible role.</text>
+  <text x="418" y="197" fill="#FFFFFF" font-size="8.5">Their enthusiasm gives the room permission.</text>
+  <text x="418" y="213" fill="#C9A84C" font-size="8" font-style="italic">Open posture · Frequent smiling</text>
+  <text x="418" y="225" fill="#C9A84C" font-size="8" font-style="italic">Immediate humor response · Forward lean</text>
+  <text x="418" y="237" fill="#C9A84C" font-size="8" font-style="italic">Animated gestures · Comfortable center-stage</text>
+  <text x="418" y="270" fill="#C9A84C" font-size="9" font-weight="700">REACTION IS THE EFFECT</text>
+  <rect x="66" y="288" width="330" height="182" rx="4" fill="#6B52A0" fill-opacity="0.10" stroke="#6B52A0" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="107" cy="322" r="20" fill="#6B52A0" fill-opacity="0.22"/>
+  <text x="107" y="328" text-anchor="middle" fill="#6B52A0" font-size="20" font-weight="700">C</text>
+  <text x="138" y="319" fill="#FFFFFF" font-size="12" font-weight="700">CONSCIENTIOUS</text>
+  <text x="138" y="334" fill="#8A9AB5" font-size="9">Analytical · Precise · Detail-oriented</text>
+  <line x1="80" y1="347" x2="384" y2="347" stroke="#6B52A0" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="80" y="363" fill="#8A9AB5" font-size="8.5" font-weight="600">ON STAGE</text>
+  <text x="80" y="377" fill="#FFFFFF" font-size="8.5">Logic must precede compliance.</text>
+  <text x="80" y="390" fill="#FFFFFF" font-size="8.5">Slow-burn reveals. Avoid rapid-fire.</text>
+  <text x="80" y="406" fill="#6B52A0" font-size="8" font-style="italic">Balanced posture · Measured speech</text>
+  <text x="80" y="418" fill="#6B52A0" font-size="8" font-style="italic">Deliberate pauses · Careful object handling</text>
+  <text x="80" y="430" fill="#6B52A0" font-size="8" font-style="italic">Looks at hands when thinking</text>
+  <text x="80" y="460" fill="#6B52A0" font-size="9" font-weight="700">BUILD COHERENCE FIRST</text>
+  <rect x="404" y="288" width="330" height="182" rx="4" fill="#1A8FA8" fill-opacity="0.08" stroke="#1A8FA8" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="445" cy="322" r="20" fill="#1A8FA8" fill-opacity="0.18"/>
+  <text x="445" y="328" text-anchor="middle" fill="#1A8FA8" font-size="20" font-weight="700">S</text>
+  <text x="476" y="319" fill="#FFFFFF" font-size="12" font-weight="700">STEADY</text>
+  <text x="476" y="334" fill="#8A9AB5" font-size="9">Calm · Cooperative · Supportive</text>
+  <line x1="418" y1="347" x2="722" y2="347" stroke="#1A8FA8" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="418" y="363" fill="#8A9AB5" font-size="8.5" font-weight="600">ON STAGE</text>
+  <text x="418" y="377" fill="#FFFFFF" font-size="8.5">Cooperates without resistance.</text>
+  <text x="418" y="390" fill="#FFFFFF" font-size="8.5">Slow the pace. Warm, clear framing.</text>
+  <text x="418" y="406" fill="#1A8FA8" font-size="8" font-style="italic">Minimal movement · Relaxed shoulders</text>
+  <text x="418" y="418" fill="#1A8FA8" font-size="8" font-style="italic">Settled posture · Unhurried speech</text>
+  <text x="418" y="430" fill="#1A8FA8" font-size="8" font-style="italic">Head tilts frequently · Warm eye contact</text>
+  <text x="418" y="460" fill="#1A8FA8" font-size="9" font-weight="700">PATIENCE IS THE ASSET</text>
+  <rect x="374" y="272" width="52" height="24" rx="3" fill="#0D1E30" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="400" y="287" text-anchor="middle" fill="#8A9AB5" font-size="8.5" letter-spacing="1">DISC</text>
+  <text x="400" y="498" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  CHAPTER 8: THE FOUR PERSONALITIES</text>
+</svg>
+  </div>
+</div>
+'''
+
 
 # ═══════════════════════════════════════════════════════════
 # TYPOGRAPHIC UTILITIES
@@ -989,6 +1069,8 @@ def build_chapter_body(section, global_para_count):
 
     # ── FIVE Cs FRAMEWORK — injected inline after first mention (see loop below) ──
     five_cs_injected = False
+    # ── DISC CHART — injected before first D — DIRECT entry ──
+    disc_injected = False
 
     # Track for element insertion
     total = len(paragraphs)
@@ -1177,6 +1259,11 @@ def build_chapter_body(section, global_para_count):
                     pull_quote_done = True
                     i += 1
                     continue
+
+        # ── DISC CHART — inject before first "D — DIRECT" entry ──
+        if not disc_injected and stripped == 'D — DIRECT':
+            parts.append(DISC_HTML)
+            disc_injected = True
 
         processed = process_paragraph(para, part_num)
         if processed:
@@ -1906,6 +1993,9 @@ body{counter-reset:page}
 
 /* ═══ FIVE Cs FRAMEWORK ═══ */
 .five-cs-graphic{margin:20px 0 0;line-height:0}
+.disc-chart{margin:1.8em 0;break-inside:avoid}
+.disc-graphic{line-height:0}
+.disc-graphic svg{width:100%;height:auto;border-radius:6px;display:block}
 
 /* Reference table */
 .five-cs-table{
