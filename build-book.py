@@ -147,7 +147,7 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 10:7 Universal Microexpressions': {
+    'CHAPTER 10:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
         'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
