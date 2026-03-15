@@ -626,6 +626,21 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
+        # Detect THE META REVEAL (handled separately via META_REVEAL_HTML; skip manuscript content)
+        if line == 'THE META REVEAL' and i > 2000:
+            if current_section:
+                sections.append(current_section)
+            current_section = {
+                'type': 'meta_reveal',
+                'chapter_num': 98,
+                'part_num': 9,
+                'title': 'The Meta Reveal',
+                'content': [],
+                'chapter_key': 'META_REVEAL'
+            }
+            i += 1
+            continue
+
         # Detect ABOUT THE AUTHOR
         if line == 'ABOUT THE AUTHOR' and i > 2000:
             if current_section:
@@ -2917,6 +2932,9 @@ def build_book(manuscript_path, output_path):
     for section in sections:
         stype = section['type']
         part_num = section.get('part_num', 0)
+
+        if stype == 'meta_reveal':
+            continue  # rendered via META_REVEAL_HTML below
 
         if stype == 'front_matter':
             html.append(f'<section class="front-matter"><h2>{escape(section["title"].upper())}</h2>')
