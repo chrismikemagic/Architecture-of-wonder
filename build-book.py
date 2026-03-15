@@ -702,11 +702,38 @@ def parse_manuscript(filepath):
 def _svg_bp():
     return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>'
 def _svg_cr():
-    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="6" r="3" stroke="#1A8FA8" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#1A8FA8" stroke-width="1.2" stroke-linecap="round"/></svg>'
+    # Book (open, two pages meeting at spine) + head (top-left) + snowflake asterisk (top-right)
+    return (
+        '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">'
+        # Open book — left page
+        '<path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/>'
+        # Open book — right page
+        '<path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/>'
+        # Head silhouette (top-left)
+        '<circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/>'
+        # Snowflake asterisk (top-right, centre 13.5, 4.5)
+        '<line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/>'
+        '<line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/>'
+        '<line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/>'
+        '<line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/>'
+        '</svg>'
+    )
 def _svg_vs():
     return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 def _svg_am():
-    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="9" x2="14" y2="9" stroke="#A83030" stroke-width="1.3" stroke-linecap="round"/><polyline points="10,5 15,9 10,13" stroke="#A83030" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    # Two person silhouettes side by side — audience/group
+    return (
+        '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">'
+        # Left person — head
+        '<circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/>'
+        # Left person — body
+        '<path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/>'
+        # Right person — head
+        '<circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/>'
+        # Right person — body
+        '<path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/>'
+        '</svg>'
+    )
 
 def _opener_legend():
     return (
