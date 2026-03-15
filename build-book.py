@@ -37,9 +37,9 @@ HOOK_LINES = {
     'CHAPTER 6': '"Authority is not claimed. It is perceived\u2009\u2014\u2009in the first 250 milliseconds."',
     'CHAPTER 7': '"Every person who walks toward you is already broadcasting."',
     'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
-    'CHAPTER 9': '"Four styles. One conversation. The read starts before anyone speaks."',
-    'CHAPTER 10': '"You already know more than you think. The trick is knowing what to trust."',
-    'CHAPTER 11': '"The face performs. The eyes search."',
+    'CHAPTER 9': '"The face performs. The eyes search."',
+    'CHAPTER 10': '"Four styles. One conversation. The read starts before anyone speaks."',
+    'CHAPTER 11': '"You already know more than you think. The trick is knowing what to trust."',
     'CHAPTER 12': '"The face lies. But it lies too slowly."',
     'CHAPTER 13': '"The volunteer chose you before you chose them."',
     'CHAPTER 14': '"Compliance is not obedience. It is agreement they did not know they gave."',
@@ -83,9 +83,9 @@ KEY_READS = {
     'CHAPTER 6': 'Credibility is not what you say. It is what they decide before you say it.',
     'CHAPTER 7': 'The read is never one signal. The read is the chain.',
     'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
-    'CHAPTER 9': 'Style is not personality. But it is the first thing the room broadcasts.',
-    'CHAPTER 10': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 11': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
+    'CHAPTER 9': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
+    'CHAPTER 10': 'Style is not personality. But it is the first thing the room broadcasts.',
+    'CHAPTER 11': 'The best cold read is a warm observation delivered cold.',
     'CHAPTER 12': 'Seven expressions. One-fifth of a second. That is the window.',
     'CHAPTER 13': 'Handle the person, not the trick.',
     'CHAPTER 14': 'The best instruction is the one that feels like their idea.',
@@ -147,10 +147,16 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 10:7 Universal Microexpressions': {
+    'CHAPTER 11:7 Universal Microexpressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'caption': 'Figure 11.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'rights': 'Author-owned photograph',
+    },
+    'CHAPTER 11:The Duchenne Smile': {
+        'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
+        'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
+        'caption': 'Figure 11.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
 }
@@ -2140,6 +2146,26 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
+  <h3 class="section-header meta-header">The Reciprocity Trigger</h3>
+
+  <p>At a specific point in this book, a line appeared that most readers will not have consciously registered as a technique. In a chapter with a title designed to attract readers who might skip ahead, a sentence acknowledged two types of reader directly: those who had skipped to that chapter because the title caught their attention, and those who had read every chapter in sequence.</p>
+
+  <p>The skippers were told that their response was salience at work — their brain had done exactly what the book had been teaching. That is a validation. It reframes what might feel like impatience as evidence of a working perceptual system.</p>
+
+  <p>The sequential readers were told something different: <em class="gold">I respect that.</em></p>
+
+  <p>That line was not decoration. It was calculated.</p>
+
+  <p>Most readers do not skip. Most people reading a non-fiction book with a structured argument read it in order. Which means the majority of the audience receives that line — a direct, personal expression of respect from the author — without knowing it was placed there for them specifically. The effect is immediate: the reader feels seen, acknowledged, and valued by someone they have spent considerable time with but never met.</p>
+
+  <p>That feeling activates <em class="gold">reciprocity</em> — one of the most robust social influence mechanisms in human psychology. When someone does something for us, or expresses regard for us, we feel a pull toward returning it. In a reading context, that return takes the form of increased trust, increased investment, and a stronger sense of connection to the author.</p>
+
+  <p>The specificity of the compliment is what makes it land. A generic "thank you for reading" produces nothing. But "you are a studious reader. I respect that" is precise enough to feel personal. The reader did not receive a courtesy. They received a read — and a correct one.</p>
+
+  <p>The technique also works because the line is self-selecting. Readers who skipped get the salience validation. Readers who did not skip get the respect. Neither group feels left out. Both groups feel accurately seen. That is the same mechanism used in cold reading: a statement that lands differently for different people while appearing to be addressed to everyone.</p>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
   <h3 class="section-header meta-header">The Design Summary</h3>
 
   <div class="meta-summary">
@@ -2154,6 +2180,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
     <div class="meta-row"><span class="gold">Edge color gradient</span><span class="meta-label">Progressive Identity Shift</span></div>
     <div class="meta-row"><span class="gold">Chris Michael\u2019s Take labels</span><span class="meta-label">Name Anchoring \u2014 Mere Exposure</span></div>
     <div class="meta-row"><span class="gold">Insider language (hit, grey elephant)</span><span class="meta-label">In-Group Signalling \u2014 Tribal Identity</span></div>
+    <div class="meta-row"><span class="gold">"I respect that" to sequential readers</span><span class="meta-label">Reciprocity Trigger \u2014 Personalised Validation</span></div>
   </div>
 
   <div class="section-break">\u00b7 \u00b7 \u00b7</div>
