@@ -1250,6 +1250,17 @@ def process_paragraph(text, part_num=1):
     if stripped in _warning_headers:
         return gen_warning_header(stripped)
 
+    # Sub-section headers — subordinate topics sitting under a parent section header
+    _sub_section_heads = {
+        'Breathing Visibility', 'The Laughter Signal', 'Stillness Gradient',
+        'Phone Emergence', 'Self-Soothing', 'Absence of Response',
+        'The Reflect and Reset', 'Productive Silence', 'The Redirect',
+        'Image or feeling', 'Fast impression or gradual realization',
+        'Attention and concentration', 'Emotional framing', 'Stage management',
+    }
+    if stripped in _sub_section_heads:
+        return f'<div class="sub-header"><span class="sub-header-label">{escape(stripped)}</span></div>'
+
     # Numbered step headers: "01 — SHOES", "02 — HANDS", etc.
     # Pattern: 1-2 digits, dash/em-dash, ALL CAPS label (≤4 words)
     _step_m = re.match(r'^(\d{1,2})\s*[\u2014\u2013\-]+\s*([A-Z][A-Z /]+)$', stripped)
@@ -2486,6 +2497,16 @@ body{counter-reset:page}
 }
 
 /* ═══ NUMBERED STEP HEADERS ═══ */
+.sub-header{
+  margin:1.8em 0 .5em;
+  padding-left:12px;
+  border-left:2px solid var(--blue);
+}
+.sub-header-label{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--blue);
+}
 .step-header{
   display:flex;align-items:center;gap:12px;
   margin:1.6em 0 .6em;
