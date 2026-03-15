@@ -332,6 +332,46 @@ body{counter-reset:page}
 .mod-note{color:var(--gray-blue);font-size:.74rem;font-style:italic;padding-left:88px}
 
 /* ═══ BEHAVIORAL READING LINE CARDS ═══ */
+/* ═══ FRUIT TO FANG CARD ═══ */
+.ftf-card{
+  background:linear-gradient(135deg,rgba(13,30,48,.97),rgba(8,15,26,.99));
+  border:1px solid rgba(201,168,76,.2);
+  border-left:4px solid var(--gold);
+  border-radius:6px;padding:20px 22px;
+  margin:2em 0;break-inside:avoid;
+}
+.ftf-header{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.15)}
+.ftf-title{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:4px;
+}
+.ftf-subtitle{font-family:var(--sans);font-size:.68rem;color:var(--gray-blue);font-style:italic}
+.ftf-intro{font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:10px;text-indent:0!important}
+.ftf-method-note{font-size:.76rem;color:var(--gray-blue);margin-bottom:14px;text-indent:0!important}
+.ftf-table{display:grid;grid-template-columns:1fr;gap:0;margin-bottom:18px;border:1px solid rgba(201,168,76,.12);border-radius:4px;overflow:hidden}
+.ftf-row{display:grid;grid-template-columns:1.4fr 1.2fr 1.2fr .6fr;gap:0}
+.ftf-row:not(:last-child){border-bottom:1px solid rgba(201,168,76,.08)}
+.ftf-head{background:rgba(201,168,76,.12)}
+.ftf-head .ftf-cell{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);padding:7px 10px}
+.ftf-cell{font-size:.74rem;color:rgba(255,255,255,.8);padding:8px 10px;line-height:1.45;border-right:1px solid rgba(201,168,76,.08)}
+.ftf-cell:last-child{border-right:none}
+.ftf-vowel{color:var(--gold);font-weight:600}
+.ftf-flow{margin-top:4px;padding-top:14px;border-top:1px solid rgba(201,168,76,.15)}
+.ftf-flow-title{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+.ftf-flow-body{display:flex;flex-direction:column;align-items:center;gap:6px}
+.ftf-node{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:6px 14px;font-size:.72rem;color:rgba(255,255,255,.85);text-align:center}
+.ftf-node-start{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.4);font-weight:600}
+.ftf-arrow{color:var(--gold);font-size:.9rem;line-height:1}
+.ftf-branch{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;width:100%;align-items:center}
+.ftf-branch-mid{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:1px;color:var(--gray-blue);text-align:center;text-transform:uppercase}
+.ftf-branch-item{background:rgba(13,30,48,.6);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:7px 10px;font-size:.7rem;color:rgba(255,255,255,.75);text-align:center;line-height:1.45}
+.ftf-yes{border-left:3px solid rgba(75,170,114,.6)}
+.ftf-no{border-left:3px solid rgba(26,143,168,.6)}
+.ftf-note{display:block;font-size:.65rem;color:var(--gray-blue);margin-top:2px;font-style:italic}
+.ftf-vowel-inline{color:var(--gold);font-weight:700}
+.ftf-node-test{background:rgba(107,82,160,.15);border-color:rgba(107,82,160,.4);font-style:italic}
+.ftf-node-note{background:rgba(26,143,168,.08);border-color:rgba(26,143,168,.3);font-size:.7rem}
+
 .reading-line-card{
   margin:.7em 0;padding:14px 16px 12px;
   border-radius:4px;break-inside:avoid;
@@ -1756,16 +1796,17 @@ html.gate-locked body { overflow: hidden; }
 <a href="#chapter-6" class="toc-ch"><span class="toc-num">6</span><span class="toc-title">Reading Body Language in Real Time</span><span class="toc-dots"></span></a>
 <a href="#chapter-7" class="toc-ch"><span class="toc-num">7</span><span class="toc-title">The 80-Signal System</span><span class="toc-dots"></span></a>
 <a href="#chapter-8" class="toc-ch"><span class="toc-num">8</span><span class="toc-title">The Four Personalities That Change Every Read</span><span class="toc-dots"></span></a>
-<a href="#chapter-9" class="toc-ch"><span class="toc-num">9</span><span class="toc-title">Cold Reading, Warm Reading, and Thin Slicing</span><span class="toc-dots"></span></a>
+<a href="#chapter-9" class="toc-ch"><span class="toc-num">9</span><span class="toc-title">The Eyes, the Face, and the Way Thought Leaks Out</span><span class="toc-dots"></span></a>
 <a href="#chapter-10" class="toc-ch"><span class="toc-num">10</span><span class="toc-title">The Micro-Expression Matrix</span><span class="toc-dots"></span></a>
-<a href="#chapter-11" class="toc-ch"><span class="toc-num">11</span><span class="toc-title">The Volunteer’s Brain</span><span class="toc-dots"></span></a>
-<a href="#chapter-12" class="toc-ch"><span class="toc-num">12</span><span class="toc-title">The Language of Yes</span><span class="toc-dots"></span></a>
-<a href="#chapter-13" class="toc-ch"><span class="toc-num">13</span><span class="toc-title">Closing the Barn Door</span><span class="toc-dots"></span></a>
-<a href="#chapter-14" class="toc-ch"><span class="toc-num">14</span><span class="toc-title">The Science of Hypnosis</span><span class="toc-dots"></span></a>
+<a href="#chapter-11" class="toc-ch"><span class="toc-num">11</span><span class="toc-title">Cold Reading, Warm Reading, and Thin Slicing</span><span class="toc-dots"></span></a>
+<a href="#chapter-12" class="toc-ch"><span class="toc-num">12</span><span class="toc-title">The Volunteer’s Brain</span><span class="toc-dots"></span></a>
+<a href="#chapter-13" class="toc-ch"><span class="toc-num">13</span><span class="toc-title">The Language of Yes</span><span class="toc-dots"></span></a>
+<a href="#chapter-14" class="toc-ch"><span class="toc-num">14</span><span class="toc-title">Closing the Barn Door</span><span class="toc-dots"></span></a>
+<a href="#chapter-15" class="toc-ch"><span class="toc-num">15</span><span class="toc-title">The Science of Hypnosis</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART THREE<span class="toc-sub">Field Notes</span></div>
 <div class="toc-part">PART FOUR<span class="toc-sub">The Corporate Stage</span></div>
-<a href="#chapter-15" class="toc-ch"><span class="toc-num">15</span><span class="toc-title">Mentalism in the Boardroom</span><span class="toc-dots"></span></a>
-<a href="#chapter-16" class="toc-ch"><span class="toc-num">16</span><span class="toc-title">Why Most Training Fails</span><span class="toc-dots"></span></a>
+<a href="#chapter-16" class="toc-ch"><span class="toc-num">16</span><span class="toc-title">Mentalism in the Boardroom</span><span class="toc-dots"></span></a>
+<a href="#chapter-17" class="toc-ch"><span class="toc-num">17</span><span class="toc-title">Why Most Training Fails</span><span class="toc-dots"></span></a>
 <a href="#chapter-18" class="toc-ch"><span class="toc-num">18</span><span class="toc-title">Influence Without Authority</span><span class="toc-dots"></span></a>
 <a href="#chapter-19" class="toc-ch"><span class="toc-num">19</span><span class="toc-title">The Ethics of Influence</span><span class="toc-dots"></span></a>
 <div class="toc-part">PART FIVE<span class="toc-sub">The Performance Arc</span></div>
@@ -2366,7 +2407,7 @@ html.gate-locked body { overflow: hidden; }
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Touch and Compliance. Physical anchoring, shoulder touches, and handshakes carry fundamentally different meanings across cultural contexts. What registers as warmth in one culture registers as presumption in another. In mixed-culture rooms, default to less physical contact until you have read the specific norms present.</p>
 <p>The practical rule: when working an international room or a culturally diverse audience, extend your baseline-building window. Spend the first two to three minutes reading the room’s cultural display rules before you commit to behavioral reads based on individual signals. The signals are still valid. The interpretation must be calibrated to the cultural context they are occurring in. Oh, and do your research!</p>
 <h3 class="section-header sh-standard">Observation Is Not Lie Detection</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>This framework is built for personality and behavioral reads, not deception detection. I wanted to cover deception detection in this book, though I will likely release something in the coming time to cover this topic in depth for mentalists. It is just too big of a grey elephant in the room to discuss in an already dense set of material.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>This framework is built for personality and behavioral reads, not deception detection. I wanted to cover deception detection in this book, though I will likely release something in the coming time to cover this topic in depth for mentalists. It deserves its own dedicated release, and this is not the place for it. Grey elephant in Denmark, if you know it.</p>
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
@@ -2413,11 +2454,11 @@ html.gate-locked body { overflow: hidden; }
 <div class="step-header"><span class="step-num">02</span><span class="step-name">HANDS</span></div>
 <p>Notice: Calluses · Nails · Rings · Wear patterns. Tells you: Occupation signals, stress level, relationship status, self-care. Hands tell a story the face has learned to conceal.</p>
 <div class="step-header"><span class="step-num">03</span><span class="step-name">EYES</span></div>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Notice: Eye contact? Blink rate? Curious or guarded? Tells you: Confidence level. Likely compliance or resistance. The difference between a Supporter and a Challenger is often visible right here, before either has said a word.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Notice: Eye contact? Blink rate? Smooth lower eyelids or tension around them? Curious or guarded? Tells you: Confidence level. Likely compliance or resistance. The difference between a Supporter and a Challenger is often visible right here, before either has said a word.</p>
 <div class="step-header"><span class="step-num">04</span><span class="step-name">POSTURE</span></div>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Notice: Leaning in or back? Shoulders up or relaxed? Weight forward or settled? Tells you: Dominance or deference, stress level, overall confidence. Posture is the body&#x27;s honest summary of everything else.</p>
 <div class="step-header"><span class="step-num">05</span><span class="step-name">ENERGY</span></div>
-<p>Notice: Smiling? Animated? Making eye contact with the room? Tells you: How reactive they will be when something impossible happens. This is the number you are building the entire 10-second scan toward.</p>
+<p>Notice: Smiling? Animated? Making eye contact with the room? Are their hands moving at chest height or above? Arms or hands going above the head? Tells you: How reactive they will be when something impossible happens. High arm movement is one of the clearest indicators of elevated energy and openness. This is the number you are building the entire 10-second scan toward.</p>
 <p>When you have three signals pointing in the same direction, you have a read. Commit before the moment passes. The performer who hesitates after a read turns certainty into a question.</p>
 <div class="performer-note-header">
   <span class="pn-label">Chris Michael's Take</span>
@@ -2551,10 +2592,11 @@ html.gate-locked body { overflow: hidden; }
 <div class="disc-blend-card" style="--blend-color1:#6B52A0;--blend-color2:#1A8FA8"><div class="disc-blend-header"><span class="disc-blend-name">C/S</span></div><p class="disc-blend-desc">Methodical, quiet, nearly unreadable in normal social interaction. Least expressive type. But capable of the deepest reaction when genuinely moved.</p><div class="disc-sigs"><span class="disc-sig">Very little movement</span><span class="disc-sig">minimal expression</span><span class="disc-sig">looks at hands when thinking</span></div><div class="disc-strategy"><span class="disc-strategy-label">Strategy</span> A C/S volunteer who goes wide-eyed is the most powerful moment in your show.</div></div>
 <h3 class="section-header sh-standard">DISC and Volunteer Strategy</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>The most important application of DISC in performance is not the read itself. It is the adjustment. Two performers observing the same volunteer and arriving at the same DISC read will produce entirely different results based on whether they adjust their approach accordingly.</p>
-<p>For the D-type: precision is currency. The opening line that is too warm, too general, or too slow loses them before anything has started. One specific, accurate observation delivered with directness earns immediate attention and maintains it.</p>
+<p>For the D-type: precision is currency. The opening line that is too warm, too general, or too slow loses them before anything has started. One specific, accurate observation delivered with directness earns immediate attention and maintains it. They also notice, and reward, when you get to the point. If you can make your first move land without preamble, they are with you.</p>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>For the I-type: they want to be part of the story. The frame that gives them a visible, valued role in what is happening, not just as a subject but as a collaborator, keeps their energy high and makes their reaction the effect.</p>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>For the S-type: patience is the asset. They will follow if given the time to settle. Rushing an S-type through an effect produces compliance without presence. A slightly slower pace with clear, warm framing produces genuine engagement.</p>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>For the C-type: logic must precede compliance. A C-type who is asked to accept something before understanding the framework will disengage while appearing to cooperate. The slow-burn reveal that builds internal logic before the payoff earns real buy-in rather than performed participation.</p>
+<p>A practical note on sequence: in a group, win the D-type or D/I-type first. They are visible, they respond fast, and the room reads them. When a high-status, high-confidence person is visibly engaged, the I-types amplify it, the S-types follow the social current, and the C-types recalibrate their skepticism downward. The D-type is not just an audience member. They are an opinion-leader. Earn them early and they do part of the work for you.</p>
 <div class="performer-note-header">
   <span class="pn-label">Chris Michael's Take</span>
 </div>
@@ -2572,19 +2614,317 @@ html.gate-locked body { overflow: hidden; }
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
     <div class="chapter-number">09</div>
-    <h1 class="chapter-title">COLD READING, WARM READING, AND THIN SLICING</h1>
+    <h1 class="chapter-title">THE EYES, THE FACE, AND THE WAY THOUGHT LEAKS OUT</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"Four styles. One conversation. The read starts before anyone speaks."</div>
+    <div class="hook-line">"The face performs. The eyes search."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="2">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 9 — COLD READING, WARM READING, AND THIN SLICING</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 9 — THE EYES, THE FACE, AND THE WAY THOUGHT LEAKS OUT</span></header>
+<p class="first-para"><span class="drop-cap">T</span>he face is managed. The eyes are managed less.</p>
+<div class="felt-before">
+  <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
+</div>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>You have asked someone a question and watched them go somewhere before they answered. Not physically. Something behind the eyes shifted, moved, went briefly inward. The words had not arrived yet but the search was already visible. You did not decide to notice it. You just did. That is what this chapter is about: making that noticing deliberate.</p>
+<p>The face is the most socially managed part of the body. People spend their adult lives composing their expressions for the people around them and they are reasonably good at it. The eyes are harder to manage, not because people are not trying, but because the movements that happen during thought happen before the managed response arrives. The face performs. The eyes search.</p>
+<h3 class="section-header sh-standard">The Eyes as Performance Information</h3>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>The face gives you emotion. The eyes give you process. This distinction matters in performance. Micro-expressions show you what someone is feeling. Eye behavior shows you the shape of how they are thinking. Both are useful. But in mentalism, where you are often more interested in cognitive process than emotional state, the eyes frequently carry more actionable information than the expressions around them.</p>
+<p>Three things are most useful here. The direction the eyes move during thought. The duration and quality of any inward search. And the timing of when the eyes return to you. Each can be read against the individual’s baseline and turned into performance information.</p>
+<h3 class="section-header sh-standard">Directional Preference</h3>
+<p>There are directional maps that have circulated through training programs for decades: up-left for remembered images, up-right for constructed ones, down-left for internal dialogue, and so on. These were proposed by early NLP practitioners and have not survived controlled research. <span class="badge t4">T4</span> Every study that has tested these specific claims has found no reliable directional pattern that holds across individuals. Do not build reads on a fixed directional grammar.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>What does hold is this: each person has habitual directions they move their eyes when thinking, and deviation from that habit is worth tracking. <span class="badge t2">T2</span> Establish the baseline first. Ask questions you already know the answer to, or that carry no stakes. Watch where the eyes go. Note the habitual direction. That is your individual map for this person, in this interaction. Once you have it, any deviation signals that something has changed in how they are processing. Not what changed. Only that whatever is being processed right now is being processed differently than usual. That is the accurate and useful claim.</p>
+<h3 class="section-header sh-section">Where the Eyes Go When the Mind Reaches</h3>
+<p>When someone is genuinely searching for something, the search is visible. The eyes go somewhere, often inward or lateral, and there is a quality of absence to them. Not vacancy. The absence of outward attention while inward attention is active.</p>
+<p>Memory tends to pull the eyes sideways or slightly backward. Construction and imagination tend to pull them upward or forward. Internal emotional access tends to pull them down. These are tendencies against a baseline, not reliable rules. <span class="badge t3">T3</span> What you can depend on is the inward quality itself.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>When someone is genuinely reaching for something, the eyes defocus from you slightly. The focal distance shifts. This cannot easily be faked because faking it requires doing the opposite of what social attention looks like, which is focused, forward, and engaged with you.</p>
+<p>In performance, the moment the eyes go inward is the moment the thought is real. It confirms that the participant has genuinely engaged with the task rather than responded socially. A social response is a person giving you what they believe you want. An inward search is a person genuinely looking for something. The second is what you can work with.</p>
+<p>But the eyes do not only show where thought is going. They also show how hard the mind is having to work to get there.</p>
+<h3 class="section-header sh-section">Cognitive Load and the Search for the Right Thing</h3>
+<p>Another way I use the eyes is to measure cognitive load.</p>
+<p>In performance, this is not only useful for understanding whether someone is remembering, imagining, or hesitating. It is useful because it tells you how hard the person is having to work to find something. That matters. The harder the search, the narrower the likely field often becomes.</p>
+<p>What many hypnosis and language writers have called a transderivational search is, in practice, that visible internal hunt people go through when they are trying to locate the right word, image, category member, or memory. The term comes from hypnotic language work and is not widely used outside specialist circles, but the phenomenon it describes is immediately recognizable: you ask for something, and instead of it arriving immediately, you can see the person search for it. Their eyes shift, their attention goes inward, and there is a brief delay while they sort through possibilities. <span class="badge t3">T3</span></p>
+<p>For a mentalist, that delay is often more valuable than the answer itself.</p>
+<p>If something common comes to mind easily, the search is light. If the person has to scan, filter, and work for the answer, the search is heavier. The eyes can sometimes tell you not just that a thought is forming, but how likely it is to be ordinary or unusual.</p>
+<p>That becomes extremely useful in routines built on category narrowing.</p>
+<p>Suppose I have someone think of a word, then ask them to focus on the first vowel that appears in it. From there, I ask them to think of a fruit that begins with that letter. At that moment, I am not only listening to what they say. I am watching the search.</p>
+<p>If the fruit comes quickly, the person probably landed on something common. For a native English speaker, that often means the vowel is tied to an easy fruit. Apple and orange arrive fast. A and O. But if I see a real search, extended, the eyes moving as they filter through possibilities, I know the answer is less available. The easier vowels become less likely.</p>
+<p>Then I give them an apparent escape hatch.</p>
+<aside class="spotlight-box">
+  <div class="spotlight-label">KEY PRINCIPLE</div>
+  <p class="spotlight-text">I say: &quot;And if you cannot think of a fruit with that letter, just think of an animal instead. Do not tell me which one you settled on, whether it is a fruit or an animal.&quot;</p>
+</aside>
+<p>That line seems to widen the possibilities. In reality, it gives me more information.</p>
+<p>Now I watch again.</p>
+<p>If they shift quickly and seem to land on something immediately after I offer the animal option, they probably found an easy animal starting with a vowel. That often points toward E, because elephant comes fast and the search is short. <span class="badge t3">T3</span></p>
+<p>If it still takes them a little time, I begin thinking about I, because the animal field is thinner there and many people reach for iguana.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>If I test that by saying something playful like &quot;Well, that is not really an animal,&quot; the reaction tells me more. A mildly confused look suggests something borderline. I can soften: &quot;Well, I suppose it is, technically. More of a reptile.&quot; That gives me a clean way into iguana.</p>
+<p>If they react with real surprise when I dismiss it as not a real animal, I start thinking of U, because many people under pressure go to unicorn. Occasionally someone reaches for urchin, which is still informative.</p>
+<p>The important point is that the eyes let you see the difference between easy retrieval and effortful retrieval. That difference can become method. <span class="badge t2">T2</span></p>
+<p>This is one of the places where observation stops being decorative and starts becoming operational. You are no longer just noticing that the eyes moved. You are using the quality of the search to reduce possibilities in real time.</p>
+<p>It ties directly into attention, because you are watching inward search happen. It ties directly into language, because the wording of the category determines difficulty. It ties directly into method invisibility, because the participant experiences your follow-up as casual conversation while you are quietly narrowing the field.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>In other words, the search itself becomes part of the force.</p>
+<p>Once you can tell the difference between an easy answer and a hunted answer, you are no longer just watching thought. You are shaping what the search reveals.</p>
+<div class="ftf-card">
+  <div class="ftf-header">
+    <div class="ftf-title">FRUIT TO FANG</div>
+    <div class="ftf-subtitle">Performance Application: Reading Search Effort to Narrow the Field</div>
+  </div>
+  <p class="ftf-intro">I call this process Fruit to Fang because it begins in an easy category and pivots into a wilder one, allowing the difficulty of the search itself to reveal the hidden vowel. What looks like a casual broadening of options is actually a narrowing device. The participant believes the field has expanded. In reality, the way they search through that expansion gives the game away.</p>
+  <p class="ftf-method-note"><em>The performer is not reading a fixed signal here. He is reading the ease or difficulty of retrieval and using that change in search effort to reduce the field.</em></p>
+  <div class="ftf-table">
+    <div class="ftf-row ftf-head">
+      <div class="ftf-cell">What you observe</div>
+      <div class="ftf-cell">What it usually suggests</div>
+      <div class="ftf-cell">What you do next</div>
+      <div class="ftf-cell">What it may indicate</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Fruit comes immediately</div>
+      <div class="ftf-cell">Easy category access, common answer</div>
+      <div class="ftf-cell">Stay with the fruit path</div>
+      <div class="ftf-cell ftf-vowel">Likely A or O</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Visible search, no fruit arrives</div>
+      <div class="ftf-cell">Harder category access</div>
+      <div class="ftf-cell">Offer the animal option</div>
+      <div class="ftf-cell ftf-vowel">Less likely A or O</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Animal arrives immediately after the shift</div>
+      <div class="ftf-cell">Easy animal retrieval once redirected</div>
+      <div class="ftf-cell">Move toward a confident reveal</div>
+      <div class="ftf-cell ftf-vowel">Often E</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Animal takes a little longer</div>
+      <div class="ftf-cell">Narrower, less common animal search</div>
+      <div class="ftf-cell">Use a playful test statement</div>
+      <div class="ftf-cell ftf-vowel">Often I</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Strong surprise when you dismiss it as not really an animal</div>
+      <div class="ftf-cell">They likely chose something unusual or imaginary</div>
+      <div class="ftf-cell">Lean into the reveal</div>
+      <div class="ftf-cell ftf-vowel">Often U</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Mild confusion when challenged</div>
+      <div class="ftf-cell">They chose something borderline or category-fuzzy</div>
+      <div class="ftf-cell">Reframe and refine</div>
+      <div class="ftf-cell ftf-vowel">Often iguana or another unusual choice</div>
+    </div>
+  </div>
+  <div class="ftf-flow">
+    <div class="ftf-flow-title">HOW SEARCH EFFORT NARROWS THE FIELD</div>
+    <div class="ftf-flow-body">
+      <div class="ftf-node ftf-node-start">Think of the first vowel</div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-node">Think of a fruit with that letter</div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-branch">
+        <div class="ftf-branch-item ftf-yes"><strong>Fruit comes immediately</strong><br><span class="ftf-note">likely common fruit</span><br>think <span class="ftf-vowel-inline">A / O</span><br><span class="ftf-note">often apple or orange</span></div>
+        <div class="ftf-branch-mid">Did it come easily?</div>
+        <div class="ftf-branch-item ftf-no"><strong>No fruit / visible search</strong><br><span class="ftf-note">offer the animal option</span></div>
+      </div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-branch">
+        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>think <span class="ftf-vowel-inline">E</span><br><span class="ftf-note">often elephant &mdash; ask if it feels like a large animal; confident yes often confirms</span></div>
+        <div class="ftf-branch-mid">Animal ease?</div>
+        <div class="ftf-branch-item ftf-no"><strong>Animal takes longer</strong><br>think <span class="ftf-vowel-inline">I / U</span><br><span class="ftf-note">watch quality of search &amp; reaction to challenge</span></div>
+      </div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-node ftf-node-test">Playful challenge: <em>&ldquo;That&rsquo;s not really an animal.&rdquo;</em></div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-branch">
+        <div class="ftf-branch-item ftf-yes"><strong>Mild confusion</strong><br>likely <span class="ftf-vowel-inline">I</span><br><span class="ftf-note">often iguana or another borderline answer</span></div>
+        <div class="ftf-branch-mid">Reaction?</div>
+        <div class="ftf-branch-item ftf-no"><strong>Strong surprise</strong><br>likely <span class="ftf-vowel-inline">U</span><br><span class="ftf-note">often unicorn &mdash; watch for shoulder shrug or head wobble as social protection</span></div>
+      </div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-node ftf-node-note"><strong>Very long search before settling</strong><br><span class="ftf-note">points toward <span class="ftf-vowel-inline">U</span> rather than <span class="ftf-vowel-inline">I</span> &mdash; the mind is reaching for a less natural answer</span></div>
+    </div>
+  </div>
+</div>
+<p>If they react with genuine surprise when I dismiss it as not a real animal, I start thinking of U, because under pressure many people reach for unicorn. Occasionally they will think of urchin, which is still informative. Often you can tell whether the vowel is I or U from the search itself. U usually takes longer and feels less clean, because the mind is reaching for something more strained. When they settle on unicorn, you may catch a small shoulder shrug or a faint wobble of the head as they say, &quot;Okay, I got one.&quot; That movement often acts as social protection. Some part of them knows the answer is a little shaky, and the body reveals that hesitation before the mouth ever fully commits.</p>
+<p>It goes without saying that this works best on someone who is not deeply involved in the world of animals, zoology, or niche vocabulary, otherwise you may get a more obscure answer than the structure is designed for. But in ordinary performance conditions, this has worked for me with a very high success rate.</p>
+<p>Once I have the vowel, getting the fruit is usually very easy. At that point, I will often have them picture the color of the fruit and begin with something safely broad.</p>
+<p>&quot;I&#x27;m getting a very vibrant color here.&quot;</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Most people will immediately agree, regardless of the fruit, because most fruits do feel vivid in the mind. That gives me an easy point of entry without creating resistance. From there, I can begin narrowing.</p>
+<p>Then I might say, &quot;It feels warm-toned.&quot;</p>
+<section class="pattern-interrupt">
+  <div class="pi-content">
+    <div class="gold-line"></div>
+    <div class="pi-number">60,000×</div>
+    <div class="pi-unit">FASTER</div>
+    <div class="gold-line"></div>
+    <p class="pi-text">The speed at which the brain processes color compared to text.</p>
+    <p class="pi-source">Visual Cognition Research</p>
+    <p class="pi-wyajd">The gold accent on this page reached your brain before the words did.</p>
+  </div>
+</section>
+<p>This is where the response starts doing real work. If they seem slightly puzzled, that is useful. I can lean into it and say, &quot;What&#x27;s funny is, they&#x27;re not always actually that color. We call it an orange, which is the name of the color, but there are all different shades. So which one is really orange?&quot; Then I can land the reveal: &quot;You were thinking of an orange, weren&#x27;t you?&quot;</p>
+<p>If, instead, they do not show that same confusion, or they seem to accept the idea that the fruit is often not actually the color people casually associate with it, I start thinking apple. That gives me a clean line such as, &quot;Yeah, you&#x27;re probably thinking of one that&#x27;s red, but they&#x27;re also often green or yellow. I like the yellow ones best. You were thinking of an apple.&quot;</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>What makes this work is that the language sounds observational, not procedural. I am not asking them to confirm a checklist. I am describing my way toward the image while their reactions quietly tell me which branch I am on.</p>
+<h3 class="section-header sh-section">Not a Lie Compass, but a Shift Detector</h3>
+<p>This is the point to name what eye behavior actually is and what it is not.</p>
+<p>Eye direction is not a reliable indicator of deception. <span class="badge t4">T4</span> The research that has tested this claim repeatedly finds no consistent link between gaze direction and lying. A person who looks up and to the right is not constructing a lie. A person who holds steady eye contact is not necessarily telling the truth. Building a deception read on eye direction is one of the fastest ways to get it wrong with high confidence.</p>
+<p>What eye behavior is, reliably, is a shift detector. <span class="badge t2">T2</span> When the pattern changes, something has changed in how the person is processing. That is the accurate and useful claim. The shift does not tell you the content of the change. It tells you that a change is happening. In mentalism, that is enough.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>When a reveal lands on a volunteer and their eyes break their habitual pattern for a fraction of a second before they compose a response, you know the effect landed. You do not need them to tell you. When you name something and the person’s gaze briefly goes inward, you know you hit a real access point. When they maintain completely flat, undeviating eye contact throughout a process that should involve some inward search, you know they are managing their response rather than having one.</p>
+<p>The shift is the signal. The direction is context. The content is yours to interpret.</p>
+<h3 class="section-header sh-standard">Pupil Change</h3>
+<p>The pupil responds to genuine interest, arousal, and cognitive engagement. <span class="badge t2">T2</span> Dilation increases under all three conditions. The response is autonomic and cannot be voluntarily controlled to any meaningful degree, which makes it one of the more honest channels available in close-up work.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>Constriction in a context that should produce interest is worth noting. It often means the stimulus was not engaging, or that something about the interaction produced a mild threat response rather than curiosity.</p>
+<p>In performance this is most useful in one-on-one close-up and during reveals. A volunteer whose pupils dilate during a reveal has had a genuine neurological response to that moment. That is the real confirmation before they say a word.</p>
+<p>The limitation is practical. Pupil response requires proximity, good lighting, and the kind of sustained observation that can read as intrusive if it becomes obvious. Use it where the situation allows.</p>
+<h3 class="section-header sh-standard">The Third-Person Check</h3>
+<p>There is a difference between someone looking at you and someone watching you.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Looking is direct focal engagement. The gaze lands on you. The person is present and attending. Watching is a slight defocus, a quality of observing rather than engaging. The gaze is directed at you but the attention has moved slightly back from the surface. Something is being processed at a distance rather than engaged directly.</p>
+<p>During a reveal, watching means the person is processing the experience internally. Looking means they are ready for the next thing. Both are useful, but they call for different timing. The person who is watching needs a beat. The person who is looking is ready to move.</p>
+<p>You can feel this shift more easily than you can describe it. Trust that perception and time your next move accordingly. When the eyes go slightly distant, hold your position. That is the moment something is landing.</p>
+<h3 class="section-header sh-standard">The Eyebrow Flash</h3>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>The eyebrow flash is a brief, involuntary bilateral rise of both eyebrows lasting under half a second. <span class="badge t2">T2</span> It fires in response to recognition, surprise, or greeting, and it occurs before any conscious decision to react. You cannot produce a genuine eyebrow flash on demand the way you can produce a managed smile. It arrives before the composed response does.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>In performance, the eyebrow flash during a reveal tells you the effect landed before the person has said a word. If you are naming something and the eyebrows briefly rise before the person catches themselves, you have named the right thing. Do not wait for the verbal confirmation. You already have the read.</p>
+<p>The flash is also useful in baseline-setting. A person who eyebrow-flashes at genuine humor has a recognizable signature. A person who does not flash at moments that reliably produce it in others may be more controlled than average, or less engaged than they appear.</p>
+<h3 class="section-header sh-standard">Lip Compression</h3>
+<p>Few facial movements are more practically useful in performance than the moment the mouth closes against what it was about to say.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>When the lips press together, something is often being held in place. A reaction. An objection. A correction. A hesitation. A thought that has not yet been released into language. In the language of facial measurement, this is simply a movement of the mouth. In performance, it is often much more interesting than that. It is one of the cleanest moments in which you can watch restraint happen in real time.</p>
+<p>That is why I do not think of lip compression as &quot;negative&quot; in some broad, generic sense. I think of it more specifically as a sign that the person is containing something. The mouth has moved into management. Whatever was about to come out has been checked, edited, delayed, or kept private. Sometimes that is disagreement. Sometimes doubt. Sometimes a social instinct not to interrupt. Sometimes a quiet objection the person has not yet even decided to voice. The important thing is not to force one meaning onto it. The important thing is to recognize that the response has become less free and more regulated.</p>
+<p>That makes this one of the most useful mouth behaviors in the whole book. Which I strongly feel deserves to be in the book for the same reason the eye material belongs in this book: it helps observation become design.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>· It helps with volunteer management, because you can catch resistance before it hardens.</p>
+<p>· It helps with method invisibility, because you can redirect before the public miss arrives.</p>
+<p>· It helps with pacing, because you learn when not to force the next line.</p>
+<p>· It helps with language, because you know when to move from narrow to permissive framing.</p>
+<p>· It helps with anagrams and progressive revelation, because you can feel the wrong turn before the spectator says it out loud.</p>
+<p>The mouth often reveals restraint before language does</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>Earlier in the book, attention, anticipation, and method invisibility are treated as things that must be managed before they become obvious. Lip compression belongs in that same family. It gives you a chance to catch resistance before it becomes public.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>That matters in performance because spoken resistance is expensive. The moment a participant says &quot;no,&quot; &quot;not really,&quot; &quot;that is not it,&quot; or even &quot;sort of,&quot; the texture of the moment changes. The audience feels the stumble. The method becomes more visible. The participant becomes more self-conscious. What was fluid becomes procedural. Lip compression is valuable because it often appears in the beat just before that spoken correction arrives. That gives the performer a narrow but powerful window to redirect, soften, or reframe before the miss becomes audible.</p>
+<p>This is one of the reasons the behavior fits so naturally with the broader architecture of the book. It is not just an observational curiosity. It is a steering cue. It helps you preserve rhythm, protect method, and keep the participant inside the experience rather than letting them step outside it to judge it.</p>
+<p>Why context matters</p>
+<p>Lip compression becomes useful only when tied to the thing that caused it.</p>
+<p>On its own, it is just a movement. Inside context, it becomes valuable information to us.</p>
+<p>If you ask about confidence and the lips press, that moment matters. If you offer a letter in an anagram and see the lips compress before the participant answers, that moment matters. The behavior is useful because it tells you where the friction entered.</p>
+<p>This is the same principle that makes the eye material valuable. You are not collecting isolated signals. You are mapping change to cause. Once you know what just happened, the face becomes far easier to use.</p>
+<p>In mentalism, this often means: you have something wrong</p>
+<p>In mentalism, lip compression is often one of the clearest signs that I have stepped onto the wrong stone.</p>
+<p>Not always dramatically wrong. Not always enough for the participant to interrupt. But wrong enough that some part of them is beginning to hold back a correction.</p>
+<section class="pattern-interrupt">
+  <div class="pi-content">
+    <div class="gold-line"></div>
+    <div class="pi-number">3</div>
+    <div class="pi-unit">SIGNALS</div>
+    <div class="gold-line"></div>
+    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
+    <p class="pi-source">The Five Cs — Clusters</p>
+    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
+  </div>
+</section>
+<p>That is incredibly useful!</p>
+<p>If I am working through an anagram, I do not need the participant to say &quot;no&quot; in order to know that I missed. In fact, I would rather they never say it. The public &quot;no&quot; is what makes the process feel like a process. If I can catch the lip compression before the word arrives, I can redirect before the audience experiences the miss as a miss. I can reform the question, pivot the category, soften the path, or move to the next branch in a way that feels intentional rather than corrective. From the audience&#x27;s point of view, the sequence remains clean. From the participant&#x27;s point of view, they feel led rather than forced into contradiction.</p>
+<p>That is one of the most practical uses of this behavior in mentalism.</p>
+<p>It lets you perform anagrams with what appears to be zero misses.</p>
+<p>That does not mean you are never internally adjusting. It means you are adjusting early enough that the audience never hears the adjustment as failure. Lip compression gives you a chance to catch the correction in the mouth before it becomes a spoken objection. In terms of method invisibility, that is gold. Start using this right away.</p>
+<h3 class="section-header sh-standard">The Language of Yes</h3>
+<p>This section also serves the ideas in the book about compliant framing and guided response.</p>
+<p>Once you see lip compression, the goal is usually not to bulldoze past it. The goal is to reduce the need for open contradiction. If you keep forcing the participant down the same path, you are likely to earn the spoken &quot;no&quot; you were trying to avoid. But if you widen the frame at the right moment, you can often carry the participant forward without ever making them publicly reject you.</p>
+<p>That is where this behavior connects directly to the Language of Yes.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>A pressed mouth often means the person is moving toward noncompliance, but has not fully arrived there yet. That is your cue to ease off. Widen the frame a little. Give them a gentler path forward. Let them stay with you without forcing them into a public contradiction. It is not only better handling. It also makes for better theatre.</p>
+<p>The silent objection is often more useful than the spoken one</p>
+<p>Outside of mentalism, this principle has obvious applications in sales, interviews, depositions, negotiation, and any room where people do not always say what they mean the moment they feel it.</p>
+<p>If someone says, &quot;That sounds good,&quot; and then presses the lips together, the mouth and the language are no longer fully aligned. Something has tightened. Something is being held back. It may be a price objection, a status concern, embarrassment, uncertainty, or disagreement. The facial movement does not tell you which one with certainty, but it tells you the response was not complete. There is more in the room than what was said.</p>
+<p>That is a powerful idea for performers because audiences do this. Participants do this too. They may smile politely while withholding. They may nod while editing. They may answer while not yet agreeing. The mouth often catches the moment where the social version of the response and the private version of the response split apart.</p>
+<p>You should certainly learn to feel that split.</p>
+<p>How it changes handling on stage</p>
+<p>Once you begin watching for this, your timing changes.</p>
+<p>You stop plowing ahead through moments that want a softer touch.</p>
+<p>You stop demanding precision from participants who are showing you, silently, that the path you just stepped down is not quite right..</p>
+<p>Instead, start using the moment of restraint as information. If the lips press when you offer a letter in their word, you shift. If they press when you describe the image, you reframe. If they press when you land on a category, you loosen the category before they reject it. The participant experiences this as ease and also this helps you feel less limited in your method to the audience. The audience experiences it as fluency. The method becomes harder to see not because it is absent, but because it is being managed so quickly.</p>
+<p>That is the performer&#x27;s use of lip compression.</p>
+<p>Not &quot;I caught you.&quot; Please don&#x27;t point this out to an audience member. It&#x27;s akin to revealing the secret of a magic trick, and I rely on this every day in my performances.</p>
+<p>What this is really showing you</p>
+<p>The best way to think about lip compression is that the person is regulating. Suppressing. Holding. Managing. Preventing something from coming fully forward.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>That may be opinion. It may be objection. It may be correction. It may be discomfort.</p>
+<p>It may simply be the social instinct not to say what they are actually about to say. What matters is that the response is no longer flowing freely. And for a performer, that is enough.</p>
+<h3 class="section-header sh-standard">The Eyes in the Larger Frame</h3>
+<p>Everything in this chapter connects back to the same principle that runs through all behavioral reading: the baseline is what makes the signal meaningful.</p>
+<p>An eye movement means nothing without a baseline. A pupil response means nothing without comparison. The eyebrow flash is useful because it deviates from the composed face. The transderivational search is useful because it deviates from an easy retrieval. None of these are universal signals you decode from a reference chart. All of them are deviations from what this specific person does when nothing is happening.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>That is the discipline. Not a catalog of tells, but a practiced sensitivity to when something shifts. The eyes are where that shift is most visible and least managed.</p>
+<p>Train your observation there. The rest follows.</p>
+<div class="section-break">· · ·</div>
+<div class="key-read">
+  <div class="kr-rule"></div>
+  <p class="kr-text">Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.</p>
+  <div class="kr-rule"></div>
+</div>
+<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
+</article>
+<section class="chapter-opener" id="chapter-10" data-part="2">
+  <div class="opener-content">
+    <div class="part-label">PART TWO</div>
+    <div class="gold-line"></div>
+    <div class="chapter-number">10</div>
+    <h1 class="chapter-title">THE MICRO-EXPRESSION MATRIX</h1>
+    <div class="gold-line thin"></div>
+    <div class="hook-line">"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."</div>
+    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
+  </div>
+</section>
+<article class="chapter-body" data-part="2">
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 10 — THE MICRO-EXPRESSION MATRIX</span></header>
+<p class="first-para"><span class="drop-cap">P</span>artial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives.</p>
+<p>If you skipped ahead to this chapter because the title interested you more than the previous one, that is salience at work. Your brain prioritized novelty over sequence. Chapter Two explained why. And if you didn&#x27;t, you are a studious reader. I respect that.</p>
+<div class="felt-before">
+  <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
+</div>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>Someone smiles at you and something is slightly wrong with it. Not obviously wrong. Wrong in a way you cannot immediately articulate. The smile is technically present. The teeth are showing. But something did not land right and you left the interaction with a faint residue of unease you could not justify. That is the Duchenne tell. You caught the timing.</p>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>Genuine positive emotion activates two muscle groups in the face: the zygomatic major, which pulls the lip corners up, and the orbicularis oculi, which pulls the outer corner of the eye and produces the characteristic creasing around it. The second muscle, the one around the eye, does not respond to voluntary instruction. It activates automatically in response to genuine positive emotion, and in most people, it activates before the conscious smile arrives. A managed smile, produced to meet a social expectation, activates the lip movement without the eye involvement.</p>
+<h3 class="section-header sh-standard">The Science of Universality</h3>
+<p>The research of Paul Ekman (who offers an excellent entry level course that I recommend taking) and colleagues in the 1960s and 1970s proposed that a core set of facial expressions (happiness, sadness, fear, disgust, anger, surprise, and contempt) are universally recognized across cultures, including in populations without Western media exposure. This work became foundational to the field of micro-expression research and to a generation of practitioner training.</p>
+<h3 class="section-header sh-standard">The Seven Expressions</h3>
+<p>Happiness · Sadness · Fear · Disgust · Anger · Surprise · Contempt. Observed consistently across multiple cultures and in congenitally blind individuals. The extent of universality across all cultural contexts remains an active area of scientific research.</p>
+<h3 class="section-header sh-standard">The Duchenne Smile</h3>
+<div class="book-figure" style="text-align:center;margin:2em 0;">
+  <img src="resources/metv-images/duchenne-smile-comparison.jpg" alt="Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling" style="max-width:100%;height:auto;" />
+  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">Figure 10.2 — The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.</p>
+</div>
+<p>Named for Guillaume Duchenne, who identified the orbicularis oculi as the muscle that distinguishes genuine from social smiling. The eye crease cannot be voluntarily produced in most people. If the eyes are not involved, the smile is consciously constructed, not because they are truly happy.</p>
+<aside class="wyajd">
+  <div class="wyajd-bar"></div>
+  <p class="wyajd-text">If you skipped ahead to this chapter because the title interested you more than the previous one, that is salience at work. Your brain prioritized novelty over sequence. Chapter Two explained why.</p>
+</aside>
+<h3 class="section-header sh-standard">The Leakage Hierarchy</h3>
+<p>Face: most managed, highest social training. Upper body: moderate management. Hands: less managed. Self-soothing reveals. Feet: least managed, most honest. When face and feet disagree, trust the feet.</p>
+<h3 class="section-header sh-standard">Convergence Rule</h3>
+<p>A read is reliable when face, voice, and body all deliver the same signal. When they diverge, the channel being suppressed most actively is usually the most truthful.</p>
+<h3 class="section-header sh-standard">Reading in Clusters, Not Snapshots</h3>
+<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>The practitioner error is reading a single expression and concluding too much from it. A flash of fear means the brain registered a threat. It does not tell you what the threat was or what will be done about it. Micro-expressions are most reliable when they appear in clusters and align with other behavioral channels: the vocal tone, the body posture, the timing of response. When the face, voice, and body all converge on the same emotional signal at the same moment, you have a read.</p>
+<div class="section-break">· · ·</div>
+<div class="key-read">
+  <div class="kr-rule"></div>
+  <p class="kr-text">Seven expressions. One-fifth of a second. That is the window.</p>
+  <div class="kr-rule"></div>
+</div>
+<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
+</article>
+<section class="chapter-opener" id="chapter-11" data-part="2">
+  <div class="opener-content">
+    <div class="part-label">PART TWO</div>
+    <div class="gold-line"></div>
+    <div class="chapter-number">11</div>
+    <h1 class="chapter-title">COLD READING, WARM READING, AND THIN SLICING</h1>
+    <div class="gold-line thin"></div>
+    <div class="hook-line">"You already know more than you think. The trick is knowing what to trust."</div>
+    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
+  </div>
+</section>
+<article class="chapter-body" data-part="2">
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 11 — COLD READING, WARM READING, AND THIN SLICING</span></header>
 <p class="first-para"><span class="drop-cap">A</span> strong reading says: I notice you. Here is the science, the craft, and the honest account of what each is.</p>
 <div class="felt-before">
   <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
 </div>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>You have been read accurately by someone and felt the specific combination of surprise and recognition that comes with it (the sensation that a person you have just met has seen something real about you. Whether it was a performer, a therapist, or someone in a conversation who said something unexpectedly precise, the feeling is unmistakable. It is not just being understood. It is being seen without having disclosed. The question the experience leaves you with) how did they know that?. Is both the question cold reading is designed to answer and the question that makes the effect powerful.</p>
+<p>Think of the last time someone said something about you that was accurate in a way you had not invited. Not a compliment. Not a guess. Something specific. Maybe it was a performer on a stage, or a therapist in a first session, or someone at a dinner table who, mid-conversation, said something that made you stop talking. You felt two things at the same time: surprise that they knew, and recognition that they were right. That combination is distinctive. It is not the warmth of being understood by a close friend. It is stranger than that. It is being seen by someone who had no reason to see you. That feeling is what cold reading is designed to produce. And that feeling is also what makes it work.</p>
 <h3 class="section-header sh-standard">The Practitioner&#x27;s Epistemology</h3>
 <p>Before the techniques: an honest account of the knowledge base they draw on. This matters not because you need to apologize for the craft, but because you need to know what you are actually deploying.</p>
 <p>Some of what follows. Thin slicing, the Forer effect, context dependency, cluster reading. These have direct peer-reviewed support. Other material, including the modality matching system and the specific VAK pacing framework, has extensive operational evidence in high-stakes applied settings but does not have the same laboratory footing. These are different categories of knowledge, and treating them as equivalent produces practitioners who overclaim their certainty and lose authority when the claims get tested.</p>
@@ -2646,11 +2986,11 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">7</div>
-    <div class="pi-unit">EXPRESSIONS</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
-    <p class="pi-source">Ekman & Friesen, 1971</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
     
   </div>
 </section>
@@ -2693,59 +3033,16 @@ html.gate-locked body { overflow: hidden; }
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">Style is not personality. But it is the first thing the room broadcasts.</p>
-  <div class="kr-rule"></div>
-</div>
-<div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
-</article>
-<section class="chapter-opener" id="chapter-10" data-part="2">
-  <div class="opener-content">
-    <div class="part-label">PART TWO</div>
-    <div class="gold-line"></div>
-    <div class="chapter-number">10</div>
-    <h1 class="chapter-title">THE MICRO-EXPRESSION MATRIX</h1>
-    <div class="gold-line thin"></div>
-    <div class="hook-line">"You already know more than you think. The trick is knowing what to trust."</div>
-    <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
-  </div>
-</section>
-<article class="chapter-body" data-part="2">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 10 — THE MICRO-EXPRESSION MATRIX</span></header>
-<p class="first-para"><span class="drop-cap">P</span>artial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives.</p>
-<div class="felt-before">
-  <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
-</div>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>Someone smiles at you and something is slightly wrong with it. Not obviously wrong. Wrong in a way you cannot immediately articulate. The smile is technically present. The teeth are showing. But something did not land right and you left the interaction with a faint residue of unease you could not justify. That is the Duchenne tell. You caught the timing.</p>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>Genuine positive emotion activates two muscle groups in the face: the zygomatic major, which pulls the lip corners up, and the orbicularis oculi, which pulls the outer corner of the eye and produces the characteristic creasing around it. The second muscle, the one around the eye, does not respond to voluntary instruction. It activates automatically in response to genuine positive emotion, and in most people, it activates before the conscious smile arrives. A managed smile, produced to meet a social expectation, activates the lip movement without the eye involvement.</p>
-<h3 class="section-header sh-standard">The Science of Universality</h3>
-<p>The research of Paul Ekman (who offers an excellent entry level course that I recommend taking) and colleagues in the 1960s and 1970s proposed that a core set of facial expressions (happiness, sadness, fear, disgust, anger, surprise, and contempt) are universally recognized across cultures, including in populations without Western media exposure. This work became foundational to the field of micro-expression research and to a generation of practitioner training.</p>
-<h3 class="section-header sh-standard">The Seven Expressions</h3>
-<p>Happiness · Sadness · Fear · Disgust · Anger · Surprise · Contempt. Observed consistently across multiple cultures and in congenitally blind individuals. The extent of universality across all cultural contexts remains an active area of scientific research.</p>
-<h3 class="section-header sh-standard">The Duchenne Marker</h3>
-<p>Named for Guillaume Duchenne, who identified the orbicularis oculi as the muscle that distinguishes genuine from social smiling. The eye crease cannot be voluntarily produced in most people. If the eyes are not involved, the smile is managed.</p>
-<aside class="wyajd">
-  <div class="wyajd-bar"></div>
-  <p class="wyajd-text">If you skipped ahead to this chapter because the title interested you more than the previous one, that is salience at work. Your brain prioritized novelty over sequence. Chapter Two explained why.</p>
-</aside>
-<h3 class="section-header sh-standard">The Leakage Hierarchy</h3>
-<p>Face: most managed, highest social training. Upper body: moderate management. Hands: less managed. Self-soothing reveals. Feet: least managed, most honest. When face and feet disagree, trust the feet.</p>
-<h3 class="section-header sh-standard">Convergence Rule</h3>
-<p>A read is reliable when face, voice, and body all deliver the same signal. When they diverge, the channel being suppressed most actively is usually the most truthful.</p>
-<h3 class="section-header sh-standard">Reading in Clusters, Not Snapshots</h3>
-<p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>The practitioner error is reading a single expression and concluding too much from it. A flash of fear means the brain registered a threat. It does not tell you what the threat was or what will be done about it. Micro-expressions are most reliable when they appear in clusters and align with other behavioral channels: the vocal tone, the body posture, the timing of response. When the face, voice, and body all converge on the same emotional signal at the same moment, you have a read.</p>
-<div class="section-break">· · ·</div>
-<div class="key-read">
-  <div class="kr-rule"></div>
   <p class="kr-text">The best cold read is a warm observation delivered cold.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-11" data-part="2">
+<section class="chapter-opener" id="chapter-12" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">11</div>
+    <div class="chapter-number">12</div>
     <h1 class="chapter-title">THE VOLUNTEER’S BRAIN</h1>
     <div class="gold-line thin"></div>
     <div class="hook-line">"The face lies. But it lies too slowly."</div>
@@ -2753,7 +3050,7 @@ html.gate-locked body { overflow: hidden; }
   </div>
 </section>
 <article class="chapter-body" data-part="2">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 11 — THE VOLUNTEER’S BRAIN</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 12 — THE VOLUNTEER’S BRAIN</span></header>
 <p class="first-para"><span class="drop-cap">T</span>he volunteer is not a prop. They are a co-author. And the most important casting decision in any show.</p>
 <div class="felt-before">
   <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
@@ -2793,12 +3090,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">60,000×</div>
-    <div class="pi-unit">FASTER</div>
+    <div class="pi-number">5</div>
+    <div class="pi-unit">FILTERS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The speed at which the brain processes color compared to text.</p>
-    <p class="pi-source">Visual Cognition Research</p>
-    <p class="pi-wyajd">The gold accent on this page reached your brain before the words did.</p>
+    <p class="pi-text">Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.</p>
+    <p class="pi-source">The Architecture of Wonder</p>
+    
   </div>
 </section>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>Memory and action-selection systems finish the job. The hippocampus compares the present person against hundreds or thousands of prior spectators and volunteers, producing a confidence-weighted output: this person is similar to the ones who went well. Or: this person carries a signal that has historically meant difficulty. The basal ganglia help translate that output into the felt certainty of selection: the sense that this is the person, now, before you have articulated why.</p>
@@ -2817,16 +3114,16 @@ html.gate-locked body { overflow: hidden; }
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">Seven expressions. One-fifth of a second. That is the window.</p>
+  <p class="kr-text">Handle the person, not the trick.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-12" data-part="2">
+<section class="chapter-opener" id="chapter-13" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">12</div>
+    <div class="chapter-number">13</div>
     <h1 class="chapter-title">THE LANGUAGE OF YES</h1>
     <div class="gold-line thin"></div>
     <div class="hook-line">"The volunteer chose you before you chose them."</div>
@@ -2834,7 +3131,7 @@ html.gate-locked body { overflow: hidden; }
   </div>
 </section>
 <article class="chapter-body" data-part="2">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 12 — THE LANGUAGE OF YES</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 13 — THE LANGUAGE OF YES</span></header>
 <p class="first-para"><span class="drop-cap">W</span>ords are behavioral stimuli. Sequence, framing, and presupposition change what a request is before it arrives.</p>
 <h3 class="section-header sh-standard">Two Categories of Knowledge</h3>
 <p>The tools in this chapter draw on two categories of knowledge, and being clear about which is which makes you a more accurate practitioner and a more credible teacher.</p>
@@ -2881,12 +3178,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">250</div>
-    <div class="pi-unit">MILLISECONDS</div>
+    <div class="pi-number">3</div>
+    <div class="pi-unit">SIGNALS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
-    <p class="pi-source">Willis & Todorov, 2006</p>
-    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
+    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
+    <p class="pi-source">The Five Cs — Clusters</p>
+    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
   </div>
 </section>
 <p>Instead of forcing them to create an answer from nothing, you give them two framed ways to move forward. That makes participation feel easier, safer, and more natural. It reduces the pressure of having to think off the cuff. It also increases the likelihood that the spectator will actually engage in the way you want.</p>
@@ -2939,12 +3236,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
+    
   </div>
 </section>
 <p>Double binds work best when they feel like ordinary conversation. They should sound like the sort of question a thoughtful, attentive person would naturally ask. Short is usually better. Clean is usually better. Present-tense is usually better.</p>
@@ -2961,19 +3258,19 @@ html.gate-locked body { overflow: hidden; }
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-13" data-part="2">
+<section class="chapter-opener" id="chapter-14" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">13</div>
+    <div class="chapter-number">14</div>
     <h1 class="chapter-title">CLOSING THE BARN DOOR</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"Compliance is not obedience. It is agreement they did not know they gave."</div>
+    <div class="hook-line">"The moment after the effect is where the real work happens."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="2">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 13 — CLOSING THE BARN DOOR</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 14 — CLOSING THE BARN DOOR</span></header>
 <p class="first-para"><span class="drop-cap">E</span>very performance creates an open question. What the audience does with that question is your last design decision.</p>
 <div class="felt-before">
   <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
@@ -2999,24 +3296,24 @@ html.gate-locked body { overflow: hidden; }
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">The best instruction is the one that feels like their idea.</p>
+  <p class="kr-text">Close the moment before they close it for you.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-14" data-part="2">
+<section class="chapter-opener" id="chapter-15" data-part="2">
   <div class="opener-content">
     <div class="part-label">PART TWO</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">14</div>
+    <div class="chapter-number">15</div>
     <h1 class="chapter-title">THE SCIENCE OF HYPNOSIS</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"The moment after the effect is where the real work happens."</div>
+    <div class="hook-line">"Hypnosis is not what you think it is. That is why it works."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="2">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 14 — THE SCIENCE OF HYPNOSIS</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 15 — THE SCIENCE OF HYPNOSIS</span></header>
 <p class="first-para"><span class="drop-cap">W</span>hat it actually is, how it actually works, and why the myths get in the way.</p>
 <div class="felt-before">
   <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
@@ -3067,18 +3364,22 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
+    
   </div>
 </section>
 <p>Surrounding those pyramidal neurons are inhibitory interneurons, especially GABAergic cells that help control timing, synchrony, and gain. These interneurons help determine which signals are amplified and which are suppressed. A hypnotic suggestion that narrows attention likely depends on this kind of local inhibitory sculpting. Irrelevant competing signals are dampened while the selected representation is stabilized. That is how a person becomes less distracted by alternative interpretations and more absorbed in the suggested one.</p>
 <p>The exact interneuron subclasses have not been specifically mapped in hypnosis research in humans, but the overall computation depends on this constant balance between excitation and inhibition.</p>
 <h3 class="section-header sh-standard">Neuromodulators: The Brain’s Gain Knobs</h3>
 <p>If synapses are the piano keys, neuromodulators are the hands changing how hard the keys are struck.</p>
+<aside class="wyajd">
+  <div class="wyajd-bar"></div>
+  <p class="wyajd-text">Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.</p>
+</aside>
 <p>Two of the most relevant systems here are norepinephrine and acetylcholine. Norepinephrine, released largely from the locus coeruleus, helps regulate arousal, priority, and signal gain. Acetylcholine, released from the basal forebrain, sharpens attention and changes how sensory cortex responds to input.</p>
 <p>These systems do not create hypnosis by themselves, but they are likely part of the chemical environment that allows focused attention and selective processing to happen.</p>
 <p>Norepinephrine is especially important because it changes neural gain. Gain is essentially the volume control on neuronal responsiveness. When neural gain is adjusted, some representations become more dominant and others fade. If a hypnotic induction succeeds in making one stream of thought highly salient and behaviorally relevant, locus coeruleus norepinephrine is one plausible contributor. Not because hypnosis is just arousal, but because the brain uses norepinephrine to prioritize what should matter now.</p>
@@ -3117,7 +3418,7 @@ html.gate-locked body { overflow: hidden; }
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">Close the moment before they close it for you.</p>
+  <p class="kr-text">The trance state is not extraordinary. It is the brain doing what it does best.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
@@ -3186,12 +3487,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
+    
   </div>
 </section>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg>The most durable influence is the influence the person does not notice arriving. When the audience discovers a belief for themselves, the self-attribution principle kicks in: self-generated conclusions are defended as personal convictions. Conclusions delivered directly produce polite acknowledgment that evaporates by morning. The question is not what you want them to believe. It is how you create the conditions for them to arrive there on their own.</p>
@@ -3233,19 +3534,19 @@ html.gate-locked body { overflow: hidden; }
     <p class="part-desc">From keynote halls to boardrooms. Behavioral science applied to the professional performance context.</p>
   </div>
 </section>
-<section class="chapter-opener" id="chapter-15" data-part="4">
+<section class="chapter-opener" id="chapter-16" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">15</div>
+    <div class="chapter-number">16</div>
     <h1 class="chapter-title">MENTALISM IN THE BOARDROOM</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"Hypnosis is not what you think it is. That is why it works."</div>
+    <div class="hook-line">"The boardroom is the most dangerous stage you will ever work."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="4">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 15 — MENTALISM IN THE BOARDROOM</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 16 — MENTALISM IN THE BOARDROOM</span></header>
 <p class="first-para"><span class="drop-cap">A</span> room full of executives is not a harder audience. It is a differently motivated one.</p>
 <p>The neurobiology is identical. Executives tend to enter with higher baseline skepticism and a more defensive relationship with the idea of being read or influenced, because their professional identity is partly built on the belief that they are not easily moved. I find this genuinely charming. The people most confident they are unreadable are, in many cases, among the most readable people in the room.</p>
 <p>The practical reality is that the neurobiology applies identically regardless of title or years of experience. A senior vice president&#x27;s amygdala responds to social threat the same way anyone else&#x27;s does. Their dopamine system peaks during anticipation just like everyone&#x27;s. The brain does not have a VP setting.</p>
@@ -3256,10 +3557,6 @@ html.gate-locked body { overflow: hidden; }
 <p>Arms crossed usually signals reserve, not hostility. Lateral eye movement before responding means they are analyzing. Phone checking means the default mode network is active, increase personal specificity immediately.</p>
 <h3 class="section-header sh-standard">The Credibility Sequence</h3>
 <p>1. Demonstrate before explaining. 2. Name what happened accurately. 3. Invite their framework before offering yours.</p>
-<aside class="wyajd">
-  <div class="wyajd-bar"></div>
-  <p class="wyajd-text">Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.</p>
-</aside>
 <h3 class="section-header sh-standard">The Real Power Map</h3>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>In executive rooms, formal authority and social authority are often different people. The person others glance at before they respond, the one whose reactions calibrate the room&#x27;s reaction, is the room&#x27;s real anchor. This person may or may not have the senior title. Identify them in the first two minutes. Earn them early. Once you have their engagement, the room follows.</p>
 <p>When the goal shifts from entertainment to behavioral change, the performance architecture changes with it. Entertainment asks an audience to feel something. Training asks them to do something differently after they leave. These are not the same request, and they require different sequences. The neurobiological experience must arrive before the conceptual explanation. Always. People do not retain what they have only been told. They retain what they have felt, been surprised by, and then been given a framework to understand.</p>
@@ -3268,24 +3565,24 @@ html.gate-locked body { overflow: hidden; }
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">The trance state is not extraordinary. It is the brain doing what it does best.</p>
+  <p class="kr-text">In the boardroom, the audience writes the review before the show ends.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
 </article>
-<section class="chapter-opener" id="chapter-16" data-part="4">
+<section class="chapter-opener" id="chapter-17" data-part="4">
   <div class="opener-content">
     <div class="part-label">PART FOUR</div>
     <div class="gold-line"></div>
-    <div class="chapter-number">16</div>
+    <div class="chapter-number">17</div>
     <h1 class="chapter-title">WHY MOST TRAINING FAILS</h1>
     <div class="gold-line thin"></div>
-    <div class="hook-line">"The boardroom is the most dangerous stage you will ever work."</div>
+    <div class="hook-line">"You cannot teach observation. You can only remove the obstacles to seeing."</div>
     <div class="opener-legend"><div class="tier-row"><span class="badge t1">T1</span><span class="badge t2">T2</span><span class="badge t3">T3</span><span class="badge t4">T4</span></div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div><div class="icon-row"><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg><span class="icon-code bp">BP</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11 L9 9.5 L9 17 L2 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><path d="M16 11 L9 9.5 L9 17 L16 17 Z" stroke="#1A8FA8" stroke-width="1.1" stroke-linejoin="round"/><circle cx="4.5" cy="4.5" r="2.2" stroke="#1A8FA8" stroke-width="1.1"/><line x1="13.5" y1="2.4" x2="13.5" y2="6.6" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="11.4" y1="4.5" x2="15.6" y2="4.5" stroke="#1A8FA8" stroke-width="1.1" stroke-linecap="round"/><line x1="12.0" y1="3.0" x2="15.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/><line x1="15.0" y1="3.0" x2="12.0" y2="6.0" stroke="#1A8FA8" stroke-width="1.0" stroke-linecap="round"/></svg><span class="icon-code cr">CR</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="icon-code vs">VS</span></span><span class="icon-item"><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg><span class="icon-code am">AM</span></span></div><div class="legend-label">OBSERVATION CATEGORIES</div></div>
   </div>
 </section>
 <article class="chapter-body" data-part="4">
-<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 16 — WHY MOST TRAINING FAILS</span></header>
+<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>CHAPTER 17 — WHY MOST TRAINING FAILS</span></header>
 <p class="first-para"><span class="drop-cap">M</span>ost corporate training fails not because the content is wrong but because the learning architecture is misaligned with how the brain actually changes behavior.</p>
 <p>Last year I walked into a room of forty senior managers who had just sat through ninety minutes of slides on influence and persuasion. They were polite. They were also checked out. Phones under the table, eyes glazing at each new bullet point. I had fifteen minutes. I spent the first three demonstrating, without explanation, that I had been reading the room&#x27;s behavioral patterns since before the slides began. I named who had been skeptical, who had been genuinely engaged, and who had been performing engagement for the presenter&#x27;s benefit. The room went completely still. A woman in the second row said, &#x27;How long were you watching us?&#x27; I said, &#x27;Since you walked in.&#x27; For the remaining twelve minutes I had the kind of attention that slides cannot buy. A year later, three of those managers independently told the client they still thought about that session. The slides from the first ninety minutes were never mentioned again.</p>
 <p>That room taught me what the research already shows:</p>
@@ -3305,7 +3602,7 @@ html.gate-locked body { overflow: hidden; }
 <div class="section-break">· · ·</div>
 <div class="key-read">
   <div class="kr-rule"></div>
-  <p class="kr-text">In the boardroom, the audience writes the review before the show ends.</p>
+  <p class="kr-text">Training is not instruction. It is guided noticing.</p>
   <div class="kr-rule"></div>
 </div>
 <div class="page-footer">THE ARCHITECTURE OF WONDER | DECODE BEHAVIOR</div>
@@ -3886,12 +4183,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">3</div>
-    <div class="pi-unit">SIGNALS</div>
+    <div class="pi-number">250</div>
+    <div class="pi-unit">MILLISECONDS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The minimum number of co-occurring behavioral signals required to form a reliable pattern.</p>
-    <p class="pi-source">The Five Cs — Clusters</p>
-    <p class="pi-wyajd">One signal is noise. Two is coincidence. Three is a read.</p>
+    <p class="pi-text">The time it takes your brain to form a first impression of a stranger.</p>
+    <p class="pi-source">Willis & Todorov, 2006</p>
+    <p class="pi-wyajd">You formed yours of this page in less time than that. What did you notice first — the number, or the word? That is salience at work.</p>
   </div>
 </section>
 <h3 class="section-header sh-standard">Scripted Revelation</h3>
@@ -4017,12 +4314,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">⅙</div>
-    <div class="pi-unit">OF A SECOND</div>
+    <div class="pi-number">40%</div>
+    <div class="pi-unit">INCREASE IN TRUST</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
-    <p class="pi-source">Ekman, 2003</p>
-    
+    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
+    <p class="pi-source">Processing Fluency Research</p>
+    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
   </div>
 </section>
 <h3 class="section-header sh-standard">Movement for Resets</h3>
@@ -4075,11 +4372,11 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">85%</div>
-    <div class="pi-unit">OF DECISIONS</div>
+    <div class="pi-number">7</div>
+    <div class="pi-unit">EXPRESSIONS</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The percentage of consumer choices where color is cited as the primary factor.</p>
-    <p class="pi-source">Color Psychology Research</p>
+    <p class="pi-text">The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.</p>
+    <p class="pi-source">Ekman & Friesen, 1971</p>
     
   </div>
 </section>
@@ -4405,12 +4702,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
+    
   </div>
 </section>
 <p>Let the moment land before you move. After a strong reveal, the audience needs three to five seconds of unmanaged silence. Not performance silence. Genuine space. The emotion needs time to complete its arc. A performer who rushes past the landing is truncating the neurological process that converts surprise into memory.</p>
@@ -4558,12 +4855,12 @@ html.gate-locked body { overflow: hidden; }
 <section class="pattern-interrupt">
   <div class="pi-content">
     <div class="gold-line"></div>
-    <div class="pi-number">40%</div>
-    <div class="pi-unit">INCREASE IN TRUST</div>
+    <div class="pi-number">⅙</div>
+    <div class="pi-unit">OF A SECOND</div>
     <div class="gold-line"></div>
-    <p class="pi-text">The boost in perceived credibility when text is set in a highly readable font.</p>
-    <p class="pi-source">Processing Fluency Research</p>
-    <p class="pi-wyajd">The font you are reading right now was chosen for this reason.</p>
+    <p class="pi-text">The duration of a micro-expression. Blink and you miss it. But your limbic system does not.</p>
+    <p class="pi-source">Ekman, 2003</p>
+    
   </div>
 </section>
 <p><svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M1.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/><circle cx="13" cy="5" r="2.2" stroke="#A83030" stroke-width="1.2"/><path d="M9.5 16.5c0-2.2 1.6-3.5 3.5-3.5s3.5 1.3 3.5 3.5" stroke="#A83030" stroke-width="1.2" stroke-linecap="round"/></svg>You do not need to memorize the entire BTE. You need a notation habit: a shorthand that lets you track what you are seeing in real time and review it after the interaction.</p>
@@ -4873,6 +5170,26 @@ html.gate-locked body { overflow: hidden; }
 
   <div class="section-break">· · ·</div>
 
+  <h3 class="section-header meta-header">The Reciprocity Trigger</h3>
+
+  <p>At a specific point in this book, a line appeared that most readers will not have consciously registered as a technique. In a chapter with a title designed to attract readers who might skip ahead, a sentence acknowledged two types of reader directly: those who had skipped to that chapter because the title caught their attention, and those who had read every chapter in sequence.</p>
+
+  <p>The skippers were told that their response was salience at work — their brain had done exactly what the book had been teaching. That is a validation. It reframes what might feel like impatience as evidence of a working perceptual system.</p>
+
+  <p>The sequential readers were told something different: <em class="gold">I respect that.</em></p>
+
+  <p>That line was not decoration. It was calculated.</p>
+
+  <p>Most readers do not skip. Most people reading a non-fiction book with a structured argument read it in order. Which means the majority of the audience receives that line — a direct, personal expression of respect from the author — without knowing it was placed there for them specifically. The effect is immediate: the reader feels seen, acknowledged, and valued by someone they have spent considerable time with but never met.</p>
+
+  <p>That feeling activates <em class="gold">reciprocity</em> — one of the most robust social influence mechanisms in human psychology. When someone does something for us, or expresses regard for us, we feel a pull toward returning it. In a reading context, that return takes the form of increased trust, increased investment, and a stronger sense of connection to the author.</p>
+
+  <p>The specificity of the compliment is what makes it land. A generic "thank you for reading" produces nothing. But "you are a studious reader. I respect that" is precise enough to feel personal. The reader did not receive a courtesy. They received a read — and a correct one.</p>
+
+  <p>The technique also works because the line is self-selecting. Readers who skipped get the salience validation. Readers who did not skip get the respect. Neither group feels left out. Both groups feel accurately seen. That is the same mechanism used in cold reading: a statement that lands differently for different people while appearing to be addressed to everyone.</p>
+
+  <div class="section-break">&middot; &middot; &middot;</div>
+
   <h3 class="section-header meta-header">The Design Summary</h3>
 
   <div class="meta-summary">
@@ -4887,6 +5204,7 @@ html.gate-locked body { overflow: hidden; }
     <div class="meta-row"><span class="gold">Edge color gradient</span><span class="meta-label">Progressive Identity Shift</span></div>
     <div class="meta-row"><span class="gold">Chris Michael’s Take labels</span><span class="meta-label">Name Anchoring — Mere Exposure</span></div>
     <div class="meta-row"><span class="gold">Insider language (hit, grey elephant)</span><span class="meta-label">In-Group Signalling — Tribal Identity</span></div>
+    <div class="meta-row"><span class="gold">"I respect that" to sequential readers</span><span class="meta-label">Reciprocity Trigger — Personalised Validation</span></div>
   </div>
 
   <div class="section-break">· · ·</div>

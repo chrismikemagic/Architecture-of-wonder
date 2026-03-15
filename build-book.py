@@ -2341,6 +2341,7 @@ body{counter-reset:page}
 .chapter-body .pattern-interrupt+p,
 .chapter-body .felt-before+p,
 .chapter-body .key-read+p{text-indent:0}
+.chapter-body .pattern-interrupt+p{margin-top:2.4em}
 
 /* ═══ RUNNING HEADER ═══ */
 .running-header{
