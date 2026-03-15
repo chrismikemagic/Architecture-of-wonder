@@ -105,6 +105,13 @@ Speaks from experience but doesn't perform expertise. Lets the work speak.
 - The TikTok parenthetical shows comfort with humor inside serious content
 - "Hypnosis likely biases that competition" — the kind of short declarative that defines the voice
 
+### From Ch9–11 reorder and face-reading sessions:
+- **Never rewrite directly supplied text.** When Chris pastes a section and says "add this," format it — don't rewrite it. Voice consistency is non-negotiable.
+- **Em dashes are an AI tell.** Chris said "em dashes read as AI to me." Replace with commas or restructure the sentence. Use sparingly throughout.
+- **Inline descriptions for neural terms.** Chris wants brief parenthetical anatomy/function notes at the first body-text use of any neural structure or neurotransmitter. Not every mention — just the first one.
+- **"Chris Michael's Take"** is the preferred callout label over "Performer's Note."
+- **Short declaratives about the reader's body state** — e.g. "You'll watch their bellies stop moving with each breath and you can see their chest lifting instead." Chris writes the physical room into every build moment.
+
 ### From Acknowledgments and Introduction edits:
 - Names specific people, specific contributions
 - "You walk into a room and within thirty seconds you know..." — the reader is always the practitioner, never the theorist

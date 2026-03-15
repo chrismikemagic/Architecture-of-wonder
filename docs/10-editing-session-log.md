@@ -72,3 +72,80 @@ This file is cumulative — each session appends to it.
 **Change (radar category color):** Redesigned Six-Category Radar cards from teal/blue to pastel pink (#D4879A) with dark rose background.
 **Why:** Cards were too similar visually to the adjacent BTE signal cards, which also use teal/blue accents.
 **Pattern/Lesson:** Adjacent card systems must be visually distinct. When two unrelated systems share the same color/style language, readers can't tell where one system ends and the other begins.
+
+### 2026-03-15 — Chapter Reorder: Eyes/Face Moved to Ch9
+
+**Change:** Moved the Eyes/Face chapter (was Ch11) to Ch9, immediately after DISC (Ch8). New order: Ch9 = Eyes/Face, Ch10 = Micro-Expression Matrix, Ch11 = Cold Reading. HOOK_LINES, KEY_READS, and FIGURES in `build-book.py` updated to match.
+**Why:** Chris determined face/eye-reading is foundational and logically follows DISC before micro-expression and cold reading application.
+**Pattern/Lesson:** Chapter order request required two passes — first script swapped wrong pair. Always verify chapter order by reading the resulting manuscript headers, not just trusting the script ran cleanly.
+
+---
+
+### 2026-03-15 — Duchenne Marker → Duchenne Smile; Performer's Note → Chris Michael's Take
+
+**Change:** Renamed "The Duchenne Marker" to "The Duchenne Smile" in manuscript and build script. Renamed `gen_performer_note()` label from "Performer's Note" to "Chris Michael's Take."
+**Why:** Chris's preference for both. "Duchenne Smile" is the standard anatomical term. "Chris Michael's Take" is more personal and author-specific.
+**Pattern/Lesson:** When Chris gives an exact rename, apply it everywhere — manuscript text, build script constants, card generators.
+
+---
+
+### 2026-03-15 — Lip Compression Section Added to Ch9
+
+**Change:** Added full Lip Compression section (Chris's exact words) to Ch9 (Eyes/Face) before "The Eyes in the Larger Frame." Only formatting applied: paragraph breaks and `·` bullet separation.
+**Why:** Chris provided the text and said "ADD IT AS IS, but do format it."
+**Pattern/Lesson:** Never rewrite directly supplied content. Format it only. First attempt rewrote it and was rejected.
+
+---
+
+### 2026-03-15 — Fruit to Fang: Reorder, New Subtitle, REFLEX Context, Em Dashes Removed
+
+**Change:** Restructured the Fruit to Fang section: title → flow chart trigger → all prose. Updated subtitle to "Propless Method: Using the Eyes to Discern a Vowel in a Word." E branch updated to "Eagle / Elephant." Two em dashes replaced with commas. REFLEX context added to The Setup sub-section.
+**Why:** Chris wanted the chart first, then the explanation. New subtitle reflects that any vowel in any word can be obtained. REFLEX is Chris's own Any Name Divination that uses this method.
+**Pattern/Lesson:** Em dashes read as AI-generated to Chris. Replace with commas or restructure. This is a firm style preference.
+
+---
+
+### 2026-03-15 — T4 Signal Cards Reinstated Inline (Ch7)
+
+**Change:** Added T4 signal cards (SIGNAL 1–4: Micro-Leakage, Proximity Inference, Timing Tells, Vocal Micro-Patterns) back into Ch7 as inline rendered cards using `gen_t4_signal_card()`, after the explanatory disclaimer paragraph.
+**Why:** Chris wanted the cards visually present, not omitted. The disclaimer paragraph sets proper epistemic context before the cards appear.
+
+---
+
+### 2026-03-15 — Post-Pattern-Interrupt Spacing Fix
+
+**Change:** Added CSS rule `.chapter-body .pattern-interrupt+p{margin-top:2.4em}` to build-book.py.
+**Why:** Text following pattern interrupt sections had insufficient top margin — screenshotted and flagged by Chris.
+**Pattern/Lesson:** Pattern interrupts are full-bleed dark blocks. The paragraph following them needs extra breathing room or it reads as a caption rather than new body text.
+
+---
+
+### 2026-03-15 — 40% Pattern Interrupt Moved to End of Ch9; Explicit Trigger System Added
+
+**Change:** Added `PATTERN_INTERRUPT_40PCT` trigger string to end of Ch9 in manuscript. Added explicit trigger handler in `build_chapter_body()` so named triggers fire specific pattern interrupts at exact locations.
+**Why:** Chris wanted the "40% INCREASE IN TRUST / Processing Fluency" card at the end of Ch9 (Eyes/Face) specifically.
+**Pattern/Lesson:** Auto-interval placement (every 45 paragraphs) is not precise enough when a specific card belongs at a specific narrative moment. Named trigger strings in the manuscript give exact placement control.
+
+---
+
+### 2026-03-15 — Microexpressions in Mentalism Section Added to Ch10
+
+**Change:** Inserted full "Microexpressions in Mentalism" section in Ch10 (Micro-Expression Matrix) after "Reading in Clusters, Not Snapshots." Covers: emotional families (anger/fear/surprise/disgust/contempt/sadness/joy), four expression variation types (full/partial/subtle/masked), three watch zones, five performance applications (readings, anagrams, forces, dual reality, Q&A), training method, and the performer's rule.
+**Why:** Chris provided the full text. Largest single content addition this session.
+
+---
+
+### 2026-03-15 — Seven Expressions Image Injection Fixed
+
+**Change:** Corrected FIGURES dict key from `'CHAPTER 10:7 Universal Microexpressions'` to `'CHAPTER 10:The Seven Expressions'` to match the actual section header in the manuscript.
+**Why:** Key mismatch meant the image was not injecting. The section header in the manuscript is "The Seven Expressions," not the more descriptive label used in the dict key.
+**Pattern/Lesson:** FIGURES keys must match the manuscript section header text exactly, character for character. Always verify by checking the actual manuscript after any chapter reorder.
+
+---
+
+### 2026-03-15 — Neural Term Inline Descriptions Added Throughout
+
+**Change:** Added brief parenthetical descriptions at the first body-text use of each neural structure and neurotransmitter throughout the manuscript.
+**Terms added:** dopamine, salience network, limbic system, hippocampus, amygdala, visual cortex, orbitofrontal cortex, medial prefrontal regions, basal ganglia, dorsolateral prefrontal cortex, executive control network, primary somatosensory cortex, locus coeruleus, nociceptors, brainstem, thalamus, mirror neurons.
+**Why:** Chris wants readers without a neuroscience background to have the anatomical context at the moment they need it, not in a glossary they have to flip to.
+**Pattern/Lesson:** Already self-described terms (zygomatic major, orbicularis oculi, cortical pyramidal neurons, norepinephrine/acetylcholine functions) do not need additions. Terms already introduced with explicit "you do not need to memorize these" explanations (anterior insula, dorsal anterior cingulate) are also fine.
