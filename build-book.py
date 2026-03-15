@@ -39,9 +39,10 @@ HOOK_LINES = {
     'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
     'CHAPTER 9': '"Four styles. One conversation. The read starts before anyone speaks."',
     'CHAPTER 10': '"You already know more than you think. The trick is knowing what to trust."',
-    'CHAPTER 11': '"The face lies. But it lies too slowly."',
-    'CHAPTER 12': '"The volunteer chose you before you chose them."',
-    'CHAPTER 13': '"Compliance is not obedience. It is agreement they did not know they gave."',
+    'CHAPTER 11': '"The face performs. The eyes search."',
+    'CHAPTER 12': '"The face lies. But it lies too slowly."',
+    'CHAPTER 13': '"The volunteer chose you before you chose them."',
+    'CHAPTER 14': '"Compliance is not obedience. It is agreement they did not know they gave."',
     'CHAPTER 14': '"The moment after the effect is where the real work happens."',
     'CHAPTER 15': '"Hypnosis is not what you think it is. That is why it works."',
     'CHAPTER 16': '"The boardroom is the most dangerous stage you will ever work."',
@@ -84,9 +85,10 @@ KEY_READS = {
     'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
     'CHAPTER 9': 'Style is not personality. But it is the first thing the room broadcasts.',
     'CHAPTER 10': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 11': 'Seven expressions. One-fifth of a second. That is the window.',
-    'CHAPTER 12': 'Handle the person, not the trick.',
-    'CHAPTER 13': 'The best instruction is the one that feels like their idea.',
+    'CHAPTER 11': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
+    'CHAPTER 12': 'Seven expressions. One-fifth of a second. That is the window.',
+    'CHAPTER 13': 'Handle the person, not the trick.',
+    'CHAPTER 14': 'The best instruction is the one that feels like their idea.',
     'CHAPTER 14': 'Close the moment before they close it for you.',
     'CHAPTER 15': 'The trance state is not extraordinary. It is the brain doing what it does best.',
     'CHAPTER 16': 'In the boardroom, the audience writes the review before the show ends.',
@@ -1364,6 +1366,85 @@ COLD_WARM_HOT_HTML = '''<div class="cwh-spectrum">
 </div>'''
 
 
+FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
+  <div class="ftf-header">
+    <div class="ftf-title">FRUIT TO FANG</div>
+    <div class="ftf-subtitle">Performance Application: Reading Search Effort to Narrow the Field</div>
+  </div>
+  <p class="ftf-intro">I call this process Fruit to Fang because it begins in an easy category and pivots into a wilder one, allowing the difficulty of the search itself to reveal the hidden vowel. What looks like a casual broadening of options is actually a narrowing device. The participant believes the field has expanded. In reality, the way they search through that expansion gives the game away.</p>
+  <p class="ftf-method-note"><em>The performer is not reading a fixed signal here. He is reading the ease or difficulty of retrieval and using that change in search effort to reduce the field.</em></p>
+  <div class="ftf-table">
+    <div class="ftf-row ftf-head">
+      <div class="ftf-cell">What you observe</div>
+      <div class="ftf-cell">What it usually suggests</div>
+      <div class="ftf-cell">What you do next</div>
+      <div class="ftf-cell">What it may indicate</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Fruit comes immediately</div>
+      <div class="ftf-cell">Easy category access, common answer</div>
+      <div class="ftf-cell">Stay with the fruit path</div>
+      <div class="ftf-cell ftf-vowel">Likely A or O</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Visible search, no fruit arrives</div>
+      <div class="ftf-cell">Harder category access</div>
+      <div class="ftf-cell">Offer the animal option</div>
+      <div class="ftf-cell ftf-vowel">Less likely A or O</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Animal arrives immediately after the shift</div>
+      <div class="ftf-cell">Easy animal retrieval once redirected</div>
+      <div class="ftf-cell">Move toward a confident reveal</div>
+      <div class="ftf-cell ftf-vowel">Often E</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Animal takes a little longer</div>
+      <div class="ftf-cell">Narrower, less common animal search</div>
+      <div class="ftf-cell">Use a playful test statement</div>
+      <div class="ftf-cell ftf-vowel">Often I</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Strong surprise when you dismiss it as not really an animal</div>
+      <div class="ftf-cell">They likely chose something unusual or imaginary</div>
+      <div class="ftf-cell">Lean into the reveal</div>
+      <div class="ftf-cell ftf-vowel">Often U</div>
+    </div>
+    <div class="ftf-row">
+      <div class="ftf-cell">Mild confusion when challenged</div>
+      <div class="ftf-cell">They chose something borderline or category-fuzzy</div>
+      <div class="ftf-cell">Reframe and refine</div>
+      <div class="ftf-cell ftf-vowel">Often iguana or another unusual choice</div>
+    </div>
+  </div>
+  <div class="ftf-flow">
+    <div class="ftf-flow-title">HOW SEARCH EFFORT NARROWS THE FIELD</div>
+    <div class="ftf-flow-body">
+      <div class="ftf-node ftf-node-start">Think of the first vowel</div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-node">Think of a fruit with that letter</div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-branch">
+        <div class="ftf-branch-item ftf-yes"><strong>Fruit comes immediately</strong><br>Think A / O</div>
+        <div class="ftf-branch-mid">Did it come easily?</div>
+        <div class="ftf-branch-item ftf-no"><strong>No fruit arrives</strong><br>Offer the animal option</div>
+      </div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-branch">
+        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>Think E</div>
+        <div class="ftf-branch-mid">Animal ease?</div>
+        <div class="ftf-branch-item ftf-no"><strong>Animal takes time</strong><br>Think I / U</div>
+      </div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-branch">
+        <div class="ftf-branch-item ftf-yes"><strong>Confused reaction</strong><br>Likely iguana</div>
+        <div class="ftf-branch-mid">Playful challenge</div>
+        <div class="ftf-branch-item ftf-no"><strong>Strong surprise</strong><br>Likely unicorn</div>
+      </div>
+    </div>
+  </div>
+</div>'''
+
 def gen_t4_signal_card(signal_name, claim, research, valid):
     """Render an Appendix A1 T4 signal card with claim/research/valid sections."""
     return (
@@ -1788,6 +1869,13 @@ def build_chapter_body(section, global_para_count):
         if not wyajd_done and chapter_num in WHAT_YOU_JUST_DID and i > total * 0.6:
             parts.append(gen_wyajd(WHAT_YOU_JUST_DID[chapter_num]))
             wyajd_done = True
+
+        # ── FRUIT TO FANG APPLICATION ──
+        if stripped == 'FRUIT TO FANG APPLICATION':
+            parts.append(FRUIT_TO_FANG_HTML)
+            i += 1
+            global_para_count += 1
+            continue
 
         # ── COLD-WARM-HOT SPECTRUM ──
         if stripped == 'The Cold-Warm-Hot Spectrum':
@@ -2433,6 +2521,42 @@ body{counter-reset:page}
 .mod-note{color:var(--gray-blue);font-size:.74rem;font-style:italic;padding-left:88px}
 
 /* ═══ BEHAVIORAL READING LINE CARDS ═══ */
+/* ═══ FRUIT TO FANG CARD ═══ */
+.ftf-card{
+  background:linear-gradient(135deg,rgba(13,30,48,.97),rgba(8,15,26,.99));
+  border:1px solid rgba(201,168,76,.2);
+  border-left:4px solid var(--gold);
+  border-radius:6px;padding:20px 22px;
+  margin:2em 0;break-inside:avoid;
+}
+.ftf-header{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.15)}
+.ftf-title{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:4px;
+}
+.ftf-subtitle{font-family:var(--sans);font-size:.68rem;color:var(--gray-blue);font-style:italic}
+.ftf-intro{font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:10px;text-indent:0!important}
+.ftf-method-note{font-size:.76rem;color:var(--gray-blue);margin-bottom:14px;text-indent:0!important}
+.ftf-table{display:grid;grid-template-columns:1fr;gap:0;margin-bottom:18px;border:1px solid rgba(201,168,76,.12);border-radius:4px;overflow:hidden}
+.ftf-row{display:grid;grid-template-columns:1.4fr 1.2fr 1.2fr .6fr;gap:0}
+.ftf-row:not(:last-child){border-bottom:1px solid rgba(201,168,76,.08)}
+.ftf-head{background:rgba(201,168,76,.12)}
+.ftf-head .ftf-cell{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);padding:7px 10px}
+.ftf-cell{font-size:.74rem;color:rgba(255,255,255,.8);padding:8px 10px;line-height:1.45;border-right:1px solid rgba(201,168,76,.08)}
+.ftf-cell:last-child{border-right:none}
+.ftf-vowel{color:var(--gold);font-weight:600}
+.ftf-flow{margin-top:4px;padding-top:14px;border-top:1px solid rgba(201,168,76,.15)}
+.ftf-flow-title{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+.ftf-flow-body{display:flex;flex-direction:column;align-items:center;gap:6px}
+.ftf-node{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:6px 14px;font-size:.72rem;color:rgba(255,255,255,.85);text-align:center}
+.ftf-node-start{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.4);font-weight:600}
+.ftf-arrow{color:var(--gold);font-size:.9rem;line-height:1}
+.ftf-branch{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;width:100%;align-items:center}
+.ftf-branch-mid{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:1px;color:var(--gray-blue);text-align:center;text-transform:uppercase}
+.ftf-branch-item{background:rgba(13,30,48,.6);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:7px 10px;font-size:.7rem;color:rgba(255,255,255,.75);text-align:center;line-height:1.45}
+.ftf-yes{border-left:3px solid rgba(75,170,114,.6)}
+.ftf-no{border-left:3px solid rgba(26,143,168,.6)}
+
 .reading-line-card{
   margin:.7em 0;padding:14px 16px 12px;
   border-radius:4px;break-inside:avoid;
