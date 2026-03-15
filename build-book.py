@@ -1413,7 +1413,7 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       <div class="ftf-cell ftf-vowel">Often I</div>
     </div>
     <div class="ftf-row">
-      <div class="ftf-cell">Strong surprise when you dismiss it as not really an animal</div>
+      <div class="ftf-cell">Strong surprise when you dismiss it as not a real animal</div>
       <div class="ftf-cell">They likely chose something unusual or imaginary</div>
       <div class="ftf-cell">Lean into the reveal</div>
       <div class="ftf-cell ftf-vowel">Often U</div>
@@ -1444,7 +1444,7 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
         <div class="ftf-branch-item ftf-no"><strong>Animal takes longer</strong><br>think <span class="ftf-vowel-inline">I / U</span><br><span class="ftf-note">watch quality of search &amp; reaction to challenge</span></div>
       </div>
       <div class="ftf-arrow">&#8595;</div>
-      <div class="ftf-node ftf-node-test">Playful challenge: <em>&ldquo;That&rsquo;s not really an animal.&rdquo;</em></div>
+      <div class="ftf-node ftf-node-test">Playful challenge: <em>&ldquo;That&rsquo;s not a real animal.&rdquo;</em></div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
         <div class="ftf-branch-item ftf-yes"><strong>Mild confusion</strong><br>likely <span class="ftf-vowel-inline">I</span><br><span class="ftf-note">often iguana or another borderline answer</span></div>
