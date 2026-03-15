@@ -1265,6 +1265,8 @@ def process_paragraph(text, part_num=1):
         'The Reflect and Reset', 'Productive Silence', 'The Redirect',
         'Image or feeling', 'Fast impression or gradual realization',
         'Attention and concentration', 'Emotional framing', 'Stage management',
+        'The Setup', 'Watching the First Search', 'The Pivot',
+        'Reading the Animal Search', 'Reading the Reaction',
     }
     if stripped in _sub_section_heads:
         return f'<div class="sub-header"><span class="sub-header-label">{escape(stripped)}</span></div>'
@@ -1375,7 +1377,7 @@ COLD_WARM_HOT_HTML = '''<div class="cwh-spectrum">
 FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
   <div class="ftf-header">
     <div class="ftf-title">FRUIT TO FANG</div>
-    <div class="ftf-subtitle">Performance Application: Reading Search Effort to Narrow the Field</div>
+    <div class="ftf-subtitle">Propless Method: Using the Eyes to Discern a Vowel in a Word</div>
   </div>
   <p class="ftf-intro">I call this process Fruit to Fang because it begins in an easy category and pivots into a wilder one, allowing the difficulty of the search itself to reveal the hidden vowel. What looks like a casual broadening of options is actually a narrowing device. The participant believes the field has expanded. In reality, the way they search through that expansion gives the game away.</p>
   <p class="ftf-method-note"><em>The performer is not reading a fixed signal here. He is reading the ease or difficulty of retrieval and using that change in search effort to reduce the field.</em></p>
@@ -1402,7 +1404,7 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       <div class="ftf-cell">Animal arrives immediately after the shift</div>
       <div class="ftf-cell">Easy animal retrieval once redirected</div>
       <div class="ftf-cell">Move toward a confident reveal</div>
-      <div class="ftf-cell ftf-vowel">Often E</div>
+      <div class="ftf-cell ftf-vowel">Often E &mdash; Eagle / Elephant</div>
     </div>
     <div class="ftf-row">
       <div class="ftf-cell">Animal takes a little longer</div>
@@ -1437,7 +1439,7 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       </div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>think <span class="ftf-vowel-inline">E</span><br><span class="ftf-note">often elephant &mdash; ask if it feels like a large animal; confident yes often confirms</span></div>
+        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>think <span class="ftf-vowel-inline">E</span><br><span class="ftf-note">Eagle / Elephant &mdash; ask if it feels like a large animal; confident yes often confirms elephant</span></div>
         <div class="ftf-branch-mid">Animal ease?</div>
         <div class="ftf-branch-item ftf-no"><strong>Animal takes longer</strong><br>think <span class="ftf-vowel-inline">I / U</span><br><span class="ftf-note">watch quality of search &amp; reaction to challenge</span></div>
       </div>

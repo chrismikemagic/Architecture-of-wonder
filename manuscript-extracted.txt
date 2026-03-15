@@ -920,7 +920,36 @@ T2
 AM/VS
 
 T4 Signals Removed
-NLP eye movement direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction, finger length ratios, ear shape personality claims, skull or face-shape character reading, and handwriting slant analysis are documented in the T4 Appendix with the research that informed their removal. Know what they claim. Know why the claim is weak. Do not build real reads on them.
+NLP eye movement direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction, finger length ratios, ear shape personality claims, skull or face-shape character reading, and handwriting slant analysis are documented below with the research that informed their removal. Know what they claim. Know why the claim is weak. Do not build real reads on them.
+
+SIGNAL 1 — NLP Eye Movement Direction
+THE CLAIM: Eye movement direction reliably indicates whether a person is accessing a visual memory (up-right), constructing a visual image (up-left), accessing an auditory memory (horizontal-right), or experiencing a kinesthetic state (down-right). This map allows a trained observer to detect the cognitive process a person is currently engaged in.
+
+THE RESEARCH: Wiseman, Watt, ten Brinke, Porter, Couper, and Rankin (2012) published a controlled three-study examination of this specific claim in PLOS ONE. They tested whether the predicted eye-movement patterns were observable and whether they could distinguish truth-tellers from liars. The predicted patterns did not appear consistently. Eye direction did not reliably predict memory access mode. The study's conclusion was direct: the NLP eye-movement model is not supported by available evidence.
+
+WHAT REMAINS VALID: Deviation from an individual's established baseline is a genuine signal. If someone's eyes go somewhere different from where they normally go when answering questions, that shift is worth tracking. Not because the direction predicts a cognitive process, but because the deviation signals that something is being processed differently than usual. The baseline-deviation framework survives. The directional map does not.
+
+SIGNAL 2 — Smooth Lower Eyelids as Confidence Indicator
+THE CLAIM: Smooth, relaxed lower eyelids indicate genuine confidence and authentic emotional display. Tension in the lower eyelid is a micro-leak of concealed anxiety or deception.
+
+THE RESEARCH: Lower eyelid tension varies significantly with age, individual physiology, hydration, fatigue, and the ambient lighting conditions in a room. The specific claim has not been supported in controlled facial coding research. Meta-analyses of facial deception detection, including work reviewed by Vrij and colleagues, find that no single facial indicator reliably distinguishes authentic from deceptive emotional display across individuals.
+
+WHAT REMAINS VALID: The Duchenne marker — the distinction between genuine and social smiling based on orbicularis oculi involvement — is supported and documented. That is a different and more robust signal. The lower eyelid smoothness claim as a standalone confidence indicator is not sufficiently reliable to carry real evidential weight.
+
+SIGNAL 3 — Deep Under-Eye Wrinkles as Chronic Worry Indicator
+THE CLAIM: Deep wrinkles under the eyes, when permanent, indicate a lifetime pattern of chronic worry, anxiety, or emotional suppression. The wrinkle pattern encodes the person's dominant emotional baseline.
+
+THE RESEARCH: Under-eye wrinkle depth is primarily determined by sun exposure, skin type, genetics, hydration, sleep quality, and age — factors that have very limited relationship to chronic emotional state. Facial aging research consistently finds that sun exposure, smoking, and sleep patterns are the dominant determinants of under-eye wrinkling. The claim that wrinkle depth encodes emotional history lacks evidential support.
+
+WHAT REMAINS VALID: The principle that faces encode habitual movement is real. Crow's feet from a lifetime of genuine smiling tell a different story than their absence. But under-eye wrinkle depth as a chronic worry read is not a defensible evidence-based claim.
+
+SIGNAL 4 — Hair Part Direction as Personality Indicator
+THE CLAIM: Hair parted on the left projects strength and logic, associated with dominant and authoritative personalities. Hair parted on the right projects cooperation and nurturance. Center parts indicate balance or ambivalence. Side-parting direction is a reliable indicator of dominant personality traits.
+
+THE RESEARCH: This claim does not appear in any peer-reviewed behavioral science literature. It originates primarily in a self-published 1999 book. No controlled studies have examined whether hair part direction correlates with personality traits in ways that generalize beyond individual styling choices.
+
+WHAT REMAINS VALID: Nothing in this specific claim is supported. Hair styling choices do carry social information — formality, cultural context, investment in appearance — but the directional claim is unsupported at any evidential level. Do not use it in any professional or performance context where credibility is a concern.
+
 The Six-Category Radar
 Eighty signals become usable when organized into six dimensions. Categories 01 and 02 are baseline reads: assess once, anchor early. Categories 03–06 are live reads: update continuously as the interaction moves. Build fluency in each category individually, then read all six simultaneously.
 01 — Appearance
@@ -1029,25 +1058,33 @@ If something common comes to mind easily, the search is light. If the person has
 
 That becomes extremely useful in routines built on category narrowing.
 
-Suppose I have someone think of a word, then ask them to focus on the first vowel that appears in it. From there, I ask them to think of a fruit that begins with that letter. At that moment, I am not only listening to what they say. I am watching the search.
+Fruit to Fang
+The Setup
+Have someone think of any word — any word they choose, privately. Ask them to focus on the first vowel that appears in it. They do not say it. They hold it. Then ask them to think of a fruit that begins with that vowel. They do not speak the fruit either. At that moment, I am not only waiting for their answer. I am watching the search.
 
-If the fruit comes quickly, the person probably landed on something common. For a native English speaker, that often means the vowel is tied to an easy fruit. Apple and orange arrive fast. A and O. But if I see a real search, extended, the eyes moving as they filter through possibilities, I know the answer is less available. The easier vowels become less likely.
+Watching the First Search
+If the fruit arrives quickly, the person landed on something common. For a native English speaker, easy fruits cluster around A and O. Apple and orange come fast. The search is light. If I see a real search — extended, the eyes moving as they filter through possibilities — I know the answer is less available. The easier vowels become less likely.
 
+The Pivot
 Then I give them an apparent escape hatch.
 
-I say: "And if you cannot think of a fruit with that letter, just think of an animal instead. Do not tell me which one you settled on, whether it is a fruit or an animal."
+"And if you cannot think of a fruit with that letter, just think of an animal instead. Do not tell me which one you settled on, whether it is a fruit or an animal."
 
 That line seems to widen the possibilities. In reality, it gives me more information.
 
+Reading the Animal Search
 Now I watch again.
 
-If they shift quickly and seem to land on something immediately after I offer the animal option, they probably found an easy animal starting with a vowel. That often points toward E, because elephant comes fast and the search is short. T3
+If they shift quickly and seem to land on something immediately after I offer the animal option, they found an easy animal. That often points toward E, because elephant comes fast and the search is short. T3
 
 If it still takes them a little time, I begin thinking about I, because the animal field is thinner there and many people reach for iguana.
 
-If I test that by saying something playful like "Well, that is not really an animal," the reaction tells me more. A mildly confused look suggests something borderline. I can soften: "Well, I suppose it is, technically. More of a reptile." That gives me a clean way into iguana.
+Reading the Reaction
+"Well, that is not really an animal."
 
-If they react with real surprise when I dismiss it as not a real animal, I start thinking of U, because many people under pressure go to unicorn. Occasionally someone reaches for urchin, which is still informative.
+A mildly confused look suggests something borderline. I can soften: "Well, I suppose it is, technically. More of a reptile." That gives me a clean way into iguana.
+
+If they react with genuine surprise, I start thinking of U, because many people under pressure go to unicorn. Occasionally someone reaches for urchin, which is still informative.
 
 The important point is that the eyes let you see the difference between easy retrieval and effortful retrieval. That difference can become method. T2
 
