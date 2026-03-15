@@ -50,8 +50,11 @@ with open('manuscript-extracted.txt', 'w') as f:
         f.write(text + '\n')
 "
 
-# Step 2: Build HTML
+# Step 2: Build designed HTML
 python3 build-book.py
+
+# Step 3: Build gated version (ALWAYS run this after build-book.py)
+python3 build-gated.py
 ```
 
 ## The Build Script (`build-book.py`)
