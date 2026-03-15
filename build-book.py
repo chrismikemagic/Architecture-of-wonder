@@ -1098,21 +1098,21 @@ def gen_volunteer_matrix_entry(heading, body):
     """Render one cell of the confidence×suggestibility matrix."""
     h = heading.lower()
     if 'high' in h and h.count('high') == 2:
-        color   = '#4BAA72'                         # HH: best — emerald
+        color   = '#4BAA72'                         # HH: best — green
         bg      = 'linear-gradient(135deg,rgba(16,48,28,.95),rgba(22,58,34,.98))'
-        glow    = 'rgba(75,170,114,.15)'
+        glow    = 'rgba(75,170,114,.18)'
     elif 'high confidence' in h:
-        color   = '#D4763B'                         # HL: challenger — copper
-        bg      = 'linear-gradient(135deg,rgba(48,22,8,.95),rgba(58,28,10,.98))'
-        glow    = 'rgba(212,118,59,.15)'
+        color   = '#C9B832'                         # HL: use with care — yellow
+        bg      = 'linear-gradient(135deg,rgba(42,38,6,.95),rgba(52,46,8,.98))'
+        glow    = 'rgba(201,184,50,.15)'
     elif 'low suggestibility' in h and 'low confidence' in h:
-        color   = '#6E7A8A'                         # LL: skip — steel blue-gray
-        bg      = 'linear-gradient(135deg,rgba(14,20,30,.95),rgba(18,26,38,.98))'
-        glow    = 'rgba(110,122,138,.10)'
+        color   = '#B83030'                         # LL: avoid — red
+        bg      = 'linear-gradient(135deg,rgba(44,10,10,.95),rgba(54,14,14,.98))'
+        glow    = 'rgba(184,48,48,.18)'
     else:
-        color   = '#C9A84C'                         # LH: potential — gold
-        bg      = 'linear-gradient(135deg,rgba(42,28,6,.95),rgba(52,36,8,.98))'
-        glow    = 'rgba(201,168,76,.15)'
+        color   = '#D4823B'                         # LH: limited use — orange
+        bg      = 'linear-gradient(135deg,rgba(48,24,6,.95),rgba(58,30,8,.98))'
+        glow    = 'rgba(212,130,59,.15)'
 
     # Extract ALL-CAPS recommendation from body start
     rec = ''
