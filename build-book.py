@@ -481,7 +481,11 @@ def is_section_header(text):
     if stripped.endswith('.'):
         return False
     # Count capitalized words (excluding small conjunctions); digits count as title tokens
+    # Strip em-dash separators — they're punctuation, not title words
     small_words = {'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'vs.', 'vs', 'is', 'not'}
+    words = [w for w in words if w not in ('—', '–', '-')]
+    if not words:
+        return False
     cap_count = sum(1 for w in words if w[0].isupper() or w[0].isdigit() or w.lower() in small_words)
     if cap_count >= len(words) * 0.7 and len(words) >= 2 and len(stripped) < 65:
         # Additional check: shouldn't start with common sentence patterns
@@ -1065,16 +1069,23 @@ def gen_volunteer_card(name, body):
 
 def gen_volunteer_matrix_entry(heading, body):
     """Render one cell of the confidence×suggestibility matrix."""
-    # Determine color by position keywords — warm amber/terracotta family
     h = heading.lower()
     if 'high' in h and h.count('high') == 2:
-        color = '#4BAA72'   # HH: best — green
+        color   = '#4BAA72'                         # HH: best — emerald
+        bg      = 'linear-gradient(135deg,rgba(16,48,28,.95),rgba(22,58,34,.98))'
+        glow    = 'rgba(75,170,114,.15)'
     elif 'high confidence' in h:
-        color = '#D4763B'   # HL: challenger — warm orange
+        color   = '#D4763B'                         # HL: challenger — copper
+        bg      = 'linear-gradient(135deg,rgba(48,22,8,.95),rgba(58,28,10,.98))'
+        glow    = 'rgba(212,118,59,.15)'
     elif 'low suggestibility' in h and 'low confidence' in h:
-        color = '#7A6858'   # LL: skip — warm brown-gray
+        color   = '#6E7A8A'                         # LL: skip — steel blue-gray
+        bg      = 'linear-gradient(135deg,rgba(14,20,30,.95),rgba(18,26,38,.98))'
+        glow    = 'rgba(110,122,138,.10)'
     else:
-        color = '#C9A84C'   # LH: potential — amber gold
+        color   = '#C9A84C'                         # LH: potential — gold
+        bg      = 'linear-gradient(135deg,rgba(42,28,6,.95),rgba(52,36,8,.98))'
+        glow    = 'rgba(201,168,76,.15)'
 
     # Extract ALL-CAPS recommendation from body start
     rec = ''
@@ -1086,7 +1097,7 @@ def gen_volunteer_matrix_entry(heading, body):
             body_rest = rest
 
     return (
-        f'<div class="vm-cell" style="--vm-color:{color}">'
+        f'<div class="vm-cell" style="--vm-color:{color};--vm-bg:{bg};--vm-glow:{glow}">'
         f'<div class="vm-heading">{escape(heading)}</div>'
         f'<div class="vm-rec">{escape(rec)}</div>'
         f'<p class="vm-body">{escape(body_rest)}</p>'
@@ -1149,8 +1160,120 @@ def gen_five_c_entry(c_word, body_text):
 
 def gen_performer_note():
     return '''<div class="performer-note-header">
-  <span class="pn-label">Performer's Note</span>
+  <span class="pn-label">Chris's Take</span>
 </div>'''
+
+
+# Certainty level colors for Soft/Moderate/Strong/Pinpoint frames
+_CERTAINTY_FRAME_META = {
+    'Soft Frame':     {'color': '#8A9AB5', 'tier': 'T3 / T4 signals', 'badge_cls': 'cf-soft'},
+    'Moderate Frame': {'color': '#C9A84C', 'tier': 'T2 cluster read', 'badge_cls': 'cf-moderate'},
+    'Strong Frame':   {'color': '#D4763B', 'tier': 'T1 / T2 anchor', 'badge_cls': 'cf-strong'},
+    'Pinpoint Frame': {'color': '#4BAA72', 'tier': 'Evidence-locked', 'badge_cls': 'cf-pinpoint'},
+}
+
+def gen_certainty_frame(name, body):
+    """Render a Soft/Moderate/Strong/Pinpoint Frame as a styled card."""
+    meta = _CERTAINTY_FRAME_META.get(name, {'color': '#C9A84C', 'tier': '', 'badge_cls': 'cf-moderate'})
+    color = meta['color']
+    tier  = meta['tier']
+    badge = meta['badge_cls']
+
+    # Parse body: "Use when ... '[line]' · '[line]' ... Avoid/Never ..."
+    # Split on bullet separator first, then classify each segment
+    use_text = ''
+    examples = []
+    avoid_text = ''
+
+    segments = [s.strip() for s in body.split(' · ')]
+    for seg in segments:
+        if not seg:
+            continue
+        sl = seg.lower()
+        if sl.startswith('avoid ') or sl.startswith('never '):
+            avoid_text = seg.rstrip('.')
+        elif seg.startswith("'") or seg.startswith('\u2018'):
+            # Extract from first quote to last quote, handling internal apostrophes
+            first_q = seg.find("'") if "'" in seg else seg.find('\u2018')
+            last_q  = seg.rfind("'") if "'" in seg else seg.rfind('\u2019')
+            if last_q > first_q:
+                example = seg[first_q + 1:last_q].strip()
+                after   = seg[last_q + 1:].strip()
+                examples.append(example)
+                if after.lower().startswith('avoid') or after.lower().startswith('never'):
+                    avoid_text = after.rstrip('.')
+            else:
+                examples.append(seg.strip("'\u2018\u2019"))
+        else:
+            if not examples:
+                # Pre-quote text is the "Use when" sentence
+                use_text = (use_text + ' ' + seg).strip().rstrip('.') if use_text else seg.rstrip('.')
+
+    lines_html = ''.join(
+        f'<div class="cf-line">\u201c{escape(ex)}\u201d</div>' for ex in examples
+    )
+    avoid_html = (
+        f'<div class="cf-avoid">{escape(avoid_text)}</div>' if avoid_text else ''
+    )
+    use_html = f'<div class="cf-use">{escape(use_text)}</div>' if use_text else ''
+
+    return (
+        f'<div class="certainty-frame {badge}" style="--cf-color:{color}">'
+        f'  <div class="cf-header">'
+        f'    <span class="cf-name">{escape(name)}</span>'
+        f'    <span class="cf-tier">{escape(tier)}</span>'
+        f'  </div>'
+        f'  {use_html}'
+        f'  <div class="cf-lines">{lines_html}</div>'
+        f'  {avoid_html}'
+        f'</div>'
+    )
+
+
+def gen_rule_callout(heading, body):
+    """Render sub-concept rules (Pace-Lead Ratio, X Check, X Structure) as compact callouts."""
+    return (
+        f'<div class="rule-callout">'
+        f'  <div class="rc-heading">{escape(heading)}</div>'
+        f'  <p class="rc-body">{escape(body)}</p>'
+        f'</div>'
+    )
+
+
+# Seven Stages — color arc from cool steel to warm gold to emerald
+_STAGE_COLORS = {
+    '01': '#5B8EA6', '02': '#4A9B8E', '03': '#8A9AB5',
+    '04': '#C9A84C', '05': '#D4823B', '06': '#D4763B', '07': '#4BAA72',
+}
+
+def gen_stage_card(num, name, body):
+    """Render a Seven Stages card — sequential arc feel, distinct from radar categories."""
+    color = _STAGE_COLORS.get(num, '#C9A84C')
+    return (
+        f'<div class="stage-card" style="--stage-color:{color}">'
+        f'  <div class="stage-num">{escape(num)}</div>'
+        f'  <div class="stage-content">'
+        f'    <div class="stage-name">{escape(name)}</div>'
+        f'    <div class="stage-rule"></div>'
+        f'    <p class="stage-body">{escape(body)}</p>'
+        f'  </div>'
+        f'</div>'
+    )
+
+
+def gen_checklist_section(heading, bullets_text):
+    """Render a Neural Performance Checklist section — checkbox item rows."""
+    items = [b.strip() for b in bullets_text.split(' · ') if b.strip()]
+    items_html = ''.join(
+        f'<div class="cl-item"><span class="cl-box">□</span><span class="cl-text">{escape(it)}</span></div>'
+        for it in items
+    )
+    return (
+        f'<div class="checklist-section">'
+        f'  <div class="cl-heading">{escape(heading)}</div>'
+        f'  <div class="cl-items">{items_html}</div>'
+        f'</div>'
+    )
 
 
 def gen_what_you_have_felt():
@@ -1353,6 +1476,10 @@ def build_chapter_body(section, global_para_count):
         # ── DISC TYPE CARDS (D — DIRECT, I — INFLUENTIAL, etc.) ──
         disc_type_m = re.match(r'^([DISC]) — ([A-Z]+)$', stripped)
         if disc_type_m and i + 1 < len(paragraphs):
+            # Inject DISC chart before the first card
+            if not disc_injected:
+                parts.append(DISC_HTML)
+                disc_injected = True
             body_para = paragraphs[i + 1].strip()
             parts.append(gen_disc_type_card(disc_type_m.group(1), disc_type_m.group(2), body_para))
             i += 2
@@ -1423,6 +1550,47 @@ def build_chapter_body(section, global_para_count):
             ))
             i += 1
             global_para_count += 1
+            continue
+
+        # ── SEVEN STAGES ARC CARDS (01 · PRIME … 07 · EMBED) ──
+        stage_m = re.match(r'^(0[1-7]) · ([A-Z]+)$', stripped)
+        if stage_m and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_stage_card(stage_m.group(1), stage_m.group(2), body_para))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── PERFORMANCE CHECKLIST SECTIONS (ALL-CAPS heading + bullet text) ──
+        checklist_heads = {
+            'PRE-SHOW PRIMING', 'ATTENTION ARCHITECTURE', 'TENSION AND RELEASE',
+            'BEHAVIORAL PROFILING', 'MEMORY ENCODING'
+        }
+        if stripped in checklist_heads and i + 1 < len(paragraphs):
+            bullet_para = paragraphs[i + 1].strip()
+            if ' · ' in bullet_para:
+                parts.append(gen_checklist_section(stripped, bullet_para))
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── CERTAINTY FRAME CARDS (Soft/Moderate/Strong/Pinpoint Frame) ──
+        if stripped in _CERTAINTY_FRAME_META and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_certainty_frame(stripped, body_para))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── RULE CALLOUTS (Pace-Lead Ratio, X Check, X Structure) ──
+        _rule_callout_triggers = {
+            'Pace-Lead Ratio', 'Presupposition Check', 'Yes Set Structure',
+        }
+        if stripped in _rule_callout_triggers and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_rule_callout(stripped, body_para))
+            i += 2
+            global_para_count += 2
             continue
 
         # ── TIER DEFINITION CARDS ──
@@ -1547,11 +1715,6 @@ def build_chapter_body(section, global_para_count):
                     pull_quote_done = True
                     i += 1
                     continue
-
-        # ── DISC CHART — inject before first "D — DIRECT" entry ──
-        if not disc_injected and stripped == 'D — DIRECT':
-            parts.append(DISC_HTML)
-            disc_injected = True
 
         processed = process_paragraph(para, part_num)
         if processed:
@@ -2120,7 +2283,9 @@ a.toc-ch:hover{opacity:.7}
 
 /* ═══ SIGNAL KEY ═══ */
 .signal-key{
-  max-width:520px;margin:0 auto;padding:60px 36px;break-before:page;
+  max-width:100%;margin:0;padding:60px calc(50% - 260px);break-before:page;
+  background:linear-gradient(180deg,var(--navy),var(--navy2));
+  min-height:100vh;box-sizing:border-box;
 }
 .signal-key h2{
   font-family:var(--sans);font-size:.85rem;font-weight:700;
@@ -2428,13 +2593,14 @@ a.toc-ch:hover{opacity:.7}
 .vc-avoid .vc-meta-label{color:#A83030}
 /* ── VOLUNTEER SELECTION MATRIX ── */
 .vm-cell{
-  background:linear-gradient(135deg,rgba(30,18,8,.9),rgba(40,24,12,.95));
-  border:1px solid rgba(180,140,80,.12);
+  background:var(--vm-bg,linear-gradient(135deg,rgba(42,28,6,.95),rgba(52,36,8,.98)));
+  border:1px solid var(--vm-glow,rgba(201,168,76,.15));
   border-left:4px solid var(--vm-color,#C9A84C);
-  border-radius:4px;
-  padding:14px 16px;
-  margin:.5em 0;
+  border-radius:6px;
+  padding:16px 18px;
+  margin:.6em 0;
   break-inside:avoid;
+  box-shadow:0 2px 12px var(--vm-glow,rgba(201,168,76,.08));
 }
 .vm-heading{
   font-family:var(--sans);font-size:.62rem;font-weight:700;
@@ -2793,6 +2959,134 @@ a.toc-ch:hover{opacity:.7}
   font-style:normal;
 }
 
+/* ═══ CERTAINTY FRAMES ═══ */
+.certainty-frame{
+  border-left:4px solid var(--cf-color,#C9A84C);
+  border-radius:0 6px 6px 0;
+  padding:14px 16px 12px;
+  margin:.5em 0;
+  break-inside:avoid;
+  background:rgba(255,255,255,.03);
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  border-right:1px solid rgba(255,255,255,.05);
+}
+.cf-header{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:8px;
+}
+.cf-name{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  color:var(--cf-color,#C9A84C);letter-spacing:.05em;text-transform:uppercase;
+}
+.cf-tier{
+  font-family:var(--sans);font-size:.55rem;font-weight:600;
+  color:rgba(138,154,181,.6);letter-spacing:.08em;text-transform:uppercase;
+}
+.cf-use{
+  font-family:var(--serif);font-size:.82rem;color:rgba(245,240,232,.7);
+  line-height:1.55;margin-bottom:8px;
+}
+.cf-lines{
+  display:flex;flex-direction:column;gap:4px;margin:8px 0;
+  padding:8px 12px;
+  background:rgba(0,0,0,.2);border-radius:4px;
+}
+.cf-line{
+  font-family:var(--serif);font-style:italic;font-size:.82rem;
+  color:var(--cf-color,#C9A84C);opacity:.85;line-height:1.5;
+}
+.cf-avoid{
+  font-family:var(--sans);font-size:.68rem;color:rgba(168,48,48,.8);
+  letter-spacing:.02em;margin-top:8px;padding-top:6px;
+  border-top:1px solid rgba(168,48,48,.15);
+}
+
+/* ═══ RULE CALLOUTS ═══ */
+.rule-callout{
+  background:rgba(201,168,76,.05);
+  border:1px solid rgba(201,168,76,.18);
+  border-left:3px solid rgba(201,168,76,.5);
+  border-radius:0 4px 4px 0;
+  padding:10px 14px;margin:.5em 0 1em;
+  break-inside:avoid;
+}
+.rc-heading{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(201,168,76,.75);margin-bottom:5px;
+}
+.rc-body{
+  font-family:var(--serif);font-size:.82rem;color:rgba(245,240,232,.72);
+  line-height:1.55;margin:0;text-indent:0!important;
+}
+
+/* ═══ SEVEN STAGES ARC ═══ */
+.stage-card{
+  display:grid;grid-template-columns:52px 1fr;gap:0;
+  margin:.4em 0;break-inside:avoid;
+  border-left:3px solid var(--stage-color,#C9A84C);
+  border-radius:0 6px 6px 0;
+  overflow:hidden;
+}
+.stage-num{
+  background:var(--stage-color,#C9A84C);
+  color:var(--navy,#080F1A);
+  font-family:var(--sans);font-size:.75rem;font-weight:900;
+  letter-spacing:.05em;
+  display:flex;align-items:center;justify-content:center;
+  padding:14px 0;opacity:.9;
+  writing-mode:horizontal-tb;
+}
+.stage-content{
+  padding:12px 16px;
+  background:rgba(255,255,255,.03);
+  border-top:1px solid rgba(255,255,255,.05);
+  border-right:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.stage-name{
+  font-family:var(--sans);font-size:.68rem;font-weight:800;
+  letter-spacing:.15em;color:var(--stage-color,#C9A84C);
+  text-transform:uppercase;margin-bottom:6px;
+}
+.stage-rule{
+  width:24px;height:1px;background:var(--stage-color,#C9A84C);
+  opacity:.4;margin-bottom:7px;
+}
+.stage-body{
+  font-family:var(--serif);font-size:.85rem;color:rgba(245,240,232,.8);
+  line-height:1.6;margin:0;text-indent:0!important;
+}
+
+/* ═══ PERFORMANCE CHECKLIST ═══ */
+.checklist-section{
+  margin:.4em 0 .8em;break-inside:avoid;
+  border:1px solid rgba(138,154,181,.15);border-radius:6px;
+  overflow:hidden;
+}
+.cl-heading{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.12em;color:rgba(138,154,181,.9);
+  text-transform:uppercase;
+  padding:8px 14px;
+  background:rgba(138,154,181,.08);
+  border-bottom:1px solid rgba(138,154,181,.12);
+}
+.cl-items{display:flex;flex-direction:column;}
+.cl-item{
+  display:grid;grid-template-columns:28px 1fr;align-items:baseline;
+  gap:0;padding:7px 14px 7px 10px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  font-family:var(--serif);font-size:.82rem;
+  color:rgba(245,240,232,.72);line-height:1.5;
+}
+.cl-item:last-child{border-bottom:none}
+.cl-box{
+  font-size:.7rem;color:rgba(201,168,76,.5);
+  font-family:var(--sans);justify-self:center;padding-top:2px;
+}
+.cl-text{color:rgba(245,240,232,.78);}
+
 /* ═══ CHAPTER OPENER LEGEND ═══ */
 .opener-legend{
   margin-top:40px;padding-top:22px;
@@ -2981,14 +3275,15 @@ def build_book(manuscript_path, output_path):
         elif stype == 'part':
             html.append(gen_part_opener(section))
             # Part body content (Field Notes, NPM) — skip first para (used as part desc in opener)
+            # Route through build_chapter_body so all special formatters (stage cards, checklist, etc.) apply
             content_paras = [p for p in section['content'] if p.strip()][1:]
             if content_paras:
+                part_section_proxy = dict(section)
+                part_section_proxy['content'] = content_paras
                 html.append(f'<article class="chapter-body" data-part="{part_num}">')
                 html.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
-                for para in content_paras:
-                    processed = process_paragraph(para, part_num)
-                    if processed:
-                        html.append(processed)
+                body_html, global_para = build_chapter_body(part_section_proxy, global_para)
+                html.append(body_html)
                 html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
                 html.append('</article>')
 
