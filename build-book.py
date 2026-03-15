@@ -133,11 +133,11 @@ PATTERN_INTERRUPTS = [
     {'number': '250', 'unit': 'MILLISECONDS', 'text': 'The time it takes your brain to form a first impression of a stranger.', 'source': 'Willis & Todorov, 2006', 'wyajd': 'You formed yours of this page in less time than that. What did you notice first\u2009\u2014\u2009the number, or the word? That is salience at work.'},
     {'number': '40%', 'unit': 'INCREASE IN TRUST', 'text': 'The boost in perceived credibility when text is set in a highly readable font.', 'source': 'Processing Fluency Research', 'wyajd': 'The font you are reading right now was chosen for this reason.'},
     {'number': '7', 'unit': 'EXPRESSIONS', 'text': 'The number of universal micro-expressions the human face produces. Each lasts less than one-fifth of a second.', 'source': 'Ekman & Friesen, 1971', 'wyajd': ''},
-    {'number': '60,000\u00d7', 'unit': 'FASTER', 'text': 'The speed at which the brain processes color compared to text.', 'source': 'Visual Cognition Research', 'wyajd': 'The gold accent on this page reached your brain before the words did.'},
     {'number': '3', 'unit': 'SIGNALS', 'text': 'The minimum number of co-occurring behavioral signals required to form a reliable pattern.', 'source': 'The Five Cs\u2009\u2014\u2009Clusters', 'wyajd': 'One signal is noise. Two is coincidence. Three is a read.'},
-    {'number': '\u2159', 'unit': 'OF A SECOND', 'text': 'The duration of a micro-expression. Blink and you miss it. But your limbic system does not.', 'source': 'Ekman, 2003', 'wyajd': ''},
-    {'number': '85%', 'unit': 'OF DECISIONS', 'text': 'The percentage of consumer choices where color is cited as the primary factor.', 'source': 'Color Psychology Research', 'wyajd': ''},
-    {'number': '5', 'unit': 'FILTERS', 'text': 'Context. Clusters. Congruence. Consistency. Culture. The Five Cs that separate noise from signal.', 'source': 'The Architecture of Wonder', 'wyajd': ''},
+    # NOTE: 60,000× FASTER (color processing) is reserved for the Meta Reveal only — do not add back here
+    # NOTE: ⅙ OF A SECOND redundant with 7 EXPRESSIONS
+    # NOTE: 85% OF DECISIONS (color/purchase) too far from book content
+    # NOTE: 5 FILTERS redundant with 3 SIGNALS
 ]
 
 # ═══════════════════════════════════════════════════════════
