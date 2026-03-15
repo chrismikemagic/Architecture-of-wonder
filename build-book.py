@@ -1625,6 +1625,14 @@ def build_chapter_body(section, global_para_count):
         global_para_count += 1
         stripped = para.strip()
 
+        # ── EXPLICIT PATTERN INTERRUPT TRIGGERS ──
+        if stripped == 'PATTERN_INTERRUPT_40PCT':
+            pi_data = next((p for p in PATTERN_INTERRUPTS if p['number'] == '40%'), None)
+            if pi_data:
+                parts.append(gen_pattern_interrupt(pi_data))
+            i += 1
+            continue
+
         # ── OBSERVATION TABLE (flat 5-column format from DOCX) ──
         if stripped == '#' and i + 4 < len(paragraphs):
             next4 = [paragraphs[i+j].strip() for j in range(1, 5)]
