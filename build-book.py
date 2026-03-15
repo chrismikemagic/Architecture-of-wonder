@@ -38,7 +38,7 @@ HOOK_LINES = {
     'CHAPTER 7': '"Every person who walks toward you is already broadcasting."',
     'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
     'CHAPTER 9': '"The face performs. The eyes search."',
-    'CHAPTER 10': '"Four styles. One conversation. The read starts before anyone speaks."',
+    'CHAPTER 10': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
     'CHAPTER 11': '"You already know more than you think. The trick is knowing what to trust."',
     'CHAPTER 12': '"The face lies. But it lies too slowly."',
     'CHAPTER 13': '"The volunteer chose you before you chose them."',
@@ -84,9 +84,9 @@ KEY_READS = {
     'CHAPTER 7': 'The read is never one signal. The read is the chain.',
     'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
     'CHAPTER 9': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
-    'CHAPTER 10': 'Style is not personality. But it is the first thing the room broadcasts.',
+    'CHAPTER 10': 'Seven expressions. One-fifth of a second. That is the window.',
     'CHAPTER 11': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 12': 'Seven expressions. One-fifth of a second. That is the window.',
+    'CHAPTER 12': 'Handle the person, not the trick.',
     'CHAPTER 13': 'Handle the person, not the trick.',
     'CHAPTER 14': 'The best instruction is the one that feels like their idea.',
     'CHAPTER 14': 'Close the moment before they close it for you.',
@@ -147,16 +147,16 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 11:7 Universal Microexpressions': {
+    'CHAPTER 10:7 Universal Microexpressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 11.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 11:The Duchenne Smile': {
+    'CHAPTER 10:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
-        'caption': 'Figure 11.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
+        'caption': 'Figure 10.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
 }
@@ -1431,22 +1431,26 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       <div class="ftf-node">Think of a fruit with that letter</div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Fruit comes immediately</strong><br>Think A / O</div>
+        <div class="ftf-branch-item ftf-yes"><strong>Fruit comes immediately</strong><br><span class="ftf-note">likely common fruit</span><br>think <span class="ftf-vowel-inline">A / O</span><br><span class="ftf-note">often apple or orange</span></div>
         <div class="ftf-branch-mid">Did it come easily?</div>
-        <div class="ftf-branch-item ftf-no"><strong>No fruit arrives</strong><br>Offer the animal option</div>
+        <div class="ftf-branch-item ftf-no"><strong>No fruit / visible search</strong><br><span class="ftf-note">offer the animal option</span></div>
       </div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>Think E</div>
+        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>think <span class="ftf-vowel-inline">E</span><br><span class="ftf-note">often elephant &mdash; ask if it feels like a large animal; confident yes often confirms</span></div>
         <div class="ftf-branch-mid">Animal ease?</div>
-        <div class="ftf-branch-item ftf-no"><strong>Animal takes time</strong><br>Think I / U</div>
+        <div class="ftf-branch-item ftf-no"><strong>Animal takes longer</strong><br>think <span class="ftf-vowel-inline">I / U</span><br><span class="ftf-note">watch quality of search &amp; reaction to challenge</span></div>
       </div>
       <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-node ftf-node-test">Playful challenge: <em>&ldquo;That&rsquo;s not really an animal.&rdquo;</em></div>
+      <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Confused reaction</strong><br>Likely iguana</div>
-        <div class="ftf-branch-mid">Playful challenge</div>
-        <div class="ftf-branch-item ftf-no"><strong>Strong surprise</strong><br>Likely unicorn</div>
+        <div class="ftf-branch-item ftf-yes"><strong>Mild confusion</strong><br>likely <span class="ftf-vowel-inline">I</span><br><span class="ftf-note">often iguana or another borderline answer</span></div>
+        <div class="ftf-branch-mid">Reaction?</div>
+        <div class="ftf-branch-item ftf-no"><strong>Strong surprise</strong><br>likely <span class="ftf-vowel-inline">U</span><br><span class="ftf-note">often unicorn &mdash; watch for shoulder shrug or head wobble as social protection</span></div>
       </div>
+      <div class="ftf-arrow">&#8595;</div>
+      <div class="ftf-node ftf-node-note"><strong>Very long search before settling</strong><br><span class="ftf-note">points toward <span class="ftf-vowel-inline">U</span> rather than <span class="ftf-vowel-inline">I</span> &mdash; the mind is reaching for a less natural answer</span></div>
     </div>
   </div>
 </div>'''
@@ -2583,6 +2587,10 @@ body{counter-reset:page}
 .ftf-branch-item{background:rgba(13,30,48,.6);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:7px 10px;font-size:.7rem;color:rgba(255,255,255,.75);text-align:center;line-height:1.45}
 .ftf-yes{border-left:3px solid rgba(75,170,114,.6)}
 .ftf-no{border-left:3px solid rgba(26,143,168,.6)}
+.ftf-note{display:block;font-size:.65rem;color:var(--gray-blue);margin-top:2px;font-style:italic}
+.ftf-vowel-inline{color:var(--gold);font-weight:700}
+.ftf-node-test{background:rgba(107,82,160,.15);border-color:rgba(107,82,160,.4);font-style:italic}
+.ftf-node-note{background:rgba(26,143,168,.08);border-color:rgba(26,143,168,.3);font-size:.7rem}
 
 .reading-line-card{
   margin:.7em 0;padding:14px 16px 12px;

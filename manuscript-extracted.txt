@@ -987,30 +987,6 @@ DISC is a read you run on the way to something else. It is not a demonstration. 
 · · ·
 
 CHAPTER 9
-The Micro-Expression Matrix
-Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives.
-────────────────────────────────────────────────────────────────────────────────
-What You Have Felt Before
-Someone smiles at you and something is slightly wrong with it. Not obviously wrong. Wrong in a way you cannot immediately articulate. The smile is technically present. The teeth are showing. But something did not land right and you left the interaction with a faint residue of unease you could not justify. That is the Duchenne tell. You caught the timing.
-Genuine positive emotion activates two muscle groups in the face: the zygomatic major, which pulls the lip corners up, and the orbicularis oculi, which pulls the outer corner of the eye and produces the characteristic creasing around it. The second muscle, the one around the eye, does not respond to voluntary instruction. It activates automatically in response to genuine positive emotion, and in most people, it activates before the conscious smile arrives. A managed smile, produced to meet a social expectation, activates the lip movement without the eye involvement.
-The Science of Universality
-The research of Paul Ekman (who offers an excellent entry level course that I recommend taking) and colleagues in the 1960s and 1970s proposed that a core set of facial expressions (happiness, sadness, fear, disgust, anger, surprise, and contempt) are universally recognized across cultures, including in populations without Western media exposure. This work became foundational to the field of micro-expression research and to a generation of practitioner training.
-
-The Seven Expressions
-
-Figure 10.1 — The seven universal expressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.
-Happiness · Sadness · Fear · Disgust · Anger · Surprise · Contempt. Observed consistently across multiple cultures and in congenitally blind individuals. The extent of universality across all cultural contexts remains an active area of scientific research.
-The Duchenne Smile
-Named for Guillaume Duchenne, who identified the orbicularis oculi as the muscle that distinguishes genuine from social smiling. The eye crease cannot be voluntarily produced in most people. If the eyes are not involved, the smile is consciously constructed, not because they are truly happy.
-The Leakage Hierarchy
-Face: most managed, highest social training. Upper body: moderate management. Hands: less managed. Self-soothing reveals. Feet: least managed, most honest. When face and feet disagree, trust the feet.
-Convergence Rule
-A read is reliable when face, voice, and body all deliver the same signal. When they diverge, the channel being suppressed most actively is usually the most truthful.
-Reading in Clusters, Not Snapshots
-The practitioner error is reading a single expression and concluding too much from it. A flash of fear means the brain registered a threat. It does not tell you what the threat was or what will be done about it. Micro-expressions are most reliable when they appear in clusters and align with other behavioral channels: the vocal tone, the body posture, the timing of response. When the face, voice, and body all converge on the same emotional signal at the same moment, you have a read.
-· · ·
-
-CHAPTER 10
 The Eyes, the Face, and the Way Thought Leaks Out
 The face is managed. The eyes are managed less.
 ────────────────────────────────────────────────────────────────────────────────
@@ -1084,6 +1060,24 @@ In other words, the search itself becomes part of the force.
 Once you can tell the difference between an easy answer and a hunted answer, you are no longer just watching thought. You are shaping what the search reveals.
 
 FRUIT TO FANG APPLICATION
+
+If they react with genuine surprise when I dismiss it as not a real animal, I start thinking of U, because under pressure many people reach for unicorn. Occasionally they will think of urchin, which is still informative. Often you can tell whether the vowel is I or U from the search itself. U usually takes longer and feels less clean, because the mind is reaching for something more strained. When they settle on unicorn, you may catch a small shoulder shrug or a faint wobble of the head as they say, "Okay, I got one." That movement often acts as social protection. Some part of them knows the answer is a little shaky, and the body reveals that hesitation before the mouth ever fully commits.
+
+It goes without saying that this works best on someone who is not deeply involved in the world of animals, zoology, or niche vocabulary, otherwise you may get a more obscure answer than the structure is designed for. But in ordinary performance conditions, this has worked for me with a very high success rate.
+
+Once I have the vowel, getting the fruit is usually very easy. At that point, I will often have them picture the color of the fruit and begin with something safely broad.
+
+"I'm getting a very vibrant color here."
+
+Most people will immediately agree, regardless of the fruit, because most fruits do feel vivid in the mind. That gives me an easy point of entry without creating resistance. From there, I can begin narrowing.
+
+Then I might say, "It feels warm-toned."
+
+This is where the response starts doing real work. If they seem slightly puzzled, that is useful. I can lean into it and say, "What's funny is, they're not always actually that color. We call it an orange, which is the name of the color, but there are all different shades. So which one is really orange?" Then I can land the reveal: "You were thinking of an orange, weren't you?"
+
+If, instead, they do not show that same confusion, or they seem to accept the idea that the fruit is often not actually the color people casually associate with it, I start thinking apple. That gives me a clean line such as, "Yeah, you're probably thinking of one that's red, but they're also often green or yellow. I like the yellow ones best. You were thinking of an apple."
+
+What makes this work is that the language sounds observational, not procedural. I am not asking them to confirm a checklist. I am describing my way toward the image while their reactions quietly tell me which branch I am on.
 
 Not a Lie Compass, but a Shift Detector
 This is the point to name what eye behavior actually is and what it is not.
@@ -1214,6 +1208,32 @@ An eye movement means nothing without a baseline. A pupil response means nothing
 That is the discipline. Not a catalog of tells, but a practiced sensitivity to when something shifts. The eyes are where that shift is most visible and least managed.
 
 Train your observation there. The rest follows.
+· · ·
+
+CHAPTER 10
+The Micro-Expression Matrix
+Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives.
+────────────────────────────────────────────────────────────────────────────────
+If you skipped ahead to this chapter because the title interested you more than the previous one, that is salience at work. Your brain prioritized novelty over sequence. Chapter Two explained why. And if you didn't, you are a studious reader. I respect that.
+
+What You Have Felt Before
+Someone smiles at you and something is slightly wrong with it. Not obviously wrong. Wrong in a way you cannot immediately articulate. The smile is technically present. The teeth are showing. But something did not land right and you left the interaction with a faint residue of unease you could not justify. That is the Duchenne tell. You caught the timing.
+Genuine positive emotion activates two muscle groups in the face: the zygomatic major, which pulls the lip corners up, and the orbicularis oculi, which pulls the outer corner of the eye and produces the characteristic creasing around it. The second muscle, the one around the eye, does not respond to voluntary instruction. It activates automatically in response to genuine positive emotion, and in most people, it activates before the conscious smile arrives. A managed smile, produced to meet a social expectation, activates the lip movement without the eye involvement.
+The Science of Universality
+The research of Paul Ekman (who offers an excellent entry level course that I recommend taking) and colleagues in the 1960s and 1970s proposed that a core set of facial expressions (happiness, sadness, fear, disgust, anger, surprise, and contempt) are universally recognized across cultures, including in populations without Western media exposure. This work became foundational to the field of micro-expression research and to a generation of practitioner training.
+
+The Seven Expressions
+
+Figure 10.1 — The seven universal expressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.
+Happiness · Sadness · Fear · Disgust · Anger · Surprise · Contempt. Observed consistently across multiple cultures and in congenitally blind individuals. The extent of universality across all cultural contexts remains an active area of scientific research.
+The Duchenne Smile
+Named for Guillaume Duchenne, who identified the orbicularis oculi as the muscle that distinguishes genuine from social smiling. The eye crease cannot be voluntarily produced in most people. If the eyes are not involved, the smile is consciously constructed, not because they are truly happy.
+The Leakage Hierarchy
+Face: most managed, highest social training. Upper body: moderate management. Hands: less managed. Self-soothing reveals. Feet: least managed, most honest. When face and feet disagree, trust the feet.
+Convergence Rule
+A read is reliable when face, voice, and body all deliver the same signal. When they diverge, the channel being suppressed most actively is usually the most truthful.
+Reading in Clusters, Not Snapshots
+The practitioner error is reading a single expression and concluding too much from it. A flash of fear means the brain registered a threat. It does not tell you what the threat was or what will be done about it. Micro-expressions are most reliable when they appear in clusters and align with other behavioral channels: the vocal tone, the body posture, the timing of response. When the face, voice, and body all converge on the same emotional signal at the same moment, you have a read.
 · · ·
 
 CHAPTER 11
