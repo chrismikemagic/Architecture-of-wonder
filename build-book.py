@@ -158,179 +158,47 @@ FIGURES = {
 # ═══════════════════════════════════════════════════════════
 
 FIVE_CS_HTML = '''
-<div class="five-cs-framework">
-  <div class="five-cs-header">
-    <div class="five-cs-title">THE FIVE C’s OF BEHAVIORAL READING</div>
-    <div class="five-cs-subtitle">The architecture without which individual signals are noise</div>
-  </div>
-
-  <div class="five-cs-graphic">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Montserrat,Calibri,sans-serif" style="width:100%;height:auto;display:block;border-radius:6px;">
-  <defs>
-    <linearGradient id="bgGradA" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#080F1A"/>
-      <stop offset="100%" stop-color="#0D1E30"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background -->
-  <rect width="800" height="380" fill="url(#bgGradA)" rx="8"/>
-
-  <!-- Title -->
-  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">THE FIVE C's OF BEHAVIORAL READING</text>
-  <line x1="220" y1="55" x2="580" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
-  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">The architecture without which individual signals are noise</text>
-
-  <!-- Tab-style layout -->
-  <!-- Tab 1: Context -->
-  <rect x="40" y="95" width="140" height="38" rx="4" fill="#A83030" opacity="0.2"/>
-  <text x="110" y="118" text-anchor="middle" fill="#A83030" font-size="12" font-weight="bold">CONTEXT</text>
-  <rect x="40" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#A83030" stroke-width="1"/>
-  <rect x="40" y="133" width="140" height="1" fill="#A83030"/>
-  <text x="55" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">What environment?</text>
-  <text x="55" y="172" fill="#8A9AB5" font-size="8.5">Same gesture means</text>
-  <text x="55" y="185" fill="#8A9AB5" font-size="8.5">different things in</text>
-  <text x="55" y="198" fill="#8A9AB5" font-size="8.5">different settings.</text>
-  <text x="55" y="218" fill="#A83030" font-size="8" font-style="italic">Context determines</text>
-  <text x="55" y="229" fill="#A83030" font-size="8" font-style="italic">meaning. Always.</text>
-
-  <!-- Tab 2: Clusters -->
-  <rect x="192" y="95" width="140" height="38" rx="4" fill="#E8C870" opacity="0.15"/>
-  <text x="262" y="118" text-anchor="middle" fill="#E8C870" font-size="12" font-weight="bold">CLUSTERS</text>
-  <rect x="192" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#E8C870" stroke-width="1"/>
-  <rect x="192" y="133" width="140" height="1" fill="#E8C870"/>
-  <text x="207" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Multiple signals?</text>
-  <text x="207" y="172" fill="#8A9AB5" font-size="8.5">One signal is noise.</text>
-  <text x="207" y="185" fill="#8A9AB5" font-size="8.5">Three co-occurring</text>
-  <text x="207" y="198" fill="#8A9AB5" font-size="8.5">behaviors = a pattern.</text>
-  <text x="207" y="218" fill="#E8C870" font-size="8" font-style="italic">Never act on a</text>
-  <text x="207" y="229" fill="#E8C870" font-size="8" font-style="italic">single signal.</text>
-
-  <!-- Tab 3: Congruence -->
-  <rect x="344" y="95" width="140" height="38" rx="4" fill="#1A8FA8" opacity="0.15"/>
-  <text x="414" y="118" text-anchor="middle" fill="#1A8FA8" font-size="12" font-weight="bold">CONGRUENCE</text>
-  <rect x="344" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#1A8FA8" stroke-width="1"/>
-  <rect x="344" y="133" width="140" height="1" fill="#1A8FA8"/>
-  <text x="359" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Body = words?</text>
-  <text x="359" y="172" fill="#8A9AB5" font-size="8.5">When body says one</text>
-  <text x="359" y="185" fill="#8A9AB5" font-size="8.5">thing and words say</text>
-  <text x="359" y="198" fill="#8A9AB5" font-size="8.5">another: body is truth.</text>
-  <text x="359" y="218" fill="#1A8FA8" font-size="8" font-style="italic">Incongruence is your</text>
-  <text x="359" y="229" fill="#1A8FA8" font-size="8" font-style="italic">most reliable signal.</text>
-
-  <!-- Tab 4: Consistency -->
-  <rect x="496" y="95" width="140" height="38" rx="4" fill="#6B52A0" opacity="0.15"/>
-  <text x="566" y="118" text-anchor="middle" fill="#6B52A0" font-size="11" font-weight="bold">CONSISTENCY</text>
-  <rect x="496" y="133" width="140" height="100" rx="0" fill="#0D1E30" stroke="#6B52A0" stroke-width="1"/>
-  <rect x="496" y="133" width="140" height="1" fill="#6B52A0"/>
-  <text x="511" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Their baseline?</text>
-  <text x="511" y="172" fill="#8A9AB5" font-size="8.5">Compare to that</text>
-  <text x="511" y="185" fill="#8A9AB5" font-size="8.5">individual's personal</text>
-  <text x="511" y="198" fill="#8A9AB5" font-size="8.5">baseline. Not generic.</text>
-  <text x="511" y="218" fill="#6B52A0" font-size="8" font-style="italic">Deviation from their</text>
-  <text x="511" y="229" fill="#6B52A0" font-size="8" font-style="italic">baseline is the data.</text>
-
-  <!-- Tab 5: Culture -->
-  <rect x="648" y="95" width="120" height="38" rx="4" fill="#C9A84C" opacity="0.12"/>
-  <text x="708" y="118" text-anchor="middle" fill="#C9A84C" font-size="12" font-weight="bold">CULTURE</text>
-  <rect x="648" y="133" width="120" height="100" rx="0" fill="#0D1E30" stroke="#C9A84C" stroke-width="1"/>
-  <rect x="648" y="133" width="120" height="1" fill="#C9A84C"/>
-  <text x="663" y="155" fill="#FFFFFF" font-size="9" font-weight="bold">Background norms?</text>
-  <text x="663" y="172" fill="#8A9AB5" font-size="8.5">Eye contact, space,</text>
-  <text x="663" y="185" fill="#8A9AB5" font-size="8.5">expressiveness vary</text>
-  <text x="663" y="198" fill="#8A9AB5" font-size="8.5">significantly.</text>
-  <text x="663" y="218" fill="#C9A84C" font-size="8" font-style="italic">Calibrate before</text>
-  <text x="663" y="229" fill="#C9A84C" font-size="8" font-style="italic">concluding.</text>
-
-  <!-- Chain flow -->
-  <text x="400" y="268" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="bold">APPLY AS A CHAIN — NOT A CHECKLIST</text>
-
-  <rect x="55" y="285" width="96" height="26" rx="13" fill="#A83030" opacity="0.2"/>
-  <text x="103" y="302" text-anchor="middle" fill="#A83030" font-size="9" font-weight="bold">Context</text>
-  <text x="160" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
-
-  <rect x="173" y="285" width="96" height="26" rx="13" fill="#E8C870" opacity="0.15"/>
-  <text x="221" y="302" text-anchor="middle" fill="#E8C870" font-size="9" font-weight="bold">Clusters</text>
-  <text x="278" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
-
-  <rect x="291" y="285" width="110" height="26" rx="13" fill="#1A8FA8" opacity="0.15"/>
-  <text x="346" y="302" text-anchor="middle" fill="#1A8FA8" font-size="9" font-weight="bold">Congruence</text>
-  <text x="410" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
-
-  <rect x="423" y="285" width="110" height="26" rx="13" fill="#6B52A0" opacity="0.15"/>
-  <text x="478" y="302" text-anchor="middle" fill="#6B52A0" font-size="9" font-weight="bold">Consistency</text>
-  <text x="542" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
-
-  <rect x="555" y="285" width="96" height="26" rx="13" fill="#C9A84C" opacity="0.12"/>
-  <text x="603" y="302" text-anchor="middle" fill="#C9A84C" font-size="9" font-weight="bold">Culture</text>
-  <text x="660" y="302" fill="#3A4A5C" font-size="12">&gt;</text>
-
-  <rect x="673" y="285" width="80" height="26" rx="13" fill="#FFFFFF" opacity="0.1"/>
-  <text x="713" y="302" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">READ</text>
-
-  <!-- Bottom note -->
-  <text x="400" y="340" text-anchor="middle" fill="#8A9AB5" font-size="9">Most weak readings fail because they skip this chain. They treat behavior like a vending machine.</text>
-  <text x="400" y="355" text-anchor="middle" fill="#C9A84C" font-size="9" font-style="italic">Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</text>
-
-  <!-- Footer -->
-  <text x="400" y="375" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
-</svg>
-  </div>
-
-  <table class="five-cs-table">
-    <thead>
-      <tr>
-        <th>Filter</th>
-        <th>Key Question</th>
-        <th>The Rule</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="c-row" data-c="context">
-        <td class="c-name">Context</td>
-        <td class="c-q">What environment?</td>
-        <td class="c-rule-cell">Context determines meaning. Always.</td>
-      </tr>
-      <tr class="c-row" data-c="clusters">
-        <td class="c-name">Clusters</td>
-        <td class="c-q">Multiple signals?</td>
-        <td class="c-rule-cell">Never act on a single signal.</td>
-      </tr>
-      <tr class="c-row" data-c="congruence">
-        <td class="c-name">Congruence</td>
-        <td class="c-q">Body = words?</td>
-        <td class="c-rule-cell">Incongruence is your most reliable signal.</td>
-      </tr>
-      <tr class="c-row" data-c="consistency">
-        <td class="c-name">Consistency</td>
-        <td class="c-q">Their baseline?</td>
-        <td class="c-rule-cell">Without baseline, every read is a projection.</td>
-      </tr>
-      <tr class="c-row" data-c="culture">
-        <td class="c-name">Culture</td>
-        <td class="c-q">Background norms?</td>
-        <td class="c-rule-cell">Calibrate before concluding.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="five-cs-chain">
-    <div class="chain-label">APPLY AS A CHAIN — NOT A CHECKLIST</div>
-    <div class="chain-flow">
-      <span class="chain-pill" data-c="context">Context</span>
-      <span class="chain-arrow">›</span>
-      <span class="chain-pill" data-c="clusters">Clusters</span>
-      <span class="chain-arrow">›</span>
-      <span class="chain-pill" data-c="congruence">Congruence</span>
-      <span class="chain-arrow">›</span>
-      <span class="chain-pill" data-c="consistency">Consistency</span>
-      <span class="chain-arrow">›</span>
-      <span class="chain-pill" data-c="culture">Culture</span>
-      <span class="chain-arrow">›</span>
-      <span class="chain-pill chain-read">READ</span>
+<div class="five-cs-inline">
+  <div class="fci-header">THE FIVE C&#8217;s OF BEHAVIORAL READING</div>
+  <div class="fci-grid">
+    <div class="fci-item" data-c="context">
+      <div class="fci-name">Context</div>
+      <div class="fci-q">What environment?</div>
+      <div class="fci-rule">Context determines meaning. Always.</div>
     </div>
-    <p class="chain-note">Most weak readings fail because they skip this chain. They treat behavior like a vending machine.</p>
-    <p class="chain-note-gold">Real behavior breathes. It moves. It has to be read in motion, against a baseline, inside a context.</p>
+    <div class="fci-item" data-c="clusters">
+      <div class="fci-name">Clusters</div>
+      <div class="fci-q">Multiple signals?</div>
+      <div class="fci-rule">Never act on a single signal.</div>
+    </div>
+    <div class="fci-item" data-c="congruence">
+      <div class="fci-name">Congruence</div>
+      <div class="fci-q">Body = words?</div>
+      <div class="fci-rule">Incongruence is your most reliable signal.</div>
+    </div>
+    <div class="fci-item" data-c="consistency">
+      <div class="fci-name">Consistency</div>
+      <div class="fci-q">Their baseline?</div>
+      <div class="fci-rule">Without baseline, every read is a projection.</div>
+    </div>
+    <div class="fci-item" data-c="culture">
+      <div class="fci-name">Culture</div>
+      <div class="fci-q">Background norms?</div>
+      <div class="fci-rule">Calibrate before concluding.</div>
+    </div>
+  </div>
+  <div class="fci-chain">
+    <span class="chain-pill" data-c="context">Context</span>
+    <span class="chain-arrow">›</span>
+    <span class="chain-pill" data-c="clusters">Clusters</span>
+    <span class="chain-arrow">›</span>
+    <span class="chain-pill" data-c="congruence">Congruence</span>
+    <span class="chain-arrow">›</span>
+    <span class="chain-pill" data-c="consistency">Consistency</span>
+    <span class="chain-arrow">›</span>
+    <span class="chain-pill" data-c="culture">Culture</span>
+    <span class="chain-arrow">›</span>
+    <span class="chain-pill chain-read">READ</span>
   </div>
 </div>
 
@@ -1187,7 +1055,23 @@ def gen_five_c_entry(c_word, body_text):
 
 def gen_performer_note():
     return '''<div class="performer-note-header">
-  <span class="pn-label">Chris's Take</span>
+  <span class="pn-label">Chris Michael's Take</span>
+</div>'''
+
+
+def gen_warning_header(text):
+    """Render a high-visibility warning section header (e.g. 'When You Have Gone Too Far')."""
+    return f'''<div class="warning-header">
+  <div class="wh-icon">&#9888;</div>
+  <h3 class="wh-title">{escape(text)}</h3>
+</div>'''
+
+
+def gen_warning_callout(heading, body):
+    """Render a 'Common Misread' or similar caution callout box."""
+    return f'''<div class="warning-callout">
+  <div class="wc-label">&#9888; {escape(heading)}</div>
+  <p class="wc-body">{escape(body)}</p>
 </div>'''
 
 
@@ -1305,8 +1189,21 @@ def gen_checklist_section(heading, bullets_text):
 
 def gen_what_you_have_felt():
     return '''<div class="felt-before">
-  <div class="felt-icon">\u25C9</div>
   <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
+</div>'''
+
+
+def gen_forces_intro(statement, forces_text):
+    """Render a 'Five forces...' doctrine block with force pills."""
+    # Split forces by comma/and
+    raw = re.split(r',\s*(?:and\s+)?|\s+and\s+', forces_text.rstrip('.'))
+    pills = ''.join(
+        f'<span class="force-pill">{escape(f.strip())}</span>'
+        for f in raw if f.strip()
+    )
+    return f'''<div class="forces-intro">
+  <p class="forces-statement">{escape(statement)}</p>
+  <div class="forces-pills">{pills}</div>
 </div>'''
 
 
@@ -1346,15 +1243,24 @@ def process_paragraph(text, part_num=1):
     if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
         return gen_performer_note()
 
-    # Section headers — 3 visual styles based on word count
+    # Warning section headers — stand-out treatment
+    _warning_headers = {
+        'When You Have Gone Too Far',
+    }
+    if stripped in _warning_headers:
+        return gen_warning_header(stripped)
+
+    # Numbered step headers: "01 — SHOES", "02 — HANDS", etc.
+    # Pattern: 1-2 digits, dash/em-dash, ALL CAPS label (≤4 words)
+    _step_m = re.match(r'^(\d{1,2})\s*[\u2014\u2013\-]+\s*([A-Z][A-Z /]+)$', stripped)
+    if _step_m:
+        _sn, _sl = _step_m.group(1), _step_m.group(2).strip()
+        return f'<div class="step-header"><span class="step-num">{escape(_sn)}</span><span class="step-name">{escape(_sl)}</span></div>'
+
+    # Section headers — 2 visual styles based on word count
     if is_section_header(stripped):
         wc = len(stripped.split())
-        if wc <= 3:
-            sh_cls = 'sh-label'
-        elif wc <= 7:
-            sh_cls = 'sh-standard'
-        else:
-            sh_cls = 'sh-section'
+        sh_cls = 'sh-section' if wc >= 8 else 'sh-standard'
         return f'<h3 class="section-header {sh_cls}">{escape(stripped)}</h3>'
 
     t = escape(stripped)
@@ -1391,6 +1297,143 @@ def is_tier_definition(text):
     stripped = text.strip()
     m = re.match(r'^T([1-4])\s*[\u2014\u2013\-]+\s*(.+)$', stripped)
     return m
+
+def gen_glossary_entry(num, term, definition):
+    """Render a single glossary entry as a definition card."""
+    return (
+        f'<div class="gloss-entry">'
+        f'<div class="gloss-head">'
+        f'<span class="gloss-num">{escape(str(num))}</span>'
+        f'<span class="gloss-term">{escape(term)}</span>'
+        f'</div>'
+        f'<p class="gloss-def">{escape(definition)}</p>'
+        f'</div>'
+    )
+
+
+def gen_principle_card(num, body):
+    """Render one of the Four Principles of Translation as a numbered card."""
+    # Split first sentence as the title punch
+    first, _, rest = body.partition('. ')
+    title = first.rstrip('.')
+    return (
+        f'<div class="principle-card">'
+        f'<div class="pc-num">{num:02d}</div>'
+        f'<div class="pc-body">'
+        f'<p class="pc-title">{escape(title)}.</p>'
+        f'<p class="pc-rest">{escape(rest.strip())}</p>'
+        f'</div>'
+        f'</div>'
+    ) if rest.strip() else (
+        f'<div class="principle-card">'
+        f'<div class="pc-num">{num:02d}</div>'
+        f'<div class="pc-body"><p class="pc-title">{escape(body)}</p></div>'
+        f'</div>'
+    )
+
+
+COLD_WARM_HOT_HTML = '''<div class="cwh-spectrum">
+  <div class="cwh-item cwh-cold">
+    <div class="cwh-label">COLD</div>
+    <div class="cwh-name">Pure Cold Reading</div>
+    <div class="cwh-desc">No prior knowledge. Works entirely from observation, context, and the Forer effect.</div>
+  </div>
+  <div class="cwh-arrow">&#8594;</div>
+  <div class="cwh-item cwh-warm">
+    <div class="cwh-label">WARM</div>
+    <div class="cwh-name">Warm Reading</div>
+    <div class="cwh-desc">Live observation. Using behavioral signals the participant has already broadcast. Most real readings are here.</div>
+  </div>
+  <div class="cwh-arrow">&#8594;</div>
+  <div class="cwh-item cwh-hot">
+    <div class="cwh-label">HOT</div>
+    <div class="cwh-name">Hot Reading</div>
+    <div class="cwh-desc">Research-based. Specific knowledge gathered in advance before the participant arrives.</div>
+  </div>
+</div>'''
+
+
+def gen_t4_signal_card(signal_name, claim, research, valid):
+    """Render an Appendix A1 T4 signal card with claim/research/valid sections."""
+    return (
+        f'<div class="t4-signal-card">'
+        f'<div class="t4s-header"><span class="t4s-badge">T4</span><span class="t4s-name">{escape(signal_name)}</span></div>'
+        f'<div class="t4s-section t4s-claim">'
+        f'<div class="t4s-label">THE CLAIM</div>'
+        f'<p class="t4s-body">{escape(claim)}</p>'
+        f'</div>'
+        f'<div class="t4s-section t4s-research">'
+        f'<div class="t4s-label">THE RESEARCH</div>'
+        f'<p class="t4s-body">{escape(research)}</p>'
+        f'</div>'
+        f'<div class="t4s-section t4s-valid">'
+        f'<div class="t4s-label">WHAT REMAINS VALID</div>'
+        f'<p class="t4s-body">{escape(valid)}</p>'
+        f'</div>'
+        f'</div>'
+    )
+
+
+def gen_modality_card(modality, signals_text):
+    """Render Visual/Auditory/Kinesthetic Signals as a compact reference card."""
+    colors = {
+        'Visual':       ('#1A8FA8', 'rgba(26,143,168,.08)'),
+        'Auditory':     ('#6B52A0', 'rgba(107,82,160,.08)'),
+        'Kinesthetic':  ('#4BAA72', 'rgba(75,170,114,.08)'),
+    }
+    color, bg = colors.get(modality, ('#C9A84C', 'rgba(201,168,76,.08)'))
+    # Parse the signals text into labeled fields
+    fields_html = ''
+    for chunk in signals_text.split('. '):
+        chunk = chunk.strip().rstrip('.')
+        if not chunk:
+            continue
+        if ':' in chunk:
+            label, _, value = chunk.partition(':')
+            fields_html += (
+                f'<div class="mod-field">'
+                f'<span class="mod-label">{escape(label.strip())}</span>'
+                f'<span class="mod-value">{escape(value.strip())}</span>'
+                f'</div>'
+            )
+        else:
+            fields_html += f'<div class="mod-field mod-note">{escape(chunk)}</div>'
+    return (
+        f'<div class="modality-card" style="--mod-color:{color};--mod-bg:{bg}">'
+        f'<div class="mod-name">{escape(modality)}</div>'
+        f'<div class="mod-fields">{fields_html}</div>'
+        f'</div>'
+    )
+
+
+def gen_reading_line_card(disc_type, context, body_text):
+    """Render a behavioral reading line card (IF YOU SEE / LINE)."""
+    context_cls = 'rl-stage' if 'stage' in context.lower() or 'strolling' in context.lower() else 'rl-closeup'
+    context_label = 'STAGE / STROLLING' if context_cls == 'rl-stage' else 'CLOSE-UP / THEATRICAL'
+    # Parse IF YOU SEE and LINE from body
+    see_html = ''
+    line_html = ''
+    see_m = re.search(r'IF YOU SEE:\s*(.+?)(?:\.\s*LINE:|LINE:|$)', body_text, re.IGNORECASE)
+    line_m = re.search(r"LINE:\s*['\u2018\u201c](.+?)['\u2019\u201d]", body_text, re.IGNORECASE)
+    if not line_m:
+        line_m = re.search(r"LINE:\s*(.+)$", body_text, re.IGNORECASE)
+    if see_m:
+        signals = [s.strip() for s in see_m.group(1).split('+') if s.strip()]
+        chips = ''.join(f'<span class="rl-signal">{escape(s)}</span>' for s in signals)
+        see_html = f'<div class="rl-signals">{chips}</div>'
+    if line_m:
+        line_html = f'<p class="rl-line">&ldquo;{escape(line_m.group(1).strip())}&rdquo;</p>'
+    return (
+        f'<div class="reading-line-card {context_cls}">'
+        f'<div class="rl-head">'
+        f'<span class="rl-type">{escape(disc_type)}</span>'
+        f'<span class="rl-context">{context_label}</span>'
+        f'</div>'
+        f'{see_html}'
+        f'{line_html}'
+        f'</div>'
+    )
+
 
 def gen_tier_card(tier_num, tier_name, body_text):
     """Generate a textbook-style tier definition card."""
@@ -1591,7 +1634,8 @@ def build_chapter_body(section, global_para_count):
         # ── PERFORMANCE CHECKLIST SECTIONS (ALL-CAPS heading + bullet text) ──
         checklist_heads = {
             'PRE-SHOW PRIMING', 'ATTENTION ARCHITECTURE', 'TENSION AND RELEASE',
-            'BEHAVIORAL PROFILING', 'MEMORY ENCODING'
+            'BEHAVIORAL PROFILING', 'MEMORY ENCODING',
+            'BEHAVIORS THAT READ AS SAFE AND STRONG'
         }
         if stripped in checklist_heads and i + 1 < len(paragraphs):
             bullet_para = paragraphs[i + 1].strip()
@@ -1605,6 +1649,15 @@ def build_chapter_body(section, global_para_count):
         if stripped in _CERTAINTY_FRAME_META and i + 1 < len(paragraphs):
             body_para = paragraphs[i + 1].strip()
             parts.append(gen_certainty_frame(stripped, body_para))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── WARNING CALLOUTS (Common Misread, When This Read Misses) ──
+        _warning_callout_triggers = {'Common Misread', 'When This Read Misses:'}
+        if stripped in _warning_callout_triggers and i + 1 < len(paragraphs):
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_warning_callout(stripped, body_para))
             i += 2
             global_para_count += 2
             continue
@@ -1724,6 +1777,111 @@ def build_chapter_body(section, global_para_count):
         if not wyajd_done and chapter_num in WHAT_YOU_JUST_DID and i > total * 0.6:
             parts.append(gen_wyajd(WHAT_YOU_JUST_DID[chapter_num]))
             wyajd_done = True
+
+        # ── COLD-WARM-HOT SPECTRUM ──
+        if stripped == 'The Cold-Warm-Hot Spectrum':
+            parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)}</h3>')
+            parts.append(COLD_WARM_HOT_HTML)
+            i += 1
+            continue
+
+        # ── FOUR PRINCIPLES OF TRANSLATION (collect 4 paras after header) ──
+        if stripped == 'The Four Principles of Translation':
+            parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)}</h3>')
+            j = i + 1
+            pcount = 0
+            while j < len(paragraphs) and pcount < 4:
+                nxt = paragraphs[j].strip()
+                if nxt:
+                    parts.append(gen_principle_card(pcount + 1, nxt))
+                    global_para_count += 1
+                    pcount += 1
+                j += 1
+            i = j
+            continue
+
+        # ── T4 SIGNAL CARDS (SIGNAL N — Name) ──
+        _t4_m = re.match(r'^SIGNAL\s+(\d+)\s*[\u2014\u2013\-]+\s*(.+)$', stripped)
+        if _t4_m and i + 3 < len(paragraphs):
+            sig_name = _t4_m.group(2).strip()
+            # Collect THE CLAIM / THE RESEARCH / WHAT REMAINS VALID blocks
+            claim = research = valid = ''
+            j = i + 1
+            while j < len(paragraphs):
+                nxt = paragraphs[j].strip()
+                if re.match(r'^THE CLAIM:?', nxt, re.IGNORECASE):
+                    claim = nxt.partition(':')[2].strip() if ':' in nxt else ''
+                    # Collect continuation paragraphs
+                    j += 1
+                    while j < len(paragraphs):
+                        cont = paragraphs[j].strip()
+                        if re.match(r'^THE RESEARCH:?|^WHAT REMAINS', cont, re.IGNORECASE):
+                            break
+                        if cont:
+                            claim += ' ' + cont
+                        j += 1
+                    continue
+                if re.match(r'^THE RESEARCH:?', nxt, re.IGNORECASE):
+                    research = nxt.partition(':')[2].strip() if ':' in nxt else ''
+                    j += 1
+                    while j < len(paragraphs):
+                        cont = paragraphs[j].strip()
+                        if re.match(r'^WHAT REMAINS', cont, re.IGNORECASE):
+                            break
+                        if cont:
+                            research += ' ' + cont
+                        j += 1
+                    continue
+                if re.match(r'^WHAT REMAINS VALID:?', nxt, re.IGNORECASE):
+                    valid = nxt.partition(':')[2].strip() if ':' in nxt else ''
+                    j += 1
+                    while j < len(paragraphs):
+                        cont = paragraphs[j].strip()
+                        if re.match(r'^SIGNAL\s+\d+', cont, re.IGNORECASE):
+                            break
+                        if cont:
+                            valid += ' ' + cont
+                        j += 1
+                    break
+                j += 1
+            global_para_count += (j - i)
+            parts.append(gen_t4_signal_card(sig_name, claim, research, valid))
+            i = j
+            continue
+
+        # ── MODALITY SIGNAL CARDS (Visual/Auditory/Kinesthetic Signals) ──
+        _modality_triggers = {'Visual Signals', 'Auditory Signals', 'Kinesthetic Signals'}
+        if stripped in _modality_triggers and i + 1 < len(paragraphs):
+            modality = stripped.replace(' Signals', '')
+            body_para = paragraphs[i + 1].strip()
+            parts.append(gen_modality_card(modality, body_para))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── BEHAVIORAL READING LINE CARDS (D-Type — Stage/Strolling etc.) ──
+        _rl_ctx_m = re.match(
+            r'^(.+?)\s*[\u2014\u2013\-]+\s*(Stage/Strolling|Close-Up/Theatrical)$',
+            stripped, re.IGNORECASE
+        )
+        if _rl_ctx_m and i + 1 < len(paragraphs):
+            disc_type = _rl_ctx_m.group(1).strip()
+            context   = _rl_ctx_m.group(2).strip()
+            body_para = paragraphs[i + 1].strip()
+            if 'IF YOU SEE' in body_para.upper() or 'LINE:' in body_para.upper():
+                parts.append(gen_reading_line_card(disc_type, context, body_para))
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── FORCES INTRO DOCTRINE BLOCK ──
+        # "Five forces reliably activate this system." + next line = pill list
+        if stripped == 'Five forces reliably activate this system.' and i + 1 < len(paragraphs):
+            forces_line = paragraphs[i + 1].strip()
+            parts.append(gen_forces_intro(stripped, forces_line))
+            i += 2
+            global_para_count += 2
+            continue
 
         # Spotlight box: find a good quote-like line at ~20-55% through
         if not spotlight_done and i > total * 0.2 and i < total * 0.55:
@@ -1853,6 +2011,36 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
+  <h3 class="section-header meta-header">The Name</h3>
+
+  <p>Every time a section was labelled <em class="gold">Chris Michael\u2019s Take</em>, your brain did something you were not aware of. It attached an insight to a specific person rather than to an anonymous author. That distinction matters.</p>
+
+  <p>When ideas are attributed to a named individual, retention and trust both increase. The label forced a micro-moment of identity encoding each time it appeared: not \u201cthe author thinks\u201d but \u201cChris Michael thinks.\u201d By the tenth repetition, that name had become a credibility anchor. You did not decide to trust it. The repetition made the decision for you.</p>
+
+  <p>That is the <em class="gold">mere exposure effect</em>. Familiarity produces trust. Repeated exposure to a name\u2009\u2014\u2009even in a neutral context\u2009\u2014\u2009registers as social familiarity. You feel like you know the person. And people take advice from people they feel they know.</p>
+
+  <p>The full name rather than \u201cChris\u201d or \u201cI\u201d was intentional. \u201cChris\u2019s Take\u201d reads like a friend. \u201cChris Michael\u2019s Take\u201d reads like a reference. That slight distance is how authority figures are cited by others\u2009\u2014\u2009and your brain processed it the same way. It also meant that by the time you close this book, the name <em class="gold">Chris Michael</em> is encoded with authority and practical insight. Not as the person who wrote it. As the person who knew.</p>
+
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
+
+  <h3 class="section-header meta-header">The In-Group Language</h3>
+
+  <p>At several points in this book, language appeared that most readers would process normally while a specific subset would recognise immediately. That recognition was not accidental.</p>
+
+  <p>The word <em class="gold">hit</em> is not standard psychology terminology. It is practitioner language\u2009\u2014\u2009the word mentalists use when a read lands, when a piece of information connects visibly with a subject. If you have spent time in that world, the word stopped you for a fraction of a second. You felt something click into place. If you have not, the word read naturally as a synonym for \u201csuccess\u201d and carried no additional weight.</p>
+
+  <p>That asymmetry was the point.</p>
+
+  <p>Later, a note referred to deception detection as \u201ctoo big a grey elephant in Denmark.\u201d That phrase will mean nothing to most readers. To a mentalist, it is something close to a handshake. The grey elephant in Denmark is one of the oldest and most reliable force effects in the repertoire\u2009\u2014\u2009a mathematical procedure that reliably steers a subject toward thinking of a grey elephant in Denmark, used for decades to open cold reading conversations and demonstrate apparent mind-reading. Using that phrase in a casual aside, without explanation, was a signal: <em>I am one of you. This book was written from inside the work, not about it from the outside.</em></p>
+
+  <p>This technique is called <em class="gold">in-group signalling</em>. It works on two levels simultaneously. For readers who catch it, it creates a moment of recognition and belonging\u2009\u2014\u2009the specific pleasure of being in on something. It validates their identity as practitioners and increases their investment in the material. For readers who do not catch it, the text reads cleanly with no sense of exclusion. Nothing is lost. But something is gained for those who are paying close attention.</p>
+
+  <p>The psychological mechanism underneath this is tribal identity and <em class="gold">in-group preference</em>. Humans are wired to trust members of their own group more readily than outsiders. When a reader recognises insider language, the author is briefly reclassified from \u201cexternal authority\u201d to \u201cpeer.\u201d Peer recommendations carry more weight than expert endorsements. The trust transfer is immediate and largely unconscious.</p>
+
+  <p>It also signals craft. A writer who uses the precise vocabulary of a discipline without translating it for outsiders is demonstrating that they operate inside the discipline, not at its edges. That demonstration does not need to be stated. It is made by the choice of words alone.</p>
+
+  <div class="section-break">\u00b7 \u00b7 \u00b7</div>
+
   <h3 class="section-header meta-header">The Design Summary</h3>
 
   <div class="meta-summary">
@@ -1865,6 +2053,8 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
     <div class="meta-row"><span class="gold">Readable fonts on cream</span><span class="meta-label">Processing Fluency (+40%)</span></div>
     <div class="meta-row"><span class="gold">Spot UV hidden text</span><span class="meta-label">The Observation Test</span></div>
     <div class="meta-row"><span class="gold">Edge color gradient</span><span class="meta-label">Progressive Identity Shift</span></div>
+    <div class="meta-row"><span class="gold">Chris Michael\u2019s Take labels</span><span class="meta-label">Name Anchoring \u2014 Mere Exposure</span></div>
+    <div class="meta-row"><span class="gold">Insider language (hit, grey elephant)</span><span class="meta-label">In-Group Signalling \u2014 Tribal Identity</span></div>
   </div>
 
   <div class="section-break">\u00b7 \u00b7 \u00b7</div>
@@ -2090,15 +2280,314 @@ body{counter-reset:page}
 /* ═══ SECTION BREAK ═══ */
 .section-break{text-align:center;color:var(--gold);font-size:1rem;letter-spacing:10px;margin:2.2em 0}
 
+/* ═══ GLOSSARY ENTRIES ═══ */
+.gloss-entry{
+  margin:.6em 0;padding:12px 16px;
+  border-bottom:1px solid var(--rule);
+  break-inside:avoid;
+}
+.gloss-head{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:5px;
+}
+.gloss-num{
+  font-family:var(--sans);font-size:.5rem;font-weight:700;
+  color:var(--gold);min-width:18px;flex-shrink:0;
+}
+.gloss-term{
+  font-family:var(--sans);font-size:.74rem;font-weight:700;
+  letter-spacing:.5px;color:var(--body-color);
+}
+.gloss-def{
+  font-size:.84rem;color:var(--body-color);
+  line-height:1.6;margin:0;text-indent:0!important;
+  padding-left:28px;
+}
+
+/* ═══ FOUR PRINCIPLES CARDS ═══ */
+.principle-card{
+  display:flex;gap:16px;margin:1em 0;
+  padding:16px 18px;break-inside:avoid;
+  border-left:3px solid var(--gold);
+  background:rgba(201,168,76,.04);
+  border-radius:0 4px 4px 0;
+}
+.pc-num{
+  font-family:var(--sans);font-size:1.4rem;font-weight:700;
+  color:rgba(201,168,76,.25);line-height:1;
+  flex-shrink:0;min-width:28px;
+}
+.pc-body{flex:1}
+.pc-title{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.3px;color:var(--body-color);
+  margin:0 0 5px;text-indent:0!important;
+}
+.pc-rest{
+  font-size:.83rem;color:var(--body-color);opacity:.8;
+  line-height:1.6;margin:0;text-indent:0!important;
+}
+
+/* ═══ COLD-WARM-HOT SPECTRUM ═══ */
+.cwh-spectrum{
+  display:flex;align-items:stretch;gap:0;
+  margin:1.8em 0;break-inside:avoid;
+  border-radius:4px;overflow:hidden;
+}
+.cwh-item{
+  flex:1;padding:16px 14px;text-align:center;
+}
+.cwh-cold{background:rgba(26,143,168,.1);border-top:3px solid #1A8FA8}
+.cwh-warm{background:rgba(201,168,76,.08);border-top:3px solid var(--gold)}
+.cwh-hot{background:rgba(168,48,48,.08);border-top:3px solid #A83030}
+.cwh-label{
+  font-family:var(--sans);font-size:.5rem;font-weight:700;
+  letter-spacing:3px;margin-bottom:5px;
+}
+.cwh-cold .cwh-label{color:#1A8FA8}
+.cwh-warm .cwh-label{color:var(--gold)}
+.cwh-hot .cwh-label{color:#A83030}
+.cwh-name{
+  font-family:var(--sans);font-size:.66rem;font-weight:700;
+  color:var(--body-color);margin-bottom:7px;letter-spacing:.3px;
+}
+.cwh-desc{font-size:.72rem;color:var(--dim);line-height:1.5}
+.cwh-arrow{
+  display:flex;align-items:center;
+  font-size:1.2rem;color:var(--rule);
+  padding:0 4px;flex-shrink:0;
+}
+
+/* ═══ T4 SIGNAL CARDS ═══ */
+.t4-signal-card{
+  margin:1.6em 0;border-radius:5px;
+  border:1px solid rgba(168,48,48,.18);
+  overflow:hidden;break-inside:avoid;
+}
+.t4s-header{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;
+  background:rgba(168,48,48,.08);
+  border-bottom:1px solid rgba(168,48,48,.12);
+}
+.t4s-badge{
+  font-family:var(--sans);font-size:.5rem;font-weight:700;
+  background:transparent;color:var(--dim);
+  border:1px dashed var(--dim);
+  border-radius:7px;padding:1px 7px;letter-spacing:.5px;
+}
+.t4s-name{
+  font-family:var(--sans);font-size:.76rem;font-weight:700;
+  letter-spacing:.5px;color:var(--body-color);
+}
+.t4s-section{padding:11px 16px;border-bottom:1px solid var(--rule)}
+.t4s-section:last-child{border-bottom:none}
+.t4s-claim{background:rgba(255,255,255,.3)}
+.t4s-research{background:rgba(255,255,255,.15)}
+.t4s-valid{background:rgba(75,170,114,.05)}
+.t4s-label{
+  font-family:var(--sans);font-size:.5rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:5px;
+}
+.t4s-claim .t4s-label{color:var(--dim)}
+.t4s-research .t4s-label{color:var(--blue)}
+.t4s-valid .t4s-label{color:#4BAA72}
+.t4s-body{font-size:.8rem;line-height:1.6;margin:0;text-indent:0!important}
+
+/* ═══ MODALITY SIGNAL CARDS ═══ */
+.modality-card{
+  margin:.7em 0;padding:12px 16px;
+  background:var(--mod-bg,rgba(201,168,76,.06));
+  border-left:3px solid var(--mod-color,var(--gold));
+  border-radius:0 4px 4px 0;
+  break-inside:avoid;
+}
+.mod-name{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--mod-color,var(--gold));margin-bottom:8px;
+}
+.mod-fields{display:flex;flex-direction:column;gap:4px}
+.mod-field{
+  display:flex;gap:8px;align-items:baseline;
+  font-size:.78rem;line-height:1.45;
+}
+.mod-label{
+  font-family:var(--sans);font-size:.54rem;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--mod-color,var(--gold));
+  min-width:80px;flex-shrink:0;padding-top:2px;
+}
+.mod-value{color:var(--body-color);flex:1}
+.mod-note{color:var(--gray-blue);font-size:.74rem;font-style:italic;padding-left:88px}
+
+/* ═══ BEHAVIORAL READING LINE CARDS ═══ */
+.reading-line-card{
+  margin:.7em 0;padding:14px 16px 12px;
+  border-radius:4px;break-inside:avoid;
+  border:1px solid rgba(201,168,76,.12);
+  background:rgba(255,255,255,.45);
+}
+.rl-stage{border-top:2px solid var(--gold)}
+.rl-closeup{border-top:2px solid var(--blue)}
+.rl-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:10px;
+}
+.rl-type{
+  font-family:var(--sans);font-size:.65rem;font-weight:700;
+  letter-spacing:1px;color:var(--body-color);
+}
+.rl-context{
+  font-family:var(--sans);font-size:.48rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--dim);
+}
+.rl-stage .rl-context{color:var(--gold)}
+.rl-closeup .rl-context{color:var(--blue)}
+.rl-signals{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.rl-signal{
+  font-family:var(--sans);font-size:.54rem;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.2);
+  border-radius:3px;padding:2px 8px;
+  color:var(--dim);
+}
+.rl-line{
+  font-size:.84rem;font-style:italic;
+  color:var(--body-color);line-height:1.55;
+  margin:0;text-indent:0!important;
+  border-left:2px solid rgba(201,168,76,.3);
+  padding-left:12px;
+}
+
+/* ═══ FORCES INTRO DOCTRINE BLOCK ═══ */
+.forces-intro{
+  margin:2.2em 0;padding:24px 28px;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:6px;border-left:4px solid var(--gold);
+  break-inside:avoid;text-align:center;
+}
+.forces-statement{
+  font-family:var(--sans);font-size:.78rem;font-weight:600;
+  letter-spacing:1px;color:#fff;margin:0 0 16px;
+  text-indent:0!important;
+}
+.forces-pills{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+}
+.force-pill{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.35);
+  border-radius:14px;padding:5px 14px;
+  background:rgba(201,168,76,.08);
+}
+
+/* ═══ NUMBERED STEP HEADERS ═══ */
+.step-header{
+  display:flex;align-items:center;gap:12px;
+  margin:1.6em 0 .6em;
+}
+.step-num{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  color:var(--gold);letter-spacing:2px;
+  min-width:22px;opacity:.8;
+}
+.step-name{
+  font-family:var(--sans);font-size:.68rem;font-weight:600;
+  letter-spacing:2px;color:var(--body-color);
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(201,168,76,.3);
+  padding-bottom:3px;flex:1;
+}
+
+/* ═══ WARNING SECTION HEADER ═══ */
+.warning-header{
+  display:flex;align-items:center;gap:10px;
+  margin:2.5em 0 1em;padding:14px 18px;
+  background:rgba(168,48,48,.07);
+  border-left:3px solid #A83030;
+  border-radius:0 4px 4px 0;
+}
+.wh-icon{color:#A83030;font-size:1rem;line-height:1;flex-shrink:0}
+.wh-title{
+  font-family:var(--sans);font-size:.76rem;font-weight:700;
+  letter-spacing:1.5px;color:#A83030;margin:0;
+}
+
+/* ═══ WARNING CALLOUT (Common Misread) ═══ */
+.warning-callout{
+  margin:1.6em 0;padding:14px 18px;
+  background:rgba(168,48,48,.06);
+  border:1px solid rgba(168,48,48,.2);
+  border-left:3px solid #A83030;
+  border-radius:0 4px 4px 0;
+  break-inside:avoid;
+}
+.wc-label{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:#A83030;margin-bottom:8px;
+}
+.wc-body{
+  font-size:.84rem;color:var(--body-color);
+  line-height:1.6;margin:0;text-indent:0!important;
+}
+
+/* ═══ FIVE Cs INLINE ═══ */
+.five-cs-inline{
+  margin:2em 0;padding:20px 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.fci-header{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold);text-align:center;
+  margin-bottom:16px;
+}
+.fci-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:8px;
+  margin-bottom:16px;
+}
+@media(max-width:600px){.fci-grid{grid-template-columns:1fr}}
+.fci-item{
+  padding:10px 10px 8px;
+  border-top:2px solid transparent;
+  background:rgba(255,255,255,.5);
+  border-radius:0 0 3px 3px;
+  text-align:center;
+}
+[data-c="context"].fci-item{border-top-color:#A83030}
+[data-c="clusters"].fci-item{border-top-color:#E8C870}
+[data-c="congruence"].fci-item{border-top-color:var(--blue)}
+[data-c="consistency"].fci-item{border-top-color:var(--purple)}
+[data-c="culture"].fci-item{border-top-color:var(--gold)}
+.fci-name{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:1px;margin-bottom:4px;
+}
+[data-c="context"] .fci-name{color:#A83030}
+[data-c="clusters"] .fci-name{color:#C4A830}
+[data-c="congruence"] .fci-name{color:var(--blue)}
+[data-c="consistency"] .fci-name{color:var(--purple)}
+[data-c="culture"] .fci-name{color:var(--gold)}
+.fci-q{font-size:.6rem;color:var(--body-color);margin-bottom:5px;font-weight:500}
+.fci-rule{font-size:.58rem;color:var(--dim);font-style:italic;line-height:1.4}
+.fci-chain{
+  display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:5px;
+}
+
 /* ═══ "WHAT YOU HAVE FELT BEFORE" ═══ */
 .felt-before{
-  text-align:center;margin:2.8em 0 1.5em;padding:18px 0;
+  text-align:center;margin:2.8em 0 1.5em;padding:14px 0;
   border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
 }
-.felt-icon{color:var(--gold);font-size:1.1rem;margin-bottom:6px}
 .felt-label{
   font-family:var(--sans);font-size:.62rem;font-weight:600;
   letter-spacing:4px;color:var(--gold);margin:0;
+  text-indent:0!important;
 }
 
 /* ═══ TIER BADGES ═══ */
@@ -2247,11 +2736,12 @@ body{counter-reset:page}
 .wyajd-text{font-style:italic;font-size:.88rem;line-height:1.55;margin:0;text-indent:0!important}
 
 /* ═══ KEY READ ═══ */
-.key-read{margin:3em auto 1.5em;max-width:380px;text-align:center}
+.key-read{display:block;width:100%;margin:3em 0 1.5em;text-align:center}
 .kr-rule{width:180px;height:1px;background:var(--gold);opacity:.35;margin:0 auto}
 .kr-text{
   font-style:italic;color:var(--gold);font-size:.92rem;
-  font-weight:600;line-height:1.55;padding:18px 8px;margin:0;text-indent:0!important;
+  font-weight:600;line-height:1.55;padding:18px 8px;margin:0;
+  text-indent:0!important;text-align:center!important;
 }
 
 /* ═══ GOLD / META ═══ */
@@ -2430,7 +2920,7 @@ a.toc-ch:hover{opacity:.7}
 }
 .title-page .tp-quote{
   font-family:var(--serif);font-size:1rem;font-style:italic;
-  color:rgba(245,240,232,.6);line-height:1.7;max-width:400px;margin-bottom:8px;
+  color:rgba(42,37,32,.72);line-height:1.7;max-width:400px;margin-bottom:8px;
 }
 .title-page .tp-attribution{
   font-family:var(--sans);font-size:.6rem;letter-spacing:3px;
@@ -2534,9 +3024,9 @@ a.toc-ch:hover{opacity:.7}
 }
 /* ── SIX-CATEGORY RADAR ── */
 .radar-category{
-  background:linear-gradient(135deg,rgba(8,15,26,.85),rgba(13,30,48,.95));
-  border:1px solid rgba(26,143,168,.25);
-  border-left:3px solid var(--blue);
+  background:linear-gradient(135deg,rgba(13,30,48,.95),rgba(8,15,26,.98));
+  border:1px solid rgba(26,143,168,.18);
+  border-left:4px solid #1A8FA8;
   border-radius:6px;
   padding:14px 18px;
   margin:1.2em 0;
@@ -2545,34 +3035,34 @@ a.toc-ch:hover{opacity:.7}
 .rc-header{
   display:flex;align-items:center;gap:10px;
   margin-bottom:10px;padding-bottom:8px;
-  border-bottom:1px solid rgba(26,143,168,.2);
+  border-bottom:1px solid rgba(26,143,168,.18);
 }
 .rc-num{
   font-family:var(--sans);font-size:.6rem;font-weight:700;
-  color:var(--blue);letter-spacing:.1em;
+  color:#1A8FA8;letter-spacing:.1em;
   background:rgba(26,143,168,.15);
   padding:2px 7px;border-radius:3px;
 }
 .rc-title{
   font-family:var(--sans);font-size:.75rem;font-weight:700;
-  letter-spacing:.08em;color:#fff;text-transform:uppercase;
+  letter-spacing:.08em;color:#d0e8f0;text-transform:uppercase;
 }
 .rc-signals{
   display:flex;flex-wrap:wrap;gap:5px 7px;margin-bottom:8px;
 }
 .rc-signal{
   display:inline-flex;align-items:center;gap:4px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.09);
+  background:rgba(26,143,168,.08);
+  border:1px solid rgba(26,143,168,.2);
   border-radius:3px;padding:3px 7px;
 }
 .rc-name{
-  font-size:.7rem;color:rgba(255,255,255,.85);
+  font-size:.7rem;color:rgba(208,232,240,.9);
 }
 .rc-insight{
-  margin:6px 0 0;font-size:.78rem;color:var(--gray-blue);
+  margin:6px 0 0;font-size:.78rem;color:rgba(26,143,168,.9);
   font-style:italic;line-height:1.55;
-  border-top:1px solid rgba(255,255,255,.06);
+  border-top:1px solid rgba(26,143,168,.15);
   padding-top:7px;
   text-indent:0!important;text-align:left!important;
 }
@@ -2993,10 +3483,10 @@ a.toc-ch:hover{opacity:.7}
   padding:14px 16px 12px;
   margin:.5em 0;
   break-inside:avoid;
-  background:rgba(255,255,255,.03);
-  border-top:1px solid rgba(255,255,255,.05);
-  border-bottom:1px solid rgba(255,255,255,.05);
-  border-right:1px solid rgba(255,255,255,.05);
+  background:linear-gradient(135deg,var(--navy,#080F1A),var(--navy2,#0D1E30));
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  border-right:1px solid rgba(255,255,255,.06);
 }
 .cf-header{
   display:flex;align-items:baseline;gap:10px;margin-bottom:8px;
@@ -3007,32 +3497,32 @@ a.toc-ch:hover{opacity:.7}
 }
 .cf-tier{
   font-family:var(--sans);font-size:.55rem;font-weight:600;
-  color:rgba(138,154,181,.6);letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(138,154,181,.7);letter-spacing:.08em;text-transform:uppercase;
 }
 .cf-use{
-  font-family:var(--serif);font-size:.82rem;color:rgba(245,240,232,.7);
-  line-height:1.55;margin-bottom:8px;
+  font-family:var(--serif);font-size:.84rem;color:rgba(245,240,232,.85);
+  line-height:1.6;margin-bottom:8px;
 }
 .cf-lines{
   display:flex;flex-direction:column;gap:4px;margin:8px 0;
   padding:8px 12px;
-  background:rgba(0,0,0,.2);border-radius:4px;
+  background:rgba(0,0,0,.25);border-radius:4px;
 }
 .cf-line{
-  font-family:var(--serif);font-style:italic;font-size:.82rem;
-  color:var(--cf-color,#C9A84C);opacity:.85;line-height:1.5;
+  font-family:var(--serif);font-style:italic;font-size:.84rem;
+  color:var(--cf-color,#C9A84C);line-height:1.55;
 }
 .cf-avoid{
-  font-family:var(--sans);font-size:.68rem;color:rgba(168,48,48,.8);
+  font-family:var(--sans);font-size:.68rem;color:rgba(220,100,100,.9);
   letter-spacing:.02em;margin-top:8px;padding-top:6px;
-  border-top:1px solid rgba(168,48,48,.15);
+  border-top:1px solid rgba(168,48,48,.25);
 }
 
 /* ═══ RULE CALLOUTS ═══ */
 .rule-callout{
-  background:rgba(201,168,76,.05);
-  border:1px solid rgba(201,168,76,.18);
-  border-left:3px solid rgba(201,168,76,.5);
+  background:linear-gradient(135deg,var(--navy,#080F1A),var(--navy2,#0D1E30));
+  border:1px solid rgba(201,168,76,.2);
+  border-left:3px solid rgba(201,168,76,.6);
   border-radius:0 4px 4px 0;
   padding:10px 14px;margin:.5em 0 1em;
   break-inside:avoid;
@@ -3040,18 +3530,17 @@ a.toc-ch:hover{opacity:.7}
 .rc-heading{
   font-family:var(--sans);font-size:.6rem;font-weight:700;
   letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(201,168,76,.75);margin-bottom:5px;
+  color:rgba(201,168,76,.9);margin-bottom:5px;
 }
 .rc-body{
-  font-family:var(--serif);font-size:.82rem;color:rgba(245,240,232,.72);
-  line-height:1.55;margin:0;text-indent:0!important;
+  font-family:var(--serif);font-size:.84rem;color:rgba(245,240,232,.85);
+  line-height:1.6;margin:0;text-indent:0!important;
 }
 
 /* ═══ SEVEN STAGES ARC ═══ */
 .stage-card{
   display:grid;grid-template-columns:52px 1fr;gap:0;
   margin:.4em 0;break-inside:avoid;
-  border-left:3px solid var(--stage-color,#C9A84C);
   border-radius:0 6px 6px 0;
   overflow:hidden;
 }
@@ -3061,15 +3550,14 @@ a.toc-ch:hover{opacity:.7}
   font-family:var(--sans);font-size:.75rem;font-weight:900;
   letter-spacing:.05em;
   display:flex;align-items:center;justify-content:center;
-  padding:14px 0;opacity:.9;
-  writing-mode:horizontal-tb;
+  padding:14px 0;
 }
 .stage-content{
-  padding:12px 16px;
-  background:rgba(255,255,255,.03);
-  border-top:1px solid rgba(255,255,255,.05);
-  border-right:1px solid rgba(255,255,255,.05);
-  border-bottom:1px solid rgba(255,255,255,.05);
+  padding:14px 18px;
+  background:linear-gradient(135deg,var(--navy,#080F1A),var(--navy2,#0D1E30));
+  border-top:1px solid rgba(255,255,255,.06);
+  border-right:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 .stage-name{
   font-family:var(--sans);font-size:.68rem;font-weight:800;
@@ -3078,41 +3566,42 @@ a.toc-ch:hover{opacity:.7}
 }
 .stage-rule{
   width:24px;height:1px;background:var(--stage-color,#C9A84C);
-  opacity:.4;margin-bottom:7px;
+  opacity:.5;margin-bottom:8px;
 }
 .stage-body{
-  font-family:var(--serif);font-size:.85rem;color:rgba(245,240,232,.8);
-  line-height:1.6;margin:0;text-indent:0!important;
+  font-family:var(--serif);font-size:.86rem;color:rgba(245,240,232,.88);
+  line-height:1.65;margin:0;text-indent:0!important;
 }
 
 /* ═══ PERFORMANCE CHECKLIST ═══ */
 .checklist-section{
   margin:.4em 0 .8em;break-inside:avoid;
-  border:1px solid rgba(138,154,181,.15);border-radius:6px;
-  overflow:hidden;
+  border-radius:6px;overflow:hidden;
+  background:linear-gradient(135deg,var(--navy,#080F1A),var(--navy2,#0D1E30));
+  border:1px solid rgba(138,154,181,.2);
 }
 .cl-heading{
   font-family:var(--sans);font-size:.6rem;font-weight:700;
-  letter-spacing:.12em;color:rgba(138,154,181,.9);
+  letter-spacing:.12em;color:rgba(138,154,181,1);
   text-transform:uppercase;
   padding:8px 14px;
-  background:rgba(138,154,181,.08);
-  border-bottom:1px solid rgba(138,154,181,.12);
+  background:rgba(138,154,181,.12);
+  border-bottom:1px solid rgba(138,154,181,.2);
 }
 .cl-items{display:flex;flex-direction:column;}
 .cl-item{
   display:grid;grid-template-columns:28px 1fr;align-items:baseline;
-  gap:0;padding:7px 14px 7px 10px;
-  border-bottom:1px solid rgba(255,255,255,.04);
-  font-family:var(--serif);font-size:.82rem;
-  color:rgba(245,240,232,.72);line-height:1.5;
+  gap:0;padding:8px 14px 8px 10px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-family:var(--serif);font-size:.84rem;
+  color:rgba(245,240,232,.88);line-height:1.55;
 }
 .cl-item:last-child{border-bottom:none}
 .cl-box{
-  font-size:.7rem;color:rgba(201,168,76,.5);
+  font-size:.75rem;color:rgba(201,168,76,.7);
   font-family:var(--sans);justify-self:center;padding-top:2px;
 }
-.cl-text{color:rgba(245,240,232,.78);}
+.cl-text{color:rgba(245,240,232,.88);}
 
 /* ═══ CHAPTER OPENER LEGEND ═══ */
 .opener-legend{
@@ -3336,9 +3825,68 @@ def build_book(manuscript_path, output_path):
             }))
             html.append('<article class="chapter-body">')
             html.append('<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>GLOSSARY</span></header>')
-            for para in section['content']:
-                if para.strip():
-                    html.append(f'<p>{escape(para.strip())}</p>')
+            paras = [p.strip() for p in section['content']]
+            gi = 0
+            while gi < len(paras):
+                p = paras[gi]
+                if not p:
+                    gi += 1
+                    continue
+                # ── APPENDIX SECTION HEADER ──
+                if re.match(r'^APPENDIX\s+A\d+', p):
+                    html.append(f'<div class="section-break">\u00b7 \u00b7 \u00b7</div>')
+                    html.append(f'<h3 class="section-header sh-standard" style="margin-top:2em">{escape(p)}</h3>')
+                    if gi + 1 < len(paras) and paras[gi+1]:
+                        html.append(f'<p class="first-para">{escape(paras[gi+1])}</p>')
+                        gi += 2
+                    else:
+                        gi += 1
+                    continue
+                # ── T4 SIGNAL CARDS (SIGNAL N — name OR SIGNAL N. name) ──
+                sig_m = re.match(r'^(SIGNAL\s+\d+)\s*[\u2014\u2013\-\.]+\s*(.+)$', p)
+                if sig_m:
+                    sig_name = sig_m.group(2).strip()
+                    claim = research = valid = ''
+                    gi += 1
+                    while gi < len(paras):
+                        np = paras[gi]
+                        if re.match(r'^THE CLAIM', np, re.I):
+                            claim = np.partition(':')[2].strip()
+                            gi += 1
+                            while gi < len(paras) and not re.match(r'^THE RESEARCH|^WHAT REMAINS|^SIGNAL\s+\d', paras[gi], re.I):
+                                if paras[gi]: claim += ' ' + paras[gi]
+                                gi += 1
+                        elif re.match(r'^THE RESEARCH', np, re.I):
+                            research = np.partition(':')[2].strip()
+                            gi += 1
+                            while gi < len(paras) and not re.match(r'^WHAT REMAINS|^SIGNAL\s+\d', paras[gi], re.I):
+                                if paras[gi]: research += ' ' + paras[gi]
+                                gi += 1
+                        elif re.match(r'^WHAT REMAINS VALID', np, re.I):
+                            valid = np.partition(':')[2].strip()
+                            gi += 1
+                            while gi < len(paras) and not re.match(r'^SIGNAL\s+\d', paras[gi], re.I):
+                                if paras[gi]: valid += ' ' + paras[gi]
+                                gi += 1
+                            break
+                        else:
+                            break
+                    html.append(gen_t4_signal_card(sig_name, claim.strip(), research.strip(), valid.strip()))
+                    continue
+                # ── STANDARD GLOSSARY ENTRY: "N.  Term  Definition" ──
+                gm = re.match(r'^(\d+)\.?\s{2,}(.+?)\s{2,}(.+)$', p)
+                if gm:
+                    html.append(gen_glossary_entry(gm.group(1), gm.group(2).strip(), gm.group(3).strip()))
+                    gi += 1
+                    continue
+                # ── SECTION BREAK ──
+                if is_section_break(p):
+                    html.append('<div class="section-break">\u00b7 \u00b7 \u00b7</div>')
+                    gi += 1
+                    continue
+                # ── FALLBACK ──
+                html.append(f'<p>{escape(p)}</p>')
+                gi += 1
             html.append('</article>')
 
         elif stype == 'about':

@@ -42,3 +42,33 @@ This file is cumulative — each session appends to it.
 **Change:** Added `gen_radar_category()` to `build-book.py`. All `NN — Category Name` + signal-bullet paragraphs now render as styled cards: numbered header badge, signal chips with T-tier badges, and insight text separated by a rule. Applied to both Six-Category Radar (Ch. 7) and Pattern Read sets. Moved Five Cs SVG graphic to appear inline directly after the trigger sentence "Context. Clusters. Congruence. Consistency. Culture." rather than at chapter start.
 **Why:** User wanted better organization for radar sections (dense paragraph blobs were hard to scan) and wanted the graphic closer to where it's introduced.
 **Pattern/Lesson:** Chris wants structured visual hierarchy for any numbered-list content. Cards > paragraphs for signal catalogs.
+
+### 2026-03-14 — Formatting Consistency Pass + New Visual Components
+
+**Change (section header consistency):** Removed the 3-tier word-count-based section header system (sh-label / sh-standard / sh-section). All section headers ≤7 words now use `sh-standard` (left-aligned, underlined). Only 8+ word headers use `sh-section` (left-border only). The old `sh-label` (centered, small caps, flanking rules) was creating inconsistency when same-level sub-headers had different word counts.
+**Why:** User showed that "The Refect and Reset" (4 words → sh-standard) and "PRODUCTIVE SILENCE" (2 words → sh-label) looked completely different despite being the same semantic level.
+**Pattern/Lesson:** Chris is very sensitive to visual inconsistency between same-tier items. If siblings look different, it reads as a design error. Never let word count alone determine visual treatment for peer-level items.
+
+**Change (numbered step headers):** Added `step-header` CSS class and detection for `NN — WORD` pattern (e.g., "01 — SHOES"). These now render as compact subordinate step items: small gold number + uppercase label, visually distinct from and smaller than section headers.
+**Why:** "THE 10-SECOND SCAN" header and its sub-steps (01 — SHOES, 02 — HANDS, etc.) all had identical visual weight. The steps looked like peer headers rather than sub-items.
+**Pattern/Lesson:** Hierarchical visual weight is critical. Parent headers must be visually dominant over their children. If it looks like 3 options, it will read as 3 options.
+
+**Change (warning headers):** Added `gen_warning_header()` for "When You Have Gone Too Far" — renders as a red-left-border alert box with ⚠ icon. Added `gen_warning_callout()` for "Common Misread" and "When This Read Misses:" — compact red-tinted callout box.
+**Why:** "When You Have Gone Too Far" should stand out as a significant topic shift with a cautionary tone. "Common Misread" functions as a warning, not a regular subheading.
+**Pattern/Lesson:** Tonal cues in section titles should map to visual treatment. Cautionary/warning sections need a distinct visual register, not generic header styling.
+
+**Change (Five Cs block redesigned):** Replaced the large dark-background Five Cs card (SVG chart + table + chain flow, ~900px tall) with a compact inline grid: 5 items in a horizontal grid with color-coded top borders, key question, and rule. Chain flow below. No outer dark container.
+**Why:** User said "I do not like this giant card here." The original card was overwhelmingly large and broke the reading flow.
+**Pattern/Lesson:** Inline reference elements should sit naturally within body text, not stop the reading experience. Dark full-width cards work for chapter openers and pattern interrupts — not for mid-chapter reference blocks.
+
+**Change ("What You Have Felt Before" icon removed):** Removed the floating `◉` circle icon from the `felt-before` block.
+**Why:** User showed the isolated dot floating above the label text looked "weird."
+**Pattern/Lesson:** Decorative icons only work when they're tightly associated with their label. Vertical spacing between icon and label can make the icon look like an orphaned artifact.
+
+**Change (manuscript text):** Changed "Yup. Unless you are using the Five C's..." to "That is unless you are using the Five C's..." and added the sentence "If you are not observing through all five, you are not reading behavior. You are instead narrating meaninglessly what you see."
+**Why:** Chris wanted the text adjusted for tone and added a punchy doctrine line.
+**Pattern/Lesson:** Chris's voice is direct and declarative. When softening an opener ("Yup" → "That is"), he compensates by adding a harder doctrine punch immediately after.
+
+**Change (radar category color):** Redesigned Six-Category Radar cards from teal/blue to pastel pink (#D4879A) with dark rose background.
+**Why:** Cards were too similar visually to the adjacent BTE signal cards, which also use teal/blue accents.
+**Pattern/Lesson:** Adjacent card systems must be visually distinct. When two unrelated systems share the same color/style language, readers can't tell where one system ends and the other begins.

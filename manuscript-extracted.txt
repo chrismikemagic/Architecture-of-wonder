@@ -342,6 +342,10 @@ The effect is this: the salience system marks the selected object as significant
 Psychological marking is closely related to the dramatic principle known as Chekhov’s gun: if a gun is hanging on the wall in the first act, the audience expects it to matter later. The reason that principle works is not just narrative neatness. It works because attention creates weight. The moment something is subtly distinguished from its surroundings, the mind tags it as significant and begins holding space for its future relevance. That idea helped inspire this chapter’s title, Attention as a Weapon, because in performance, attention does not merely illuminate. It loads. It marks. It creates expectancy. A casually emphasized object becomes psychologically heavier than the rest of the environment, and when the time comes for a choice, a memory, or a moment of meaning, that weight can quietly steer behavior.
 The Effort Inversion
 Greater conscious effort by the participant produces less subconscious response. If someone is trying hard to feel something, they are occupying the processing bandwidth that would otherwise be receiving the suggestion. The participant who is relaxed and slightly distracted is more available than the one who is concentrating intently. Compliance does not require effort. It requires availability. Design for available, not effortful.
+A practical rule: replace effort words with observation words. Instead of "try to feel your hand getting lighter," say, "just notice which hand begins to feel slightly different first." Instead of "concentrate," say, "you do not have to force anything, just let yourself notice what changes on its own." The moment you ask them to do the experience, you recruit deliberate effort. The moment you ask them to observe the experience, you free up bandwidth for the suggestion to land.
+You also reduce conscious effort by giving the mind something light but occupying to do. A small task, like following your finger, imagining a color, counting two breaths, or picturing the last place they left their keys, can keep conscious attention gently busy while the suggestion takes root underneath. That is one reason spacing helps. If you seed the idea, move on, and come back, the participant has had time to stop working at it.
+Another major factor is pressure. The harder they feel they are being watched, tested, or expected to respond, the more effortful they become. So remove the feeling of performance. Lower the stakes. Make it seem normal if nothing dramatic happens immediately. "Some people notice this fast, some notice it gradually" is often better than "you're about to feel this now." One creates availability. The other creates demand.
+So in practice, reduce conscious effort by doing four things: simplify the instruction, shift from forcing to noticing, lightly occupy the analytical mind, and remove the pressure to succeed. The participant should feel like they are allowing, not achieving. That is usually where the best responses begin.
 · · ·
 
 PART TWO
@@ -360,7 +364,7 @@ Body Language Is Mostly Bullshit
 
 At least, the way most people use the term.
 
-Yup. Unless you are using the Five C’s and actually know how to observe, notate, and draw meaning from what you see. Otherwise, you are guessing, and usually guessing badly. People think body language means decoding a crossed arm, a glance away, or a fidget like it is a vending machine for truth. It is not. A single gesture can mean twenty different things depending on context, personality, environment, timing, and baseline. Without the tools and frameworks I’m about to give you, “reading body language” is usually just confident projection.
+That is unless you are using the Five C’s and actually know how to observe, notate, and draw meaning from what you see. If you are not observing through all five, you are not reading behavior. You are instead narrating meaninglessly what you see. Otherwise, you are guessing, and usually guessing badly. People think body language means decoding a crossed arm, a glance away, or a fidget like it is a vending machine for truth. It is not. A single gesture can mean twenty different things depending on context, personality, environment, timing, and baseline. Without the tools and frameworks I’m about to give you, “reading body language” is usually just confident projection.
 
 Joe Navarro tells a story from a counterintelligence interview that makes the point better than theory can. He was speaking with a suspected spy while the man smoked a cigarette. Then a certain name was mentioned, and the cigarette in the suspect’s hand began to tremble noticeably. Not a generic nervous habit. A sharp departure, tied to a precise moment. That single reaction did not solve the case, but it revealed that something important had just been touched. 
 
@@ -486,7 +490,7 @@ Cultural Projection. Eye contact norms, personal space, and emotional expressive
 
 Cultural Calibration in Practice
 
-The single-paragraph warning above deserves expansion, because cultural miscalibration in a live reading is not merely embarrassing. It is the fastest way to lose a room that was otherwise available to you.
+The small warning on errors above deserves expansion, because cultural miscalibration in a live reading is not merely embarrassing. It is the fastest way to lose a room that was otherwise on your side.
 
 Eye Contact. In Western corporate contexts, sustained eye contact is a confidence signal. In many East Asian, Middle Eastern, and Indigenous cultural contexts, sustained direct eye contact with a higher-status person is a challenge signal, not a confidence signal. A volunteer who avoids your gaze may be showing you respect, not anxiety. Reading it as low confidence and selecting accordingly is a misread with visible consequences.
 
@@ -496,13 +500,11 @@ Emotional Expressiveness. Cultures vary dramatically in the social permission gr
 
 Touch and Compliance. Physical anchoring, shoulder touches, and handshakes carry fundamentally different meanings across cultural contexts. What registers as warmth in one culture registers as presumption in another. In mixed-culture rooms, default to less physical contact until you have read the specific norms present.
 
-The practical rule: when working an international room or a culturally diverse audience, extend your baseline-building window. Spend the first two to three minutes reading the room’s cultural display rules before you commit to behavioral reads based on individual signals. The signals are still valid. The interpretation must be calibrated to the cultural context they are occurring in.
+The practical rule: when working an international room or a culturally diverse audience, extend your baseline-building window. Spend the first two to three minutes reading the room’s cultural display rules before you commit to behavioral reads based on individual signals. The signals are still valid. The interpretation must be calibrated to the cultural context they are occurring in. Oh, and do your research!
 
 Observation Is Not Lie Detection
 
-This framework is built for personality and behavioral reads, not deception detection. Research consistently shows even trained professionals perform near chance levels at detecting lies from behavior alone. Keep these domains separate.
-
-This distinction is also strategic. If you position yourself as someone who can “tell when people are lying,” you have made a claim you cannot consistently deliver. If you position yourself as someone who reads behavioral patterns with unusual precision, you have made a claim you can demonstrate every night. One is a parlor trick. The other is a professional identity. Choose carefully.
+This framework is built for personality and behavioral reads, not deception detection. I wanted to cover deception detection in this book, though I will likely release something in the coming time to cover this topic in depth for mentalists. It is just too big of a grey elephant in the room to discuss in an already dense set of material.
 
 · · ·
 
@@ -949,7 +951,7 @@ Notice: Leaning in or back? Shoulders up or relaxed? Weight forward or settled? 
 Notice: Smiling? Animated? Making eye contact with the room? Tells you: How reactive they will be when something impossible happens. This is the number you are building the entire 10-second scan toward.
 When you have three signals pointing in the same direction, you have a read. Commit before the moment passes. The performer who hesitates after a read turns certainty into a question.
 Performer's Note
-The 10-Second Scan is not a routine to perform out loud. It runs internally, invisibly, every time. You are not narrating a checklist. You are completing a calibration. By the time you speak, the read is already live.
+The 10-Second Scan does not happen out loud. You run it while shaking a hand, while laughing at the MC's opener, while pretending to look for somewhere to stand. By the time you open your mouth, you already know. That is the whole point.
 · · ·
 
 CHAPTER 8
@@ -1366,6 +1368,12 @@ Have you ever watched a laugh arrive at a moment that was not funny? That sound 
 WHAT THIS MEANS ONSTAGE: That nervous laugh three minutes into your show? Read it as a warning signal, not encouragement. The window between productive tension and genuine discomfort is narrow. When you hear a pressure-release laugh, back off the intensity. Give them a moment of genuine levity. Then rebuild. The audience that trusts you will let you take them further than the one you accidentally cornered.
 CM Takeaway
 When the room tips over the cortisol window, do not accelerate. Offer a brief social release. Something warm and human. Then continue the build. The window recovers faster than you think.
+
+Reflect and Reset
+
+It is okay. We have all experienced this in one way or another, and all of us performing will experience it again. It is part of the journey as a performer. Fret not. The window can be recovered. This is the most important thing a performer can know about cortisol: the damage is not permanent in the moment, and the tools for recovery are not complicated. But they require the willingness to recognize what has happened and respond to it rather than push through.
+
+The standard mistake when a room tips over the window is to accelerate. To perform harder, give them more, make the next moment bigger. This loads more cortisol onto a nervous system that is already at capacity. The right response is social: step briefly out of the performance, make human contact, and let the room's nervous system normalize before you resume the build. One word of caution that surprisingly comes from my law enforcement trainings and not the performance world, but is aptly applied here: when relieving tension, unless it is absolutely critical to do so, do not break character.
 The reveal is not the payoff. This is counterintuitive, but dopamine neurons fire during anticipation, the cue that predicts reward, not during the reward itself. Once an outcome is reliably predicted, the dopamine response shifts backward in time to the signal. Your audience is neurologically most alive during the build, not the climax. The sustained uncertainty is the experience. The reveal is the punctuation.
 THE PRACTICAL MOVE: Slow down before the reveal, not after. I once watched a performer rush through a beautiful prediction sequence in forty seconds. The audience applauded politely. The next night, same effect, I stretched the build to two full minutes. The room held its breath. Same method. Same reveal. Completely different neurological experience. The build is where you should be living. Stay there longer.
 CM Takeaway
@@ -1502,12 +1510,12 @@ CHAPTER 18
 Influence Without Authority
 The performer in a corporate context has no formal authority whatsoever. This is, paradoxically, a meaningful advantage.
 ────────────────────────────────────────────────────────────────────────────────
-There is a significant distinction in behavioral science between compliance and internalization. Compliance is behavioral conformity driven by external pressure. Internalization is behavioral change that the person attributes to their own values, reasoning, or experience. Compliance ends when the authority leaves. Internalization persists indefinitely. If you want to make a difference that outlasts your invoice, you want internalization.
+There is a difference between someone who does what you ask because you are watching, and someone who does it because they have decided it is theirs. The first stops the moment you leave the room. The second does not need you there at all. One is rented. The other is purchased. Design for the second one. If you want to make a difference that outlasts your invoice, you want internalization.
 The performer in a corporate context has no formal authority whatsoever. This is, paradoxically, a meaningful advantage. Because there is no manager or compliance officer, influence cannot be attributed to hierarchy. Any change in perspective that occurs in the room has to be attributed by the audience to their own reasoning. They thought of it themselves. They will defend it accordingly.
 Compliance vs. Internalization
 Compliance: behavioral conformity from external pressure. It lasts as long as the authority is present. Internalization: behavioral change attributed by the person to their own values. It lasts indefinitely. Design for the second one.
 The Self-Attribution Principle
-Beliefs the audience discovers feel self-generated. Self-generated conclusions are defended as personal convictions. Telling a room what to conclude produces polite acknowledgment. Creating the conditions for them to find it produces ownership.
+A room that is told what to think will smile and move on. A room that figures something out will carry it home. You are not in the business of convincing people. You are in the business of giving them somewhere to arrive.
 "Never tell an audience what to conclude. Create the conditions for the conclusion to emerge. The insight they discover themselves will outlast anything you tell them by years."
 The Reflection Protocol
 The most practical tool for creating self-attributed insight is reflection. Not agreement (reflection. A CFO told me after a training session that he thought the exercise was “interesting.” I said, “It landed differently than you expected) you were surprised by what you noticed about yourself.” He paused. Then he said, “Yeah. I was.” That pause was the open door. When you restate what someone has just expressed, with slightly more clarity and precision than they managed, two things happen simultaneously. They feel accurately understood: which opens rather than closes receptivity. And they hear their own thinking returned in a form that is a small step ahead of where they started. The next observation they make builds on the reflected version, not the original. You are not pushing. You are feeding the logic they are already running.
@@ -1742,6 +1750,32 @@ Compliance is not a single moment. It is an architecture that builds across the 
 Compliance History
 Compliance Temperature
 Read it in the first 90 seconds: forward lean, ratio of phone-checking, speed of first laugh. High vs. low temperature rooms require different opening sequences. Diagnose before you design.
+
+· · ·
+
+Creepy Collapses the Frame
+
+I almost did not include this topic in the book. Most performers never receive honest feedback about this, even when an audience picks up on it, because the feedback is uncomfortable to give. But this matters here because authority, suggestibility, compliance, and influence all depend on trust. The moment the room reads you as invasive or socially unsafe, those forces begin working against you. Authority weakens. Suggestibility drops. Compliance stiffens. Wonder gives way to caution. If we are to construct wonder, we should also learn to maintain it.
+
+Most performers who trigger this reaction are not trying to be creepy. They are usually just moving too fast, too close, or too intensely for the level of rapport they have earned. The reason it happens so quickly is biological. Touch, eye contact, distance, and body orientation are part of the nervous system's threat-and-relevance language. When a performer reads as socially unsafe, the audience stops engaging wonder and starts engaging threat-monitoring.
+
+Along with the amygdala, the anterior insula and dorsal anterior cingulate are the regions you do not want lighting up, because they are strongly involved in salience, embarrassment, social pain, and the feeling of being uncomfortably observed. There is not one single cringe chemical. Cringe is better understood as a network state than a single molecule, though stress chemistry — cortisol, noradrenergic arousal — is often part of the experience. That is why a performer can be technically polite and still feel wrong.
+
+One of the most common mistakes is combining touch with direct eye contact too early. A performer takes a volunteer's arm or hand, holds on a little too long, and locks eyes as if that should create connection. Without established rapport, it often does the opposite. It can read as invasive, controlling, or socially hungry. The volunteer may tolerate it. The audience usually will not.
+
+Duration matters too. A brief, functional touch can feel normal. A touch that lingers without a strong reason starts making the room ask the wrong question: why is this still happening?
+
+The same is true of approach behavior. If you move toward someone whose body is closed, you are likely to read badly no matter how good your intentions are. The ventral side is the more vulnerable front of the body: throat, chest, abdomen, palms, and the inner surfaces of the arms. When someone hides those areas, turns away, compresses the shoulders, or protects the torso, they are not signaling openness. They are signaling management. Advancing further into that closed state often creates the read of creepiness because your movement is ignoring the body's existing answer.
+
+This is why hugs and celebratory contact need more awareness than most performers apply. Do not move into intimacy because the reveal feels big to you. Move only when the person is clearly looking at you, clearly open, and the moment feels mutual rather than extracted. Consent matters, but so does how you ask for it. Repeatedly over-asking in a needy or overly careful way can make the moment feel socially unstable, as though you need permission more than you want connection. A better approach is usually simple: open posture, visible palms, clear invitation, easy refusal, no trap.
+
+The practical rule: do not escalate intimacy faster than rapport can justify. Do not pair strong eye contact with sustained touch before safety has been established. Do not approach a closed body as though it were open. Do not make the participant manage your need for connection in front of the room.
+
+People often talk about creepy as though it were mystical. It is not. It is the body recognizing a mismatch between closeness and permission, intensity and rapport, or contact and comfort. Once you understand that, it becomes much easier to prevent. And for a performer, preventing it is not optional. The moment the audience reads you as invasive, the performance contract changes. You are no longer leading them. You are asking them to recover from you.
+
+BEHAVIORS THAT READ AS SAFE AND STRONG
+Open posture · Visible palms · Clear invitation · Easy refusal · Brief and functional touch only when needed · Mutual eye contact rather than imposed eye contact · Letting the participant come toward you when possible · Giving space instead of taking it · Calm energy instead of hungry energy · Treating comfort as part of the method
+
 · · ·
 
 CHAPTER 24
@@ -2139,13 +2173,13 @@ The words you choose and the sentence structures you use are behavioral signals.
 ────────────────────────────────────────────────────────────────────────────────
 The words you choose and the sentence structures you use are behavioral signals. The limbic system evaluates language for indicators of certainty, in-group membership, and cognitive authority. And it does so below the threshold of conscious awareness. Most performers pay careful attention to what they say and very little attention to how their language signals authority or undermines it.
 Processing Fluency
-Information delivered at a slower pace is judged as more credible and more intelligent. Speed suggests the speaker is unsure it will hold up. Slow down at the beginning of every significant interaction. Source: Alter & Oppenheimer (2009), Psychological Bulletin, 136(4), 568–596.
+When you are nervous you talk faster. Everyone does. The problem is the room can hear it even if they cannot name it. Slow down at the start. Give each thing you say enough room to actually land before you move on. Information delivered at a slower pace is judged as more credible and more intelligent. Source: Alter & Oppenheimer (2009), Psychological Bulletin, 136(4), 568–596.
 Silence as Signal
 Silence after something important says: I am comfortable with this space. I do not need to fill it. The other person's discomfort with the silence is theirs to manage. And they will fill it with something more genuine than anything you could have prompted.
 What Weak Language Sounds Like
 Authority is undermined not by what you say but by the structure of how you say it. Hedge words at the end of declarative statements: 'That was really good, I thought.' Apology language before a direct request: 'I was just wondering if maybe we could...' Upward inflection on statements that are not questions. Each of these patterns signals the same thing: I am not sure this landing will hold up, and I am inviting you to tell me I am wrong before you even have the chance to decide.
 Declaration vs. Invitation
-A declaration lands. An invitation waits. Upward inflection on a statement, a trailing 'I think,' or an apology before a direct ask all convert declarations into invitations. Eliminate each one.
+Most people soften things they do not need to soften. They trail off at the end of statements, throw in an "I think" that was not necessary, or apologize before asking for something they are completely entitled to ask for. Each one of those habits costs you something. Watch your own recordings. You will find them.
 Email Compression
 High-authority email: one specific answer, one direct ask, no apology, appropriate length. Low-authority email: multiple questions, hedged language, over-explanation, premature reassurance.
 · · ·
@@ -2163,7 +2197,7 @@ Third Person to First Person
 'What does something like this cost?' is third-person framing (evaluating. 'What would you need from us?' is first-person framing) assuming. The switch from evaluating to assuming is the buying signal. Watch for it.
 State the Fee. Stop.
 The moment you introduce price into a client conversation, the behavioral dynamics shift. Watch for it. People who were leaning forward often sit back slightly. Eye contact that was easy frequently breaks. A pause appears where there was none. None of these signals mean the answer is no. They mean the brain has just been asked to do economic evaluation, which is a different cognitive activity from the social engagement that preceded it.
-When you state your fee, state it cleanly and stop. A single brief sentence about value is appropriate. More than that signals that you are not confident the number will hold on its own. The pause that follows is not rejection. It is processing. Hold it. The first person to speak after a price is stated gives ground. Make sure it is not you.
+Say the number and stop talking. Most people fill that silence because it feels uncomfortable, and every word they add makes them sound less sure of the number they just said. The pause on the other end is not a no. It is someone doing math. Let them. Hold it. The first person to speak after a price is stated gives ground. Make sure it is not you.
 The Right Question
 'What would make this the obvious choice for your event?' is the most useful question in a client conversation that has stalled. It stops the guessing and asks the client to tell you precisely what they need to hear.
 · · ·
@@ -2174,7 +2208,7 @@ A complete behavioral model for the performing professional, from first contact 
 ────────────────────────────────────────────────────────────────────────────────
 The Decode Behavior framework is a synthesis of the principles in this book applied specifically to the business of performing. It is not a sales system. It is a behavioral design system for creating the conditions in which the right clients find you, trust you, hire you, and return.
 The Framework in One Line
-Observe. Position. Match. Decode. Install. In that sequence, every time. Skip any step and you are operating at reduced capacity in the most important conversations of your professional life.
+Observe. Position. Match. Decode. Install. In that sequence, every time. The steps that get skipped are always the early ones, because the early ones feel slow. They are not slow. They are what the rest of it runs on.
 Observe Before Speaking
 Establish behavioral baseline before any content exchange. This applies to client calls, discovery meetings, and pre-show interactions. You cannot detect deviation without baseline. You cannot detect buying signals without knowing what neutral looks like. Listen and observe in the first minutes of every interaction before you offer anything.
 Peer vs. Vendor
@@ -2237,7 +2271,7 @@ You have walked on stage and known within fifteen seconds whether the room was y
 
 The FATE Model
 
-Developed by Chase Hughes and applied across intelligence, corporate influence, and behavioral training contexts, the FATE Model identifies four forces that the limbic system evaluates simultaneously in every human interaction. In a corporate sales environment, these forces determine whether a buyer trusts you before the pitch begins. On stage, they determine whether an audience surrenders before the first effect lands.
+Chase Hughes developed the FATE Model working in intelligence and corporate influence contexts. Four forces. The limbic system runs all of them at the same time, before any conscious evaluation starts. In a sales meeting they decide whether the buyer trusts you before you have made your case. On stage they decide whether the room is with you before you have done anything worth being with you for.
 
 F — Focus
 
@@ -2277,7 +2311,7 @@ Perceived legitimacy is the key variable. Not actual knowledge. Not actual rank.
 
 Authority Broadcasting for the Stage
 
-Move slowly. Fast movement signals anxiety. The limbic system reads pace as a proxy for threat level. A performer who moves deliberately (who crosses the stage as if the room will wait, because it will) broadcasts the single most powerful authority signal available without speaking.
+Move slowly. Fast movement reads as anxious whether you are anxious or not. The limbic system evolved to detect pace as a threat signal without any conscious effort from the person reading it, which means the room is already making a judgment before they know they are making one. Cross the stage like you have done it a thousand times and have no particular reason to rush. The room will wait. It always does when the person in front of it looks like they already know that.
 
 Speak slowly. Processing fluency research demonstrates that when information arrives without rush, the brain assigns it higher truth value. Slow speech reduces cortisol in the listener. The audience feels safer. Safer audiences are more compliant audiences.
 

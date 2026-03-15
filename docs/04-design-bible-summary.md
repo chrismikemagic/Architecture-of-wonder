@@ -129,6 +129,25 @@ Every 8–12 pages. Options: full-bleed dark page, sidebar shift, pull quote, "W
 
 ---
 
+## Design Override Rules
+
+> **Chris's observed preferences override the original design bible where they conflict.**
+
+| Decision | Original Spec | Actual Preference |
+|----------|--------------|-------------------|
+| AM icon | Directional arrow | Two person silhouettes |
+| CR icon | Profile silhouette | Open book + head + snowflake |
+| Five Cs block | Large dark card with SVG chart | Compact inline grid, no dark container |
+| "WHAT YOU HAVE FELT BEFORE" | Floating circle icon above label | Clean label only, no icon |
+| Section headers | 3 tiers (sh-label / sh-standard / sh-section) | 2 tiers only (sh-standard / sh-section) — word-count-based sh-label removed to fix inconsistency |
+| Section headers (numbered steps) | Treated same as regular section headers | Distinct subordinate step-header style (01 — SHOES etc.) |
+| Warning headings | No special treatment | Red/amber warning-header box (e.g. "When You Have Gone Too Far") |
+| "Common Misread" | Plain paragraph | Warning callout box with red border |
+| Six-Category Radar cards | Same style as BTE signal cards | Pastel pink (#D4879A) to distinguish |
+| Volunteer matrix | Single color | Traffic-light scale: green → yellow → orange → red |
+
+---
+
 ## SVG Graphics Inventory
 
 | File | What It Shows | Where It Goes |
