@@ -319,16 +319,22 @@ SECTION_BADGES = {
     'CHAPTER 13:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
     'CHAPTER 13:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
     'CHAPTER 13:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
-    # ── CHAPTER 12: Contact Mind Reading ──
-    'CHAPTER 9:Muscle Reading':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 9:The Method':                     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 9:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
-    'CHAPTER 9:Intent Cues Beyond the Stage':   {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 13: Volunteer's Brain ──
-    'CHAPTER 10:Seven Volunteer Types':          {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 10:The Volunteer Selection Matrix': {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 10:Anchoring in Performance':       {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 10:The Neural Selection Circuit':   {'tiers': ['t2'],       'cats': ['vs']},
+    # ── CHAPTER 13: Contact Mind Reading ──
+    'CHAPTER 13:Muscle Reading':                        {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:The Method':                            {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Focus, Not Clutter':                    {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Suggestibility and the Frame':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Setting Up the Conditions':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13:The Grip':                              {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13:Verify, Verify, Verify':                {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13:The Science Behind Contact Mind Reading': {'tiers': ['t1'],     'cats': ['bp']},
+    'CHAPTER 13:Framing the Effect':                    {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13:Intent Cues Beyond the Stage':          {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 9: Volunteer's Brain ──
+    'CHAPTER 9:Seven Volunteer Types':                  {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 9:The Volunteer Selection Matrix':         {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 9:Anchoring in Performance':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 9:The Neural Selection Circuit':           {'tiers': ['t2'],       'cats': ['vs']},
     # ── CHAPTER 14: Language of Yes ──
     'CHAPTER 14:Pacing and Leading':             {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 14:Yes Sets':                       {'tiers': ['t2'],       'cats': ['am']},
@@ -1203,6 +1209,150 @@ def gen_bte_signal(name, code, drs, description):
         f'<span class="bte-drs" style="color:{drs_color}">DRS {drs}</span>' +
         '</div>' +
         f'<p class="bte-desc">{escape(description)}</p>' +
+        '</div>'
+    )
+
+
+def gen_six_area_radar():
+    """Inline SVG spider/radar chart — Six Areas to Watch, three example profiles."""
+    import math
+
+    # ── layout constants ──
+    SVG_W  = 520
+    HDR_H  = 72   # space reserved for title/subtitle above radar group
+    cx, cy = 260, 210   # radar centre inside the translated group
+    r_max  = 130
+    levels = 5
+
+    # Axes clockwise from top
+    axes = [
+        'Appearance',
+        'Movement\n& Posture',
+        'Territory\n& Space',
+        'Social\nConfidence',
+        'Thinking\nStyle',
+        'Emotional\nReactivity',
+    ]
+
+    profiles = [
+        ('The Take-Charge Type', '#C9A84C', [4.2, 4.5, 4.5, 3.0, 1.8, 2.5]),
+        ('The Ideal Volunteer',  '#4A8DB5', [2.5, 2.5, 1.8, 4.5, 3.0, 4.5]),
+        ('The Skeptic',          '#C85A5A', [2.8, 2.2, 3.5, 2.0, 4.5, 1.8]),
+    ]
+    descriptions = [
+        'Strong on confidence, movement, and territory. Don\u2019t slow them down.',
+        'High reactivity and social confidence. Follows your lead eagerly.',
+        'Guards their space. Analytical. Low emotional reaction.',
+    ]
+
+    n = len(axes)
+    LABEL_R = r_max + 30   # radius to axis label centres
+    # Compute total group height: cy + r_max + label clearance (2 lines × 14px + 6px gap)
+    GROUP_H = cy + r_max + LABEL_R - r_max + 34   # ~cy + label_r + a bit
+    # SVG height: header + radar group + gap + legend (3 rows × 26px)
+    LEG_START = HDR_H + GROUP_H + 16
+    SVG_H     = LEG_START + 3 * 28 + 8
+
+    def ang(i):
+        return math.radians(-90 + i * 360 / n)
+
+    def pt(i, val):
+        a   = ang(i)
+        rad = (val / levels) * r_max
+        return cx + rad * math.cos(a), cy + rad * math.sin(a)
+
+    # ── grid hexagons ──
+    grid = ''
+    for lvl in range(1, levels + 1):
+        pts = ' '.join(
+            f'{cx + (lvl/levels)*r_max*math.cos(ang(i)):.1f},'
+            f'{cy + (lvl/levels)*r_max*math.sin(ang(i)):.1f}'
+            for i in range(n)
+        )
+        op = '.22' if lvl == levels else '.1'
+        grid += f'<polygon points="{pts}" fill="none" stroke="rgba(42,37,32,{op})" stroke-width="1"/>'
+
+    # ── axis spokes ──
+    spokes = ''
+    for i in range(n):
+        x2 = cx + r_max * math.cos(ang(i))
+        y2 = cy + r_max * math.sin(ang(i))
+        spokes += f'<line x1="{cx}" y1="{cy}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="rgba(42,37,32,.15)" stroke-width="1"/>'
+
+    # ── level labels (Low / Mid / High) ──
+    lvl_labels = ''
+    for lvl, lbl in ((1, 'Low'), (3, 'Mid'), (5, 'High')):
+        lx = cx + (lvl/levels) * r_max * math.cos(ang(0)) + 5
+        ly = cy + (lvl/levels) * r_max * math.sin(ang(0)) - 3
+        lvl_labels += (
+            f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="8" fill="rgba(42,37,32,.35)"'
+            f' font-family="sans-serif">{lbl}</text>'
+        )
+
+    # ── profile polygons + dots ──
+    polys = ''
+    for _, color, data in profiles:
+        pts = ' '.join(f'{px:.1f},{py:.1f}' for px, py in (pt(i, v) for i, v in enumerate(data)))
+        r_v = int(color[1:3], 16); g_v = int(color[3:5], 16); b_v = int(color[5:7], 16)
+        polys += (
+            f'<polygon points="{pts}" fill="rgba({r_v},{g_v},{b_v},.15)"'
+            f' stroke="{color}" stroke-width="2.2" stroke-linejoin="round"/>'
+        )
+        for i, v in enumerate(data):
+            dx, dy = pt(i, v)
+            polys += (
+                f'<circle cx="{dx:.1f}" cy="{dy:.1f}" r="3.8"'
+                f' fill="{color}" stroke="white" stroke-width="1.5"/>'
+            )
+
+    # ── axis labels — placed at LABEL_R from centre ──
+    cat_labels = ''
+    for i, cat in enumerate(axes):
+        a   = ang(i)
+        lx  = cx + LABEL_R * math.cos(a)
+        ly  = cy + LABEL_R * math.sin(a)
+        anc = 'middle'
+        if lx < cx - 12: anc = 'end'
+        elif lx > cx + 12: anc = 'start'
+        lines  = cat.split('\n')
+        base_y = ly - (len(lines) - 1) * 7
+        for j, ln in enumerate(lines):
+            cat_labels += (
+                f'<text x="{lx:.1f}" y="{base_y + j*14:.1f}" text-anchor="{anc}"'
+                f' font-size="11" font-weight="700" fill="#2A2520" font-family="sans-serif">{ln}</text>'
+            )
+
+    # ── legend — stacked vertically, centred ──
+    legend = ''
+    lx0 = 60   # left edge of legend block
+    for idx, ((pname, color, _), desc) in enumerate(zip(profiles, descriptions)):
+        row_y = LEG_START + idx * 28
+        legend += (
+            f'<rect x="{lx0}" y="{row_y}" width="12" height="12" fill="{color}" rx="2"/>'
+            f'<text x="{lx0+18}" y="{row_y+10}" font-size="10.5" font-weight="700"'
+            f' fill="{color}" font-family="sans-serif">{pname}</text>'
+            f'<text x="{lx0+18}" y="{row_y+23}" font-size="9" fill="rgba(42,37,32,.6)"'
+            f' font-family="sans-serif">{desc}</text>'
+        )
+
+    return (
+        '<div class="six-area-radar">'
+        f'<svg viewBox="0 0 {SVG_W} {int(SVG_H)}" xmlns="http://www.w3.org/2000/svg"'
+        ' style="width:100%;max-width:540px;display:block;margin:0 auto;">'
+        # header
+        f'<text x="{SVG_W//2}" y="18" text-anchor="middle" font-size="8" font-weight="700"'
+        ' letter-spacing="2.5" fill="#C9A84C" font-family="sans-serif">'
+        'READING THE WHOLE PERSON AT ONCE</text>'
+        f'<text x="{SVG_W//2}" y="40" text-anchor="middle" font-size="18" font-weight="700"'
+        ' fill="#2A2520" font-family="sans-serif">Six Areas to Watch</text>'
+        f'<text x="{SVG_W//2}" y="57" text-anchor="middle" font-size="9" fill="rgba(42,37,32,.55)"'
+        ' font-family="sans-serif">'
+        'Each axis = one dimension of behavior. Farther from center = stronger signal.</text>'
+        # radar body
+        f'<g transform="translate(0,{HDR_H})">{grid}{spokes}{lvl_labels}{polys}{cat_labels}</g>'
+        # legend
+        f'<g>{legend}</g>'
+        '</svg>'
         '</div>'
     )
 
@@ -2908,6 +3058,11 @@ def build_chapter_body(section, global_para_count):
             parts.append(gen_feedback_chart())
             i += 1; global_para_count += 1; continue
 
+        # ── SIX AREA RADAR CHART ──
+        if stripped == 'SIX_AREA_RADAR':
+            parts.append(gen_six_area_radar())
+            i += 1; global_para_count += 1; continue
+
         # Spotlight box: find a good quote-like line at ~20-55% through
         if not spotlight_done and i > total * 0.2 and i < total * 0.55:
             if (stripped.startswith(('\u201c', '"', '\u2018')) and len(stripped) < 250 and len(stripped) > 30) or \
@@ -3587,6 +3742,16 @@ ul.book-list li::before{
 }
 
 /* ═══ READING FEEDBACK CHART ═══ */
+/* ═══ SIX AREA RADAR CHART ═══ */
+.six-area-radar{
+  margin:1.8em 0;
+  padding:1.4em 1em 1em;
+  background:var(--cream);
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:6px;
+  break-inside:avoid;
+}
+
 .feedback-chart{
   margin:1.8em 0;border-radius:6px;overflow:hidden;
   border:1px solid rgba(201,168,76,.28);

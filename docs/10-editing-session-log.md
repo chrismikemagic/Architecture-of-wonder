@@ -143,6 +143,30 @@ This file is cumulative — each session appends to it.
 
 ---
 
+### 2026-03-17 — Cold Reading Toolkit Redesign + Visual Overhaul
+
+**Change:** Complete redesign of Cold Reading Toolkit chapter rendering. Replaced verbose entry cards with compact 3-column scan tables (Cue | Line + context symbols | DISC badge). Added `gen_crt_table()`, `gen_feedback_signals_ref()`, `_ctx_to_symbols()`. Added section icons via `_SECTION_ICONS` dict. Buffering system accumulates `CRT:` rows per section, flushes as single `<table>` at section end. Toolkit color scheme changed from gold to cool blue (#4A8DB5). Recovery card headers redesigned with dark navy gradient background + white text. Feedback chart left column widened from 118px to 150px to prevent Microexpression of Contempt overflow. Six-Area-to-Watch radar chart added to Ch7 via `gen_six_area_radar()` SVG function with dynamic height and stacked legend.
+**Why:** Multiple Chris feedback: overflow bug, unreadable headers, gold color preference, "integrate this chart."
+**Pattern/Lesson:** When two adjacent card systems share a color language, readers cannot distinguish them. Buffering enables proper `<thead>/<tbody>` structure for multi-row tables. SVG height must be computed dynamically to avoid clipping.
+
+---
+
+### 2026-03-17 — Chapter Reorder: Volunteer's Brain Moved to Ch9
+
+**Change:** Moved Volunteer's Brain chapter from Ch13 to Ch9 (immediately after DISC Ch8). Old Ch9-12 shifted to Ch10-13. HOOK_LINES, KEY_READS, SECTION_BADGES, FIGURES all updated. Added DISC profiling bridge paragraph and 80-signal VS callout in Volunteer's Brain intro. SECTION_BADGES corrected from stale CHAPTER 9/10 keys to correct CHAPTER 13/9 keys.
+**Why:** Chris determined face/eye-reading is foundational and logically follows DISC; Volunteer's Brain builds on personality typing material.
+**Pattern/Lesson:** Chapter reorder requires two-phase placeholder approach to avoid swap collisions. Always verify SECTION_BADGES keys match actual chapter numbers in manuscript after any reorder.
+
+---
+
+### 2026-03-17 — Contact Mind Reading Chapter Expanded (Ch13)
+
+**Change:** Replaced "The Method" (short version) with full expanded version including Trevo Sheikh refinements on performer focus, practice conditions, and natural walking contact. Added five new sections: "Focus, Not Clutter" (Satori's end-target approach, clutter vs. clarity), "Suggestibility and the Frame" (Peter Turner's observation on the guiding-line suggestion, I-type participant selection), "Setting Up the Conditions" (pendulum/ideomotor screening, emotional investment, in-contact coaching), "The Grip" (Trevo's surface-area grip principle), "Verify, Verify, Verify" (patience over certainty). "The Science Behind Contact Mind Reading" rewritten with cleaner scope statement and relational/psychological caveat. "Framing the Effect" expanded with performer's internal state note. SECTION_BADGES added for all new sections (t2/t3/bp).
+**Why:** Chris provided full expanded text and said "combine this into the contact mind reading section — overwrite shared headings, add new ones."
+**Pattern/Lesson:** Never rewrite directly supplied content. Format and integrate only. Multi-section replacements are safest done via a temp Python script to avoid bash heredoc quoting issues.
+
+---
+
 ### 2026-03-15 — Neural Term Inline Descriptions Added Throughout
 
 **Change:** Added brief parenthetical descriptions at the first body-text use of each neural structure and neurotransmitter throughout the manuscript.
