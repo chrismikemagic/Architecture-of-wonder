@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" font-family="'Georgia', 'Garamond', serif">
+  <defs>
+    <linearGradient id="tblBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="700" height="900" fill="url(#tblBg)" rx="4"/>
+
+  <!-- Title -->
+  <text x="350" y="40" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="14" letter-spacing="4" font-weight="700">EXPANDED OBSERVATION LIST</text>
+  <text x="350" y="60" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10">80 signals organized by evidential tier — showing first 20</text>
+  <line x1="150" y1="70" x2="550" y2="70" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Tier definitions row -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="50" height="16" rx="8" fill="#C9A84C"/>
+    <text x="25" y="12" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T1</text>
+    <text x="58" y="12" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8">Concrete, visible</text>
+
+    <rect x="170" y="0" width="50" height="16" rx="8" fill="#1A8FA8"/>
+    <text x="195" y="12" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T2</text>
+    <text x="228" y="12" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8">Contextual clusters</text>
+
+    <rect x="360" y="0" width="50" height="16" rx="8" fill="none" stroke="#8A9AB5" stroke-width="1"/>
+    <text x="385" y="12" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T3</text>
+    <text x="418" y="12" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8">Higher inference</text>
+
+    <rect x="520" y="0" width="50" height="16" rx="8" fill="none" stroke="#3A4A5C" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="545" y="12" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T4</text>
+    <text x="578" y="12" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8">Weak/disputed</text>
+  </g>
+
+  <!-- Table header -->
+  <rect x="40" y="110" width="620" height="28" fill="#C9A84C" opacity="0.12"/>
+  <text x="65" y="129" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" font-weight="700" letter-spacing="1">#</text>
+  <text x="100" y="129" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" font-weight="700" letter-spacing="1">OBSERVATION</text>
+  <text x="340" y="129" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" font-weight="700" letter-spacing="1">WHAT IT TELLS YOU</text>
+  <text x="560" y="129" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" font-weight="700" letter-spacing="1">TIER</text>
+  <text x="620" y="129" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" font-weight="700" letter-spacing="1">USE</text>
+
+  <!-- T1 rows — GOLD accent, bolder (Von Restorff: T1 stands out) -->
+  <!-- Row 01 -->
+  <rect x="40" y="140" width="620" height="32" fill="#C9A84C" opacity="0.06"/>
+  <rect x="40" y="140" width="3" height="32" fill="#C9A84C"/>
+  <text x="65" y="160" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10" font-weight="700">01</text>
+  <text x="100" y="160" fill="#FFFFFF" font-size="10" font-weight="600">Phone pocket side</text>
+  <text x="340" y="160" fill="#8A9AB5" font-size="9">Handedness indicator</text>
+  <rect x="555" y="151" width="28" height="14" rx="7" fill="#C9A84C"/>
+  <text x="569" y="162" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T1</text>
+  <text x="620" y="160" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">BP</text>
+
+  <!-- Row 02 -->
+  <rect x="40" y="174" width="620" height="32" fill="#C9A84C" opacity="0.04"/>
+  <rect x="40" y="174" width="3" height="32" fill="#C9A84C"/>
+  <text x="65" y="194" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10" font-weight="700">02</text>
+  <text x="100" y="194" fill="#FFFFFF" font-size="10" font-weight="600">Shoe sole wear direction</text>
+  <text x="340" y="194" fill="#8A9AB5" font-size="9">Gait and stance pattern</text>
+  <rect x="555" y="185" width="28" height="14" rx="7" fill="#C9A84C"/>
+  <text x="569" y="196" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T1</text>
+  <text x="620" y="194" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">BP</text>
+
+  <!-- T2 row — Steel blue accent, standard weight -->
+  <!-- Row 03 -->
+  <rect x="40" y="208" width="620" height="32" fill="#1A8FA8" opacity="0.04"/>
+  <rect x="40" y="208" width="3" height="32" fill="#1A8FA8"/>
+  <text x="65" y="228" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10">03</text>
+  <text x="100" y="228" fill="#FFFFFF" font-size="10">Clothing condition vs. posture</text>
+  <text x="340" y="228" fill="#8A9AB5" font-size="9">Self-image investment</text>
+  <rect x="555" y="219" width="28" height="14" rx="7" fill="#1A8FA8"/>
+  <text x="569" y="230" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T2</text>
+  <text x="620" y="228" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">CR/BP</text>
+
+  <!-- Row 04 -->
+  <rect x="40" y="242" width="620" height="32" fill="#1A8FA8" opacity="0.02"/>
+  <rect x="40" y="242" width="3" height="32" fill="#1A8FA8"/>
+  <text x="65" y="262" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10">04</text>
+  <text x="100" y="262" fill="#FFFFFF" font-size="10">Thumbs outside pockets</text>
+  <text x="340" y="262" fill="#8A9AB5" font-size="9">Confidence signal</text>
+  <rect x="555" y="253" width="28" height="14" rx="7" fill="#1A8FA8"/>
+  <text x="569" y="264" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T2</text>
+  <text x="620" y="262" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">VS/AM</text>
+
+  <!-- T3 row — outlined, subdued -->
+  <!-- Row 05 -->
+  <rect x="40" y="276" width="620" height="32" fill="#FFFFFF" opacity="0.02"/>
+  <rect x="40" y="276" width="3" height="32" fill="#8A9AB5" opacity="0.5"/>
+  <text x="65" y="296" fill="#5A6A7C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10">05</text>
+  <text x="100" y="296" fill="#CCCCCC" font-size="10">Thumbs inside pockets</text>
+  <text x="340" y="296" fill="#5A6A7C" font-size="9">Comfort, reservation, or self-containment</text>
+  <rect x="555" y="287" width="28" height="14" rx="7" fill="none" stroke="#8A9AB5" stroke-width="1"/>
+  <text x="569" y="298" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T3</text>
+  <text x="620" y="296" fill="#5A6A7C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">VS</text>
+
+  <!-- Row 06 (T1 again) -->
+  <rect x="40" y="310" width="620" height="32" fill="#C9A84C" opacity="0.06"/>
+  <rect x="40" y="310" width="3" height="32" fill="#C9A84C"/>
+  <text x="65" y="330" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10" font-weight="700">06</text>
+  <text x="100" y="330" fill="#FFFFFF" font-size="10" font-weight="600">Time since last haircut</text>
+  <text x="340" y="330" fill="#8A9AB5" font-size="9">Grooming priority</text>
+  <rect x="555" y="321" width="28" height="14" rx="7" fill="#C9A84C"/>
+  <text x="569" y="332" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T1</text>
+  <text x="620" y="330" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">BP/CR</text>
+
+  <!-- Row 07 (T1) -->
+  <rect x="40" y="344" width="620" height="32" fill="#C9A84C" opacity="0.04"/>
+  <rect x="40" y="344" width="3" height="32" fill="#C9A84C"/>
+  <text x="65" y="364" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10" font-weight="700">07</text>
+  <text x="100" y="364" fill="#FFFFFF" font-size="10" font-weight="600">Fingernail condition</text>
+  <text x="340" y="364" fill="#8A9AB5" font-size="9">Care level; occupational signals</text>
+  <rect x="555" y="355" width="28" height="14" rx="7" fill="#C9A84C"/>
+  <text x="569" y="366" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T1</text>
+  <text x="620" y="364" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">BP</text>
+
+  <!-- Row 08 (T2) -->
+  <rect x="40" y="378" width="620" height="32" fill="#1A8FA8" opacity="0.04"/>
+  <rect x="40" y="378" width="3" height="32" fill="#1A8FA8"/>
+  <text x="65" y="398" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="10">08</text>
+  <text x="100" y="398" fill="#FFFFFF" font-size="10">Eye contact willingness</text>
+  <text x="340" y="398" fill="#8A9AB5" font-size="9">Social confidence (rate 1–8)</text>
+  <rect x="555" y="389" width="28" height="14" rx="7" fill="#1A8FA8"/>
+  <text x="569" y="400" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T2</text>
+  <text x="620" y="398" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">VS/CR</text>
+
+  <!-- Divider showing "... continues to 80" -->
+  <text x="350" y="440" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" letter-spacing="3">·  ·  ·</text>
+  <text x="350" y="460" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">Continues through Observation #80</text>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- T4 APPENDIX SECTION — Red treatment -->
+  <!-- ══════════════════════════════════════════════ -->
+  <line x1="100" y1="500" x2="600" y2="500" stroke="#A83030" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="350" y="530" text-anchor="middle" fill="#A83030" font-family="'Montserrat', 'Calibri', sans-serif" font-size="12" letter-spacing="3" font-weight="700">TIER 4 APPENDIX</text>
+  <text x="350" y="550" text-anchor="middle" fill="#5A6A7C" font-size="9" font-style="italic">Signals with weak, disputed, or unreliable support</text>
+
+  <!-- T4 disclaimer box -->
+  <rect x="60" y="565" width="580" height="55" rx="3" fill="#A83030" opacity="0.06"/>
+  <rect x="60" y="565" width="3" height="55" fill="#A83030" opacity="0.6"/>
+  <text x="80" y="583" fill="#8A9AB5" font-size="9">These signals have been widely discussed in performance, NLP, pop psychology, and practitioner</text>
+  <text x="80" y="597" fill="#8A9AB5" font-size="9">circles, but do not hold up as reliable indicators under careful scrutiny. Know what they claim.</text>
+  <text x="80" y="611" fill="#A83030" font-size="9" font-weight="600">Know why the claim is weak. Do not build real reads on them.</text>
+
+  <!-- T4 entries -->
+  <rect x="60" y="630" width="580" height="28" fill="#A83030" opacity="0.04"/>
+  <rect x="60" y="630" width="3" height="28" fill="#A83030" opacity="0.3"/>
+  <text x="80" y="648" fill="#5A6A7C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">T4-01</text>
+  <text x="130" y="648" fill="#8A9AB5" font-size="9">NLP eye movement direction</text>
+  <text x="370" y="648" fill="#5A6A7C" font-size="9">Constructed vs. remembered thought</text>
+  <rect x="595" y="639" width="34" height="14" rx="7" fill="none" stroke="#3A4A5C" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="612" y="650" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T4</text>
+
+  <rect x="60" y="660" width="580" height="28" fill="#A83030" opacity="0.02"/>
+  <rect x="60" y="660" width="3" height="28" fill="#A83030" opacity="0.3"/>
+  <text x="80" y="678" fill="#5A6A7C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">T4-02</text>
+  <text x="130" y="678" fill="#8A9AB5" font-size="9">Smooth lower eyelids</text>
+  <text x="370" y="678" fill="#5A6A7C" font-size="9">Confidence / emotional control</text>
+  <rect x="595" y="669" width="34" height="14" rx="7" fill="none" stroke="#3A4A5C" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="612" y="680" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T4</text>
+
+  <text x="350" y="720" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" letter-spacing="3">·  ·  ·</text>
+  <text x="350" y="740" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">8 signals total in T4 Appendix</text>
+
+  <!-- Summary stats -->
+  <g transform="translate(100, 770)">
+    <text x="0" y="0" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" font-weight="700">12</text>
+    <text x="30" y="0" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">T1</text>
+
+    <text x="90" y="0" fill="#1A8FA8" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" font-weight="700">52</text>
+    <text x="120" y="0" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">T2</text>
+
+    <text x="180" y="0" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" font-weight="700">16</text>
+    <text x="210" y="0" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">T3</text>
+
+    <text x="270" y="0" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" font-weight="700">8</text>
+    <text x="283" y="0" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">T4 (appendix)</text>
+
+    <text x="400" y="0" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" font-weight="700">88</text>
+    <text x="427" y="0" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">total signals</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="350" y="890" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>

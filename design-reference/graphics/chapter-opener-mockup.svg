@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" font-family="'Georgia', 'Garamond', serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C9A84C" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full dark background — the "stage" -->
+  <rect width="600" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Part number — subtle, top -->
+  <text x="300" y="180" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="11" letter-spacing="6" font-weight="400">PART TWO</text>
+
+  <!-- Thin gold line -->
+  <rect x="230" y="195" width="140" height="0.5" fill="url(#goldGlow)"/>
+
+  <!-- Chapter number — large, gold -->
+  <text x="300" y="300" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="72" font-weight="300" letter-spacing="3">06</text>
+
+  <!-- Chapter title — sans-serif, caps, letterspaced -->
+  <text x="300" y="365" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" letter-spacing="5" font-weight="700">BEHAVIORAL PROFILING</text>
+  <text x="300" y="395" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="18" letter-spacing="5" font-weight="700">IN REAL TIME</text>
+
+  <!-- Gold accent line under title -->
+  <rect x="200" y="415" width="200" height="1" fill="#C9A84C" opacity="0.6"/>
+
+  <!-- Hook line — the Serial Position Effect opener -->
+  <text x="300" y="470" text-anchor="middle" fill="#8A9AB5" font-size="13" font-style="italic">"Every person who walks toward you is already</text>
+  <text x="300" y="490" text-anchor="middle" fill="#8A9AB5" font-size="13" font-style="italic">broadcasting. The question is whether you are listening."</text>
+
+  <!-- Tier badge examples — inline demonstration -->
+  <rect x="220" y="540" width="30" height="16" rx="8" fill="#C9A84C" opacity="0.9"/>
+  <text x="235" y="552" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T1</text>
+
+  <rect x="260" y="540" width="30" height="16" rx="8" fill="#1A8FA8" opacity="0.9"/>
+  <text x="275" y="552" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T2</text>
+
+  <rect x="300" y="540" width="30" height="16" rx="8" fill="none" stroke="#8A9AB5" stroke-width="1"/>
+  <text x="315" y="552" text-anchor="middle" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T3</text>
+
+  <rect x="340" y="540" width="30" height="16" rx="8" fill="none" stroke="#3A4A5C" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="355" y="552" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="700">T4</text>
+
+  <text x="300" y="580" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">SIGNAL CONFIDENCE TIERS</text>
+
+  <!-- Margin observation icons demonstration -->
+  <g transform="translate(50, 630)">
+    <!-- BP icon — eye -->
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+    <ellipse cx="12" cy="12" rx="7" ry="5" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+    <circle cx="12" cy="12" r="2.5" fill="#C9A84C"/>
+    <text x="12" y="36" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1">BP</text>
+  </g>
+
+  <g transform="translate(170, 630)">
+    <!-- CR icon — profile silhouette -->
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#1A8FA8" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="12" cy="9" r="4" fill="none" stroke="#1A8FA8" stroke-width="0.8"/>
+    <path d="M5,20 Q5,14 12,14 Q19,14 19,20" fill="none" stroke="#1A8FA8" stroke-width="0.8"/>
+    <text x="12" y="36" text-anchor="middle" fill="#1A8FA8" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1">CR</text>
+  </g>
+
+  <g transform="translate(290, 630)">
+    <!-- VS icon — waveform -->
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#6B52A0" stroke-width="0.8" opacity="0.5"/>
+    <path d="M4,12 L7,8 L9,16 L11,6 L13,18 L15,7 L17,15 L20,12" fill="none" stroke="#6B52A0" stroke-width="0.8"/>
+    <text x="12" y="36" text-anchor="middle" fill="#6B52A0" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1">VS</text>
+  </g>
+
+  <g transform="translate(410, 630)">
+    <!-- AM icon — directional arrow -->
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#A83030" stroke-width="0.8" opacity="0.5"/>
+    <path d="M7,12 L17,12 M14,8 L18,12 L14,16" fill="none" stroke="#A83030" stroke-width="1"/>
+    <text x="12" y="36" text-anchor="middle" fill="#A83030" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="1">AM</text>
+  </g>
+
+  <text x="260" y="690" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">MARGIN OBSERVATION ICONS</text>
+
+  <!-- Footer -->
+  <text x="300" y="770" text-anchor="middle" fill="#3A4A5C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>

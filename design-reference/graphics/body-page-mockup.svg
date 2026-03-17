@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" font-family="'Georgia', 'Garamond', serif">
+  <defs>
+    <linearGradient id="darkBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Warm cream page background -->
+  <rect width="600" height="800" fill="#F5F0E8"/>
+
+  <!-- Page number -->
+  <text x="555" y="30" text-anchor="end" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9">47</text>
+
+  <!-- Running header -->
+  <text x="45" y="30" fill="#8A9AB5" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" letter-spacing="2">CHAPTER 6  —  BEHAVIORAL PROFILING IN REAL TIME</text>
+  <line x1="45" y1="38" x2="555" y2="38" stroke="#D8D0C4" stroke-width="0.5"/>
+
+  <!-- Body text block — serif, readable -->
+  <text x="80" y="75" fill="#2A2520" font-size="11" font-weight="400">The first thing to understand about behavioral reading is that you</text>
+  <text x="80" y="93" fill="#2A2520" font-size="11">are not looking for single signals. You are looking for patterns. A</text>
+  <text x="80" y="111" fill="#2A2520" font-size="11">crossed arm is not defensiveness. It might be cold. It might be</text>
+  <text x="80" y="129" fill="#2A2520" font-size="11">comfortable. It might be habitual. The signal only becomes</text>
+  <text x="80" y="147" fill="#2A2520" font-size="11">meaningful when it appears alongside other signals — when the</text>
+  <text x="80" y="165" fill="#2A2520" font-size="11">cluster forms.</text>
+
+  <!-- Margin icon — BP (eye) for physical observation reference -->
+  <g transform="translate(42, 85)">
+    <ellipse cx="8" cy="8" rx="5" ry="3.5" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.6"/>
+    <circle cx="8" cy="8" r="1.8" fill="#C9A84C" opacity="0.6"/>
+  </g>
+
+  <!-- Inline tier badge demonstration -->
+  <text x="80" y="200" fill="#2A2520" font-size="11">Consider Observation #02: Shoe sole wear direction</text>
+  <!-- T1 badge inline -->
+  <rect x="395" y="189" width="24" height="13" rx="6.5" fill="#C9A84C"/>
+  <text x="407" y="199" text-anchor="middle" fill="#080F1A" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T1</text>
+  <text x="425" y="200" fill="#2A2520" font-size="11">. This</text>
+
+  <text x="80" y="218" fill="#2A2520" font-size="11">is a concrete, visible, low-inference observation. The wear pattern</text>
+  <text x="80" y="236" fill="#2A2520" font-size="11">is physically present on the shoe. It requires no interpretation. It</text>
+  <text x="80" y="254" fill="#2A2520" font-size="11">tells you about gait, stance, and movement habit — facts anchored</text>
+  <text x="80" y="272" fill="#2A2520" font-size="11">to the body.</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- VON RESTORFF SPOTLIGHT — the one thing they'll remember -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="60" y="295" width="480" height="90" rx="4" fill="url(#darkBg)"/>
+  <rect x="60" y="295" width="4" height="90" fill="#C9A84C"/>
+  <text x="85" y="325" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="9" letter-spacing="2" font-weight="700">KEY PRINCIPLE</text>
+  <text x="85" y="350" fill="#FFFFFF" font-size="12" font-style="italic">"One signal is noise. Three co-occurring</text>
+  <text x="85" y="370" fill="#FFFFFF" font-size="12" font-style="italic">behaviors form a pattern. Five confirm a read."</text>
+
+  <!-- AM margin icon next to spotlight -->
+  <g transform="translate(42, 325)">
+    <path d="M3,8 L13,8 M10,4 L14,8 L10,12" fill="none" stroke="#A83030" stroke-width="0.6" opacity="0.6"/>
+  </g>
+
+  <!-- Continuing body text after spotlight -->
+  <text x="80" y="420" fill="#2A2520" font-size="11">Now compare this with Observation #08: Eye contact willingness</text>
+  <!-- T2 badge inline -->
+  <rect x="488" y="409" width="24" height="13" rx="6.5" fill="#1A8FA8"/>
+  <text x="500" y="419" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" font-weight="700">T2</text>
+
+  <text x="80" y="438" fill="#2A2520" font-size="11">This is a useful contextual signal, but it requires calibration.</text>
+  <text x="80" y="456" fill="#2A2520" font-size="11">Some cultures sustain direct eye contact as a sign of respect.</text>
+  <text x="80" y="474" fill="#2A2520" font-size="11">Others avoid it for the same reason. Without the Five Cs chain —</text>
+  <text x="80" y="492" fill="#2A2520" font-size="11">Context, Clusters, Congruence, Consistency, Culture — this</text>
+  <text x="80" y="510" fill="#2A2520" font-size="11">observation tells you very little.</text>
+
+  <!-- VS margin icon -->
+  <g transform="translate(42, 425)">
+    <path d="M2,8 L5,4 L7,12 L9,2 L11,14 L13,5 L15,10" fill="none" stroke="#6B52A0" stroke-width="0.6" opacity="0.6"/>
+  </g>
+
+  <!-- Section break -->
+  <text x="300" y="545" text-anchor="middle" fill="#C9A84C" font-size="10">· · ·</text>
+
+  <!-- Sub-section header — sans-serif contrast -->
+  <text x="80" y="580" fill="#2A2520" font-family="'Montserrat', 'Calibri', sans-serif" font-size="13" font-weight="700" letter-spacing="1">THE FIVE Cs CHAIN</text>
+  <rect x="80" y="590" width="60" height="2" fill="#C9A84C"/>
+
+  <text x="80" y="615" fill="#2A2520" font-size="11">Before any signal becomes a read, it must pass through five</text>
+  <text x="80" y="633" fill="#2A2520" font-size="11">filters. These are not optional. They are the architecture without</text>
+  <text x="80" y="651" fill="#2A2520" font-size="11">which individual signals are noise.</text>
+
+  <!-- Mini Five Cs flow on body page -->
+  <g transform="translate(80, 670)">
+    <rect x="0" y="0" width="70" height="20" rx="10" fill="#A83030" opacity="0.15"/>
+    <text x="35" y="14" text-anchor="middle" fill="#A83030" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="600">Context</text>
+    <text x="78" y="14" fill="#D8D0C4" font-size="10">›</text>
+
+    <rect x="88" y="0" width="70" height="20" rx="10" fill="#E8C870" opacity="0.12"/>
+    <text x="123" y="14" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="600">Clusters</text>
+    <text x="166" y="14" fill="#D8D0C4" font-size="10">›</text>
+
+    <rect x="176" y="0" width="85" height="20" rx="10" fill="#1A8FA8" opacity="0.1"/>
+    <text x="218" y="14" text-anchor="middle" fill="#1A8FA8" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="600">Congruence</text>
+    <text x="269" y="14" fill="#D8D0C4" font-size="10">›</text>
+
+    <rect x="279" y="0" width="85" height="20" rx="10" fill="#6B52A0" opacity="0.1"/>
+    <text x="321" y="14" text-anchor="middle" fill="#6B52A0" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="600">Consistency</text>
+    <text x="372" y="14" fill="#D8D0C4" font-size="10">›</text>
+
+    <rect x="382" y="0" width="65" height="20" rx="10" fill="#C9A84C" opacity="0.1"/>
+    <text x="414" y="14" text-anchor="middle" fill="#C9A84C" font-family="'Montserrat', 'Calibri', sans-serif" font-size="8" font-weight="600">Culture</text>
+  </g>
+
+  <!-- ═════════════════════════════════════════════════ -->
+  <!-- SERIAL POSITION EFFECT — chapter closing key read -->
+  <!-- ═════════════════════════════════════════════════ -->
+  <line x1="200" y1="730" x2="400" y2="730" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  <text x="300" y="755" text-anchor="middle" fill="#C9A84C" font-size="11" font-style="italic" font-weight="600">The read is never one signal. The read is the chain.</text>
+  <line x1="200" y1="765" x2="400" y2="765" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Footer -->
+  <text x="300" y="790" text-anchor="middle" fill="#D8D0C4" font-family="'Montserrat', 'Calibri', sans-serif" font-size="7" letter-spacing="2">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Calibri, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+    <linearGradient id="windowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A8FA8" stop-opacity="0.05"/>
+      <stop offset="35%" stop-color="#1A8FA8" stop-opacity="0.15"/>
+      <stop offset="65%" stop-color="#1A8FA8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#A83030" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="520" fill="url(#bgGrad2)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">THE CORTISOL WINDOW</text>
+  <line x1="250" y1="55" x2="550" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">The difference between wonder and fear is the finest line in performance</text>
+
+  <!-- Graph area -->
+  <!-- Y axis -->
+  <line x1="100" y1="100" x2="100" y2="380" stroke="#3A4A5C" stroke-width="1"/>
+  <text x="40" y="240" text-anchor="middle" fill="#8A9AB5" font-size="10" transform="rotate(-90, 40, 240)">CORTISOL LEVEL</text>
+
+  <!-- X axis -->
+  <line x1="100" y1="380" x2="720" y2="380" stroke="#3A4A5C" stroke-width="1"/>
+  <text x="410" y="405" text-anchor="middle" fill="#8A9AB5" font-size="10">PERFORMANCE DURATION</text>
+
+  <!-- Window zone (green-ish area) -->
+  <rect x="100" y="170" width="620" height="120" fill="#1A8FA8" opacity="0.08" rx="2"/>
+
+  <!-- Threshold lines -->
+  <line x1="100" y1="170" x2="720" y2="170" stroke="#A83030" stroke-width="1" stroke-dasharray="6,4" opacity="0.7"/>
+  <text x="730" y="174" fill="#A83030" font-size="9" font-weight="bold">AVERSIVE THRESHOLD</text>
+
+  <line x1="100" y1="290" x2="720" y2="290" stroke="#1A8FA8" stroke-width="1" stroke-dasharray="6,4" opacity="0.7"/>
+  <text x="730" y="294" fill="#1A8FA8" font-size="9" font-weight="bold">ENGAGEMENT FLOOR</text>
+
+  <!-- Window label -->
+  <text x="115" y="235" fill="#C9A84C" font-size="12" font-weight="bold" opacity="0.8">PRODUCTIVE</text>
+  <text x="115" y="250" fill="#C9A84C" font-size="12" font-weight="bold" opacity="0.8">TENSION</text>
+
+  <!-- Ideal curve -->
+  <path d="M 120,300 C 180,280 220,240 280,210 S 380,190 420,200 S 480,180 520,195 S 600,210 660,230 Q 690,240 700,260"
+        fill="none" stroke="#C9A84C" stroke-width="2.5" opacity="0.9"/>
+  <text x="710" y="258" fill="#C9A84C" font-size="8">IDEAL</text>
+
+  <!-- Over-threshold curve -->
+  <path d="M 120,300 C 180,260 240,200 300,160 S 380,130 440,120"
+        fill="none" stroke="#A83030" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+  <text x="450" y="118" fill="#A83030" font-size="8">TOO FAR</text>
+
+  <!-- Under curve -->
+  <path d="M 120,300 C 200,310 300,320 400,330 S 550,340 700,350"
+        fill="none" stroke="#3A4A5C" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+  <text x="710" y="348" fill="#3A4A5C" font-size="8">FLAT</text>
+
+  <!-- Six indicators -->
+  <text x="400" y="435" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="bold">SIX VISIBLE CORTISOL INDICATORS</text>
+
+  <!-- Indicator pills -->
+  <rect x="55" y="452" width="105" height="28" rx="4" fill="#1A8FA8" opacity="0.2"/>
+  <text x="107" y="470" text-anchor="middle" fill="#1A8FA8" font-size="9" font-weight="bold">Blink Rate</text>
+
+  <rect x="170" y="452" width="105" height="28" rx="4" fill="#1A8FA8" opacity="0.2"/>
+  <text x="222" y="470" text-anchor="middle" fill="#1A8FA8" font-size="9" font-weight="bold">Breathing</text>
+
+  <rect x="285" y="452" width="105" height="28" rx="4" fill="#1A8FA8" opacity="0.2"/>
+  <text x="337" y="470" text-anchor="middle" fill="#1A8FA8" font-size="9" font-weight="bold">Tension Laugh</text>
+
+  <rect x="400" y="452" width="105" height="28" rx="4" fill="#C9A84C" opacity="0.2"/>
+  <text x="452" y="470" text-anchor="middle" fill="#C9A84C" font-size="9" font-weight="bold">Stillness</text>
+
+  <rect x="515" y="452" width="115" height="28" rx="4" fill="#C9A84C" opacity="0.2"/>
+  <text x="572" y="470" text-anchor="middle" fill="#C9A84C" font-size="9" font-weight="bold">Phone Check</text>
+
+  <rect x="640" y="452" width="110" height="28" rx="4" fill="#A83030" opacity="0.2"/>
+  <text x="695" y="470" text-anchor="middle" fill="#A83030" font-size="9" font-weight="bold">Self-Soothing</text>
+
+  <!-- Recovery note -->
+  <text x="400" y="505" text-anchor="middle" fill="#8A9AB5" font-size="9" font-style="italic">The window can be recovered. The damage is not permanent in the moment.</text>
+</svg>

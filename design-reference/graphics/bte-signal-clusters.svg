@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" font-family="Calibri, sans-serif">
+  <defs>
+    <linearGradient id="bgGradB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080F1A"/>
+      <stop offset="100%" stop-color="#0D1E30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" fill="url(#bgGradB)" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#C9A84C" font-size="13" letter-spacing="4" font-weight="bold">BTE SIGNAL CLUSTERS</text>
+  <line x1="280" y1="55" x2="520" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
+  <text x="400" y="72" text-anchor="middle" fill="#8A9AB5" font-size="11">Three clusters that cover the majority of on-stage reads</text>
+
+  <!-- Cluster 1: Engagement Retreat -->
+  <rect x="40" y="95" width="230" height="370" rx="6" fill="#0D1E30" stroke="#A83030" stroke-width="2"/>
+  <rect x="40" y="95" width="230" height="42" rx="6" fill="#A83030" opacity="0.12"/>
+  <text x="155" y="121" text-anchor="middle" fill="#A83030" font-size="13" font-weight="bold">ENGAGEMENT RETREAT</text>
+  <rect x="40" y="137" width="230" height="1" fill="#A83030" opacity="0.3"/>
+  <text x="155" y="155" text-anchor="middle" fill="#8A9AB5" font-size="9">The body is withdrawing. They</text>
+  <text x="155" y="168" text-anchor="middle" fill="#8A9AB5" font-size="9">haven't said no, but their limbic system has.</text>
+
+  <!-- Signal items -->
+  <rect x="52" y="182" width="206" height="28" rx="3" fill="#A83030" opacity="0.06"/>
+  <text x="62" y="196" fill="#A83030" font-size="9" font-weight="bold">Bi</text>
+  <text x="82" y="196" fill="#FFFFFF" font-size="9">Ankle Lock</text>
+  <text x="230" y="196" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 2.0</text>
+
+  <rect x="52" y="214" width="206" height="28" rx="3" fill="transparent"/>
+  <text x="62" y="228" fill="#A83030" font-size="9" font-weight="bold">Tlt</text>
+  <text x="82" y="228" fill="#FFFFFF" font-size="9">Torso Tilt Away</text>
+  <text x="230" y="228" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 1.5</text>
+
+  <rect x="52" y="246" width="206" height="28" rx="3" fill="#A83030" opacity="0.06"/>
+  <text x="62" y="260" fill="#A83030" font-size="9" font-weight="bold">Bar</text>
+  <text x="82" y="260" fill="#FFFFFF" font-size="9">Arm Barrier</text>
+  <text x="230" y="260" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 2.0</text>
+
+  <rect x="52" y="278" width="206" height="28" rx="3" fill="transparent"/>
+  <text x="62" y="292" fill="#A83030" font-size="9" font-weight="bold">Ob</text>
+  <text x="82" y="292" fill="#FFFFFF" font-size="9">Object Barrier</text>
+  <text x="230" y="292" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 1.5</text>
+
+  <rect x="52" y="310" width="206" height="28" rx="3" fill="#A83030" opacity="0.06"/>
+  <text x="62" y="324" fill="#A83030" font-size="9" font-weight="bold">Wd</text>
+  <text x="82" y="324" fill="#FFFFFF" font-size="9">Gaze Withdrawal</text>
+  <text x="230" y="324" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 2.0</text>
+
+  <!-- Response -->
+  <rect x="52" y="348" width="206" height="45" rx="3" fill="#A83030" opacity="0.08"/>
+  <text x="62" y="365" fill="#C9A84C" font-size="8" font-weight="bold">RESPONSE</text>
+  <text x="62" y="378" fill="#8A9AB5" font-size="8">Do not push harder. Reframe.</text>
+  <text x="62" y="390" fill="#8A9AB5" font-size="8">Create safety. Lower stakes.</text>
+
+  <!-- DRS range indicator -->
+  <rect x="52" y="405" width="206" height="20" rx="10" fill="#A83030" opacity="0.1"/>
+  <rect x="52" y="405" width="130" height="20" rx="10" fill="#A83030" opacity="0.25"/>
+  <text x="155" y="419" text-anchor="middle" fill="#A83030" font-size="8" font-weight="bold">DRS RANGE: 1.5 – 2.0</text>
+
+  <!-- Cluster 2: Evaluation -->
+  <rect x="285" y="95" width="230" height="370" rx="6" fill="#0D1E30" stroke="#E8C870" stroke-width="2"/>
+  <rect x="285" y="95" width="230" height="42" rx="6" fill="#E8C870" opacity="0.10"/>
+  <text x="400" y="121" text-anchor="middle" fill="#E8C870" font-size="13" font-weight="bold">EVALUATION</text>
+  <rect x="285" y="137" width="230" height="1" fill="#E8C870" opacity="0.3"/>
+  <text x="400" y="155" text-anchor="middle" fill="#8A9AB5" font-size="9">Not resisting. Processing. The most</text>
+  <text x="400" y="168" text-anchor="middle" fill="#8A9AB5" font-size="9">important cluster to read correctly.</text>
+
+  <rect x="297" y="182" width="206" height="28" rx="3" fill="#E8C870" opacity="0.06"/>
+  <text x="307" y="196" fill="#E8C870" font-size="9" font-weight="bold">Lc</text>
+  <text x="327" y="196" fill="#FFFFFF" font-size="9">Lip Compress</text>
+  <text x="475" y="196" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 2.0</text>
+
+  <rect x="297" y="214" width="206" height="28" rx="3" fill="transparent"/>
+  <text x="307" y="228" fill="#E8C870" font-size="9" font-weight="bold">Tlt</text>
+  <text x="327" y="228" fill="#FFFFFF" font-size="9">Head Tilt</text>
+  <text x="475" y="228" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 1.5</text>
+
+  <rect x="297" y="246" width="206" height="28" rx="3" fill="#E8C870" opacity="0.06"/>
+  <text x="307" y="260" fill="#E8C870" font-size="9" font-weight="bold">Cs</text>
+  <text x="327" y="260" fill="#FFFFFF" font-size="9">Chin Stroke</text>
+  <text x="475" y="260" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 1.5</text>
+
+  <rect x="297" y="278" width="206" height="28" rx="3" fill="transparent"/>
+  <text x="307" y="292" fill="#E8C870" font-size="9" font-weight="bold">St</text>
+  <text x="327" y="292" fill="#FFFFFF" font-size="9">Finger Steeple</text>
+  <text x="475" y="292" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 2.5</text>
+
+  <rect x="297" y="310" width="206" height="28" rx="3" fill="#E8C870" opacity="0.06"/>
+  <text x="307" y="324" fill="#E8C870" font-size="9" font-weight="bold">Bn</text>
+  <text x="327" y="324" fill="#FFFFFF" font-size="9">Brow Narrow</text>
+  <text x="475" y="324" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 1.5</text>
+
+  <rect x="297" y="348" width="206" height="45" rx="3" fill="#E8C870" opacity="0.06"/>
+  <text x="307" y="365" fill="#C9A84C" font-size="8" font-weight="bold">RESPONSE</text>
+  <text x="307" y="378" fill="#8A9AB5" font-size="8">Do NOT fill the silence. Let them</text>
+  <text x="307" y="390" fill="#8A9AB5" font-size="8">finish. This is engagement, not resistance.</text>
+
+  <rect x="297" y="405" width="206" height="20" rx="10" fill="#E8C870" opacity="0.1"/>
+  <rect x="297" y="405" width="140" height="20" rx="10" fill="#E8C870" opacity="0.2"/>
+  <text x="400" y="419" text-anchor="middle" fill="#E8C870" font-size="8" font-weight="bold">DRS RANGE: 1.5 – 2.5</text>
+
+  <!-- Cluster 3: Certainty Drop -->
+  <rect x="530" y="95" width="230" height="370" rx="6" fill="#0D1E30" stroke="#6B52A0" stroke-width="2"/>
+  <rect x="530" y="95" width="230" height="42" rx="6" fill="#6B52A0" opacity="0.12"/>
+  <text x="645" y="121" text-anchor="middle" fill="#6B52A0" font-size="13" font-weight="bold">CERTAINTY DROP</text>
+  <rect x="530" y="137" width="230" height="1" fill="#6B52A0" opacity="0.3"/>
+  <text x="645" y="155" text-anchor="middle" fill="#8A9AB5" font-size="9">High DRS territory. Something has</text>
+  <text x="645" y="168" text-anchor="middle" fill="#8A9AB5" font-size="9">changed. A new variable entered.</text>
+
+  <rect x="542" y="182" width="206" height="28" rx="3" fill="#6B52A0" opacity="0.06"/>
+  <text x="552" y="196" fill="#6B52A0" font-size="9" font-weight="bold">Jc</text>
+  <text x="572" y="196" fill="#FFFFFF" font-size="9">Jaw Clench</text>
+  <text x="720" y="196" text-anchor="end" fill="#A83030" font-size="8" font-weight="bold">DRS 3.5</text>
+
+  <rect x="542" y="214" width="206" height="28" rx="3" fill="transparent"/>
+  <text x="552" y="228" fill="#6B52A0" font-size="9" font-weight="bold">Sw</text>
+  <text x="572" y="228" fill="#FFFFFF" font-size="9">Swallow Spike</text>
+  <text x="720" y="228" text-anchor="end" fill="#A83030" font-size="8" font-weight="bold">DRS 3.0</text>
+
+  <rect x="542" y="246" width="206" height="28" rx="3" fill="#6B52A0" opacity="0.06"/>
+  <text x="552" y="260" fill="#6B52A0" font-size="9" font-weight="bold">Df</text>
+  <text x="572" y="260" fill="#FFFFFF" font-size="9">Digit Flex</text>
+  <text x="720" y="260" text-anchor="end" fill="#8A9AB5" font-size="8">DRS 2.5</text>
+
+  <rect x="542" y="278" width="206" height="28" rx="3" fill="transparent"/>
+  <text x="552" y="292" fill="#6B52A0" font-size="9" font-weight="bold">Thc</text>
+  <text x="572" y="292" fill="#FFFFFF" font-size="9">Throat Clasp</text>
+  <text x="720" y="292" text-anchor="end" fill="#A83030" font-size="8" font-weight="bold">DRS 3.5</text>
+
+  <rect x="542" y="310" width="206" height="28" rx="3" fill="#6B52A0" opacity="0.06"/>
+  <text x="552" y="324" fill="#6B52A0" font-size="9" font-weight="bold">Fz</text>
+  <text x="572" y="324" fill="#FFFFFF" font-size="9">Freeze</text>
+  <text x="720" y="324" text-anchor="end" fill="#A83030" font-size="8" font-weight="bold">DRS 3.0</text>
+
+  <rect x="542" y="348" width="206" height="45" rx="3" fill="#6B52A0" opacity="0.06"/>
+  <text x="552" y="365" fill="#C9A84C" font-size="8" font-weight="bold">RESPONSE</text>
+  <text x="552" y="378" fill="#8A9AB5" font-size="8">Slow down. Soften your frame.</text>
+  <text x="552" y="390" fill="#8A9AB5" font-size="8">Convert threat into connection.</text>
+
+  <rect x="542" y="405" width="206" height="20" rx="10" fill="#6B52A0" opacity="0.1"/>
+  <rect x="542" y="405" width="190" height="20" rx="10" fill="#6B52A0" opacity="0.25"/>
+  <text x="645" y="419" text-anchor="middle" fill="#6B52A0" font-size="8" font-weight="bold">DRS RANGE: 2.5 – 3.5+</text>
+
+  <!-- Bottom note -->
+  <rect x="140" y="485" width="520" height="40" rx="4" fill="#C9A84C" opacity="0.08"/>
+  <text x="400" y="502" text-anchor="middle" fill="#C9A84C" font-size="9" font-weight="bold">DRS THRESHOLD: 11+ points across a behavioral cluster signals likely deception</text>
+  <text x="400" y="517" text-anchor="middle" fill="#8A9AB5" font-size="8.5">In performance: significant emotional activation worth tracking</text>
+
+  <!-- Footer -->
+  <text x="400" y="550" text-anchor="middle" fill="#3A4A5C" font-size="8">THE ARCHITECTURE OF WONDER  |  DECODE BEHAVIOR  |  BTE: Chase Hughes (2012–2022)</text>
+</svg>
