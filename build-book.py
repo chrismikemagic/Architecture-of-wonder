@@ -37,11 +37,11 @@ HOOK_LINES = {
     'CHAPTER 6': '"Authority is not claimed. It is perceived\u2009\u2014\u2009in the first 250 milliseconds."',
     'CHAPTER 7': '"Every person who walks toward you is already broadcasting."',
     'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
-    'CHAPTER 9': '"The face performs. The eyes search."',
-    'CHAPTER 10': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
-    'CHAPTER 11': '"You already know more than you think. The trick is knowing what to trust."',
-    'CHAPTER 12': '"Thought does not stay inside the head. The body has been listening the whole time."',
-    'CHAPTER 13': '"The volunteer chose you before you chose them."',
+    'CHAPTER 11': '"The face performs. The eyes search."',
+    'CHAPTER 12': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
+    'CHAPTER 13': '"You already know more than you think. The trick is knowing what to trust."',
+    'CHAPTER 9': '"Thought does not stay inside the head. The body has been listening the whole time."',
+    'CHAPTER 10': '"The volunteer chose you before you chose them."',
     'CHAPTER 14': '"Compliance is not obedience. It is agreement they did not know they gave."',
     'CHAPTER 15': '"The moment after the effect is where the real work happens."',
     'CHAPTER 16': '"Hypnosis is not what you think it is. That is why it works."',
@@ -84,11 +84,11 @@ KEY_READS = {
     'CHAPTER 6': 'Credibility is not what you say. It is what they decide before you say it.',
     'CHAPTER 7': 'The read is never one signal. The read is the chain.',
     'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
-    'CHAPTER 9': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
-    'CHAPTER 10': 'Seven expressions. One-fifth of a second. That is the window.',
-    'CHAPTER 11': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 12': 'Intention is not invisible. It is just smaller than you were looking for.',
-    'CHAPTER 13': 'Handle the person, not the trick.',
+    'CHAPTER 11': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
+    'CHAPTER 12': 'Seven expressions. One-fifth of a second. That is the window.',
+    'CHAPTER 13': 'The best cold read is a warm observation delivered cold.',
+    'CHAPTER 9': 'Intention is not invisible. It is just smaller than you were looking for.',
+    'CHAPTER 10': 'Handle the person, not the trick.',
     'CHAPTER 14': 'The best instruction is the one that feels like their idea.',
     'CHAPTER 15': 'Close the moment before they close it for you.',
     'CHAPTER 16': 'The trance state is not extraordinary. It is the brain doing what it does best.',
@@ -133,11 +133,11 @@ CHAPTER_LEGEND = {
     'CHAPTER 6':  {'tiers': ['t1', 't2'], 'cats': ['am']},
     'CHAPTER 7':  {'tiers': ['t1', 't2'], 'cats': ['bp']},
     'CHAPTER 8':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 9':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 10': {'tiers': ['t1', 't2'], 'cats': ['bp']},
-    'CHAPTER 11': {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 12': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 13': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 11':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 12': {'tiers': ['t1', 't2'], 'cats': ['bp']},
+    'CHAPTER 13': {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 9': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 10': {'tiers': ['t2', 't3'], 'cats': ['am']},
     'CHAPTER 14': {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 15': {'tiers': ['t3'],       'cats': ['bp']},
     'CHAPTER 16': {'tiers': ['t1', 't2'], 'cats': ['am']},
@@ -221,19 +221,19 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 10:The Seven Expressions': {
+    'CHAPTER 12:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
         'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 10:The Duchenne Smile': {
+    'CHAPTER 12:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
         'caption': 'Figure 10.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 9:Lip Compression': {
+    'CHAPTER 11:Lip Compression': {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
         'caption': 'Figure 9.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
@@ -294,41 +294,41 @@ SECTION_BADGES = {
     'CHAPTER 8:Reading DISC Blends':             {'tiers': ['t3'],       'cats': ['bp']},
     'CHAPTER 8:DISC and Volunteer Strategy':     {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 9: Eyes/Face ──
-    'CHAPTER 9:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
-    'CHAPTER 9:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 9:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 9:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 9:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 9:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 9:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 9:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
+    'CHAPTER 11:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 11:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 11:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 11:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
     # ── CHAPTER 10: Micro-Expression Matrix ──
-    'CHAPTER 10:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 10:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 10:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 10:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 10:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
-    'CHAPTER 10:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 12:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 12:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
+    'CHAPTER 12:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
     # ── CHAPTER 11: Cold Reading ──
-    'CHAPTER 11:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
-    'CHAPTER 11:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
-    'CHAPTER 11:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 11:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
-    'CHAPTER 11:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
-    'CHAPTER 11:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
-    'CHAPTER 11:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 11:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 11:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 13:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
+    'CHAPTER 13:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
+    'CHAPTER 13:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 13:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 13:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
+    'CHAPTER 13:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
+    'CHAPTER 13:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 13:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 13:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
     # ── CHAPTER 12: Contact Mind Reading ──
-    'CHAPTER 12:Muscle Reading':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:The Method':                     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
-    'CHAPTER 12:Intent Cues Beyond the Stage':   {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 9:Muscle Reading':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:The Method':                     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
+    'CHAPTER 9:Intent Cues Beyond the Stage':   {'tiers': ['t3'],       'cats': ['bp']},
     # ── CHAPTER 13: Volunteer's Brain ──
-    'CHAPTER 13:Seven Volunteer Types':          {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 13:The Volunteer Selection Matrix': {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 13:Anchoring in Performance':       {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 13:The Neural Selection Circuit':   {'tiers': ['t2'],       'cats': ['vs']},
+    'CHAPTER 10:Seven Volunteer Types':          {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 10:The Volunteer Selection Matrix': {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 10:Anchoring in Performance':       {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 10:The Neural Selection Circuit':   {'tiers': ['t2'],       'cats': ['vs']},
     # ── CHAPTER 14: Language of Yes ──
     'CHAPTER 14:Pacing and Leading':             {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 14:Yes Sets':                       {'tiers': ['t2'],       'cats': ['am']},
@@ -1740,6 +1740,105 @@ def gen_cr_toolkit_entry(cue, line, disc, context):
     )
 
 
+_SECTION_ICONS = {
+    'Appearance':                   '✨',
+    'Movement and Posture':         '🏃',
+    'Territory and Personal Space': '🛡',
+    'Social Confidence':            '👁',
+    'Cognitive Processing':         '🧠',
+    'Emotional Regulation':         '❤️',
+}
+
+def _ctx_to_symbols(ctx):
+    """Map context string to emoji performance symbols."""
+    ctx_l = ctx.lower()
+    syms = []
+    if any(x in ctx_l for x in ('stage', 'crowd', 'audience', 'leadership', 'dominant', 'influence')):
+        syms.append('🎭')
+    if any(x in ctx_l for x in ('strolling', 'walk-around', 'walk around')):
+        syms.append('🏃')
+    if any(x in ctx_l for x in ('close-up', 'intimate', 'baseline', 'quiet', 'subtle', 'analytical', 'thoughtful', 'preparation')):
+        syms.append('👁')
+    if any(x in ctx_l for x in ('guarded', 'hiding', 'reserved', 'restraint', 'caution')):
+        syms.append('⚠️')
+    return '\u2009'.join(syms)
+
+
+def gen_feedback_signals_ref():
+    """Compact feedback-signals callout — sits below the toolkit nav."""
+    signals = [
+        ('Lip compression',       'pause, then reverse the direction of the line'),
+        ('Eyebrow flash + pause', 'broaden the statement, give it more room to land'),
+        ('Head turning away',     'switch cue category entirely'),
+        ('Smile or nod',          'expand on the theme — you have the thread'),
+    ]
+    sym_key = [
+        ('🎭', 'Stage or crowd'),
+        ('🏃', 'Strolling'),
+        ('👁', 'Close-up or baseline'),
+        ('⚠️', 'Adjust first'),
+    ]
+    sigs_html = ''.join(
+        f'<li><span class="fsr-sig">{escape(s)}</span>'
+        f'<span class="fsr-arrow"> → </span>{escape(a)}</li>'
+        for s, a in signals
+    )
+    key_html = ''.join(
+        f'<span class="fsr-key-item"><span class="fsr-key-sym">{sym}</span>{escape(label)}</span>'
+        for sym, label in sym_key
+    )
+    return (
+        '<div class="feedback-signals-ref">'
+        '<div class="fsr-header">'
+        '<span class="fsr-title">Feedback Signals · Quick Reference</span>'
+        f'<span class="fsr-key">{key_html}</span>'
+        '</div>'
+        f'<ul class="fsr-list">{sigs_html}</ul>'
+        '</div>'
+    )
+
+
+def gen_crt_table(rows):
+    """Render buffered CRT rows as a 3-col scan table: Cue | Line + symbols | DISC badge."""
+    _DISC_CLASS = {
+        'D': 'disc-d', 'I': 'disc-i', 'S': 'disc-s', 'C': 'disc-c',
+        'D / I': 'disc-di', 'D/I': 'disc-di',
+        'C / S': 'disc-cs', 'C/S': 'disc-cs',
+        '\u2014': 'disc-other', '-': 'disc-other', '': 'disc-other',
+    }
+    if not rows:
+        return ''
+    rows_html = ''
+    for cue, line, disc, context in rows:
+        disc_clean = disc.strip().replace('/', ' / ')
+        disc_cls   = _DISC_CLASS.get(disc.strip(), 'disc-other')
+        syms       = _ctx_to_symbols(context)
+        sym_html   = f'<span class="crt-syms">{syms}</span>' if syms else ''
+        line_html  = _apply_bold(escape(line))
+        rows_html += (
+            f'<tr>'
+            f'<td class="crt-cue-cell">{escape(cue)}</td>'
+            f'<td class="crt-line-cell">'
+            f'<span class="crt-line-text">{line_html}</span>'
+            f'{sym_html}'
+            f'</td>'
+            f'<td class="crt-disc-cell">'
+            f'<span class="crt-disc-badge {disc_cls}">{escape(disc_clean) if disc_clean else "\xb7"}</span>'
+            f'</td>'
+            f'</tr>'
+        )
+    return (
+        '<table class="crt-table">'
+        '<thead><tr>'
+        '<th class="crt-th crt-th-cue">Cue</th>'
+        '<th class="crt-th crt-th-line">Line</th>'
+        '<th class="crt-th crt-th-disc">Type</th>'
+        '</tr></thead>'
+        f'<tbody>{rows_html}</tbody>'
+        '</table>'
+    )
+
+
 def gen_cm_takeaway(body):
     """Render a CM Takeaway callout block — dark navy, gold label, cream italic body."""
     body_html = _apply_bold(escape(body))
@@ -2330,6 +2429,8 @@ def build_chapter_body(section, global_para_count):
     wyajd_done = False
     pull_quote_done = False
     _toolkit_section_open = False
+    _crt_buffer = []          # rows buffered within current toolkit section
+    _current_section_id = ''  # id of open toolkit section
     pi_count = 0
     pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
@@ -2750,17 +2851,26 @@ def build_chapter_body(section, global_para_count):
                 'Emotional Regulation':     'cr-emotional',
             }
             sec_id = _id_map.get(name, 'cr-' + name.lower().replace(' ', '-'))
-            close_tag = '</div></div>' if _toolkit_section_open else ''
+            icon   = _SECTION_ICONS.get(name, '')
+            # flush previous section buffer + close div
+            if _toolkit_section_open:
+                parts.append(gen_crt_table(_crt_buffer))
+                _crt_buffer.clear()
+                parts.append('</div></div>')
             _toolkit_section_open = True
+            _current_section_id = sec_id
+            icon_html = f'<span class="tks-icon">{icon}</span>' if icon else ''
             parts.append(
-                f'{close_tag}<div id="{sec_id}" class="toolkit-section">'
-                f'<div class="tks-header">{escape(name)}</div>'
+                f'<div id="{sec_id}" class="toolkit-section">'
+                f'<div class="tks-header">{icon_html}<span class="tks-name">{escape(name)}</span></div>'
                 f'<div class="tks-body">'
             )
             i += 1; global_para_count += 1; continue
 
         if stripped == 'TOOLKIT_SECTION_END':
             if _toolkit_section_open:
+                parts.append(gen_crt_table(_crt_buffer))
+                _crt_buffer.clear()
                 parts.append('</div></div>')
                 _toolkit_section_open = False
             i += 1; global_para_count += 1; continue
@@ -2768,6 +2878,7 @@ def build_chapter_body(section, global_para_count):
         # ── TOOLKIT NAVIGATION PANEL ──
         if stripped == 'TOOLKIT_NAV':
             parts.append(gen_toolkit_nav())
+            parts.append(gen_feedback_signals_ref())
             i += 1; global_para_count += 1; continue
 
         # ── TOOLKIT SUMMARY TABLE ──
@@ -2789,7 +2900,7 @@ def build_chapter_body(section, global_para_count):
             disc_t = parts_h[1] if len(parts_h) > 1 else ''
             ctx_t  = parts_h[2] if len(parts_h) > 2 else ''
             line_t = paragraphs[i + 1].strip()
-            parts.append(gen_cr_toolkit_entry(cue_t, line_t, disc_t, ctx_t))
+            _crt_buffer.append((cue_t, line_t, disc_t, ctx_t))
             i += 2; global_para_count += 2; continue
 
         # ── FEEDBACK CHART — standalone "FEEDBACK_CHART" trigger ──
@@ -3418,34 +3529,44 @@ ul.book-list li::before{
 
 /* ═══ RECOVERY METHOD CARDS ═══ */
 .recovery-card{
-  margin:1.2em 0;padding:1.1em 1.4em;
-  border-left:4px solid #C88A30;
-  background:rgba(200,138,48,.06);
-  border-radius:0 4px 4px 0;
+  margin:1.2em 0;
+  border:1px solid rgba(200,138,48,.35);
+  border-radius:5px;
+  overflow:hidden;
   break-inside:avoid;
 }
 .rc-header{
-  display:flex;align-items:baseline;gap:.8em;
-  margin-bottom:.5em;
+  display:flex;align-items:center;gap:.8em;
+  padding:10px 16px;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-bottom:1px solid rgba(200,138,48,.3);
 }
 .rc-num{
-  font-family:var(--sans);font-size:1.1rem;font-weight:700;
+  font-family:var(--sans);font-size:1.05rem;font-weight:700;
   color:#C88A30;min-width:2em;flex-shrink:0;line-height:1;
 }
 .rc-name{
-  font-family:var(--sans);font-size:.95rem;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--body-color);
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,240,232,.92);
 }
 .rc-when{
-  font-family:var(--sans);font-size:.75rem;letter-spacing:.06em;
-  color:#C88A30;margin-bottom:.7em;line-height:1.4;
+  font-family:var(--sans);font-size:.78rem;letter-spacing:.04em;
+  color:rgba(42,37,32,.75);
+  padding:8px 16px 0;
+  line-height:1.5;
 }
 .rc-when-label{
   font-weight:700;letter-spacing:.15em;text-transform:uppercase;
-  margin-right:.4em;
+  color:#C88A30;margin-right:.4em;
 }
-.rcv-body{font-size:.95em;line-height:1.7;color:#1a1a1a;margin:0}
+.rcv-body{
+  font-family:var(--serif);font-size:.95em;line-height:1.7;
+  color:var(--body-color);
+  padding:6px 16px 14px;
+  margin:0;
+  background:rgba(200,138,48,.03);
+}
 
 /* ═══ CM TAKEAWAY ═══ */
 .cm-takeaway{
@@ -3485,7 +3606,7 @@ ul.book-list li::before{
 }
 .fbc-grid{
   display:grid;
-  grid-template-columns:90px 1fr 1fr 1.15fr;
+  grid-template-columns:150px 1fr 1fr 1.15fr;
 }
 /* column headers */
 .fbc-ch{
@@ -3536,13 +3657,13 @@ ul.book-list li::before{
 .toolkit-nav{
   display:flex;align-items:center;gap:14px;flex-wrap:wrap;
   padding:10px 16px;margin:1.2em 0 .8em;
-  background:rgba(201,168,76,.06);
-  border-radius:4px;border:1px solid rgba(201,168,76,.2);
+  background:rgba(74,141,181,.06);
+  border-radius:4px;border:1px solid rgba(74,141,181,.25);
 }
 .tn-label{
   font-family:var(--sans);font-size:.6rem;font-weight:700;
   letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(201,168,76,.75);white-space:nowrap;
+  color:rgba(74,141,181,.9);white-space:nowrap;
 }
 .tn-links{display:flex;flex-wrap:wrap;gap:8px;}
 .tn-link{
@@ -3550,23 +3671,23 @@ ul.book-list li::before{
   letter-spacing:.06em;text-transform:uppercase;
   color:var(--body-color);text-decoration:none;
   padding:3px 9px;border-radius:3px;
-  border:1px solid rgba(201,168,76,.3);
+  border:1px solid rgba(74,141,181,.35);
   background:rgba(255,255,255,.5);
   transition:background .15s;
 }
-.tn-link:hover{background:rgba(201,168,76,.15);}
+.tn-link:hover{background:rgba(74,141,181,.12);}
 .cr-anchor{display:block;height:0;visibility:hidden;}
 
 /* ═══ CR QUICK REFERENCE SUMMARY TABLE ═══ */
 .cr-summary-table{
   margin:1.6em 0;border-radius:6px;overflow:hidden;
-  border:1px solid rgba(201,168,76,.25);
+  border:1px solid rgba(74,141,181,.3);
   break-inside:avoid;
 }
 .crst-header{
-  background:rgba(201,168,76,.1);
+  background:rgba(74,141,181,.1);
   padding:9px 16px;display:flex;justify-content:space-between;align-items:baseline;
-  border-bottom:1px solid rgba(201,168,76,.25);
+  border-bottom:1px solid rgba(74,141,181,.25);
 }
 .crst-title{
   font-family:var(--sans);font-size:.7rem;font-weight:700;
@@ -3585,21 +3706,21 @@ ul.book-list li::before{
 .crst-table thead th{
   font-family:var(--sans);font-size:.56rem;font-weight:700;
   letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(201,168,76,.75);
+  color:rgba(74,141,181,.9);
   padding:7px 12px;text-align:left;
-  border-bottom:1px solid rgba(201,168,76,.2);
-  border-right:1px solid rgba(201,168,76,.1);
+  border-bottom:1px solid rgba(74,141,181,.2);
+  border-right:1px solid rgba(74,141,181,.12);
 }
 .crst-table thead th:last-child{border-right:none;}
 .crst-table td{
   font-family:var(--serif);padding:8px 12px;vertical-align:top;
-  border-bottom:1px solid rgba(201,168,76,.08);
-  border-right:1px solid rgba(201,168,76,.07);
+  border-bottom:1px solid rgba(74,141,181,.08);
+  border-right:1px solid rgba(74,141,181,.07);
   color:var(--body-color);
 }
 .crst-table td:last-child{border-right:none;}
 .crst-table tr:last-child td{border-bottom:none;}
-.crs-alt td{background:rgba(201,168,76,.025);}
+.crs-alt td{background:rgba(74,141,181,.03);}
 .crs-cat{
   font-family:var(--sans);font-size:.65rem;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;color:rgba(42,37,32,.6);
@@ -3609,7 +3730,7 @@ ul.book-list li::before{
 .crs-disc{text-align:center;white-space:nowrap;}
 .crs-dbadge{
   font-family:var(--sans);font-size:.6rem;font-weight:700;
-  color:var(--gold);border:1px solid rgba(201,168,76,.4);
+  color:#4A8DB5;border:1px solid rgba(74,141,181,.45);
   border-radius:3px;padding:1px 6px;letter-spacing:.08em;
 }
 .crs-ctx{
@@ -3618,62 +3739,130 @@ ul.book-list li::before{
 }
 .crs-line{font-size:.8rem;font-style:italic;color:var(--body-color);}
 
-/* ═══ COLD READING TOOLKIT ENTRIES ═══ */
-.cr-toolkit-entry{
-  display:flex;flex-direction:column;
-  border-left:3px solid rgba(201,168,76,.55);
-  padding:.65em 1em .65em 1em;
-  margin:.45em 0;
-  background:rgba(201,168,76,.03);
-  break-inside:avoid;
-}
-.crt-header{
-  display:flex;justify-content:space-between;align-items:baseline;
-  margin-bottom:.35em;
-}
-.crt-cue{
-  font-family:var(--sans);font-size:.72rem;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--body-color);
-}
-.crt-meta{
-  display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:12px;
-}
-.crt-disc{
-  font-family:var(--sans);font-size:.62rem;font-weight:700;
-  color:var(--gold);letter-spacing:.12em;text-transform:uppercase;
-  border:1px solid rgba(201,168,76,.4);border-radius:3px;
-  padding:1px 5px;
-}
-.crt-context{
-  font-family:var(--sans);font-size:.6rem;
-  color:rgba(42,37,32,.45);letter-spacing:.06em;text-transform:uppercase;
-}
-.crt-line{
-  font-family:var(--serif);font-size:.93rem;font-style:italic;
-  line-height:1.6;color:var(--body-color);margin:0;
-}
-
 /* ═══ TOOLKIT SECTION BOXES ═══ */
 .toolkit-section{
-  margin:1.4em 0;
-  border:1px solid rgba(201,168,76,.25);
+  margin:1.6em 0;
+  border:1px solid rgba(74,141,181,.3);
   border-radius:6px;
   overflow:hidden;
   break-inside:avoid;
 }
 .tks-header{
-  background:rgba(201,168,76,.08);
-  padding:9px 16px;
+  background:linear-gradient(135deg,rgba(74,141,181,.14),rgba(74,141,181,.07));
+  padding:10px 18px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid rgba(74,141,181,.25);
+}
+.tks-icon{font-size:1.1rem;line-height:1;flex-shrink:0;}
+.tks-name{
   font-family:var(--sans);font-size:.68rem;font-weight:700;
   letter-spacing:.18em;text-transform:uppercase;color:var(--body-color);
-  border-bottom:1px solid rgba(201,168,76,.18);
 }
 .tks-body{padding:0;}
-.toolkit-section .cr-toolkit-entry{
-  margin:0;border-left:none;border-radius:0;
-  border-bottom:1px solid rgba(201,168,76,.08);
+
+/* ═══ CRT SCAN TABLE ═══ */
+.crt-table{
+  width:100%;border-collapse:collapse;
+  font-size:.85rem;
 }
-.toolkit-section .cr-toolkit-entry:last-child{border-bottom:none;}
+.crt-th{
+  font-family:var(--sans);font-size:.54rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(74,141,181,.95);
+  padding:7px 14px;text-align:left;
+  background:rgba(74,141,181,.06);
+  border-bottom:1px solid rgba(74,141,181,.2);
+  border-right:1px solid rgba(74,141,181,.12);
+}
+.crt-th:last-child{border-right:none;text-align:center;}
+.crt-th-cue{width:26%;}
+.crt-th-line{width:62%;}
+.crt-th-disc{width:12%;text-align:center;}
+.crt-table tbody tr{
+  border-bottom:1px solid rgba(74,141,181,.1);
+  transition:background .12s;
+}
+.crt-table tbody tr:last-child{border-bottom:none;}
+.crt-table tbody tr:nth-child(even){background:rgba(74,141,181,.03);}
+.crt-table tbody tr:hover{background:rgba(74,141,181,.07);}
+.crt-cue-cell{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;
+  color:var(--body-color);
+  padding:11px 14px;
+  vertical-align:top;
+  border-right:1px solid rgba(74,141,181,.14);
+}
+.crt-line-cell{
+  font-family:var(--serif);font-size:.88rem;line-height:1.65;
+  color:var(--body-color);
+  padding:10px 14px;
+  vertical-align:top;
+  border-right:1px solid rgba(74,141,181,.09);
+}
+.crt-line-text{font-style:italic;}
+.crt-syms{
+  display:inline-block;margin-left:8px;
+  font-size:.85rem;letter-spacing:.1em;
+  opacity:.85;white-space:nowrap;
+}
+.crt-disc-cell{
+  padding:10px 10px;
+  vertical-align:middle;text-align:center;
+}
+.crt-disc-badge{
+  display:inline-block;
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  border-radius:3px;padding:3px 7px;
+  white-space:nowrap;
+}
+.disc-d{color:#C85C5C;border:1px solid rgba(200,92,92,.45);background:rgba(200,92,92,.07);}
+.disc-i{color:#C9A84C;border:1px solid rgba(201,168,76,.5);background:rgba(201,168,76,.08);}
+.disc-s{color:#5C8FC8;border:1px solid rgba(92,143,200,.45);background:rgba(92,143,200,.07);}
+.disc-c{color:#8A5CC8;border:1px solid rgba(138,92,200,.4);background:rgba(138,92,200,.07);}
+.disc-di,.disc-cs,.disc-other{
+  color:rgba(42,37,32,.55);border:1px solid rgba(42,37,32,.2);
+  background:rgba(42,37,32,.04);
+}
+
+/* ═══ FEEDBACK SIGNALS QUICK REFERENCE ═══ */
+.feedback-signals-ref{
+  margin:.6em 0 1.4em;
+  border:1px solid rgba(74,141,181,.25);
+  border-radius:5px;
+  overflow:hidden;
+  background:rgba(74,141,181,.04);
+}
+.fsr-header{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+  padding:8px 16px;
+  background:rgba(74,141,181,.09);
+  border-bottom:1px solid rgba(74,141,181,.2);
+}
+.fsr-title{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--body-color);
+}
+.fsr-key{display:flex;flex-wrap:wrap;gap:10px;}
+.fsr-key-item{
+  font-family:var(--sans);font-size:.6rem;color:rgba(42,37,32,.6);
+  display:flex;align-items:center;gap:4px;
+}
+.fsr-key-sym{font-size:.8rem;}
+.fsr-list{
+  list-style:none;margin:0;padding:7px 16px;
+  display:flex;flex-wrap:wrap;gap:4px 24px;
+}
+.fsr-list li{
+  font-family:var(--serif);font-size:.8rem;line-height:1.7;
+  color:var(--body-color);
+}
+.fsr-sig{
+  font-family:var(--sans);font-size:.7rem;font-weight:700;
+  color:var(--body-color);
+}
+.fsr-arrow{color:rgba(74,141,181,.9);}
 
 /* ═══ ANTHEM & ARIA CARDS ═══ */
 .anthem-aria-card{
