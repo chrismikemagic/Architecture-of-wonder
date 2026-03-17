@@ -276,6 +276,7 @@ SECTION_BADGES = {
     'CHAPTER 5:Change Blindness':                {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 5:Psychological Marking':           {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 5:The Effort Inversion':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 5:How to Create the Feeling of Novelty': {'tiers': ['t2'], 'cats': ['am']},
     # ── CHAPTER 6: Behavioral Profiling ──
     'CHAPTER 6:The Foundation: Baseline First':  {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 6:The Five Cs':                     {'tiers': ['t2'],       'cats': ['bp']},
@@ -386,6 +387,7 @@ SECTION_BADGES = {
     'CHAPTER 25:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 25:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 25:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 25:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
     # ── CHAPTER 29: Signal to Statement ──
     'CHAPTER 18:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 18:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
@@ -408,6 +410,7 @@ SECTION_BADGES = {
     'CHAPTER 41:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 41:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 38: FATE Model ──
+    'CHAPTER 26:How the Brain Builds Experience Before It Receives It': {'tiers': ['t1'], 'cats': ['am']},
     'CHAPTER 26:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 26:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 26:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
@@ -592,6 +595,119 @@ DISC_HTML = '''
 </div>
 '''
 
+
+# ── Novelty Techniques ───────────────────────────────────────────────────────
+NOVELTY_TECHNIQUES_HTML = '''
+<div style="background:#0e1628;border-radius:8px;padding:2em 2em 1.5em;margin:2em 0;">
+  <div style="font-size:0.72em;letter-spacing:0.12em;color:#c9a84c;text-transform:uppercase;margin-bottom:0.3em;">Novelty is Designed — Not Accidental</div>
+  <h3 style="color:#fff;font-size:1.3em;margin:0 0 1.2em;font-weight:700;">How to Create the Feeling of Novelty</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9em;">
+    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Violate the Format</div>
+      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">Start in silence. Open with the unexpected. The pattern interrupt activates dopaminergic attention before a word is spoken.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">The Deliberate Withhold</div>
+      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">&ldquo;There&rsquo;s one thing that changes everything. I want to come back to it.&rdquo; Anticipation is its own novelty state.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Name the Unnamed</div>
+      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">Give language to a feeling they&rsquo;ve had but never named. &ldquo;I&rsquo;ve always felt this&rdquo; = you become unforgettable.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Reframe the Familiar</div>
+      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">&ldquo;That&rsquo;s not a pricing objection. That&rsquo;s a trust deficit.&rdquo; Reframes feel like discoveries.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Unexplained Specificity</div>
+      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">&ldquo;Companies in your range hit a bottleneck around month 8.&rdquo; Specific numbers with no explanation trigger curiosity.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Physical Novelty Anchors</div>
+      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">An unusual prop, a distinct handout format. Memory encodes around novelty. What stands out during the pitch is recalled during the decision.</div>
+    </div>
+  </div>
+</div>
+'''
+
+# ── Speech Patterns ──────────────────────────────────────────────────────────
+SPEECH_PATTERNS_HTML = '''
+<div style="background:#0e1628;border-radius:8px;padding:2em 2em 1.5em;margin:2em 0;">
+  <div style="font-size:0.72em;letter-spacing:0.12em;color:#c9a84c;text-transform:uppercase;margin-bottom:0.3em;">Neuroscience // Processing Fluency (Reber &amp; Schwarz)</div>
+  <h3 style="color:#fff;font-size:1.3em;margin:0 0 1.2em;font-weight:700;">5 Speech Patterns That Build Instant Authority</h3>
+  <div style="display:flex;flex-direction:column;gap:0.6em;">
+    <div style="display:flex;align-items:flex-start;gap:1em;background:#1a2540;border-radius:4px;padding:0.9em 1em;">
+      <div style="background:#c9a84c;color:#0e1628;font-weight:800;font-size:0.85em;padding:0.3em 0.6em;border-radius:3px;min-width:2.2em;text-align:center;flex-shrink:0;">01</div>
+      <div style="flex:1;">
+        <div style="color:#fff;font-weight:700;font-size:0.95em;">Slow the Beginning <span style="color:#c9a84c;font-size:0.8em;font-weight:400;margin-left:0.5em;">Processing Fluency</span></div>
+        <div style="color:#c8d4e8;font-size:0.88em;margin-top:0.3em;">Slower opening + clear statement = authority rises. &ldquo;Let me show you something interesting&hellip;&rdquo;</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:1em;background:#1a2540;border-radius:4px;padding:0.9em 1em;">
+      <div style="background:#c9a84c;color:#0e1628;font-weight:800;font-size:0.85em;padding:0.3em 0.6em;border-radius:3px;min-width:2.2em;text-align:center;flex-shrink:0;">02</div>
+      <div style="flex:1;">
+        <div style="color:#fff;font-weight:700;font-size:0.95em;">The Spontaneous Compliment <span style="color:#c9a84c;font-size:0.8em;font-weight:400;margin-left:0.5em;">Social Trust Circuits</span></div>
+        <div style="color:#c8d4e8;font-size:0.88em;margin-top:0.3em;">&ldquo;&mdash;Oh, that&rsquo;s a good question.&rdquo; The exclamation makes praise feel unplanned and genuine.</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:1em;background:#1a2540;border-radius:4px;padding:0.9em 1em;">
+      <div style="background:#c9a84c;color:#0e1628;font-weight:800;font-size:0.85em;padding:0.3em 0.6em;border-radius:3px;min-width:2.2em;text-align:center;flex-shrink:0;">03</div>
+      <div style="flex:1;">
+        <div style="color:#fff;font-weight:700;font-size:0.95em;">Future Memory Language <span style="color:#c9a84c;font-size:0.8em;font-weight:400;margin-left:0.5em;">Neural Simulation</span></div>
+        <div style="color:#c8d4e8;font-size:0.88em;margin-top:0.3em;">&ldquo;Imagine it&rsquo;s next quarter&hellip;&rdquo; The brain simulates futures using the same circuits as memory.</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:1em;background:#1a2540;border-radius:4px;padding:0.9em 1em;">
+      <div style="background:#c9a84c;color:#0e1628;font-weight:800;font-size:0.85em;padding:0.3em 0.6em;border-radius:3px;min-width:2.2em;text-align:center;flex-shrink:0;">04</div>
+      <div style="flex:1;">
+        <div style="color:#fff;font-weight:700;font-size:0.95em;">The Status Frame <span style="color:#c9a84c;font-size:0.8em;font-weight:400;margin-left:0.5em;">Decision-Maker Positioning</span></div>
+        <div style="color:#c8d4e8;font-size:0.88em;margin-top:0.3em;">&ldquo;I&rsquo;m curious which direction you&rsquo;re leaning.&rdquo; The other person becomes the expert, not the target.</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:1em;background:#1a2540;border-radius:4px;padding:0.9em 1em;">
+      <div style="background:#c9a84c;color:#0e1628;font-weight:800;font-size:0.85em;padding:0.3em 0.6em;border-radius:3px;min-width:2.2em;text-align:center;flex-shrink:0;">05</div>
+      <div style="flex:1;">
+        <div style="color:#fff;font-weight:700;font-size:0.95em;">Strategic Silence <span style="color:#c9a84c;font-size:0.8em;font-weight:400;margin-left:0.5em;">FBI Negotiation Tactic</span></div>
+        <div style="color:#c8d4e8;font-size:0.88em;margin-top:0.3em;">After a proposal &mdash; stop talking. Whoever speaks first gives ground. Silence signals certainty.</div>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+# ── Tension Signals SVG ──────────────────────────────────────────────────────
+TENSION_SIGNALS_HTML = '''
+<div style="background:#0e1628;border-radius:8px;padding:1.8em 2em 1.5em;margin:2em 0;">
+  <div style="font-size:0.72em;letter-spacing:0.12em;color:#c9a84c;text-transform:uppercase;margin-bottom:0.3em;">T2 &middot; Audience Management</div>
+  <h3 style="color:#fff;font-size:1.2em;margin:0 0 1.1em;font-weight:700;">Six Cortisol Signals — Reading the Room in Real Time</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8em;">
+    <div style="background:#1a2540;border-left:4px solid #c9a84c;border-radius:4px;padding:0.9em 1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.9em;margin-bottom:0.4em;">Breathing Visibility</div>
+      <div style="color:#c8d4e8;font-size:0.84em;line-height:1.5;">Slow breathing + still shoulders = inside the window. Shallow, rapid breathing + rising shoulder pads = window exceeded. Watch the first two rows. They read out the whole room.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #c9a84c;border-radius:4px;padding:0.9em 1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.9em;margin-bottom:0.4em;">The Laughter Signal</div>
+      <div style="color:#c8d4e8;font-size:0.84em;line-height:1.5;">Laughter at a non-funny moment is cortisol discharge. The window is at its edge. Offer a brief social release, then resume the build. Because these are less common, take them more seriously when they appear.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #c9a84c;border-radius:4px;padding:0.9em 1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.9em;margin-bottom:0.4em;">Stillness Gradient</div>
+      <div style="color:#c8d4e8;font-size:0.84em;line-height:1.5;">Inside the window: progressive stillness (held breath, leaning in). Window exceeded: shifting, recrossing legs, pulling at clothing, beginning to lean back.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #c9a84c;border-radius:4px;padding:0.9em 1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.9em;margin-bottom:0.4em;">Phone Emergence</div>
+      <div style="color:#c8d4e8;font-size:0.84em;line-height:1.5;">A phone in a tense moment is a nervous system looking for an exit. Tension was not earned or has been held too long. (Some people are just realtors.)</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #c9a84c;border-radius:4px;padding:0.9em 1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.9em;margin-bottom:0.4em;">Self-Soothing</div>
+      <div style="color:#c8d4e8;font-size:0.84em;line-height:1.5;">Self-touch to neck, face, hair, and arms rises with cortisol. A wave of soothing behaviors moving across a section at the same time is a specific, high-confidence signal.</div>
+    </div>
+    <div style="background:#1a2540;border-left:4px solid #c9a84c;border-radius:4px;padding:0.9em 1em;">
+      <div style="color:#c9a84c;font-weight:700;font-size:0.9em;margin-bottom:0.4em;">Absence of Response</div>
+      <div style="color:#c8d4e8;font-size:0.84em;line-height:1.5;">Flat room where energy should have risen. Dopamine response interrupted. Volunteer selection shifts from playful hesitation to social reluctance. The room is not with you. It is protecting itself from you.</div>
+    </div>
+  </div>
+</div>
+'''
 
 # ═══════════════════════════════════════════════════════════
 # TYPOGRAPHIC UTILITIES
@@ -1251,11 +1367,11 @@ def gen_six_area_radar():
     # Axes clockwise from top
     axes = [
         'Appearance',
-        'Movement\n& Posture',
-        'Territory\n& Space',
+        'Movement',
+        'Territory',
         'Social\nConfidence',
-        'Thinking\nStyle',
-        'Emotional\nReactivity',
+        'Cognitive\nProcessing',
+        'Emotional\nRegulation',
     ]
 
     profiles = [
@@ -2596,6 +2712,12 @@ def build_chapter_body(section, global_para_count):
     five_cs_injected = False
     # ── DISC CHART — injected before first D — DIRECT entry ──
     disc_injected = False
+    # ── NOVELTY TECHNIQUES — injected after trigger line in Ch5 ──
+    novelty_injected = False
+    # ── SPEECH PATTERNS — injected after trigger line in Ch25 ──
+    speech_injected = False
+    # ── TENSION SIGNALS — injected after trigger line in Ch3 ──
+    tension_injected = False
 
     # Track for element insertion
     total = len(paragraphs)
@@ -3200,6 +3322,21 @@ def build_chapter_body(section, global_para_count):
         if not five_cs_injected and stripped == 'Context. Clusters. Congruence. Consistency. Culture.':
             parts.append(FIVE_CS_HTML)
             five_cs_injected = True
+
+        # ── NOVELTY TECHNIQUES — inject after trigger line in Ch5 ──
+        if not novelty_injected and stripped == 'Violate the Format. The Deliberate Withhold. Name the Unnamed. Reframe the Familiar. Unexplained Specificity. Physical Novelty Anchors.':
+            parts.append(NOVELTY_TECHNIQUES_HTML)
+            novelty_injected = True
+
+        # ── SPEECH PATTERNS — inject after trigger line in Ch25 ──
+        if not speech_injected and stripped == 'Slow the Beginning. The Spontaneous Compliment. Future Memory Language. The Status Frame. Strategic Silence.':
+            parts.append(SPEECH_PATTERNS_HTML)
+            speech_injected = True
+
+        # ── TENSION SIGNALS OVERVIEW — inject after the last of the six signal sections ──
+        if not tension_injected and stripped.endswith('The room is not with you. It is protecting itself from you.'):
+            parts.append(TENSION_SIGNALS_HTML)
+            tension_injected = True
 
         # ── FIGURE + SECTION BADGE INJECTION — after section headers ──
         if is_section_header(stripped):

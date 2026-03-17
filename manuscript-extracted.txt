@@ -345,6 +345,11 @@ A practical rule: replace effort words with observation words. Instead of "try t
 You also reduce conscious effort by giving the mind something light but occupying to do. A small task, like following your finger, imagining a color, counting two breaths, or picturing the last place they left their keys, can keep conscious attention gently busy while the suggestion takes root underneath. That is one reason spacing helps. If you seed the idea, move on, and come back, the participant has had time to stop working at it.
 Another major factor is pressure. The harder they feel they are being watched, tested, or expected to respond, the more effortful they become. So remove the feeling of performance. Lower the stakes. Make it seem normal if nothing dramatic happens immediately. "Some people notice this fast, some notice it gradually" is often better than "you're about to feel this now." One creates availability. The other creates demand.
 So in practice, reduce conscious effort by doing four things: simplify the instruction, shift from forcing to noticing, lightly occupy the analytical mind, and remove the pressure to succeed. The participant should feel like they are allowing, not achieving. That is usually where the best responses begin.
+How to Create the Feeling of Novelty
+Novelty is designed, not accidental. The salience system responds to deviation from expected patterns — which means the sensation that something genuinely new is happening can be engineered into the architecture of a performance. You do not need different content. You need structure that breaks prediction.
+Violate the Format. The Deliberate Withhold. Name the Unnamed. Reframe the Familiar. Unexplained Specificity. Physical Novelty Anchors.
+Use two or three of these in your opening and you have manufactured the novelty state before you have said anything that matters.
+
 · · ·
 
 PART TWO
@@ -986,6 +991,13 @@ Notice: Smiling? Animated? Making eye contact with the room? Are their hands mov
 When you have three signals pointing in the same direction, you have a read. Commit before the moment passes. The performer who hesitates after a read turns certainty into a question.
 Performer's Note
 The 10-Second Scan does not happen out loud. You run it while shaking a hand, while laughing at the MC's opener, while pretending to look for somewhere to stand. By the time you open your mouth, you already know. That is the whole point.
+Signals That Point Toward DISC
+The 80-Signal System gives you the raw data. DISC gives you the pattern that organizes it into a usable performance adjustment. The signals are not the personality type — they are the behavioral evidence that lets you predict pace, resistance, expressiveness, and compliance before the first instruction is given. Chapter 8 gives you the full DISC framework. The signals below are the fastest path to getting there.
+D-Type Signals to Watch: #43 walking speed vs. crowd, #46 weight distribution at rest, #57 handshake pressure, #58 how quickly they sit, #67 interruption frequency, #71 reaction to contradiction, #80 how quickly they reclaim silence.
+I-Type Signals to Watch: #08 eye contact willingness, #45 head tilt when listening, #50 humor reaction timing, #56 eyebrow expressiveness, #64 whether they mirror pace or tone, #72 speed of smile disappearance, #73 delay before laughter after others laugh.
+S-Type Signals to Watch: #14 fidgeting level in public, #45 head tilt when listening, #49 breathing depth in conversation, #52 conversational distance preference, #66 speed of agreeing to small requests, #74 whether they ask permission before moving, #75 how they handle mistakes publicly.
+C-Type Signals to Watch: #35 privacy screen on device, #42 notification response speed, #53 face touching during thinking, #59 whether they move objects before sitting, #65 response lag before answering personal questions, #76 whether they explain simple choices unprompted, #79 object straightening and alignment behavior.
+
 · · ·
 
 CHAPTER 8
@@ -2666,6 +2678,10 @@ The real test of certainty is not how you present when everything is going well.
 The Congruence Gap
 
 Congruence must hold across every touchpoint: communications, presentation, arrival, behavior during the show. A single gap, one inconsistency between claimed and demonstrated level, creates cognitive dissonance the client will feel but may not name.
+Five Speech Patterns That Build Instant Authority
+Processing fluency research (Reber and Schwarz) established that when information is easy to process, the brain assigns it higher truth value. Slowing down is not a communication preference. It is a persuasion mechanism.
+Slow the Beginning. The Spontaneous Compliment. Future Memory Language. The Status Frame. Strategic Silence.
+
 · · ·
 
 
@@ -2682,6 +2698,10 @@ Four forces every audience evaluates before you speak — and how to control all
 What You Have Felt Before
 
 You walk on stage and within fifteen seconds you know. Not because of anything you said — you may not have spoken yet. Not because of the technical quality of anything — the performance has not started. Something in the room moved in your direction, or it did not. That shift is wordless and decisive, and it happens before your first sentence. The audience has already made a judgment. This chapter is about controlling what that judgment is.
+How the Brain Builds Experience Before It Receives It
+The brain does not wait for your show to begin before forming a judgment about it. The anterior insula, the anterior cingulate cortex, and the prefrontal cortex run a continuous predictive simulation: what is this person likely to do, based on every signal received so far. Your stage presence, pace, wardrobe, the quality of the room, the way you arrived — these are not background details. They are the data the brain is using to construct an anticipated version of your performance before the first word leaves your mouth.
+This is predictive processing: the brain's mechanism for generating expected experience in advance of sensory confirmation. It conserves cognitive resources by predicting what comes next rather than building experience from scratch at each moment. The practical consequence is significant: your audience is already inside a version of your show before you begin. Every FATE variable shapes that simulation. The question is not whether the brain will build an experience in advance. It will. The question is whether the experience it builds is the one you designed.
+
 
 The FATE Model
 
@@ -3344,6 +3364,7 @@ Every chapter closed with a single sentence in gold, set between thin lines with
 That is the serial position effect — recency. The last item in a sequence stays in working memory. Those closing lines were planted as seeds. They are the sentences you will remember from this book long after you forget the supporting details.
 
 Primacy and recency. First and last. The architecture of every chapter was built on two anchors — and everything in between was elaboration.
+
 
 · · ·
 
