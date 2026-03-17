@@ -49,27 +49,28 @@ HOOK_LINES = {
     'CHAPTER 18': '"You cannot teach observation. You can only remove the obstacles to seeing."',
     'CHAPTER 19': '"Every performance teaches you something. Most of the lessons hurt."',
     'CHAPTER 20': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 21': '"The question is never whether to influence. It is whether to admit it."',
-    'CHAPTER 22': '"The walk to the stage is the performance."',
-    'CHAPTER 23': '"Standing ovations are not earned. They are engineered."',
-    'CHAPTER 24': '"Sound is the invisible stage."',
-    'CHAPTER 25': '"The environment gives the instruction before you do."',
-    'CHAPTER 26': '"Authority is not claimed. It is perceived."',
-    'CHAPTER 27': '"Your career is a performance with a very long run."',
-    'CHAPTER 28': '"They have already decided before you walk on stage."',
-    'CHAPTER 29': '"The signal is data. The statement is performance. The gap between them is skill."',
-    'CHAPTER 30': '"The best insight demonstration looks like telepathy and works like science."',
-    'CHAPTER 31': '"Method invisibility is not misdirection. It is architecture."',
-    'CHAPTER 32': '"A performer with perfect reads and poor timing is less effective than the reverse."',
-    'CHAPTER 33': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 34': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 35': '"What you say matters less than how it sounds when you say it."',
-    'CHAPTER 36': '"The client is reading you harder than you are reading them."',
-    'CHAPTER 37': '"Every framework in this book leads here."',
-    'CHAPTER 38': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
-    'CHAPTER 39': '"Authority is not one thing. It is five things, and most people have two."',
-    'CHAPTER 40': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 41': '"Influence is not a trick. It is an equation with variables you can measure."',
+    'CHAPTER 21': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
+    'CHAPTER 22': '"The question is never whether to influence. It is whether to admit it."',
+    'CHAPTER 23': '"The walk to the stage is the performance."',
+    'CHAPTER 24': '"Standing ovations are not earned. They are engineered."',
+    'CHAPTER 25': '"Sound is the invisible stage."',
+    'CHAPTER 26': '"The environment gives the instruction before you do."',
+    'CHAPTER 27': '"Authority is not claimed. It is perceived."',
+    'CHAPTER 28': '"Your career is a performance with a very long run."',
+    'CHAPTER 29': '"They have already decided before you walk on stage."',
+    'CHAPTER 30': '"The signal is data. The statement is performance. The gap between them is skill."',
+    'CHAPTER 31': '"The best insight demonstration looks like telepathy and works like science."',
+    'CHAPTER 32': '"Method invisibility is not misdirection. It is architecture."',
+    'CHAPTER 33': '"A performer with perfect reads and poor timing is less effective than the reverse."',
+    'CHAPTER 34': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 35': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 36': '"What you say matters less than how it sounds when you say it."',
+    'CHAPTER 37': '"The client is reading you harder than you are reading them."',
+    'CHAPTER 38': '"Every framework in this book leads here."',
+    'CHAPTER 39': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 40': '"Authority is not one thing. It is five things, and most people have two."',
+    'CHAPTER 41': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 42': '"Influence is not a trick. It is an equation with variables you can measure."',
     'CHAPTER 42': '"Every framework in this book was designed to work on stage. This one ties them together."',
     'GLOSSARY': '"The language shapes the thinking. Know the words."',
 }
@@ -79,7 +80,7 @@ KEY_READS = {
     'CHAPTER 2': 'Salience is not what you show. It is what they cannot ignore.',
     'CHAPTER 3': 'Tension is not the enemy. Boredom is.',
     'CHAPTER 4': 'Delay is not cruelty. It is craft.',
-    'CHAPTER 5': 'Direct their eyes, and you direct their minds.',
+    'CHAPTER 5': 'You cannot give someone an experience they were not paying attention for.',
     'CHAPTER 6': 'Credibility is not what you say. It is what they decide before you say it.',
     'CHAPTER 7': 'The read is never one signal. The read is the chain.',
     'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
@@ -94,35 +95,108 @@ KEY_READS = {
     'CHAPTER 17': 'In the boardroom, the audience writes the review before the show ends.',
     'CHAPTER 18': 'Training is not instruction. It is guided noticing.',
     'CHAPTER 19': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 20': 'Authority is borrowed. Influence is earned in the moment.',
-    'CHAPTER 21': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
-    'CHAPTER 22': 'The walk is the show. Everything after is confirmation.',
-    'CHAPTER 23': 'The ovation begins in the first thirty seconds.',
-    'CHAPTER 24': 'Control the sound, and you control the space.',
-    'CHAPTER 25': 'Design the compliance. Then act surprised when they comply.',
-    'CHAPTER 26': 'The frame precedes the content. Always.',
-    'CHAPTER 27': 'Advance the system, not the ego.',
-    'CHAPTER 28': 'You are not what you do. You are what they remember you doing.',
-    'CHAPTER 29': 'The signal is the data. The statement is the art. Never confuse the two.',
-    'CHAPTER 30': 'The best insight feels impossible because it is grounded in what is actually there.',
-    'CHAPTER 31': 'If they are looking for the method, the architecture failed.',
-    'CHAPTER 32': 'Silence is not absence. It is the loudest tool you have.',
-    'CHAPTER 33': 'The booking is won in the room they never see you in.',
-    'CHAPTER 34': 'The introduction is the first frame. Own it.',
-    'CHAPTER 35': 'Language is not communication. It is positioning.',
-    'CHAPTER 36': 'Read them first. Then let them think they read you.',
-    'CHAPTER 37': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 38': 'FATE is not a formula. It is a mirror.',
-    'CHAPTER 39': 'Build all five pillars. Then let them carry the weight.',
-    'CHAPTER 40': 'Every element has a weight. The table tells you which ones matter.',
-    'CHAPTER 41': 'Influence without understanding is manipulation. With understanding, it is leadership.',
+    'CHAPTER 20': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 21': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 22': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
+    'CHAPTER 23': 'The walk is the show. Everything after is confirmation.',
+    'CHAPTER 24': 'The ovation begins in the first thirty seconds.',
+    'CHAPTER 25': 'Control the sound, and you control the space.',
+    'CHAPTER 26': 'Design the compliance. Then act surprised when they comply.',
+    'CHAPTER 27': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
+    'CHAPTER 28': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
+    'CHAPTER 29': 'You are not what you do. You are what they remember you doing.',
+    'CHAPTER 30': 'The signal is the data. The statement is the art. Never confuse the two.',
+    'CHAPTER 31': 'The best insight feels impossible because it is grounded in what is actually there.',
+    'CHAPTER 32': 'If they are looking for the method, the architecture failed.',
+    'CHAPTER 33': 'Silence is not absence. It is the loudest tool you have.',
+    'CHAPTER 34': 'The booking is won in the room they never see you in.',
+    'CHAPTER 35': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 36': 'Language is not communication. It is positioning.',
+    'CHAPTER 37': 'Read them first. Then let them think they read you.',
+    'CHAPTER 38': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 39': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 40': 'Build all five pillars. Then let them carry the weight.',
+    'CHAPTER 41': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 42': 'Influence without understanding is manipulation. With understanding, it is leadership.',
     'CHAPTER 42': 'Go see what others miss.',
 }
+
+# Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
+# tiers: list from ['t1','t2','t3','t4']   cats: list from ['bp','cr','vs','am']
+# BP=Behavioral Profiling  CR=Cold Reading  VS=Verbal/Vocal Signals  AM=Audience Management
+CHAPTER_LEGEND = {
+    'CHAPTER 1':  {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2':  {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3':  {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 4':  {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 5':  {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 6':  {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 7':  {'tiers': ['t1', 't2'], 'cats': ['bp']},
+    'CHAPTER 8':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 9':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 10': {'tiers': ['t1', 't2'], 'cats': ['bp']},
+    'CHAPTER 11': {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 12': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 13': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 14': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 15': {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 16': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 17': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 18': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 20': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 21': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 22': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 23': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 24': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 25': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 26': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 27': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 28': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 29': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 30': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 31': {'tiers': ['t2', 't3'], 'cats': ['cr']},
+    'CHAPTER 32': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 33': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 34': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 35': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 36': {'tiers': ['t2', 't3'], 'cats': ['vs']},
+    'CHAPTER 37': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 38': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 39': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 40': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 41': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 42': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 42': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+}
+
+# T4 signal table data — (signal name, brief read, use category)
+T4_SIGNALS = [
+    (
+        'NLP Eye Movement Direction',
+        'Eye direction maps to cognitive mode: visual memory, visual construction, auditory recall, or kinesthetic processing.',
+        'BP',
+    ),
+    (
+        'Smooth Lower Eyelids as Confidence Indicator',
+        'Relaxed lower eyelids indicate genuine confidence. Tension around the lower eyelid signals concealed anxiety or stress.',
+        'BP',
+    ),
+    (
+        'Deep Under-Eye Wrinkles as Chronic Worry Indicator',
+        'Deep permanent under-eye wrinkles reflect a lifetime pattern of chronic worry or emotional suppression.',
+        'BP',
+    ),
+    (
+        'Hair Part Direction as Personality Indicator',
+        'Left = dominance and logic. Right = cooperation and nurturance. Center = balance or ambivalence.',
+        'BP',
+    ),
+]
 
 WHAT_YOU_JUST_DID = {
     3: "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat\u2009\u2014\u2009even though the threat is not real. Observation, applied to yourself.",
     7: "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01\u2009\u2014\u2009handedness indicator. You just demonstrated it without thinking.",
-    10: "If you skipped ahead to this chapter because the title interested you more than the previous one, that is salience at work. Your brain prioritized novelty over sequence. Chapter Two explained why.",
     15: "Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.",
     21: "You just turned to this chapter. Before reading a word, you formed an impression of its length by glancing at the page count. That is thin-slicing applied to a book. You do this with people too.",
     28: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Two taught you this. The book just demonstrated it.",
@@ -159,7 +233,212 @@ FIGURES = {
         'caption': 'Figure 10.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
+    'CHAPTER 9:Lip Compression': {
+        'src': 'resources/metv-images/lip-compression-example.png',
+        'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
+        'caption': 'Figure 9.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'rights': 'AI-generated illustration',
+    },
 }
+
+# ═══════════════════════════════════════════════════════════
+# SECTION BADGES — Tier + category badges injected after section headers
+# Key: "CHAPTER <num>:<section header text>" → {tiers, cats}
+# Shows readers the evidence tier and observation category for each topic.
+# ═══════════════════════════════════════════════════════════
+
+SECTION_BADGES = {
+    # ── CHAPTER 1: Designing for Reality ──
+    'CHAPTER 1:The Setup Is the Performance':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 1:Expectation Loading':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 1:Predictive Processing':           {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 1:Cognitive Economy':               {'tiers': ['t1'],       'cats': ['am']},
+    # ── CHAPTER 2: Five Forces of Salience ──
+    'CHAPTER 2:1. Novelty':                      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:2. Emotional Relevance':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:3. Social Signal':                {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:4. Unresolved Uncertainty':       {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:5. Contrast':                     {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:Stacking the Forces':             {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 3: Tension, Threat and Window ──
+    'CHAPTER 3:The Cortisol Threshold':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:Breathing Visibility':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 3:Stillness Gradient':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 3:The Laughter Signal':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 3:Phone Emergence':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 3:Reading the Audience\'s Cortisol Level': {'tiers': ['t2'], 'cats': ['am']},
+    # ── CHAPTER 4: Art of Anticipation ──
+    'CHAPTER 4:Increasing Dopamine':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 4:Premature Resolution':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 4:Intermittent Structure':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 5: Attention as a Weapon ──
+    'CHAPTER 5:The Gorilla Principle':           {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 5:Change Blindness':                {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 5:Psychological Marking':           {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 5:The Effort Inversion':            {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 6: Behavioral Profiling ──
+    'CHAPTER 6:The Foundation: Baseline First':  {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 6:The Five Cs':                     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 6:Reading Deviation':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 6:The Leakage Window':              {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 6:Eye Movement and the Baseline Principle': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 6:The Three-Signal Rule':           {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 6:Observation Is Not Lie Detection':{'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 6:Common Observer Errors':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 6:Cultural Calibration in Practice':{'tiers': ['t2'],       'cats': ['bp']},
+    # ── CHAPTER 7: 80-Signal System ──
+    'CHAPTER 7:The Six-Category Radar':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:The 10-Second Scan':              {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:T4 Signals Removed':              {'tiers': ['t4'],       'cats': ['bp']},
+    # ── CHAPTER 8: DISC ──
+    'CHAPTER 8:Reading DISC Blends':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 8:DISC and Volunteer Strategy':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 9: Eyes/Face ──
+    'CHAPTER 9:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 9:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 9:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 9:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
+    # ── CHAPTER 10: Micro-Expression Matrix ──
+    'CHAPTER 10:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 10:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 10:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 10:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 10:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
+    'CHAPTER 10:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
+    # ── CHAPTER 11: Cold Reading ──
+    'CHAPTER 11:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
+    'CHAPTER 11:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
+    'CHAPTER 11:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 11:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 11:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
+    'CHAPTER 11:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
+    'CHAPTER 11:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 11:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 11:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
+    # ── CHAPTER 12: Contact Mind Reading ──
+    'CHAPTER 12:Muscle Reading':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:The Method':                     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
+    'CHAPTER 12:Intent Cues Beyond the Stage':   {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 13: Volunteer's Brain ──
+    'CHAPTER 13:Seven Volunteer Types':          {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 13:The Volunteer Selection Matrix': {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 13:Anchoring in Performance':       {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 13:The Neural Selection Circuit':   {'tiers': ['t2'],       'cats': ['vs']},
+    # ── CHAPTER 14: Language of Yes ──
+    'CHAPTER 14:Pacing and Leading':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 14:Yes Sets':                       {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 14:Double Binds':                   {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 14:Presupposition Check':           {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 14:Degrees of Certainty':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 15: Closing the Barn Door ──
+    'CHAPTER 15:The Memory Problem':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 15:The Language of Preemptive Closure': {'tiers': ['t2'],   'cats': ['am']},
+    # ── CHAPTER 16: Science of Hypnosis ──
+    'CHAPTER 16:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 16:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 16:The Rainville Finding':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 16:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 16:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 16:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
+    # ── CHAPTER 17: Mentalism in Boardroom ──
+    'CHAPTER 17:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 17:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 17:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 18: Behavioral Training ──
+    'CHAPTER 18:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 18:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 19: Influence Without Authority ──
+    'CHAPTER 19:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 20: Ethics of Influence ──
+    'CHAPTER 20:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 20:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 21: The Performance Arc ──
+    'CHAPTER 21:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 21:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 21:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    # ── CHAPTER 22: Art of Strolling ──
+    'CHAPTER 22:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 22:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 23: Duration Neglect / Standing Ovation ──
+    'CHAPTER 23:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 23:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 24: Audio as Architecture ──
+    'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
+    'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 25: Compliance by Design ──
+    'CHAPTER 25:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 25:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 25:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 26: Authority Frame ──
+    'CHAPTER 26:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 26:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 26:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 29: Signal to Statement ──
+    'CHAPTER 29:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 29:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 29:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 29:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
+    # ── CHAPTER 30: Insight Demonstrations ──
+    'CHAPTER 30:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
+    'CHAPTER 30:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 30:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
+    # ── CHAPTER 31: Method Invisibility ──
+    'CHAPTER 31:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 31:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 33: Where Bookings Are Won ──
+    'CHAPTER 33:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 33:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 35: Language of Authority ──
+    'CHAPTER 35:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 35:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 36: Reading the Booking Room ──
+    'CHAPTER 36:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 36:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 38: FATE Model ──
+    'CHAPTER 38:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 38:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 39: Authority Architecture ──
+    'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 40: Performer's Signal Dictionary ──
+    'CHAPTER 40:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 40:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 40:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 41: Influence Equation ──
+    'CHAPTER 41:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 41:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 42: DECODE Framework ──
+    'CHAPTER 42:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 42:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 42:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 42:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 42:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 42:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
+}
+
+def gen_section_badge_strip(tiers, cats):
+    """Compact inline tier+category strip shown beneath section headers."""
+    _all_tiers = ['t1', 't2', 't3', 't4']
+    _all_cats  = ['bp', 'cr', 'vs', 'am']
+    tier_html = ''.join(
+        f'<span class="badge {t}">{t.upper()}</span>'
+        for t in _all_tiers if t in tiers
+    )
+    cat_html = ''.join(
+        f'<span class="sec-cat-pill {c}">{c.upper()}</span>'
+        for c in _all_cats if c in cats
+    )
+    return f'<div class="section-badge-strip">{tier_html}<span class="sbs-divider"></span>{cat_html}</div>'
 
 # ═══════════════════════════════════════════════════════════
 # THE FIVE Cs FRAMEWORK — Injected at beginning of Chapter 7
@@ -576,7 +855,15 @@ def parse_manuscript(filepath):
 
 # ── SVG margin icons ──
 def _svg_bp():
-    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="9" cy="9" rx="8" ry="5.5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="9" cy="9" r="2.2" fill="#C9A84C"/></svg>'
+    # Magnifying glass — observation/behavioral profiling
+    return (
+        '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">'
+        # Lens circle
+        '<circle cx="7.5" cy="7.5" r="4.8" stroke="#C9A84C" stroke-width="1.4"/>'
+        # Handle
+        '<line x1="11.3" y1="11.3" x2="15.5" y2="15.5" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round"/>'
+        '</svg>'
+    )
 def _svg_cr():
     # Book (open, two pages meeting at spine) + head (top-left) + snowflake asterisk (top-right)
     return (
@@ -595,7 +882,17 @@ def _svg_cr():
         '</svg>'
     )
 def _svg_vs():
-    return '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="2,9 5,5 8,13 11,5 14,9 16,9" stroke="#6B52A0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    # Raised hand — volunteer selection
+    return (
+        '<svg class="margin-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">'
+        # Palm — upright rectangle
+        '<rect x="6" y="6" width="6" height="7" rx="1.2" stroke="#6B52A0" stroke-width="1.2"/>'
+        # Index finger raised above palm
+        '<rect x="8.5" y="2" width="2" height="5" rx="1" stroke="#6B52A0" stroke-width="1.1"/>'
+        # Wrist/arm stub
+        '<path d="M7 13 Q7 16 9 16 Q11 16 11 13" stroke="#6B52A0" stroke-width="1.1" stroke-linecap="round"/>'
+        '</svg>'
+    )
 def _svg_am():
     # Two person silhouettes side by side — audience/group
     return (
@@ -611,21 +908,31 @@ def _svg_am():
         '</svg>'
     )
 
-def _opener_legend():
+def _opener_legend(tiers=None, cats=None):
+    # tiers/cats: lists restricting which badges to show; None = show all
+    _all_tiers = ['t1', 't2', 't3', 't4']
+    _all_cats  = ['bp', 'cr', 'vs', 'am']
+    show_tiers = tiers if tiers else _all_tiers
+    show_cats  = cats  if cats  else _all_cats
+
+    tier_html = ''.join(
+        f'<span class="badge {t}">{t.upper()}</span>'
+        for t in _all_tiers if t in show_tiers
+    )
+    _cat_html = {
+        'bp': f'<span class="icon-item">{_svg_bp()}<span class="icon-code bp">BP</span></span>',
+        'cr': f'<span class="icon-item">{_svg_cr()}<span class="icon-code cr">CR</span></span>',
+        'vs': f'<span class="icon-item">{_svg_vs()}<span class="icon-code vs">VS</span></span>',
+        'am': f'<span class="icon-item">{_svg_am()}<span class="icon-code am">AM</span></span>',
+    }
+    cat_html = ''.join(_cat_html[c] for c in _all_cats if c in show_cats)
+
     return (
         '<div class="opener-legend">'
-        '<div class="tier-row">'
-        '<span class="badge t1">T1</span>'
-        '<span class="badge t2">T2</span>'
-        '<span class="badge t3">T3</span>'
-        '<span class="badge t4">T4</span>'
-        '</div><div class="legend-label">SIGNAL CONFIDENCE TIERS</div>'
-        '<div class="icon-row">'
-        f'<span class="icon-item">{_svg_bp()}<span class="icon-code bp">BP</span></span>'
-        f'<span class="icon-item">{_svg_cr()}<span class="icon-code cr">CR</span></span>'
-        f'<span class="icon-item">{_svg_vs()}<span class="icon-code vs">VS</span></span>'
-        f'<span class="icon-item">{_svg_am()}<span class="icon-code am">AM</span></span>'
-        '</div><div class="legend-label">OBSERVATION CATEGORIES</div>'
+        f'<div class="tier-row">{tier_html}</div>'
+        '<div class="legend-label">SIGNAL CONFIDENCE TIERS</div>'
+        f'<div class="icon-row">{cat_html}</div>'
+        '<div class="legend-label">OBSERVATION CATEGORIES</div>'
         '</div>'
     )
 
@@ -645,7 +952,8 @@ def gen_chapter_opener(section):
     else:
         ch_display = '\u2726'  # diamond for intro
 
-    legend = _opener_legend()
+    legend_data = CHAPTER_LEGEND.get(chapter_key, {})
+    legend = _opener_legend(tiers=legend_data.get('tiers'), cats=legend_data.get('cats'))
     ch_id = f'chapter-{ch_num}'
     return f'''<section class="chapter-opener" id="{ch_id}" data-part="{part_num}">
   <div class="opener-content">
@@ -746,6 +1054,40 @@ def gen_observation_table(rows):
             f'<span class="obs-num-cell">{num}</span>' +
             f'<span class="obs-name-cell">{escape(obs)}</span>' +
             f'<span class="obs-what-cell">{escape(what)}</span>' +
+            f'<span class="obs-tier-cell">{tier_badge}</span>' +
+            f'<span class="obs-use-cell">{use_html}</span>' +
+            '</div>'
+        )
+    return header + ''.join(body_rows) + '</div>'
+
+
+def gen_t4_table():
+    """Render the T4 signals as a table in the same style as the 80-signal system."""
+    use_colors = {'BP':'#C9A84C','CR':'#1A8FA8','VS':'#6B52A0','AM':'#A83030'}
+    header = (
+        '<div class="obs-table-wrap t4-table-wrap">'
+        '<div class="obs-table-header">'
+        '<span class="obs-th obs-num">#</span>'
+        '<span class="obs-th obs-name">SIGNAL</span>'
+        '<span class="obs-th obs-what">THE READ</span>'
+        '<span class="obs-th obs-tier">TIER</span>'
+        '<span class="obs-th obs-use">USE</span>'
+        '</div>'
+    )
+    body_rows = []
+    for i, (name, read, use) in enumerate(T4_SIGNALS, 1):
+        tier_badge = '<span class="badge t4">T4</span>'
+        use_parts = use.replace('/',' ').split()
+        use_html = ' '.join(
+            f'<span class="use-badge" style="color:{use_colors.get(u,"#8A9AB5")};">{u}</span>'
+            for u in use_parts
+        )
+        row_class = 'obs-row-alt' if i % 2 == 0 else 'obs-row'
+        body_rows.append(
+            f'<div class="obs-row-wrap {row_class}">' +
+            f'<span class="obs-num-cell">{i}</span>' +
+            f'<span class="obs-name-cell">{escape(name)}</span>' +
+            f'<span class="obs-what-cell">{escape(read)}</span>' +
             f'<span class="obs-tier-cell">{tier_badge}</span>' +
             f'<span class="obs-use-cell">{use_html}</span>' +
             '</div>'
@@ -1195,9 +1537,223 @@ def gen_checklist_section(heading, bullets_text):
     )
 
 
+def gen_mnemonic(acronym, phrase, expansion, note):
+    """Render a mnemonic memory-aid block."""
+    exp_html = ''.join(
+        f'<span class="mn-item">{escape(item.strip())}</span>'
+        for item in expansion.split('·') if item.strip()
+    )
+    return (
+        f'<div class="mnemonic-block">'
+        f'<div class="mn-header">'
+        f'<span class="mn-label">REMEMBER IT</span>'
+        f'<span class="mn-acronym">{escape(acronym)}</span>'
+        f'</div>'
+        f'<div class="mn-phrase">&ldquo;{escape(phrase)}&rdquo;</div>'
+        f'<div class="mn-expansion">{exp_html}</div>'
+        f'<div class="mn-note">{escape(note)}</div>'
+        f'</div>'
+    )
+
+
+def gen_def_card(term, definition):
+    """Render a compact inline definition card — term in gold, definition beside it."""
+    return (
+        f'<div class="def-card">'
+        f'<div class="dc-term">{escape(term)}</div>'
+        f'<div class="dc-def">{escape(definition)}</div>'
+        f'</div>'
+    )
+
+
+def gen_numbered_card(num, title, body):
+    """Render a numbered variation card (e.g. 1. Full-face micros)."""
+    return (
+        f'<div class="numbered-card">'
+        f'<div class="nc-num">{escape(num)}</div>'
+        f'<div class="nc-content">'
+        f'<div class="nc-title">{escape(title)}</div>'
+        f'<p class="nc-body">{escape(body)}</p>'
+        f'</div>'
+        f'</div>'
+    )
+
+
+def gen_recovery_card(num, name, when, body):
+    """Render a cortisol-recovery method card — amber, numbered, with a WHEN tag."""
+    # Process body for bold terms
+    body_html = _apply_bold(escape(body))
+    return (
+        f'<div class="recovery-card">'
+        f'<div class="rc-header">'
+        f'<span class="rc-num">0{num}</span>'
+        f'<span class="rc-name">{escape(name)}</span>'
+        f'</div>'
+        f'<div class="rc-when"><span class="rc-when-label">WHEN</span> {escape(when)}</div>'
+        f'<div class="rcv-body">{body_html}</div>'
+        f'</div>'
+    )
+
+
+def gen_anthem_aria_card(body):
+    """Render an Anthem & Aria field advice card — pink/blue split header."""
+    body_html = _apply_bold(escape(body))
+    return (
+        '<div class="anthem-aria-card">'
+        '<div class="aa-header">'
+        '<span class="aa-label">Anthem &amp; Aria</span>'
+        '<span class="aa-subtitle">Field Advice</span>'
+        '</div>'
+        f'<div class="aa-body">{body_html}</div>'
+        '</div>'
+    )
+
+
+def gen_toolkit_nav():
+    """Render jump-link navigation panel for the Cold Reading Toolkit."""
+    cats = [
+        ('Appearance',          'cr-appearance'),
+        ('Movement',            'cr-movement'),
+        ('Territory',           'cr-territory'),
+        ('Social Confidence',   'cr-confidence'),
+        ('Cognitive Processing','cr-cognitive'),
+        ('Emotional Regulation','cr-emotional'),
+    ]
+    links = ''.join(
+        f'<a href="#{aid}" class="tn-link">{name}</a>' for name, aid in cats
+    )
+    return (
+        '<div class="toolkit-nav">'
+        '<span class="tn-label">Jump to section</span>'
+        f'<div class="tn-links">{links}</div>'
+        '</div>'
+    )
+
+
+def gen_cr_summary_table():
+    """Render quick-reference summary table for the Cold Reading Toolkit."""
+    _ROWS = [
+        ('Appearance',          'Immaculate clothing or grooming',  'C',   'Baseline / Stage',   'Every detail is in place. Nothing about you is accidental.'),
+        ('Appearance',          'Bold, eye-catching colors',        'I',   'Stage / Strolling',  'You dress to be seen. Not out of vanity — because ordinary clothes could not contain it.'),
+        ('Movement',            'Purposeful stride, forward lean',  'D',   'Leadership',         'You walk like you have a destination, even when you do not.'),
+        ('Movement',            'Arms crossed, guarded posture',    'S',   'Guarded',            'You cross your arms so naturally you probably do not notice. Trust does not come easily.'),
+        ('Territory',           'Back to wall, exit scanning',      'C/S', 'Security baseline',  'You like a clear view of the room. You do not miss much happening around you.'),
+        ('Territory',           'Sprawls, claims space',            'D',   'Stage / Dominant',   'You quietly own any space you enter.'),
+        ('Social Confidence',   'Initiates warmly, no strangers',   'I',   'Crowd / Stage',      'You have never met a stranger. That warmth makes others feel seen.'),
+        ('Social Confidence',   'Listens quietly, speaks once',     'C',   'Close-up / Intimate','When you speak, everyone goes quiet — because they know it will matter.'),
+        ('Cognitive Processing','Pauses carefully before speaking', 'C',   'Thoughtful',         'That pause is not uncertainty. It is precision.'),
+        ('Cognitive Processing','Rapid, run-on speech',             'I',   'Influence / Crowd',  'Your thoughts race. Even at rest, your mind does not slow down.'),
+        ('Emotional Regulation','Calm in chaos, refuses to panic',  'D',   'Dominant control',   'You do feel panic. You just refuse to feed it.'),
+        ('Emotional Regulation','Smiles or laughs when hurt',       'S',   'Emotional baseline', 'You smile even when you are hurting. The gentleness in your eyes gives it away.'),
+    ]
+    rows_html = ''.join(
+        f'<tr class="crs-{"alt" if idx % 2 else "base"}">'
+        f'<td class="crs-cat">{escape(cat)}</td>'
+        f'<td class="crs-cue">{escape(cue)}</td>'
+        f'<td class="crs-disc"><span class="crs-dbadge">{escape(disc)}</span></td>'
+        f'<td class="crs-ctx">{escape(ctx)}</td>'
+        f'<td class="crs-line"><em>{escape(line)}</em></td>'
+        '</tr>'
+        for idx, (cat, cue, disc, ctx, line) in enumerate(_ROWS)
+    )
+    return (
+        '<div class="cr-summary-table">'
+        '<div class="crst-header">'
+        '<span class="crst-title">Quick Reference</span>'
+        '<span class="crst-sub">Cue &rarr; Type &rarr; Line</span>'
+        '</div>'
+        '<table class="crst-table">'
+        '<thead><tr>'
+        '<th>Category</th><th>Cue</th><th>Type</th><th>Context</th><th>Opening Line</th>'
+        '</tr></thead>'
+        f'<tbody>{rows_html}</tbody>'
+        '</table>'
+        '</div>'
+    )
+
+
+def gen_feedback_chart():
+    """Render the 4-signal reading feedback reference chart as a uniform grid."""
+    _SIGNALS = [
+        ('01', 'Lip Compression',
+         'Suppressed disagreement. They think the read is wrong.',
+         'Reframe without defending. Preserve the theme, reverse the direction.',
+         'Instead of <em>You trust people easily</em>, try <em>You want to trust people, but experience has made you careful.</em>'),
+        ('02', 'Eyebrow Flash + Pause',
+         'Uncertainty. The frame did not fit cleanly.',
+         'Broaden the statement. Give it more room to land.',
+         '<em>This may not apply in every situation, but there is a pattern around you where&hellip;</em>'),
+        ('03', 'Head Turning Away',
+         'Low recognition. This category has lost traction.',
+         'Change topic territory entirely.',
+         'Move from relationships to work, or from work to trust and decision-making.'),
+        ('04', 'Microexpression of Contempt',
+         'They have rejected the frame. Not disagreed. Rejected.',
+         'Full reset. Do not push further.',
+         '<em>You strike me as someone who does not particularly like being read too quickly.</em> Their resistance becomes your hit.'),
+    ]
+    # Column header row
+    col_heads = (
+        '<div class="fbc-ch"></div>'
+        '<div class="fbc-ch">Signal Means</div>'
+        '<div class="fbc-ch">Adjustment</div>'
+        '<div class="fbc-ch">Pivot To</div>'
+    )
+    cells_html = col_heads
+    for num, signal, meaning, action, example in _SIGNALS:
+        cells_html += (
+            f'<div class="fbc-sig-cell"><span class="fbc-num">{num}</span><span class="fbc-name">{signal}</span></div>'
+            f'<div class="fbc-data-cell">{meaning}</div>'
+            f'<div class="fbc-data-cell">{action}</div>'
+            f'<div class="fbc-data-cell fbc-pivot">{example}</div>'
+        )
+    return (
+        '<div class="feedback-chart">'
+        '<div class="fbc-header"><span class="fbc-title">Reading the Feedback</span>'
+        '<span class="fbc-sub">Four signals. Four corrections.</span></div>'
+        f'<div class="fbc-grid">{cells_html}</div>'
+        '</div>'
+    )
+
+
+def gen_cr_toolkit_entry(cue, line, disc, context):
+    """Render a Cold Reading Toolkit entry — cue + DISC/context meta + reading line."""
+    _DISC_LABELS = {
+        'D': 'D · Decisive', 'I': 'I · Expressive',
+        'S': 'S · Steady',   'C': 'C · Analytical',
+        'D / I': 'D / I', 'D/I': 'D / I',
+        'C / S': 'C / S', 'C/S': 'C / S',
+        '—': '—', '-': '—', '': '',
+    }
+    disc_label = _DISC_LABELS.get(disc.strip(), disc.strip())
+    line_html = _apply_bold(escape(line))
+    disc_html = f'<span class="crt-disc">{escape(disc_label)}</span>' if disc_label else ''
+    ctx_html  = f'<span class="crt-context">{escape(context)}</span>' if context else ''
+    return (
+        '<div class="cr-toolkit-entry">'
+        '<div class="crt-header">'
+        f'<span class="crt-cue">{escape(cue)}</span>'
+        f'<span class="crt-meta">{disc_html}{ctx_html}</span>'
+        '</div>'
+        f'<div class="crt-line">{line_html}</div>'
+        '</div>'
+    )
+
+
+def gen_cm_takeaway(body):
+    """Render a CM Takeaway callout block — dark navy, gold label, cream italic body."""
+    body_html = _apply_bold(escape(body))
+    return (
+        '<div class="cm-takeaway">'
+        '<div class="cm-label">CM Takeaway</div>'
+        f'<div class="cm-body">{body_html}</div>'
+        '</div>'
+    )
+
+
 def gen_what_you_have_felt():
     return '''<div class="felt-before">
-  <p class="felt-label">WHAT YOU HAVE FELT BEFORE</p>
+  <p class="felt-label">WHAT IT FEELS LIKE</p>
 </div>'''
 
 
@@ -1213,6 +1769,82 @@ def gen_forces_intro(statement, forces_text):
   <p class="forces-statement">{escape(statement)}</p>
   <div class="forces-pills">{pills}</div>
 </div>'''
+
+
+# ── BOLD TERMS — key technical/named signals bolded on every occurrence ──
+# Regex applies optional plural 's' automatically — no need for duplicate entries.
+BOLD_TERMS = [
+    # DISC personality system
+    'DISC',
+    'D-type', 'I-type', 'S-type', 'C-type',
+    'D/I-type', 'D/C-type', 'I/S-type', 'S/C-type',
+    # Named behavioral signals
+    'confirmation glance', 'social referencing glance', 'eyebrow flash',
+    'lip compression', 'transderivational search', 'chiral expression', 'chirality',
+    'leakage hierarchy', 'baseline deviation',
+    'microexpression', 'micro-expression',
+    'productive tension', 'cortisol threshold', 'cortisol window',
+    # Named measurement systems
+    'Duchenne smile', 'Duchenne marker',
+    'FACS', 'Action Units',
+    # Cognitive / psychological named effects
+    'cognitive load', 'cognitive dissonance', 'cognitive bias',
+    'confirmation bias', 'social proof',
+    'Von Restorff effect', 'framing effect',
+    'inattentional blindness', 'change blindness',
+    'predictive processing', 'processing fluency',
+    'variable reward',
+    # NLP / hypnosis / suggestion techniques
+    'double bind', 'presupposition', 'yes set',
+    'pacing and leading', 'modality matching',
+    'VAK', 'suggestibility', 'absorption',
+    'pseudo-hypnotic',
+    # Mentalism & performance techniques
+    'misdirection', 'psychological force', 'dual reality',
+    'pattern interrupt', 'soft hit', 'strong hit',
+    'layered read', 'opening read',
+    'salience',
+    # Observation categories
+    'Behavioral Profiling', 'Volunteer Selection', 'Audience Management',
+    # Performance framing headers
+    'How it helps your performances:', 'How it hurts your performances:',
+    'Watch three zones:', 'And watch them at three moments:',
+    'In practical terms, the best training path is simple:',
+    'A better use is invisible.',
+    # Book core frameworks
+    'Five Cs', 'Six-Category Radar',
+    'Cluster Reading', 'context dependency',
+    # Reading types & book-named techniques
+    'cold reading', 'warm reading', 'hot reading',
+    'thin slicing', 'Forer effect',
+    'Three-Signal Rule',
+    'serial position', 'primacy effect', 'recency effect',
+    # Book-system concepts
+    'method invisibility', 'volunteer management',
+    'Fruit to Fang',
+    # T4 clinical terms
+    'phrenology', 'physiognomy', 'graphology',
+]
+
+def _apply_bold(text):
+    """Apply bold to BOLD_TERMS in text, safely skipping existing HTML tags.
+    Automatically handles plurals by appending optional 's' to each term pattern."""
+    segments = re.split(r'(<[^>]+>)', text)
+    out = []
+    for seg in segments:
+        if seg.startswith('<'):
+            out.append(seg)
+        else:
+            for term in BOLD_TERMS:
+                # s? handles plurals (D-types, microexpressions, etc.)
+                seg = re.sub(
+                    rf'(?<!\w)({re.escape(term)}s?)(?!\w)',
+                    r'<strong>\1</strong>',
+                    seg,
+                    flags=re.IGNORECASE
+                )
+            out.append(seg)
+    return ''.join(out)
 
 
 def process_paragraph(text, part_num=1):
@@ -1258,15 +1890,78 @@ def process_paragraph(text, part_num=1):
     if stripped in _warning_headers:
         return gen_warning_header(stripped)
 
+    # Major parent section headers — elevated divider treatment
+    # Featured concept headers — split on colon, elevated two-line treatment
+    _concept_headers = {
+        'Semantic Satiation: Why Words Die in Your Mouth',
+    }
+    if stripped in _concept_headers:
+        if ':' in stripped:
+            concept, _, tagline = stripped.partition(':')
+            return (
+                f'<div class="concept-header">'
+                f'<div class="ch-rule"></div>'
+                f'<div class="ch-concept">{escape(concept.strip())}</div>'
+                f'<div class="ch-tagline">{escape(tagline.strip())}</div>'
+                f'<div class="ch-rule"></div>'
+                f'</div>'
+            )
+
+    _major_headers = {
+        'Fruit to Fang',
+    }
+    if stripped in _major_headers:
+        return f'<h3 class="section-header sh-major">{escape(stripped)}</h3>'
+
+    # Child sub-headers — visually indented, clearly subordinate to a named parent section
+    _child_heads = {
+        # Lip Compression child sub-sections
+        'Why context matters',
+        'In mentalism, this often means: you have something wrong',
+        'The mouth often reveals restraint before language does',
+        'The silent objection is often more useful than the spoken one',
+        'How it changes handling on stage',
+        'What this is really showing you',
+        'The Language of Yes',
+    }
+    if stripped in _child_heads:
+        return f'<div class="sub-header sh-child"><span class="sub-header-label">{escape(stripped)}</span></div>'
+
     # Sub-section headers — subordinate topics sitting under a parent section header
     _sub_section_heads = {
         'Breathing Visibility', 'The Laughter Signal', 'Stillness Gradient',
         'Phone Emergence', 'Self-Soothing', 'Absence of Response',
-        'The Reflect and Reset', 'Productive Silence', 'The Redirect',
+        'The Redirect',
         'Image or feeling', 'Fast impression or gradual realization',
         'Attention and concentration', 'Emotional framing', 'Stage management',
         'The Setup', 'Watching the First Search', 'The Pivot',
         'Reading the Animal Search', 'Reading the Reaction',
+        # Contact mind reading sub-sections
+        'Lipping',
+        # Cold Reading Toolkit single-word headers
+        'Appearance',
+        # Field Notes sub-sections
+        'Reflect and Reset',
+        # Double binds sub-sections
+        'Why this matters on stage',
+        'What a double bind really does',
+        "The mentalist's version",
+        'An easy way to understand it',
+        'Examples for mentalism',
+        'Why this increases compliance',
+        'Where performers misuse this',
+        'A useful rule for building them',
+        # Transderivational search sub-sections
+        'How to spot it',
+        'Why it happens',
+        # Microexpression sub-sections
+        'How to identify them in the real world',
+        'How to identify variations',
+        'What to look for in a performance context',
+        'How this applies to specific mentalism methods',
+        'The best way to train this',
+        "The performer's rule",
+        'The deeper point',
     }
     if stripped in _sub_section_heads:
         return f'<div class="sub-header"><span class="sub-header-label">{escape(stripped)}</span></div>'
@@ -1277,6 +1972,11 @@ def process_paragraph(text, part_num=1):
     if _step_m:
         _sn, _sl = _step_m.group(1), _step_m.group(2).strip()
         return f'<div class="step-header"><span class="step-num">{escape(_sn)}</span><span class="step-name">{escape(_sl)}</span></div>'
+
+    # Dialogue lines — standalone paragraphs fully enclosed in quotation marks
+    if ((stripped.startswith('\u201c') and stripped.endswith('\u201d')) or
+            (stripped.startswith('"') and stripped.endswith('"'))) and len(stripped) > 8:
+        return f'<p class="dialogue-line"><strong><em>{escape(stripped)}</em></strong></p>'
 
     # Section headers — 2 visual styles based on word count
     if is_section_header(stripped):
@@ -1310,7 +2010,15 @@ def process_paragraph(text, part_num=1):
         icon_html = _svg_vs()
     elif any(w in tl for w in ['motivation', 'compliance', 'action', 'decision', 'drive', 'goal-oriented', 'directive']):
         icon_html = _svg_am()
-    return f'<p>{icon_html}{t}</p>' 
+    # Bold inline "Label:" openers — short defined terms at the start of a paragraph
+    # Matches 1–7 word phrase followed by colon (e.g. "For the D-type:", "THE CLAIM:", "How it helps your performances:")
+    t = re.sub(
+        r'^(<[^>]+>)*([A-Z][A-Za-z\s\'\-,/]{2,60}:)(?=\s)',
+        lambda m: (m.group(1) or '') + f'<strong>{m.group(2)}</strong>',
+        t
+    )
+    t = _apply_bold(t)
+    return f'<p>{icon_html}{t}</p>'
 
 
 def is_tier_definition(text):
@@ -1404,25 +2112,25 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       <div class="ftf-cell">Animal arrives immediately after the shift</div>
       <div class="ftf-cell">Easy animal retrieval once redirected</div>
       <div class="ftf-cell">Move toward a confident reveal</div>
-      <div class="ftf-cell ftf-vowel">Often E &mdash; Eagle / Elephant</div>
+      <div class="ftf-cell ftf-vowel">E &mdash; Eagle / Elephant</div>
     </div>
     <div class="ftf-row">
       <div class="ftf-cell">Animal takes a little longer</div>
       <div class="ftf-cell">Narrower, less common animal search</div>
       <div class="ftf-cell">Use a playful test statement</div>
-      <div class="ftf-cell ftf-vowel">Often I</div>
+      <div class="ftf-cell ftf-vowel">I</div>
     </div>
     <div class="ftf-row">
       <div class="ftf-cell">Strong surprise when you dismiss it as not a real animal</div>
       <div class="ftf-cell">They likely chose something unusual or imaginary</div>
       <div class="ftf-cell">Lean into the reveal</div>
-      <div class="ftf-cell ftf-vowel">Often U</div>
+      <div class="ftf-cell ftf-vowel">U</div>
     </div>
     <div class="ftf-row">
       <div class="ftf-cell">Mild confusion when challenged</div>
       <div class="ftf-cell">They chose something borderline or category-fuzzy</div>
       <div class="ftf-cell">Reframe and refine</div>
-      <div class="ftf-cell ftf-vowel">Often iguana or another unusual choice</div>
+      <div class="ftf-cell ftf-vowel">Iguana or another unusual choice</div>
     </div>
   </div>
   <div class="ftf-flow">
@@ -1433,13 +2141,13 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       <div class="ftf-node">Think of a fruit with that letter</div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Fruit comes immediately</strong><br><span class="ftf-note">likely common fruit</span><br>think <span class="ftf-vowel-inline">A / O</span><br><span class="ftf-note">often apple or orange</span></div>
+        <div class="ftf-branch-item ftf-yes"><strong>Fruit comes immediately</strong><br><span class="ftf-note">likely common fruit</span><br>think <span class="ftf-vowel-inline">A / O</span><br><span class="ftf-note">apple or orange</span></div>
         <div class="ftf-branch-mid">Did it come easily?</div>
         <div class="ftf-branch-item ftf-no"><strong>No fruit / visible search</strong><br><span class="ftf-note">offer the animal option</span></div>
       </div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>think <span class="ftf-vowel-inline">E</span><br><span class="ftf-note">Eagle / Elephant &mdash; ask if it feels like a large animal; confident yes often confirms elephant</span></div>
+        <div class="ftf-branch-item ftf-yes"><strong>Animal comes immediately</strong><br>think <span class="ftf-vowel-inline">E</span><br><span class="ftf-note">Eagle / Elephant &mdash; ask if it feels like a large animal; confident yes confirms elephant</span></div>
         <div class="ftf-branch-mid">Animal ease?</div>
         <div class="ftf-branch-item ftf-no"><strong>Animal takes longer</strong><br>think <span class="ftf-vowel-inline">I / U</span><br><span class="ftf-note">watch quality of search &amp; reaction to challenge</span></div>
       </div>
@@ -1447,9 +2155,9 @@ FRUIT_TO_FANG_HTML = '''<div class="ftf-card">
       <div class="ftf-node ftf-node-test">Playful challenge: <em>&ldquo;That&rsquo;s not a real animal.&rdquo;</em></div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-branch">
-        <div class="ftf-branch-item ftf-yes"><strong>Mild confusion</strong><br>likely <span class="ftf-vowel-inline">I</span><br><span class="ftf-note">often iguana or another borderline answer</span></div>
+        <div class="ftf-branch-item ftf-yes"><strong>Mild confusion</strong><br>likely <span class="ftf-vowel-inline">I</span><br><span class="ftf-note">iguana or another borderline answer</span></div>
         <div class="ftf-branch-mid">Reaction?</div>
-        <div class="ftf-branch-item ftf-no"><strong>Strong surprise</strong><br>likely <span class="ftf-vowel-inline">U</span><br><span class="ftf-note">often unicorn &mdash; watch for shoulder shrug or head wobble as social protection</span></div>
+        <div class="ftf-branch-item ftf-no"><strong>Strong surprise</strong><br>likely <span class="ftf-vowel-inline">U</span><br><span class="ftf-note">unicorn &mdash; watch for shoulder shrug or head wobble as social protection</span></div>
       </div>
       <div class="ftf-arrow">&#8595;</div>
       <div class="ftf-node ftf-node-note"><strong>Very long search before settling</strong><br><span class="ftf-note">points toward <span class="ftf-vowel-inline">U</span> rather than <span class="ftf-vowel-inline">I</span> &mdash; the mind is reaching for a less natural answer</span></div>
@@ -1501,7 +2209,12 @@ def gen_modality_card(modality, signals_text):
                 f'</div>'
             )
         else:
-            fields_html += f'<div class="mod-field mod-note">{escape(chunk)}</div>'
+            fields_html += (
+                f'<div class="mod-field">'
+                f'<span class="mod-label"></span>'
+                f'<span class="mod-value mod-note">{escape(chunk)}</span>'
+                f'</div>'
+            )
     return (
         f'<div class="modality-card" style="--mod-color:{color};--mod-bg:{bg}">'
         f'<div class="mod-name">{escape(modality)}</div>'
@@ -1512,8 +2225,8 @@ def gen_modality_card(modality, signals_text):
 
 def gen_reading_line_card(disc_type, context, body_text):
     """Render a behavioral reading line card (IF YOU SEE / LINE)."""
-    context_cls = 'rl-stage' if 'stage' in context.lower() or 'strolling' in context.lower() else 'rl-closeup'
-    context_label = 'STAGE / STROLLING' if context_cls == 'rl-stage' else 'CLOSE-UP / THEATRICAL'
+    context_cls = 'rl-stage' if 'stage' in context.lower() or 'theatrical' in context.lower() else 'rl-closeup'
+    context_label = 'STAGE / THEATRICAL' if context_cls == 'rl-stage' else 'STROLLING / CLOSE-UP'
     # Parse IF YOU SEE and LINE from body
     see_html = ''
     line_html = ''
@@ -1526,7 +2239,7 @@ def gen_reading_line_card(disc_type, context, body_text):
         chips = ''.join(f'<span class="rl-signal">{escape(s)}</span>' for s in signals)
         see_html = f'<div class="rl-signals">{chips}</div>'
     if line_m:
-        line_html = f'<p class="rl-line">&ldquo;{escape(line_m.group(1).strip())}&rdquo;</p>'
+        line_html = f'<p class="rl-line"><strong>&ldquo;{escape(line_m.group(1).strip())}&rdquo;</strong></p>'
     return (
         f'<div class="reading-line-card {context_cls}">'
         f'<div class="rl-head">'
@@ -1616,6 +2329,7 @@ def build_chapter_body(section, global_para_count):
     spotlight_done = False
     wyajd_done = False
     pull_quote_done = False
+    _toolkit_section_open = False
     pi_count = 0
     pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
@@ -1626,6 +2340,14 @@ def build_chapter_body(section, global_para_count):
         stripped = para.strip()
 
         # ── EXPLICIT PATTERN INTERRUPT TRIGGERS ──
+        # ── EXPLICIT KEY PRINCIPLE CALLOUT ──
+        if stripped == 'KEY PRINCIPLE' and i + 1 < len(paragraphs):
+            body_text = paragraphs[i + 1].strip()
+            parts.append(gen_spotlight(escape(body_text)))
+            spotlight_done = True
+            i += 2
+            continue
+
         if stripped == 'PATTERN_INTERRUPT_40PCT':
             pi_data = next((p for p in PATTERN_INTERRUPTS if p['number'] == '40%'), None)
             if pi_data:
@@ -1879,21 +2601,8 @@ def build_chapter_body(section, global_para_count):
             i += 1
             continue
 
-        # Pattern interrupt every ~45 paragraphs — but never inside a card sequence
-        _is_card_trigger = bool(
-            re.match(r'^[DISC] — ', stripped) or
-            re.match(r'^[DISC]/[DISC] Blend', stripped) or
-            re.match(r'^0[1-7]·', stripped) or
-            re.match(r'^(Soft|Moderate|Strong|Pinpoint) Frame', stripped) or
-            re.match(r'^(The Supporter|The Enthusiast|The Skeptic|The Performer|The Nervous|The Reserved|The Joker)', stripped) or
-            re.match(r'^SIGNAL \d+ —', stripped) or
-            re.match(r'^T[1-4] —', stripped) or
-            re.match(r'^(High|Moderate|Low|Mixed)/(High|Moderate|Low|Mixed)', stripped)
-        )
-        if i > 0 and i % 45 == 0 and pi_count < 2 and not _is_card_trigger:
-            parts.append(gen_pattern_interrupt(PATTERN_INTERRUPTS[pi_idx % len(PATTERN_INTERRUPTS)]))
-            pi_idx += 1
-            pi_count += 1
+        # Auto pattern interrupts DISABLED — use explicit PATTERN_INTERRUPT_40PCT
+        # trigger in the manuscript at natural section breaks instead.
 
         # "What You Just Did" at ~65% through chapter
         if not wyajd_done and chapter_num in WHAT_YOU_JUST_DID and i > total * 0.6:
@@ -1929,18 +2638,35 @@ def build_chapter_body(section, global_para_count):
             i = j
             continue
 
-        # ── T4 SIGNAL CARDS (SIGNAL N — Name) ──
+        # ── T4 SIGNAL CARDS / TABLE (SIGNAL N — Name) ──
         _t4_m = re.match(r'^SIGNAL\s+(\d+)\s*[\u2014\u2013\-]+\s*(.+)$', stripped)
         if _t4_m and i + 3 < len(paragraphs):
+            sig_num = int(_t4_m.group(1))
+            # In Ch7: inject full T4 table on signal 1, skip all 4 signal blocks
+            if chapter_num == 7:
+                if sig_num == 1:
+                    parts.append(gen_t4_table())
+                # Fast-forward past this signal's CLAIM/RESEARCH/VALID content
+                j = i + 1
+                while j < len(paragraphs):
+                    nxt = paragraphs[j].strip()
+                    # Stop at next SIGNAL marker or a non-T4 section header
+                    if re.match(r'^SIGNAL\s+\d+', nxt):
+                        break
+                    if is_section_header(nxt) and not re.match(r'^(THE CLAIM|THE RESEARCH|WHAT REMAINS)', nxt, re.IGNORECASE):
+                        break
+                    j += 1
+                global_para_count += (j - i)
+                i = j
+                continue
+            # All other chapters (appendix): render detailed card as before
             sig_name = _t4_m.group(2).strip()
-            # Collect THE CLAIM / THE RESEARCH / WHAT REMAINS VALID blocks
             claim = research = valid = ''
             j = i + 1
             while j < len(paragraphs):
                 nxt = paragraphs[j].strip()
                 if re.match(r'^THE CLAIM:?', nxt, re.IGNORECASE):
                     claim = nxt.partition(':')[2].strip() if ':' in nxt else ''
-                    # Collect continuation paragraphs
                     j += 1
                     while j < len(paragraphs):
                         cont = paragraphs[j].strip()
@@ -2012,6 +2738,65 @@ def build_chapter_body(section, global_para_count):
             global_para_count += 2
             continue
 
+        # ── TOOLKIT SECTION BOX (open/close) ──
+        if stripped.startswith('TOOLKIT_SECTION:'):
+            name = stripped[len('TOOLKIT_SECTION:'):].strip()
+            _id_map = {
+                'Appearance':               'cr-appearance',
+                'Movement and Posture':     'cr-movement',
+                'Territory and Personal Space': 'cr-territory',
+                'Social Confidence':        'cr-confidence',
+                'Cognitive Processing':     'cr-cognitive',
+                'Emotional Regulation':     'cr-emotional',
+            }
+            sec_id = _id_map.get(name, 'cr-' + name.lower().replace(' ', '-'))
+            close_tag = '</div></div>' if _toolkit_section_open else ''
+            _toolkit_section_open = True
+            parts.append(
+                f'{close_tag}<div id="{sec_id}" class="toolkit-section">'
+                f'<div class="tks-header">{escape(name)}</div>'
+                f'<div class="tks-body">'
+            )
+            i += 1; global_para_count += 1; continue
+
+        if stripped == 'TOOLKIT_SECTION_END':
+            if _toolkit_section_open:
+                parts.append('</div></div>')
+                _toolkit_section_open = False
+            i += 1; global_para_count += 1; continue
+
+        # ── TOOLKIT NAVIGATION PANEL ──
+        if stripped == 'TOOLKIT_NAV':
+            parts.append(gen_toolkit_nav())
+            i += 1; global_para_count += 1; continue
+
+        # ── TOOLKIT SUMMARY TABLE ──
+        if stripped == 'CR_SUMMARY_TABLE':
+            parts.append(gen_cr_summary_table())
+            i += 1; global_para_count += 1; continue
+
+        # ── INVISIBLE ANCHOR for in-page navigation ──
+        if stripped.startswith('CRANCHOR:'):
+            anchor_id = stripped[len('CRANCHOR:'):].strip()
+            parts.append(f'<span id="{escape(anchor_id)}" class="cr-anchor"></span>')
+            i += 1; global_para_count += 1; continue
+
+        # ── COLD READING TOOLKIT — "CRT: Cue | DISC | Context" followed by line paragraph ──
+        if stripped.startswith('CRT:') and i + 1 < len(paragraphs):
+            header = stripped[len('CRT:'):].strip()
+            parts_h = [p.strip() for p in header.split('|')]
+            cue_t  = parts_h[0] if len(parts_h) > 0 else ''
+            disc_t = parts_h[1] if len(parts_h) > 1 else ''
+            ctx_t  = parts_h[2] if len(parts_h) > 2 else ''
+            line_t = paragraphs[i + 1].strip()
+            parts.append(gen_cr_toolkit_entry(cue_t, line_t, disc_t, ctx_t))
+            i += 2; global_para_count += 2; continue
+
+        # ── FEEDBACK CHART — standalone "FEEDBACK_CHART" trigger ──
+        if stripped == 'FEEDBACK_CHART':
+            parts.append(gen_feedback_chart())
+            i += 1; global_para_count += 1; continue
+
         # Spotlight box: find a good quote-like line at ~20-55% through
         if not spotlight_done and i > total * 0.2 and i < total * 0.55:
             if (stripped.startswith(('\u201c', '"', '\u2018')) and len(stripped) < 250 and len(stripped) > 30) or \
@@ -2030,6 +2815,93 @@ def build_chapter_body(section, global_para_count):
                     i += 1
                     continue
 
+        # ── MNEMONIC BLOCK — "MNEMONIC: ACRONYM — phrase" followed by "expansion. note" ──
+        if stripped.startswith('MNEMONIC:') and i + 1 < len(paragraphs):
+            header = stripped[len('MNEMONIC:'):].strip()
+            # header format: "ACRONYM — phrase"
+            if '\u2014' in header:
+                acronym, _, phrase = header.partition('\u2014')
+            elif ' - ' in header:
+                acronym, _, phrase = header.partition(' - ')
+            else:
+                acronym, phrase = header, ''
+            body = paragraphs[i + 1].strip()
+            # Split body into expansion (first sentence up to period) and note (rest)
+            if '. ' in body:
+                expansion, _, note = body.partition('. ')
+            else:
+                expansion, note = body, ''
+            parts.append(gen_mnemonic(acronym.strip(), phrase.strip(), expansion.strip(), note.strip()))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── CM TAKEAWAY CARDS ──
+        if stripped == 'CM Takeaway' and i + 1 < len(paragraphs):
+            body = paragraphs[i + 1].strip()
+            parts.append(gen_cm_takeaway(body))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── ANTHEM & ARIA FIELD ADVICE CARDS ──
+        if stripped.startswith('ANTHEM_ARIA:'):
+            body = stripped[len('ANTHEM_ARIA:'):].strip()
+            parts.append(gen_anthem_aria_card(body))
+            i += 1
+            global_para_count += 1
+            continue
+
+        # ── RECOVERY CARDS — "RECOVERY: Name | when text" followed by body paragraph ──
+        if stripped.startswith('RECOVERY:') and i + 1 < len(paragraphs):
+            header = stripped[len('RECOVERY:'):].strip()
+            if '|' in header:
+                name_part, when_part = header.split('|', 1)
+            else:
+                name_part, when_part = header, ''
+            body_part = paragraphs[i + 1].strip()
+            # Count recovery cards in this chapter to auto-number
+            _rc_num = sum(1 for p in parts if 'recovery-card' in p) + 1
+            parts.append(gen_recovery_card(_rc_num, name_part.strip(), when_part.strip(), body_part))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── DEFINITION CARDS — "DEFCARD: Term" followed by definition paragraph ──
+        if stripped.startswith('DEFCARD:') and i + 1 < len(paragraphs):
+            term = stripped[len('DEFCARD:'):].strip()
+            defn = paragraphs[i + 1].strip()
+            parts.append(gen_def_card(term, defn))
+            i += 2
+            global_para_count += 2
+            continue
+
+        # ── NUMBERED CARDS — "N. Title" followed by body paragraph ──
+        _num_m = re.match(r'^(\d+)\.\s+(.+)$', stripped)
+        if _num_m and i + 1 < len(paragraphs):
+            _body = paragraphs[i + 1].strip()
+            if _body and not re.match(r'^\d+\.', _body):
+                parts.append(gen_numbered_card(_num_m.group(1), _num_m.group(2), _body))
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── BULLET LIST — consecutive · prefixed lines ──
+        if stripped.startswith('\u00b7') and stripped not in ('\u00b7 \u00b7 \u00b7', '\u00b7\u00b7\u00b7'):
+            items = []
+            while i < len(paragraphs):
+                s = paragraphs[i].strip()
+                if s.startswith('\u00b7') and s not in ('\u00b7 \u00b7 \u00b7', '\u00b7\u00b7\u00b7'):
+                    item_text = s.lstrip('\u00b7').strip()
+                    items.append(escape(item_text))
+                    i += 1
+                    global_para_count += 1
+                else:
+                    break
+            li_html = '\n'.join(f'<li>{it}</li>' for it in items)
+            parts.append(f'<ul class="book-list">{li_html}</ul>')
+            continue
+
         processed = process_paragraph(para, part_num)
         if processed:
             parts.append(processed)
@@ -2039,7 +2911,7 @@ def build_chapter_body(section, global_para_count):
             parts.append(FIVE_CS_HTML)
             five_cs_injected = True
 
-        # ── FIGURE INJECTION — after section headers ──
+        # ── FIGURE + SECTION BADGE INJECTION — after section headers ──
         if is_section_header(stripped):
             fig_key = f'{chapter_key}:{stripped}'
             if fig_key in FIGURES:
@@ -2049,6 +2921,9 @@ def build_chapter_body(section, global_para_count):
                 if fig.get('caption'):
                     parts.append(f'  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">{fig["caption"]}</p>')
                 parts.append(f'</div>')
+            badge_data = SECTION_BADGES.get(fig_key)
+            if badge_data:
+                parts.append(gen_section_badge_strip(badge_data['tiers'], badge_data['cats']))
 
         i += 1
 
@@ -2131,6 +3006,21 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
   <blockquote class="pull-quote"><p>\u201cTension is not the enemy. Boredom is.\u201d</p></blockquote>
 
   <p>That is <em class="gold">serial position\u2009\u2014\u2009recency</em>. The last thing in working memory is the thing that stays.</p>
+
+  <p>Now look at the ones in the middle of the book.</p>
+
+  <p>Chapters 26 and 27 carried these Key Reads:</p>
+
+  <blockquote class="pull-quote"><p>\u201cForfeit the game before somebody else takes you out of the frame.\u201d</p></blockquote>
+  <blockquote class="pull-quote"><p>\u201cEvery room holds the memory of a performance it has not yet seen.\u201d</p></blockquote>
+
+  <p>The first one is a Linkin Park lyric. Papercut, 2001. The second one is not anything. They were designed to sound like they mean something. They were designed to seem like the kind of lines you underline. Neither of them is insight. They are structurally familiar, tonally consistent, and semantically empty. They were placed in the <em class="gold">serial position trough</em>, the statistical valley in a 42-chapter book where reader attention is at its lowest, roughly Chapters 22 through 27, where the novelty of the opening has faded and the pull of the ending has not yet started.</p>
+
+  <p>Your brain, trained by dozens of previous Key Reads to expect a meaningful sentence in that position, assigned meaning to them anyway. That is not a flaw in your reading. That is pattern completion. The context predicted a signal, so your system supplied one.</p>
+
+  <p>Two things were happening at the same time. First, the writing effort saved by not composing meaningful Key Reads in the chapters readers are least likely to scrutinize closely was real and deliberate. Second, the position was an experiment. If you read those lines and felt a pull of recognition, that is the same mechanism a performer uses when a frame is placed before a piece of information. The structure does the convincing. The content is almost beside the point.</p>
+
+  <p>If you caught them, go back and re-read Chapters 22 through 27. Your attention is high right now. See what you find.</p>
 
   <div class="section-break">\u00b7 \u00b7 \u00b7</div>
 
@@ -2215,7 +3105,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
     <p class="finale-3">And now you know how.</p>
   </div>
 
-  <div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>
+  <div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>
 </article>'''
 
 
@@ -2416,6 +3306,46 @@ body{counter-reset:page}
   margin:2.2em 0 .85em;
 }
 
+/* Style D — major parent section: full-width divider, gold rules, elevated type */
+.section-header.sh-major{
+  display:block;width:100%;
+  font-size:.92rem;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:none;
+  border-top:2px solid var(--gold);
+  border-bottom:1px solid rgba(201,168,76,.25);
+  padding:.75em 0 .65em;
+  margin:3.5em 0 1.4em;
+}
+
+/* ═══ FEATURED CONCEPT HEADER ═══ */
+.concept-header{
+  margin:3.2em 0 1.8em;
+  text-align:center;
+  break-after:avoid;
+}
+.ch-rule{
+  width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:0 auto;
+}
+.ch-concept{
+  font-family:var(--sans);
+  font-size:1.05rem;font-weight:800;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);
+  padding:.55em 0 .2em;
+}
+.ch-tagline{
+  font-family:var(--serif);
+  font-size:.82rem;font-weight:400;
+  letter-spacing:.5px;font-style:italic;
+  color:var(--body-color);
+  opacity:.8;
+  padding:.15em 0 .5em;
+}
+
 /* Style C — long descriptive (8+ words): full-width, left border only */
 .section-header.sh-section{
   display:block;
@@ -2427,6 +3357,393 @@ body{counter-reset:page}
 }
 
 .meta-header{color:var(--gold)}
+
+/* Dialogue lines — spoken words rendered bold+italic, inset */
+.dialogue-line{
+  font-style:italic;font-weight:600;
+  color:var(--body-color);
+  padding-left:1.4em;
+  border-left:2px solid var(--gold-dim);
+  margin:1.1em 0;
+}
+
+/* ═══ BOOK BULLET LIST ═══ */
+ul.book-list{
+  margin:1.4em 0 1.6em 0;padding:0;list-style:none;
+}
+ul.book-list li{
+  position:relative;padding:.55em 0 .55em 1.8em;
+  border-bottom:1px solid rgba(201,168,76,.15);
+  font-family:var(--serif);font-size:1.05em;line-height:1.65;color:var(--body-color);
+}
+ul.book-list li:last-child{border-bottom:none}
+ul.book-list li::before{
+  content:'';position:absolute;left:2px;top:.95em;
+  width:7px;height:7px;background:var(--gold);border-radius:50%;
+}
+
+/* ═══ DEFINITION CARDS ═══ */
+.def-card{
+  display:flex;gap:1.2em;align-items:baseline;
+  margin:.5em 0;padding:.7em 1em;
+  border-left:2px solid var(--gold-dim);
+  background:rgba(201,168,76,.04);
+  break-inside:avoid;
+}
+.dc-term{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+  min-width:10em;flex-shrink:0;
+}
+.dc-def{font-size:.95em;line-height:1.6;color:var(--body-color)}
+
+/* ═══ NUMBERED CARDS ═══ */
+.numbered-card{
+  display:flex;gap:1.1em;align-items:flex-start;
+  margin:.8em 0;padding:1em 1.2em;
+  border-left:3px solid var(--gold);
+  background:rgba(201,168,76,.05);
+  break-inside:avoid;
+}
+.nc-num{
+  font-family:var(--sans);font-size:1.4rem;font-weight:700;
+  color:var(--gold);min-width:1.4em;line-height:1;flex-shrink:0;
+}
+.nc-title{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--body-color);
+  margin-bottom:.4em;
+}
+.nc-body{margin:0;font-size:.97em;line-height:1.65}
+
+/* ═══ RECOVERY METHOD CARDS ═══ */
+.recovery-card{
+  margin:1.2em 0;padding:1.1em 1.4em;
+  border-left:4px solid #C88A30;
+  background:rgba(200,138,48,.06);
+  border-radius:0 4px 4px 0;
+  break-inside:avoid;
+}
+.rc-header{
+  display:flex;align-items:baseline;gap:.8em;
+  margin-bottom:.5em;
+}
+.rc-num{
+  font-family:var(--sans);font-size:1.1rem;font-weight:700;
+  color:#C88A30;min-width:2em;flex-shrink:0;line-height:1;
+}
+.rc-name{
+  font-family:var(--sans);font-size:.95rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--body-color);
+}
+.rc-when{
+  font-family:var(--sans);font-size:.75rem;letter-spacing:.06em;
+  color:#C88A30;margin-bottom:.7em;line-height:1.4;
+}
+.rc-when-label{
+  font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  margin-right:.4em;
+}
+.rcv-body{font-size:.95em;line-height:1.7;color:#1a1a1a;margin:0}
+
+/* ═══ CM TAKEAWAY ═══ */
+.cm-takeaway{
+  margin:1.4em 0;border-radius:5px;overflow:hidden;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border:1px solid rgba(201,168,76,.28);
+  break-inside:avoid;
+}
+.cm-label{
+  font-family:var(--sans);font-size:.52rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);padding:10px 18px 0;
+}
+.cm-body{
+  padding:6px 18px 14px;
+  font-family:var(--serif);font-size:.95rem;font-style:italic;
+  line-height:1.75;color:rgba(245,240,232,.9);margin:0;
+}
+
+/* ═══ READING FEEDBACK CHART ═══ */
+.feedback-chart{
+  margin:1.8em 0;border-radius:6px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.28);
+  break-inside:avoid;
+}
+.fbc-header{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  padding:12px 20px;display:flex;justify-content:space-between;align-items:baseline;
+}
+.fbc-title{
+  font-family:var(--sans);font-size:.75rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+}
+.fbc-sub{
+  font-family:var(--serif);font-size:.72rem;font-style:italic;
+  color:rgba(245,240,232,.5);
+}
+.fbc-grid{
+  display:grid;
+  grid-template-columns:90px 1fr 1fr 1.15fr;
+}
+/* column headers */
+.fbc-ch{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(201,168,76,.75);
+  padding:7px 12px;
+  background:rgba(201,168,76,.07);
+  border-bottom:1px solid rgba(201,168,76,.2);
+  border-right:1px solid rgba(201,168,76,.12);
+}
+.fbc-ch:first-child{border-right:2px solid rgba(201,168,76,.25);}
+.fbc-ch:last-child{border-right:none;}
+/* signal cells (left column) */
+.fbc-sig-cell{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:14px 8px;
+  background:rgba(201,168,76,.05);
+  border-right:2px solid rgba(201,168,76,.25);
+  border-bottom:1px solid rgba(201,168,76,.12);
+}
+.fbc-num{
+  font-family:var(--sans);font-size:1.15rem;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:5px;
+}
+.fbc-name{
+  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;
+  color:var(--body-color);text-align:center;line-height:1.35;
+}
+/* data cells */
+.fbc-data-cell{
+  font-family:var(--serif);font-size:.83rem;line-height:1.6;
+  color:var(--body-color);
+  padding:12px 14px;
+  border-right:1px solid rgba(201,168,76,.1);
+  border-bottom:1px solid rgba(201,168,76,.1);
+  vertical-align:top;
+}
+.fbc-data-cell:last-child{border-right:none;}
+.fbc-pivot{
+  font-style:italic;background:rgba(201,168,76,.04);
+}
+/* remove bottom border from last row of cells */
+.fbc-grid > *:nth-last-child(-n+4){border-bottom:none;}
+
+/* ═══ TOOLKIT NAVIGATION PANEL ═══ */
+.toolkit-nav{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px 16px;margin:1.2em 0 .8em;
+  background:rgba(201,168,76,.06);
+  border-radius:4px;border:1px solid rgba(201,168,76,.2);
+}
+.tn-label{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(201,168,76,.75);white-space:nowrap;
+}
+.tn-links{display:flex;flex-wrap:wrap;gap:8px;}
+.tn-link{
+  font-family:var(--sans);font-size:.65rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--body-color);text-decoration:none;
+  padding:3px 9px;border-radius:3px;
+  border:1px solid rgba(201,168,76,.3);
+  background:rgba(255,255,255,.5);
+  transition:background .15s;
+}
+.tn-link:hover{background:rgba(201,168,76,.15);}
+.cr-anchor{display:block;height:0;visibility:hidden;}
+
+/* ═══ CR QUICK REFERENCE SUMMARY TABLE ═══ */
+.cr-summary-table{
+  margin:1.6em 0;border-radius:6px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.25);
+  break-inside:avoid;
+}
+.crst-header{
+  background:rgba(201,168,76,.1);
+  padding:9px 16px;display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid rgba(201,168,76,.25);
+}
+.crst-title{
+  font-family:var(--sans);font-size:.7rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--body-color);
+}
+.crst-sub{
+  font-family:var(--serif);font-size:.7rem;font-style:italic;
+  color:rgba(42,37,32,.5);
+}
+.crst-table{
+  width:100%;border-collapse:collapse;font-size:.82rem;
+}
+.crst-table thead tr{
+  background:rgba(42,37,32,.04);
+}
+.crst-table thead th{
+  font-family:var(--sans);font-size:.56rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(201,168,76,.75);
+  padding:7px 12px;text-align:left;
+  border-bottom:1px solid rgba(201,168,76,.2);
+  border-right:1px solid rgba(201,168,76,.1);
+}
+.crst-table thead th:last-child{border-right:none;}
+.crst-table td{
+  font-family:var(--serif);padding:8px 12px;vertical-align:top;
+  border-bottom:1px solid rgba(201,168,76,.08);
+  border-right:1px solid rgba(201,168,76,.07);
+  color:var(--body-color);
+}
+.crst-table td:last-child{border-right:none;}
+.crst-table tr:last-child td{border-bottom:none;}
+.crs-alt td{background:rgba(201,168,76,.025);}
+.crs-cat{
+  font-family:var(--sans);font-size:.65rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:rgba(42,37,32,.6);
+  white-space:nowrap;
+}
+.crs-cue{font-size:.8rem;}
+.crs-disc{text-align:center;white-space:nowrap;}
+.crs-dbadge{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  color:var(--gold);border:1px solid rgba(201,168,76,.4);
+  border-radius:3px;padding:1px 6px;letter-spacing:.08em;
+}
+.crs-ctx{
+  font-family:var(--sans);font-size:.65rem;
+  color:rgba(42,37,32,.5);white-space:nowrap;
+}
+.crs-line{font-size:.8rem;font-style:italic;color:var(--body-color);}
+
+/* ═══ COLD READING TOOLKIT ENTRIES ═══ */
+.cr-toolkit-entry{
+  display:flex;flex-direction:column;
+  border-left:3px solid rgba(201,168,76,.55);
+  padding:.65em 1em .65em 1em;
+  margin:.45em 0;
+  background:rgba(201,168,76,.03);
+  break-inside:avoid;
+}
+.crt-header{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:.35em;
+}
+.crt-cue{
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--body-color);
+}
+.crt-meta{
+  display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:12px;
+}
+.crt-disc{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  color:var(--gold);letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid rgba(201,168,76,.4);border-radius:3px;
+  padding:1px 5px;
+}
+.crt-context{
+  font-family:var(--sans);font-size:.6rem;
+  color:rgba(42,37,32,.45);letter-spacing:.06em;text-transform:uppercase;
+}
+.crt-line{
+  font-family:var(--serif);font-size:.93rem;font-style:italic;
+  line-height:1.6;color:var(--body-color);margin:0;
+}
+
+/* ═══ TOOLKIT SECTION BOXES ═══ */
+.toolkit-section{
+  margin:1.4em 0;
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:6px;
+  overflow:hidden;
+  break-inside:avoid;
+}
+.tks-header{
+  background:rgba(201,168,76,.08);
+  padding:9px 16px;
+  font-family:var(--sans);font-size:.68rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--body-color);
+  border-bottom:1px solid rgba(201,168,76,.18);
+}
+.tks-body{padding:0;}
+.toolkit-section .cr-toolkit-entry{
+  margin:0;border-left:none;border-radius:0;
+  border-bottom:1px solid rgba(201,168,76,.08);
+}
+.toolkit-section .cr-toolkit-entry:last-child{border-bottom:none;}
+
+/* ═══ ANTHEM & ARIA CARDS ═══ */
+.anthem-aria-card{
+  margin:1.6em 0;border-radius:8px;
+  overflow:hidden;
+  border:1px solid rgba(176,96,130,.25);
+  box-shadow:0 2px 14px rgba(0,0,0,.07);
+  break-inside:avoid;
+}
+.aa-header{
+  background:linear-gradient(90deg,#B05878 0%,#4A7EA8 100%);
+  padding:10px 20px;
+  display:flex;align-items:center;gap:14px;
+}
+.aa-label{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:#fff;
+}
+.aa-subtitle{
+  font-family:var(--serif);font-size:.78rem;font-style:italic;
+  color:rgba(255,255,255,.72);letter-spacing:.06em;
+}
+.aa-body{
+  background:#fdf5f9;
+  padding:14px 20px;
+  font-size:.95em;line-height:1.75;color:#1f1f1f;
+}
+
+/* ═══ MNEMONIC BLOCK ═══ */
+.mnemonic-block{
+  margin:1.4em 0;padding:1em 1.4em;
+  border:1px solid rgba(201,168,76,.3);
+  border-left:4px solid var(--gold);
+  background:rgba(201,168,76,.04);
+  border-radius:0 4px 4px 0;
+  break-inside:avoid;
+}
+.mn-header{
+  display:flex;align-items:baseline;gap:.8em;
+  margin-bottom:.4em;
+}
+.mn-label{
+  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:#8A6E20;
+}
+.mn-acronym{
+  font-family:var(--sans);font-size:1rem;font-weight:800;
+  letter-spacing:.25em;color:var(--gold);
+}
+.mn-phrase{
+  font-family:var(--serif);font-size:.88rem;font-style:italic;
+  color:var(--body-color);margin-bottom:.6em;
+}
+.mn-expansion{
+  display:flex;flex-wrap:wrap;gap:.4em .6em;
+  margin-bottom:.55em;
+}
+.mn-item{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);
+  background:rgba(201,168,76,.09);
+  padding:.2em .55em;border-radius:3px;
+}
+.mn-note{
+  font-size:.78rem;line-height:1.6;
+  color:var(--body-color);opacity:.8;
+  font-style:italic;
+}
 
 /* ═══ SECTION BREAK ═══ */
 .section-break{text-align:center;color:var(--gold);font-size:1rem;letter-spacing:10px;margin:2.2em 0}
@@ -2464,7 +3781,7 @@ body{counter-reset:page}
 }
 .pc-num{
   font-family:var(--sans);font-size:1.4rem;font-weight:700;
-  color:rgba(201,168,76,.25);line-height:1;
+  color:rgba(201,168,76,.65);line-height:1;
   flex-shrink:0;min-width:28px;
 }
 .pc-body{flex:1}
@@ -2547,30 +3864,44 @@ body{counter-reset:page}
 
 /* ═══ MODALITY SIGNAL CARDS ═══ */
 .modality-card{
-  margin:.7em 0;padding:12px 16px;
+  margin:.9em 0;
   background:var(--mod-bg,rgba(201,168,76,.06));
   border-left:3px solid var(--mod-color,var(--gold));
   border-radius:0 4px 4px 0;
-  break-inside:avoid;
+  overflow:hidden;break-inside:avoid;
 }
 .mod-name{
   font-family:var(--sans);font-size:.58rem;font-weight:700;
   letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--mod-color,var(--gold));margin-bottom:8px;
+  color:var(--mod-color,var(--gold));
+  padding:9px 14px 8px;
+  border-bottom:1px solid rgba(0,0,0,.08);
 }
-.mod-fields{display:flex;flex-direction:column;gap:4px}
+.mod-fields{display:block}
 .mod-field{
-  display:flex;gap:8px;align-items:baseline;
-  font-size:.78rem;line-height:1.45;
+  display:grid;
+  grid-template-columns:115px 1fr;
+  border-bottom:1px solid rgba(0,0,0,.06);
+  align-items:center;
 }
+.mod-field:last-child{border-bottom:none}
 .mod-label{
   font-family:var(--sans);font-size:.54rem;font-weight:700;
   letter-spacing:1px;text-transform:uppercase;
   color:var(--mod-color,var(--gold));
-  min-width:80px;flex-shrink:0;padding-top:2px;
+  padding:7px 8px 7px 14px;
+  align-self:stretch;display:flex;align-items:center;
 }
-.mod-value{color:var(--body-color);flex:1}
-.mod-note{color:var(--gray-blue);font-size:.74rem;font-style:italic;padding-left:88px}
+.mod-value{
+  font-size:.8rem;line-height:1.5;
+  color:var(--body-color);
+  padding:7px 14px 7px 12px;
+  border-left:1px solid rgba(0,0,0,.09);
+}
+.mod-value.mod-note{
+  font-style:italic;
+  color:var(--gray-blue,#666);
+}
 
 /* ═══ BEHAVIORAL READING LINE CARDS ═══ */
 /* ═══ FRUIT TO FANG CARD ═══ */
@@ -2687,20 +4018,34 @@ body{counter-reset:page}
   letter-spacing:1.5px;text-transform:uppercase;
   color:var(--blue);
 }
+
+/* Child sub-headers — indented under a named parent section (e.g. Lip Compression) */
+.sub-header.sh-child{
+  margin:1.4em 0 .4em;
+  margin-left:18px;
+  padding-left:10px;
+  border-left:2px solid rgba(201,168,76,.45);
+}
+.sub-header.sh-child .sub-header-label{
+  font-size:.68rem;
+  letter-spacing:1.2px;
+  color:rgba(201,168,76,.75);
+  font-weight:600;
+}
 .step-header{
   display:flex;align-items:center;gap:12px;
   margin:1.6em 0 .6em;
 }
 .step-num{
-  font-family:var(--sans);font-size:.55rem;font-weight:700;
+  font-family:var(--sans);font-size:.7rem;font-weight:700;
   color:var(--gold);letter-spacing:2px;
-  min-width:22px;opacity:.8;
+  min-width:26px;opacity:.9;
 }
 .step-name{
-  font-family:var(--sans);font-size:.68rem;font-weight:600;
-  letter-spacing:2px;color:var(--body-color);
+  font-family:var(--sans);font-size:.85rem;font-weight:700;
+  letter-spacing:1.5px;color:var(--body-color);
   text-transform:uppercase;
-  border-bottom:1px solid rgba(201,168,76,.3);
+  border-bottom:1px solid rgba(201,168,76,.4);
   padding-bottom:3px;flex:1;
 }
 
@@ -2801,6 +4146,24 @@ body{counter-reset:page}
 .badge.t2{background:var(--blue);color:#fff}
 .badge.t3{background:transparent;color:var(--gray-blue);border:1px solid var(--gray-blue)}
 .badge.t4{background:transparent;color:var(--dim);border:1px dashed var(--dim)}
+
+/* ═══ SECTION BADGE STRIP ═══ */
+.section-badge-strip{
+  display:flex;align-items:center;gap:10px;
+  margin:-0.3em 0 1.3em 0;
+  flex-wrap:wrap;
+}
+.section-badge-strip .badge{font-size:.54rem;padding:2px 8px}
+.sbs-divider{display:inline-block;width:1px;height:14px;background:var(--rule);margin:0 4px;opacity:.5}
+.sec-cat-pill{
+  display:inline-block;font-family:var(--sans);font-size:.54rem;
+  font-weight:700;padding:2px 8px;border-radius:7px;
+  letter-spacing:.5px;vertical-align:middle;
+}
+.sec-cat-pill.bp{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.4)}
+.sec-cat-pill.cr{background:rgba(26,143,168,.15);color:#1A8FA8;border:1px solid rgba(26,143,168,.4)}
+.sec-cat-pill.vs{background:rgba(107,82,160,.15);color:#6B52A0;border:1px solid rgba(107,82,160,.4)}
+.sec-cat-pill.am{background:rgba(168,48,48,.15);color:#A83030;border:1px solid rgba(168,48,48,.4)}
 
 /* ═══ OBSERVATION REF ═══ */
 .obs-ref{color:var(--gold);font-weight:600}
@@ -4001,14 +5364,14 @@ def build_book(manuscript_path, output_path):
                 html.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
                 body_html, global_para = build_chapter_body(part_section_proxy, global_para)
                 html.append(body_html)
-                html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
+                html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>')
                 html.append('</article>')
 
         elif stype == 'how_to_read':
             html.append('<article class="chapter-body how-to-read" data-part="0" style="break-before:page">')
             body, global_para = build_chapter_body(section, global_para)
             html.append(body)
-            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
+            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>')
             html.append('</article>')
 
         elif stype == 'chapter':
@@ -4016,7 +5379,7 @@ def build_book(manuscript_path, output_path):
             html.append(f'<article class="chapter-body" data-part="{part_num}">')
             body, global_para = build_chapter_body(section, global_para)
             html.append(body)
-            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003DECODE BEHAVIOR</div>')
+            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>')
             html.append('</article>')
 
         elif stype == 'glossary':
