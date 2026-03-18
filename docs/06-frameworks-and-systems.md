@@ -31,7 +31,7 @@ The foundational filter. No behavioral signal should be acted on without passing
 | T3 | Field-Tested Pattern | Observed consistently in thousands of performance hours. Not formally validated. | Add nuance. Never lead with T3 alone. |
 | T4 | Experimental | Weak/disputed support. NLP eye direction, hair part, smooth eyelids. | Know the claim. Know why it fails. Never use in consulting. |
 
-**T4 Appendix signals:** NLP eye direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction (all documented with research showing why each claim doesn't hold).
+**T4 signals (removed from book):** NLP eye direction, smooth lower eyelids, deep under-eye wrinkles, hair part direction, finger length ratios, ear shape, phrenology, graphology. The APPENDIX A1 deep-dive was removed from the manuscript at Chris's request (2026-03-18). The T4 tier label still exists in the system; the explanatory appendix is gone.
 
 ---
 
@@ -63,15 +63,29 @@ Full list in `design-reference/Expanded-Observation-List.md`
 
 ---
 
-## The Five Pillars of Authority
+## Authority Architecture — Two Systems
 
-From Chase Hughes' research. The limbic system uses these to assign authority before conscious evaluation:
+This book uses two distinct authority frameworks. They are **not competing** — they are surface and source.
+
+### Ch25: The Five Authority Signals (External)
+How authority is broadcast through observable behavior. The limbic system reads these before conscious evaluation:
 
 1. **Certainty** — Walk certain. Speak without seeking approval. Slow, deliberate movement = high-status.
 2. **Congruence** — Appearance, preparation, behavior all signal the same thing. Every visual cue aligns.
-3. **Presence** — Genuinely in the moment vs. managing the performance of being in the moment. The room detects the difference.
-4. **Composure** — How you handle the unexpected. Technical failure, joke that doesn't land, unexpected response. Treat disruption as planned material.
-5. **Investment** — Genuine curiosity about the people in front of you. Not performed interest. Actual engagement.
+3. **Presence** — Genuinely in the moment vs. managing the performance of being in the moment.
+4. **Composure** — How you handle the unexpected. Treat disruption as planned material.
+5. **Investment** — Genuine curiosity about the people in front of you. Not performed interest.
+
+### Ch27: The Five Pillars of Authority (Internal)
+The internal character traits that *produce* the external signals. From Chase Hughes' research:
+
+1. **Confidence** — Walk in certain. The limbic system reads confidence as a proxy for competence.
+2. **Leadership** — Set the example through behavior, not title.
+3. **Discipline** — Physical appearance, preparation, and follow-through signal internal order.
+4. **Gratitude** — A contagious sense of gratitude is socially magnetic. Signals abundance, not desperation.
+5. **Enjoyment** — Genuine (not performed) enjoyment creates an authority signal that technical skill cannot replicate.
+
+**Rule:** Strong external signals + hollow internal pillars = the room feels the crack under pressure. Strong internal pillars + weak external signals = the room can't read what you actually have. Both layers must function.
 
 ---
 
@@ -96,24 +110,52 @@ Seven-stage performance arc. Details in Part Five.
 
 ## The FATE Model
 
-Framework for performers. Details in Chapter 37.
+Room-level diagnostic framework (Ch26). Four forces the limbic system evaluates before the performer speaks:
 
-- **F** — Framework
-- **A** — Authority
-- **T** — Tension
-- **E** — Experience
+- **F** — Focus (where is the room's attention?)
+- **A** — Authority (what is the room's trust level?)
+- **T** — Tribe (does the room feel like a shared group?)
+- **E** — Emotion (what emotional state is the room in?)
 
 ---
 
 ## The DECODE Framework
 
-Live performance behavioral system. Details in Chapter 40.
+Six-step live performance workflow (Ch31). The operational spine that connects behavioral observation to installed performance experience:
+
+| Step | What it means |
+|------|---------------|
+| **D — Detect** | Observe before acting. Establish baseline first. |
+| **E — Engage** | Position as peer, not performer. Tone before content. |
+| **C — Calibrate** | Match communication style, pace, and energy level. |
+| **O — Observe** | Watch for hesitation signals, retreat patterns, evaluation clusters. |
+| **D — Decode** | Identify the real response beneath the surface behavior. |
+| **E — Elevate** | Install a future vision. Guide the experience to its natural conclusion. |
+
+Every method in Part Three feeds one or more DECODE steps. Cold reading feeds Decode + Elevate. Contact work feeds Engage + Calibrate. Compliance language runs across all six.
+
+---
+
+## Chris Michael's Tell Table
+
+In-performance behavioral reading tool (Ch10). Distinct from the 80-Signal System:
+
+| 80-Signal System | Tell Table |
+|------------------|------------|
+| Profiling tool | Reading tool |
+| Used before/during performance to build predictions | Used in real time to extract what is happening now |
+| Answers: "Who is this person?" | Answers: "What is happening right now?" |
+| Works over time with signal clusters | Works moment-to-moment with immediate behavioral response |
+
+**Key phrase:** "Profiling reads the person. Reading reads the moment."
+
+Three color sections in the table: Green (go — proceed/escalate), Yellow (calibrate — adjust approach), Red (stop/exit/de-escalate).
 
 ---
 
 ## The Influence Equation
 
-Ethical influence architecture. Details in Chapter 40 (formerly 41).
+Novelty + Authority = Influence (Ch29). Ethical influence architecture.
 
 ---
 

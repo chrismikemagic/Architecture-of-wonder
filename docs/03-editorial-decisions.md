@@ -202,3 +202,78 @@
 ## Content Consolidation (Field Notes)
 
 **Decision:** Consolidated scattered neuroscience content into Part Three (Field Notes) as themed sections rather than numbered chapters. Topics: Attention and Prediction, Neurochemistry and Threat, Memory and Embodiment, Influence and Compliance, Salience and Framing, The Body as Signal.
+
+---
+
+## Chapter 10 Renamed + Rewritten: "Chris Michael's Tell Table"
+
+**Decision:** Chapter 10 renamed from "The Performance Read Panel" to "Chris Michael's Tell Table." Full introduction rewritten.
+
+**New intro distinction:** The 80-Signal System is a *profiling tool* — used before/during performance to build predictions about who someone is. The Tell Table is a *reading tool* — used in real time to extract what is happening right now. Key phrase: "Profiling reads the person. Reading reads the moment."
+
+**BEHAVIORAL_READING_DEF_HTML callout:** Moved from Ch11 to Ch10. It defines Behavioral Profiling vs. Behavioral Reading — this boundary chapter is the correct location. New trigger point: "Profiling reads the person. Reading reads the moment."
+
+**Chapter structure:** Five Things Panel → Tell Table (full signal grid) → Mini Scenarios → Quick-Reference Cheat Sheet → prose close.
+
+---
+
+## Chapter 11 Opener Rewritten
+
+**Decision:** Removed "From Profiling to Reading" transition section (now in Ch10). New opener focuses on the face/eyes distinction:
+- "The face is the most socially managed surface in human interaction."
+- "The eyes are different. Not because people are not trying to manage them, but because the movements that carry real information happen before the social response is assembled."
+
+**Why:** The old intro's subject matter had been moved to Ch10. Ch11 needed a standalone opening that worked without relying on Ch10's profiling/reading framing.
+
+---
+
+## BTE Signal Panel Color Fix
+
+**Decision:** Changed `.bte-signal` background from `rgba(13,30,48,.5)` to solid `#0d1117`. Changed `.bte-cluster-wrap` from opacity-based dark to `#0d1117`. Changed `.bte-cluster-header` to `#0a0e14`.
+
+**Why:** 50% opacity dark blue over parchment background computed to washed-out gray (~#818b8c). Screenshot showed panels were unattractive and hard to read.
+
+**Rule going forward:** Never use rgba opacity for container backgrounds in this book. The parchment page background will interact with any transparency and produce gray. Always use solid hex.
+
+---
+
+## APPENDIX A1 (T4 Signal Review) Removed
+
+**Decision:** Removed APPENDIX A1 "T4 Signal Review: The Evidence Record" entirely. Also removed the sentence referencing the appendix from the Ch7 signal table intro.
+
+**Content removed:** 8-signal deep-dive on NLP eye movement, smooth lower eyelids, under-eye wrinkles, hair part direction, finger length ratios, ear shape, phrenology, graphology — each with THE CLAIM / THE RESEARCH / WHAT REMAINS VALID structure.
+
+**Note:** The T4 tier designation itself remains in the system — signals are still labeled T1-T4 in the working table. The removed appendix was the explanatory deep-dive. It's gone; the tier label stays.
+
+---
+
+## Performance Read Panel: Four HTML Visual Components
+
+**Decision:** Built four HTML panel constants in `build-book.py` for Ch10:
+1. `FIVE_THINGS_PANEL_HTML` — 3+2 SVG card grid (5 questions, color-coded)
+2. `SIGNAL_TABLE_HTML` — "Chris Michael's Tell Table" HTML/CSS table, 3-color sections
+3. `MINI_SCENARIOS_HTML` — 2-card green/red scenario pair
+4. `CHEAT_SHEET_HTML` — 3-column quick-reference grid
+
+**Architecture decision:** All text-heavy panels use HTML/CSS, not SVG. SVG text in a 900-unit viewBox renders at approximately 6px on screen — unreadable. Only the Five Things Panel (graphical card layout) uses SVG.
+
+---
+
+## Credibility Sequence Numbered Boxes (Ch33)
+
+**Decision:** Replaced flat single-line "1. Demonstrate before explaining. 2. Name what happened accurately. 3. Invite their framework before offering yours." in Ch33 with a `CREDIBILITY_SEQUENCE` marker injecting three dark-background numbered cards (CREDIBILITY_SEQUENCE_HTML).
+
+---
+
+## VERSION FOR REVIEW: Developmental Critique Editorial Pass
+
+**Decision:** Applied targeted fixes from a professional developmental critique. Five changes:
+1. Softened dopamine→compliance causal claim in Ch4 (T3 framing added)
+2. Ethics preview paragraph added to intro ("A Note on Consent and Intended Use")
+3. DECODE workflow map inserted before Part Three (spine preview before methods)
+4. Closer Design Protocol (5 design questions) added to Ch22
+5. "Two Systems, One Architecture" reconciliation note added to Ch27
+
+**Output:** `Architecture-of-Wonder-VERSION-FOR-REVIEW.html`
+
+**Items already resolved in v2:** saleince typo, complaint/suggestable typo, intro part-map omission, Five Pillars naming collision (Ch25 = "Five Authority Signals" / Ch27 = "Five Pillars").

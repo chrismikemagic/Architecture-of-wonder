@@ -157,3 +157,24 @@ When using the Edit tool to replace multi-line Python triple-quoted strings, the
 
 ### Build always = build-book.py + build-gated.py
 Always run both scripts together. build-gated.py reads from Architecture-of-Wonder-DESIGNED.html, so any change to build-book.py requires rebuilding both.
+
+### SVG vs HTML/CSS for text-heavy panels
+SVG text inside a `viewBox="0 0 900 530"` renders at approximately the same pixel size as the viewBox unit — meaning 9pt text in SVG renders at ~6px on a 900px-wide element. That is unreadable. Use HTML/CSS divs for:
+- Signal tables
+- Cheat sheets
+- Scenario/scenario pair cards
+- Any card where text is the primary content
+
+Reserve SVG for purely graphical layouts (geometric cards, quadrant charts, radars) where precise shape positioning matters.
+
+### rgba backgrounds over parchment = gray
+If a panel uses `rgba(r,g,b,0.5)` on a parchment/cream page background, the result is a washed-out gray, not a dark panel. Always use solid hex values for container backgrounds in this design. `#0d1117` is the standard dark panel color.
+
+### write_panels.py for large HTML replacements
+The Edit tool cannot reliably replace 50KB+ HTML constant blocks in build-book.py — the old_string match fails due to encoding or line-ending issues. Solution: write a standalone `write_panels.py` script that reads the file as text, finds markers (e.g., `# ── Ch10: Performance Read Panel visuals`), and replaces the content between them. Run the script, then delete it.
+
+### manuscript-extracted.txt IS the primary editing surface
+Despite CLAUDE.md saying "Never edit the HTML or extracted text directly," in practice all prose edits in this project happen in `manuscript-extracted.txt`. The DOCX is no longer being kept in sync. Build from `manuscript-extracted.txt` → HTML directly. The extraction step (DOCX → txt) is not used.
+
+### When the Edit tool fails with "String not found" on large blocks
+Use a Python script to do the replacement instead. Write the script to `apply_*.py`, run it with `python apply_*.py`, verify output, then delete the script. This is more reliable than heredoc bash one-liners (quoting issues) and more reliable than the Edit tool for exact-match requirements on large blocks.

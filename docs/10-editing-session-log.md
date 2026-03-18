@@ -173,3 +173,117 @@ This file is cumulative — each session appends to it.
 **Terms added:** dopamine, salience network, limbic system, hippocampus, amygdala, visual cortex, orbitofrontal cortex, medial prefrontal regions, basal ganglia, dorsolateral prefrontal cortex, executive control network, primary somatosensory cortex, locus coeruleus, nociceptors, brainstem, thalamus, mirror neurons.
 **Why:** Chris wants readers without a neuroscience background to have the anatomical context at the moment they need it, not in a glossary they have to flip to.
 **Pattern/Lesson:** Already self-described terms (zygomatic major, orbicularis oculi, cortical pyramidal neurons, norepinephrine/acetylcholine functions) do not need additions. Terms already introduced with explicit "you do not need to memorize these" explanations (anterior insula, dorsal anterior cingulate) are also fine.
+
+---
+
+### 2026-03-18 — Performance Read Panel: Four HTML Visuals for Ch10
+
+**Change:** Built four HTML panel constants in `build-book.py` for Chapter 10 (originally "The Performance Read Panel"):
+- `FIVE_THINGS_PANEL_HTML` — 3+2 grid layout (5 colored cards), SVG-based, with one card per "question to ask"
+- `SIGNAL_TABLE_HTML` — HTML/CSS div table "Chris Michael's Tell Table" — 3-color sections (green/yellow/red), `160px 1fr 1fr 170px` grid
+- `MINI_SCENARIOS_HTML` — two-card HTML/CSS layout (green card + red card) showing behavioral read scenarios
+- `CHEAT_SHEET_HTML` — 3-column HTML grid, 10 items per column with alternating row backgrounds
+
+**Why:** Chris wanted a rich visual chapter for in-performance behavioral reading (the "Tell Table").
+
+**Pattern/Lesson:** SVG text is unreadable at typical HTML viewport widths — text in a 900-unit viewBox renders at ~6px. Always use HTML/CSS for text-heavy tables and panels. Reserve SVG for graphical/geometric layouts only.
+
+---
+
+### 2026-03-18 — Ch10 Renamed and Rewritten: "Chris Michael's Tell Table"
+
+**Change:**
+- Chapter renamed from "The Performance Read Panel" → "Chris Michael's Tell Table"
+- New 4-paragraph intro added distinguishing the 80-Signal System (profiling/predictions) from the Tell Table (real-time behavioral reading)
+- Key distinction: profiling answers "who is this person?"; Tell Table answers "what is happening right now?"
+- Phrase: "Profiling reads the person. Reading reads the moment." added as the BEHAVIORAL_READING_DEF_HTML trigger point
+- `BEHAVIORAL_READING_DEF_HTML` callout box moved from Ch11 to Ch10 (it conceptually belongs at the profiling/reading boundary)
+
+**Why:** Chris wanted the chapter intro to clearly articulate the distinction between the 80-Signal System and the Tell Table.
+
+**Pattern/Lesson:** The "profiling vs reading" distinction is load-bearing for the whole book architecture — profiling = building predictions over time, reading = extracting direct information in the moment.
+
+---
+
+### 2026-03-18 — Ch11 Opener Rewritten
+
+**Change:** Removed the "From Profiling to Reading" transition section from Ch11 (it now belongs in Ch10). Wrote fresh 2-paragraph opener focused on the face vs. eyes distinction:
+- "The face is the most socially managed surface in human interaction."
+- "The eyes are different. Not because people are not trying to manage them, but because the movements that carry real information happen before the social response is assembled."
+
+**Why:** Ch11 had redundant content now handled by Ch10's new intro. The face/eyes chapter needed an opening that earned reader attention on its own terms.
+
+---
+
+### 2026-03-18 — BTE Signal Panel Color Fix
+
+**Change:** Changed `.bte-signal` and `.bte-cluster-wrap` background from `rgba(13,30,48,.5)` to solid `#0d1117`. Also changed `.bte-cluster-header` to `#0a0e14`. Font sizes bumped to `.78rem`.
+
+**Why:** The 50% opacity dark blue over the parchment page background computed to a washed-out gray-slate (~#818b8c). Chris showed a screenshot — panels looked "unattractive and hard to read."
+
+**Pattern/Lesson:** Never use rgba opacity for backgrounds over parchment/cream page backgrounds — always use solid hex values. The interaction with the cream background creates gray rather than the intended dark.
+
+---
+
+### 2026-03-18 — APPENDIX A1 (T4 Signal Review) Removed
+
+**Change:** Removed APPENDIX A1 "T4 Signal Review: The Evidence Record" in its entirety from `manuscript-extracted.txt`. Also removed the sentence "T4 signals have been removed from this table and documented in the T4 Appendix." from the signal table intro in Ch7.
+
+**Why:** Chris said "remove these please, I dont want this in the book." The appendix covered 8 T4 signals (NLP eye movement, smooth lower eyelids, under-eye wrinkles, hair part direction, finger length ratios, ear shape, phrenology, graphology).
+
+**Pattern/Lesson:** The T4 tier designation still exists in the book's system — signals are still tiered T1-T4 in the working signal table. The appendix detailing removed signals is gone, but the concept of T4 remains as a category label.
+
+---
+
+### 2026-03-18 — Credibility Sequence Numbered Boxes (Ch33)
+
+**Change:** Replaced the flat single-line "1. Demonstrate before explaining. 2. Name what happened accurately. 3. Invite their framework before offering yours." in Ch33 (Mentalism in the Boardroom) with a `CREDIBILITY_SEQUENCE` marker. Added `CREDIBILITY_SEQUENCE_HTML` to `build-book.py` — 3 dark cards in a horizontal grid, each with a large gold number + text.
+
+**Why:** Chris said "format that better, each number should have their own box."
+
+---
+
+### 2026-03-18 — Developmental Critique Applied: VERSION FOR REVIEW Build
+
+**Context:** Received a full professional developmental critique covering structural analysis, chapter-by-chapter diagnostic, inconsistency log, and priority fixes.
+
+**Changes applied to `manuscript-extracted.txt`:**
+
+1. **Dopamine claim softened (Ch4):** "The more dopamine you deliver to your audience, the more compliant and suggestible they will become." → Replaced with a probabilistic, T3-framed explanation: sustained anticipation increases engagement and lowers cognitive resistance — the design principle holds, but not as a linear causal chain.
+
+2. **Ethics preview added to intro:** After "What This Book Is" section, added "A Note on Consent and Intended Use" paragraph — frames the book's intended use before readers encounter compliance/influence chapters.
+
+3. **DECODE workflow preview added before Part Three:** Brief 2-paragraph map of all 6 DECODE steps inserted before Part Three opens, so readers have the workflow spine before learning individual methods.
+
+4. **Closer Design Protocol added to Ch22 (When the Room Rises):** Five design questions added after "The Song Anchor Technique" — covering peak vs. close distinction, collective framing, cascade starters, and clear ending signals.
+
+5. **Two Authority Systems reconciliation note added to Ch27:** "Two Systems, One Architecture" section explains Ch25 = external signals (outputs), Ch27 = internal traits (source). Makes the dual-pillar system explicit and coherent.
+
+**Output:** `Architecture-of-Wonder-VERSION-FOR-REVIEW.html` (3.6MB)
+
+**Why already clean in v2 (no changes needed):**
+- "saleince" typo — already fixed
+- "complaint and suggestable" — already fixed to "compliant and suggestible"
+- Intro part-map — already described all 7 parts
+- Five Pillars naming collision — v2 already named them differently: Ch25 = "Five Authority Signals", Ch27 = "Five Pillars of Authority"
+
+**Pattern/Lesson:** Run a pass against the v1 critique list before assuming fixes are needed — v2 had already resolved several items. The developmental critique was based on an earlier draft.
+
+---
+
+### 2026-03-18 — Strolling Chapter Expanded with New Sections
+
+**Change:** Added 10 new sections to Ch22 (The Art of Strolling), rewritten in Chris's voice, after the "Exit Principle" section:
+- **Leaving Them Wanting More** — framing intro about strolling as social-environment management
+- **Leaving on the Reveal** — Marcus Eddie's advice: leave after the payoff. Why: social pressure drops, honest reactions, energy throws outward
+- **Letting the Moment Belong to Them** — don't over-manage the payoff; silence is often the strongest evidence of impact
+- **Announce the Visit Before You Begin** — the "I'll be back in 2 minutes" technique; plants anticipation, lowers resistance, warms the group before arrival
+- **Room Leader First** — expanded CEO Introduction with full social-proof mechanism explanation
+- **Use Applause to Prime the Next Table** — applause as room-level social signal
+- **Compliment the Group First** — group feels seen → feels safe → easier to lead
+- **Get Their Names** — makes the interaction relational vs. transactional
+- **Choose the Right Volunteer** — the volunteer's reaction is social evidence; quality of volunteer often matters more than quality of effect
+
+**Why:** Chris supplied the full strolling content and asked for a rewrite in voice + insertion into the strolling chapter.
+
+**Pattern/Lesson:** The "Announce the Visit Before You Begin" technique is genuinely distinct from any existing section. The social-orientation principle (delayed request > sudden request) is a behavioral mechanism worth preserving with that level of specificity. Keep it verbatim.

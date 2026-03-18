@@ -22,6 +22,8 @@ import re
 import html as html_module
 import os
 import textwrap
+import base64
+import mimetypes
 
 # ═══════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -38,40 +40,40 @@ HOOK_LINES = {
     'CHAPTER 7': '"Every person who walks toward you is already broadcasting."',
     'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
     'CHAPTER 9': '"Thought does not stay inside the head. The body has been listening the whole time."',
-    'CHAPTER 10': '"The face performs. The eyes search."',
-    'CHAPTER 11': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
-    'CHAPTER 13': '"You already know more than you think. The trick is knowing what to trust."',
-    'CHAPTER 14': '"The volunteer chose you before you chose them."',
-    'CHAPTER 15': '"Compliance is not obedience. It is agreement they did not know they gave."',
-    'CHAPTER 16': '"The moment after the effect is where the real work happens."',
-    'CHAPTER 12': '"Hypnosis is not what you think it is. That is why it works."',
-    'CHAPTER 32': '"The boardroom is the most dangerous stage you will ever work."',
-    'CHAPTER 33': '"You cannot teach observation. You can only remove the obstacles to seeing."',
-    'CHAPTER 34': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 35': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 17': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
-    'CHAPTER 21': '"The question is never whether to influence. It is whether to admit it."',
-    'CHAPTER 22': '"The walk to the stage is the performance."',
-    'CHAPTER 23': '"Standing ovations are not earned. They are engineered."',
-    'CHAPTER 24': '"Sound is the invisible stage."',
-    'CHAPTER 25': '"The environment gives the instruction before you do."',
-    'CHAPTER 37': '"Authority is not claimed. It is perceived."',
-    'CHAPTER 38': '"Your career is a performance with a very long run."',
-    'CHAPTER 18': '"They have already decided before you walk on stage."',
-    'CHAPTER 30': '"The signal is data. The statement is performance. The gap between them is skill."',
-    'CHAPTER 19': '"The best insight demonstration looks like telepathy and works like science."',
-    'CHAPTER 20': '"Method invisibility is not misdirection. It is architecture."',
-    'CHAPTER 36': '"A performer with perfect reads and poor timing is less effective than the reverse."',
-    'CHAPTER 39': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 40': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 41': '"What you say matters less than how it sounds when you say it."',
-    'CHAPTER 42': '"The client is reading you harder than you are reading them."',
-    'CHAPTER 26': '"Every framework in this book leads here."',
-    'CHAPTER 27': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
-    'CHAPTER 28': '"Authority is not one thing. It is five things, and most people have two."',
-    'CHAPTER 29': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 31': '"Influence is not a trick. It is an equation with variables you can measure."',
-    'CHAPTER 31': '"Every framework in this book was designed to work on stage. This one ties them together."',
+    'CHAPTER 11': '"The face performs. The eyes search."',
+    'CHAPTER 12': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
+    'CHAPTER 14': '"You already know more than you think. The trick is knowing what to trust."',
+    'CHAPTER 15': '"The volunteer chose you before you chose them."',
+    'CHAPTER 16': '"Compliance is not obedience. It is agreement they did not know they gave."',
+    'CHAPTER 17': '"The moment after the effect is where the real work happens."',
+    'CHAPTER 13': '"Hypnosis is not what you think it is. That is why it works."',
+    'CHAPTER 33': '"The boardroom is the most dangerous stage you will ever work."',
+    'CHAPTER 34': '"You cannot teach observation. You can only remove the obstacles to seeing."',
+    'CHAPTER 35': '"Every performance teaches you something. Most of the lessons hurt."',
+    'CHAPTER 36': '"The most powerful person in the room is rarely the one with the title."',
+    'CHAPTER 18': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
+    'CHAPTER 22': '"The question is never whether to influence. It is whether to admit it."',
+    'CHAPTER 23': '"The walk to the stage is the performance."',
+    'CHAPTER 24': '"Standing ovations are not earned. They are engineered."',
+    'CHAPTER 25': '"Sound is the invisible stage."',
+    'CHAPTER 26': '"The environment gives the instruction before you do."',
+    'CHAPTER 38': '"Authority is not claimed. It is perceived."',
+    'CHAPTER 39': '"Your career is a performance with a very long run."',
+    'CHAPTER 19': '"They have already decided before you walk on stage."',
+    'CHAPTER 31': '"The signal is data. The statement is performance. The gap between them is skill."',
+    'CHAPTER 20': '"The best insight demonstration looks like telepathy and works like science."',
+    'CHAPTER 21': '"Method invisibility is not misdirection. It is architecture."',
+    'CHAPTER 37': '"A performer with perfect reads and poor timing is less effective than the reverse."',
+    'CHAPTER 40': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 41': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 42': '"What you say matters less than how it sounds when you say it."',
+    'CHAPTER 43': '"The client is reading you harder than you are reading them."',
+    'CHAPTER 27': '"Every framework in this book leads here."',
+    'CHAPTER 28': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 29': '"Authority is not one thing. It is five things, and most people have two."',
+    'CHAPTER 30': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 32': '"Influence is not a trick. It is an equation with variables you can measure."',
+    'CHAPTER 32': '"Every framework in this book was designed to work on stage. This one ties them together."',
     'GLOSSARY': '"The language shapes the thinking. Know the words."',
 }
 
@@ -85,40 +87,40 @@ KEY_READS = {
     'CHAPTER 7': 'The read is never one signal. The read is the chain.',
     'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
     'CHAPTER 9': 'Intention is not invisible. It is just smaller than you were looking for.',
-    'CHAPTER 10': 'Handle the person, not the trick.',
-    'CHAPTER 11': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
-    'CHAPTER 13': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 14': 'Seven expressions. One-fifth of a second. That is the window.',
-    'CHAPTER 15': 'The best instruction is the one that feels like their idea.',
-    'CHAPTER 16': 'Close the moment before they close it for you.',
-    'CHAPTER 12': 'The trance state is not extraordinary. It is the brain doing what it does best.',
-    'CHAPTER 32': 'In the boardroom, the audience writes the review before the show ends.',
-    'CHAPTER 33': 'Training is not instruction. It is guided noticing.',
-    'CHAPTER 34': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 35': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 17': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
-    'CHAPTER 21': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
-    'CHAPTER 22': 'The walk is the show. Everything after is confirmation.',
-    'CHAPTER 23': 'The ovation begins in the first thirty seconds.',
-    'CHAPTER 24': 'Control the sound, and you control the space.',
-    'CHAPTER 25': 'Design the compliance. Then act surprised when they comply.',
-    'CHAPTER 37': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
-    'CHAPTER 38': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
-    'CHAPTER 18': 'You are not what you do. You are what they remember you doing.',
-    'CHAPTER 30': 'The signal is the data. The statement is the art. Never confuse the two.',
-    'CHAPTER 19': 'The best insight feels impossible because it is grounded in what is actually there.',
-    'CHAPTER 20': 'If they are looking for the method, the architecture failed.',
-    'CHAPTER 36': 'Silence is not absence. It is the loudest tool you have.',
-    'CHAPTER 39': 'The booking is won in the room they never see you in.',
-    'CHAPTER 40': 'Your biography arrives before you do. Make sure it is doing the right job.',
-    'CHAPTER 41': 'Language is not communication. It is positioning.',
-    'CHAPTER 42': 'Read them first. Then let them think they read you.',
-    'CHAPTER 26': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 27': 'Four forces. Every room is already running the equation before you open your mouth.',
-    'CHAPTER 28': 'Build all five pillars. Then let them carry the weight.',
-    'CHAPTER 29': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 31': 'Influence without understanding is manipulation. With understanding, it is leadership.',
-    'CHAPTER 31': 'Go see what others miss.',
+    'CHAPTER 11': 'Handle the person, not the trick.',
+    'CHAPTER 12': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
+    'CHAPTER 14': 'The best cold read is a warm observation delivered cold.',
+    'CHAPTER 15': 'Seven expressions. One-fifth of a second. That is the window.',
+    'CHAPTER 16': 'The best instruction is the one that feels like their idea.',
+    'CHAPTER 17': 'Close the moment before they close it for you.',
+    'CHAPTER 13': 'The trance state is not extraordinary. It is the brain doing what it does best.',
+    'CHAPTER 33': 'In the boardroom, the audience writes the review before the show ends.',
+    'CHAPTER 34': 'Training is not instruction. It is guided noticing.',
+    'CHAPTER 35': 'The face is the performance. The hands are the truth.',
+    'CHAPTER 36': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 18': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 22': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
+    'CHAPTER 23': 'The walk is the show. Everything after is confirmation.',
+    'CHAPTER 24': 'The ovation begins in the first thirty seconds.',
+    'CHAPTER 25': 'Control the sound, and you control the space.',
+    'CHAPTER 26': 'Design the compliance. Then act surprised when they comply.',
+    'CHAPTER 38': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
+    'CHAPTER 39': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
+    'CHAPTER 19': 'You are not what you do. You are what they remember you doing.',
+    'CHAPTER 31': 'The signal is the data. The statement is the art. Never confuse the two.',
+    'CHAPTER 20': 'The best insight feels impossible because it is grounded in what is actually there.',
+    'CHAPTER 21': 'If they are looking for the method, the architecture failed.',
+    'CHAPTER 37': 'Silence is not absence. It is the loudest tool you have.',
+    'CHAPTER 40': 'The booking is won in the room they never see you in.',
+    'CHAPTER 41': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 42': 'Language is not communication. It is positioning.',
+    'CHAPTER 43': 'Read them first. Then let them think they read you.',
+    'CHAPTER 27': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 28': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 29': 'Build all five pillars. Then let them carry the weight.',
+    'CHAPTER 30': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 32': 'Influence without understanding is manipulation. With understanding, it is leadership.',
+    'CHAPTER 32': 'Go see what others miss.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
@@ -133,41 +135,41 @@ CHAPTER_LEGEND = {
     'CHAPTER 6':  {'tiers': ['t1', 't2'], 'cats': ['am']},
     'CHAPTER 7':  {'tiers': ['t1', 't2'], 'cats': ['bp']},
     'CHAPTER 8':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 11':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 13': {'tiers': ['t1', 't2'], 'cats': ['bp']},
-    'CHAPTER 14': {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 12':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 14': {'tiers': ['t1', 't2'], 'cats': ['bp']},
+    'CHAPTER 15': {'tiers': ['t3'],       'cats': ['cr']},
     'CHAPTER 9': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 10': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 15': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 16': {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 12': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 32': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 33': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 35': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 17': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 21': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 22': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 23': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 11': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 16': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 17': {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 33': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 34': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 36': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 18': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 22': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 23': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 24': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 25': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 38': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 18': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 30': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 19': {'tiers': ['t2', 't3'], 'cats': ['cr']},
-    'CHAPTER 20': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 36': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 25': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 26': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38': {'tiers': ['t1', 't2'], 'cats': ['am']},
     'CHAPTER 39': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 40': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 41': {'tiers': ['t2', 't3'], 'cats': ['vs']},
-    'CHAPTER 42': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 26': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 27': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 28': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 29': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 31': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 31': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 20': {'tiers': ['t2', 't3'], 'cats': ['cr']},
+    'CHAPTER 21': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 37': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 40': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 41': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 42': {'tiers': ['t2', 't3'], 'cats': ['vs']},
+    'CHAPTER 43': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 27': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 28': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 29': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 30': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 32': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 32': {'tiers': ['t2', 't3'], 'cats': ['bp']},
 }
 
 # T4 signal table data — (signal name, brief read, use category)
@@ -221,19 +223,19 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 11:The Seven Expressions': {
+    'CHAPTER 12:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
         'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 11:The Duchenne Smile': {
+    'CHAPTER 12:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
         'caption': 'Figure 10.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 10:Lip Compression': {
+    'CHAPTER 11:Lip Compression': {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
         'caption': 'Figure 9.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
@@ -295,144 +297,144 @@ SECTION_BADGES = {
     'CHAPTER 8:Reading DISC Blends':             {'tiers': ['t3'],       'cats': ['bp']},
     'CHAPTER 8:DISC and Volunteer Strategy':     {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 9: Eyes/Face ──
-    'CHAPTER 10:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
-    'CHAPTER 10:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 10:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 10:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 10:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 10:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 10:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 10:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
-    # ── CHAPTER 10: Micro-Expression Matrix ──
-    'CHAPTER 11:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 11:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 11:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 11:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 11:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
-    'CHAPTER 11:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
-    # ── CHAPTER 11: Cold Reading ──
-    'CHAPTER 13:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
-    'CHAPTER 13:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
-    'CHAPTER 13:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 13:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
-    'CHAPTER 13:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
-    'CHAPTER 13:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
-    'CHAPTER 13:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 13:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 13:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
-    # ── CHAPTER 13: Contact Mind Reading ──
-    'CHAPTER 14:Muscle Reading':                        {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 14:The Method':                            {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 14:Focus, Not Clutter':                    {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 14:Suggestibility and the Frame':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 14:Setting Up the Conditions':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 14:The Grip':                              {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 14:Verify, Verify, Verify':                {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 14:The Science Behind Contact Mind Reading': {'tiers': ['t1'],     'cats': ['bp']},
-    'CHAPTER 14:Framing the Effect':                    {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 14:Intent Cues Beyond the Stage':          {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 11:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 11:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 11:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 11:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 11:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
+    # ── CHAPTER 11: Micro-Expression Matrix ──
+    'CHAPTER 12:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 12:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 12:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
+    'CHAPTER 12:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
+    # ── CHAPTER 12: Cold Reading ──
+    'CHAPTER 14:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
+    'CHAPTER 14:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
+    'CHAPTER 14:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 14:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 14:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
+    'CHAPTER 14:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
+    'CHAPTER 14:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 14:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 14:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
+    # ── CHAPTER 14: Contact Mind Reading ──
+    'CHAPTER 15:Muscle Reading':                        {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 15:The Method':                            {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 15:Focus, Not Clutter':                    {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 15:Suggestibility and the Frame':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 15:Setting Up the Conditions':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 15:The Grip':                              {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 15:Verify, Verify, Verify':                {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 15:The Science Behind Contact Mind Reading': {'tiers': ['t1'],     'cats': ['bp']},
+    'CHAPTER 15:Framing the Effect':                    {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 15:Intent Cues Beyond the Stage':          {'tiers': ['t3'],       'cats': ['bp']},
     # ── CHAPTER 9: Volunteer's Brain ──
     'CHAPTER 9:Seven Volunteer Types':                  {'tiers': ['t3'],       'cats': ['vs']},
     'CHAPTER 9:The Volunteer Selection Matrix':         {'tiers': ['t3'],       'cats': ['vs']},
     'CHAPTER 9:Anchoring in Performance':               {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 9:The Neural Selection Circuit':           {'tiers': ['t2'],       'cats': ['vs']},
-    # ── CHAPTER 14: Language of Yes ──
-    'CHAPTER 15:Pacing and Leading':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 15:Yes Sets':                       {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 15:Double Binds':                   {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 15:Presupposition Check':           {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 15:Degrees of Certainty':           {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 15: Closing the Barn Door ──
-    'CHAPTER 16:The Memory Problem':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 16:The Language of Preemptive Closure': {'tiers': ['t2'],   'cats': ['am']},
-    # ── CHAPTER 16: Science of Hypnosis ──
-    'CHAPTER 12:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 12:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 12:The Rainville Finding':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 12:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
-    'CHAPTER 12:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 12:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
-    # ── CHAPTER 17: Mentalism in Boardroom ──
-    'CHAPTER 32:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 32:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 32:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 18: Behavioral Training ──
-    'CHAPTER 33:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 33:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 19: Influence Without Authority ──
-    'CHAPTER 34:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 20: Ethics of Influence ──
-    'CHAPTER 35:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 21: The Performance Arc ──
-    'CHAPTER 17:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 17:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 17:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
-    # ── CHAPTER 22: Art of Strolling ──
-    'CHAPTER 21:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 21:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 23: Duration Neglect / Standing Ovation ──
-    'CHAPTER 22:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 22:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 24: Audio as Architecture ──
-    'CHAPTER 23:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
-    'CHAPTER 23:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 25: Compliance by Design ──
-    'CHAPTER 24:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 24:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 24:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 26: Authority Frame ──
-    'CHAPTER 25:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 25:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 25:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 25:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
-    # ── CHAPTER 29: Signal to Statement ──
-    'CHAPTER 18:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 18:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 18:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 18:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
-    # ── CHAPTER 30: Insight Demonstrations ──
-    'CHAPTER 30:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
-    'CHAPTER 30:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 30:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
-    # ── CHAPTER 31: Method Invisibility ──
-    'CHAPTER 19:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 19:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 33: Where Bookings Are Won ──
-    'CHAPTER 36:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 36:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 35: Language of Authority ──
-    'CHAPTER 40:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 40:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 36: Reading the Booking Room ──
-    'CHAPTER 41:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 41:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 38: FATE Model ──
-    'CHAPTER 26:How the Brain Builds Experience Before It Receives It': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 26:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 26:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 26:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 26:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 26:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 39: Authority Architecture ──
-    'CHAPTER 27:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 27:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 40: Performer's Signal Dictionary ──
-    'CHAPTER 28:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 28:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 28:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 41: Influence Equation ──
-    'CHAPTER 29:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 29:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 42: DECODE Framework ──
-    'CHAPTER 31:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 31:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 31:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 31:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 31:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 31:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 16: Architecture of Obedience ──
+    'CHAPTER 16:Pacing and Leading':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 16:Yes Sets':                       {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 16:Double Binds':                   {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 16:Presupposition Check':           {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 16:Degrees of Certainty':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 16: Closing the Barn Door ──
+    'CHAPTER 17:The Memory Problem':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 17:The Language of Preemptive Closure': {'tiers': ['t2'],   'cats': ['am']},
+    # ── CHAPTER 17: Science of Hypnosis ──
+    'CHAPTER 13:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 13:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 13:The Rainville Finding':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 13:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 13:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 13:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
+    # ── CHAPTER 18: Mentalism in Boardroom ──
+    'CHAPTER 33:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 33:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 33:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 19: Behavioral Training ──
+    'CHAPTER 34:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 20: Influence Without Authority ──
+    'CHAPTER 35:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 21: Ethics of Influence ──
+    'CHAPTER 36:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 36:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 22: The Performance Arc ──
+    'CHAPTER 18:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 18:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 18:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    # ── CHAPTER 23: Art of Strolling ──
+    'CHAPTER 22:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 22:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 24: Duration Neglect / Standing Ovation ──
+    'CHAPTER 23:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 23:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 25: Audio as Architecture ──
+    'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
+    'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 26: Compliance by Design ──
+    'CHAPTER 25:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 25:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 25:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 27: Authority Frame ──
+    'CHAPTER 26:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 26:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 26:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 26:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
+    # ── CHAPTER 30: Signal to Statement ──
+    'CHAPTER 19:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 19:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 19:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 19:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
+    # ── CHAPTER 31: Insight Demonstrations ──
+    'CHAPTER 31:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
+    'CHAPTER 31:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 31:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
+    # ── CHAPTER 32: Method Invisibility ──
+    'CHAPTER 20:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 20:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 34: Where Bookings Are Won ──
+    'CHAPTER 37:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 36: Language of Authority ──
+    'CHAPTER 41:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 41:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 37: Reading the Booking Room ──
+    'CHAPTER 42:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 42:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 39: FATE Model ──
+    'CHAPTER 27:How the Brain Builds Experience Before It Receives It': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 27:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 27:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 27:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 27:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 27:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 40: Authority Architecture ──
+    'CHAPTER 28:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 28:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 41: Performer's Signal Dictionary ──
+    'CHAPTER 29:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 29:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 29:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 42: Influence Equation ──
+    'CHAPTER 30:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 30:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 43: DECODE Framework ──
+    'CHAPTER 32:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 32:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 32:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 32:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 32:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 32:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
 }
 
 def gen_section_badge_strip(tiers, cats):
@@ -596,36 +598,942 @@ DISC_HTML = '''
 '''
 
 
+# ── Ch11: Leakage Hierarchy visual ───────────────────────────────────────────
+LEAKAGE_HIERARCHY_HTML = '''
+<div style="margin:1.4em 0 1.2em;background:#080e1a;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+  <div style="font-size:0.67em;letter-spacing:0.16em;color:#4a5e7a;text-transform:uppercase;padding:0.85em 1.4em 0.7em;border-bottom:1px solid rgba(255,255,255,0.05);">The Leakage Hierarchy — Most to Least Managed</div>
+  <div style="display:grid;grid-template-columns:120px 1fr;font-size:0.85em;">
+    <div style="padding:0.65em 0.8em 0.65em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);color:white;font-weight:bold;">Face</div>
+    <div style="padding:0.65em 1.4em 0.65em 0.4em;border-bottom:1px solid rgba(255,255,255,0.04);color:#7a8ba8;">Most managed &nbsp;·&nbsp; highest social training</div>
+    <div style="padding:0.65em 0.8em 0.65em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);color:white;font-weight:bold;">Upper Body</div>
+    <div style="padding:0.65em 1.4em 0.65em 0.4em;border-bottom:1px solid rgba(255,255,255,0.04);color:#7a8ba8;">Moderate management</div>
+    <div style="padding:0.65em 0.8em 0.65em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);color:white;font-weight:bold;">Hands</div>
+    <div style="padding:0.65em 1.4em 0.65em 0.4em;border-bottom:1px solid rgba(255,255,255,0.04);color:#7a8ba8;">Less managed &nbsp;·&nbsp; self-soothing reveals</div>
+    <div style="padding:0.65em 0.8em 0.65em 1.4em;color:#C9A84C;font-weight:bold;">Feet</div>
+    <div style="padding:0.65em 1.4em 0.65em 0.4em;color:#C9A84C;">Least managed &nbsp;·&nbsp; most honest</div>
+  </div>
+</div>
+'''
+
+
+# ── Cold Reading: Three Opener Frameworks visual ─────────────────────────────
+THREE_OPENERS_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;background:#0d1117;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+  <div style="padding:0.7em 1.4em;border-bottom:1px solid #1c2535;">
+    <span style="font-size:0.65em;letter-spacing:0.28em;color:#4a5e7a;text-transform:uppercase;font-weight:600;">Three Opener Frameworks</span>
+  </div>
+
+  <!-- Card 1: T1 Opener -->
+  <div style="background:#131920;border-left:5px solid #C9A84C;padding:1.2em 1.4em 1.1em;border-bottom:1px solid #1c2535;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.6em;">
+      <div style="font-size:0.8em;font-weight:700;color:#C9A84C;letter-spacing:0.18em;text-transform:uppercase;">The T1 Opener</div>
+      <div style="display:flex;gap:5px;flex-shrink:0;">
+        <span style="background:#C9A84C;color:#0d1117;font-size:0.65em;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;">T1</span>
+        <span style="background:rgba(201,168,76,0.15);color:#C9A84C;font-size:0.65em;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;">BP</span>
+      </div>
+    </div>
+    <div style="font-size:0.84em;color:#7a8ba8;line-height:1.6;margin-bottom:0.9em;">Lead with a physical evidence read. T1 signals require no conversation, no setup, and no interpretation &mdash; they are facts anchored to the body. The precision reads as impossible to anyone who met you thirty seconds ago.</div>
+    <div style="border-top:1px solid #1e2a3a;padding-top:0.8em;">
+      <div style="font-size:0.62em;letter-spacing:0.2em;color:#4a5e7a;text-transform:uppercase;margin-bottom:0.5em;">Sample Script</div>
+      <div style="font-size:0.87em;color:#c0cce0;font-style:italic;line-height:1.7;">&lsquo;I want to start with you specifically &mdash; not because of anything you&rsquo;ve said, but because of something I noticed when you walked in. You&rsquo;ve been on your feet most of today. Not because you had to be. Because that&rsquo;s how you think.&rsquo;</div>
+      <div style="font-size:0.75em;color:#3a4f66;margin-top:0.6em;">Anchored to: shoe sole wear pattern &middot; trouser crease relaxation &middot; posture shift when seated</div>
+    </div>
+  </div>
+
+  <!-- Card 2: Behavioral Opener -->
+  <div style="background:#0f1720;border-left:5px solid #1A8FA8;padding:1.2em 1.4em 1.1em;border-bottom:1px solid #1c2535;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.6em;">
+      <div style="font-size:0.8em;font-weight:700;color:#1A8FA8;letter-spacing:0.18em;text-transform:uppercase;">The Behavioral Opener</div>
+      <div style="display:flex;gap:5px;flex-shrink:0;">
+        <span style="background:#1A8FA8;color:white;font-size:0.65em;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;">T2</span>
+        <span style="background:rgba(26,143,168,0.15);color:#1A8FA8;font-size:0.65em;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;">BP</span>
+      </div>
+    </div>
+    <div style="font-size:0.84em;color:#7a8ba8;line-height:1.6;margin-bottom:0.9em;">Lead with a DISC-based personality read. Fast, broad, and specific enough to feel personal without requiring defense. Particularly effective for high-D and high-C profiles where certainty and precision land harder than warmth.</div>
+    <div style="border-top:1px solid #1e2a3a;padding-top:0.8em;">
+      <div style="font-size:0.62em;letter-spacing:0.2em;color:#4a5e7a;text-transform:uppercase;margin-bottom:0.5em;">Sample Script</div>
+      <div style="font-size:0.87em;color:#c0cce0;font-style:italic;line-height:1.7;">&lsquo;You&rsquo;re someone who decides quickly and explains later. That&rsquo;s not impatience. That&rsquo;s a specific kind of intelligence. The people around you don&rsquo;t always understand the gap between where you are and where they&rsquo;re still standing.&rsquo;</div>
+      <div style="font-size:0.75em;color:#3a4f66;margin-top:0.6em;">Anchored to: DISC behavioral cluster &middot; confidence signals &middot; pace and decision indicators from the 10-Second Scan</div>
+    </div>
+  </div>
+
+  <!-- Card 3: Social Opener -->
+  <div style="background:#131920;border-left:5px solid #6B52A0;padding:1.2em 1.4em 1.1em;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.6em;">
+      <div style="font-size:0.8em;font-weight:700;color:#6B52A0;letter-spacing:0.18em;text-transform:uppercase;">The Social Opener</div>
+      <div style="display:flex;gap:5px;flex-shrink:0;">
+        <span style="background:rgba(107,82,160,0.2);color:#6B52A0;font-size:0.65em;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;">BP</span>
+      </div>
+    </div>
+    <div style="font-size:0.84em;color:#7a8ba8;line-height:1.6;margin-bottom:0.9em;">Open with a read about the subject&rsquo;s social role. Particularly powerful in strolling work where the group dynamic is visible before you approach. The room has already told you who this person is. You are reading the room&rsquo;s answer.</div>
+    <div style="border-top:1px solid #1e2a3a;padding-top:0.8em;">
+      <div style="font-size:0.62em;letter-spacing:0.2em;color:#4a5e7a;text-transform:uppercase;margin-bottom:0.5em;">Sample Script</div>
+      <div style="font-size:0.87em;color:#c0cce0;font-style:italic;line-height:1.7;">&lsquo;Before I start. You&rsquo;re not the one who organized this evening, but you&rsquo;re the reason most of these people are enjoying it.&rsquo;</div>
+      <div style="font-size:0.75em;color:#3a4f66;margin-top:0.6em;">Anchored to: energy level &middot; eye contact pattern across the group &middot; who others look to before laughing</div>
+    </div>
+  </div>
+</div>
+'''
+
+
+# ── Ch10: Behavioral Reading vs. Profiling definition callout ────────────────
+BEHAVIORAL_READING_DEF_HTML = '''
+<div style="display:grid;grid-template-columns:1fr 44px 1fr;margin:1.8em 0 2em;background:#080e1a;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+  <div style="padding:1.5em 1.8em;">
+    <div style="font-size:0.67em;letter-spacing:0.16em;color:#4a5e7a;text-transform:uppercase;margin-bottom:0.75em;">Chapters 6 – 9</div>
+    <div style="font-size:0.92em;color:white;font-weight:bold;margin-bottom:0.65em;letter-spacing:0.02em;">Behavioral Profiling</div>
+    <div style="font-size:0.83em;color:#8a9ab8;line-height:1.65;">Grouping repeated behavioral patterns to predict likely tendencies and future behavior.</div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;background:#0d1320;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div style="padding:1.5em 1.8em;border-left:1px solid rgba(255,255,255,0.06);">
+    <div style="font-size:0.67em;letter-spacing:0.16em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.75em;">Chapter 10 onwards</div>
+    <div style="font-size:0.92em;color:white;font-weight:bold;margin-bottom:0.65em;letter-spacing:0.02em;">Behavioral Reading</div>
+    <div style="font-size:0.83em;color:#8a9ab8;line-height:1.65;">Reading behavior in real time to glean information about thoughts, feelings, and internal processing.</div>
+  </div>
+</div>
+'''
+
+
+# ── Ch10: Performance Read Panel visuals ─────────────────────────────────────
+
+# Five Things Panel — 3+2 SVG layout for readable card widths
+FIVE_THINGS_PANEL_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;">
+<svg viewBox="0 0 900 530" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:4px;overflow:hidden;">
+  <rect width="900" height="530" fill="#0d1117"/>
+  <rect x="0" y="0" width="900" height="44" fill="#0a0e14"/>
+  <line x1="0" y1="44" x2="900" y2="44" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  <text x="450" y="18" text-anchor="middle" fill="white" font-size="13" font-family="Georgia,serif" letter-spacing="5" font-weight="bold">THE FIVE THINGS YOU'RE ALWAYS READING</text>
+  <text x="450" y="35" text-anchor="middle" fill="#C9A84C" font-size="10" font-family="Georgia,serif" font-style="italic">Every signal maps to one of these five questions. Answer them and you know the room.</text>
+
+  <!-- ROW 1: Cards 1, 2, 3 — width 282 each -->
+
+  <!-- Card 1 -->
+  <rect x="10" y="56" width="282" height="210" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="10" y="56" width="282" height="5" rx="3" fill="#C9A84C"/>
+  <text x="40" y="86" fill="#C9A84C" font-size="32" font-family="Georgia,serif" font-weight="bold" opacity="0.18">1</text>
+  <text x="151" y="88" text-anchor="middle" fill="#C9A84C" font-size="11" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">DID IT LAND?</text>
+  <line x1="26" y1="98" x2="276" y2="98" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="151" y="116" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">Are they still with you, or did</text>
+  <text x="151" y="130" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">the last moment miss its mark?</text>
+  <line x1="26" y1="144" x2="276" y2="144" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="151" y="160" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="151" y="176" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Eye contact shift</text>
+  <text x="151" y="191" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Blink rate change</text>
+  <text x="151" y="206" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Postural lean</text>
+  <text x="151" y="221" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Breath pattern</text>
+
+  <!-- Card 2 -->
+  <rect x="308" y="56" width="282" height="210" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="308" y="56" width="282" height="5" rx="3" fill="#1A8FA8"/>
+  <text x="338" y="86" fill="#1A8FA8" font-size="32" font-family="Georgia,serif" font-weight="bold" opacity="0.18">2</text>
+  <text x="449" y="88" text-anchor="middle" fill="#1A8FA8" font-size="11" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">CAN THEY BE LED?</text>
+  <line x1="324" y1="98" x2="574" y2="98" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="449" y="116" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">Are they following your pace,</text>
+  <text x="449" y="130" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">or running their own script?</text>
+  <line x1="324" y1="144" x2="574" y2="144" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="449" y="160" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="449" y="176" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Mirroring your pace</text>
+  <text x="449" y="191" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Head nodding</text>
+  <text x="449" y="206" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Open body toward you</text>
+  <text x="449" y="221" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Silence as compliance</text>
+
+  <!-- Card 3 -->
+  <rect x="606" y="56" width="284" height="210" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="606" y="56" width="284" height="5" rx="3" fill="#A83030"/>
+  <text x="636" y="86" fill="#A83030" font-size="32" font-family="Georgia,serif" font-weight="bold" opacity="0.18">3</text>
+  <text x="748" y="88" text-anchor="middle" fill="#A83030" font-size="11" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">PUSHING BACK?</text>
+  <line x1="622" y1="98" x2="874" y2="98" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="748" y="116" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">Is there resistance — visible</text>
+  <text x="748" y="130" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">or just below the surface?</text>
+  <line x1="622" y1="144" x2="874" y2="144" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="748" y="160" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="748" y="176" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Lean back + arms cross</text>
+  <text x="748" y="191" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Smirk at wrong moment</text>
+  <text x="748" y="206" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Breaking eye contact</text>
+  <text x="748" y="221" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Whisper to neighbor</text>
+
+  <!-- ROW 2: Cards 4, 5 — width 435 each -->
+
+  <!-- Card 4 -->
+  <rect x="10" y="278" width="435" height="238" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="10" y="278" width="435" height="5" rx="3" fill="#6B52A0"/>
+  <text x="42" y="314" fill="#6B52A0" font-size="40" font-family="Georgia,serif" font-weight="bold" opacity="0.15">4</text>
+  <text x="228" y="310" text-anchor="middle" fill="#6B52A0" font-size="12" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">ARE THEY COMFORTABLE?</text>
+  <line x1="26" y1="322" x2="429" y2="322" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="228" y="342" text-anchor="middle" fill="#7a8ba8" font-size="10.5" font-family="Georgia,serif">Is this person safe enough to go deeper, or do they need space?</text>
+  <line x1="26" y1="356" x2="429" y2="356" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="228" y="374" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="228" y="392" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Relaxed hands and face · Breathing depth normal</text>
+  <text x="228" y="410" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Comfortable conversational distance · Unprompted smiling</text>
+
+  <!-- Card 5 -->
+  <rect x="455" y="278" width="435" height="238" rx="3" fill="#131920" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
+  <rect x="455" y="278" width="435" height="5" rx="3" fill="#C9A84C"/>
+  <text x="487" y="314" fill="#C9A84C" font-size="40" font-family="Georgia,serif" font-weight="bold" opacity="0.15">5</text>
+  <text x="672" y="310" text-anchor="middle" fill="#C9A84C" font-size="12" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">IS THE ROOM HOLDING?</text>
+  <line x1="471" y1="322" x2="874" y2="322" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="672" y="342" text-anchor="middle" fill="#7a8ba8" font-size="10.5" font-family="Georgia,serif">Is the collective energy building, or beginning to fracture?</text>
+  <line x1="471" y1="356" x2="874" y2="356" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="672" y="374" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="672" y="392" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Room-wide stillness · Collective blink slowing</text>
+  <text x="672" y="410" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Nobody reaching for phone · Shared forward lean</text>
+  <rect x="582" y="490" width="180" height="18" rx="9" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="0.7"/>
+  <text x="672" y="502" text-anchor="middle" fill="#C9A84C" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">THE MASTER READ</text>
+</svg>
+</div>
+'''
+
+
+# Tell Table — HTML/CSS for readable text at any screen width
+SIGNAL_TABLE_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;background:#0d1117;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+  <div style="background:#0a0e14;padding:1em 1.5em 0.8em;text-align:center;border-bottom:1px solid rgba(201,168,76,0.3);">
+    <div style="font-size:0.7em;letter-spacing:0.3em;color:white;font-weight:bold;text-transform:uppercase;margin-bottom:0.3em;">Chris Michael's Tell Table</div>
+    <div style="font-size:0.8em;color:#C9A84C;font-style:italic;">Three colors. One decision per row. Signal / What You See / What It Means / What To Do.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:#0f1520;border-bottom:1px solid #1c2535;">
+    <div style="padding:0.5em 1em;font-size:0.65em;letter-spacing:0.15em;color:#4a5e7a;text-transform:uppercase;">Signal</div>
+    <div style="padding:0.5em 0.8em;font-size:0.65em;letter-spacing:0.15em;color:#4a5e7a;text-transform:uppercase;border-left:1px solid #1c2535;">What You See</div>
+    <div style="padding:0.5em 0.8em;font-size:0.65em;letter-spacing:0.15em;color:#4a5e7a;text-transform:uppercase;border-left:1px solid #1c2535;">What It Means</div>
+    <div style="padding:0.5em 0.8em;font-size:0.65em;letter-spacing:0.15em;color:#4a5e7a;text-transform:uppercase;border-left:1px solid #1c2535;">What To Do</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:rgba(34,168,85,0.12);border-left:4px solid #22a855;border-bottom:1px solid rgba(34,168,85,0.2);padding:0.45em 1em;">
+    <div style="font-size:0.7em;letter-spacing:0.15em;color:#22a855;font-weight:bold;">GREEN — ENGAGED</div>
+    <div style="font-size:0.72em;color:rgba(34,168,85,0.65);font-style:italic;text-align:right;padding-right:0.5em;">Stay the course. Go deeper. This is working.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(34,168,85,0.04);border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Forward lean</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Body tilted toward you; weight on front of chair</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Invested. Emotionally present.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Increase specificity</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Slow blink rate</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Long intervals between blinks; relaxed eyelids</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Attention locked. Prediction system active.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Hold pace. Don't break.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(34,168,85,0.04);border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Room-wide stillness</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Movement stops; nobody shifting or reaching</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Full cortisol window. Collective hold.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Extend the build</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Sustained eye contact</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Holding gaze without looking away</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Trust. Open to suggestion.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Hold contact. Slow down.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(34,168,85,0.04);border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Head nod (slow)</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Deliberate nods during your delivery</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Processing and agreeing simultaneously.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Name what they feel</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Open posture</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Arms relaxed, hands visible, chest open</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">No defensive blocking. Receptive state.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Move into their space</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(34,168,85,0.04);border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Arms uncrossed (shift)</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Arms drop from crossed to open</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Resistance just dropped. Window opened.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Immediate ask or reveal</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Spontaneous smile</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Genuine smile reaching eyes (Duchenne)</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Dopamine active. Wants more.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Reward immediately</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(34,168,85,0.04);border-bottom:1px solid #161e16;border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Mirroring your pace</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">They match your speed and rhythm unconsciously</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Deep rapport. Following your lead.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Lead the change you want</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid rgba(34,168,85,0.25);border-left:2px solid rgba(34,168,85,0.35);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Held breath (visible)</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Chest stops moving; breath suspended</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Peak anticipation. Reveal window is now.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#22a855;border-left:1px solid #1c2535;">Deliver. Don't extend.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:rgba(201,168,76,0.12);border-left:4px solid #C9A84C;border-bottom:1px solid rgba(201,168,76,0.2);border-top:1px solid rgba(201,168,76,0.15);padding:0.45em 1em;">
+    <div style="font-size:0.7em;letter-spacing:0.15em;color:#C9A84C;font-weight:bold;">YELLOW — UNCERTAIN</div>
+    <div style="font-size:0.72em;color:rgba(201,168,76,0.65);font-style:italic;text-align:right;padding-right:0.5em;">Adjust. Check in. Don't push yet.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(201,168,76,0.04);border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Looking around</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Eyes scanning the room instead of staying on you</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Checking for social permission.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Reestablish with room</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Face touch</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Hand moves to mouth, nose, or cheek mid-thought</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Cognitive load spiking. Self-soothing.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Simplify. Reduce complexity.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(201,168,76,0.04);border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Neutral expression</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Face flat; no visible affect</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Evaluating. Verdict not in yet.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Deliver proof. Don't explain.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Arms starting to cross</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Folding across body, not yet fully closed</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Early defensive signal. Not yet closed off.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Reduce pressure. Add warmth.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(201,168,76,0.04);border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Hesitation before reply</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Delay between prompt and response</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Processing or calculating. Uncertain.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Wait. Give them space.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Eyebrow micro-raise</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Quick flash of brow lift, gone in under a second</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Surprise or disbelief. Not fully sold yet.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Restate and anchor</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(201,168,76,0.04);border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Evaluative squint</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Eyes narrow slightly; concentrating hard</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Scrutinizing. Wants more evidence.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Give a T1 proof point</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1c12;border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Reduced eye contact</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Brief breaks increasing; gaze wandering</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Starting to disengage. Attention drifting.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Re-engage with name or question</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid rgba(201,168,76,0.2);border-left:2px solid rgba(201,168,76,0.4);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Brow furrow</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Vertical lines between brows; effortful thinking</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Confusion or dissonance. Lost the thread.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#C9A84C;border-left:1px solid #1c2535;">Recap. Back up one step.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:rgba(168,48,48,0.15);border-left:4px solid #A83030;border-bottom:1px solid rgba(168,48,48,0.2);border-top:1px solid rgba(168,48,48,0.15);padding:0.45em 1em;">
+    <div style="font-size:0.7em;letter-spacing:0.15em;color:#A83030;font-weight:bold;">RED — DISENGAGED / RESISTANT</div>
+    <div style="font-size:0.72em;color:rgba(168,48,48,0.65);font-style:italic;text-align:right;padding-right:0.5em;">Pivot now. Don't push through.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(168,48,48,0.05);border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Lean back + arms cross</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Full body retreat; closed, symmetric posture</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Closed off. Disengaged or resistant.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Reframe. Lower the stakes.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Phone check</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Hand reaches for phone or screen glanced at</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Fully broken. Nothing competes anymore.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Call it out or skip them</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(168,48,48,0.05);border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Laugh at wrong moment</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Nervous or contemptuous laugh; nothing was funny</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Cortisol discharge. Tension broke wrong way.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Reset. Drop the bit entirely.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Fidgeting / leg-recross</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Repetitive movement; crossing and uncrossing</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Anxious or impatient. Needs release.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Shorter format. Move on.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(168,48,48,0.05);border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Whisper to neighbor</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Leaning and murmuring to person beside them</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">You've lost them to each other.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Bring them in or move past them</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Evaluative smirk</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Asymmetric half-smile; contemptuous micro-expression</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Disbelief with a power stance. Challenge.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Acknowledge, don't compete</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;background:rgba(168,48,48,0.05);border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Sharp blink increase</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Blink rate jumps; rapid repeated blinking</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Mental reset. Lost focus. Stress spike.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Pattern interrupt. Change state.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-bottom:1px solid #1e1212;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Feet toward exit</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Lower body oriented away or toward door</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Mind already leaving. Most honest signal.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Close fast or release</div>
+  </div>
+  <div style="display:grid;grid-template-columns:160px 1fr 1fr 170px;border-left:2px solid rgba(168,48,48,0.45);">
+    <div style="padding:0.6em 1em;font-size:0.85em;color:#c0cce0;">Full shift back in chair</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Maximum posterior shift; distance sought</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#8a9ab8;border-left:1px solid #1c2535;">Creating space. Wants separation.</div>
+    <div style="padding:0.6em 0.8em;font-size:0.85em;color:#A83030;border-left:1px solid #1c2535;">Don't follow in. Give space.</div>
+  </div>
+  <div style="background:#080e14;padding:0.8em 1.5em;text-align:center;border-top:1px solid rgba(201,168,76,0.2);">
+    <div style="font-size:0.75em;letter-spacing:0.12em;color:#C9A84C;margin-bottom:0.25em;">THE THREE-SIGNAL RULE</div>
+    <div style="font-size:0.8em;color:#4a5e7a;">One signal is noise. Two is a pattern forming. Three signals in the same color is a read. Act on it.</div>
+  </div>
+</div>
+'''
+
+
+MINI_SCENARIOS_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;background:#0d1117;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+  <!-- Header -->
+  <div style="background:#0a0e14;padding:0.9em 1.5em 0.75em;text-align:center;border-bottom:1px solid #1c2535;">
+    <div style="font-size:0.7em;letter-spacing:0.3em;color:white;font-weight:bold;text-transform:uppercase;margin-bottom:0.25em;">In-Performance Reads</div>
+    <div style="font-size:0.8em;color:#4a5e7a;font-style:italic;">Observation cluster &#8594; Decision</div>
+  </div>
+  <!-- Two cards -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+    <!-- GREEN card -->
+    <div style="background:#0a1410;border-right:1px solid rgba(255,255,255,0.06);border-top:3px solid #22a855;">
+      <div style="padding:1.2em 1.4em 0.8em;border-bottom:1px solid rgba(34,168,85,0.12);">
+        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.9em;">
+          <span style="font-size:0.68em;letter-spacing:0.12em;color:#22a855;background:rgba(34,168,85,0.12);border:1px solid rgba(34,168,85,0.3);padding:0.2em 0.7em;border-radius:9px;">GREEN</span>
+          <span style="font-size:0.9em;color:#c0cce0;font-weight:bold;">You See:</span>
+        </div>
+        <p style="font-size:0.9em;color:#7a9a88;line-height:1.65;margin:0;">Volunteer leans forward. Body still. Blink rate slowed. Hands open in lap. Eyes holding yours.</p>
+      </div>
+      <div style="padding:1em 1.4em 0.8em;border-bottom:1px solid rgba(34,168,85,0.12);">
+        <div style="font-size:0.8em;color:#c0cce0;font-weight:bold;margin-bottom:0.5em;">What It Means:</div>
+        <p style="font-size:0.9em;color:#7a9a88;line-height:1.65;margin:0;">Three green signals in a cluster. They are fully inside the experience. Resistance is gone.</p>
+      </div>
+      <div style="padding:1em 1.4em 1.4em;">
+        <div style="font-size:0.8em;color:#c0cce0;font-weight:bold;margin-bottom:0.7em;">What To Do:</div>
+        <div style="background:rgba(34,168,85,0.08);border:1px solid rgba(34,168,85,0.2);border-radius:4px;padding:1em 1.2em;text-align:center;">
+          <div style="font-size:1.35em;color:#22a855;font-style:italic;font-family:Georgia,serif;margin-bottom:0.3em;">Stay. Go deeper.</div>
+          <div style="font-size:0.78em;color:rgba(34,168,85,0.5);">This is your window. Don&#x27;t break it with explanation.</div>
+        </div>
+      </div>
+    </div>
+    <!-- RED card -->
+    <div style="background:#140a0a;border-top:3px solid #A83030;">
+      <div style="padding:1.2em 1.4em 0.8em;border-bottom:1px solid rgba(168,48,48,0.12);">
+        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.9em;">
+          <span style="font-size:0.68em;letter-spacing:0.12em;color:#A83030;background:rgba(168,48,48,0.12);border:1px solid rgba(168,48,48,0.3);padding:0.2em 0.7em;border-radius:9px;">RED</span>
+          <span style="font-size:0.9em;color:#c0cce0;font-weight:bold;">You See:</span>
+        </div>
+        <p style="font-size:0.9em;color:#9a7a7a;line-height:1.65;margin:0;">Volunteer squints. Shifts back in chair. Touches face. Blink rate increasing. Eyes leave yours.</p>
+      </div>
+      <div style="padding:1em 1.4em 0.8em;border-bottom:1px solid rgba(168,48,48,0.12);">
+        <div style="font-size:0.8em;color:#c0cce0;font-weight:bold;margin-bottom:0.5em;">What It Means:</div>
+        <p style="font-size:0.9em;color:#9a7a7a;line-height:1.65;margin:0;">Three signals: discomfort, scrutiny, self-soothing. The last move missed. They are managing anxiety.</p>
+      </div>
+      <div style="padding:1em 1.4em 1.4em;">
+        <div style="font-size:0.8em;color:#c0cce0;font-weight:bold;margin-bottom:0.7em;">What To Do:</div>
+        <div style="background:rgba(168,48,48,0.08);border:1px solid rgba(168,48,48,0.2);border-radius:4px;padding:1em 1.2em;text-align:center;">
+          <div style="font-size:1.35em;color:#A83030;font-style:italic;font-family:Georgia,serif;margin-bottom:0.3em;">You missed. Pivot.</div>
+          <div style="font-size:0.78em;color:rgba(168,48,48,0.5);">Acknowledge, redirect, or drop the bit entirely.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+
+# Cheat Sheet — HTML/CSS grid for readable text
+CHEAT_SHEET_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;background:#0d1117;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
+  <div style="background:#0a0e14;padding:1em 1.5em 0.8em;text-align:center;border-bottom:1px solid rgba(201,168,76,0.3);">
+    <div style="font-size:0.7em;letter-spacing:0.3em;color:white;font-weight:bold;text-transform:uppercase;margin-bottom:0.3em;">Quick-Reference Cheat Sheet</div>
+    <div style="font-size:0.8em;color:#C9A84C;font-style:italic;">If you remember nothing else, remember these. One cluster from any column is a read.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;">
+    <div style="border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="background:rgba(34,168,85,0.12);border-left:4px solid #22a855;padding:0.75em 1.2em;border-bottom:1px solid rgba(34,168,85,0.2);">
+        <div style="font-size:0.75em;letter-spacing:0.2em;color:#22a855;font-weight:bold;margin-bottom:0.15em;">TOP 10 GREEN</div>
+        <div style="font-size:0.75em;color:rgba(34,168,85,0.6);font-style:italic;">Stay. Deepen. Deliver.</div>
+      </div>
+      <div style="padding:0 0 0.5em;">
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">01</span><span style="font-size:0.87em;color:#c0cce0;">Forward lean</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);background:rgba(34,168,85,0.03);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">02</span><span style="font-size:0.87em;color:#c0cce0;">Slow blink rate</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">03</span><span style="font-size:0.87em;color:#c0cce0;">Room-wide stillness</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);background:rgba(34,168,85,0.03);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">04</span><span style="font-size:0.87em;color:#c0cce0;">Sustained eye contact</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">05</span><span style="font-size:0.87em;color:#c0cce0;">Slow head nod</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);background:rgba(34,168,85,0.03);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">06</span><span style="font-size:0.87em;color:#c0cce0;">Open posture</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">07</span><span style="font-size:0.87em;color:#c0cce0;">Arms uncrossing (shift)</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);background:rgba(34,168,85,0.03);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">08</span><span style="font-size:0.87em;color:#c0cce0;">Spontaneous smile</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(34,168,85,0.07);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">09</span><span style="font-size:0.87em;color:#c0cce0;">Mirroring your pace</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;background:rgba(34,168,85,0.03);"><span style="font-size:0.72em;color:rgba(34,168,85,0.45);padding-top:0.1em;">10</span><span style="font-size:0.87em;color:#c0cce0;">Held breath</span></div>
+      </div>
+      <div style="margin:0 1em 1em;padding:0.6em 1em;background:rgba(34,168,85,0.07);border-radius:3px;border:1px solid rgba(34,168,85,0.15);">
+        <div style="font-size:0.82em;color:#22a855;font-style:italic;margin-bottom:0.2em;">Three of these = your window is open.</div>
+        <div style="font-size:0.78em;color:rgba(34,168,85,0.5);">Act. Don't wait for four.</div>
+      </div>
+    </div>
+    <div style="border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="background:rgba(201,168,76,0.1);border-left:4px solid #C9A84C;padding:0.75em 1.2em;border-bottom:1px solid rgba(201,168,76,0.2);">
+        <div style="font-size:0.75em;letter-spacing:0.2em;color:#C9A84C;font-weight:bold;margin-bottom:0.15em;">TOP 10 YELLOW</div>
+        <div style="font-size:0.75em;color:rgba(201,168,76,0.6);font-style:italic;">Adjust. Check. Don't escalate.</div>
+      </div>
+      <div style="padding:0 0 0.5em;">
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">01</span><span style="font-size:0.87em;color:#c0cce0;">Looking around</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);background:rgba(201,168,76,0.03);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">02</span><span style="font-size:0.87em;color:#c0cce0;">Face touch mid-thought</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">03</span><span style="font-size:0.87em;color:#c0cce0;">Neutral expression</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);background:rgba(201,168,76,0.03);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">04</span><span style="font-size:0.87em;color:#c0cce0;">Arms starting to cross</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">05</span><span style="font-size:0.87em;color:#c0cce0;">Hesitation before reply</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);background:rgba(201,168,76,0.03);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">06</span><span style="font-size:0.87em;color:#c0cce0;">Eyebrow micro-raise</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">07</span><span style="font-size:0.87em;color:#c0cce0;">Evaluative squint</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);background:rgba(201,168,76,0.03);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">08</span><span style="font-size:0.87em;color:#c0cce0;">Reduced eye contact</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(201,168,76,0.07);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">09</span><span style="font-size:0.87em;color:#c0cce0;">Brow furrow</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;background:rgba(201,168,76,0.03);"><span style="font-size:0.72em;color:rgba(201,168,76,0.4);padding-top:0.1em;">10</span><span style="font-size:0.87em;color:#c0cce0;">Posture shift mid-point</span></div>
+      </div>
+      <div style="margin:0 1em 1em;padding:0.6em 1em;background:rgba(201,168,76,0.07);border-radius:3px;border:1px solid rgba(201,168,76,0.15);">
+        <div style="font-size:0.82em;color:#C9A84C;font-style:italic;margin-bottom:0.2em;">Two yellows = slow down and check.</div>
+        <div style="font-size:0.78em;color:rgba(201,168,76,0.5);">Three = you lost them. Adjust now.</div>
+      </div>
+    </div>
+    <div>
+      <div style="background:rgba(168,48,48,0.12);border-left:4px solid #A83030;padding:0.75em 1.2em;border-bottom:1px solid rgba(168,48,48,0.2);">
+        <div style="font-size:0.75em;letter-spacing:0.2em;color:#A83030;font-weight:bold;margin-bottom:0.15em;">TOP 10 RED</div>
+        <div style="font-size:0.75em;color:rgba(168,48,48,0.6);font-style:italic;">Pivot. Pivot. Pivot.</div>
+      </div>
+      <div style="padding:0 0 0.5em;">
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">01</span><span style="font-size:0.87em;color:#c0cce0;">Lean back + arms cross</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);background:rgba(168,48,48,0.03);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">02</span><span style="font-size:0.87em;color:#c0cce0;">Phone check</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">03</span><span style="font-size:0.87em;color:#c0cce0;">Laugh at wrong moment</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);background:rgba(168,48,48,0.03);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">04</span><span style="font-size:0.87em;color:#c0cce0;">Fidgeting / leg-recross</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">05</span><span style="font-size:0.87em;color:#c0cce0;">Whisper to neighbor</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);background:rgba(168,48,48,0.03);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">06</span><span style="font-size:0.87em;color:#c0cce0;">Evaluative smirk</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">07</span><span style="font-size:0.87em;color:#c0cce0;">Sharp blink increase</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);background:rgba(168,48,48,0.03);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">08</span><span style="font-size:0.87em;color:#c0cce0;">Feet toward exit</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;border-bottom:1px solid rgba(168,48,48,0.07);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">09</span><span style="font-size:0.87em;color:#c0cce0;">Full shift back in chair</span></div>
+        <div style="display:grid;grid-template-columns:28px 1fr;padding:0.55em 1.2em 0.55em 1em;background:rgba(168,48,48,0.03);"><span style="font-size:0.72em;color:rgba(168,48,48,0.4);padding-top:0.1em;">10</span><span style="font-size:0.87em;color:#c0cce0;">Eyes leaving performer</span></div>
+      </div>
+      <div style="margin:0 1em 1em;padding:0.6em 1em;background:rgba(168,48,48,0.07);border-radius:3px;border:1px solid rgba(168,48,48,0.15);">
+        <div style="font-size:0.82em;color:#A83030;font-style:italic;margin-bottom:0.2em;">One red = watch. Two = pivot.</div>
+        <div style="font-size:0.78em;color:rgba(168,48,48,0.5);">Three = stop the bit. Redirect now.</div>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+
+# ── Ch33: Credibility Sequence numbered boxes ────────────────────────────────
+CREDIBILITY_SEQUENCE_HTML = '''
+<div style="margin:1.5em 0 2em;page-break-inside:avoid;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+    <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);padding:1.4em 1.2em 1.3em;text-align:center;">
+      <div style="font-size:2.2em;font-weight:900;color:#C9A84C;line-height:1;margin-bottom:0.4em;font-family:serif;">1</div>
+      <div style="font-size:0.88em;color:#c8d4e0;line-height:1.5;font-weight:600;">Demonstrate before explaining.</div>
+    </div>
+    <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);padding:1.4em 1.2em 1.3em;text-align:center;">
+      <div style="font-size:2.2em;font-weight:900;color:#C9A84C;line-height:1;margin-bottom:0.4em;font-family:serif;">2</div>
+      <div style="font-size:0.88em;color:#c8d4e0;line-height:1.5;font-weight:600;">Name what happened accurately.</div>
+    </div>
+    <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);padding:1.4em 1.2em 1.3em;text-align:center;">
+      <div style="font-size:2.2em;font-weight:900;color:#C9A84C;line-height:1;margin-bottom:0.4em;font-family:serif;">3</div>
+      <div style="font-size:0.88em;color:#c8d4e0;line-height:1.5;font-weight:600;">Invite their framework before offering yours.</div>
+    </div>
+  </div>
+</div>
+'''
+
+
+# ── Ch7: 10-Second Scan visual ───────────────────────────────────────────────
+TEN_SECOND_SCAN_HTML = '''
+<div style="margin:2.5rem 0 2rem;page-break-inside:avoid;">
+<svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:4px;overflow:hidden;">
+  <defs>
+    <linearGradient id="scanBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#0f1520"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="720" fill="url(#scanBg)"/>
+  <rect x="0" y="0" width="900" height="44" fill="#0a0e14" opacity="0.6"/>
+  <line x1="0" y1="44" x2="900" y2="44" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+  <text x="450" y="22" text-anchor="middle" fill="white" font-size="14" font-family="Georgia,serif" letter-spacing="5" font-weight="bold">THE 10-SECOND SCAN</text>
+  <text x="450" y="37" text-anchor="middle" fill="#C9A84C" font-size="9.5" font-family="Georgia,serif" font-style="italic">Ten seconds · Five data points · One read · Run in this order, every time.</text>
+  <!-- Row 1 arrows -->
+  <polygon points="305,197 298,192 298,202" fill="#2a3548"/>
+  <polygon points="601,197 594,192 594,202" fill="#2a3548"/>
+  <!-- Row 2 arrow -->
+  <polygon points="454,509 447,504 447,514" fill="#2a3548"/>
+
+  <!-- ═══ CARD 1: SHOES — x=10, w=286, y=47, cx=153 ═══ -->
+  <rect x="10" y="47" width="286" height="300" fill="#131920" rx="3"/>
+  <rect x="10" y="47" width="286" height="6" fill="#C9A84C" rx="2"/>
+  <rect x="10" y="47" width="286" height="300" fill="none" stroke="#1c2535" stroke-width="1" rx="3"/>
+  <text x="153" y="101" text-anchor="middle" fill="#C9A84C" font-size="34" font-family="Georgia,serif" font-weight="bold" opacity="0.85">01</text>
+  <text x="153" y="122" text-anchor="middle" fill="white" font-size="11" font-family="Georgia,serif" letter-spacing="4">SHOES</text>
+  <line x1="28" y1="133" x2="278" y2="133" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="28" y="150" fill="#4a5e7a" font-size="8" font-family="Georgia,serif" letter-spacing="2.5">NOTICE</text>
+  <text x="28" y="167" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Condition · Style</text>
+  <text x="28" y="183" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Brand level</text>
+  <line x1="28" y1="218" x2="278" y2="218" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="28" y="235" fill="#9a8245" font-size="8" font-family="Georgia,serif" letter-spacing="2">TELLS YOU</text>
+  <text x="28" y="252" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Appearance investment</text>
+  <text x="28" y="268" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Likely profession</text>
+  <text x="28" y="284" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Economic background</text>
+  <text x="153" y="318" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">Furthest from the face.</text>
+  <text x="153" y="332" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">Hardest to manage.</text>
+
+  <!-- ═══ CARD 2: HANDS — x=306, w=286, y=47, cx=449 ═══ -->
+  <rect x="306" y="47" width="286" height="300" fill="#131920" rx="3"/>
+  <rect x="306" y="47" width="286" height="6" fill="#C9A84C" rx="2"/>
+  <rect x="306" y="47" width="286" height="300" fill="none" stroke="#1c2535" stroke-width="1" rx="3"/>
+  <text x="449" y="101" text-anchor="middle" fill="#C9A84C" font-size="34" font-family="Georgia,serif" font-weight="bold" opacity="0.85">02</text>
+  <text x="449" y="122" text-anchor="middle" fill="white" font-size="11" font-family="Georgia,serif" letter-spacing="4">HANDS</text>
+  <line x1="324" y1="133" x2="574" y2="133" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="324" y="150" fill="#4a5e7a" font-size="8" font-family="Georgia,serif" letter-spacing="2.5">NOTICE</text>
+  <text x="324" y="167" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Calluses · Nails</text>
+  <text x="324" y="183" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Rings · Wear patterns</text>
+  <line x1="324" y1="218" x2="574" y2="218" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="324" y="235" fill="#9a8245" font-size="8" font-family="Georgia,serif" letter-spacing="2">TELLS YOU</text>
+  <text x="324" y="252" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Occupation signals</text>
+  <text x="324" y="268" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Stress level</text>
+  <text x="324" y="284" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Self-care · Relationship</text>
+  <text x="449" y="318" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">The story the face</text>
+  <text x="449" y="332" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">has learned to conceal.</text>
+
+  <!-- ═══ CARD 3: EYES — x=602, w=286, y=47, cx=745 ═══ -->
+  <rect x="602" y="47" width="286" height="300" fill="#131920" rx="3"/>
+  <rect x="602" y="47" width="286" height="6" fill="#C9A84C" rx="2"/>
+  <rect x="602" y="47" width="286" height="300" fill="none" stroke="#1c2535" stroke-width="1" rx="3"/>
+  <text x="745" y="101" text-anchor="middle" fill="#C9A84C" font-size="34" font-family="Georgia,serif" font-weight="bold" opacity="0.85">03</text>
+  <text x="745" y="122" text-anchor="middle" fill="white" font-size="11" font-family="Georgia,serif" letter-spacing="4">EYES</text>
+  <line x1="620" y1="133" x2="870" y2="133" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="620" y="150" fill="#4a5e7a" font-size="8" font-family="Georgia,serif" letter-spacing="2.5">NOTICE</text>
+  <text x="620" y="167" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Eye contact willingness</text>
+  <text x="620" y="183" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Blink rate · Lid tension</text>
+  <text x="620" y="199" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Curious or guarded?</text>
+  <line x1="620" y1="218" x2="870" y2="218" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="620" y="235" fill="#9a8245" font-size="8" font-family="Georgia,serif" letter-spacing="2">TELLS YOU</text>
+  <text x="620" y="252" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Confidence level</text>
+  <text x="620" y="268" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Compliance vs. resistance</text>
+  <text x="620" y="284" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Supporter or Challenger</text>
+  <text x="745" y="318" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">Often visible before</text>
+  <text x="745" y="332" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">either speaks.</text>
+
+  <!-- ═══ CARD 4: POSTURE — x=10, w=435, y=359, cx=227 ═══ -->
+  <rect x="10" y="359" width="435" height="300" fill="#131920" rx="3"/>
+  <rect x="10" y="359" width="435" height="6" fill="#C9A84C" rx="2"/>
+  <rect x="10" y="359" width="435" height="300" fill="none" stroke="#1c2535" stroke-width="1" rx="3"/>
+  <text x="227" y="413" text-anchor="middle" fill="#C9A84C" font-size="34" font-family="Georgia,serif" font-weight="bold" opacity="0.85">04</text>
+  <text x="227" y="434" text-anchor="middle" fill="white" font-size="11" font-family="Georgia,serif" letter-spacing="4">POSTURE</text>
+  <line x1="28" y1="445" x2="427" y2="445" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="28" y="462" fill="#4a5e7a" font-size="8" font-family="Georgia,serif" letter-spacing="2.5">NOTICE</text>
+  <text x="28" y="479" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Lean direction</text>
+  <text x="28" y="495" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Shoulders · Weight forward or settled</text>
+  <line x1="28" y1="530" x2="427" y2="530" stroke="#222d3e" stroke-width="0.8"/>
+  <text x="28" y="547" fill="#9a8245" font-size="8" font-family="Georgia,serif" letter-spacing="2">TELLS YOU</text>
+  <text x="28" y="564" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Dominance or deference</text>
+  <text x="28" y="580" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Stress level</text>
+  <text x="28" y="596" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Overall confidence</text>
+  <text x="227" y="632" text-anchor="middle" fill="#2e3e52" font-size="9" font-family="Georgia,serif" font-style="italic">The body&#39;s honest summary of everything.</text>
+
+  <!-- ═══ CARD 5: ENERGY — x=455, w=435, y=359, cx=672 — KEY ═══ -->
+  <rect x="455" y="359" width="435" height="300" fill="#161d24" rx="3"/>
+  <rect x="455" y="359" width="435" height="6" fill="#C9A84C" rx="2"/>
+  <rect x="455" y="359" width="435" height="300" fill="none" stroke="#C9A84C" stroke-width="1" rx="3" opacity="0.35"/>
+  <rect x="841" y="349" width="34" height="14" fill="#C9A84C" rx="2"/>
+  <text x="858" y="360" text-anchor="middle" fill="#0d1117" font-size="7" font-family="Georgia,serif" letter-spacing="1.5" font-weight="bold">KEY</text>
+  <text x="672" y="413" text-anchor="middle" fill="#C9A84C" font-size="34" font-family="Georgia,serif" font-weight="bold">05</text>
+  <text x="672" y="434" text-anchor="middle" fill="white" font-size="11" font-family="Georgia,serif" letter-spacing="4">ENERGY</text>
+  <line x1="473" y1="445" x2="872" y2="445" stroke="#2a3548" stroke-width="0.8"/>
+  <text x="473" y="462" fill="#4a5e7a" font-size="8" font-family="Georgia,serif" letter-spacing="2.5">NOTICE</text>
+  <text x="473" y="479" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Expression · Animation</text>
+  <text x="473" y="495" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Eye contact with room</text>
+  <text x="473" y="511" fill="#8a9ab8" font-size="10.5" font-family="Georgia,serif">Arm height in space</text>
+  <line x1="473" y1="530" x2="872" y2="530" stroke="#2a3548" stroke-width="0.8"/>
+  <text x="473" y="547" fill="#9a8245" font-size="8" font-family="Georgia,serif" letter-spacing="2">TELLS YOU</text>
+  <text x="473" y="564" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Reactive potential</text>
+  <text x="473" y="580" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">High arm = openness</text>
+  <text x="473" y="596" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">What impossible looks like</text>
+  <text x="672" y="632" text-anchor="middle" fill="#7a6430" font-size="9" font-family="Georgia,serif" font-style="italic">This is the number you came here for.</text>
+
+  <!-- Footer -->
+  <line x1="60" y1="674" x2="840" y2="674" stroke="#1a2333" stroke-width="0.8"/>
+  <text x="450" y="694" text-anchor="middle" fill="#c0cce0" font-size="11" font-family="Georgia,serif">When you have three signals pointing in the same direction, you have a read.</text>
+  <text x="450" y="712" text-anchor="middle" fill="#C9A84C" font-size="11" font-family="Georgia,serif" font-style="italic">Commit before the moment passes.</text>
+</svg>
+</div>
+'''
+
+
+# ── Ch7: Signal Chain Flow (closing bridge to Ch8) ───────────────────────────
+CHAIN_FLOW_HTML = '''
+<div style="background:#0b1220;border:1px solid rgba(42,157,143,0.2);border-radius:6px;padding:1.8em 2em 1.6em;margin:2em 0;">
+  <div style="font-size:0.68em;letter-spacing:0.16em;color:#2a9d8f;text-transform:uppercase;margin-bottom:1.3em;">The Reading Chain</div>
+  <div style="display:flex;align-items:stretch;gap:0.5em;">
+
+    <div style="flex:1;background:#141f38;border-top:2px solid #2a9d8f;border-radius:3px;padding:1.1em 1em;text-align:center;">
+      <div style="color:#2a9d8f;font-size:0.62em;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.5em;">01</div>
+      <div style="color:#fff;font-weight:800;font-size:1em;letter-spacing:0.04em;text-transform:uppercase;">Observe</div>
+      <div style="color:#6a7c96;font-size:0.78em;line-height:1.5;margin-top:0.5em;">80 signals<br>6 categories<br>10-second scan</div>
+    </div>
+
+    <div style="display:flex;align-items:center;padding:0 0.2em;">
+      <svg width="24" height="16" viewBox="0 0 24 16"><path d="M0 8 L18 8 M14 3 L20 8 L14 13" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="flex:1;background:#141f38;border-top:2px solid #c9a84c;border-radius:3px;padding:1.1em 1em;text-align:center;">
+      <div style="color:#c9a84c;font-size:0.62em;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.5em;">02</div>
+      <div style="color:#fff;font-weight:800;font-size:1em;letter-spacing:0.04em;text-transform:uppercase;">Cluster</div>
+      <div style="color:#6a7c96;font-size:0.78em;line-height:1.5;margin-top:0.5em;">group by direction<br>weight the chain<br>look for pattern</div>
+    </div>
+
+    <div style="display:flex;align-items:center;padding:0 0.2em;">
+      <svg width="24" height="16" viewBox="0 0 24 16"><path d="M0 8 L18 8 M14 3 L20 8 L14 13" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="flex:1;background:#141f38;border-top:2px solid #c9a84c;border-radius:3px;padding:1.1em 1em;text-align:center;">
+      <div style="color:#c9a84c;font-size:0.62em;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.5em;">03</div>
+      <div style="color:#fff;font-weight:800;font-size:1em;letter-spacing:0.04em;text-transform:uppercase;">Adjust</div>
+      <div style="color:#6a7c96;font-size:0.78em;line-height:1.5;margin-top:0.5em;">pace &amp; framing<br>selection strategy<br>performance opening</div>
+    </div>
+
+  </div>
+  <div style="margin-top:1.4em;border-top:1px solid rgba(255,255,255,0.06);padding-top:1em;font-size:0.82em;color:#6a7c96;font-style:italic;">The grouping logic that connects observation to adjustment begins in the next chapter.</div>
+</div>
+'''
+
+
+# ── Ch8: Methodology Bridge (Ch7 → Ch8 transition visual) ────────────────────
+DISC_OPENING_HTML = '''
+<div style="background:#080e1a;border-radius:6px;padding:1.5em 2em;margin:1.6em 0 0.5em;border:1px solid rgba(255,255,255,0.07);">
+  <div style="font-size:0.67em;letter-spacing:0.16em;color:#c9a84c;text-transform:uppercase;margin-bottom:1.1em;">Chapter 7 → Chapter 8</div>
+  <div style="display:grid;grid-template-columns:1fr 32px 1fr;gap:0;align-items:center;">
+
+    <div style="background:#111b30;border-radius:4px;padding:1em;">
+      <div style="font-size:0.65em;letter-spacing:0.12em;color:#2a9d8f;text-transform:uppercase;margin-bottom:0.7em;">Chapter 7 gave you</div>
+      <div style="display:flex;flex-direction:column;gap:0.45em;">
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#2a9d8f;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">The 80-Signal inventory</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#2a9d8f;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">The Six-Category Radar</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#2a9d8f;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">The 10-Second Scan</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#2a9d8f;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">Raw observational data</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <svg width="20" height="40" viewBox="0 0 20 40"><path d="M10 2 L10 32 M4 26 L10 34 L16 26" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="background:#111b30;border-radius:4px;padding:1em;">
+      <div style="font-size:0.65em;letter-spacing:0.12em;color:#c9a84c;text-transform:uppercase;margin-bottom:0.7em;">Chapter 8 gives you</div>
+      <div style="display:flex;flex-direction:column;gap:0.45em;">
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#c9a84c;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">The pattern grouping logic</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#c9a84c;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">Four communication styles</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#c9a84c;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">Performance adjustments per type</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.6em;">
+          <div style="width:6px;height:6px;border-radius:50%;background:#c9a84c;flex-shrink:0;"></div>
+          <div style="color:#c8d4e8;font-size:0.84em;">Volunteer strategy by style</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top:1.1em;text-align:center;font-size:0.8em;color:#4a5c78;letter-spacing:0.04em;font-style:italic;">Same signals. The first true level of organization.</div>
+</div>
+'''
+
+
+# ── Ch8: DISC Signal Clusters + Rule Callout ─────────────────────────────────
+DISC_CLUSTER_HTML = '''
+<div style="margin:2em 0;">
+
+  <!-- Rule callout: ONE SIGNAL IS NOT A TYPE -->
+  <div style="background:#0d1422;border-left:5px solid #c9a84c;border-radius:2px;padding:1.2em 1.6em;margin-bottom:1.4em;position:relative;">
+    <div style="font-size:0.65em;letter-spacing:0.18em;color:#c9a84c;text-transform:uppercase;margin-bottom:0.45em;">Field Rule</div>
+    <div style="color:#fff;font-weight:800;font-size:1em;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.4em;">One signal is not a type.</div>
+    <div style="color:#c8d4e8;font-size:0.86em;line-height:1.65;">DISC comes from clusters, not cues. Look for one strong signal and two supporting signals, or three moderate signals pointing in the same direction. The read is the chain &mdash; not the single tell. Use one strong signal plus two supporting signals, or three moderate signals all moving in the same direction. When you are not sure, wait for a third data point before committing to an adjustment.</div>
+  </div>
+
+  <!-- Cluster label -->
+  <div style="font-size:0.68em;letter-spacing:0.14em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.9em;">Signal Clusters by Type &mdash; Which Signals From Chapter 7 Point Where</div>
+
+  <!-- 2x2 grid of cluster boxes -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9em;">
+
+    <!-- D: Direct -->
+    <div style="background:#120d1a;border-left:4px solid #A83030;border-radius:3px;padding:1.1em 1.2em;">
+      <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.9em;">
+        <div style="background:#A83030;color:#fff;font-weight:800;font-size:1em;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">D</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:0.9em;">Direct</div>
+          <div style="color:#A83030;font-size:0.74em;">Fast &middot; Decisive &middot; Results-focused</div>
+        </div>
+      </div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.45em;">Look first for</div>
+      <div style="color:#c8d4e8;font-size:0.82em;line-height:1.7;margin-bottom:0.8em;">#43 walking speed &middot; #46 weight at rest &middot; #57 handshake pressure &middot; #67 interruption rate &middot; #71 contradiction reaction &middot; #80 silence reclaim speed</div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.35em;">Also watch</div>
+      <div style="color:#7a8a9c;font-size:0.8em;line-height:1.6;margin-bottom:0.8em;">#04 thumbs out &middot; #08 eye contact &middot; #58 sitting speed &middot; #60 chair choice</div>
+      <div style="background:#1a1020;border-radius:2px;padding:0.6em 0.8em;">
+        <div style="color:#A83030;font-size:0.74em;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Adjustment</div>
+        <div style="color:#c8d4e8;font-size:0.8em;margin-top:0.2em;">Skip warm-up. Lead with precision. Precision is currency.</div>
+      </div>
+    </div>
+
+    <!-- I: Influential -->
+    <div style="background:#161208;border-left:4px solid #C9A84C;border-radius:3px;padding:1.1em 1.2em;">
+      <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.9em;">
+        <div style="background:#C9A84C;color:#0e1628;font-weight:800;font-size:1em;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">I</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:0.9em;">Influential</div>
+          <div style="color:#C9A84C;font-size:0.74em;">Expressive &middot; Social &middot; Enthusiastic</div>
+        </div>
+      </div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.45em;">Look first for</div>
+      <div style="color:#c8d4e8;font-size:0.82em;line-height:1.7;margin-bottom:0.8em;">#08 eye contact &middot; #45 head tilt &middot; #50 humor timing &middot; #56 eyebrow expressiveness &middot; #64 mirroring &middot; #72 smile duration &middot; #73 laughter delay</div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.35em;">Also watch</div>
+      <div style="color:#7a8a9c;font-size:0.8em;line-height:1.6;margin-bottom:0.8em;">#43 walking speed &middot; #48 micro-grooming &middot; #52 conversational distance &middot; #55 ear redness</div>
+      <div style="background:#161208;border-radius:2px;padding:0.6em 0.8em;border:1px solid rgba(201,168,76,0.15);">
+        <div style="color:#C9A84C;font-size:0.74em;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Adjustment</div>
+        <div style="color:#c8d4e8;font-size:0.8em;margin-top:0.2em;">Give them a visible role. Their reaction is the effect.</div>
+      </div>
+    </div>
+
+    <!-- S: Steady -->
+    <div style="background:#091418;border-left:4px solid #1A8FA8;border-radius:3px;padding:1.1em 1.2em;">
+      <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.9em;">
+        <div style="background:#1A8FA8;color:#fff;font-weight:800;font-size:1em;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">S</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:0.9em;">Steady</div>
+          <div style="color:#1A8FA8;font-size:0.74em;">Calm &middot; Cooperative &middot; Supportive</div>
+        </div>
+      </div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.45em;">Look first for</div>
+      <div style="color:#c8d4e8;font-size:0.82em;line-height:1.7;margin-bottom:0.8em;">#14 fidgeting level &middot; #45 head tilt &middot; #49 breathing depth &middot; #52 conversational distance &middot; #66 agreement speed &middot; #74 permission-seeking &middot; #75 public mistake recovery</div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.35em;">Also watch</div>
+      <div style="color:#7a8a9c;font-size:0.8em;line-height:1.6;margin-bottom:0.8em;">#21 eye contact break &middot; #44 shoulder tension &middot; #46 weight distribution &middot; #61 coat placement</div>
+      <div style="background:#091418;border-radius:2px;padding:0.6em 0.8em;border:1px solid rgba(26,143,168,0.15);">
+        <div style="color:#1A8FA8;font-size:0.74em;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Adjustment</div>
+        <div style="color:#c8d4e8;font-size:0.8em;margin-top:0.2em;">Slow the pace. Warm framing. Patience is the asset.</div>
+      </div>
+    </div>
+
+    <!-- C: Conscientious -->
+    <div style="background:#0f0d1a;border-left:4px solid #6B52A0;border-radius:3px;padding:1.1em 1.2em;">
+      <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.9em;">
+        <div style="background:#6B52A0;color:#fff;font-weight:800;font-size:1em;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">C</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:0.9em;">Conscientious</div>
+          <div style="color:#6B52A0;font-size:0.74em;">Analytical &middot; Precise &middot; Detail-oriented</div>
+        </div>
+      </div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.45em;">Look first for</div>
+      <div style="color:#c8d4e8;font-size:0.82em;line-height:1.7;margin-bottom:0.8em;">#35 privacy screen &middot; #42 notification speed &middot; #53 face-touching during thought &middot; #59 object-moving before sitting &middot; #65 response lag &middot; #76 unprompted explanations &middot; #79 object alignment</div>
+      <div style="font-size:0.72em;letter-spacing:0.1em;color:#8a9ab5;text-transform:uppercase;margin-bottom:0.35em;">Also watch</div>
+      <div style="color:#7a8a9c;font-size:0.8em;line-height:1.6;margin-bottom:0.8em;">#12 shoelace condition &middot; #22 object handling &middot; #41 phone grip &middot; #60 chair choice &middot; #62 drink placement</div>
+      <div style="background:#0f0d1a;border-radius:2px;padding:0.6em 0.8em;border:1px solid rgba(107,82,160,0.15);">
+        <div style="color:#6B52A0;font-size:0.74em;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">Adjustment</div>
+        <div style="color:#c8d4e8;font-size:0.8em;margin-top:0.2em;">Build coherence first. Logic must precede compliance.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer note -->
+  <div style="margin-top:0.9em;padding:0.8em 1em;background:#080e1a;border-radius:4px;font-size:0.78em;color:#4a5c78;line-height:1.6;">
+    <strong style="color:#6a7a90;">These are patterns, not proof.</strong> Signals <em>suggest</em> &mdash; they do not confirm. Use as a probability filter for performance adjustment, not as a diagnosis. One strong signal plus two supporting signals. Three moderate signals pointing the same direction. That is a read. That is also the minimum standard before you adjust your approach.
+  </div>
+
+</div>
+'''
+
+
 # ── Novelty Techniques ───────────────────────────────────────────────────────
 NOVELTY_TECHNIQUES_HTML = '''
-<div style="background:#0e1628;border-radius:8px;padding:2em 2em 1.5em;margin:2em 0;">
-  <div style="font-size:0.72em;letter-spacing:0.12em;color:#c9a84c;text-transform:uppercase;margin-bottom:0.3em;">Novelty is Designed — Not Accidental</div>
-  <h3 style="color:#fff;font-size:1.3em;margin:0 0 1.2em;font-weight:700;">How to Create the Feeling of Novelty</h3>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9em;">
-    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
-      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Violate the Format</div>
-      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">Start in silence. Open with the unexpected. The pattern interrupt activates dopaminergic attention before a word is spoken.</div>
+<div style="background:linear-gradient(160deg,#090e1a 0%,#0e1628 55%,#111e35 100%);border-radius:8px;padding:2em 2em 1.5em;margin:2em 0;position:relative;overflow:hidden;">
+  <!-- Broken grid / interruption waveform overlay -->
+  <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.06;pointer-events:none;" viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice">
+    <line x1="-40" y1="80" x2="280" y2="400" stroke="#2a9d8f" stroke-width="1.2"/>
+    <line x1="120" y1="-10" x2="480" y2="350" stroke="#2a9d8f" stroke-width="0.6"/>
+    <line x1="400" y1="-20" x2="760" y2="340" stroke="#c9a84c" stroke-width="0.6"/>
+    <!-- Interruption: waveform that breaks in the middle -->
+    <path d="M0,230 Q80,215 160,230 Q200,238 230,228" stroke="#2a9d8f" stroke-width="1.2" fill="none" stroke-dasharray="3 7"/>
+    <circle cx="240" cy="226" r="2.5" fill="#2a9d8f"/>
+    <path d="M252,224 Q330,210 420,228 Q480,238 560,220 Q620,210 700,218" stroke="#2a9d8f" stroke-width="1.2" fill="none"/>
+    <!-- Horizontal grid fragments -->
+    <line x1="0" y1="140" x2="90" y2="140" stroke="#c9a84c" stroke-width="0.4" stroke-dasharray="2 5"/>
+    <line x1="580" y1="300" x2="700" y2="300" stroke="#2a9d8f" stroke-width="0.4" stroke-dasharray="2 5"/>
+  </svg>
+
+  <!-- Section label + title -->
+  <div style="font-size:0.7em;letter-spacing:0.14em;color:#2a9d8f;text-transform:uppercase;margin-bottom:0.3em;position:relative;">Novelty is Designed &mdash; Not Accidental</div>
+  <h3 style="color:#fff;font-size:1.25em;margin:0 0 1.3em;font-weight:700;letter-spacing:0.02em;position:relative;">How to Create the Feeling of Novelty</h3>
+
+  <!-- HERO CARD: Violate the Format -->
+  <div style="background:#1a2540;border-radius:2px;padding:1.3em 1.5em 1.3em 2em;margin-bottom:1.1em;position:relative;">
+    <!-- Glow bar -->
+    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#2a9d8f;border-radius:2px 0 0 2px;box-shadow:0 0 14px rgba(42,157,143,0.7);"></div>
+    <div style="font-size:0.64em;letter-spacing:0.18em;color:#2a9d8f;text-transform:uppercase;margin-bottom:0.5em;">Entry Point</div>
+    <div style="color:#fff;font-weight:800;font-size:1.05em;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.55em;">Violate the Format</div>
+    <div style="color:#c8d4e8;font-size:0.9em;line-height:1.65;">Start in silence. Open with the unexpected. The pattern interrupt activates dopaminergic attention before a word is spoken. Every format creates a prediction. Breaking it at the moment of maximum confidence is where the effect begins.</div>
+  </div>
+
+  <!-- 2-col staggered grid -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9em;position:relative;">
+
+    <!-- LEFT COLUMN -->
+    <div style="display:flex;flex-direction:column;gap:0.9em;">
+      <!-- Name the Unnamed: sharp corners, heavy gold accent -->
+      <div style="background:#141f38;border-left:5px solid #c9a84c;border-radius:1px;padding:1em 1em 1em 1.1em;margin-top:0.5em;">
+        <div style="color:#c9a84c;font-weight:700;font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45em;">Name the Unnamed</div>
+        <div style="color:#c8d4e8;font-size:0.86em;line-height:1.55;">Give language to a feeling they&rsquo;ve had but never named. &ldquo;I&rsquo;ve always felt this&rdquo; turns you into a mirror they didn&rsquo;t know existed.</div>
+      </div>
+      <!-- Unexplained Specificity: glow inset, no hard border -->
+      <div style="background:#1a2540;border-radius:4px;padding:1em;box-shadow:inset 0 0 0 1px rgba(42,157,143,0.28);">
+        <div style="color:#c9a84c;font-weight:700;font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45em;">Unexplained Specificity</div>
+        <div style="color:#c8d4e8;font-size:0.86em;line-height:1.55;">&ldquo;Companies in your range hit a bottleneck around month 8.&rdquo; The specific number with no explanation opens a curiosity loop the brain cannot close.</div>
+      </div>
     </div>
-    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
-      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">The Deliberate Withhold</div>
-      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">&ldquo;There&rsquo;s one thing that changes everything. I want to come back to it.&rdquo; Anticipation is its own novelty state.</div>
+
+    <!-- RIGHT COLUMN -->
+    <div style="display:flex;flex-direction:column;gap:0.9em;">
+      <!-- Deliberate Withhold: teal accent, standard -->
+      <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+        <div style="color:#c9a84c;font-weight:700;font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45em;">The Deliberate Withhold</div>
+        <div style="color:#c8d4e8;font-size:0.86em;line-height:1.55;">&ldquo;There&rsquo;s one thing that changes everything. I want to come back to it.&rdquo; Anticipation is its own novelty state.</div>
+      </div>
+      <!-- Reframe the Familiar: tertiary — dimmer, thinner accent, slight offset -->
+      <div style="background:#111929;border-left:3px solid rgba(201,168,76,0.45);border-radius:4px;padding:0.9em;">
+        <div style="color:#b8a060;font-weight:700;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4em;">Reframe the Familiar</div>
+        <div style="color:#a8b8cc;font-size:0.84em;line-height:1.55;">&ldquo;That&rsquo;s not a pricing objection. That&rsquo;s a trust deficit.&rdquo; Reframes feel like discoveries because they are.</div>
+      </div>
+      <!-- Physical Novelty Anchors: tertiary — dimmest -->
+      <div style="background:#111929;border-left:3px solid rgba(42,157,143,0.35);border-radius:4px;padding:0.9em;">
+        <div style="color:#7fb5ae;font-weight:700;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4em;">Physical Novelty Anchors</div>
+        <div style="color:#a8b8cc;font-size:0.84em;line-height:1.55;">An unusual prop, a distinct handout format. Memory encodes around novelty. What stands out during the pitch is recalled during the decision.</div>
+      </div>
     </div>
-    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
-      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Name the Unnamed</div>
-      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">Give language to a feeling they&rsquo;ve had but never named. &ldquo;I&rsquo;ve always felt this&rdquo; = you become unforgettable.</div>
-    </div>
-    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
-      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Reframe the Familiar</div>
-      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">&ldquo;That&rsquo;s not a pricing objection. That&rsquo;s a trust deficit.&rdquo; Reframes feel like discoveries.</div>
-    </div>
-    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
-      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Unexplained Specificity</div>
-      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">&ldquo;Companies in your range hit a bottleneck around month 8.&rdquo; Specific numbers with no explanation trigger curiosity.</div>
-    </div>
-    <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
-      <div style="color:#c9a84c;font-weight:700;font-size:0.95em;margin-bottom:0.5em;">Physical Novelty Anchors</div>
-      <div style="color:#c8d4e8;font-size:0.88em;line-height:1.5;">An unusual prop, a distinct handout format. Memory encodes around novelty. What stands out during the pitch is recalled during the decision.</div>
-    </div>
+
   </div>
 </div>
 '''
@@ -1669,7 +2577,7 @@ def gen_five_c_entry(c_word, body_text):
         opener = (
             '<div class="five-cs-prose-chart">' +
             '<div class="fcp-header">' +
-            '<div class="fcp-title">THE FIVE C’s IN PRACTICE</div>' +
+            '<div class="fcp-title">THE FIVE C&#x27;s IN PRACTICE</div>' +
             '<div class="fcp-subtitle">Apply as a chain. Each filter builds on the last.</div>' +
             '</div>'
         )
@@ -2269,7 +3177,7 @@ def process_paragraph(text, part_num=1):
             return gen_five_c_entry(c_word, body)
 
     # Performer's Note — distinct from section headers
-    if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
+    if stripped in ("Performer's Note", "Performer's Note", "Performers Note"):
         return gen_performer_note()
 
     # Warning section headers — stand-out treatment
@@ -2311,7 +3219,7 @@ def process_paragraph(text, part_num=1):
         'The silent objection is often more useful than the spoken one',
         'How it changes handling on stage',
         'What this is really showing you',
-        'The Language of Yes',
+        'The Architecture of Obedience',
     }
     if stripped in _child_heads:
         return f'<div class="sub-header sh-child"><span class="sub-header-label">{escape(stripped)}</span></div>'
@@ -2718,6 +3626,23 @@ def build_chapter_body(section, global_para_count):
     speech_injected = False
     # ── TENSION SIGNALS — injected after trigger line in Ch3 ──
     tension_injected = False
+    # ── THREE OPENERS — injected after Social Opener body in Cold Reading ch ──
+    three_openers_injected = False
+    # ── BEHAVIORAL READING DEF — injected after bridge paragraph in Ch10 ──
+    behavioral_def_injected = False
+    # ── 10-SECOND SCAN — injected after closing sentence in Ch7 ──
+    scan_injected = False
+    # ── CHAIN FLOW — injected after "First you collect." in Ch7 ──
+    chain_injected = False
+    # ── DISC OPENING BRIDGE — injected after Ch8 opening paragraph ──
+    disc_opening_injected = False
+    # ── DISC CLUSTER BOXES — injected before "Reading DISC Blends" in Ch8 ──
+    disc_cluster_injected = False
+    # ── PERFORMANCE READ PANEL components ──
+    five_things_injected = False
+    signal_table_injected = False
+    mini_scenarios_injected = False
+    cheat_sheet_injected = False
 
     # Track for element insertion
     total = len(paragraphs)
@@ -2743,6 +3668,40 @@ def build_chapter_body(section, global_para_count):
             parts.append(gen_spotlight(escape(body_text)))
             spotlight_done = True
             i += 2
+            continue
+
+        if stripped == 'LEAKAGE_HIERARCHY':
+            parts.append(LEAKAGE_HIERARCHY_HTML)
+            i += 1
+            continue
+
+        if stripped == 'FIVE_THINGS_PANEL':
+            parts.append(FIVE_THINGS_PANEL_HTML)
+            five_things_injected = True
+            i += 1
+            continue
+
+        if stripped == 'SIGNAL_TABLE':
+            parts.append(SIGNAL_TABLE_HTML)
+            signal_table_injected = True
+            i += 1
+            continue
+
+        if stripped == 'MINI_SCENARIOS':
+            parts.append(MINI_SCENARIOS_HTML)
+            mini_scenarios_injected = True
+            i += 1
+            continue
+
+        if stripped == 'CHEAT_SHEET':
+            parts.append(CHEAT_SHEET_HTML)
+            cheat_sheet_injected = True
+            i += 1
+            continue
+
+        if stripped == 'CREDIBILITY_SEQUENCE':
+            parts.append(CREDIBILITY_SEQUENCE_HTML)
+            i += 1
             continue
 
         if stripped == 'PATTERN_INTERRUPT_40PCT':
@@ -3338,13 +4297,50 @@ def build_chapter_body(section, global_para_count):
             parts.append(TENSION_SIGNALS_HTML)
             tension_injected = True
 
+        # ── THREE OPENERS — inject after Social Opener body paragraph ──
+        if not three_openers_injected and stripped.startswith("Open with a read about the subject") and "Before I start" in stripped:
+            parts.append(THREE_OPENERS_HTML)
+            three_openers_injected = True
+
+        # ── BEHAVIORAL READING DEF — inject after Ch10 distinction sentence ──
+        if not behavioral_def_injected and stripped == 'Profiling reads the person. Reading reads the moment.':
+            parts.append(BEHAVIORAL_READING_DEF_HTML)
+            behavioral_def_injected = True
+
+        # ── 10-SECOND SCAN — inject after closing sentence of scan section ──
+        if not scan_injected and stripped == 'When you have three signals pointing in the same direction, you have a read. Commit before the moment passes. The performer who hesitates after a read turns certainty into a question.':
+            parts.append(TEN_SECOND_SCAN_HTML)
+            scan_injected = True
+
+        # ── CHAIN FLOW — inject after closing sentence of Ch7 "From Signals to Patterns" ──
+        if not chain_injected and stripped == 'First you collect. Then you group. Then you adjust.':
+            parts.append(CHAIN_FLOW_HTML)
+            chain_injected = True
+
+        # ── DISC OPENING BRIDGE — inject after Ch8 opening paragraph ──
+        if not disc_opening_injected and stripped.startswith('DISC is a communication style model, not a clinical personality diagnosis.'):
+            parts.append(DISC_OPENING_HTML)
+            disc_opening_injected = True
+
+        # ── DISC CLUSTER BOXES — inject before "Reading DISC Blends" section header ──
+        if not disc_cluster_injected and stripped == 'Reading DISC Blends':
+            parts.append(DISC_CLUSTER_HTML)
+            disc_cluster_injected = True
+
         # ── FIGURE + SECTION BADGE INJECTION — after section headers ──
         if is_section_header(stripped):
             fig_key = f'{chapter_key}:{stripped}'
             if fig_key in FIGURES:
                 fig = FIGURES[fig_key]
                 parts.append(f'<div class="book-figure" style="text-align:center;margin:2em 0;">')
-                parts.append(f'  <img src="{fig["src"]}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
+                img_src = fig["src"]
+                if os.path.exists(img_src):
+                    mime, _ = mimetypes.guess_type(img_src)
+                    mime = mime or 'image/jpeg'
+                    with open(img_src, 'rb') as _f:
+                        b64 = base64.b64encode(_f.read()).decode('ascii')
+                    img_src = f'data:{mime};base64,{b64}'
+                parts.append(f'  <img src="{img_src}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
                 if fig.get('caption'):
                     parts.append(f'  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">{fig["caption"]}</p>')
                 parts.append(f'</div>')
@@ -5064,41 +6060,44 @@ a.toc-ch:hover{opacity:.7}
 /* ═══ BTE SIGNAL CARDS ═══ */
 .bte-signal{
   display:grid;grid-template-columns:1fr;
-  padding:10px 16px;margin:0;
-  border-bottom:1px solid rgba(255,255,255,.05);
-  background:rgba(13,30,48,.5);
+  padding:12px 18px;margin:0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:#0d1117;
 }
+.bte-signal:last-child{border-bottom:none;}
 .bte-cluster-wrap{
-  background:var(--navy2);border-radius:5px;
+  background:#0d1117;border-radius:6px;
   margin:1.6em 0;overflow:hidden;
+  border:1px solid rgba(255,255,255,.07);
   break-inside:auto;
 }
 .bte-cluster-header{
-  padding:12px 16px;
-  border-bottom:1px solid rgba(201,168,76,.15);
+  padding:12px 18px;
+  background:#0a0e14;
+  border-bottom:1px solid rgba(201,168,76,.2);
 }
 .bte-cluster-name{
   font-family:var(--sans);font-size:.68rem;font-weight:700;
   letter-spacing:2px;color:var(--gold);margin-bottom:3px;
 }
-.bte-cluster-desc{font-size:.72rem;color:var(--gray-blue);font-style:italic}
+.bte-cluster-desc{font-size:.75rem;color:#7a8ba8;font-style:italic}
 .bte-signal-head{
-  display:flex;align-items:baseline;gap:10px;margin-bottom:4px;
+  display:flex;align-items:baseline;gap:10px;margin-bottom:5px;
 }
 .bte-name{
-  font-family:var(--sans);font-size:.7rem;font-weight:700;color:#fff;
+  font-family:var(--sans);font-size:.78rem;font-weight:700;color:#e8eef5;
 }
 .bte-code{
-  font-family:var(--sans);font-size:.58rem;font-weight:600;
-  color:var(--dim);letter-spacing:1px;
+  font-family:var(--sans);font-size:.62rem;font-weight:600;
+  color:#4a5e7a;letter-spacing:1px;
 }
 .bte-drs{
-  font-family:var(--sans);font-size:.58rem;font-weight:700;
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
   letter-spacing:.5px;margin-left:auto;flex-shrink:0;
 }
 .bte-desc{
-  font-size:.72rem;color:var(--gray-blue);
-  line-height:1.5;margin:0;
+  font-size:.78rem;color:#7a8ba8;
+  line-height:1.6;margin:0;
   text-indent:0!important;text-align:left!important;
 }
 /* ── SIX-CATEGORY RADAR ── */
