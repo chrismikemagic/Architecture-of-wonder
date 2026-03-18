@@ -1124,6 +1124,82 @@ CHEAT_SHEET_HTML = '''
 
 
 # ── Ch33: Credibility Sequence numbered boxes ────────────────────────────────
+PERFORMANCE_MATRIX_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;overflow-x:auto;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);padding:0;overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.12);padding:0.9em 1.4em;border-bottom:1px solid rgba(201,168,76,0.25);">
+      <div style="font-size:0.7em;letter-spacing:0.15em;color:#C9A84C;text-transform:uppercase;font-weight:700;">The Performance Decision Matrix</div>
+      <div style="font-size:0.78em;color:#8a9ab8;margin-top:0.3em;">Match environment to approach before the lights come up. Every row is a different neurological contract.</div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:0.78em;">
+      <thead>
+        <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+          <th style="padding:0.7em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;white-space:nowrap;">ENVIRONMENT</th>
+          <th style="padding:0.7em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">DEMONSTRATION TYPE</th>
+          <th style="padding:0.7em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">VOLUNTEER APPROACH</th>
+          <th style="padding:0.7em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">REVEAL STYLE</th>
+          <th style="padding:0.7em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">KEY RULE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">STROLLING</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">T1 cold reads · Social role · 90-sec behavioral profile</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">T1 opener on whoever is present. Act on one or two strong signals.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Soft hit + one strong hit</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">No pre-selection. Leave at the peak.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">CLOSE-UP</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Hidden interest read · Relationship dynamic · Life pivot</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Emotional, Reserved, or Analytical volunteer. Intimacy is the asset.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Full layered read at Level 3–4</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">Depth earns trust. Use the full reading lines.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">PARLOR (8–30)</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Curiosity-based reads · Social role · Life pivot</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Room is the volunteer. Read everyone simultaneously.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Layered read + callback</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">Intimacy creates permission. Work the whole room.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">CORPORATE KEYNOTE</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Behavioral profile · Pre-show reveals · Travel pattern read</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Pre-show selection. Win the room leader first.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Strong hit + pre-show reveal</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">Authority matters. Win the room leader in effect one.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">STAGE SHOW</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Full layered read · Life reading · Social role reveal</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Full matrix selection. Assess confidence and suggestibility independently.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">All four levels of the layered read</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">Level 4 staging mechanics every time.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">THEATER</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Insight demonstration sequence · Callback close</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Supporter or Emotional for peaks. Challenger for prediction.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Layered read + insight demo + callback</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">Plant in first effect. Pay off at the close.</td>
+        </tr>
+        <tr>
+          <td style="padding:0.8em 1em;color:#e8dfc8;font-weight:700;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.1);">PRIVATE CONSULT</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">Complete deep-read · All six insight frameworks</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">One subject. Full session. No audience management required.</td>
+          <td style="padding:0.8em 1em;color:#c8d4e0;">All levels, extended, with full DISC framing</td>
+          <td style="padding:0.8em 1em;color:#8a9ab8;font-style:italic;">Only context where explaining your framework serves the work.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="padding:0.6em 1.4em 0.8em;border-top:1px solid rgba(201,168,76,0.1);">
+      <span style="font-size:0.72em;color:#4a5e7a;font-style:italic;">Sit with this grid before every show. Circle the row. That ten-second decision shapes every choice that follows.</span>
+    </div>
+  </div>
+</div>
+'''
+
 CREDIBILITY_SEQUENCE_HTML = '''
 <div style="margin:1.5em 0 2em;page-break-inside:avoid;">
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
@@ -3701,6 +3777,11 @@ def build_chapter_body(section, global_para_count):
 
         if stripped == 'CREDIBILITY_SEQUENCE':
             parts.append(CREDIBILITY_SEQUENCE_HTML)
+            i += 1
+            continue
+
+        if stripped == 'PERFORMANCE_MATRIX':
+            parts.append(PERFORMANCE_MATRIX_HTML)
             i += 1
             continue
 
