@@ -4070,6 +4070,14 @@ def process_paragraph(text, part_num=1):
     if stripped in ("Performer's Note", "Performer's Note", "Performers Note"):
         return gen_performer_note()
 
+    # Bylines — bold attribution lines beneath section headers
+    _bylines = {
+        '\u201cWatch Your Figure\u201d by Chris Michael',
+        '"Watch Your Figure" by Chris Michael',
+    }
+    if stripped in _bylines:
+        return f'<p style="font-weight:700;font-style:italic;color:#c9a84c;margin:0.2em 0 1em;">{escape(stripped)}</p>'
+
     # Warning section headers — stand-out treatment
     _warning_headers = {
         'When You Have Gone Too Far',
