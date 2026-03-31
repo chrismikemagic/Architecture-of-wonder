@@ -4159,6 +4159,8 @@ def process_paragraph(text, part_num=1):
         'Attention and concentration', 'Emotional framing', 'Stage management',
         'The Setup', 'Watching the First Search', 'The Pivot',
         'Reading the Animal Search', 'Reading the Reaction',
+        # Zodiac chapter sub-sections
+        'When They Do Not Know Their Element',
         # Contact mind reading sub-sections
         'Lipping',
         # Cold Reading Toolkit single-word headers
