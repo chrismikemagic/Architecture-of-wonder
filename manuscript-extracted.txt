@@ -2637,11 +2637,6 @@ The strongest pre-show asks for less and reveals more. It doesn't merely retriev
 That is when pre-show stops being method. That is when it becomes something else entirely.
 · · ·
 
-PART FOUR
-Performance Craft
-How to build the show: the arc, timing, room management, revelation structure, and the decisions that determine whether skill becomes experience.
-
-
 CHAPTER 20
 Psychological Forces
 ────────────────────────────────────────────────────────────────────────────────
@@ -3151,11 +3146,171 @@ A performer who knows the fallback is solid carries the routine differently. Les
 STEP 8 — REHEARSE THE DISAPPEARANCE
 The system is not invisible when the structure is finished. It is invisible when the timing is refined. Where do you pause. When do you look away. How long do you let a recognition beat breathe before speaking again. What happens physically after the acquisition is complete. These details are not decoration. They are the place where the spectator becomes a true believer.
 Build the routine on paper. Then rehearse it until the structure no longer looks like a structure — it just looks like mind-reading.
-[Propless routines to be added — 3/30/26]
+CHAPTER 23
+Zodiac Divinations Without Anagrams
+────────────────────────────────────────────────────────────────────────────────
+A Note Before We Go Further
+If you have seen me perform a zodiac divination, you will notice that I do not get any verbal yes or no. I simply ask the person to picture when in the year they are born, and then which part of that month they are born in. With as little as that, I am able to name the zodiac on the first attempt.
+I often explain that this is a skill you cannot teach, only one you will work up to.
+To this day I still perform my earlier versions of this, because not everyone is equally easy to read. What follows is the exact progression of methods I used to get to the point of guessing a zodiac with two questions, and sometimes three in a pinch. If you have genuinely mastered what is in this section, I would be happy for you to find a way to get in touch with me, as long as I am still alive when you are reading this, and I will teach you what comes next.
+This set of methods will build upon everything you have learned in the book so far. Behavioral profiling, volunteer selection, body language reading, and the thinking on propless mentalism. As a general rule, I will try to avoid the far too common procedure of progressive anagrams with letters. If I use one, it is purely to rule out one option versus another.
+
+In one routine you will need to memorize the zodiac signs elements. This is easy to do and should take no more than 20 minutes of just repeating it and quizzing yourself. I will teach you a super easy way remember this. I do teach another routine called “Watch Your Figure” that does not require you to memorize the elements. Please, just remember them.
+
+The Half-Year Split
+You are in casual conversation. Nothing about the interaction has been framed as a performance yet. You find a natural moment and you say, "Are you born at the end of the year, like the last six months?"
+If they say yes, you say, "I thought so. I want to see if I can read your mind and get your exact zodiac sign. Can we try something?"
+If they say no, you say, "Oh, interesting. I want to see if I can guess your exact zodiac sign. Can we try something?"
+Both lines create identical framing. The spectator has no way to know that you just answered the first question yourself.
+The last six months of the year covers Cancer, Leo, Virgo, Libra, Scorpio, and Sagittarius. The first six covers Capricorn, Aquarius, Pisces, Aries, Taurus, and Gemini. You have cut the field in half before the performance has officially started. That is the part of this method I want you to sit with for a moment. The trick has already begun. They do not know it yet.
+
+Getting Their Element Without a Single Spoken Word
+Now you need to move from six signs to one.
+You are going to ask the person to think about whether their sign is earth, fire, air, or water. You are going to find out which one by touch. You will often come across people who do not know their element. That is fine. I will cover that in the next section.
+This approach was popularized in Christian Grace's Enigma, which I consider one of the most well-constructed close-up routines in modern mentalism. Not only is the person performing the effect completely fooled, so is everyone watching, because there is no visible transmission of information. I am not going to teach you Enigma here, but with Christian's direct permission, I am going to cover this ingenious dual reality method of secretly obtaining information, and its specific application to this zodiac structure.
+Ask the person to hold their hand out, fingertips toward yours, palms facing but not touching, so that your fingertips are resting lightly against theirs. The contact is light. Comfortable. You say, "I want you to focus on how we can communicate without words. I'm going to name each element, and I just want you to send me the signal for whichever one is yours. Don't say anything out loud."
+You go through the four elements in order: fire as you press lightly with your pinky, water as you press with your ring finger, air as you press with your middle finger, earth as you press with your index finger. Then you run it in reverse, earth to fire. What you are signaling is that each finger corresponds to an element. Without saying it explicitly, you want them to subtly push back with the finger that represents their element, just enough to clearly feel it but not so much that the movement is visible. You might even include a confirmation line that does double duty: as you press the finger you believe they pushed, you say, "Try to receive the information I'm focusing on here. This is the element that you were sending me, yes?" To everyone watching, it looks like the two of you are sending thoughts between your minds.
+You are now down to two signs, or fewer. In six of the eight combinations, the element read resolves to a single sign.
+Here is the table you need to know cold:
+In two of them — earth/first half and air/first half— you are left with two. The same is true for fire/last half and water/last half. In those cases, you use the Repeat It Ploy, taught below, to eliminate one. There is no letter guessing in this method. There is no moment where anyone in the room hears you get something wrong. You either name a single sign, or you use a technique that makes the two-choice scenario invisible.
+
+This is better than the RAISE Anagram for one reason specifically: there is no public moment where you guess a letter and get told no. The only direction this method goes is forward.
+
+Remembering the elements:
+
+FIRE SIGNS
+
+Aries is a ram. I think how firefighters use a battering ram to break down the front door when the fire has melted the handle on the door. Aries = fire
+
+Leo - I picture a lion roaring loud with a mane of fire. Super bad-ass image. Leo = fire.
+
+Sagittarius is an archer. I picture archers with arrows on fire launching a barrage of flaming arrows at a castle they are at war with. Sagittarius = fire.
+
+
+
+
+WATER SIGNS 
+
+Pisces is a fish. Need I say more? Pisces = water.
+
+Cancer is a crab. Crabs live in the water. Cancer = water. 
+
+Scorpio is a scorpion. Scorpions look similar to crabs with their front pincher claws. You may also remember it this way if you need an extra reminder: Scorpions live in the desert, and the desert has no WATER. Scorpio = water. 
+
+
+
+
+EARTH SIGNS
+Capricorn has the word corn in it. Where does corn come from? The earth. Capricorn = earth.
+
+Taurus is a bull. Bulls are usually on a farm. Very earth-centric imagery in my mind. Taurus = earth.
+
+Virgo is the goddess of agriculture. Agriculture is stuff that grows out of the earth. You may also think of the Virgin Mary, who is believed to have given the son of god a home on EARTH. Virgo = earth. 
+
+
+
+
+
+
+AIR SIGNS
+Aquarius is often confused for a water sign due to the word Aqua being in it. Despite "Aqua" in the name, they are the "wind" that scatters the water. Remember two things, Aqua is H2O and O is oxygen so that makes me think Air. If you want a more direct and less confusing way to remember it just simply remember that Aquarius is the tricky one and you will remember it is not a water sign but instead an air sign. Aquarius = Air 
+
+*After writing this section my friend and fellow mentalist Adam Brown simplified this alot. Think Aqu-AIR-ius. THANKS ADAM!
+Gemini - Think “Gemin-EYE” And then think EYE of a storm with heavy winds. Gemini = Wind.
+
+Libra is a balancing scale. The two ways to remember this are either - balancing scales would mess up if there is heavy winds while you are trying to perfectly balance something. Or you can remember the scales of justice is a very heavenly symbol. Heaven is the air above us. Libra = air.
+
+When They Do Not Know Their Element
+This comes up all the time. Especially for men, and especially for westerners. Not everyone walks around knowing the element of their zodiac. There are four elements: Earth, Fire, Air, and Water.
+When you name each element in the setup, you list the signs underneath it. You say, "Fire, which would be Aries, Leo, or Sagittarius" as you press the pinky. "Water, Cancer, Scorpio, Pisces" as you press the ring finger. You go through all four. You tell them not to give you any verbal signal, not to nod, not to say anything. You are just giving them the information they need to know what to send you.
+
+Preferably, you do not show them a card with the elements and the signs within those elements, as seeing only four options gives a much clearer picture of how little work you have to do once you know their element. When they hear it auditorily, it is much more stimulating and obfuscates the limitation we are imposing.
+
+The Alternative Opener
+If the casual conversation approach does not fit your context, there is a second way to execute the half-year split.
+You say, "Before we start, I want to try something small. If you were born in the first half of the year, January through June, go ahead and raise your dominant hand, just like this." You model it. You pause, and you watch.
+Then you say, "I ask because I've noticed that people born in the earlier months tend to process through their dominant side slightly differently, and it affects how I work. If you're in the second half, go ahead and raise either hand."
+The rationale does not need to be airtight. It needs to be plausible enough that the instruction follows naturally. The person lifts a hand. You note which instruction they followed. You have your answer.
+The casual conversation version is stronger because it happens before any performance frame is established. The raised hand version is cleaner for structured sets where you cannot wander into pre-show territory first. Know your context and choose accordingly.
+The information you need is available before you ask for it. Your job is to arrange the conditions so that extracting it feels like nothing at all.
+
+The Repeat It Ploy
+Created by Jerry Sadowitz and Bob Farmer
+You are down to two signs. You need one more piece of information and you cannot ask for it directly.
+Ask them to focus on their zodiac and silently repeat it in their mind. Then you name one of the two candidates, casually, as if offering an example of the behavior you want from them: "Just repeat it to yourself, over and over. So it would be something like... Sagittarius, Sagittarius, Sagittarius."
+You watch.
+If you are right, you will see it. Look for the green tells. Return to the chapter on Chris Michael’s tell table if needed. 
+
+ If you see the yellow or red signals from the table, you continue with  "...for example. Just like that, concentrate and repeat it." You have reframed the named zodiac as an illustration, not a solid guess. To the spectator and everyone watching, nothing happened. You simply demonstrated what you meant. You now know it is the other sign, and you are free to name it however you choose.
+One more thing. The ploy only works if the beat between the named zodiac and "for example" is natural. The moment you hesitate, the technique becomes visible. Practice the pacing until it feels like one thought.
+
+TRULY IMPOSSIBLE FEELING ZODIAC DIVINATION
+"Watch Your Figure" by Chris Michael
+
+The Figure Method: Working With the Spectator Who Doesn't Know Zodiacs
+There is a version of this that I particularly enjoy, and I want to be clear upfront that what I am about to say is not about stereotyping. It is about profiling. There is a difference, and you have read enough of this book to know what that difference is.
+Through your profiling work before the performance, you are looking for a specific type of spectator: someone who is unlikely to know much about astrology. The personality signals that tend to correlate here are D-types, analytical C-types who have little patience for what they categorize as superstition, and generally men in corporate or technical environments. This is not a rule. It is a base rate. Calibrate to the room in front of you.
+What makes this spectator valuable is precisely what makes them seem difficult: they do not know their zodiac figure. Most people with even casual astrology knowledge can tell you that Scorpio is a scorpion, Leo is a lion, Taurus is a bull. The spectator who says "I think I'm something but I don't really know" has just given you enormous operational freedom. They cannot catch a miss they do not know how to evaluate. And they have no idea how much information we are already working with. This also means that if you do need a letter or two to land a final hit, they only see their zodiac as a word. They have no other frame for it. Even so, we will keep letter guessing to a minimum.
+Here is how it unfolds.
+
+Half-Year Split: The Rope Visualization
+You ask this spectator to close their eyes.
+"Focus on when in the year you are born. Concentrate on that month and on where it falls among the twelve months. If time were a rope, imagine that rope laid out flat in front of you. Then picture picking up a pair of scissors and cutting that rope at the exact point that represents when in the year you were born."
+You pause.
+"Open your eyes and look at me."
+Then: "First half of the year." You pause. You watch.
+What you are doing is reframing the moment. You redirect their attention to you, then you make the statement. If you are right, they will react. If you are wrong, you have a narrow window before the beat passes. You use it. You slide directly into the next line without hesitation, as if you were always about to say it: "Or last half of the year… Focus on where once more….. I am seeing clearly that you cut the rope in the second half."
+The tells to watch for are covered in Part Two of this book. The reaction to a correct statement and the absence of reaction to an incorrect one are both readable with practice.
+Now you know which half of the year they are born in.
+
+The Narrowed Field
+Once you have the half, your candidate signs are:
+First Half of the Year (January–June): Capricorn, Aquarius, Gemini
+Last Half of the Year (July–December): Virgo, Libra, Sagittarius
+Note that this only applies when working with the spectator who does not know their zodiac figure. The commonly known figures — Taurus, Scorpio, Leo, Cancer, and often but not always Aries — have already been filtered out by the figure question. Every single zodiac on both of these lists contains an "I" somewhere in the name. Every one of them is more than one syllable. Every one of them is more than five letters. You know they are not a Leo or Scorpio regardless of which list you are on. Take those hits where you see fit.
+Before we get into the specific paths, one more setup move worth deploying with the first-half list.
+"Since you don't know the figure of your zodiac, take a guess at what it might be."
+They guess something wrong. You say, "Okay, yeah. That makes no sense." Small laugh. Natural. "You definitely don't know this one. Since you're not sure, focus on the name of your zodiac. Spell it in your head, picturing each letter as you spell it in your mind."
+Then: "The most noticeable letter to me was that 'I' in the middle. I heard that one clearly."
+Every name on both lists validates that hit.
+
+Working the Last Half (Virgo, Libra, Sagittarius)
+Between these three, Libra is the statistical outlier. People born in late September to mid-October who don't know astrology will often describe themselves as born "towards the end" of the year less readily than those born in November or December. Virgo is your primary candidate. Libra is your backup if Virgo does not land.
+For Virgo specifically, there is a very clean line: "There is something that comes to mind when you think about this that resembles purity. An image of cleanliness, precision, something like that. I can see that."
+If it's Virgo, the reaction is immediate. If it doesn't land, you are down to Libra or Sagittarius, and you use the Repeat It Ploy to resolve it.
+For Sagittarius, use the name length: "This is a long zodiac name. I'm seeing something long at first."
+A hit gets you Sagittarius. If it doesn't land, you have narrowed to Virgo and Libra, and again, the Repeat It Ploy handles the last step. You can also hear Sagittarius as two syllables in your head. Determine the number of syllables before going in and listen for the reaction.
+
+Working the First Half (Capricorn, Aquarius, Gemini)
+The name-length line worked for Sagittarius because the name is long. The same principle applies here: "I first saw a long zodiac name in your mind."
+A hit lands you on Capricorn or Aquarius, and you use the Repeat It Ploy to get the exact one. If it doesn't hit, you have Gemini. You can say, "For instance, you're not a Leo, Libra, Virgo. It was longer than that. I know for certain you are a... Gemini."
+For Aquarius specifically, the first letter works: "Focus on the first letter. Concentrate on it." Then: "I'm seeing a vowel."
+If it lands, it's Aquarius. If it does not, you redirect: "That's not an O I'm seeing. It got cut off. It's a C or a G." Use the Repeat It Ploy to land on Capricorn or Gemini.
+If you think about it, an "O" doesn't really make sense. There are no zodiacs beginning with O. But they likely don't know that. And even if they do, something Peter Turner told me and gave me permission to share: "If a spectator is thinking, they are not thinking." If they are concentrated on their zodiac, the question of why you guessed O is almost never going to cross their mind.
+
+The Cognitive Load Technique
+From part two earlier in the book you should know many of the ways to determine what the spectator is thinking within a binary (Yes/No, This/That, Comfort/Discomfort, Cognitive Strain/Cognitive ease). We will use this to our advantage here. 
+
+This is one of my favorite methods for the first-half list, and it works precisely because this spectator does not know that certain zodiac figures are so iconic that we are certain they would recognize their own if it was one of them. They have no idea we have already eliminated Taurus, Scorpio, Leo, and in large part Aries. That is the room we have to work in. That makes this so much fun.
+You say, "Since you don't know the figure of your zodiac, I'm going to give you something easy to picture. Listen carefully. If you're a Capricorn, choose a country you want to travel to, pick a city in that country, and picture yourself being there. If you're a Taurus, imagine the flavor and texture of a piece of fresh fruit. If you're a Scorpio, imagine a scenario where a fight is breaking out and you're brave enough to stop it. If you're a Leo, imagine a toy you had when you were little. If you're a Gemini, picture a sibling or a close relative. If you're anything else, just focus on a simple shape and create a picture out of it."
+You watch for cognitive load. The Capricorn instruction has three sequential steps. A person who is a Capricorn will visibly begin working the moment you say "choose a country and think of a city in that country." It is difficult not to see it. Pause after the Capricorn instruction and briefly observe. If it is not yet clear, watch the Gemini instruction for someone who seems to still be waiting for their line, patient, a little delayed. And at the close, when you say "if you are anything else," watch for a person who is now engaged because they finally have their instruction.
+You now know whether they are a Capricorn, a Gemini, or an Aquarius.
+
+One final note on working with this type of spectator.
+The person who doesn't know their zodiac figure doesn't know what you can and cannot know by simply asking them if they know their zodiac figure. They don't know what you are eliminating each time you obtain a small piece of information. Every hit you make is a miracle from where they're standing. You are working with an audience that has no frame of reference for how possible what you just did actually is.
+
+
+
 · · ·
 
 
-CHAPTER 23
+
+PART FOUR
+Performance Craft
+How to build the show: the arc, timing, room management, revelation structure, and the decisions that determine whether skill becomes experience.
+
+
+CHAPTER 24
 The Performance Arc
 A complete framework for designing, executing, and auditing performances through a behavioral lens. Seven stages. One arc. Designed to be used before and after every show.
 
@@ -3193,7 +3348,7 @@ Where the Neural Performance Model describes the arc of a show, the Performance 
 PERF_ARCH_FRAMEWORK_SVG
 · · ·
 
-CHAPTER 24
+CHAPTER 25
 Method Invisibility
 The goal is not to hide things from the audience. It is to build a performance the audience cannot trace even while watching everything.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3226,7 +3381,7 @@ An audience that experienced something impossible will not remember how it was s
 After a strong reveal, the audience is feeling. You are not analyzing. Deliver the next beat while they are still in that state. It is the most protected moment in any performance.
 · · ·
 
-CHAPTER 25
+CHAPTER 26
 Patter, Rhythm, and Silence
 The words are not the performance. The timing between the words is the performance.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3427,7 +3582,7 @@ Name the experience in the close. Give the room one sentence they can repeat. Ma
 
 
 
-CHAPTER 26
+CHAPTER 27
 The Art of Strolling
 Close-up and walk-around mentalism is the most technically demanding format. You have no stage, no amplification, no architecture of separation.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3575,7 +3730,7 @@ This is one more reason the two-minute approach works. It gives the group time t
 
 · · ·
 
-CHAPTER 27
+CHAPTER 28
 When the Room Rises
 A standing ovation is not a verdict on your work. It is a cascade, and cascades can be engineered.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3601,7 +3756,7 @@ Five: Does the close have a clear, unambiguous signal that it is over? Ambiguous
 The peak handles emotional intensity. The close handles meaning. The cascade handles the room. They are three separate engineering problems.
 · · ·
 
-CHAPTER 28
+CHAPTER 29
 Making the Room Say Yes
 The dance floor of death is a design failure, not an audience failure.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3677,7 +3832,7 @@ Authority, Influence, and the Deep Framework
 The invisible architecture that determines whether a performance has power before the first effect begins. The FATE Model, Authority Architecture, the Signal Dictionary, the Influence Equation, and the DECODE Framework — each built for high-stakes behavioral work, each sharper on stage.
 
 
-CHAPTER 29
+CHAPTER 30
 What the Room Decides Before You Speak
 Four forces every audience evaluates before you speak — and how to control all four.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3798,7 +3953,7 @@ The performer who controls all four FATE forces before the first effect begins h
 
 · · ·
 
-CHAPTER 30
+CHAPTER 31
 The Authority Frame
 Authority is not claimed. It is broadcast. Through behavior, pace, and the consistency of every signal you send.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3844,7 +3999,7 @@ Slow the Beginning. The Spontaneous Compliment. Future Memory Language. The Stat
 · · ·
 
 
-CHAPTER 31
+CHAPTER 32
 Authority Architecture
 The five pillars of authority. And why the most powerful signal you can broadcast is the one that requires no words.
 ────────────────────────────────────────────────────────────────────────────────
@@ -3937,7 +4092,7 @@ The performer who audits these pillars honestly, and does the work to move the l
 
 · · ·
 
-CHAPTER 32
+CHAPTER 33
 How Influence Actually Works
 Novelty plus authority equals influence. And why compliance begins in the body before it reaches the mind.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4022,7 +4177,7 @@ Strategic silence. After a proposal, a statement, or a reveal. Stop talking. Sil
 
 · · ·
 
-CHAPTER 33
+CHAPTER 34
 Six Steps from Observation to Ovation
 Six steps from observation to installation. Adapted from behavioral intelligence fieldwork for the mentalist's stage.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4266,7 +4421,7 @@ The Professional Stage
 Behavioral science applied to the professional performance context — from keynote halls and boardrooms to corporate training and the ethics of influence.
 
 
-CHAPTER 34
+CHAPTER 35
 Mentalism in the Boardroom
 A room full of executives is not a harder audience. It is a differently motivated one.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4289,7 +4444,7 @@ Experience Before Explanation
 The moment you explain a principle before demonstrating it, you lose the emotional encoding that makes it stick. Always build the visceral experience first. The explanation lands differently when the audience has already felt the thing you are explaining.
 · · ·
 
-CHAPTER 35
+CHAPTER 36
 Why Most Training Fails
 Most corporate training fails not because the content is wrong but because the learning architecture is misaligned with how the brain actually changes behavior.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4313,7 +4468,7 @@ The Performer Advantage
 Most trainers simulate primary experience through case studies and role-play. A performer who demonstrates the learning objective on the participants creates real experience. Retention rates for primary vs. simulated experience differ significantly. Source: Kolb (1984), Experiential Learning.
 · · ·
 
-CHAPTER 36
+CHAPTER 37
 Influence Without Authority
 The performer in a corporate context has no formal authority whatsoever. This is, paradoxically, a meaningful advantage.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4341,7 +4496,7 @@ That distinction is where ethics enters. Because these tools are powerful enough
 The question of where your practice sits on that line, and how you are sure it is where you think it is, is what the next chapter addresses. Not as a disclaimer, and not as a warning. As a direct and necessary companion to everything that came before it.
 · · ·
 
-CHAPTER 37
+CHAPTER 38
 The Ethics of Influence
 These tools are genuinely powerful. That makes the question of how they are used more important than how they work.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4392,7 +4547,7 @@ The Business Brain
 Where bookings are actually won, how authority is built before you walk in the room, and the business of performing at the highest level.
 
 
-CHAPTER 38
+CHAPTER 39
 Where Bookings Are Actually Won
 The performance is not where the client makes their decision. It is where they confirm it.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4426,7 +4581,7 @@ Performer's Note
 I lost a $15,000 rebooking because my first email read like a form letter. The show was flawless. The client even said so. But the relationship was not there, and the referral never came. I know exactly which line of that email set the wrong frame, and I rewrote my templates the next morning. Run this list before every engagement, not after. A strong show inside a weak frame earns admiration. A strong show inside a strong frame earns trust that generates referrals without asking.
 · · ·
 
-CHAPTER 39
+CHAPTER 40
 Building a Career, Not a Calendar
 Most performers have one conversation with a client before the show and one after. This is the minimum viable relationship.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4466,7 +4621,7 @@ The performers who consistently command the highest fees are not always the most
 
 · · ·
 
-CHAPTER 40
+CHAPTER 41
 The Intro Video
 The live host introduction is the single most unreliable variable in a corporate performance. Solve it.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4505,7 +4660,7 @@ The Threshold Rule
 Do not pause at the entry. Walk in as if you have been there before. Because you have, in your preparation. The audience reads hesitation at the threshold as uncertainty about belonging. The room is yours. Enter it that way.
 · · ·
 
-CHAPTER 41
+CHAPTER 42
 Introductions, Bios, and Testimonials
 The way a performer is introduced has more influence on the room than most performers realize.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4526,7 +4681,7 @@ Performer's Note
 I spent two years with a bio that listed every impressive thing I had done. Then a client told me she almost did not book me because the bio felt like it was trying too hard. I rewrote it in one afternoon. Cut it by sixty percent. Led with one sentence of positioning, followed by three client quotes that did the selling for me. Bookings went up immediately. Not because I had new credentials. Because the materials stopped performing and started positioning. Let the client's voice carry the weight. Your own voice delivering your own credentials is the least persuasive version of the same information.
 · · ·
 
-CHAPTER 42
+CHAPTER 43
 The Language of Authority
 The words you choose and the sentence structures you use are behavioral signals.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4543,7 +4698,7 @@ Email Compression
 High-authority email: one specific answer, one direct ask, no apology, appropriate length. Low-authority email: multiple questions, hedged language, over-explanation, premature reassurance.
 · · ·
 
-CHAPTER 43
+CHAPTER 44
 Reading the Booking Room
 The discovery call or initial meeting with a potential client is a performance. It has a structure, behavioral dynamics, and a moment when the decision tips.
 ────────────────────────────────────────────────────────────────────────────────
@@ -4561,7 +4716,7 @@ The Right Question
 'What would make this the obvious choice for your event?' is the most useful question in a client conversation that has stalled. It stops the guessing and asks the client to tell you precisely what they need to hear.
 · · ·
 
-CHAPTER 44
+CHAPTER 45
 From First Contact to Follow-Up
 A complete behavioral model for the performing professional, from first contact to final follow-up.
 ────────────────────────────────────────────────────────────────────────────────
