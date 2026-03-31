@@ -46,34 +46,35 @@ HOOK_LINES = {
     'CHAPTER 15': '"The volunteer chose you before you chose them."',
     'CHAPTER 16': '"Compliance is not obedience. It is agreement they did not know they gave."',
     'CHAPTER 17': '"The moment after the effect is where the real work happens."',
+    'CHAPTER 18': '"The strongest version of an effect is not what happened. It is what they are willing to swear happened."',
     'CHAPTER 13': '"Hypnosis is not what you think it is. That is why it works."',
-    'CHAPTER 33': '"The boardroom is the most dangerous stage you will ever work."',
-    'CHAPTER 34': '"You cannot teach observation. You can only remove the obstacles to seeing."',
-    'CHAPTER 35': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 36': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 18': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
-    'CHAPTER 22': '"The question is never whether to influence. It is whether to admit it."',
-    'CHAPTER 23': '"The walk to the stage is the performance."',
-    'CHAPTER 24': '"Standing ovations are not earned. They are engineered."',
-    'CHAPTER 25': '"Sound is the invisible stage."',
-    'CHAPTER 26': '"The environment gives the instruction before you do."',
-    'CHAPTER 38': '"Authority is not claimed. It is perceived."',
-    'CHAPTER 39': '"Your career is a performance with a very long run."',
-    'CHAPTER 19': '"They have already decided before you walk on stage."',
-    'CHAPTER 31': '"The signal is data. The statement is performance. The gap between them is skill."',
-    'CHAPTER 20': '"The best insight demonstration looks like telepathy and works like science."',
-    'CHAPTER 21': '"Method invisibility is not misdirection. It is architecture."',
-    'CHAPTER 37': '"A performer with perfect reads and poor timing is less effective than the reverse."',
-    'CHAPTER 40': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 41': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 42': '"What you say matters less than how it sounds when you say it."',
-    'CHAPTER 43': '"The client is reading you harder than you are reading them."',
-    'CHAPTER 27': '"Every framework in this book leads here."',
-    'CHAPTER 28': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
-    'CHAPTER 29': '"Authority is not one thing. It is five things, and most people have two."',
-    'CHAPTER 30': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 32': '"Influence is not a trick. It is an equation with variables you can measure."',
-    'CHAPTER 32': '"Every framework in this book was designed to work on stage. This one ties them together."',
+    'CHAPTER 34': '"The boardroom is the most dangerous stage you will ever work."',
+    'CHAPTER 35': '"You cannot teach observation. You can only remove the obstacles to seeing."',
+    'CHAPTER 36': '"Every performance teaches you something. Most of the lessons hurt."',
+    'CHAPTER 37': '"The most powerful person in the room is rarely the one with the title."',
+    'CHAPTER 23': '"Zodiac divination without a single anagram. Every read built from behavior, setting, and the architecture of what people already know."',
+    'CHAPTER 24': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
+    'CHAPTER 26': '"The question is never whether to influence. It is whether to admit it."',
+    'CHAPTER 27': '"The walk to the stage is the performance."',
+    'CHAPTER 28': '"Sound is the invisible stage."',
+    'CHAPTER 29': '"The environment gives the instruction before you do."',
+    'CHAPTER 39': '"Authority is not claimed. It is perceived."',
+    'CHAPTER 40': '"Your career is a performance with a very long run."',
+    'CHAPTER 24': '"The best insight demonstration looks like telepathy and works like science."',
+    'CHAPTER 25': '"Method invisibility is not misdirection. It is architecture."',
+    'CHAPTER 38': '"A performer with perfect reads and poor timing is less effective than the reverse."',
+    'CHAPTER 41': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 42': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 43': '"What you say matters less than how it sounds when you say it."',
+    'CHAPTER 44': '"The client is reading you harder than you are reading them."',
+    'CHAPTER 19': '"A psychological force does not always create a thought. Often, it calls one forward."',
+    'CHAPTER 20': '"Propless mentalism is the hardest thing to do well and the easiest thing to do badly. That gap is what this chapter closes."',
+    'CHAPTER 21': '"Understanding propless mentalism and being able to build it are different skills. This chapter is for the second one."',
+    'CHAPTER 30': '"Every framework in this book leads here."',
+    'CHAPTER 31': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 32': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 33': '"Influence is not a trick. It is an equation with variables you can measure."',
+    'CHAPTER 33': '"Every framework in this book was designed to work on stage. This one ties them together."',
     'GLOSSARY': '"The language shapes the thinking. Know the words."',
 }
 
@@ -93,34 +94,35 @@ KEY_READS = {
     'CHAPTER 15': 'Seven expressions. One-fifth of a second. That is the window.',
     'CHAPTER 16': 'The best instruction is the one that feels like their idea.',
     'CHAPTER 17': 'Close the moment before they close it for you.',
+    'CHAPTER 18': 'The only effect that lasts is the one that survives the retelling. Build for that version, not the version in the room.',
     'CHAPTER 13': 'The trance state is not extraordinary. It is the brain doing what it does best.',
-    'CHAPTER 33': 'In the boardroom, the audience writes the review before the show ends.',
-    'CHAPTER 34': 'Training is not instruction. It is guided noticing.',
-    'CHAPTER 35': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 36': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 18': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
-    'CHAPTER 22': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
-    'CHAPTER 23': 'The walk is the show. Everything after is confirmation.',
-    'CHAPTER 24': 'The ovation begins in the first thirty seconds.',
-    'CHAPTER 25': 'Control the sound, and you control the space.',
-    'CHAPTER 26': 'Design the compliance. Then act surprised when they comply.',
-    'CHAPTER 38': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
-    'CHAPTER 39': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
-    'CHAPTER 19': 'You are not what you do. You are what they remember you doing.',
-    'CHAPTER 31': 'The signal is the data. The statement is the art. Never confuse the two.',
-    'CHAPTER 20': 'The best insight feels impossible because it is grounded in what is actually there.',
-    'CHAPTER 21': 'If they are looking for the method, the architecture failed.',
-    'CHAPTER 37': 'Silence is not absence. It is the loudest tool you have.',
-    'CHAPTER 40': 'The booking is won in the room they never see you in.',
-    'CHAPTER 41': 'Your biography arrives before you do. Make sure it is doing the right job.',
-    'CHAPTER 42': 'Language is not communication. It is positioning.',
-    'CHAPTER 43': 'Read them first. Then let them think they read you.',
-    'CHAPTER 27': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 28': 'Four forces. Every room is already running the equation before you open your mouth.',
-    'CHAPTER 29': 'Build all five pillars. Then let them carry the weight.',
-    'CHAPTER 30': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 32': 'Influence without understanding is manipulation. With understanding, it is leadership.',
-    'CHAPTER 32': 'Go see what others miss.',
+    'CHAPTER 34': 'In the boardroom, the audience writes the review before the show ends.',
+    'CHAPTER 35': 'Training is not instruction. It is guided noticing.',
+    'CHAPTER 36': 'The face is the performance. The hands are the truth.',
+    'CHAPTER 37': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 23': 'The spectator thinks you guessed. What actually happened is that you eliminated everything else.',
+    'CHAPTER 24': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 26': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
+    'CHAPTER 27': 'The walk is the show. Everything after is confirmation.',
+    'CHAPTER 28': 'Control the sound, and you control the space.',
+    'CHAPTER 29': 'Design the compliance. Then act surprised when they comply.',
+    'CHAPTER 39': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
+    'CHAPTER 40': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
+    'CHAPTER 24': 'The best insight feels impossible because it is grounded in what is actually there.',
+    'CHAPTER 25': 'If they are looking for the method, the architecture failed.',
+    'CHAPTER 38': 'Silence is not absence. It is the loudest tool you have.',
+    'CHAPTER 41': 'The booking is won in the room they never see you in.',
+    'CHAPTER 42': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 43': 'Language is not communication. It is positioning.',
+    'CHAPTER 44': 'Read them first. Then let them think they read you.',
+    'CHAPTER 19': 'A force that feels like a force has already failed. The method is in the architecture, not the aggression.',
+    'CHAPTER 20': 'The method is in service of the experience. The moment that relationship inverts, you are no longer a mentalist. You are a technician showing your work.',
+    'CHAPTER 21': 'Enter through the form the thought is already living in. Work your way out to the word from there.',
+    'CHAPTER 30': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 31': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 32': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 33': 'Influence without understanding is manipulation. With understanding, it is leadership.',
+    'CHAPTER 33': 'Go see what others miss.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
@@ -142,34 +144,35 @@ CHAPTER_LEGEND = {
     'CHAPTER 11': {'tiers': ['t2', 't3'], 'cats': ['am']},
     'CHAPTER 16': {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 17': {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18': {'tiers': ['t2', 't3'], 'cats': ['am', 'vs']},
     'CHAPTER 13': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 33': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 34': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 36': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 18': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 22': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 23': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 24': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 25': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 26': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 39': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 19': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 31': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 20': {'tiers': ['t2', 't3'], 'cats': ['cr']},
-    'CHAPTER 21': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 37': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 40': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 41': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 42': {'tiers': ['t2', 't3'], 'cats': ['vs']},
-    'CHAPTER 43': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 27': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 34': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 35': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 36': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 37': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 23': {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
+    'CHAPTER 24': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 26': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 27': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 28': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 29': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 29': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 40': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 24': {'tiers': ['t2', 't3'], 'cats': ['cr']},
+    'CHAPTER 25': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 38': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 41': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 42': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 43': {'tiers': ['t2', 't3'], 'cats': ['vs']},
+    'CHAPTER 44': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 19': {'tiers': ['t2', 't3'], 'cats': ['am', 'cr']},
+    'CHAPTER 20': {'tiers': ['t2', 't3'], 'cats': ['am', 'cr']},
+    'CHAPTER 21': {'tiers': ['t2', 't3'], 'cats': ['am', 'cr']},
     'CHAPTER 30': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 32': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 31': {'tiers': ['t2', 't3'], 'cats': ['am']},
     'CHAPTER 32': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 33': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 33': {'tiers': ['t2', 't3'], 'cats': ['bp']},
 }
 
 # T4 signal table data — (signal name, brief read, use category)
@@ -239,6 +242,30 @@ FIGURES = {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
         'caption': 'Figure 9.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 23:FIRE SIGNS': {
+        'src': 'resources/metv-images/zodiac-image1.jpg',
+        'alt': 'Fire signs mnemonic: Leo (lion on burning castle), Sagittarius (archers with flaming arrows), Aries (ram)',
+        'caption': 'Fire Signs \u2014 Aries, Leo, Sagittarius.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 23:WATER SIGNS': {
+        'src': 'resources/metv-images/zodiac-image4.jpg',
+        'alt': 'Water signs mnemonic: Pisces (fish leaping from ocean), Cancer (crab), Scorpio (scorpion)',
+        'caption': 'Water Signs \u2014 Cancer, Scorpio, Pisces.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 23:EARTH SIGNS': {
+        'src': 'resources/metv-images/zodiac-image2.jpg',
+        'alt': 'Earth signs mnemonic: Capricorn (corn field), Taurus (bull ploughing), Virgo (goddess of agriculture)',
+        'caption': 'Earth Signs \u2014 Capricorn, Taurus, Virgo.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 23:AIR SIGNS': {
+        'src': 'resources/metv-images/zodiac-image3.jpg',
+        'alt': 'Air signs mnemonic: Gemini (twins in storm), Libra (scales in wind), Aquarius (water-bearer)',
+        'caption': 'Air Signs \u2014 Aquarius, Gemini, Libra.',
         'rights': 'AI-generated illustration',
     },
 }
@@ -354,87 +381,85 @@ SECTION_BADGES = {
     'CHAPTER 13:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
     'CHAPTER 13:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 13:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
-    # ── CHAPTER 18: Mentalism in Boardroom ──
-    'CHAPTER 33:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 33:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 33:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 19: Behavioral Training ──
-    'CHAPTER 34:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 20: Influence Without Authority ──
-    'CHAPTER 35:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 21: Ethics of Influence ──
-    'CHAPTER 36:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 36:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 22: The Performance Arc ──
-    'CHAPTER 18:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 18:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 18:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
-    # ── CHAPTER 23: Art of Strolling ──
-    'CHAPTER 22:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 22:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 24: Duration Neglect / Standing Ovation ──
-    'CHAPTER 23:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 23:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 25: Audio as Architecture ──
-    'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
-    'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 26: Compliance by Design ──
-    'CHAPTER 25:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 25:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 25:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 27: Authority Frame ──
-    'CHAPTER 26:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 26:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 26:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 26:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
-    # ── CHAPTER 30: Signal to Statement ──
-    'CHAPTER 19:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 19:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 19:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 19:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
-    # ── CHAPTER 31: Insight Demonstrations ──
-    'CHAPTER 31:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
-    'CHAPTER 31:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 31:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
-    # ── CHAPTER 32: Method Invisibility ──
-    'CHAPTER 20:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 20:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 34: Where Bookings Are Won ──
-    'CHAPTER 37:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 36: Language of Authority ──
-    'CHAPTER 41:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 41:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 37: Reading the Booking Room ──
-    'CHAPTER 42:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 42:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 39: FATE Model ──
-    'CHAPTER 27:How the Brain Builds Experience Before It Receives It': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 27:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 27:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 27:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 27:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 27:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 40: Authority Architecture ──
+    # ── CHAPTER 20: Mentalism in Boardroom ──
+    'CHAPTER 35:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 35:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 21: Behavioral Training ──
+    'CHAPTER 36:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 36:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 23: Influence Without Authority ──
+    'CHAPTER 37:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 24: Ethics of Influence ──
+    'CHAPTER 38:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 25: The Performance Arc ──
+    'CHAPTER 20:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 20:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 20:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    # ── CHAPTER 26: Art of Strolling ──
+    'CHAPTER 25:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 25:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 27: Duration Neglect / Standing Ovation ──
+    'CHAPTER 26:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 26:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 27: Audio as Architecture ──
+    # ── CHAPTER 28: Compliance by Design ──
+    'CHAPTER 27:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 27:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 27:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 29: Authority Frame ──
     'CHAPTER 28:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 28:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 41: Performer's Signal Dictionary ──
-    'CHAPTER 29:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 29:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 29:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 42: Influence Equation ──
-    'CHAPTER 30:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 30:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 43: DECODE Framework ──
-    'CHAPTER 32:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 32:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 32:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 32:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 32:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 32:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 28:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 28:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 28:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
+    # ── CHAPTER 32: Signal to Statement ──
+    'CHAPTER 21:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 21:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 21:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 21:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
+    # ── CHAPTER 33: Insight Demonstrations ──
+    'CHAPTER 33:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
+    'CHAPTER 33:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 33:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
+    # ── CHAPTER 34: Method Invisibility ──
+    'CHAPTER 23:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 23:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 36: Where Bookings Are Won ──
+    'CHAPTER 39:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 38: Language of Authority ──
+    'CHAPTER 43:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 43:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 39: Reading the Booking Room ──
+    'CHAPTER 44:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 44:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 41: FATE Model ──
+    'CHAPTER 29:How the Brain Builds Experience Before It Receives It': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 29:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 29:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 29:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 29:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 29:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 42: Authority Architecture ──
+    'CHAPTER 30:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 30:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 43: Performer's Signal Dictionary ──
+    'CHAPTER 31:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 31:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 31:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 44: Influence Equation ──
+    'CHAPTER 32:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 32:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 44: DECODE Framework ──
+    'CHAPTER 34:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 34:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 34:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 34:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 34:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
 }
 
 def gen_section_badge_strip(tiers, cats):
@@ -696,92 +721,148 @@ BEHAVIORAL_READING_DEF_HTML = '''
 '''
 
 
+# ── DECODE Framework reference panel ─────────────────────────────────────────
+DECODE_PANEL_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.08);padding:0.75em 1.4em;border-bottom:1px solid rgba(201,168,76,0.2);">
+      <span style="font-size:0.68em;letter-spacing:0.18em;color:#C9A84C;text-transform:uppercase;font-weight:700;">The DECODE Framework</span>
+    </div>
+    <div style="padding:0.25em 0;">
+      <div style="display:flex;align-items:baseline;padding:0.75em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:1.35em;font-weight:800;color:#C9A84C;letter-spacing:0.04em;min-width:1.6em;line-height:1;">D</span>
+        <div>
+          <span style="font-size:0.78em;font-weight:700;color:#e8dfc8;letter-spacing:0.08em;text-transform:uppercase;">Detect</span>
+          <span style="font-size:0.78em;color:#7a8ba0;margin-left:0.6em;">Observe before acting. Establish baseline first.</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:baseline;padding:0.75em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.015);">
+        <span style="font-size:1.35em;font-weight:800;color:#C9A84C;letter-spacing:0.04em;min-width:1.6em;line-height:1;">E</span>
+        <div>
+          <span style="font-size:0.78em;font-weight:700;color:#e8dfc8;letter-spacing:0.08em;text-transform:uppercase;">Engage</span>
+          <span style="font-size:0.78em;color:#7a8ba0;margin-left:0.6em;">Position as peer, not performer.</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:baseline;padding:0.75em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:1.35em;font-weight:800;color:#C9A84C;letter-spacing:0.04em;min-width:1.6em;line-height:1;">C</span>
+        <div>
+          <span style="font-size:0.78em;font-weight:700;color:#e8dfc8;letter-spacing:0.08em;text-transform:uppercase;">Calibrate</span>
+          <span style="font-size:0.78em;color:#7a8ba0;margin-left:0.6em;">Match pace and communication style.</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:baseline;padding:0.75em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.015);">
+        <span style="font-size:1.35em;font-weight:800;color:#C9A84C;letter-spacing:0.04em;min-width:1.6em;line-height:1;">O</span>
+        <div>
+          <span style="font-size:0.78em;font-weight:700;color:#e8dfc8;letter-spacing:0.08em;text-transform:uppercase;">Observe</span>
+          <span style="font-size:0.78em;color:#7a8ba0;margin-left:0.6em;">Watch for hesitation, retreat, and evaluation signals.</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:baseline;padding:0.75em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:1.35em;font-weight:800;color:#C9A84C;letter-spacing:0.04em;min-width:1.6em;line-height:1;">D</span>
+        <div>
+          <span style="font-size:0.78em;font-weight:700;color:#e8dfc8;letter-spacing:0.08em;text-transform:uppercase;">Decode</span>
+          <span style="font-size:0.78em;color:#7a8ba0;margin-left:0.6em;">Identify the real response beneath the surface behavior.</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:baseline;padding:0.75em 1.4em;background:rgba(255,255,255,0.015);">
+        <span style="font-size:1.35em;font-weight:800;color:#C9A84C;letter-spacing:0.04em;min-width:1.6em;line-height:1;">E</span>
+        <div>
+          <span style="font-size:0.78em;font-weight:700;color:#e8dfc8;letter-spacing:0.08em;text-transform:uppercase;">Elevate</span>
+          <span style="font-size:0.78em;color:#7a8ba0;margin-left:0.6em;">Guide the experience to its natural conclusion.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+
 # ── Ch10: Performance Read Panel visuals ─────────────────────────────────────
 
 # Five Things Panel — 3+2 SVG layout for readable card widths
 FIVE_THINGS_PANEL_HTML = '''
 <div style="margin:2em 0 2.5em;page-break-inside:avoid;">
-<svg viewBox="0 0 900 530" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:4px;overflow:hidden;">
-  <rect width="900" height="530" fill="#0d1117"/>
-  <rect x="0" y="0" width="900" height="44" fill="#0a0e14"/>
-  <line x1="0" y1="44" x2="900" y2="44" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
-  <text x="450" y="18" text-anchor="middle" fill="white" font-size="13" font-family="Georgia,serif" letter-spacing="5" font-weight="bold">THE FIVE THINGS YOU'RE ALWAYS READING</text>
-  <text x="450" y="35" text-anchor="middle" fill="#C9A84C" font-size="10" font-family="Georgia,serif" font-style="italic">Every signal maps to one of these five questions. Answer them and you know the room.</text>
+<svg viewBox="0 0 900 610" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:4px;overflow:hidden;">
+  <rect width="900" height="610" fill="#0d1117"/>
+  <rect x="0" y="0" width="900" height="48" fill="#0a0e14"/>
+  <line x1="0" y1="48" x2="900" y2="48" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  <text x="450" y="20" text-anchor="middle" fill="white" font-size="17" font-family="Georgia,serif" letter-spacing="5" font-weight="bold">THE FIVE THINGS YOU'RE ALWAYS READING</text>
+  <text x="450" y="39" text-anchor="middle" fill="#C9A84C" font-size="13" font-family="Georgia,serif" font-style="italic">Every signal maps to one of these five questions. Answer them and you know the room.</text>
 
   <!-- ROW 1: Cards 1, 2, 3 — width 282 each -->
 
   <!-- Card 1 -->
-  <rect x="10" y="56" width="282" height="210" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
-  <rect x="10" y="56" width="282" height="5" rx="3" fill="#C9A84C"/>
-  <text x="40" y="86" fill="#C9A84C" font-size="32" font-family="Georgia,serif" font-weight="bold" opacity="0.18">1</text>
-  <text x="151" y="88" text-anchor="middle" fill="#C9A84C" font-size="11" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">DID IT LAND?</text>
-  <line x1="26" y1="98" x2="276" y2="98" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="151" y="116" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">Are they still with you, or did</text>
-  <text x="151" y="130" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">the last moment miss its mark?</text>
-  <line x1="26" y1="144" x2="276" y2="144" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="151" y="160" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
-  <text x="151" y="176" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Eye contact shift</text>
-  <text x="151" y="191" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Blink rate change</text>
-  <text x="151" y="206" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Postural lean</text>
-  <text x="151" y="221" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Breath pattern</text>
+  <rect x="10" y="60" width="282" height="248" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="10" y="60" width="282" height="5" rx="3" fill="#C9A84C"/>
+  <text x="40" y="96" fill="#C9A84C" font-size="42" font-family="Georgia,serif" font-weight="bold" opacity="0.18">1</text>
+  <text x="151" y="98" text-anchor="middle" fill="#C9A84C" font-size="14" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">DID IT LAND?</text>
+  <line x1="26" y1="110" x2="276" y2="110" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="151" y="130" text-anchor="middle" fill="#7a8ba8" font-size="13" font-family="Georgia,serif">Are they still with you, or did</text>
+  <text x="151" y="148" text-anchor="middle" fill="#7a8ba8" font-size="13" font-family="Georgia,serif">the last moment miss its mark?</text>
+  <line x1="26" y1="163" x2="276" y2="163" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="151" y="181" text-anchor="middle" fill="#4a5e7a" font-size="11" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="151" y="200" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Eye contact shift</text>
+  <text x="151" y="218" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Blink rate change</text>
+  <text x="151" y="236" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Postural lean</text>
+  <text x="151" y="254" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Breath pattern</text>
 
   <!-- Card 2 -->
-  <rect x="308" y="56" width="282" height="210" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
-  <rect x="308" y="56" width="282" height="5" rx="3" fill="#1A8FA8"/>
-  <text x="338" y="86" fill="#1A8FA8" font-size="32" font-family="Georgia,serif" font-weight="bold" opacity="0.18">2</text>
-  <text x="449" y="88" text-anchor="middle" fill="#1A8FA8" font-size="11" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">CAN THEY BE LED?</text>
-  <line x1="324" y1="98" x2="574" y2="98" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="449" y="116" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">Are they following your pace,</text>
-  <text x="449" y="130" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">or running their own script?</text>
-  <line x1="324" y1="144" x2="574" y2="144" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="449" y="160" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
-  <text x="449" y="176" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Mirroring your pace</text>
-  <text x="449" y="191" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Head nodding</text>
-  <text x="449" y="206" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Open body toward you</text>
-  <text x="449" y="221" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Silence as compliance</text>
+  <rect x="308" y="60" width="282" height="248" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="308" y="60" width="282" height="5" rx="3" fill="#1A8FA8"/>
+  <text x="338" y="96" fill="#1A8FA8" font-size="42" font-family="Georgia,serif" font-weight="bold" opacity="0.18">2</text>
+  <text x="449" y="98" text-anchor="middle" fill="#1A8FA8" font-size="14" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">CAN THEY BE LED?</text>
+  <line x1="324" y1="110" x2="574" y2="110" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="449" y="130" text-anchor="middle" fill="#7a8ba8" font-size="13" font-family="Georgia,serif">Are they following your pace,</text>
+  <text x="449" y="148" text-anchor="middle" fill="#7a8ba8" font-size="13" font-family="Georgia,serif">or running their own script?</text>
+  <line x1="324" y1="163" x2="574" y2="163" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="449" y="181" text-anchor="middle" fill="#4a5e7a" font-size="11" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="449" y="200" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Mirroring your pace</text>
+  <text x="449" y="218" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Head nodding</text>
+  <text x="449" y="236" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Open body toward you</text>
+  <text x="449" y="254" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Silence as compliance</text>
 
   <!-- Card 3 -->
-  <rect x="606" y="56" width="284" height="210" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
-  <rect x="606" y="56" width="284" height="5" rx="3" fill="#A83030"/>
-  <text x="636" y="86" fill="#A83030" font-size="32" font-family="Georgia,serif" font-weight="bold" opacity="0.18">3</text>
-  <text x="748" y="88" text-anchor="middle" fill="#A83030" font-size="11" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">PUSHING BACK?</text>
-  <line x1="622" y1="98" x2="874" y2="98" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="748" y="116" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">Is there resistance — visible</text>
-  <text x="748" y="130" text-anchor="middle" fill="#7a8ba8" font-size="10" font-family="Georgia,serif">or just below the surface?</text>
-  <line x1="622" y1="144" x2="874" y2="144" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="748" y="160" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
-  <text x="748" y="176" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Lean back + arms cross</text>
-  <text x="748" y="191" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Smirk at wrong moment</text>
-  <text x="748" y="206" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Breaking eye contact</text>
-  <text x="748" y="221" text-anchor="middle" fill="#c0cce0" font-size="10" font-family="Georgia,serif">Whisper to neighbor</text>
+  <rect x="606" y="60" width="284" height="248" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="606" y="60" width="284" height="5" rx="3" fill="#A83030"/>
+  <text x="636" y="96" fill="#A83030" font-size="42" font-family="Georgia,serif" font-weight="bold" opacity="0.18">3</text>
+  <text x="748" y="98" text-anchor="middle" fill="#A83030" font-size="14" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">PUSHING BACK?</text>
+  <line x1="622" y1="110" x2="874" y2="110" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="748" y="130" text-anchor="middle" fill="#7a8ba8" font-size="13" font-family="Georgia,serif">Is there resistance — visible</text>
+  <text x="748" y="148" text-anchor="middle" fill="#7a8ba8" font-size="13" font-family="Georgia,serif">or just below the surface?</text>
+  <line x1="622" y1="163" x2="874" y2="163" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="748" y="181" text-anchor="middle" fill="#4a5e7a" font-size="11" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="748" y="200" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Lean back + arms cross</text>
+  <text x="748" y="218" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Smirk at wrong moment</text>
+  <text x="748" y="236" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Breaking eye contact</text>
+  <text x="748" y="254" text-anchor="middle" fill="#c0cce0" font-size="13" font-family="Georgia,serif">Whisper to neighbor</text>
 
   <!-- ROW 2: Cards 4, 5 — width 435 each -->
 
   <!-- Card 4 -->
-  <rect x="10" y="278" width="435" height="238" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
-  <rect x="10" y="278" width="435" height="5" rx="3" fill="#6B52A0"/>
-  <text x="42" y="314" fill="#6B52A0" font-size="40" font-family="Georgia,serif" font-weight="bold" opacity="0.15">4</text>
-  <text x="228" y="310" text-anchor="middle" fill="#6B52A0" font-size="12" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">ARE THEY COMFORTABLE?</text>
-  <line x1="26" y1="322" x2="429" y2="322" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="228" y="342" text-anchor="middle" fill="#7a8ba8" font-size="10.5" font-family="Georgia,serif">Is this person safe enough to go deeper, or do they need space?</text>
-  <line x1="26" y1="356" x2="429" y2="356" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="228" y="374" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
-  <text x="228" y="392" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Relaxed hands and face · Breathing depth normal</text>
-  <text x="228" y="410" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Comfortable conversational distance · Unprompted smiling</text>
+  <rect x="10" y="320" width="435" height="270" rx="3" fill="#131920" stroke="#1c2535" stroke-width="1"/>
+  <rect x="10" y="320" width="435" height="5" rx="3" fill="#6B52A0"/>
+  <text x="42" y="360" fill="#6B52A0" font-size="52" font-family="Georgia,serif" font-weight="bold" opacity="0.15">4</text>
+  <text x="228" y="356" text-anchor="middle" fill="#6B52A0" font-size="15" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">ARE THEY COMFORTABLE?</text>
+  <line x1="26" y1="370" x2="429" y2="370" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="228" y="393" text-anchor="middle" fill="#7a8ba8" font-size="13.5" font-family="Georgia,serif">Is this person safe enough to go deeper, or do they need space?</text>
+  <line x1="26" y1="410" x2="429" y2="410" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="228" y="430" text-anchor="middle" fill="#4a5e7a" font-size="11" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="228" y="452" text-anchor="middle" fill="#c0cce0" font-size="13.5" font-family="Georgia,serif">Relaxed hands and face · Breathing depth normal</text>
+  <text x="228" y="474" text-anchor="middle" fill="#c0cce0" font-size="13.5" font-family="Georgia,serif">Comfortable conversational distance · Unprompted smiling</text>
 
   <!-- Card 5 -->
-  <rect x="455" y="278" width="435" height="238" rx="3" fill="#131920" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
-  <rect x="455" y="278" width="435" height="5" rx="3" fill="#C9A84C"/>
-  <text x="487" y="314" fill="#C9A84C" font-size="40" font-family="Georgia,serif" font-weight="bold" opacity="0.15">5</text>
-  <text x="672" y="310" text-anchor="middle" fill="#C9A84C" font-size="12" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">IS THE ROOM HOLDING?</text>
-  <line x1="471" y1="322" x2="874" y2="322" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="672" y="342" text-anchor="middle" fill="#7a8ba8" font-size="10.5" font-family="Georgia,serif">Is the collective energy building, or beginning to fracture?</text>
-  <line x1="471" y1="356" x2="874" y2="356" stroke="#1c2535" stroke-width="0.7"/>
-  <text x="672" y="374" text-anchor="middle" fill="#4a5e7a" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
-  <text x="672" y="392" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Room-wide stillness · Collective blink slowing</text>
-  <text x="672" y="410" text-anchor="middle" fill="#c0cce0" font-size="10.5" font-family="Georgia,serif">Nobody reaching for phone · Shared forward lean</text>
-  <rect x="582" y="490" width="180" height="18" rx="9" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="0.7"/>
-  <text x="672" y="502" text-anchor="middle" fill="#C9A84C" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">THE MASTER READ</text>
+  <rect x="455" y="320" width="435" height="270" rx="3" fill="#131920" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
+  <rect x="455" y="320" width="435" height="5" rx="3" fill="#C9A84C"/>
+  <text x="487" y="360" fill="#C9A84C" font-size="52" font-family="Georgia,serif" font-weight="bold" opacity="0.15">5</text>
+  <text x="672" y="356" text-anchor="middle" fill="#C9A84C" font-size="15" font-family="Georgia,serif" letter-spacing="2" font-weight="bold">IS THE ROOM HOLDING?</text>
+  <line x1="471" y1="370" x2="874" y2="370" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="672" y="393" text-anchor="middle" fill="#7a8ba8" font-size="13.5" font-family="Georgia,serif">Is the collective energy building, or beginning to fracture?</text>
+  <line x1="471" y1="410" x2="874" y2="410" stroke="#1c2535" stroke-width="0.7"/>
+  <text x="672" y="430" text-anchor="middle" fill="#4a5e7a" font-size="11" font-family="Georgia,serif" letter-spacing="1.5">LOOK FOR</text>
+  <text x="672" y="452" text-anchor="middle" fill="#c0cce0" font-size="13.5" font-family="Georgia,serif">Room-wide stillness · Collective blink slowing</text>
+  <text x="672" y="474" text-anchor="middle" fill="#c0cce0" font-size="13.5" font-family="Georgia,serif">Nobody reaching for phone · Shared forward lean</text>
+  <rect x="582" y="532" width="180" height="22" rx="11" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="0.7"/>
+  <text x="672" y="547" text-anchor="middle" fill="#C9A84C" font-size="11" font-family="Georgia,serif" letter-spacing="1.5">THE MASTER READ</text>
 </svg>
 </div>
 '''
@@ -1220,8 +1301,678 @@ CREDIBILITY_SEQUENCE_HTML = '''
 '''
 
 
+# ── Ch43/44: Sitcom Constellation table ─────────────────────────────────────
+SITCOM_TABLE_HTML = '''
+<div style="margin:2em 0 2.5em;page-break-inside:avoid;overflow-x:auto;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);padding:0;overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.08);padding:0.8em 1.4em;border-bottom:1px solid rgba(201,168,76,0.2);">
+      <div style="font-size:0.7em;letter-spacing:0.15em;color:#C9A84C;text-transform:uppercase;font-weight:700;">The Sitcom Constellation — Three Splits, Eight Outcomes</div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:0.82em;">
+      <thead>
+        <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+          <th style="padding:0.65em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">SHOW</th>
+          <th style="padding:0.65em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">TEMPERATURE</th>
+          <th style="padding:0.65em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">SOCIAL WORLD</th>
+          <th style="padding:0.65em 1em;text-align:left;color:#C9A84C;font-weight:700;letter-spacing:0.08em;font-size:0.85em;">TEXTURE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">Cheers</td>
+          <td style="padding:0.75em 1em;"><span style="color:#4a9d8f;font-size:0.85em;font-weight:600;">Warm</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Public</td>
+          <td style="padding:0.75em 1em;color:#8a9ab8;font-style:italic;">Classic</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">Friends</td>
+          <td style="padding:0.75em 1em;"><span style="color:#4a9d8f;font-size:0.85em;font-weight:600;">Warm</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Public</td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Modern</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">The Golden Girls</td>
+          <td style="padding:0.75em 1em;"><span style="color:#4a9d8f;font-size:0.85em;font-weight:600;">Warm</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Domestic</td>
+          <td style="padding:0.75em 1em;color:#8a9ab8;font-style:italic;">Classic</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">Modern Family</td>
+          <td style="padding:0.75em 1em;"><span style="color:#4a9d8f;font-size:0.85em;font-weight:600;">Warm</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Domestic</td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Modern</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">Seinfeld</td>
+          <td style="padding:0.75em 1em;"><span style="color:#9a5050;font-size:0.85em;font-weight:600;">Sharp</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Public</td>
+          <td style="padding:0.75em 1em;color:#8a9ab8;font-style:italic;">Classic</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">The Office</td>
+          <td style="padding:0.75em 1em;"><span style="color:#9a5050;font-size:0.85em;font-weight:600;">Sharp</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Public</td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Modern</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">I Love Lucy</td>
+          <td style="padding:0.75em 1em;"><span style="color:#9a5050;font-size:0.85em;font-weight:600;">Sharp</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Domestic</td>
+          <td style="padding:0.75em 1em;color:#8a9ab8;font-style:italic;">Classic</td>
+        </tr>
+        <tr>
+          <td style="padding:0.75em 1em;color:#e8dfc8;font-weight:600;">The Big Bang Theory</td>
+          <td style="padding:0.75em 1em;"><span style="color:#9a5050;font-size:0.85em;font-weight:600;">Sharp</span></td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Domestic</td>
+          <td style="padding:0.75em 1em;color:#c8d4e0;">Modern</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="padding:0.6em 1.4em 0.75em;border-top:1px solid rgba(201,168,76,0.1);">
+      <span style="font-size:0.72em;color:#4a5e7a;font-style:italic;">Three splits. Eight outcomes. The participant never hears them as categories. They experience them as impressions.</span>
+    </div>
+  </div>
+</div>
+'''
+
+
+# ── Ch18: Diagnostic reference panel (ten questions) ─────────────────────────
+CH18_DIAGNOSTIC_PANEL_HTML = '''
+<div style="margin:1.8em 0 2.2em;page-break-inside:avoid;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.07);padding:0.75em 1.4em;border-bottom:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;gap:.7em;">
+      <span style="font-size:0.63em;letter-spacing:0.18em;color:#C9A84C;text-transform:uppercase;font-weight:700;">Run against every routine — ten diagnostic questions</span>
+    </div>
+    <div style="padding:.1em 0 .3em;">
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">01</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does the revelation exceed what the audience saw you receive?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If no, the line from inputs to output is the method. Find where the output exceeds the input.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,.015);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">02</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does this have a premise the audience can believe in?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If no, the audience defaults to "trick." Build the home before the method lives in it.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">03</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does the participant feel free throughout?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If no, the audience is watching a procedure. Review every instruction — make it feel like conversation.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,.015);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">04</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does the audience know when certainty arrived?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If yes, they know where the method is. Bury the acquisition deeper in transition or time.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">05</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Is the thought meaningful, or only procedural?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If procedural, the revelation will be correct and forgettable. Push for emotional weight.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,.015);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">06</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Can this survive retelling?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If no, the effect dies in the room. Design for the story the audience tells tomorrow.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">07</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does the post-reveal moment strengthen the impossibility?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If it weakens, you are overproving or reacting to your own hit. Move on before the audience opens it.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,.015);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">08</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does this fit the performer's character?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If not, the method is floating. The audience feels "something off" before they can name why.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">09</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does this leave the audience with a decoy explanation?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">If not, they find the real one. Plant something true but insufficient. Give them pride in the wrong theory.</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;padding-top:.1em;min-width:1.6em;">10</span>
+        <div><div style="font-size:.84em;font-weight:600;color:#e2e8f0;line-height:1.4;">Does the method disappear inside the experience — or the experience inside the method?</div><div style="font-size:.76em;color:rgba(180,185,210,.65);line-height:1.4;margin-top:.2em;">This governs everything else. The method is in service of the experience. Always. When that inverts, you are a technician.</div></div>
+      </div>
+    </div>
+    <div style="padding:.6em 1.4em .75em;border-top:1px solid rgba(201,168,76,0.1);">
+      <span style="font-size:0.7em;color:#4a5e7a;font-style:italic;">When a question reveals a gap, the gap tells you which section to return to. The diagnostic is the index.</span>
+    </div>
+  </div>
+</div>
+'''
+
+# ── Ch18: IF YOU REMEMBER NOTHING ELSE capstone ──────────────────────────────
+CH18_IFYRE_PANEL_HTML = '''
+<div class="concept-box" style="margin:1.6em 0 1.2em;">
+  <div class="concept-label">If You Remember Nothing Else</div>
+  <div class="concept-body">
+    <p><strong>Propless mentalism fails for three reasons:</strong> the audience hears you working, can trace a line from inputs to output, or watches you think. Every principle in this chapter addresses one of those three failures.</p>
+    <p><strong>The premise is not the explanation.</strong> It is the frame that makes explanation unnecessary. Give the audience something to believe before you ask them to witness something they cannot explain.</p>
+    <p><strong>Certainty arrives before the audience knows you are looking for it.</strong> The earlier the acquisition sits in the timeline, the more invisible it becomes. The decisive moment was buried inside something that did not look like performance.</p>
+    <p><strong>The revelation must exceed the question.</strong> If you name the word, you answered a question. If you describe the life that word opened inside them, you did something the audience cannot file under any category they already own.</p>
+  </div>
+</div>
+'''
+
+# ── Ch19: IF YOU REMEMBER NOTHING ELSE capstone ──────────────────────────────
+CH19_IFYRE_PANEL_HTML = '''
+<div class="concept-box" style="margin:1.6em 0 1.2em;">
+  <div class="concept-label">If You Remember Nothing Else</div>
+  <div class="concept-body">
+    <p><strong>The thought is not a word.</strong> It is an experience that has a word attached to it. Design your extraction around the experience, not the label.</p>
+    <p><strong>Obtain information in the form the thought is naturally experienced.</strong> Enter through image, scale, movement, temperature, and emotional register. Letters are the last room, not the door.</p>
+    <p><strong>The visible method should often happen after the real method is over.</strong> Get the information early inside something that looks like preparation or ritual, then stage a visible second phase that absorbs all suspicion. The audience assigns causality to the second phase. The first disappears.</p>
+    <p><strong>Only reveal when it is inevitable.</strong> The C.E.R.T.A.I.N. framework ends in a declaration, not a guess. If you are not certain, do not name. Describe another quality. Add another layer.</p>
+    <p><strong>Design for the worst participant.</strong> When every prompt produces structural value from either a yes or a no, you have a real system. Until then, you have a theory.</p>
+  </div>
+  <p class="concept-highlight">Enter through the form the thought is already living in. Work your way out to the word from there.</p>
+</div>
+'''
+
+# ── Ch45: Psychological Forces — categories placeholder ──────────────────────
+PSYFORCE_CATEGORIES_TBC_HTML = '''
+
+<div style="margin:1.6em 0 2em;">
+  <div style="margin-bottom:1.2em;"><p style="font-size:.82em;color:#c0ccd8;line-height:1.5;">The examples below are not designed to be creative or fooling. They are here to give you a clear reference so you can understand the architecture of each category.</p></div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">01</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Dominant Choice</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Prompts where one answer dominates the category so heavily that most people arrive there immediately.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Fast associative retrieval. The brain favors the lowest-effort, highest-familiarity memory trace rather than exhaustively searching all options.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Very high hit rate. Easy to understand. Good for demonstrating the principle.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Often too transparent. The spectator may feel the answer was obvious rather than secretly influenced.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">As a teaching example, quick opener, or stepping stone into a larger effect rather than the final revelation itself.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What is the most culturally dominant answer in this category? What would a child know first? What answer appears most in media, repetition, and memory? Keep the wording clean and fast.</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Name a famous reindeer.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Rudolph</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">02</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Statistical</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Common answers that are strong statistically, but not always transparently obvious.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">A tug-of-war between fast intuitive retrieval and light self-monitoring. The participant edits slightly, but not enough to escape the cluster.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Better balance of hit rate and mystery. Stronger than Dominant Choice forces.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Can vary by culture, age, and wording. Needs testing.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">For direct predictions, casual mindreading demonstrations, or one-ahead style pieces.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What answer feels random but is actually common? What avoids the obvious extremes? Remove the extremes and let them settle into the “quiet default” zone.</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Think of a number from 1 to 10. Don’t make it too obvious.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;7</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">03</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Scene-Completion</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">You put the person inside a familiar mental scene and let them fill in the missing detail.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Schema activation. Familiar scene templates help the brain predict and complete missing elements quickly. The mind prefers completion over generation.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Feel much more psychological and personal. Less obviously mechanical.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Need careful wording. Too broad a scene can create multiple common answers.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">Close-up and intimate mentalism, book tests, drawing duplications, or anything memory-themed.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What object is expected but not guaranteed in this scene? What item is noticed most when missing? What captures the function of the moment? Use a familiar place, a specific moment in time, and a missing functional object.</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Picture a junk drawer in a kitchen. Think of the one object people always seem to need, but never when they’re actually looking for it.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Scissors</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">04</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Contextual</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Framing, emotion, or story narrows the answer until one choice feels natural.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Concept priming through emotional and narrative context. Once a frame is active, compatible answers become easier to retrieve. People choose inside the frame, not outside it.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Very deceptive. Hides the method well. Feels organic and genuinely psychological.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Requires stronger scripting and delivery. Harder to improvise cleanly.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">Longer routines, stage pieces, or when you want the force to feel like genuine thought-reading rather than coincidence.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What answer best fits this mood? What answer feels cinematic inside this frame? What is emotionally right, not logically correct? Build with a feeling, a qualifier, and a vivid tone.</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Think of a city that feels expensive and impressive. Not just big…”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Dubai (backup: Tokyo)</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">05</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Anchoring</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">An earlier word, image, or idea quietly biases a later choice.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Associative priming. Related concepts remain more available in memory after activation. Earlier ideas stay mentally warm when the later choice arrives.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Elegant and invisible when done well. Can happen far before the reveal moment.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Subtle enough that results can be inconsistent without good supporting structure.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">As an early seed in a routine, or layered with another force to strengthen the outcome. Best when combined, not used alone.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What words or images connect naturally to your target? How can you plant them organically? How far before the force can you seed the answer?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">Talk casually about celebrities, fame, constellations, wishes, Hollywood, and the night sky. Then ask: “Think of a simple shape or symbol you could easily draw.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Star</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">06</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Exclusion</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Establish a category, remove the most obvious options, and let the remaining target feel self-chosen.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Local search after pruning. Once options are excluded, the brain works from remaining nearby candidates rather than rebuilding the full answer-space from scratch.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Can be very strong. Feels impossible when it lands. Useful for narrowing broad categories without sounding procedural.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">If exclusions are too specific, the method becomes visible. If handled clumsily, it feels like steering rather than mind-reading.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">When you want to guide a thought inside a known category while keeping the choice feeling free. Works especially well layered with anchoring or earlier framing.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What are the top 2–3 most obvious answers in this category? If you remove them, what attractive remainder is left? Can you make the exclusions sound casual rather than procedural?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Picture a simple shape. Not a square or a rectangle.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Triangle</span>
+    </div>
+    <div style="font-size:.87em;color:#c8b49a;margin:.4em 0 0;line-height:1.5;padding:.35em .65em;border-left:2px solid rgba(154,120,80,.3);">Note: Simply mentioning the alternatives tends to suppress them. The exclusion does not need to be forceful to be effective.</div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">07</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Phonetic</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Forces based on the sound, rhythm, or feel of words.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Cross-links between sound processing, meaning, and imagery. The word does not just mean something—it feels like something. Similar sounds and word-texture can bias retrieval.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Very unusual. Can feel deeply psychological and non-obvious when constructed well.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Harder to script. More language-dependent. Can fail if the wording is not precise.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">When you want to force shapes, invented words, textures, or qualities rather than obvious named objects.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What target word has helpful sound echoes? What nearby words can smuggle those sounds into natural speech? What does the target feel like in the mouth or ear?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Think of a small object. Something simple. Something people bring with them, wear, hold, or keep.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Ring</span>
+    </div>
+    <div style="font-size:.87em;color:#b8c8d4;font-style:italic;margin:.4em 0 0;line-height:1.5;padding:.35em .65em;border-left:2px solid rgba(201,168,76,.2);">Why it works: “Bring,” “thing,” “keep,” and “wear” share phonetic echoes with ring without naming it directly.</div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">08</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Sensory</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Forces through smell, touch, temperature, sound, or physical memory.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Sensory cues—especially smell—connect strongly to autobiographical memory and emotion. Sensory memory often feels more private, vivid, and immediate than verbal category search.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">One of the strongest theatrical categories. Feels private, emotional, and real.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Can split into a few common answers. Needs careful exclusions to narrow the cluster.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">Intimate work, emotional routines, memory pieces, or material that should feel less like a trick and more like a genuine reading.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What sensory memory is early, vivid, and common? What cue is simple rather than complex? What can you exclude to remove diffuse or competing answers?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Think of a smell from childhood. Not food, not perfume. Something simple that takes you back immediately.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Crayons</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">09</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Social-Normalcy</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">These exploit the tendency to choose the safe, acceptable, non-weird answer.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Choice shaped by self-monitoring and social evaluation. People filter their answer through what feels normal to say aloud in front of others.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Often highly reliable in live performance. Spectators rarely realize social pressure is shaping their choice.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Can feel ordinary if overused. The safest answer is sometimes also the dullest.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">When asking about preferences, drinks, pets, habits, or anything where people want to seem like a reasonable, normal person.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What answer sounds socially safe in this room? What avoids embarrassment or over-literalness? What sounds like what a “normal person” would say aloud?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Think of a drink people have every day.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Coffee</span>
+    </div>
+    <div style="font-size:.87em;color:#b8c8d4;font-style:italic;margin:.4em 0 0;line-height:1.5;padding:.35em .65em;border-left:2px solid rgba(201,168,76,.2);">Why it works: Water is technically correct but often feels too literal or socially flat. Coffee sounds more human and more performatively normal.</div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">10</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Contrast / Opposites</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">You ask for the opposite of something, and they land on a dominant contrast rather than searching broadly.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">The original concept stays active and shapes the search. The “opposite” is found nearby, not globally. People do not search the full universe of opposites.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Feels broad, but is often narrower than it sounds. Good for more disguised forcing.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Can produce multiple valid opposites unless the setup is tight.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">When you want a force to feel conceptually open, but still converge on a predictable answer.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What is the most prototypical opposite of this idea? Can you constrain the kind of opposite they choose? How can you stop them from going abstract?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Think of something soft. Now think of something the exact opposite.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Rock or metal (depending on framing)</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">11</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Psychological Framing</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">The answer is shaped by order, pause, emphasis, gesture, salience, or how the idea is presented.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Attentional weighting. The brain privileges what is most salient or easiest to process. The answer that is most emphasized, best placed, or easiest to picture often wins.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Very powerful when combined with other categories. Often entirely invisible.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Rarely strong enough by itself. Depends heavily on performance skill and live delivery.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">As a hidden support layer underneath another force, not as the primary mechanism.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">What can you place for maximum attention? What is easiest to picture? What word sounds strongest when spoken aloud?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">“Focus on one of these words: Furmery, Redundant, Capcasian Hemisphere, or Triage.”</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Hemisphere</span>
+    </div>
+    <div style="font-size:.87em;color:#b8c8d4;font-style:italic;margin:.4em 0 0;line-height:1.5;padding:.35em .65em;border-left:2px solid rgba(201,168,76,.2);">Why it works: Second to last in the list, naturally emphasized in speech, and the easiest to picture of the four.</div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">12</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Timing and Compliance</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">Forces that depend on when the instruction lands and when the participant mentally commits.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Commitment inertia under time pressure. Once a person begins a response pattern, they usually continue it. The brain starts the action path before later instructions can reshape it.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Can be extremely deceptive. Useful in live, controlled interaction where you manage the pacing.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Timing must be precise. Harder to teach on paper than to perform in person.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">In a polished live performance, especially when you can control rhythm and interrupt thought flow before the participant settles on a deliberate choice.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">When does the participant begin deciding? Can you deliver a clarification after commitment starts? Can you use rhythm to create a predictable lag between instruction and action?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">When dealing cards onto a table, tell the spectator to say stop at any time. They will often stop 3 cards after the instruction—but you must already be dealing before giving the direction.</span>
+    </div>
+  </div>
+</div>
+<div style="margin:0 0 1.1em;border:1px solid rgba(201,168,76,0.13);border-radius:5px;overflow:hidden;break-inside:avoid;">
+  <div style="background:#0d1117;padding:.5em 1.1em .45em;border-bottom:1px solid rgba(201,168,76,0.13);display:flex;align-items:center;gap:.7em;">
+    <span style="font-size:.75em;color:rgba(201,168,76,.45);font-weight:700;min-width:1.5em;">13</span>
+    <span style="font-size:1.0em;font-weight:700;color:#e8dfc8;letter-spacing:.02em;">Piggyback</span>
+  </div>
+  <div style="background:#0d1117;padding:.6em 1.1em .7em;">
+    <p style="font-size:.95em;color:#d8e2ea;line-height:1.55;margin:.15em 0 .6em;">You start with one force, then convert that answer into another domain.</p>
+    <div style="font-size:.88em;line-height:1.5;margin:.15em 0 .55em;"><span style="color:#7a8a9a;font-weight:600;">How they work:&nbsp;</span><span style="color:#c8d4e0;">Associative chaining. Once the first answer is stabilized, later thoughts build naturally from it. The original force becomes less visible because attention has moved on.</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35em;margin:.4em 0 .55em;">
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(74,157,143,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Pros</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">Excellent for disguising the original force. Makes the final reveal seem much broader and more impossible.</div>
+      </div>
+      <div style="border-radius:3px;padding:.35em .65em;border:1px solid rgba(154,80,80,.18);">
+        <div style="font-size:.68em;letter-spacing:.1em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.2em;">Cons</div>
+        <div style="font-size:.87em;color:#ccd6e0;line-height:1.4;">More structure required. If the first force is weak, the whole chain suffers.</div>
+      </div>
+    </div>
+    <div style="font-size:.88em;margin:.3em 0 .38em;line-height:1.5;"><span style="color:#C9A84C;font-weight:600;">When to use:&nbsp;</span><span style="color:#c8d4e0;">For multi-phase routines, apparent mindreading, and effects that should grow in impossibility across multiple steps.</span></div>
+    <div style="font-size:.86em;margin:.22em 0 .42em;line-height:1.5;"><span style="color:#8a9aaa;font-weight:600;">How to construct:&nbsp;</span><span style="color:#b8c8d4;">If they think X, what naturally follows? Can you move from image to word, word to letter, object to place? Does the second step feel justified rather than forced?</span></div>
+    <div style="background:rgba(255,255,255,.03);border-left:2px solid rgba(201,168,76,.25);border-radius:0 3px 3px 0;padding:.42em .7em;margin:.42em 0 0;display:flex;align-items:baseline;gap:.55em;flex-wrap:wrap;">
+      <span style="font-size:.68em;letter-spacing:.1em;color:#7a8a9a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Example</span>
+      <span style="font-size:.92em;font-style:italic;color:#d8e2ea;">Force Paris, then ask them to think of the first letter of the country it is in.</span> <span style="font-size:.92em;color:#C9A84C;font-weight:600;">&rarr;&nbsp;Paris → France → F</span>
+    </div>
+  </div>
+</div>
+</div>
+
+'''
+
+
+# ── Ch45: Psychological Forces — strength level panel ────────────────────────
+PSYFORCE_STRENGTH_PANEL_HTML = '''
+<div style="margin:1.8em 0 2em;page-break-inside:avoid;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.07);padding:0.7em 1.4em;border-bottom:1px solid rgba(201,168,76,0.2);">
+      <span style="font-size:.63em;letter-spacing:.18em;color:#C9A84C;text-transform:uppercase;font-weight:700;">Force Strength — Three Levels</span>
+    </div>
+    <div style="padding:.8em 0 .4em;">
+      <div style="padding:.8em 1.4em 1em;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <div style="display:flex;align-items:baseline;gap:.8em;margin-bottom:.4em;">
+          <span style="font-size:.63em;letter-spacing:.12em;color:#4a7a8a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Level 1</span>
+          <span style="font-size:.88em;font-weight:700;color:#c8d4e0;">Soft Influence</span>
+        </div>
+        <div style="font-size:.8em;color:rgba(180,185,210,.75);margin-bottom:.35em;">Phonetic &nbsp;·&nbsp; Anchoring &nbsp;·&nbsp; Framing</div>
+        <div style="font-size:.77em;color:rgba(150,160,180,.6);">Used alone: weak &nbsp;&nbsp;|&nbsp;&nbsp; Used together: powerful</div>
+      </div>
+      <div style="padding:.8em 1.4em 1em;border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,.015);">
+        <div style="display:flex;align-items:baseline;gap:.8em;margin-bottom:.4em;">
+          <span style="font-size:.63em;letter-spacing:.12em;color:#7a7a4a;text-transform:uppercase;font-weight:700;flex-shrink:0;">Level 2</span>
+          <span style="font-size:.88em;font-weight:700;color:#c8d4e0;">Guided Choice</span>
+        </div>
+        <div style="font-size:.8em;color:rgba(180,185,210,.75);margin-bottom:.35em;">Exclusion &nbsp;·&nbsp; Contextual &nbsp;·&nbsp; Scene-completion</div>
+        <div style="font-size:.77em;color:rgba(150,160,180,.6);">Balanced and practical</div>
+      </div>
+      <div style="padding:.8em 1.4em 1em;">
+        <div style="display:flex;align-items:baseline;gap:.8em;margin-bottom:.4em;">
+          <span style="font-size:.63em;letter-spacing:.12em;color:#9a6a30;text-transform:uppercase;font-weight:700;flex-shrink:0;">Level 3</span>
+          <span style="font-size:.88em;font-weight:700;color:#c8d4e0;">Hard Bias</span>
+        </div>
+        <div style="font-size:.8em;color:rgba(180,185,210,.75);margin-bottom:.35em;">Dominant Choice &nbsp;·&nbsp; Statistical &nbsp;·&nbsp; Social-normalcy</div>
+        <div style="font-size:.77em;color:rgba(150,160,180,.6);">High hit rate &nbsp;&nbsp;|&nbsp;&nbsp; Higher risk of feeling obvious</div>
+      </div>
+    </div>
+    <div style="padding:.55em 1.4em .7em;border-top:1px solid rgba(201,168,76,0.1);">
+      <span style="font-size:.74em;color:#4a5e7a;font-style:italic;">The stronger the force, the more it risks feeling obvious. The weaker the force, the more it needs support.</span>
+    </div>
+  </div>
+</div>
+'''
+
+# ── Ch45: Psychological Forces — construction framework panel ─────────────────
+PSYFORCE_CONSTRUCT_PANEL_HTML = '''
+<div style="margin:1.8em 0 2em;page-break-inside:avoid;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.07);padding:0.7em 1.4em;border-bottom:1px solid rgba(201,168,76,0.2);">
+      <span style="font-size:.63em;letter-spacing:.18em;color:#C9A84C;text-transform:uppercase;font-weight:700;">Five Moving Parts of Every Psychological Force</span>
+    </div>
+    <div style="padding:.3em 0 .5em;">
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;min-width:1.6em;padding-top:.15em;">01</span>
+        <div><div style="font-size:.85em;font-weight:700;color:#e2e8f0;line-height:1.3;">Activation</div><div style="font-size:.76em;color:rgba(180,185,210,.65);margin-top:.2em;line-height:1.4;">What ideas are now mentally on the table?</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,.015);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;min-width:1.6em;padding-top:.15em;">02</span>
+        <div><div style="font-size:.85em;font-weight:700;color:#e2e8f0;line-height:1.3;">Restriction</div><div style="font-size:.76em;color:rgba(180,185,210,.65);margin-top:.2em;line-height:1.4;">What ideas feel less valid, less likely, or less attractive?</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;min-width:1.6em;padding-top:.15em;">03</span>
+        <div><div style="font-size:.85em;font-weight:700;color:#e2e8f0;line-height:1.3;">Fluency</div><div style="font-size:.76em;color:rgba(180,185,210,.65);margin-top:.2em;line-height:1.4;">Which answer is easiest to access?</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,.015);">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;min-width:1.6em;padding-top:.15em;">04</span>
+        <div><div style="font-size:.85em;font-weight:700;color:#e2e8f0;line-height:1.3;">Commitment</div><div style="font-size:.76em;color:rgba(180,185,210,.65);margin-top:.2em;line-height:1.4;">At what moment do they mentally lock in?</div></div>
+      </div>
+      <div style="display:flex;gap:1em;padding:.7em 1.4em;">
+        <span style="font-size:.68em;color:#C9A84C;font-weight:700;flex-shrink:0;min-width:1.6em;padding-top:.15em;">05</span>
+        <div><div style="font-size:.85em;font-weight:700;color:#e2e8f0;line-height:1.3;">Memory</div><div style="font-size:.76em;color:rgba(180,185,210,.65);margin-top:.2em;line-height:1.4;">How will they remember the freedom they had?</div></div>
+      </div>
+    </div>
+    <div style="padding:.55em 1.4em .7em;border-top:1px solid rgba(201,168,76,0.1);">
+      <span style="font-size:.72em;color:#4a5e7a;font-style:italic;">A force works when it reduces the search space, increases accessibility, and lets the answer feel self-generated.</span>
+    </div>
+  </div>
+</div>
+'''
+
+
+# ── Ch45: Psychological Forces — category map panel ──────────────────────────
+PSYFORCE_MAP_PANEL_HTML = '''
+<div style="margin:1.8em 0 2em;page-break-inside:avoid;">
+  <div style="background:#0d1117;border-radius:6px;border:1px solid rgba(201,168,76,0.25);overflow:hidden;">
+    <div style="background:rgba(201,168,76,0.07);padding:0.7em 1.4em;border-bottom:1px solid rgba(201,168,76,0.2);">
+      <span style="font-size:.63em;letter-spacing:.18em;color:#C9A84C;text-transform:uppercase;font-weight:700;">Force Category Reference Map</span>
+    </div>
+    <div style="padding:.7em 1.4em 1em;">
+      <div style="margin-bottom:1.1em;">
+        <div style="font-size:.63em;letter-spacing:.12em;color:#4a9d8f;text-transform:uppercase;font-weight:700;margin-bottom:.35em;">Best Raw Reliability</div>
+        <div style="font-size:.83em;color:#c8d4e0;">Dominant Choice &nbsp;·&nbsp; Statistical &nbsp;·&nbsp; Social-normalcy</div>
+      </div>
+      <div style="margin-bottom:1.1em;">
+        <div style="font-size:.63em;letter-spacing:.12em;color:#9a7a50;text-transform:uppercase;font-weight:700;margin-bottom:.35em;">Best Theatrical Strength</div>
+        <div style="font-size:.83em;color:#c8d4e0;">Scene &nbsp;·&nbsp; Contextual &nbsp;·&nbsp; Sensory</div>
+      </div>
+      <div style="margin-bottom:1.1em;">
+        <div style="font-size:.63em;letter-spacing:.12em;color:#5a6a8a;text-transform:uppercase;font-weight:700;margin-bottom:.35em;">Best Hidden Support</div>
+        <div style="font-size:.83em;color:#c8d4e0;">Anchoring &nbsp;·&nbsp; Framing &nbsp;·&nbsp; Timing &nbsp;·&nbsp; Piggyback</div>
+      </div>
+      <div>
+        <div style="font-size:.63em;letter-spacing:.12em;color:#9a5050;text-transform:uppercase;font-weight:700;margin-bottom:.35em;">Most Dangerous If Used Badly</div>
+        <div style="font-size:.83em;color:#c8d4e0;">Dominant &nbsp;·&nbsp; Exclusion &nbsp;·&nbsp; Opposites</div>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+
 # ── Ch7: 10-Second Scan visual ───────────────────────────────────────────────
 TEN_SECOND_SCAN_HTML = '''
+    '<div style="margin:2em 0;text-align:center;">'
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 680" '
+    'style="max-width:100%;height:auto;display:block;margin:0 auto;" '
+    'font-family="Georgia, Times New Roman, serif">'
+    '<defs><linearGradient id="paf-bg" x1="0" y1="0" x2="0" y2="1">'
+    '<stop offset="0%" stop-color="#0d1117"/>'
+    '<stop offset="100%" stop-color="#111820"/>'
+    '</linearGradient></defs>'
+    '<rect width="700" height="680" fill="url(#paf-bg)" rx="8"/>'
+    '<rect width="700" height="680" fill="none" stroke="#C9A84C" stroke-width="1" stroke-opacity=".2" rx="8"/>'
+    '<rect x="0" y="0" width="700" height="3" fill="#C9A84C" fill-opacity=".5" rx="2"/>'
+    '<text x="350" y="36" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="9" letter-spacing="3" fill="#C9A84C" fill-opacity=".7" font-weight="600">THE PERFORMANCE ARCHITECTURE FRAMEWORK</text>'
+    '<line x1="200" y1="47" x2="500" y2="47" stroke="#C9A84C" stroke-width=".5" stroke-opacity=".3"/>'
+    '<text x="350" y="64" text-anchor="middle" font-size="13" fill="#8a9aaa" font-style="italic">Four layers. Each required before the next is accessible.</text>'
+    '<rect x="40" y="80" width="620" height="120" rx="5" fill="#fff" fill-opacity=".028" stroke="#C9A84C" stroke-width=".8" stroke-opacity=".35"/>'
+    '<rect x="40" y="80" width="4" height="120" fill="#C9A84C" fill-opacity=".7" rx="2"/>'
+    '<text x="62" y="103" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#C9A84C" fill-opacity=".6" font-weight="700">LAYER 1</text>'
+    '<text x="62" y="122" font-size="15.5" fill="#e8dfc8" letter-spacing=".3">Observation Architecture</text>'
+    '<text x="62" y="141" font-size="12" fill="#8a9aaa" font-style="italic">Always active — does not stop when the show begins.</text>'
+    '<text x="62" y="159" font-size="12.5" fill="#7a8898">The 80-signal system · Six-Category radar · 10-Second Scan</text>'
+    '<text x="62" y="177" font-size="12.5" fill="#7a8898">Read continuously. Your reads at minute twenty should be better than at minute one.</text>'
+    '<line x1="350" y1="200" x2="350" y2="218" stroke="#C9A84C" stroke-width="1" stroke-opacity=".35" stroke-dasharray="3,3"/>'
+    '<polygon points="345,218 355,218 350,226" fill="#C9A84C" fill-opacity=".35"/>'
+    '<rect x="40" y="228" width="620" height="120" rx="5" fill="#fff" fill-opacity=".028" stroke="#4a7a9a" stroke-width=".8" stroke-opacity=".35"/>'
+    '<rect x="40" y="228" width="4" height="120" fill="#4a7a9a" fill-opacity=".7" rx="2"/>'
+    '<text x="62" y="251" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#4a9aaa" fill-opacity=".7" font-weight="700">LAYER 2</text>'
+    '<text x="62" y="270" font-size="15.5" fill="#e8dfc8" letter-spacing=".3">Environmental Architecture</text>'
+    '<text x="62" y="289" font-size="12" fill="#8a9aaa" font-style="italic">Set before the audience arrives. Cannot be changed mid-show.</text>'
+    '<text x="62" y="308" font-size="12.5" fill="#7a8898">Position · prop placement · sightlines · social cluster map</text>'
+    '<text x="62" y="326" font-size="12.5" fill="#7a8898">Who is sitting near whom. Which clusters will influence each other.</text>'
+    '<line x1="350" y1="348" x2="350" y2="366" stroke="#C9A84C" stroke-width="1" stroke-opacity=".35" stroke-dasharray="3,3"/>'
+    '<polygon points="345,366 355,366 350,374" fill="#C9A84C" fill-opacity=".35"/>'
+    '<rect x="40" y="376" width="620" height="120" rx="5" fill="#fff" fill-opacity=".028" stroke="#4a8a6a" stroke-width=".8" stroke-opacity=".35"/>'
+    '<rect x="40" y="376" width="4" height="120" fill="#4a9a7a" fill-opacity=".6" rx="2"/>'
+    '<text x="62" y="399" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#4a9a7a" fill-opacity=".8" font-weight="700">LAYER 3</text>'
+    '<text x="62" y="418" font-size="15.5" fill="#e8dfc8" letter-spacing=".3">Pre-Show Intelligence</text>'
+    '<text x="62" y="437" font-size="12" fill="#8a9aaa" font-style="italic">From real-time reading, not research. Formed before the first effect.</text>'
+    '<text x="62" y="456" font-size="12.5" fill="#7a8898">Behavioral profiles · social anchor · best volunteer per effect</text>'
+    '<text x="62" y="474" font-size="12.5" fill="#7a8898">Room energy state and what it implies about pacing.</text>'
+    '<line x1="350" y1="496" x2="350" y2="514" stroke="#C9A84C" stroke-width="1" stroke-opacity=".35" stroke-dasharray="3,3"/>'
+    '<polygon points="345,514 355,514 350,522" fill="#C9A84C" fill-opacity=".35"/>'
+    '<rect x="40" y="524" width="620" height="100" rx="5" fill="#fff" fill-opacity=".018" stroke="#6a6a7a" stroke-width=".8" stroke-opacity=".3"/>'
+    '<rect x="40" y="524" width="4" height="100" fill="#6a6a8a" fill-opacity=".5" rx="2"/>'
+    '<text x="62" y="547" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#8a8aaa" fill-opacity=".8" font-weight="700">LAYER 4</text>'
+    '<text x="62" y="566" font-size="15.5" fill="#c8c0b0" letter-spacing=".3">Structural Sequence</text>'
+    '<text x="62" y="585" font-size="12" fill="#7a8898" font-style="italic">The last layer — and the least important.</text>'
+    '<text x="62" y="604" font-size="12.5" fill="#6a7888">Effect order · pacing · callbacks · silence placement</text>'
+    '<line x1="60" y1="642" x2="640" y2="642" stroke="#C9A84C" stroke-width=".5" stroke-opacity=".2"/>'
+    '<text x="350" y="660" text-anchor="middle" font-size="11.5" fill="#6a7888" font-style="italic">When a show underperforms, the failure almost always lives in layers 1–3.</text>'
+    '</svg></div>'
+)
+
 <div style="margin:2.5rem 0 2rem;page-break-inside:avoid;">
 <svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:4px;overflow:hidden;">
   <defs>
@@ -1340,6 +2091,61 @@ TEN_SECOND_SCAN_HTML = '''
 </svg>
 </div>
 '''
+
+PERF_ARCH_FRAMEWORK_SVG_HTML = (
+    '<div style="margin:2em 0;text-align:center;">'
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 680"'
+    ' style="max-width:100%;height:auto;display:block;margin:0 auto;"'
+    ' font-family="Georgia, Times New Roman, serif">'
+    '<defs><linearGradient id="paf-bg" x1="0" y1="0" x2="0" y2="1">'
+    '<stop offset="0%" stop-color="#0d1117"/>'
+    '<stop offset="100%" stop-color="#111820"/>'
+    '</linearGradient></defs>'
+    '<rect width="700" height="680" fill="url(#paf-bg)" rx="8"/>'
+    '<rect width="700" height="680" fill="none" stroke="#C9A84C" stroke-width="1" stroke-opacity=".2" rx="8"/>'
+    '<rect x="0" y="0" width="700" height="3" fill="#C9A84C" fill-opacity=".5" rx="2"/>'
+    '<text x="350" y="36" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="9" letter-spacing="3" fill="#C9A84C" fill-opacity=".7" font-weight="600">THE PERFORMANCE ARCHITECTURE FRAMEWORK</text>'
+    '<line x1="200" y1="47" x2="500" y2="47" stroke="#C9A84C" stroke-width=".5" stroke-opacity=".3"/>'
+    '<text x="350" y="64" text-anchor="middle" font-size="13" fill="#8a9aaa" font-style="italic">Four layers. Each required before the next is accessible.</text>'
+    '<rect x="40" y="80" width="620" height="120" rx="5" fill="#fff" fill-opacity=".028" stroke="#C9A84C" stroke-width=".8" stroke-opacity=".35"/>'
+    '<rect x="40" y="80" width="4" height="120" fill="#C9A84C" fill-opacity=".7" rx="2"/>'
+    '<text x="62" y="103" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#C9A84C" fill-opacity=".6" font-weight="700">LAYER 1</text>'
+    '<text x="62" y="122" font-size="15.5" fill="#e8dfc8" letter-spacing=".3">Observation Architecture</text>'
+    '<text x="62" y="141" font-size="12" fill="#8a9aaa" font-style="italic">Always active \u2014 does not stop when the show begins.</text>'
+    '<text x="62" y="159" font-size="12.5" fill="#7a8898">The 80-signal system \u00b7 Six-Category radar \u00b7 10-Second Scan</text>'
+    '<text x="62" y="177" font-size="12.5" fill="#7a8898">Read continuously. Your reads at minute twenty should be better than at minute one.</text>'
+    '<line x1="350" y1="200" x2="350" y2="218" stroke="#C9A84C" stroke-width="1" stroke-opacity=".35" stroke-dasharray="3,3"/>'
+    '<polygon points="345,218 355,218 350,226" fill="#C9A84C" fill-opacity=".35"/>'
+    '<rect x="40" y="228" width="620" height="120" rx="5" fill="#fff" fill-opacity=".028" stroke="#4a7a9a" stroke-width=".8" stroke-opacity=".35"/>'
+    '<rect x="40" y="228" width="4" height="120" fill="#4a7a9a" fill-opacity=".7" rx="2"/>'
+    '<text x="62" y="251" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#4a9aaa" fill-opacity=".7" font-weight="700">LAYER 2</text>'
+    '<text x="62" y="270" font-size="15.5" fill="#e8dfc8" letter-spacing=".3">Environmental Architecture</text>'
+    '<text x="62" y="289" font-size="12" fill="#8a9aaa" font-style="italic">Set before the audience arrives. Cannot be changed mid-show.</text>'
+    '<text x="62" y="308" font-size="12.5" fill="#7a8898">Position \u00b7 prop placement \u00b7 sightlines \u00b7 social cluster map</text>'
+    '<text x="62" y="326" font-size="12.5" fill="#7a8898">Who is sitting near whom. Which clusters will influence each other.</text>'
+    '<line x1="350" y1="348" x2="350" y2="366" stroke="#C9A84C" stroke-width="1" stroke-opacity=".35" stroke-dasharray="3,3"/>'
+    '<polygon points="345,366 355,366 350,374" fill="#C9A84C" fill-opacity=".35"/>'
+    '<rect x="40" y="376" width="620" height="120" rx="5" fill="#fff" fill-opacity=".028" stroke="#4a8a6a" stroke-width=".8" stroke-opacity=".35"/>'
+    '<rect x="40" y="376" width="4" height="120" fill="#4a9a7a" fill-opacity=".6" rx="2"/>'
+    '<text x="62" y="399" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#4a9a7a" fill-opacity=".8" font-weight="700">LAYER 3</text>'
+    '<text x="62" y="418" font-size="15.5" fill="#e8dfc8" letter-spacing=".3">Pre-Show Intelligence</text>'
+    '<text x="62" y="437" font-size="12" fill="#8a9aaa" font-style="italic">From real-time reading, not research. Formed before the first effect.</text>'
+    '<text x="62" y="456" font-size="12.5" fill="#7a8898">Behavioral profiles \u00b7 social anchor \u00b7 best volunteer per effect</text>'
+    '<text x="62" y="474" font-size="12.5" fill="#7a8898">Room energy state and what it implies about pacing.</text>'
+    '<line x1="350" y1="496" x2="350" y2="514" stroke="#C9A84C" stroke-width="1" stroke-opacity=".35" stroke-dasharray="3,3"/>'
+    '<polygon points="345,514 355,514 350,522" fill="#C9A84C" fill-opacity=".35"/>'
+    '<rect x="40" y="524" width="620" height="100" rx="5" fill="#fff" fill-opacity=".018" stroke="#6a6a7a" stroke-width=".8" stroke-opacity=".3"/>'
+    '<rect x="40" y="524" width="4" height="100" fill="#6a6a8a" fill-opacity=".5" rx="2"/>'
+    '<text x="62" y="547" font-family="Helvetica Neue,Arial,sans-serif" font-size="8.5" letter-spacing="2" fill="#8a8aaa" fill-opacity=".8" font-weight="700">LAYER 4</text>'
+    '<text x="62" y="566" font-size="15.5" fill="#c8c0b0" letter-spacing=".3">Structural Sequence</text>'
+    '<text x="62" y="585" font-size="12" fill="#7a8898" font-style="italic">The last layer \u2014 and the least important.</text>'
+    '<text x="62" y="604" font-size="12.5" fill="#6a7888">Effect order \u00b7 pacing \u00b7 callbacks \u00b7 silence placement</text>'
+    '<line x1="60" y1="642" x2="640" y2="642" stroke="#C9A84C" stroke-width=".5" stroke-opacity=".2"/>'
+    '<text x="350" y="660" text-anchor="middle" font-size="11.5" fill="#6a7888" font-style="italic">'
+    'When a show underperforms, the failure almost always lives in layers 1\u20133.'
+    '</text>'
+    '</svg></div>'
+)
 
 
 # ── Ch7: Signal Chain Flow (closing bridge to Ch8) ───────────────────────────
@@ -1598,15 +2404,15 @@ NOVELTY_TECHNIQUES_HTML = '''
         <div style="color:#c9a84c;font-weight:700;font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45em;">The Deliberate Withhold</div>
         <div style="color:#c8d4e8;font-size:0.86em;line-height:1.55;">&ldquo;There&rsquo;s one thing that changes everything. I want to come back to it.&rdquo; Anticipation is its own novelty state.</div>
       </div>
-      <!-- Reframe the Familiar: tertiary — dimmer, thinner accent, slight offset -->
-      <div style="background:#111929;border-left:3px solid rgba(201,168,76,0.45);border-radius:4px;padding:0.9em;">
-        <div style="color:#b8a060;font-weight:700;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4em;">Reframe the Familiar</div>
-        <div style="color:#a8b8cc;font-size:0.84em;line-height:1.55;">&ldquo;That&rsquo;s not a pricing objection. That&rsquo;s a trust deficit.&rdquo; Reframes feel like discoveries because they are.</div>
+      <!-- Reframe the Familiar: gold accent, uniform with Name the Unnamed -->
+      <div style="background:#141f38;border-left:5px solid #c9a84c;border-radius:1px;padding:1em 1em 1em 1.1em;">
+        <div style="color:#c9a84c;font-weight:700;font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45em;">Reframe the Familiar</div>
+        <div style="color:#c8d4e8;font-size:0.86em;line-height:1.55;">&ldquo;That&rsquo;s not a pricing objection. That&rsquo;s a trust deficit.&rdquo; Reframes feel like discoveries because they are.</div>
       </div>
-      <!-- Physical Novelty Anchors: tertiary — dimmest -->
-      <div style="background:#111929;border-left:3px solid rgba(42,157,143,0.35);border-radius:4px;padding:0.9em;">
-        <div style="color:#7fb5ae;font-weight:700;font-size:0.8em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4em;">Physical Novelty Anchors</div>
-        <div style="color:#a8b8cc;font-size:0.84em;line-height:1.55;">An unusual prop, a distinct handout format. Memory encodes around novelty. What stands out during the pitch is recalled during the decision.</div>
+      <!-- Physical Novelty Anchors: teal accent, uniform with Deliberate Withhold -->
+      <div style="background:#1a2540;border-left:4px solid #2a9d8f;border-radius:4px;padding:1em;">
+        <div style="color:#c9a84c;font-weight:700;font-size:0.82em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.45em;">Physical Novelty Anchors</div>
+        <div style="color:#c8d4e8;font-size:0.86em;line-height:1.55;">An unusual prop, a distinct handout format. Memory encodes around novelty. What stands out during the pitch is recalled during the decision.</div>
       </div>
     </div>
 
@@ -2660,7 +3466,7 @@ def gen_five_c_entry(c_word, body_text):
     if c_word == 'Culture':
         closer = (
             '<div class="fcp-footer">' +
-            '<span class="fcp-chain">Context › Clusters › Congruence › Consistency › Culture › READ</span>' +
+            '<span class="fcp-chain">Context › Clusters › Congruence › Consistency › Culture › <span class="fcp-read">READ</span></span>' +
             '</div>' +
             '</div>'
         )
@@ -2799,10 +3605,18 @@ def gen_stage_card(num, name, body):
 def gen_checklist_section(heading, bullets_text):
     """Render a Neural Performance Checklist section — checkbox item rows."""
     items = [b.strip() for b in bullets_text.split(' · ') if b.strip()]
-    items_html = ''.join(
-        f'<div class="cl-item"><span class="cl-box">□</span><span class="cl-text">{escape(it)}</span></div>'
-        for it in items
-    )
+    def _cl_item(it):
+        if ' | ' in it:
+            main, note = it.split(' | ', 1)
+            return (
+                f'<div class="cl-item">'
+                f'<span class="cl-box">□</span>'
+                f'<span class="cl-text">{escape(main)}'
+                f'<span class="cl-note">{escape(note)}</span>'
+                f'</span></div>'
+            )
+        return f'<div class="cl-item"><span class="cl-box">□</span><span class="cl-text">{escape(it)}</span></div>'
+    items_html = ''.join(_cl_item(it) for it in items)
     return (
         f'<div class="checklist-section">'
         f'  <div class="cl-heading">{escape(heading)}</div>'
@@ -3282,6 +4096,34 @@ def process_paragraph(text, part_num=1):
 
     _major_headers = {
         'Fruit to Fang',
+        # Ch20 parent buckets — Propless Mentalism
+        'WHY LEARN PROPLESS MENTALISM',
+        'WHY PROPLESS MENTALISM TYPICALLY SUCKS',
+        'PREMISE ARCHITECTURE',
+        'FREEDOM AND RESTRICTION',
+        'COVERT ACQUISITION',
+        'THE PUMP',
+        'TIPS WHEN PERFORMING PROPLESS MENTALISM',
+        'ENDGAME CONTROL',
+        # Ch18 Memory Distortion parent buckets
+        'WHAT IS ACTUALLY HAPPENING',
+        'THE EIGHT MECHANISMS',
+        'THE LANGUAGE TOOLS',
+        'APPLICATIONS FOR MENTALISTS: WHEN AND HOW TO USE IT',
+        # Ch19 parent buckets
+        'THE DESIGN DOCTRINE',
+        'THE BUILD PROCESS',
+        'THE OPERATOR MODEL',
+        'EXAMPLE SYSTEMS',
+        'ADVANCED REFINEMENTS',
+        # Ch19 parent buckets — Psychological Forces
+        'My Current Favorite Psychological Force',
+        'WHY PSYCHOLOGICAL FORCES WORK',
+        'USING PSYCHOLOGICAL FORCES AS A TOSSED-OUT DECK',
+        'CATEGORIZING PSYCHOLOGICAL FORCES',
+        'HOW FORCES COMBINE',
+        'HOW TO CONSTRUCT YOUR OWN PSYCHOLOGICAL FORCES',
+        'THE SIMPLEST WAY TO THINK ABOUT ALL 13',
     }
     if stripped in _major_headers:
         return f'<h3 class="section-header sh-major">{escape(stripped)}</h3>'
@@ -3335,6 +4177,28 @@ def process_paragraph(text, part_num=1):
         'The best way to train this',
         "The performer's rule",
         'The deeper point',
+        # Ch18 Memory Distortion — memory stage sub-items
+        'ENCODING', 'Consolidation', 'Retrieval', 'Reconstruction',
+        'Source monitoring', 'A brief note on the function',
+        # Ch19 Psychological Forces sub-headers
+        'Performance Note', 'THE PSYCHOLOGY BEHIND IT', 'A NOTE ON PERFORMING THIS',
+        # Ch19 Example System structural labels (repeated across each system)
+        'Why this target', 'The stable variables', 'The prompts', 'The cluster map',
+        'Ambiguity resolution', 'The reveal sequence', 'The fallback', 'Why this works',
+        'The core insight', 'The reveal', 'The temporal read',
+        # Ch19 Sitcom Constellation structural labels
+        'Why sitcoms work as a category', 'The target set', 'The hidden architecture',
+        'The acquisition ritual', 'Reading the contact', 'The reveal structure',
+        'The show-world pumps', 'The fallback', 'Why it works', 'Performance notes',
+        # Ch19 Advanced Refinements sub-labels
+        'The two-phase structure', 'What the second phase actually does',
+        'The calibration line', 'The rule that changes what you build',
+        # Ch19 Real Secrets sub-items
+        'Rejection is structure', 'Simplicity is not minimalism',
+        'Design for the worst participant',
+        # Ch45 Psychological Forces sub-labels
+        'Over-restriction', 'Under-restriction', 'Poor timing',
+        'Lack of layering', 'Bad framing',
     }
     if stripped in _sub_section_heads:
         return f'<div class="sub-header"><span class="sub-header-label">{escape(stripped)}</span></div>'
@@ -3350,6 +4214,24 @@ def process_paragraph(text, part_num=1):
     if ((stripped.startswith('\u201c') and stripped.endswith('\u201d')) or
             (stripped.startswith('"') and stripped.endswith('"'))) and len(stripped) > 8:
         return f'<p class="dialogue-line"><strong><em>{escape(stripped)}</em></strong></p>'
+
+    # Headers forced to sh-section (child items in numbered sequences)
+    _force_sh_section = {
+        # Ch19 Five Acquisition Channels — child of FIVE ACQUISITION CHANNELS BEYOND LETTERS
+        '1. EMBODIED BINARIES', '2. SENSORY GATES', '3. CATEGORY LOCKS',
+        '4. SOCIALLY NATURAL NARROWING', '5. REACTION-BASED PUMPS',
+        # Ch19 Eight Steps — all uniform, child of THE EIGHT-STEP DESIGN PROCESS
+        'STEP 1: DEFINE THE TARGET WITH REALISTIC SCOPE',
+        'STEP 2: IDENTIFY STABLE VARIABLES ONLY',
+        'STEP 3: CONVERT QUESTIONS INTO RECOGNITION PROMPTS',
+        'STEP 4: LIMIT TO TWO STRUCTURAL EXTRACTIONS',
+        'STEP 5: BUILD TARGET CLUSTERS',
+        'STEP 6: DESIGN AMBIGUITY RESOLUTION WITHOUT ADDITIONAL PROMPTS',
+        'STEP 7: DESIGN THE REVEAL IN LAYERS',
+        'STEP 8: BUILD THE FALLBACK PATH FIRST',
+    }
+    if stripped in _force_sh_section and is_section_header(stripped):
+        return f'<h3 class="section-header sh-section">{escape(stripped)}</h3>'
 
     # Section headers — 2 visual styles based on word count
     if is_section_header(stripped):
@@ -3760,6 +4642,56 @@ def build_chapter_body(section, global_para_count):
         if stripped == 'SIGNAL_TABLE':
             parts.append(SIGNAL_TABLE_HTML)
             signal_table_injected = True
+            i += 1
+            continue
+
+        if stripped == 'SITCOM_TABLE':
+            parts.append(SITCOM_TABLE_HTML)
+            i += 1
+            continue
+
+        if stripped == 'DECODE_PANEL':
+            parts.append(DECODE_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'CH18_DIAGNOSTIC_PANEL':
+            parts.append(CH18_DIAGNOSTIC_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'CH18_IFYRE_PANEL':
+            parts.append(CH18_IFYRE_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'CH19_IFYRE_PANEL':
+            parts.append(CH19_IFYRE_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'PSYFORCE_CATEGORIES_TBC':
+            parts.append(PSYFORCE_CATEGORIES_TBC_HTML)
+            i += 1
+            continue
+
+        if stripped == 'PSYFORCE_STRENGTH_PANEL':
+            parts.append(PSYFORCE_STRENGTH_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'PSYFORCE_CONSTRUCT_PANEL':
+            parts.append(PSYFORCE_CONSTRUCT_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'PSYFORCE_MAP_PANEL':
+            parts.append(PSYFORCE_MAP_PANEL_HTML)
+            i += 1
+            continue
+
+        if stripped == 'PERF_ARCH_FRAMEWORK_SVG':
+            parts.append(PERF_ARCH_FRAMEWORK_SVG_HTML)
             i += 1
             continue
 
@@ -5811,9 +6743,9 @@ ul.book-list li::before{
   color:#fff;margin-bottom:10px;letter-spacing:.5px;
 }
 .concept-box .concept-body{
-  color:var(--gray-blue);font-size:.88rem;line-height:1.6;
+  color:#e8eaf0;font-size:.88rem;line-height:1.6;
 }
-.concept-box .concept-body p{text-indent:0!important;text-align:left!important;color:var(--gray-blue);margin-bottom:.5em}
+.concept-box .concept-body p{text-indent:0!important;text-align:left!important;color:#e8eaf0;margin-bottom:.5em}
 .concept-box .concept-highlight{
   color:var(--gold);font-weight:600;font-style:italic;
   margin-top:8px;font-size:.85rem;
@@ -6580,6 +7512,7 @@ a.toc-ch:hover{opacity:.7}
   font-family:var(--sans);font-size:.55rem;font-weight:600;
   letter-spacing:1.5px;color:var(--dim);
 }
+.fcp-read{color:var(--gold);font-weight:700;letter-spacing:2px;}
 .five-c-entry{
   padding:14px 22px 14px 20px;
   border-left:none;border-radius:0;margin:0;
@@ -6761,6 +7694,7 @@ a.toc-ch:hover{opacity:.7}
   font-family:var(--sans);justify-self:center;padding-top:2px;
 }
 .cl-text{color:rgba(245,240,232,.88);}
+.cl-note{display:block;font-size:.8em;color:rgba(180,190,210,.5);font-style:italic;margin-top:.18em;line-height:1.4;}
 
 /* ═══ CHAPTER OPENER LEGEND ═══ */
 .opener-legend{
