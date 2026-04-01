@@ -4161,6 +4161,7 @@ def process_paragraph(text, part_num=1):
         'Reading the Animal Search', 'Reading the Reaction',
         # Zodiac chapter sub-sections
         'When They Do Not Know Their Element',
+        'The Explanation',
         # Contact mind reading sub-sections
         'Lipping',
         # Cold Reading Toolkit single-word headers
