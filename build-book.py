@@ -4070,6 +4070,11 @@ def process_paragraph(text, part_num=1):
     if stripped in ("Performer's Note", "Performer's Note", "Performers Note"):
         return gen_performer_note()
 
+    # Italic paragraphs — [ITALIC]...[/ITALIC] markers
+    if stripped.startswith('[ITALIC]') and stripped.endswith('[/ITALIC]'):
+        inner = escape(stripped[8:-8])
+        return f'<p style="font-style:italic;color:#c8d4e0;">{inner}</p>'
+
     # Bylines — bold attribution lines beneath section headers
     _bylines = {
         '\u201cWatch Your Figure\u201d by Chris Michael',
