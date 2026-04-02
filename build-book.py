@@ -53,6 +53,12 @@ HOOK_LINES = {
     'CHAPTER 22': '"Your introduction is the first frame the audience receives. Control it."',
     'CHAPTER 23': '"The booking was won or lost before you picked up the phone."',
     'CHAPTER 24': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
+    'CHAPTER 25': '"Memory is not a recording. It is a story the brain tells itself every time you ask for it."',
+    'CHAPTER 26': '"The word they are thinking has not been written down, but you are still about to measure it."',
+    'CHAPTER 27': '"A free choice is only free until someone designs the menu."',
+    'CHAPTER 28': '"Propless does not mean effortless. It means the work is invisible."',
+    'CHAPTER 29': '"The method disappears when the frame is large enough."',
+    'CHAPTER 30': '"Some rooms comply before you earn it. Most rooms wait to see if you know you deserve it."',
     'CHAPTER 39': '"Every framework in this book leads here."',
     'CHAPTER 40': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
     'CHAPTER 41': '"Authority is not one thing. It is five things, and most people have two."',
@@ -87,6 +93,12 @@ KEY_READS = {
     'CHAPTER 22': 'Your biography arrives before you do. Make sure it is doing the right job.',
     'CHAPTER 23': 'The booking is won in the room they never see you in.',
     'CHAPTER 24': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 25': 'The memory of the effect matters more than the effect itself.',
+    'CHAPTER 26': 'Influence and counting. That is the whole secret of The Babel Count.',
+    'CHAPTER 27': 'A psychological force is not a trick. It is an architecture.',
+    'CHAPTER 28': 'When there is nothing in your hands, everything in you has to be right.',
+    'CHAPTER 29': 'The zodiac is a frame. What you put inside it is the work.',
+    'CHAPTER 30': 'Obedience is not compliance. It is the architecture that makes compliance feel natural.',
     'CHAPTER 39': 'Decode is not a technique. It is a way of seeing.',
     'CHAPTER 40': 'Four forces. Every room is already running the equation before you open your mouth.',
     'CHAPTER 41': 'Build all five pillars. Then let them carry the weight.',
@@ -123,6 +135,12 @@ CHAPTER_LEGEND = {
     'CHAPTER 22': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 23': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 24': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 25': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 26': {'tiers': ['t2', 't3'], 'cats': ['cr']},
+    'CHAPTER 27': {'tiers': ['t2', 't3'], 'cats': ['cr']},
+    'CHAPTER 28': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 29': {'tiers': ['t2', 't3'], 'cats': ['cr']},
+    'CHAPTER 30': {'tiers': ['t1', 't2'], 'cats': ['am']},
     'CHAPTER 39': {'tiers': ['t2', 't3'], 'cats': ['bp']},
     'CHAPTER 40': {'tiers': ['t2', 't3'], 'cats': ['am']},
     'CHAPTER 41': {'tiers': ['t1', 't2'], 'cats': ['am']},
@@ -2186,10 +2204,19 @@ def process_paragraph(text, part_num=1):
         _sn, _sl = _step_m.group(1), _step_m.group(2).strip()
         return f'<div class="step-header"><span class="step-num">{escape(_sn)}</span><span class="step-name">{escape(_sl)}</span></div>'
 
+    # Script/italic blocks — [ITALIC]...[/ITALIC] markers from v2 import
+    if stripped.startswith('[ITALIC]') and stripped.endswith('[/ITALIC]'):
+        inner = stripped[8:-9].strip()
+        return f'<p class="script-italic">{escape(inner)}</p>'
+
     # Dialogue lines — standalone paragraphs fully enclosed in quotation marks
     if ((stripped.startswith('\u201c') and stripped.endswith('\u201d')) or
             (stripped.startswith('"') and stripped.endswith('"'))) and len(stripped) > 8:
         return f'<p class="dialogue-line"><strong><em>{escape(stripped)}</em></strong></p>'
+
+    # Failure-label lines — "The Nth failure is..." as standalone bold sentences
+    if re.match(r'^The (first|second|third|fourth|fifth) failure is ', stripped, re.IGNORECASE):
+        return f'<p class="failure-label"><strong>{escape(stripped)}</strong></p>'
 
     # Section headers — 2 visual styles based on word count
     if is_section_header(stripped):
@@ -3596,6 +3623,20 @@ body{counter-reset:page}
   padding-left:1.4em;
   border-left:2px solid var(--gold-dim);
   margin:1.1em 0;
+}
+/* Script blocks from [ITALIC]...[/ITALIC] — performance script in black italic */
+.script-italic{
+  font-style:italic;
+  color:#1a1a1a;
+  padding-left:1.2em;
+  border-left:3px solid var(--rule);
+  margin:1em 0;
+  line-height:1.7;
+}
+/* Failure-label paragraphs — The Nth failure is... */
+.failure-label{
+  color:#1a1a1a;
+  margin:1.4em 0 0.4em;
 }
 
 /* ═══ BOOK BULLET LIST ═══ */
