@@ -934,14 +934,15 @@ def gen_chapter_opener(section):
                   5:'PART FIVE',6:'PART SIX',7:'PART SEVEN',8:'PART EIGHT'}
     part_label = part_names.get(part_num, '')
 
+    ch_id_str = section.get('chapter_id', str(ch_num))
     if ch_num > 0:
-        ch_display = f'{ch_num:02d}'
+        ch_display = ch_id_str  # use full ID (e.g. "19B") for display and anchor
     else:
         ch_display = '\u2726'  # diamond for intro
 
     legend_data = CHAPTER_LEGEND.get(chapter_key, {})
     legend = _opener_legend(tiers=legend_data.get('tiers'), cats=legend_data.get('cats'))
-    ch_id = f'chapter-{ch_num}'
+    ch_id = f'chapter-{ch_id_str}'
     return f'''<section class="chapter-opener" id="{ch_id}" data-part="{part_num}">
   <div class="opener-content">
     <div class="part-label">{escape(part_label)}</div>
@@ -3377,9 +3378,10 @@ def gen_toc(sections):
         if s['type'] == 'part':
             parts.append(f'<div class="toc-part">{escape(s["title"])}<span class="toc-sub">{escape(s.get("subtitle",""))}</span></div>')
         elif s['type'] == 'chapter':
-            ch = s.get('chapter_num', 0)
-            num = 'Intro' if ch == 0 else str(ch)
-            parts.append(f'<a href="#chapter-{ch}" class="toc-ch"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></a>')
+            ch_num = s.get('chapter_num', 0)
+            ch_id  = s.get('chapter_id', str(ch_num))
+            num = 'Intro' if ch_num == 0 else ch_id
+            parts.append(f'<a href="#chapter-{ch_id}" class="toc-ch"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></a>')
         elif s['type'] == 'glossary':
             parts.append('<div class="toc-part">Glossary</div>')
         elif s['type'] == 'about':
