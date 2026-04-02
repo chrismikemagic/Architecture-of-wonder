@@ -931,7 +931,7 @@ def gen_chapter_opener(section):
     hook = HOOK_LINES.get(chapter_key, '')
 
     part_names = {0:'',1:'PART ONE',2:'PART TWO',3:'PART THREE',4:'PART FOUR',
-                  5:'PART FIVE',6:'PART SIX',7:'PART SEVEN',8:'PART EIGHT'}
+                  5:'PART FIVE',6:'PART SIX',7:'PART SEVEN',8:'PART FIVE'}
     part_label = part_names.get(part_num, '')
 
     ch_id_str = section.get('chapter_id', str(ch_num))

@@ -109,16 +109,16 @@ Chapter 24  —  Propless Systems That Actually Work
 Understanding propless mentalism and being able to build it are different skills. This chapter is primarily about the second one.
 Chapter 29  —  Zodiac Divinations Without Anagrams
 Clean approaches to zodiac and birth information that do not rely on anagram systems or dual-reality methodology.
-PART FOUR  —  The Corporate Stage
-From pre-show intelligence to keynote halls to boardrooms. Behavioral science applied to the professional performance context.
 Chapter 17  —  Pre-Show
 What happens before you walk on. The pre-show window, intelligence gathering, and the decisions that set every effect up to land.
+Chapter 19B  —  Digital Preshow
+Open source intelligence for the working performer. OSINT sources, Google dorking, corroboration, delivery protocol, and the ethical framework for intelligence-based reveals.
+PART FOUR  —  The Corporate Stage
+From keynote halls to boardrooms. Behavioral science applied to the professional performance context.
 Chapter 18  —  Mentalism in the Boardroom
 Executive audiences, the credibility sequence, and the real power map in any room.
 Chapter 19  —  Why Most Training Fails
 Experience before explanation. Why most corporate training fails and how the performer advantage changes the equation.
-Chapter 19B  —  The Digital Preshow
-Open source intelligence for the working performer. OSINT sources, Google dorking, corroboration, delivery protocol, and the ethical framework for intelligence-based reveals.
 Chapter 20  —  Influence Without Authority
 Compliance vs. internalization, the self-attribution principle, and the reflection protocol for performance contexts.
 Chapter 21  —  The Ethics of Influence
@@ -131,8 +131,6 @@ PART FIVE  —  Performance Craft
 The architecture of a full show. Structural choices, obedience dynamics, and the behavioral intelligence that governs every room.
 Chapter 30  —  The Architecture of Obedience
 Why some rooms comply and others resist. The authority gradient, the compliance window, and how to design both into the structure of a show.
-PART EIGHT  —  Behavioral Intelligence for the Stage
-Corporate behavioral intelligence frameworks adapted for the mentalist's stage. The science is identical. The application is sharper.
 Chapter 39  —  What the Room Decides Before You Speak
 Focus, Authority, Tribe, Emotion. Four forces the limbic system evaluates before you speak, and how to control all four.
 Chapter 40  —  Authority Architecture
@@ -2599,8 +2597,6 @@ CATEGORIZING PSYCHOLOGICAL FORCES
 
 The examples given in the following section are not designed to be creative or fooling, but to give a very simple example so that you can understand the architecture of each category.
 
-PSYFORCE_CATEGORIES_TBC
-
 HOW FORCES COMBINE
 
 Most psychological forces are not strong enough on their own. The real strength comes from layering.
@@ -2614,8 +2610,6 @@ The target is star. What is happening: anchoring from the opening frame, exclusi
 This is how real propless mentalism works. The individual forces are ordinary. The stack is not.
 
 HOW STRONG IS THIS FORCE?
-
-PSYFORCE_STRENGTH_PANEL
 
 WHY PSYCHOLOGICAL FORCES FAIL
 
@@ -2655,13 +2649,9 @@ HOW TO CONSTRUCT YOUR OWN PSYCHOLOGICAL FORCES
 
 Almost every effective psychological force is built from five moving parts working together.
 
-PSYFORCE_CONSTRUCT_PANEL
-
 A force works when it reduces the search space, increases accessibility of the target, and allows the answer to feel self-generated. The participant does not experience a force as an external constraint. They experience their own thought arriving. That is the goal of every part of the construction.
 
 THE SIMPLEST WAY TO THINK ABOUT ALL 13
-
-PSYFORCE_MAP_PANEL
 
 Juke Box Oracle
 
@@ -3165,11 +3155,6 @@ The person who doesn't know their zodiac figure doesn't know what you can and ca
 
 
 
-PART FOUR
-The Corporate Stage
-From keynote halls to boardrooms. Behavioral science applied to the professional performance context.
-
-
 CHAPTER 17
 Pre-Show
 The strongest pre-show doesn't feel like pre-show at all.
@@ -3349,48 +3334,8 @@ Modern, clean, and live-sounding.
 The “most people” framing removes suspicion entirely. It becomes universal behavior, not a specific catch.
 · · ·
 
-CHAPTER 18
-Mentalism in the Boardroom
-A room full of executives is not a harder audience. It is a differently motivated one.
-────────────────────────────────────────────────────────────────────────────────
-The neurobiology is identical. Executives tend to enter with higher baseline skepticism and a more defensive relationship with the idea of being read or influenced, because their professional identity is partly built on the belief that they are not easily moved. I find this genuinely charming. The people most confident they are unreadable are, in many cases, among the most readable people in the room.
-The practical reality is that the neurobiology applies identically regardless of title or years of experience. A senior vice president's amygdala responds to social threat the same way anyone else's does. Their dopamine system peaks during anticipation just like everyone's. The brain does not have a VP setting.
-Credibility as the First Act
-In a corporate context, credibility is established before the performance begins and it is established behaviorally. A performer who arrives and waits to be introduced has already conceded authority to the room. A performer who has sent a thoughtful pre-show communication, who arrives with composure, who engages the client contact as a peer: that performer enters the room with borrowed authority that the introduction then confirms.
-The credibility sequence in boardroom contexts: demonstrate before explaining, name what happened accurately, then invite their framework before offering yours. This sequence prevents the most common failure mode in executive rooms. Positioning yourself as the expert before you have earned that position from them.
-Corporate Audience Signals
-Arms crossed usually signals reserve, not hostility. Lateral eye movement before responding means they are analyzing. Phone checking means the default mode network is active, increase personal specificity immediately.
-The Credibility Sequence
-1. Demonstrate before explaining. 2. Name what happened accurately. 3. Invite their framework before offering yours.
-The Real Power Map
-In executive rooms, formal authority and social authority are often different people. The person others glance at before they respond, the one whose reactions calibrate the room's reaction, is the room's real anchor. This person may or may not have the senior title. Identify them in the first two minutes. Earn them early. Once you have their engagement, the room follows.
-When the goal shifts from entertainment to behavioral change, the performance architecture changes with it. Entertainment asks an audience to feel something. Training asks them to do something differently after they leave. These are not the same request, and they require different sequences. The neurobiological experience must arrive before the conceptual explanation. Always. People do not retain what they have only been told. They retain what they have felt, been surprised by, and then been given a framework to understand.
-Experience Before Explanation
-The moment you explain a principle before demonstrating it, you lose the emotional encoding that makes it stick. Always build the visceral experience first. The explanation lands differently when the audience has already felt the thing you are explaining.
-· · ·
-
-CHAPTER 19
-Why Most Training Fails
-Most corporate training fails not because the content is wrong but because the learning architecture is misaligned with how the brain actually changes behavior.
-────────────────────────────────────────────────────────────────────────────────
-Last year I walked into a room of forty senior managers who had just sat through ninety minutes of slides on influence and persuasion. They were polite. They were also checked out. Phones under the table, eyes glazing at each new bullet point. I had fifteen minutes. I spent the first three demonstrating, without explanation, that I had been reading the room's behavioral patterns since before the slides began. I named who had been skeptical, who had been genuinely engaged, and who had been performing engagement for the presenter's benefit. The room went completely still. A woman in the second row said, 'How long were you watching us?' I said, 'Since you walked in.' For the remaining twelve minutes I had the kind of attention that slides cannot buy. A year later, three of those managers independently told the client they still thought about that session. The slides from the first ninety minutes were never mentioned again.
-That room taught me what the research already shows:
-Declarative instruction, presenting information in lectures or slides, activates cortical learning systems but does not reliably produce the emotional encoding necessary for behavioral change. To change a behavior, you need to create an experience that the hippocampus tags as significant. A slide deck reliably does not do this.
-The Design Sequence
-Every conceptual learning objective should be preceded by a direct experience that makes the concept visceral and personal before the explanation arrives. The explanation is not the learning moment. The experience is. The explanation provides the framework to understand what just happened.
-The experience-first sequence: create a direct experience → allow genuine confusion or surprise → introduce the framework that explains what just happened → support application. Run it in reverse and you produce knowledge without behavior change. Reverse it once and participants will remember the concept but not apply it.
-The Design Sequence
-Experience → Reflection → Framework → Application. Run it in reverse and you produce knowledge without behavior change.
-The Hippocampus Test
-For a learning moment to be retained, the hippocampus needs an emotional tag. The question to ask about every training activity: will this generate genuine surprise, genuine recognition, or genuine discomfort? If not, it will not be remembered.
-The Opening Experience
-The opening experience needs to meet three criteria: it must be visceral enough that intellectual observation is temporarily not possible, it must relate directly to the behavioral concept being taught, and it must generate genuine, not performed, emotional response. Surprise works. Cognitive dissonance works. Mild physical or social discomfort works, when handled with care.
-The most reliable opening experience in behavioral influence training is a demonstration of involuntary compliance (showing participants that their own behavior has been shaped by environmental design they did not notice. The moment of recognition) the moment they realize they were led without knowing it. Produces the precise combination of surprise, curiosity, and mild self-directed discomfort that the hippocampus tags most reliably for long-term retention.
-The Performer Advantage
-Most trainers simulate primary experience through case studies and role-play. A performer who demonstrates the learning objective on the participants creates real experience. Retention rates for primary vs. simulated experience differ significantly. Source: Kolb (1984), Experiential Learning.
-
 CHAPTER 19B
-The Digital Preshow
+Digital Preshow
 ────────────────────────────────────────────────────────────────────────────────
 WHAT IT FEELS LIKE
 You have been at this event for forty minutes. You do not know the performer. You were not given any kind of intake form. You did not stop at a registration table and fill out a card. Nobody has spoken to you since you sat down.
@@ -3590,6 +3535,51 @@ This is the difference between a name reveal and an experience. The name reveal 
 The combination of standard preshow and digital preshow makes this possible because each method fills a gap the other leaves open. Standard preshow gives you the emotional context, the temperature of the participant, the nature of the relationship, the details that no public record contains because they live only in the way a person talks about someone they loved. Digital preshow gives you the verifiable biographical facts that transform a warm reading into a specific one. Warmth without specificity is cold reading. Specificity without warmth is a demonstration. Together they are something that has no clean category, which is exactly where the most powerful mentalism lives.
 The practical rule is this. Any time you are working with written information that contains a name, treat the peek as the beginning of the research process rather than the end of it. The name is not the destination. The name is the key that opens the file. What you do with the file is the performance.
 · · ·
+PART FOUR
+The Corporate Stage
+From keynote halls to boardrooms. Behavioral science applied to the professional performance context.
+
+
+CHAPTER 18
+Mentalism in the Boardroom
+A room full of executives is not a harder audience. It is a differently motivated one.
+────────────────────────────────────────────────────────────────────────────────
+The neurobiology is identical. Executives tend to enter with higher baseline skepticism and a more defensive relationship with the idea of being read or influenced, because their professional identity is partly built on the belief that they are not easily moved. I find this genuinely charming. The people most confident they are unreadable are, in many cases, among the most readable people in the room.
+The practical reality is that the neurobiology applies identically regardless of title or years of experience. A senior vice president's amygdala responds to social threat the same way anyone else's does. Their dopamine system peaks during anticipation just like everyone's. The brain does not have a VP setting.
+Credibility as the First Act
+In a corporate context, credibility is established before the performance begins and it is established behaviorally. A performer who arrives and waits to be introduced has already conceded authority to the room. A performer who has sent a thoughtful pre-show communication, who arrives with composure, who engages the client contact as a peer: that performer enters the room with borrowed authority that the introduction then confirms.
+The credibility sequence in boardroom contexts: demonstrate before explaining, name what happened accurately, then invite their framework before offering yours. This sequence prevents the most common failure mode in executive rooms. Positioning yourself as the expert before you have earned that position from them.
+Corporate Audience Signals
+Arms crossed usually signals reserve, not hostility. Lateral eye movement before responding means they are analyzing. Phone checking means the default mode network is active, increase personal specificity immediately.
+The Credibility Sequence
+1. Demonstrate before explaining. 2. Name what happened accurately. 3. Invite their framework before offering yours.
+The Real Power Map
+In executive rooms, formal authority and social authority are often different people. The person others glance at before they respond, the one whose reactions calibrate the room's reaction, is the room's real anchor. This person may or may not have the senior title. Identify them in the first two minutes. Earn them early. Once you have their engagement, the room follows.
+When the goal shifts from entertainment to behavioral change, the performance architecture changes with it. Entertainment asks an audience to feel something. Training asks them to do something differently after they leave. These are not the same request, and they require different sequences. The neurobiological experience must arrive before the conceptual explanation. Always. People do not retain what they have only been told. They retain what they have felt, been surprised by, and then been given a framework to understand.
+Experience Before Explanation
+The moment you explain a principle before demonstrating it, you lose the emotional encoding that makes it stick. Always build the visceral experience first. The explanation lands differently when the audience has already felt the thing you are explaining.
+· · ·
+
+CHAPTER 19
+Why Most Training Fails
+Most corporate training fails not because the content is wrong but because the learning architecture is misaligned with how the brain actually changes behavior.
+────────────────────────────────────────────────────────────────────────────────
+Last year I walked into a room of forty senior managers who had just sat through ninety minutes of slides on influence and persuasion. They were polite. They were also checked out. Phones under the table, eyes glazing at each new bullet point. I had fifteen minutes. I spent the first three demonstrating, without explanation, that I had been reading the room's behavioral patterns since before the slides began. I named who had been skeptical, who had been genuinely engaged, and who had been performing engagement for the presenter's benefit. The room went completely still. A woman in the second row said, 'How long were you watching us?' I said, 'Since you walked in.' For the remaining twelve minutes I had the kind of attention that slides cannot buy. A year later, three of those managers independently told the client they still thought about that session. The slides from the first ninety minutes were never mentioned again.
+That room taught me what the research already shows:
+Declarative instruction, presenting information in lectures or slides, activates cortical learning systems but does not reliably produce the emotional encoding necessary for behavioral change. To change a behavior, you need to create an experience that the hippocampus tags as significant. A slide deck reliably does not do this.
+The Design Sequence
+Every conceptual learning objective should be preceded by a direct experience that makes the concept visceral and personal before the explanation arrives. The explanation is not the learning moment. The experience is. The explanation provides the framework to understand what just happened.
+The experience-first sequence: create a direct experience → allow genuine confusion or surprise → introduce the framework that explains what just happened → support application. Run it in reverse and you produce knowledge without behavior change. Reverse it once and participants will remember the concept but not apply it.
+The Design Sequence
+Experience → Reflection → Framework → Application. Run it in reverse and you produce knowledge without behavior change.
+The Hippocampus Test
+For a learning moment to be retained, the hippocampus needs an emotional tag. The question to ask about every training activity: will this generate genuine surprise, genuine recognition, or genuine discomfort? If not, it will not be remembered.
+The Opening Experience
+The opening experience needs to meet three criteria: it must be visceral enough that intellectual observation is temporarily not possible, it must relate directly to the behavioral concept being taught, and it must generate genuine, not performed, emotional response. Surprise works. Cognitive dissonance works. Mild physical or social discomfort works, when handled with care.
+The most reliable opening experience in behavioral influence training is a demonstration of involuntary compliance (showing participants that their own behavior has been shaped by environmental design they did not notice. The moment of recognition) the moment they realize they were led without knowing it. Produces the precise combination of surprise, curiosity, and mild self-directed discomfort that the hippocampus tags most reliably for long-term retention.
+The Performer Advantage
+Most trainers simulate primary experience through case studies and role-play. A performer who demonstrates the learning objective on the participants creates real experience. Retention rates for primary vs. simulated experience differ significantly. Source: Kolb (1984), Experiential Learning.
+
 CHAPTER 20
 Influence Without Authority
 You have no title in this room. That is the design, not the limitation.
@@ -3935,18 +3925,6 @@ The best performance methods do not make the spectator feel handled. They make t
 · · ·
 
 
-PART EIGHT
-Behavioral Intelligence for the Stage
-
-The frameworks in this section were developed for corporate influence (sales environments, boardrooms, negotiation settings where behavioral science is applied under pressure with measurable outcomes. They were built by Chris Michael and informed by the work of Chase Hughes, Stanley Milgram, and the broader applied behavioral science tradition. They were designed to read people, broadcast authority, and move decisions) in rooms where the consequences are financial and immediate.
-
-Every one of them works better on stage.
-
-You operate under conditions that no corporate trainer, sales professional, or negotiation coach ever faces: real-time behavioral reading with no margin for error, in front of a live audience that is simultaneously evaluating and experiencing the result. The performer who understands these frameworks does not just read behavior. They design environments where behavior moves in their direction before the first effect begins.
-
-This section adapts the full Behavioral Intelligence framework (the FATE Model, Authority Architecture, the Behavioral Table of Elements, the Influence Equation, and the DECODE Framework) for the mentalist's stage. The science is identical. The application is sharper. The margin for error is zero.
-
-· · ·
 
 CHAPTER 39
 What the Room Decides Before You Speak
