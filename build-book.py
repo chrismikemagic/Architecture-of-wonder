@@ -45,33 +45,34 @@ HOOK_LINES = {
     'CHAPTER 14': '"Compliance is not obedience. It is agreement they did not know they gave."',
     'CHAPTER 15': '"The moment after the effect is where the real work happens."',
     'CHAPTER 16': '"Hypnosis is not what you think it is. That is why it works."',
-    'CHAPTER 17': '"The boardroom is the most dangerous stage you will ever work."',
-    'CHAPTER 18': '"You cannot teach observation. You can only remove the obstacles to seeing."',
-    'CHAPTER 19': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 20': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 21': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
-    'CHAPTER 22': '"The question is never whether to influence. It is whether to admit it."',
-    'CHAPTER 23': '"The walk to the stage is the performance."',
-    'CHAPTER 24': '"Standing ovations are not earned. They are engineered."',
-    'CHAPTER 25': '"Sound is the invisible stage."',
-    'CHAPTER 26': '"The environment gives the instruction before you do."',
-    'CHAPTER 27': '"Authority is not claimed. It is perceived."',
-    'CHAPTER 28': '"Your career is a performance with a very long run."',
-    'CHAPTER 29': '"They have already decided before you walk on stage."',
-    'CHAPTER 30': '"The signal is data. The statement is performance. The gap between them is skill."',
-    'CHAPTER 31': '"The best insight demonstration looks like telepathy and works like science."',
-    'CHAPTER 32': '"Method invisibility is not misdirection. It is architecture."',
-    'CHAPTER 33': '"A performer with perfect reads and poor timing is less effective than the reverse."',
-    'CHAPTER 34': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 35': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 36': '"What you say matters less than how it sounds when you say it."',
-    'CHAPTER 37': '"The client is reading you harder than you are reading them."',
-    'CHAPTER 38': '"Every framework in this book leads here."',
-    'CHAPTER 39': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
-    'CHAPTER 40': '"Authority is not one thing. It is five things, and most people have two."',
-    'CHAPTER 41': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 42': '"Influence is not a trick. It is an equation with variables you can measure."',
-    'CHAPTER 42': '"Every framework in this book was designed to work on stage. This one ties them together."',
+    'CHAPTER 18': '"The boardroom is the most dangerous stage you will ever work."',
+    'CHAPTER 19': '"You cannot teach observation. You can only remove the obstacles to seeing."',
+    'CHAPTER 19B': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
+    'CHAPTER 20': '"Every performance teaches you something. Most of the lessons hurt."',
+    'CHAPTER 21': '"The most powerful person in the room is rarely the one with the title."',
+    'CHAPTER 22': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
+    'CHAPTER 23': '"The question is never whether to influence. It is whether to admit it."',
+    'CHAPTER 24': '"The walk to the stage is the performance."',
+    'CHAPTER 25': '"Standing ovations are not earned. They are engineered."',
+    'CHAPTER 26': '"Sound is the invisible stage."',
+    'CHAPTER 27': '"The environment gives the instruction before you do."',
+    'CHAPTER 28': '"Authority is not claimed. It is perceived."',
+    'CHAPTER 29': '"Your career is a performance with a very long run."',
+    'CHAPTER 30': '"They have already decided before you walk on stage."',
+    'CHAPTER 31': '"The signal is data. The statement is performance. The gap between them is skill."',
+    'CHAPTER 32': '"The best insight demonstration looks like telepathy and works like science."',
+    'CHAPTER 33': '"Method invisibility is not misdirection. It is architecture."',
+    'CHAPTER 34': '"A performer with perfect reads and poor timing is less effective than the reverse."',
+    'CHAPTER 35': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 36': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 37': '"What you say matters less than how it sounds when you say it."',
+    'CHAPTER 38': '"The client is reading you harder than you are reading them."',
+    'CHAPTER 39': '"Every framework in this book leads here."',
+    'CHAPTER 40': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 41': '"Authority is not one thing. It is five things, and most people have two."',
+    'CHAPTER 42': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 43': '"Influence is not a trick. It is an equation with variables you can measure."',
+    'CHAPTER 43': '"Every framework in this book was designed to work on stage. This one ties them together."',
     'GLOSSARY': '"The language shapes the thinking. Know the words."',
 }
 
@@ -92,33 +93,34 @@ KEY_READS = {
     'CHAPTER 14': 'The best instruction is the one that feels like their idea.',
     'CHAPTER 15': 'Close the moment before they close it for you.',
     'CHAPTER 16': 'The trance state is not extraordinary. It is the brain doing what it does best.',
-    'CHAPTER 17': 'In the boardroom, the audience writes the review before the show ends.',
-    'CHAPTER 18': 'Training is not instruction. It is guided noticing.',
-    'CHAPTER 19': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 20': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 21': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
-    'CHAPTER 22': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
-    'CHAPTER 23': 'The walk is the show. Everything after is confirmation.',
-    'CHAPTER 24': 'The ovation begins in the first thirty seconds.',
-    'CHAPTER 25': 'Control the sound, and you control the space.',
-    'CHAPTER 26': 'Design the compliance. Then act surprised when they comply.',
-    'CHAPTER 27': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
-    'CHAPTER 28': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
-    'CHAPTER 29': 'You are not what you do. You are what they remember you doing.',
-    'CHAPTER 30': 'The signal is the data. The statement is the art. Never confuse the two.',
-    'CHAPTER 31': 'The best insight feels impossible because it is grounded in what is actually there.',
-    'CHAPTER 32': 'If they are looking for the method, the architecture failed.',
-    'CHAPTER 33': 'Silence is not absence. It is the loudest tool you have.',
-    'CHAPTER 34': 'The booking is won in the room they never see you in.',
-    'CHAPTER 35': 'Your biography arrives before you do. Make sure it is doing the right job.',
-    'CHAPTER 36': 'Language is not communication. It is positioning.',
-    'CHAPTER 37': 'Read them first. Then let them think they read you.',
-    'CHAPTER 38': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 39': 'Four forces. Every room is already running the equation before you open your mouth.',
-    'CHAPTER 40': 'Build all five pillars. Then let them carry the weight.',
-    'CHAPTER 41': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 42': 'Influence without understanding is manipulation. With understanding, it is leadership.',
-    'CHAPTER 42': 'Go see what others miss.',
+    'CHAPTER 18': 'In the boardroom, the audience writes the review before the show ends.',
+    'CHAPTER 19': 'Training is not instruction. It is guided noticing.',
+    'CHAPTER 19B': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
+    'CHAPTER 20': 'The face is the performance. The hands are the truth.',
+    'CHAPTER 21': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 22': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 23': 'Ethics is not a constraint. It is the architecture that makes the rest stand.',
+    'CHAPTER 24': 'The walk is the show. Everything after is confirmation.',
+    'CHAPTER 25': 'The ovation begins in the first thirty seconds.',
+    'CHAPTER 26': 'Control the sound, and you control the space.',
+    'CHAPTER 27': 'Design the compliance. Then act surprised when they comply.',
+    'CHAPTER 28': 'Forfeit the game before somebody else takes you out of the frame.',  # deliberate — serial position trough (Linkin Park, Papercut)
+    'CHAPTER 29': 'Every room holds the memory of a performance it has not yet seen.',  # deliberate — serial position trough
+    'CHAPTER 30': 'You are not what you do. You are what they remember you doing.',
+    'CHAPTER 31': 'The signal is the data. The statement is the art. Never confuse the two.',
+    'CHAPTER 32': 'The best insight feels impossible because it is grounded in what is actually there.',
+    'CHAPTER 33': 'If they are looking for the method, the architecture failed.',
+    'CHAPTER 34': 'Silence is not absence. It is the loudest tool you have.',
+    'CHAPTER 35': 'The booking is won in the room they never see you in.',
+    'CHAPTER 36': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 37': 'Language is not communication. It is positioning.',
+    'CHAPTER 38': 'Read them first. Then let them think they read you.',
+    'CHAPTER 39': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 40': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 41': 'Build all five pillars. Then let them carry the weight.',
+    'CHAPTER 42': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 43': 'Influence without understanding is manipulation. With understanding, it is leadership.',
+    'CHAPTER 43': 'Go see what others miss.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
@@ -141,33 +143,34 @@ CHAPTER_LEGEND = {
     'CHAPTER 14': {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 15': {'tiers': ['t3'],       'cats': ['bp']},
     'CHAPTER 16': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 17': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 18': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 19': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 20': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 21': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 18': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 19': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19B': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},
+    'CHAPTER 20': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 21': {'tiers': ['t2', 't3'], 'cats': ['am']},
     'CHAPTER 22': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 23': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 24': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 23': {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 24': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 25': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 26': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 27': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 28': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 26': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 27': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 28': {'tiers': ['t1', 't2'], 'cats': ['am']},
     'CHAPTER 29': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 30': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 31': {'tiers': ['t2', 't3'], 'cats': ['cr']},
-    'CHAPTER 32': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 30': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 31': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 32': {'tiers': ['t2', 't3'], 'cats': ['cr']},
     'CHAPTER 33': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 34': {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 35': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 36': {'tiers': ['t2', 't3'], 'cats': ['vs']},
-    'CHAPTER 37': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 36': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 37': {'tiers': ['t2', 't3'], 'cats': ['vs']},
     'CHAPTER 38': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 39': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 40': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 41': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 42': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 40': {'tiers': ['t2', 't3'], 'cats': ['am']},
+    'CHAPTER 41': {'tiers': ['t1', 't2'], 'cats': ['am']},
     'CHAPTER 42': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 43': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 43': {'tiers': ['t2', 't3'], 'cats': ['bp']},
 }
 
 # T4 signal table data — (signal name, brief read, use category)
@@ -351,85 +354,85 @@ SECTION_BADGES = {
     'CHAPTER 16:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
     'CHAPTER 16:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 16:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
-    # ── CHAPTER 17: Mentalism in Boardroom ──
-    'CHAPTER 17:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 17:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 17:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 18: Behavioral Training ──
-    'CHAPTER 18:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 18:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 19: Influence Without Authority ──
-    'CHAPTER 19:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 19:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 19:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 20: Ethics of Influence ──
-    'CHAPTER 20:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 20:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 21: The Performance Arc ──
-    'CHAPTER 21:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 21:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 21:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
-    # ── CHAPTER 22: Art of Strolling ──
-    'CHAPTER 22:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 22:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 23: Duration Neglect / Standing Ovation ──
-    'CHAPTER 23:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 23:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 24: Audio as Architecture ──
-    'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
-    'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 25: Compliance by Design ──
-    'CHAPTER 25:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 25:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 25:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 26: Authority Frame ──
-    'CHAPTER 26:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 26:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 26:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 29: Signal to Statement ──
-    'CHAPTER 29:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 29:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 29:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 29:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
-    # ── CHAPTER 30: Insight Demonstrations ──
-    'CHAPTER 30:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
-    'CHAPTER 30:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 30:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
-    # ── CHAPTER 31: Method Invisibility ──
-    'CHAPTER 31:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 31:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 33: Where Bookings Are Won ──
-    'CHAPTER 33:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 33:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 35: Language of Authority ──
-    'CHAPTER 35:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 35:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 36: Reading the Booking Room ──
-    'CHAPTER 36:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 36:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 38: FATE Model ──
-    'CHAPTER 38:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 38:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 39: Authority Architecture ──
-    'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 39:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 40: Performer's Signal Dictionary ──
-    'CHAPTER 40:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 40:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 40:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 41: Influence Equation ──
-    'CHAPTER 41:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 41:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 42: DECODE Framework ──
-    'CHAPTER 42:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 42:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 42:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 42:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 42:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 42:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 18: Mentalism in Boardroom ──
+    'CHAPTER 18:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 18:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 19: Behavioral Training ──
+    'CHAPTER 19:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 20: Influence Without Authority ──
+    'CHAPTER 20:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 20:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 20:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 21: Ethics of Influence ──
+    'CHAPTER 21:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 21:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 22: The Performance Arc ──
+    'CHAPTER 22:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 22:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 22:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    # ── CHAPTER 23: Art of Strolling ──
+    'CHAPTER 23:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 23:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 24: Duration Neglect / Standing Ovation ──
+    'CHAPTER 24:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 24:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 25: Audio as Architecture ──
+    'CHAPTER 25:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
+    'CHAPTER 25:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 26: Compliance by Design ──
+    'CHAPTER 26:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 26:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 26:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 27: Authority Frame ──
+    'CHAPTER 27:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 27:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 27:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 30: Signal to Statement ──
+    'CHAPTER 30:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 30:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 30:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 30:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
+    # ── CHAPTER 31: Insight Demonstrations ──
+    'CHAPTER 31:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
+    'CHAPTER 31:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 31:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
+    # ── CHAPTER 32: Method Invisibility ──
+    'CHAPTER 32:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 32:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 34: Where Bookings Are Won ──
+    'CHAPTER 34:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 36: Language of Authority ──
+    'CHAPTER 36:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 36:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 37: Reading the Booking Room ──
+    'CHAPTER 37:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 37:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 39: FATE Model ──
+    'CHAPTER 39:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 39:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 40: Authority Architecture ──
+    'CHAPTER 40:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 40:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 41: Performer's Signal Dictionary ──
+    'CHAPTER 41:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 41:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 41:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 42: Influence Equation ──
+    'CHAPTER 42:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 42:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 43: DECODE Framework ──
+    'CHAPTER 43:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 43:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 43:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 43:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 43:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 43:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
 }
 
 def gen_section_badge_strip(tiers, cats):
@@ -706,10 +709,11 @@ def parse_manuscript(filepath):
             i += 2
             continue
 
-        # Detect CHAPTER headers
-        chapter_match = re.match(r'^CHAPTER\s+(\d+)\s*$', line)
+        # Detect CHAPTER headers (supports alphanumeric IDs like 19B)
+        chapter_match = re.match(r'^CHAPTER\s+(\d+[A-Z]?)\s*$', line)
         if chapter_match and i > 55:
-            chapter_num = int(chapter_match.group(1))
+            chapter_id = chapter_match.group(1)  # e.g. "19" or "19B"
+            chapter_num = int(re.match(r'\d+', chapter_id).group())
             title = ''
             if i+1 < len(lines) and lines[i+1].strip():
                 title = lines[i+1].strip()
@@ -718,10 +722,11 @@ def parse_manuscript(filepath):
             current_section = {
                 'type': 'chapter',
                 'chapter_num': chapter_num,
+                'chapter_id': chapter_id,
                 'part_num': current_part,
                 'title': title,
                 'content': [],
-                'chapter_key': f'CHAPTER {chapter_num}'
+                'chapter_key': f'CHAPTER {chapter_id}'
             }
             i += 2
             if i < len(lines) and '\u2500' in lines[i]:
@@ -2135,6 +2140,7 @@ def process_paragraph(text, part_num=1):
     # Warning section headers — stand-out treatment
     _warning_headers = {
         'When You Have Gone Too Far',
+        'The Line',
     }
     if stripped in _warning_headers:
         return gen_warning_header(stripped)
@@ -2552,8 +2558,9 @@ def build_chapter_body(section, global_para_count):
         return '', global_para_count
 
     # Running header
+    chapter_id = section.get('chapter_id', str(chapter_num))
     if chapter_num > 0:
-        header_text = f'CHAPTER {chapter_num}\u2003\u2014\u2003{title.upper()}'
+        header_text = f'CHAPTER {chapter_id}\u2003\u2014\u2003{title.upper()}'
     elif chapter_num == 0:
         header_text = 'INTRODUCTION'
     else:
