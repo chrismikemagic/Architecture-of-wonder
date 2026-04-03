@@ -28,125 +28,116 @@ import textwrap
 # ═══════════════════════════════════════════════════════════
 
 HOOK_LINES = {
-    'INTRODUCTION': '"What you are about to read was designed to demonstrate its own content. Every page is a performance."',
-    'CHAPTER 1': '"Reality is not what happens. It is what they remember happening."',
-    'CHAPTER 2': '"Your audience\u2019s brain is deciding what matters before you open your mouth."',
-    'CHAPTER 3': '"The moment before the reveal is worth more than the reveal itself."',
-    'CHAPTER 4': '"Dopamine does not reward the outcome. It rewards the anticipation."',
-    'CHAPTER 5': '"Attention is not given. It is taken."',
-    'CHAPTER 6': '"Authority is not claimed. It is perceived\u2009\u2014\u2009in the first 250 milliseconds."',
-    'CHAPTER 7': '"Every person who walks toward you is already broadcasting."',
-    'CHAPTER 8': '"Eighty signals. Four tiers. One chain to read them all."',
-    'CHAPTER 11': '"The face performs. The eyes search."',
-    'CHAPTER 12': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
-    'CHAPTER 13': '"You already know more than you think. The trick is knowing what to trust."',
-    'CHAPTER 9': '"Thought does not stay inside the head. The body has been listening the whole time."',
-    'CHAPTER 10': '"The volunteer chose you before you chose them."',
-    'CHAPTER 14': '"Compliance is not obedience. It is agreement they did not know they gave."',
+    'CHAPTER 1':  '"Colin Cloud said something I have not been able to stop thinking about."',
+    'CHAPTER 2':  '"What you are about to read was designed to demonstrate its own content. Every page is a performance."',
+    'CHAPTER 3':  '"Reality is not what happens. It is what they remember happening."',
+    'CHAPTER 4':  '"Your audience\u2019s brain is deciding what matters before you open your mouth."',
+    'CHAPTER 5':  '"The moment before the reveal is worth more than the reveal itself."',
+    'CHAPTER 6':  '"Dopamine does not reward the outcome. It rewards the anticipation."',
+    'CHAPTER 7':  '"Attention is not given. It is taken."',
+    'CHAPTER 8':  '"Authority is not claimed. It is perceived\u2009\u2014\u2009in the first 250 milliseconds."',
+    'CHAPTER 9':  '"Every person who walks toward you is already broadcasting."',
+    'CHAPTER 10':  '"Eighty signals. Four tiers. One chain to read them all."',
+    'CHAPTER 11': '"The volunteer chose you before you chose them."',
+    'CHAPTER 13': '"Thought does not stay inside the head. The body has been listening the whole time."',
+    'CHAPTER 14': '"The face performs. The eyes search."',
     'CHAPTER 15': '"The moment after the effect is where the real work happens."',
-    'CHAPTER 16': '"Hypnosis is not what you think it is. That is why it works."',
-    'CHAPTER 18': '"The boardroom is the most dangerous stage you will ever work."',
-    'CHAPTER 19': '"You cannot teach observation. You can only remove the obstacles to seeing."',
-    'CHAPTER 19B': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
-    'CHAPTER 20': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 21': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 22': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 23': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 24': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
-    'CHAPTER 25': '"Memory is not a recording. It is a story the brain tells itself every time you ask for it."',
-    'CHAPTER 26': '"The word they are thinking has not been written down, but you are still about to measure it."',
-    'CHAPTER 27': '"A free choice is only free until someone designs the menu."',
-    'CHAPTER 28': '"Propless does not mean effortless. It means the work is invisible."',
-    'CHAPTER 29': '"The method disappears when the frame is large enough."',
-    'CHAPTER 30': '"Some rooms comply before you earn it. Most rooms wait to see if you know you deserve it."',
-    'CHAPTER 39': '"Every framework in this book leads here."',
+    'CHAPTER 16': '"Memory is not a recording. It is a story the brain tells itself every time you ask for it."',
+    'CHAPTER 17': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
+    'CHAPTER 18': '"You already know more than you think. The trick is knowing what to trust."',
+    'CHAPTER 19': '"Hypnosis is not what you think it is. That is why it works."',
+    'CHAPTER 20': '"The word they are thinking has not been written down, but you are still about to measure it."',
+    'CHAPTER 21': '"A free choice is only free until someone designs the menu."',
+    'CHAPTER 22': '"Propless does not mean effortless. It means the work is invisible."',
+    'CHAPTER 23': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
+    'CHAPTER 24': '"The method disappears when the frame is large enough."',
+    'CHAPTER 26': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
+    'CHAPTER 33': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 34': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 35': '"Every framework in this book leads here."',
+    'CHAPTER 36': '"The most powerful person in the room is rarely the one with the title."',
+    'CHAPTER 37': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 38': '"Every performance teaches you something. Most of the lessons hurt."',
     'CHAPTER 40': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
-    'CHAPTER 41': '"Authority is not one thing. It is five things, and most people have two."',
-    'CHAPTER 42': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 43': '"Influence is not a trick. It is an equation with variables you can measure."',
-    'CHAPTER 43': '"Every framework in this book was designed to work on stage. This one ties them together."',
-    'GLOSSARY': '"The language shapes the thinking. Know the words."',
+    'GLOSSARY':   '"The language shapes the thinking. Know the words."',
 }
 
 KEY_READS = {
-    'CHAPTER 1': 'Design the memory, and you design the experience.',
-    'CHAPTER 2': 'Salience is not what you show. It is what they cannot ignore.',
-    'CHAPTER 3': 'Tension is not the enemy. Boredom is.',
-    'CHAPTER 4': 'Delay is not cruelty. It is craft.',
-    'CHAPTER 5': 'You cannot give someone an experience they were not paying attention for.',
-    'CHAPTER 6': 'Credibility is not what you say. It is what they decide before you say it.',
-    'CHAPTER 7': 'The read is never one signal. The read is the chain.',
-    'CHAPTER 8': 'Eighty signals. Five filters. One practice.',
-    'CHAPTER 11': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
-    'CHAPTER 12': 'Seven expressions. One-fifth of a second. That is the window.',
-    'CHAPTER 13': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 9': 'Intention is not invisible. It is just smaller than you were looking for.',
-    'CHAPTER 10': 'Handle the person, not the trick.',
-    'CHAPTER 14': 'The best instruction is the one that feels like their idea.',
+    'CHAPTER 3':  'Design the memory, and you design the experience.',
+    'CHAPTER 4':  'Salience is not what you show. It is what they cannot ignore.',
+    'CHAPTER 5':  'Tension is not the enemy. Boredom is.',
+    'CHAPTER 6':  'Delay is not cruelty. It is craft.',
+    'CHAPTER 7':  'You cannot give someone an experience they were not paying attention for.',
+    'CHAPTER 8':  'Credibility is not what you say. It is what they decide before you say it.',
+    'CHAPTER 9':  'The read is never one signal. The read is the chain.',
+    'CHAPTER 10':  'Eighty signals. Five filters. One practice.',
+    'CHAPTER 11': 'Handle the person, not the trick.',
+    'CHAPTER 13': 'Intention is not invisible. It is just smaller than you were looking for.',
+    'CHAPTER 14': 'Seven expressions. One-fifth of a second. That is the window.',
     'CHAPTER 15': 'Close the moment before they close it for you.',
-    'CHAPTER 16': 'The trance state is not extraordinary. It is the brain doing what it does best.',
-    'CHAPTER 18': 'In the boardroom, the audience writes the review before the show ends.',
-    'CHAPTER 19': 'Training is not instruction. It is guided noticing.',
-    'CHAPTER 19B': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
-    'CHAPTER 20': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 21': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 22': 'Your biography arrives before you do. Make sure it is doing the right job.',
-    'CHAPTER 23': 'The booking is won in the room they never see you in.',
-    'CHAPTER 24': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
-    'CHAPTER 25': 'The memory of the effect matters more than the effect itself.',
-    'CHAPTER 26': 'Influence and counting. That is the whole secret of The Babel Count.',
-    'CHAPTER 27': 'A psychological force is not a trick. It is an architecture.',
-    'CHAPTER 28': 'When there is nothing in your hands, everything in you has to be right.',
-    'CHAPTER 29': 'The zodiac is a frame. What you put inside it is the work.',
-    'CHAPTER 30': 'Obedience is not compliance. It is the architecture that makes compliance feel natural.',
-    'CHAPTER 39': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 16': 'The memory of the effect matters more than the effect itself.',
+    'CHAPTER 17': 'The best cold read is a warm observation delivered cold.',
+    'CHAPTER 18': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
+    'CHAPTER 19': 'The trance state is not extraordinary. It is the brain doing what it does best.',
+    'CHAPTER 20': 'Influence and counting. That is the whole secret of The Babel Count.',
+    'CHAPTER 21': 'A psychological force is not a trick. It is an architecture.',
+    'CHAPTER 22': 'When there is nothing in your hands, everything in you has to be right.',
+    'CHAPTER 23': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 24': 'The zodiac is a frame. What you put inside it is the work.',
+    'CHAPTER 26': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
+    'CHAPTER 33': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 34': 'The booking is won in the room they never see you in.',
+    'CHAPTER 35': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 36': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 37': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 38': 'The face is the performance. The hands are the truth.',
     'CHAPTER 40': 'Four forces. Every room is already running the equation before you open your mouth.',
-    'CHAPTER 41': 'Build all five pillars. Then let them carry the weight.',
-    'CHAPTER 42': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 43': 'Influence without understanding is manipulation. With understanding, it is leadership.',
-    'CHAPTER 43': 'Go see what others miss.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
 # tiers: list from ['t1','t2','t3','t4']   cats: list from ['bp','cr','vs','am']
 # BP=Behavioral Profiling  CR=Cold Reading  VS=Verbal/Vocal Signals  AM=Audience Management
 CHAPTER_LEGEND = {
-    'CHAPTER 1':  {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2':  {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3':  {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 4':  {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 5':  {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 6':  {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 7':  {'tiers': ['t1', 't2'], 'cats': ['bp']},
-    'CHAPTER 8':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 11':  {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 12': {'tiers': ['t1', 't2'], 'cats': ['bp']},
-    'CHAPTER 13': {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 9': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 10': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 14': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 15': {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 16': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 18': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 19': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 19B': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},
-    'CHAPTER 20': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 21': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 22': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 23': {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 24': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 25': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 26': {'tiers': ['t2', 't3'], 'cats': ['cr']},
-    'CHAPTER 27': {'tiers': ['t2', 't3'], 'cats': ['cr']},
-    'CHAPTER 28': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 29': {'tiers': ['t2', 't3'], 'cats': ['cr']},
-    'CHAPTER 30': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 39': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 40': {'tiers': ['t2', 't3'], 'cats': ['am']},
-    'CHAPTER 41': {'tiers': ['t1', 't2'], 'cats': ['am']},
-    'CHAPTER 42': {'tiers': ['t2', 't3'], 'cats': ['bp']},
-    'CHAPTER 43': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 43': {'tiers': ['t2', 't3'], 'cats': ['bp']},
+    'CHAPTER 1':  {'tiers': ['t1'],             'cats': ['am']},          # The Method Is Not the Point
+    'CHAPTER 2':  {'tiers': ['t1'],             'cats': ['am']},          # On Being the Person
+    'CHAPTER 3':  {'tiers': ['t1'],             'cats': ['am']},          # Designing for Reality
+    'CHAPTER 4':  {'tiers': ['t1', 't2'],       'cats': ['am']},          # Five Forces
+    'CHAPTER 5':  {'tiers': ['t1'],             'cats': ['am']},          # Tension
+    'CHAPTER 6':  {'tiers': ['t1'],             'cats': ['am']},          # Anticipation
+    'CHAPTER 7':  {'tiers': ['t1', 't2'],       'cats': ['am']},          # Attention as Weapon
+    'CHAPTER 8':  {'tiers': ['t1', 't2'],       'cats': ['bp']},          # Reading Body Language
+    'CHAPTER 9':  {'tiers': ['t2', 't3'],       'cats': ['bp']},          # 80-Signal System
+    'CHAPTER 10':  {'tiers': ['t2', 't3'],       'cats': ['bp']},          # Four Personalities
+    'CHAPTER 11': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Volunteer's Brain
+    'CHAPTER 12': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # Chris Michael's Tell Table
+    'CHAPTER 13': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # Eyes, Face
+    'CHAPTER 14': {'tiers': ['t1', 't2'],       'cats': ['bp']},          # Micro-Expression Matrix
+    'CHAPTER 15': {'tiers': ['t3'],             'cats': ['bp']},          # Closing the Barn Door
+    'CHAPTER 16': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Memory Distortion
+    'CHAPTER 17': {'tiers': ['t3'],             'cats': ['cr']},          # Cold Reading
+    'CHAPTER 18': {'tiers': ['t2'],             'cats': ['bp']},          # Contact Mind Reading
+    'CHAPTER 19': {'tiers': ['t1', 't2'],       'cats': ['am']},          # How Hypnosis Really Works
+    'CHAPTER 20': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # The Babel Count
+    'CHAPTER 21': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Psychological Forces
+    'CHAPTER 22': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making Better Propless
+    'CHAPTER 23': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Propless Systems
+    'CHAPTER 24': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Zodiac Divinations
+    'CHAPTER 25': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Pre-Show
+    'CHAPTER 26': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},   # Digital Preshow
+    'CHAPTER 27': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Performance Arc
+    'CHAPTER 28': {'tiers': ['t3'],             'cats': ['am']},          # Method Invisibility
+    'CHAPTER 29': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Patter, Rhythm, Silence
+    'CHAPTER 30': {'tiers': ['t2', 't3'],       'cats': ['am']},          # When the Room Rises
+    'CHAPTER 31': {'tiers': ['t3'],             'cats': ['am']},          # Art of Strolling
+    'CHAPTER 32': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making the Room Say Yes
+    'CHAPTER 33': {'tiers': ['t3'],             'cats': ['am']},          # Intro Video
+    'CHAPTER 34': {'tiers': ['t3'],             'cats': ['am']},          # Introductions, Bios
+    'CHAPTER 35': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides
+    'CHAPTER 36': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Ethics of Influence
+    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # How Influence Actually Works
+    'CHAPTER 38': {'tiers': ['t3'],             'cats': ['am']},          # Influence Without Authority
+    'CHAPTER 39': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Frame
+    'CHAPTER 40': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Architecture
 }
 
 # T4 signal table data — (signal name, brief read, use category)
@@ -174,12 +165,12 @@ T4_SIGNALS = [
 ]
 
 WHAT_YOU_JUST_DID = {
-    3: "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat\u2009\u2014\u2009even though the threat is not real. Observation, applied to yourself.",
-    7: "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01\u2009\u2014\u2009handedness indicator. You just demonstrated it without thinking.",
-    15: "Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.",
-    21: "You just turned to this chapter. Before reading a word, you formed an impression of its length by glancing at the page count. That is thin-slicing applied to a book. You do this with people too.",
-    28: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Two taught you this. The book just demonstrated it.",
-    36: "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect\u2009\u2014\u2009your brain knows it is close to the end and is already preparing to consolidate.",
+    4: "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat\u2009\u2014\u2009even though the threat is not real. Observation, applied to yourself.",
+    8: "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01\u2009\u2014\u2009handedness indicator. You just demonstrated it without thinking.",
+    16: "Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.",
+    22: "You just turned to this chapter. Before reading a word, you formed an impression of its length by glancing at the page count. That is thin-slicing applied to a book. You do this with people too.",
+    29: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Three taught you this. The book just demonstrated it.",
+    37: "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect\u2009\u2014\u2009your brain knows it is close to the end and is already preparing to consolidate.",
 }
 
 PATTERN_INTERRUPTS = [
@@ -200,22 +191,22 @@ PATTERN_INTERRUPTS = [
 FIGURES = {
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 12:The Seven Expressions': {
+    'CHAPTER 13:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 10.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'caption': 'Figure 13.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 12:The Duchenne Smile': {
+    'CHAPTER 13:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
-        'caption': 'Figure 10.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
+        'caption': 'Figure 13.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 11:Lip Compression': {
+    'CHAPTER 12:Lip Compression': {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
-        'caption': 'Figure 9.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'caption': 'Figure 12.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
         'rights': 'AI-generated illustration',
     },
 }
@@ -227,188 +218,159 @@ FIGURES = {
 # ═══════════════════════════════════════════════════════════
 
 SECTION_BADGES = {
-    # ── CHAPTER 1: Designing for Reality ──
-    'CHAPTER 1:The Setup Is the Performance':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 1:Expectation Loading':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 1:Predictive Processing':           {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 1:Cognitive Economy':               {'tiers': ['t1'],       'cats': ['am']},
-    # ── CHAPTER 2: Five Forces of Salience ──
-    'CHAPTER 2:1. Novelty':                      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:2. Emotional Relevance':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:3. Social Signal':                {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:4. Unresolved Uncertainty':       {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:5. Contrast':                     {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:Stacking the Forces':             {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 3: Tension, Threat and Window ──
-    'CHAPTER 3:The Cortisol Threshold':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3:Breathing Visibility':            {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 3:Stillness Gradient':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 3:The Laughter Signal':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 3:Phone Emergence':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 3:Reading the Audience\'s Cortisol Level': {'tiers': ['t2'], 'cats': ['am']},
-    # ── CHAPTER 4: Art of Anticipation ──
-    'CHAPTER 4:Increasing Dopamine':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 4:Premature Resolution':            {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 4:Intermittent Structure':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 5: Attention as a Weapon ──
-    'CHAPTER 5:The Gorilla Principle':           {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 5:Change Blindness':                {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 5:Psychological Marking':           {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 5:The Effort Inversion':            {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 6: Behavioral Profiling ──
-    'CHAPTER 6:The Foundation: Baseline First':  {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 6:The Five Cs':                     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 6:Reading Deviation':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 6:The Leakage Window':              {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 6:Eye Movement and the Baseline Principle': {'tiers': ['t3'], 'cats': ['bp']},
-    'CHAPTER 6:The Three-Signal Rule':           {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 6:Observation Is Not Lie Detection':{'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 6:Common Observer Errors':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 6:Cultural Calibration in Practice':{'tiers': ['t2'],       'cats': ['bp']},
-    # ── CHAPTER 7: 80-Signal System ──
-    'CHAPTER 7:The Six-Category Radar':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:The 10-Second Scan':              {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:T4 Signals Removed':              {'tiers': ['t4'],       'cats': ['bp']},
-    # ── CHAPTER 8: DISC ──
-    'CHAPTER 8:Reading DISC Blends':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 8:DISC and Volunteer Strategy':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 9: Eyes/Face ──
-    'CHAPTER 11:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
-    'CHAPTER 11:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 11:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 11:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 11:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 11:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 11:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 11:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
-    # ── CHAPTER 10: Micro-Expression Matrix ──
-    'CHAPTER 12:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 12:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 12:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
-    'CHAPTER 12:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
-    # ── CHAPTER 11: Cold Reading ──
-    'CHAPTER 13:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
-    'CHAPTER 13:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
-    'CHAPTER 13:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 13:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
-    'CHAPTER 13:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
-    'CHAPTER 13:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
-    'CHAPTER 13:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 13:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 13:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
-    # ── CHAPTER 13: Contact Mind Reading ──
-    'CHAPTER 13:Muscle Reading':                        {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 13:The Method':                            {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 13:Focus, Not Clutter':                    {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 13:Suggestibility and the Frame':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 13:Setting Up the Conditions':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 13:The Grip':                              {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 13:Verify, Verify, Verify':                {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 13:The Science Behind Contact Mind Reading': {'tiers': ['t1'],     'cats': ['bp']},
-    'CHAPTER 13:Framing the Effect':                    {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 13:Intent Cues Beyond the Stage':          {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 9: Volunteer's Brain ──
-    'CHAPTER 9:Seven Volunteer Types':                  {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 9:The Volunteer Selection Matrix':         {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 9:Anchoring in Performance':               {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 9:The Neural Selection Circuit':           {'tiers': ['t2'],       'cats': ['vs']},
-    # ── CHAPTER 14: Language of Yes ──
-    'CHAPTER 14:Pacing and Leading':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 14:Yes Sets':                       {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 14:Double Binds':                   {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 14:Presupposition Check':           {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 14:Degrees of Certainty':           {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 3: Designing for Reality ──
+    'CHAPTER 2:The Setup Is the Performance':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:Expectation Loading':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:Predictive Processing':           {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 2:Cognitive Economy':               {'tiers': ['t1'],       'cats': ['am']},
+    # ── CHAPTER 4: Five Forces of Salience ──
+    'CHAPTER 3:1. Novelty':                      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:2. Emotional Relevance':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:3. Social Signal':                {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:4. Unresolved Uncertainty':       {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:5. Contrast':                     {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:Stacking the Forces':             {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 5: Tension, Threat and Window ──
+    'CHAPTER 4:The Cortisol Threshold':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 4:Breathing Visibility':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 4:Stillness Gradient':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 4:The Laughter Signal':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 4:Phone Emergence':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 4:Reading the Audience\'s Cortisol Level': {'tiers': ['t2'], 'cats': ['am']},
+    # ── CHAPTER 6: Art of Anticipation ──
+    'CHAPTER 5:Increasing Dopamine':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 5:Premature Resolution':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 5:Intermittent Structure':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 7: Attention as a Weapon ──
+    'CHAPTER 6:The Gorilla Principle':           {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 6:Change Blindness':                {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 6:Psychological Marking':           {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 6:The Effort Inversion':            {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 8: Reading Body Language ──
+    'CHAPTER 7:The Foundation: Baseline First':  {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:The Five Cs':                     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:Reading Deviation':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:The Leakage Window':              {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:Eye Movement and the Baseline Principle': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 7:The Three-Signal Rule':           {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:Observation Is Not Lie Detection':{'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 7:Common Observer Errors':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 7:Cultural Calibration in Practice':{'tiers': ['t2'],       'cats': ['bp']},
+    # ── CHAPTER 9: 80-Signal System ──
+    'CHAPTER 8:The Six-Category Radar':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 8:The 10-Second Scan':              {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 8:T4 Signals Removed':              {'tiers': ['t4'],       'cats': ['bp']},
+    # ── CHAPTER 10: Four Personalities ──
+    'CHAPTER 9:Reading DISC Blends':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 9:DISC and Volunteer Strategy':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 11: Volunteer's Brain ──
+    'CHAPTER 10:Seven Volunteer Types':          {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 10:The Volunteer Selection Matrix': {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 10:Anchoring in Performance':       {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 10:The Neural Selection Circuit':   {'tiers': ['t2'],       'cats': ['vs']},
+    # ── CHAPTER 13: Eyes, Face ──
+    'CHAPTER 12:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 12:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 12:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 12:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 12:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
+    # ── CHAPTER 14: Micro-Expression Matrix ──
+    'CHAPTER 13:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 13:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 13:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
+    'CHAPTER 13:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
     # ── CHAPTER 15: Closing the Barn Door ──
-    'CHAPTER 15:The Memory Problem':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 15:The Language of Preemptive Closure': {'tiers': ['t2'],   'cats': ['am']},
-    # ── CHAPTER 16: Science of Hypnosis ──
-    'CHAPTER 16:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 16:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 16:The Rainville Finding':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 16:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
-    'CHAPTER 16:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 16:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
-    # ── CHAPTER 18: Mentalism in Boardroom ──
-    'CHAPTER 18:Credibility as the First Act':   {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 18:Corporate Audience Signals':     {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 18:The Real Power Map':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 19: Behavioral Training ──
-    'CHAPTER 19:Why Most Training Fails':        {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 19:The Hippocampus Test':           {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 20: Influence Without Authority ──
-    'CHAPTER 20:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 20:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 20:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 21: Ethics of Influence ──
-    'CHAPTER 21:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 21:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 22: The Performance Arc ──
-    'CHAPTER 22:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 22:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 22:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
-    # ── CHAPTER 23: Art of Strolling ──
-    'CHAPTER 23:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 23:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 24: Duration Neglect / Standing Ovation ──
-    'CHAPTER 24:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 24:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 25: Audio as Architecture ──
-    'CHAPTER 25:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
-    'CHAPTER 25:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 26: Compliance by Design ──
-    'CHAPTER 26:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 26:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 26:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 27: Authority Frame ──
-    'CHAPTER 27:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 27:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 27:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 30: Signal to Statement ──
+    'CHAPTER 14:The Memory Problem':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 14:The Language of Preemptive Closure': {'tiers': ['t2'],   'cats': ['am']},
+    # ── CHAPTER 17: Cold Reading ──
+    'CHAPTER 16:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
+    'CHAPTER 16:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
+    'CHAPTER 16:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 16:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 16:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
+    'CHAPTER 16:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
+    'CHAPTER 16:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 16:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 16:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 16:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
+    'CHAPTER 16:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
+    'CHAPTER 16:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
+    # ── CHAPTER 18: Contact Mind Reading ──
+    'CHAPTER 17:Muscle Reading':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 17:The Method':                     {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 17:Focus, Not Clutter':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 17:Suggestibility and the Frame':   {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 17:Setting Up the Conditions':      {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 17:The Grip':                       {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 17:Verify, Verify, Verify':         {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 17:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
+    'CHAPTER 17:Framing the Effect':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 17:Intent Cues Beyond the Stage':   {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 19: How Hypnosis Really Works ──
+    'CHAPTER 18:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 18:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 18:The Rainville Finding':          {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 18:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 18:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 18:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
+    # ── CHAPTER 27: The Performance Arc ──
+    'CHAPTER 26:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 26:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 26:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    # ── CHAPTER 28: Method Invisibility ──
+    'CHAPTER 27:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 27:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 31: Art of Strolling ──
+    'CHAPTER 30:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 30:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 30:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 30:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
     'CHAPTER 30:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 30:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
-    # ── CHAPTER 31: Insight Demonstrations ──
-    'CHAPTER 31:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
-    'CHAPTER 31:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 31:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
-    # ── CHAPTER 32: Method Invisibility ──
-    'CHAPTER 32:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 32:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 34: Where Bookings Are Won ──
+    # ── CHAPTER 30: When the Room Rises ──
+    'CHAPTER 29:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 29:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 25: Pre-Show ──
+    'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
+    'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 32: Making the Room Say Yes ──
+    'CHAPTER 31:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 31:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 31:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 39: Authority Frame ──
+    'CHAPTER 38:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 38:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    # ── CHAPTER 35: What the Room Decides ──
     'CHAPTER 34:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 34:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 36: Language of Authority ──
+    'CHAPTER 34:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 34:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 36: Ethics of Influence ──
+    'CHAPTER 35:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 37: How Influence Actually Works ──
     'CHAPTER 36:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 36:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 37: Reading the Booking Room ──
+    'CHAPTER 36:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 36:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 38: Influence Without Authority ──
+    'CHAPTER 37:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 37:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 37:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 39: FATE Model ──
-    'CHAPTER 39:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 39:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 39:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 39:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 39:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 40: Authority Architecture ──
-    'CHAPTER 40:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 40:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 41: Performer's Signal Dictionary ──
-    'CHAPTER 41:Cluster One: Engagement Retreat':{'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 41:Cluster Two: Evaluation':        {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 41:Cluster Three: Certainty Drop':  {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 42: Influence Equation ──
-    'CHAPTER 42:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 42:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 43: DECODE Framework ──
-    'CHAPTER 43:D \u2014 Detect':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 43:E \u2014 Engage':                {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 43:C \u2014 Calibrate':             {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 43:O \u2014 Observe':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 43:D \u2014 Decode':                {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 43:E \u2014 Elevate':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
 }
 
 def gen_section_badge_strip(tiers, cats):
@@ -2887,7 +2849,7 @@ def build_chapter_body(section, global_para_count):
         if _t4_m and i + 3 < len(paragraphs):
             sig_num = int(_t4_m.group(1))
             # In Ch7: inject full T4 table on signal 1, skip all 4 signal blocks
-            if chapter_num == 7:
+            if chapter_num == 8:
                 if sig_num == 1:
                     parts.append(gen_t4_table())
                 # Fast-forward past this signal's CLAIM/RESEARCH/VALID content
