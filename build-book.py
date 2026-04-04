@@ -51,14 +51,14 @@ HOOK_LINES = {
     'CHAPTER 22': '"Propless does not mean effortless. It means the work is invisible."',
     'CHAPTER 23': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
     'CHAPTER 24': '"The method disappears when the frame is large enough."',
-    'CHAPTER 26': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
-    'CHAPTER 33': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 34': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 35': '"Every framework in this book leads here."',
-    'CHAPTER 36': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 37': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 38': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 40': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 27': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
+    'CHAPTER 34': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 35': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 36': '"Every framework in this book leads here."',
+    'CHAPTER 37': '"The most powerful person in the room is rarely the one with the title."',
+    'CHAPTER 38': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 39': '"Every performance teaches you something. Most of the lessons hurt."',
+    'CHAPTER 41': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
     'GLOSSARY':   '"The language shapes the thinking. Know the words."',
 }
 
@@ -84,14 +84,14 @@ KEY_READS = {
     'CHAPTER 22': 'When there is nothing in your hands, everything in you has to be right.',
     'CHAPTER 23': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
     'CHAPTER 24': 'The zodiac is a frame. What you put inside it is the work.',
-    'CHAPTER 26': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
-    'CHAPTER 33': 'Your biography arrives before you do. Make sure it is doing the right job.',
-    'CHAPTER 34': 'The booking is won in the room they never see you in.',
-    'CHAPTER 35': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 36': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 37': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 38': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 40': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 27': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
+    'CHAPTER 34': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 35': 'The booking is won in the room they never see you in.',
+    'CHAPTER 36': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 37': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 38': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 39': 'The face is the performance. The hands are the truth.',
+    'CHAPTER 41': 'Four forces. Every room is already running the equation before you open your mouth.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
@@ -122,22 +122,23 @@ CHAPTER_LEGEND = {
     'CHAPTER 22': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making Better Propless
     'CHAPTER 23': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Propless Systems
     'CHAPTER 24': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Zodiac Divinations
-    'CHAPTER 25': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Pre-Show
-    'CHAPTER 26': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},   # Digital Preshow
-    'CHAPTER 27': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Performance Arc
-    'CHAPTER 28': {'tiers': ['t3'],             'cats': ['am']},          # Method Invisibility
-    'CHAPTER 29': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Patter, Rhythm, Silence
-    'CHAPTER 30': {'tiers': ['t2', 't3'],       'cats': ['am']},          # When the Room Rises
-    'CHAPTER 31': {'tiers': ['t3'],             'cats': ['am']},          # Art of Strolling
-    'CHAPTER 32': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making the Room Say Yes
-    'CHAPTER 33': {'tiers': ['t3'],             'cats': ['am']},          # Intro Video
-    'CHAPTER 34': {'tiers': ['t3'],             'cats': ['am']},          # Introductions, Bios
-    'CHAPTER 35': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides
-    'CHAPTER 36': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Ethics of Influence
-    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # How Influence Actually Works
-    'CHAPTER 38': {'tiers': ['t3'],             'cats': ['am']},          # Influence Without Authority
-    'CHAPTER 39': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Frame
-    'CHAPTER 40': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Architecture
+    'CHAPTER 25': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Is Pre-Show Worth It?
+    'CHAPTER 26': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Pre-Show
+    'CHAPTER 27': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},   # Digital Preshow
+    'CHAPTER 28': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Performance Arc
+    'CHAPTER 29': {'tiers': ['t3'],             'cats': ['am']},          # Method Invisibility
+    'CHAPTER 30': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Patter, Rhythm, Silence
+    'CHAPTER 31': {'tiers': ['t2', 't3'],       'cats': ['am']},          # When the Room Rises
+    'CHAPTER 32': {'tiers': ['t3'],             'cats': ['am']},          # Art of Strolling
+    'CHAPTER 33': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making the Room Say Yes
+    'CHAPTER 34': {'tiers': ['t3'],             'cats': ['am']},          # Intro Video
+    'CHAPTER 35': {'tiers': ['t3'],             'cats': ['am']},          # Introductions, Bios
+    'CHAPTER 36': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides
+    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Ethics of Influence
+    'CHAPTER 38': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # How Influence Actually Works
+    'CHAPTER 39': {'tiers': ['t3'],             'cats': ['am']},          # Influence Without Authority
+    'CHAPTER 40': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Frame
+    'CHAPTER 41': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Architecture
 }
 
 # T4 signal table data — (signal name, brief read, use category)
@@ -318,35 +319,35 @@ SECTION_BADGES = {
     'CHAPTER 18:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
     'CHAPTER 18:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 18:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
-    # ── CHAPTER 27: The Performance Arc ──
+    # ── CHAPTER 28: The Performance Arc ──
     'CHAPTER 26:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 26:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 26:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
-    # ── CHAPTER 28: Method Invisibility ──
+    # ── CHAPTER 29: Method Invisibility ──
     'CHAPTER 27:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 27:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 31: Art of Strolling ──
+    # ── CHAPTER 32: Art of Strolling ──
     'CHAPTER 30:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 30:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 30:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 30:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
     'CHAPTER 30:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 30:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
-    # ── CHAPTER 30: When the Room Rises ──
+    # ── CHAPTER 31: When the Room Rises ──
     'CHAPTER 29:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 29:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 25: Pre-Show ──
+    # ── CHAPTER 26: Pre-Show ──
     'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
     'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 32: Making the Room Say Yes ──
+    # ── CHAPTER 33: Making the Room Say Yes ──
     'CHAPTER 31:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 31:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 31:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 39: Authority Frame ──
+    # ── CHAPTER 40: Authority Frame ──
     'CHAPTER 38:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 38:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 38:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 35: What the Room Decides ──
+    # ── CHAPTER 36: What the Room Decides ──
     'CHAPTER 34:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 34:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 34:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
@@ -354,21 +355,21 @@ SECTION_BADGES = {
     'CHAPTER 34:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 34:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 34:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 36: Ethics of Influence ──
+    # ── CHAPTER 37: Ethics of Influence ──
     'CHAPTER 35:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 35:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 37: How Influence Actually Works ──
+    # ── CHAPTER 38: How Influence Actually Works ──
     'CHAPTER 36:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 36:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 36:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 36:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 38: Influence Without Authority ──
+    # ── CHAPTER 39: Influence Without Authority ──
     'CHAPTER 37:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 37:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 37:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
     'CHAPTER 37:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
     'CHAPTER 37:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 40: Authority Architecture ──
+    # ── CHAPTER 41: Authority Architecture ──
     'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 39:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
 }
@@ -1699,6 +1700,20 @@ def gen_anthem_aria_card(body):
         '<span class="aa-subtitle">Field Advice</span>'
         '</div>'
         f'<div class="aa-body">{body_html}</div>'
+        '</div>'
+    )
+
+
+def gen_colin_cloud_card(body):
+    """Render a Colin Cloud insight card — deep green to silver gradient header."""
+    body_html = _apply_bold(escape(body))
+    return (
+        '<div class="cc-card">'
+        '<div class="cc-header">'
+        '<span class="cc-label">Colin Cloud</span>'
+        '<span class="cc-subtitle">Framework</span>'
+        '</div>'
+        f'<div class="cc-body">{body_html}</div>'
         '</div>'
     )
 
@@ -3073,6 +3088,14 @@ def build_chapter_body(section, global_para_count):
             global_para_count += 1
             continue
 
+        # ── COLIN CLOUD FRAMEWORK CARDS ──
+        if stripped.startswith('COLIN_CLOUD:'):
+            body = stripped[len('COLIN_CLOUD:'):].strip()
+            parts.append(gen_colin_cloud_card(body))
+            i += 1
+            global_para_count += 1
+            continue
+
         # ── RECOVERY CARDS — "RECOVERY: Name | when text" followed by body paragraph ──
         if stripped.startswith('RECOVERY:') and i + 1 < len(paragraphs):
             header = stripped[len('RECOVERY:'):].strip()
@@ -4024,6 +4047,34 @@ ul.book-list li::before{
   background:#fdf5f9;
   padding:14px 20px;
   font-size:.95em;line-height:1.75;color:#1f1f1f;
+}
+
+/* ═══ COLIN CLOUD FRAMEWORK CARD ═══ */
+.cc-card{
+  margin:1.8em 0;border-radius:8px;
+  overflow:hidden;
+  border:1px solid rgba(30,100,60,.25);
+  box-shadow:0 4px 24px rgba(0,0,0,.1),0 1px 4px rgba(31,107,58,.12);
+  break-inside:avoid;
+}
+.cc-header{
+  background:linear-gradient(105deg,#1A5C2A 0%,#266B3B 45%,#6B8A90 78%,#A8BFC4 100%);
+  padding:12px 20px;
+  display:flex;align-items:center;gap:14px;
+}
+.cc-label{
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:#fff;
+}
+.cc-subtitle{
+  font-family:var(--serif);font-size:.78rem;font-style:italic;
+  color:rgba(255,255,255,.68);letter-spacing:.06em;
+}
+.cc-body{
+  background:#F2F9F4;
+  border-left:4px solid #1F6B38;
+  padding:16px 22px;
+  font-size:.96em;line-height:1.78;color:#1a1a1a;
 }
 
 /* ═══ MNEMONIC BLOCK ═══ */
