@@ -50,15 +50,16 @@ HOOK_LINES = {
     'CHAPTER 21': '"A free choice is only free until someone designs the menu."',
     'CHAPTER 22': '"Propless does not mean effortless. It means the work is invisible."',
     'CHAPTER 23': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
-    'CHAPTER 24': '"The method disappears when the frame is large enough."',
-    'CHAPTER 27': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
-    'CHAPTER 34': '"Your introduction is the first frame the audience receives. Control it."',
-    'CHAPTER 35': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 36': '"Every framework in this book leads here."',
-    'CHAPTER 37': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 38': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 39': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 41': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 24': '"The body reveals what the mind is trying to protect."',
+    'CHAPTER 25': '"The method disappears when the frame is large enough."',
+    'CHAPTER 28': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
+    'CHAPTER 35': '"Your introduction is the first frame the audience receives. Control it."',
+    'CHAPTER 36': '"The booking was won or lost before you picked up the phone."',
+    'CHAPTER 37': '"Every framework in this book leads here."',
+    'CHAPTER 38': '"The most powerful person in the room is rarely the one with the title."',
+    'CHAPTER 39': '"The periodic table of behavioral elements. Every signal has a weight."',
+    'CHAPTER 40': '"Every performance teaches you something. Most of the lessons hurt."',
+    'CHAPTER 42': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
     'GLOSSARY':   '"The language shapes the thinking. Know the words."',
 }
 
@@ -83,15 +84,16 @@ KEY_READS = {
     'CHAPTER 21': 'A psychological force is not a trick. It is an architecture.',
     'CHAPTER 22': 'When there is nothing in your hands, everything in you has to be right.',
     'CHAPTER 23': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
-    'CHAPTER 24': 'The zodiac is a frame. What you put inside it is the work.',
-    'CHAPTER 27': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
-    'CHAPTER 34': 'Your biography arrives before you do. Make sure it is doing the right job.',
-    'CHAPTER 35': 'The booking is won in the room they never see you in.',
-    'CHAPTER 36': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 37': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 38': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 39': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 41': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 24': 'You can get a lot of information when you use a which hand as the delivery method.',
+    'CHAPTER 25': 'The zodiac is a frame. What you put inside it is the work.',
+    'CHAPTER 28': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
+    'CHAPTER 35': 'Your biography arrives before you do. Make sure it is doing the right job.',
+    'CHAPTER 36': 'The booking is won in the room they never see you in.',
+    'CHAPTER 37': 'Decode is not a technique. It is a way of seeing.',
+    'CHAPTER 38': 'You have no title on that stage. That is the advantage.',
+    'CHAPTER 39': 'There are no random behaviors. There are only patterns you have not mapped yet.',
+    'CHAPTER 40': 'The face is the performance. The hands are the truth.',
+    'CHAPTER 42': 'Four forces. Every room is already running the equation before you open your mouth.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
@@ -121,24 +123,25 @@ CHAPTER_LEGEND = {
     'CHAPTER 21': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Psychological Forces
     'CHAPTER 22': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making Better Propless
     'CHAPTER 23': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Propless Systems
-    'CHAPTER 24': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Zodiac Divinations
-    'CHAPTER 25': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Is Pre-Show Worth It?
-    'CHAPTER 26': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Pre-Show
-    'CHAPTER 27': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},   # Digital Preshow
-    'CHAPTER 28': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Performance Arc
-    'CHAPTER 29': {'tiers': ['t3'],             'cats': ['am']},          # Method Invisibility
-    'CHAPTER 30': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Patter, Rhythm, Silence
-    'CHAPTER 31': {'tiers': ['t2', 't3'],       'cats': ['am']},          # When the Room Rises
-    'CHAPTER 32': {'tiers': ['t3'],             'cats': ['am']},          # Art of Strolling
-    'CHAPTER 33': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making the Room Say Yes
-    'CHAPTER 34': {'tiers': ['t3'],             'cats': ['am']},          # Intro Video
-    'CHAPTER 35': {'tiers': ['t3'],             'cats': ['am']},          # Introductions, Bios
-    'CHAPTER 36': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides
-    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Ethics of Influence
-    'CHAPTER 38': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # How Influence Actually Works
-    'CHAPTER 39': {'tiers': ['t3'],             'cats': ['am']},          # Influence Without Authority
-    'CHAPTER 40': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Frame
-    'CHAPTER 41': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Architecture
+    'CHAPTER 24': {'tiers': ['t2', 't3'],       'cats': ['bp', 'vs']},     # REFLEX
+    'CHAPTER 25': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Zodiac Divinations
+    'CHAPTER 26': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Is Pre-Show Worth It?
+    'CHAPTER 27': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Pre-Show
+    'CHAPTER 28': {'tiers': ['t1', 't2', 't3'], 'cats': ['bp', 'cr']},   # Digital Preshow
+    'CHAPTER 29': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Performance Arc
+    'CHAPTER 30': {'tiers': ['t3'],             'cats': ['am']},          # Method Invisibility
+    'CHAPTER 31': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Patter, Rhythm, Silence
+    'CHAPTER 32': {'tiers': ['t2', 't3'],       'cats': ['am']},          # When the Room Rises
+    'CHAPTER 33': {'tiers': ['t3'],             'cats': ['am']},          # Art of Strolling
+    'CHAPTER 34': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making the Room Say Yes
+    'CHAPTER 35': {'tiers': ['t3'],             'cats': ['am']},          # Intro Video
+    'CHAPTER 36': {'tiers': ['t3'],             'cats': ['am']},          # Introductions, Bios
+    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides
+    'CHAPTER 38': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Ethics of Influence
+    'CHAPTER 39': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # How Influence Actually Works
+    'CHAPTER 40': {'tiers': ['t3'],             'cats': ['am']},          # Influence Without Authority
+    'CHAPTER 41': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Frame
+    'CHAPTER 42': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Architecture
 }
 
 # T4 signal table data — (signal name, brief read, use category)
@@ -190,6 +193,12 @@ PATTERN_INTERRUPTS = [
 # ═══════════════════════════════════════════════════════════
 
 FIGURES = {
+    'CHAPTER 24:The Name Chart': {
+        'src': 'resources/metv-images/reflex-name-chart.svg',
+        'alt': 'REFLEX Name Chart — organized by gender, name length, alphabet half, and first vowel',
+        'caption': 'Figure 24.1 — REFLEX Name Chart. Cross-reference gender, name length, alphabet half, and first vowel to arrive at the name.',
+        'rights': 'Author-created chart',
+    },
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
     'CHAPTER 13:The Seven Expressions': {
@@ -320,41 +329,41 @@ SECTION_BADGES = {
     'CHAPTER 18:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 18:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
     # ── CHAPTER 28: The Performance Arc ──
-    'CHAPTER 26:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 26:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 26:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 27:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 27:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 27:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
     # ── CHAPTER 29: Method Invisibility ──
-    'CHAPTER 27:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 27:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 28:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 28:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 32: Art of Strolling ──
-    'CHAPTER 30:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 30:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 30:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 30:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 30:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 30:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 31:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 31:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 31:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 31:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 31:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 31:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
     # ── CHAPTER 31: When the Room Rises ──
-    'CHAPTER 29:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 29:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 30:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 30:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 26: Pre-Show ──
-    'CHAPTER 24:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
-    'CHAPTER 24:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 25:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
+    'CHAPTER 25:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 33: Making the Room Say Yes ──
-    'CHAPTER 31:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 31:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 31:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 32:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 32:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 32:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 40: Authority Frame ──
-    'CHAPTER 38:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 38:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 39:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 39:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
     # ── CHAPTER 36: What the Room Decides ──
-    'CHAPTER 34:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 34:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 34:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 35:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 35:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 37: Ethics of Influence ──
     'CHAPTER 35:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 35:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
