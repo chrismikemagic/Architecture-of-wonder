@@ -5617,9 +5617,9 @@ def build_book(manuscript_path, output_path):
     html.append('''<section class="cover">
   <div class="author">C H R I S \u2003 M I C H A E L</div>
   <div class="rule"></div>
-  <div class="title">THE<br>ARCHITECTURE<br>OF WONDER</div>
+  <div class="title">BUILT<br>FOR<br>WONDER</div>
   <div class="rule"></div>
-  <div class="subtitle">A BEHAVIORAL GUIDE TO ATTENTION,<br>SUGGESTION, AND ASTONISHMENT</div>
+  <div class="subtitle">A MENTALIST'S GUIDE TO BEHAVIORAL SCIENCE,<br>PSYCHOLOGICAL PERFORMANCE, AND ASTONISHMENT</div>
   <div class="rule"></div>
   <div class="icons"><span>BP</span><span>CR</span><span>VS</span><span>AM</span></div>
   <div class="tagline">D E C O D E \u2003 B E H A V I O R</div>
@@ -5721,8 +5721,8 @@ def build_book(manuscript_path, output_path):
             if tp_start is not None:
                 html.append('''<section class="title-page">
   <div class="tp-brand">DECODE BEHAVIOR</div>
-  <div class="tp-title">THE ARCHITECTURE<br>OF WONDER</div>
-  <div class="tp-subtitle">A Behavioral Guide to Attention, Suggestion,<br>and Astonishment for Mentalists</div>
+  <div class="tp-title">BUILT<br>FOR WONDER</div>
+  <div class="tp-subtitle">A Mentalist's Guide to Behavioral Science,<br>Psychological Performance, and Astonishment</div>
   <div class="tp-edition">EXPANDED EDITION</div>
   <div class="tp-rule"></div>
   <div class="tp-author">CHRIS MICHAEL</div>
