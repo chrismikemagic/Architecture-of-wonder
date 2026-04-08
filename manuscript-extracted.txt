@@ -59,7 +59,7 @@ TABLE OF CONTENTS
 Page numbers will be finalized at layout. This manuscript is organized using heading styles. Use Word's automatic Table of Contents feature (References → Table of Contents) to generate a linked TOC with current page numbers.
 Chapter 4  —  On Being the Person Who Admits What They Do
 What you are holding and why it exists. The Crystal City story. A note on sources and the two categories of evidence.
-PART ONE  —  The Architecture of Wonder
+PART ONE  —  Built for Wonder
 The neurobiology of performance. What is happening in the audience's brain and how to design for it.
 Chapter 3  —  Designing for Reality
 Cognitive economy, metabolic efficiency, and predictive processing. The three properties of the brain that make wonder possible.
@@ -210,7 +210,7 @@ Let’s begin.
 
 
 PART ONE
-The Architecture of Wonder
+Built for Wonder
 The neurobiology of performance. What is happening in the audience's brain and how to design for it.
 
 

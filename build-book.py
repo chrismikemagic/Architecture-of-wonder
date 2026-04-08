@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Architecture of Wonder — Book Design Generator v2
+Built for Wonder — Book Design Generator v2
 Converts the manuscript into a fully designed HTML book.
 
 Fixes from v1:
@@ -534,7 +534,7 @@ DISC_HTML = '''
   <text x="400" y="350" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="1">DISC</text>
 
   <!-- Footer -->
-  <text x="400" y="610" text-anchor="middle" fill="#3A4A5C" font-size="9">THE ARCHITECTURE OF WONDER  |  CHAPTER 8: THE FOUR PERSONALITIES</text>
+  <text x="400" y="610" text-anchor="middle" fill="#3A4A5C" font-size="9">BUILT FOR WONDER  |  CHAPTER 8: THE FOUR PERSONALITIES</text>
 </svg>
   </div>
 </div>
@@ -2535,7 +2535,7 @@ def build_chapter_body(section, global_para_count):
     else:
         header_text = title.upper()
 
-    parts.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(header_text)}</span></header>')
+    parts.append(f'<header class="running-header"><span>BUILT FOR WONDER</span><span>{escape(header_text)}</span></header>')
 
     # First paragraph with drop cap
     first = escape(paragraphs[0].strip())
@@ -3201,7 +3201,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 </section>
 
 <article class="chapter-body meta-body">
-  <header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>THE META REVEAL</span></header>
+  <header class="running-header"><span>BUILT FOR WONDER</span><span>THE META REVEAL</span></header>
 
   <p class="first-para"><span class="drop-cap">Y</span>ou have been reading a book that demonstrated its own content on every page.</p>
 
@@ -3355,7 +3355,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
     <p class="finale-3">And now you know how.</p>
   </div>
 
-  <div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>
+  <div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>
 </article>'''
 
 
@@ -5742,17 +5742,17 @@ def build_book(manuscript_path, output_path):
                 part_section_proxy = dict(section)
                 part_section_proxy['content'] = content_paras
                 html.append(f'<article class="chapter-body" data-part="{part_num}">')
-                html.append(f'<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
+                html.append(f'<header class="running-header"><span>BUILT FOR WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
                 body_html, global_para = build_chapter_body(part_section_proxy, global_para)
                 html.append(body_html)
-                html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>')
+                html.append('<div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>')
                 html.append('</article>')
 
         elif stype == 'how_to_read':
             html.append('<article class="chapter-body how-to-read" data-part="0" style="break-before:page">')
             body, global_para = build_chapter_body(section, global_para)
             html.append(body)
-            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>')
+            html.append('<div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>')
             html.append('</article>')
 
         elif stype == 'chapter':
@@ -5760,7 +5760,7 @@ def build_book(manuscript_path, output_path):
             html.append(f'<article class="chapter-body" data-part="{part_num}">')
             body, global_para = build_chapter_body(section, global_para)
             html.append(body)
-            html.append('<div class="page-footer">THE ARCHITECTURE OF WONDER\u2003|\u2003VANISHING INC</div>')
+            html.append('<div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>')
             html.append('</article>')
 
         elif stype == 'glossary':
@@ -5769,7 +5769,7 @@ def build_book(manuscript_path, output_path):
                 'title':'Glossary','chapter_key':'GLOSSARY'
             }))
             html.append('<article class="chapter-body">')
-            html.append('<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>GLOSSARY</span></header>')
+            html.append('<header class="running-header"><span>BUILT FOR WONDER</span><span>GLOSSARY</span></header>')
             paras = [p.strip() for p in section['content']]
             gi = 0
             while gi < len(paras):
@@ -5836,7 +5836,7 @@ def build_book(manuscript_path, output_path):
 
         elif stype == 'about':
             html.append('<article class="chapter-body" style="break-before:page">')
-            html.append('<header class="running-header"><span>THE ARCHITECTURE OF WONDER</span><span>ABOUT THE AUTHOR</span></header>')
+            html.append('<header class="running-header"><span>BUILT FOR WONDER</span><span>ABOUT THE AUTHOR</span></header>')
             html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
             for para in section['content']:
                 if para.strip():
