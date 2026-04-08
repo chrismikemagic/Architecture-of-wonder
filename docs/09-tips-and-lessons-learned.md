@@ -142,3 +142,18 @@ Every design change needs a corresponding Meta Reveal update. Use `docs/08-meta-
 
 ### Chapter renumbering cascades
 When removing or adding a chapter, you must update: all chapter numbers in the DOCX, the TOC entries, the hook lines/key reads in build-book.py, and the chapter map in docs/07-chapter-map.md.
+
+### Visual consistency: same-level items must look the same
+If three things are the same semantic level (e.g., sub-methods within a chapter section), they must render identically. Mixing sh-label (centered, small) and sh-standard (left-aligned, underlined) for same-level headers is confusing. Rule: use a single visual style for all sibling headers. Avoid word-count-based style differentiation when items belong to the same hierarchy tier.
+
+### Numbered step headers need distinct treatment
+Items like "01 — SHOES", "02 — HANDS" are subordinate steps, not peer section headers. They must look visually smaller/different from the parent section header. The `process_paragraph()` step-header detector handles this — detects `\d{1,2} — [A-Z]+` pattern and renders as a compact step-header rather than a full section header.
+
+### Large dark framework cards break page flow
+Full-width dark-background cards (like the original Five Cs SVG + table) feel overwhelming when embedded in cream-background chapter body. Prefer compact inline treatments (bordered grid, chain pills) that sit naturally within the text. Reserve full dark-background treatment for pattern interrupts and chapter openers.
+
+### The Edit tool may corrupt Python string delimiters with curly quotes
+When using the Edit tool to replace multi-line Python triple-quoted strings, the `'''` delimiters can get replaced with curly quotes (`\u2018\u2019\u2019`), breaking the syntax. If you see `SyntaxError: invalid character` after an edit, check that all triple-quote delimiters in the affected string are straight ASCII quotes. Fix with a binary `replace()` if needed.
+
+### Build always = build-book.py + build-gated.py
+Always run both scripts together. build-gated.py reads from Architecture-of-Wonder-DESIGNED.html, so any change to build-book.py requires rebuilding both.

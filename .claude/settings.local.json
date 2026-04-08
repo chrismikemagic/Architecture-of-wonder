@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(node:*)",
+      "Bash(where chrome:*)",
+      "Bash(where \"chrome.exe\")",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(python:*)",
+      "Bash(grep -n \"^''''''''''''$\" build-book.py)"
+    ]
+  }
+}

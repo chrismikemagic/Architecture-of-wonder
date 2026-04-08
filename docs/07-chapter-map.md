@@ -21,11 +21,12 @@
 | 6 | Behavioral Profiling in Real Time | "Every person who walks toward you is already broadcasting." | "The read is never one signal. The read is the chain." |
 | 7 | The 80-Signal System | (needs hook) | (needs key read) |
 | 8 | DISC in Real Time | (needs hook) | (needs key read) |
-| 9 | Cold Reading, Warm Reading, Thin Slicing | "You already know more than you think. The trick is knowing what to trust." | "The best cold read is a warm observation delivered cold." |
-| 10 | The Micro-Expression Matrix | "The face lies. But it lies too slowly." | "Seven expressions. One-fifth of a second. That is the window." |
-| 11 | Volunteer Handling | "The volunteer chose you before you chose them." | "Handle the person, not the trick." |
-| 12 | The Language of Compliance | "Compliance is not obedience. It is agreement they did not know they gave." | "The best instruction is the one that feels like their idea." |
-| 13 | Closing the Barn Door | (needs hook) | "The face is the performance. The hands are the truth." |
+| 9 | The Language of the Face (Eyes/Face) | "The face performs. The eyes search." | "Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals." |
+| 10 | The Micro-Expression Matrix | "Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives." | "Seven expressions. One-fifth of a second. That is the window." |
+| 11 | Cold Reading, Warm Reading, Thin Slicing | "You already know more than you think. The trick is knowing what to trust." | "The best cold read is a warm observation delivered cold." |
+| 12 | Volunteer Handling | "The volunteer chose you before you chose them." | "Handle the person, not the trick." |
+| 13 | The Language of Compliance | "Compliance is not obedience. It is agreement they did not know they gave." | "The best instruction is the one that feels like their idea." |
+| 14 | Closing the Barn Door | (needs hook) | "The face is the performance. The hands are the truth." |
 | 14 | The Science of Hypnosis | "Hypnosis is not what you think it is. That is why it works." | "The trance state is not extraordinary. It is the brain doing what it does best — following a well-marked path." |
 
 ## Part Three: Field Notes
