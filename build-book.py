@@ -55,11 +55,12 @@ HOOK_LINES = {
     'CHAPTER 28': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
     'CHAPTER 35': '"Your introduction is the first frame the audience receives. Control it."',
     'CHAPTER 36': '"The booking was won or lost before you picked up the phone."',
-    'CHAPTER 37': '"Every framework in this book leads here."',
-    'CHAPTER 38': '"The most powerful person in the room is rarely the one with the title."',
-    'CHAPTER 39': '"The periodic table of behavioral elements. Every signal has a weight."',
-    'CHAPTER 40': '"Every performance teaches you something. Most of the lessons hurt."',
-    'CHAPTER 42': '"FATE is not a model. It is a diagnostic for every performance you will ever give."',
+    'CHAPTER 37': '"The room has already decided something about you before you walk in."',
+    'CHAPTER 38': '"These tools are genuinely powerful. That makes the question of how they are used more important than how they work."',
+    'CHAPTER 39': '"Novelty plus authority equals influence. And why compliance begins in the body before it reaches the mind."',
+    'CHAPTER 40': '"You have no title in this room. That is the design, not the limitation."',
+    'CHAPTER 41': '"Authority is not claimed. It is broadcast. Through behavior, pace, and the consistency of every signal you send."',
+    'CHAPTER 42': '"The five pillars of authority. And why the most powerful signal you can broadcast is the one that requires no words."',
     'GLOSSARY':   '"The language shapes the thinking. Know the words."',
 }
 
@@ -89,11 +90,12 @@ KEY_READS = {
     'CHAPTER 28': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
     'CHAPTER 35': 'Your biography arrives before you do. Make sure it is doing the right job.',
     'CHAPTER 36': 'The booking is won in the room they never see you in.',
-    'CHAPTER 37': 'Decode is not a technique. It is a way of seeing.',
-    'CHAPTER 38': 'You have no title on that stage. That is the advantage.',
-    'CHAPTER 39': 'There are no random behaviors. There are only patterns you have not mapped yet.',
-    'CHAPTER 40': 'The face is the performance. The hands are the truth.',
-    'CHAPTER 42': 'Four forces. Every room is already running the equation before you open your mouth.',
+    'CHAPTER 37': 'The show is the last piece of that picture, not the first.',
+    'CHAPTER 38': 'The work that requires no ethical attention is the work that is not powerful enough to need it.',
+    'CHAPTER 39': 'The body leads the mind.',
+    'CHAPTER 40': 'Design for the second one. Always.',
+    'CHAPTER 41': 'The unexpected moment is the highest-leverage authority broadcast in the show.',
+    'CHAPTER 42': 'The weakest pillar defines the ceiling.',
 }
 
 # Per-chapter legend: only the most prevalent tier(s) and observation category/categories.
@@ -136,11 +138,11 @@ CHAPTER_LEGEND = {
     'CHAPTER 34': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making the Room Say Yes
     'CHAPTER 35': {'tiers': ['t3'],             'cats': ['am']},          # Intro Video
     'CHAPTER 36': {'tiers': ['t3'],             'cats': ['am']},          # Introductions, Bios
-    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides
-    'CHAPTER 38': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Ethics of Influence
+    'CHAPTER 37': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # What the Room Decides Before You Speak
+    'CHAPTER 38': {'tiers': ['t2', 't3'],       'cats': ['am']},          # The Ethics of Influence
     'CHAPTER 39': {'tiers': ['t2', 't3'],       'cats': ['bp']},          # How Influence Actually Works
-    'CHAPTER 40': {'tiers': ['t3'],             'cats': ['am']},          # Influence Without Authority
-    'CHAPTER 41': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Frame
+    'CHAPTER 40': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Influence Without Authority
+    'CHAPTER 41': {'tiers': ['t2', 't3'],       'cats': ['am']},          # The Authority Frame
     'CHAPTER 42': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Authority Architecture
 }
 
@@ -352,32 +354,27 @@ SECTION_BADGES = {
     'CHAPTER 32:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 32:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 32:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
-    # ── CHAPTER 40: Authority Frame ──
-    'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 39:Certainty Under Pressure':       {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 39:The Congruence Gap':             {'tiers': ['t3'],       'cats': ['bp']},
-    # ── CHAPTER 36: What the Room Decides ──
-    'CHAPTER 35:The Limbic Ledger':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:Referral Psychology':            {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:F \u2014 Focus':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:A \u2014 Authority':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:T \u2014 Tribe':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 35:E \u2014 Emotion':               {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 37: Ethics of Influence ──
-    'CHAPTER 35:The Consent Framework':          {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 35:The Manipulation Line':          {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 38: How Influence Actually Works ──
-    'CHAPTER 36:Processing Fluency':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 36:Declaration vs. Invitation':     {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 36:The Two Components':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 36:Compliance Architecture':        {'tiers': ['t2'],       'cats': ['am']},
-    # ── CHAPTER 39: Influence Without Authority ──
-    'CHAPTER 37:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37:The Self-Attribution Principle': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37:The Mirror Technique':           {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 37:Establishing the Baseline':      {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 37:Third Person to First Person':   {'tiers': ['t3'],       'cats': ['am']},
+    # ── CHAPTER 37: What the Room Decides Before You Speak ──
+    'CHAPTER 37:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:F \u2014 FOCUS':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:A \u2014 AUTHORITY':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:T \u2014 TRIBE':                 {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 37:E \u2014 EMOTION':               {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 38: The Ethics of Influence ──
+    'CHAPTER 38:The Consent Test':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:The Transparency Rule':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:The 100% Plus 1 Principle':      {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 39: How Influence Actually Works ──
+    'CHAPTER 39:Physical Following Creates Mental Following': {'tiers': ['t2'], 'cats': ['bp']},
+    'CHAPTER 39:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
+    # ── CHAPTER 40: Influence Without Authority ──
+    'CHAPTER 40:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 40:The Skeptic as an Asset':        {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 41: The Authority Frame ──
+    'CHAPTER 41:The Five Authority Signals':     {'tiers': ['t2'],       'cats': ['am']},
+    # ── CHAPTER 42: Authority Architecture ──
+    'CHAPTER 42:The Five Pillars of Authority Architecture': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 42:The Self-Assessment':            {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 41: Authority Architecture ──
     'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
     'CHAPTER 39:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
@@ -5610,7 +5607,7 @@ def build_book(manuscript_path, output_path):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Architecture of Wonder \u2014 Decode Behavior</title>
+<title>Built for Wonder \u2014 Decode Behavior</title>
 <style>{CSS}</style>
 </head>
 <body>
