@@ -5632,10 +5632,10 @@ def build_book(manuscript_path, output_path):
   <p class="def-pos">noun</p>
   <p class="def-meaning">A feeling of surprise mingled with admiration, caused by something beautiful, unexpected, unfamiliar, or inexplicable. The state of being open to what cannot yet be explained.</p>
   <div class="section-break">\u00b7 \u00b7 \u00b7</div>
-  <p class="def-word">architecture</p>
-  <p class="def-phonetic">/\u02c8\u0251\u02d0rk\u026atekt\u0283\u0259r/</p>
+  <p class="def-word">building</p>
+  <p class="def-phonetic">/\u02c8b\u026ald\u026a\u014b/</p>
   <p class="def-pos">noun</p>
-  <p class="def-meaning">The complex or carefully designed structure of something. The deliberate arrangement of elements to produce a specific experience in the person who moves through it.</p>
+  <p class="def-meaning">The process of constructing something by putting parts together systematically. The deliberate act of assembling knowledge, skill, and experience into a structure that holds under pressure.</p>
 </section>''')
 
     # ── TOC ──
@@ -5731,6 +5731,11 @@ def build_book(manuscript_path, output_path):
   <div class="tp-dots">&middot; &middot; &middot;</div>
   <div class="tp-quote">&ldquo;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&rdquo;</div>
   <div class="tp-attribution">&mdash; CHRIS MICHAEL</div>
+</section>''')
+                # ── CONDENSED AUTHOR NOTE (front signal) ──
+                html.append('''<section class="author-note-front" style="break-before:page;max-width:640px;margin:4em auto;padding:2em 0;text-align:center;">
+  <p style="font-family:var(--sans);font-size:.65rem;letter-spacing:4px;color:var(--gold);margin-bottom:1.5em">ABOUT THE AUTHOR</p>
+  <p style="font-size:.9rem;color:#ccc;line-height:1.7;text-align:left">Chris Michael is a behavioral strategist and corporate mentalist. He holds a DoD-recognized certification in counterintelligence threat assessment, is trained by a founding member of the FBI&rsquo;s Behavioral Analysis Program, and serves as Executive Director of the Global Institute of Behavior. He has delivered behavioral intelligence training for FBI personnel, U.S. Army troops, Fortune 500 organizations, and government defense agencies across more than twenty industries.</p>
 </section>''')
 
         elif stype == 'part':
@@ -5838,6 +5843,7 @@ def build_book(manuscript_path, output_path):
             html.append('<article class="chapter-body" style="break-before:page">')
             html.append('<header class="running-header"><span>BUILT FOR WONDER</span><span>ABOUT THE AUTHOR</span></header>')
             html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
+            html.append('<div style="text-align:center;margin:0 auto 2.5em"><img src="resources/metv-images/chris-michael-author.jpg" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
             for para in section['content']:
                 if para.strip():
                     html.append(f'<p>{escape(para.strip())}</p>')
@@ -5849,7 +5855,7 @@ def build_book(manuscript_path, output_path):
     # ── BACK COVER ──
     html.append('''<section class="back-cover">
   <div class="rule" style="width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:22px 0"></div>
-  <div class="title" style="font-family:var(--sans);font-size:1.6rem;font-weight:700;letter-spacing:5px;color:var(--gold);text-align:center;margin:18px 0">THE ARCHITECTURE<br>OF WONDER</div>
+  <div class="title" style="font-family:var(--sans);font-size:1.6rem;font-weight:700;letter-spacing:5px;color:var(--gold);text-align:center;margin:18px 0">BUILT<br>FOR WONDER</div>
   <div class="rule" style="width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:22px 0"></div>
   <p class="back-blurb">Every design decision in this book demonstrates the psychology it teaches. The colors, the typography, the layout, the pattern interrupts\u2009\u2014\u2009all of it was engineered using the same behavioral architecture you just learned to build.</p>
   <div class="rule" style="width:120px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:18px 0"></div>

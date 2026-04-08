@@ -7,10 +7,10 @@ wonder
 noun
 A feeling of surprise mingled with admiration, caused by something beautiful, unexpected, unfamiliar, or inexplicable. The state of being open to what cannot yet be explained.
 •  •  •
-architecture
-/ˈɑːrkɪtektʃər/
+building
+/ˈbɪldɪŋ/
 noun
-The complex or carefully designed structure of something. The deliberate arrangement of elements to produce a specific experience in the person who moves through it.
+The process of constructing something by putting parts together systematically. The deliberate act of assembling knowledge, skill, and experience into a structure that holds under pressure.
 
 
 Why This Book Puts Them Together
@@ -54,6 +54,10 @@ Founder, Decode Behavior · Global Institute of Behavior
 
 "The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver."
 — Chris Michael
+
+ABOUT THE AUTHOR
+Chris Michael is a behavioral strategist and corporate mentalist. He holds a DoD-recognized certification in counterintelligence threat assessment, is trained by a founding member of the FBI's Behavioral Analysis Program, and serves as Executive Director of the Global Institute of Behavior. He has delivered behavioral intelligence training for FBI personnel, U.S. Army troops, Fortune 500 organizations, and government defense agencies across more than twenty industries.
+
 ────────────────────────────────────────────────────────────────────────────────
 TABLE OF CONTENTS
 Page numbers will be finalized at layout. This manuscript is organized using heading styles. Use Word's automatic Table of Contents feature (References → Table of Contents) to generate a linked TOC with current page numbers.
@@ -4537,11 +4541,15 @@ The performer who controls all four FATE forces before the first effect begins h
 
 
 ABOUT THE AUTHOR
-Chris Michael is a behavioral strategist, mentalist, and keynote speaker based in Washington D.C. He is the founder of Decode Behavior, a behavioral science consultancy serving corporate clients across the technology, financial services, defense, and healthcare sectors. He is also the founder of the Global Institute of Behavior, an independent nonprofit standards and certification authority in applied behavioral science.
-Chris has performed for and trained audiences at the Pentagon, Fortune 500 leadership teams, national healthcare conferences, financial services firms, and technology companies across the United States. He holds a certification in advanced behavioral analysis and has developed training programs in behavioral influence, reading nonverbal communication, and compliance design.
-His work sits at the intersection of performance craft and behavioral science. Applying the same neurobiological principles that drive exceptional mentalism to the challenges of corporate leadership, team influence, and professional communication.
-He performs professionally as a mentalist at @chrismikemagic.
+While many reading this book will know him as a magic consultant, Chris Michael is a behavioral strategist, corporate mentalist, and keynote speaker based in Washington D.C. He is the founder of Decode Behavior and serves as Executive Director of the Global Institute of Behavior, where he contributes to research, certification standards, and professional development in applied behavioral science.
+His training has been delivered to FBI personnel, U.S. Army troops, Fortune 500 sales organizations, government defense agencies, NASDAQ founders, and executive leadership groups across more than twenty industries. Following a single training session with U.S. Army personnel, he received an Army Civilian Service decoration, a distinction awarded to civilians whose contributions produce exceptional impact on military readiness and effectiveness.
+Chris is trained by a founding member of the FBI's Behavioral Analysis Program in techniques used in real investigative and threat assessment contexts. He holds a DoD-recognized certification in counterintelligence threat assessment, is a globally recognized APA-certified continuing education provider, a licensed Center for Body Language instructor, and holds certifications across nonverbal behavior, microexpression analysis, and applied behavioral science.
+His corporate clients include Pepsi, Deloitte, Bloomberg, CDW, and the U.S. Army.
+As a performing mentalist, Chris occupies a specific and unusual position: he is among the very few practitioners in the world who operates simultaneously at the highest levels of both live performance and applied behavioral intelligence. It is worth being clear about what that means in practice. His mentalism performances do not present themselves as demonstrations of his intelligence work. He does not step on stage and ask audiences to believe they are watching real behavioral analysis or genuine psychological surveillance. What he offers instead is something he considers more interesting: a show that is transparent about being a performance, that tells audiences directly that what they are about to see will blur the line between what is real and what is not, and then delivers on that promise in ways that neither explanation can fully account for. The science behind the work is real. The credentials behind the man are real. The show is theatre, and it says so. That distinction matters to him.
+The methods in this book come from rooms where the stakes were real, interrogation suites, executive briefings, foreign policy dinners, military operations, and from stages where the measure of success was not applause but whether the person in the front row left the room slightly changed.
+He performs and trains worldwide.
 
 decodebehavior.co
-behaviorinstitute.org
+bookchrismichael.com
+chrismichaelspeaks.com
 · · ·
