@@ -2,7 +2,9 @@
 
 ## What This Is
 
-"The Architecture of Wonder" by Chris Michael. A non-fiction book teaching behavioral profiling, audience psychology, and performance craft through the lens of mentalism. 40 chapters, 8 parts. The book's design demonstrates its own content — the Meta Reveal chapter shows the reader what was done to them.
+**"Built for Wonder: A Mentalist's Guide to Behavioral Science, Psychological Performance, and Astonishment"** by Chris Michael. A non-fiction book teaching behavioral profiling, audience psychology, and performance craft through the lens of mentalism. 42 chapters (plus 37A), 5 parts. The book's design demonstrates its own content — the Meta Reveal chapter shows the reader what was done to them.
+
+> **Title note:** The book was renamed from "The Architecture of Wonder" to "Built for Wonder" on 2026-04-08. Filenames still contain the old name (e.g., `Architecture-of-Wonder.docx`, `Architecture-of-Wonder-GATED.html`) to avoid breaking the build pipeline and Netlify deployment path. Display text everywhere reads "Built for Wonder."
 
 ## The Source of Truth
 
@@ -111,3 +113,37 @@ Update docs regularly. Every structural decision, workflow change, or lesson lea
 - DOCX is binary — commit messages must be descriptive (they're the only record of what changed)
 - Back up DOCX before major edits
 - Commit and push after completing each task
+
+## Post-Build Deployment
+
+After every successful build, copy the gated HTML to the v2 folder:
+```bash
+cp Architecture-of-Wonder-GATED.html /c/Users/Chris/Architecture-of-wonder-v2/Architecture-of-Wonder-GATED.html
+```
+This is the Netlify deployment source.
+
+## Claude Dispatch
+
+Chris uses **Claude Dispatch** to send book-editing tasks from his phone to this desktop. Dispatch is a Claude Pro/Max feature that lets him assign tasks remotely through the Claude mobile app, which then execute in Claude Desktop on this machine with full local file access.
+
+### What this means for sessions launched via Dispatch
+
+- The dispatched Claude may have less context than a full Claude Code session — it runs in Claude Desktop, not Claude Code CLI.
+- Tool access is different: Dispatch uses Desktop's file/MCP connectors rather than the full Claude Code tool set (Bash, Edit, Grep, etc.).
+- When a dispatched request comes in, read this file and `docs/10-editing-session-log.md` first to restore context before making any changes.
+- **Always follow the same build cycle:** edit DOCX/manuscript → `python build-book.py` → `python build-gated.py` → copy to v2 folder.
+- If Dispatch can't execute Python directly, either: (a) write the edit to a task file for the next Claude Code session to pick up, or (b) guide Chris through running the build himself.
+
+### Typical Dispatch requests Chris might send
+
+- "Add a Chris Michael's Take paragraph to Ch14 that says..." — full edit + rebuild
+- "What's the current word count of Part 5?" — read-only query
+- "Rebuild and push" — build cycle + git commit/push
+- "Update the meta reveal to reference [new technique]" — edit `META_REVEAL_HTML` in `build-book.py`
+
+### Setup requirements (for Chris's reference)
+
+- Claude Pro ($20/mo) or Max plan
+- Claude Desktop installed and running on this PC
+- Claude mobile app on phone, same Anthropic account
+- Both devices online when dispatching
