@@ -195,6 +195,36 @@ PATTERN_INTERRUPTS = [
 # ═══════════════════════════════════════════════════════════
 
 FIGURES = {
+    'CHAPTER 19:Brain Wave States Reference Chart': {
+        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
+        'alt': 'Brain wave states: beta, alpha, theta, delta — frequency and function',
+        'caption': 'Figure 19.1 — Brain wave states. Alpha is the state you are working toward in any participant before you deliver a suggestion that matters. The three-step method — close eyes, slow breath, visualize — is covered in The Alpha Shift section below.',
+        'rights': 'From BFW_AllRewrites source document',
+    },
+    'CHAPTER 19:What the Brain Is Doing at the Network Level': {
+        'src': 'resources/metv-images/hypnosis-brain-networks-shift.png',
+        'alt': 'Default mode network quiets while executive control and salience networks coordinate around the suggestion',
+        'caption': 'Figure 19.2 — How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
+        'rights': 'From BFW_AllRewrites source document',
+    },
+    'CHAPTER 19:The Rainville Finding': {
+        'src': 'resources/metv-images/hypnosis-rainville-finding.png',
+        'alt': 'The Rainville finding: suggestions targeting unpleasantness activate ACC; suggestions targeting intensity activate somatosensory cortex',
+        'caption': 'Figure 19.3 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
+        'rights': 'From BFW_AllRewrites source document',
+    },
+    'CHAPTER 19:The Alpha Shift': {
+        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
+        'alt': 'Brain wave state chart with alpha highlighted as target state for hypnotic suggestion',
+        'caption': 'Figure 19.4 — Brain wave states, alpha is your target. Beta is the brain scanning for threats and judging. Alpha is the brain settling in and becoming willing to receive.',
+        'rights': 'From BFW_AllRewrites source document',
+    },
+    'CHAPTER 19:Rapid Inductions': {
+        'src': 'resources/metv-images/hypnosis-fractionation-depth.png',
+        'alt': 'Fractionation cycle depth chart: each re-entry reaches greater depth than the last',
+        'caption': 'Figure 19.5 — Why fractionation works: each cycle reaches greater depth. By cycle three the participant is following a pattern their brain has already confirmed works for them twice in a row. This is also where installing a touch or word trigger pays off most — the brain can return to depth almost immediately on cue.',
+        'rights': 'From BFW_AllRewrites source document',
+    },
     'CHAPTER 24:The Name Chart': {
         'src': 'resources/metv-images/reflex-name-chart.svg',
         'alt': 'REFLEX Name Chart — organized by gender, name length, alphabet half, and first vowel',
