@@ -1968,7 +1968,7 @@ def gen_crt_table(rows):
             f'{sym_html}'
             f'</td>'
             f'<td class="crt-disc-cell">'
-            f'<span class="crt-disc-badge {disc_cls}">{escape(disc_clean) if disc_clean else "\xb7"}</span>'
+            f'<span class="crt-disc-badge {disc_cls}">{escape(disc_clean) if disc_clean else "·"}</span>'
             f'</td>'
             f'</tr>'
         )
