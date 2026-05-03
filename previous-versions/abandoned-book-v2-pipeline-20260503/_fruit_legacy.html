@@ -1,0 +1,105 @@
+* ═══ BEHAVIORAL READING LINE CARDS ═══ */
+/* ═══ FRUIT TO FANG CARD ═══ */
+.ftf-card{
+  background:linear-gradient(135deg,rgba(13,30,48,.97),rgba(8,15,26,.99));
+  border:1px solid rgba(201,168,76,.2);
+  border-left:4px solid var(--gold);
+  border-radius:6px;padding:20px 22px;
+  margin:2em 0;break-inside:avoid;
+}
+.ftf-header{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.15)}
+.ftf-title{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:3px;color:var(--gold);margin-bottom:4px;
+}
+.ftf-subtitle{font-family:var(--sans);font-size:.68rem;color:var(--gray-blue);font-style:italic}
+.ftf-intro{font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:10px;text-indent:0!important}
+.ftf-method-note{font-size:.76rem;color:var(--gray-blue);margin-bottom:14px;text-indent:0!important}
+.ftf-table{display:grid;grid-template-columns:1fr;gap:0;margin-bottom:18px;border:1px solid rgba(201,168,76,.12);border-radius:4px;overflow:hidden}
+.ftf-row{display:grid;grid-template-columns:1.4fr 1.2fr 1.2fr .6fr;gap:0}
+.ftf-row:not(:last-child){border-bottom:1px solid rgba(201,168,76,.08)}
+.ftf-head{background:rgba(201,168,76,.12)}
+.ftf-head .ftf-cell{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);padding:7px 10px}
+.ftf-cell{font-size:.74rem;color:rgba(255,255,255,.8);padding:8px 10px;line-height:1.45;border-right:1px solid rgba(201,168,76,.08)}
+.ftf-cell:last-child{border-right:none}
+.ftf-vowel{color:var(--gold);font-weight:600}
+.ftf-flow{margin-top:4px;padding-top:14px;border-top:1px solid rgba(201,168,76,.15)}
+.ftf-flow-title{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+.ftf-flow-body{display:flex;flex-direction:column;align-items:center;gap:6px}
+.ftf-node{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:6px 14px;font-size:.72rem;color:rgba(255,255,255,.85);text-align:center}
+.ftf-node-start{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.4);font-weight:600}
+.ftf-arrow{color:var(--gold);font-size:.9rem;line-height:1}
+.ftf-branch{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;width:100%;align-items:center}
+.ftf-branch-mid{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:1px;color:var(--gray-blue);text-align:center;text-transform:uppercase}
+.ftf-branch-item{background:rgba(13,30,48,.6);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:7px 10px;font-size:.7rem;color:rgba(255,255,255,.75);text-align:center;line-height:1.45}
+.ftf-yes{border-left:3px solid rgba(75,170,114,.6)}
+.ftf-no{border-left:3px solid rgba(26,143,168,.6)}
+.ftf-note{display:block;font-size:.65rem;color:var(--gray-blue);margin-top:2px;font-style:italic}
+.ftf-vowel-inline{color:var(--gold);font-weight:700}
+.ftf-node-test{background:rgba(107,82,160,.15);border-color:rgba(107,82,160,.4);font-style:italic}
+.ftf-node-note{background:rgba(26,143,168,.08);border-color:rgba(26,143,168,.3);font-size:.7rem}
+
+.reading-line-card{
+  margin:.7em 0;padding:14px 16px 12px;
+  border-radius:4px;break-inside:avoid;
+  border:1px solid rgba(201,168,76,.12);
+  background:rgba(255,255,255,.45);
+}
+.rl-stage{border-top:2px solid var(--gold)}
+.rl-closeup{border-top:2px solid var(--blue)}
+.rl-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:10px;
+}
+.rl-type{
+  font-family:var(--sans);font-size:.65rem;font-weight:700;
+  letter-spacing:1px;color:var(--body-color);
+}
+.rl-context{
+  font-family:var(--sans);font-size:.48rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--dim);
+}
+.rl-stage .rl-context{color:var(--gold)}
+.rl-closeup .rl-context{color:var(--blue)}
+.rl-signals{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.rl-signal{
+  font-family:var(--sans);font-size:.54rem;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.2);
+  border-radius:3px;padding:2px 8px;
+  color:var(--dim);
+}
+.rl-line{
+  font-size:.84rem;font-style:italic;
+  color:var(--body-color);line-height:1.55;
+  margin:0;text-indent:0!important;
+  border-left:2px solid rgba(201,168,76,.3);
+  padding-left:12px;
+}
+
+/* ═══ FORCES INTRO DOCTRINE BLOCK ═══ */
+.forces-intro{
+  margin:2.2em 0;padding:24px 28px;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:6px;border-left:4px solid var(--gold);
+  break-inside:avoid;text-align:center;
+}
+.forces-statement{
+  font-family:var(--sans);font-size:.78rem;font-weight:600;
+  letter-spacing:1px;color:#fff;margin:0 0 16px;
+  text-indent:0!important;
+}
+.forces-pills{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+}
+.force-pill{
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,.35);
+  border-radius:14px;padding:5px 14px;
+  background:rgba(201,168,76,.08);
+}
+
+/* ═══ NUMBERED STEP HEAD

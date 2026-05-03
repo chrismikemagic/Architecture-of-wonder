@@ -665,7 +665,7 @@ def parse_manuscript(filepath):
 
         # Detect PART headers (standalone line)
         part_match = re.match(r'^PART\s+(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT)\s*$', line)
-        if part_match and i > 143:  # Skip TOC
+        if part_match:
             part_names = {'ONE':1,'TWO':2,'THREE':3,'FOUR':4,'FIVE':5,'SIX':6,'SEVEN':7,'EIGHT':8}
             current_part = part_names.get(part_match.group(1), current_part)
             subtitle = ''
@@ -686,7 +686,7 @@ def parse_manuscript(filepath):
 
         # Detect CHAPTER headers (supports alphanumeric IDs like 19B)
         chapter_match = re.match(r'^CHAPTER\s+(\d+[A-Z]?)\s*$', line)
-        if chapter_match and i > 143:
+        if chapter_match:
             chapter_id = chapter_match.group(1)  # e.g. "19" or "19B"
             chapter_num = int(re.match(r'\d+', chapter_id).group())
             title = ''
@@ -708,8 +708,8 @@ def parse_manuscript(filepath):
                 i += 1
             continue
 
-        # Detect INTRODUCTION (after TOC)
-        if line == 'INTRODUCTION' and i > 143:
+        # Detect INTRODUCTION
+        if line == 'INTRODUCTION':
             subtitle = ''
             if i+1 < len(lines) and lines[i+1].strip():
                 subtitle = lines[i+1].strip()
@@ -726,8 +726,8 @@ def parse_manuscript(filepath):
             i += 2
             continue
 
-        # Detect HOW TO READ THIS BOOK (front matter, after Introduction)
-        if line == 'HOW TO READ THIS BOOK' and i > 143:
+        # Detect HOW TO READ THIS BOOK (front matter)
+        if line == 'HOW TO READ THIS BOOK':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -741,8 +741,8 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Detect ACKNOWLEDGMENTS (early in file)
-        if line == 'ACKNOWLEDGMENTS' and i < 50:
+        # Detect ACKNOWLEDGMENTS (front matter)
+        if line == 'ACKNOWLEDGMENTS':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -756,8 +756,8 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Detect GLOSSARY
-        if line.startswith('GLOSSARY') and i > 2000:
+        # Detect GLOSSARY (back matter)
+        if line.startswith('GLOSSARY') and current_section is not None and current_section.get('chapter_num', 0) > 0:
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -772,7 +772,7 @@ def parse_manuscript(filepath):
             continue
 
         # Detect THE META REVEAL (handled separately via META_REVEAL_HTML; skip manuscript content)
-        if line == 'THE META REVEAL' and i > 2000:
+        if line == 'THE META REVEAL':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -787,7 +787,7 @@ def parse_manuscript(filepath):
             continue
 
         # Detect ABOUT THE AUTHOR
-        if line == 'ABOUT THE AUTHOR' and i > 2000:
+        if line == 'ABOUT THE AUTHOR':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -801,13 +801,9 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Skip early front matter before ACKNOWLEDGMENTS
-        if i < 34 and current_section is None:
-            i += 1
-            continue
-
-        # Skip TOC block unconditionally (lines 57–143 are table of contents)
-        if i >= 57 and i <= 143:
+        # Skip lines before any section has started (title page, etc.).
+        # The extractor strips the TOC, so no separate TOC range is needed.
+        if current_section is None:
             i += 1
             continue
 
