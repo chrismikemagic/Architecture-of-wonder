@@ -2364,6 +2364,16 @@ def process_paragraph(text, part_num=1):
         inner = stripped[8:-9].strip()
         return f'<p class="script-italic">{escape(inner)}</p>'
 
+    # Five Cs practice lead-ins — "Context—What environment is the behavior occurring in?"
+    _fivec_m = re.match(r'^(Context|Clusters|Congruence|Consistency|Culture)\s*[—–-]\s*(.+\?)$', stripped)
+    if _fivec_m:
+        return f'<p class="fivec-q"><strong>{_fivec_m.group(1)}</strong> — {escape(_fivec_m.group(2))}</p>'
+
+    # Five Cs chain strip — Context › Clusters › … › READ
+    if re.match(r'^Context\s*›\s*Clusters\s*›\s*Congruence\s*›\s*Consistency\s*›\s*Culture\s*›\s*READ$', stripped):
+        return ('<div class="fivec-chain">CONTEXT <span>›</span> CLUSTERS <span>›</span> CONGRUENCE '
+                '<span>›</span> CONSISTENCY <span>›</span> CULTURE <span>›</span> <strong>READ</strong></div>')
+
     # Bylines — “Routine Title” by Author Name attribution beneath section headers
     if re.match(r'^[“"][^”"]+[”"] by [A-Z][A-Za-z’\'. -]+$', stripped) and len(stripped) < 70:
         return f'<p class="byline-credit">{escape(stripped)}</p>'
@@ -2790,8 +2800,11 @@ def build_chapter_body(section, global_para_count):
         global_para_count += 1
         stripped = para.strip()
 
-        # Skip in-text duplicates of the config-injected hook line / key read
-        if _chapter_dupe_norms and _norm_dupe(stripped) in _chapter_dupe_norms:
+        # Skip in-text duplicates of the config-injected hook line / key read.
+        # Exception: the Five Cs trigger sentence must survive — it both
+        # renders as prose and fires the FIVE_CS_HTML grid injection.
+        if (_chapter_dupe_norms and _norm_dupe(stripped) in _chapter_dupe_norms
+                and stripped != 'Context. Clusters. Congruence. Consistency. Culture.'):
             i += 1
             continue
 
@@ -3670,7 +3683,10 @@ def gen_toc(sections):
     parts = ['<nav class="toc"><h2>Contents</h2><div class="toc-list">']
     for s in sections:
         if s['type'] == 'part':
-            parts.append(f'<div class="toc-part">{escape(s["title"])}<span class="toc-sub">{escape(s.get("subtitle",""))}</span></div>')
+            _sub = (s.get('subtitle') or '').strip()
+            if not _sub or _sub.isdigit():
+                continue  # page-chrome part stub, not a real divider
+            parts.append(f'<div class="toc-part">{escape(s["title"])}<span class="toc-sub">{escape(_sub)}</span></div>')
         elif s['type'] == 'chapter':
             ch_num = s.get('chapter_num', 0)
             ch_id  = s.get('chapter_id', str(ch_num))
@@ -3679,7 +3695,10 @@ def gen_toc(sections):
         elif s['type'] == 'glossary':
             parts.append('<div class="toc-part">Glossary</div>')
         elif s['type'] == 'about':
-            parts.append('<div class="toc-part">About the Author</div>')
+            # several about-type sections exist (front-matter note + closing bio);
+            # one TOC label is enough
+            if '<div class="toc-part">About the Author</div>' not in parts:
+                parts.append('<div class="toc-part">About the Author</div>')
     parts.append('</div></nav>')
     return '\n'.join(parts)
 
@@ -3961,6 +3980,15 @@ body{counter-reset:page}
 .zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-dim)}
 .zet-table .zet-cell:nth-last-child(-n+3){border-bottom:none}
 .zet-note{font-size:.85em;font-style:italic;color:#666;margin:0 0 1.4em}
+/* Five Cs practice lead-ins + chain strip */
+.fivec-q{margin:1.3em 0 .35em}
+.fivec-q strong{color:var(--gold-dim);letter-spacing:.03em}
+.fivec-chain{
+  text-align:center;font-family:var(--sans);font-weight:600;
+  font-size:.78em;letter-spacing:.14em;color:#777;margin:1.8em 0;
+}
+.fivec-chain span{color:var(--gold-dim);margin:0 .3em}
+.fivec-chain strong{color:var(--gold-dim);letter-spacing:.14em}
 /* Byline credit — “Routine Title” by Author Name */
 .byline-credit{
   font-weight:700;
@@ -5061,28 +5089,34 @@ ul.book-list li::before{
 }
 
 /* ═══ TOC ═══ */
-.toc{max-width:480px;margin:0 auto;padding:60px 36px;break-after:page}
+.toc{max-width:560px;margin:0 auto;padding:60px 36px;break-after:page}
 .toc h2{
-  font-family:var(--sans);font-size:.85rem;font-weight:700;
-  letter-spacing:7px;color:var(--gold);text-align:center;margin-bottom:3em;text-transform:uppercase;
+  font-family:var(--sans);font-size:.95rem;font-weight:700;
+  letter-spacing:8px;color:var(--gold);text-align:center;margin-bottom:2.6em;text-transform:uppercase;
 }
 .toc-list{list-style:none}
 .toc-part{
-  font-family:var(--sans);font-size:.62rem;font-weight:700;
-  letter-spacing:3px;color:var(--dim);margin:2em 0 .3em;
-  padding-top:1em;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:.66rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold-dim);margin:2.6em 0 .9em;
+  padding-top:1.5em;border-top:1px solid var(--rule);
+  text-align:center;
 }
-.toc-sub{display:block;font-weight:400;letter-spacing:1px;font-size:.58rem;color:var(--gray-blue);margin-top:2px}
+.toc-sub{
+  display:block;font-family:var(--serif);font-weight:400;font-style:italic;
+  letter-spacing:.5px;font-size:.92rem;color:var(--gray-blue);
+  margin-top:.45em;text-transform:none;
+}
 a.toc-ch{
-  display:flex;align-items:baseline;padding:5px 0 5px 16px;font-size:.82rem;
+  display:flex;align-items:baseline;padding:6px 0;font-size:.8rem;line-height:1.5;
   text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s;
 }
 a.toc-ch:hover{opacity:.7}
-.toc-num{color:var(--gold);font-weight:600;min-width:32px;flex-shrink:0}
-.toc-title{flex-shrink:0}
+.toc-num{color:var(--gold);font-weight:600;min-width:36px;flex-shrink:0;font-size:.74rem}
+.toc-title{flex:0 1 auto;letter-spacing:.4px}
 .toc-dots{
-  flex-grow:1;margin:0 8px;
-  border-bottom:1px dotted var(--rule);min-width:20px;
+  flex:1 1 16px;margin:0 10px;
+  border-bottom:1px dotted var(--rule);min-width:16px;
+  transform:translateY(-3px);
 }
 
 /* ═══ SIGNAL KEY ═══ */
@@ -6081,6 +6115,12 @@ def build_book(manuscript_path, output_path):
 </section>''')
 
         elif stype == 'part':
+            # The merged DOCX carries "PART X / <chapter number>" page chrome
+            # before nearly every chapter — render an opener only for real
+            # part dividers (named subtitle, not a stray number or blank).
+            _psub = (section.get('subtitle') or '').strip()
+            if not _psub or _psub.isdigit():
+                continue
             html.append(gen_part_opener(section))
             # Part body content (Field Notes, NPM) — skip first para (used as part desc in opener)
             # Route through build_chapter_body so all special formatters (stage cards, checklist, etc.) apply

@@ -211,3 +211,19 @@ This file is cumulative — each session appends to it.
 
 **Change (`build-book.py`):** MARKER_BLOCKS system (TELL_TABLE, FRUIT_TO_FANG_TABLE/FLOW, FEEDBACK_SIGNALS_TABLE, ZODIAC_ELEMENT_TABLE) + CSS; `*PLACE HOLDER*` span + editor-note strip at output time.
 **Pattern/Lesson:** The pre-existing book CSS already used the `ftf-` class prefix — new marker-block classes were renamed `f2f-*` after a collision rendered the grid single-column. Check class-name collisions when adding CSS to the 6k-line build script. Also: shell cwd persisted into the v2 folder after a deploy commit, which made a round of greps read v2's stale April files — always pin absolute paths when verifying.
+
+---
+
+### 2026-06-12 (third pass) — Five Cs duplication, junk part pages, TOC redesign, excerpt chrome
+
+**Change (DOCX via `docx_repair_round4.py`, backup `backups/Architecture-of-Wonder.pre-round4-20260612.docx`):**
+- Removed the flattened Five Cs card block (17 paragraphs) that duplicated the designed FIVE_CS grid, including the mashed "Context›…›READ" breadcrumb.
+- Part Five intro: joined the split "B/efore You Begin" drop-cap and removed the two standalone-download paragraphs ("If you are reading this as a standalone download…", "The full book that this section is pulled from…") — excerpt-edition chrome that doesn't belong in the full book. The Parts 2–5 recap and the FATE warning stay.
+
+**Change (`build-book.py`):**
+- Part-opener and TOC now skip the "PART X / <number>" page-chrome stubs the merge created before nearly every chapter — 49 part-opener pages reduced to the 5 real dividers; TOC went from ~50 part rows (with stray chapter numbers and an "Intro B" entry) to 5 clean part rows + 42 chapters + Before You Begin.
+- TOC restyled: centered gold part labels with italic serif subtitles, fixed title wrap/leader-dot layout, single About the Author label.
+- Five Cs practice section: "Context—What environment…?" lead-ins render with gold bold C-words (.fivec-q); the "Context › … › READ" chain renders as a centered chain strip (.fivec-chain).
+- Hook/key-read dedup exempts the Five Cs trigger sentence (it fires the grid injection).
+
+**Pattern/Lesson:** The page-chrome "PART X + page number" pairs from the PDF merge created phantom part sections — filter at render time (subtitle empty/numeric), not in the parser, so chapter part-numbering stays intact.
