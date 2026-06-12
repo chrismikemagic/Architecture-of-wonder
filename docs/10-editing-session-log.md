@@ -173,3 +173,25 @@ This file is cumulative — each session appends to it.
 **Terms added:** dopamine, salience network, limbic system, hippocampus, amygdala, visual cortex, orbitofrontal cortex, medial prefrontal regions, basal ganglia, dorsolateral prefrontal cortex, executive control network, primary somatosensory cortex, locus coeruleus, nociceptors, brainstem, thalamus, mirror neurons.
 **Why:** Chris wants readers without a neuroscience background to have the anatomical context at the moment they need it, not in a glossary they have to flip to.
 **Pattern/Lesson:** Already self-described terms (zygomatic major, orbicularis oculi, cortical pyramidal neurons, norepinephrine/acetylcholine functions) do not need additions. Terms already introduced with explicit "you do not need to memorize these" explanations (anterior insula, dorsal anterior cingulate) are also fine.
+
+---
+
+### 2026-06-12 — Release-prep: restore flattened design systems, lost figures, and add two contributed routines
+
+**Change (DOCX, via `docx_update_contributions.py` + `docx_repair_cards.py`, backups in `backups/*20260612*`):**
+- Removed two leaked editorial notes ("CHAPTER ROADMAP — SUGGESTED ADDITION" + advisory paragraphs) from Ch16 and Ch28.
+- Re-added [ITALIC] markers to the three Juke Box Oracle script paragraphs (lost in the merged-DOCX swap).
+- Inserted Rado Sheytanov's "Ephemeris" (complete prop-less star sign divination) and Christopher Parrish's "The Red Dwarf" (+ Group Variation + closing thoughts) into Ch25 ZODIAC DIVINATIONS, each with a narrative thank-you intro and gold byline. Added a joint thank-you paragraph to ACKNOWLEDGMENTS. Sources archived in `resources/rado-ephemeris.txt` and `resources/For-Rado-The-Red-Dwarf.pdf`.
+- Rebuilt flattened card-trigger text the PDF→DOCX merge destroyed: DISC type cards (`D — DIRECT` …), DISC blend cards (`D/C Blend` …), Six-Category Radar (`SIX_AREA_RADAR` + `NN — Name` + signal lines), 10-Second Scan step headers (`01 — SHOES` …), Seven Stages cards (`01 · PRIME` …), Neural Performance Checklist (items joined with ` · `, heading VOLUNTEERS AND AUDIENCE MANAGEMENT uppercased), warning-callout trigger (stripped ⚠ prefix), PATTERN_INTERRUPT_40PCT marker. Fixed five typos (memeber, breath/breathe, th memory, theis, audiences brain).
+
+**Change (`build-book.py`):**
+- FIGURES keys re-anchored after the merge shifted chapters: Lip Compression → CH13, Seven Expressions/Duchenne → CH14; Ch19 figures renumbered 19.1–19.4 (brain-wave chart re-anchored at "Oscillations and Timing"; fractionation figure dropped — its prose no longer exists). Added four zodiac element mnemonic figures (CH25 FIRE/WATER/EARTH/AIR SIGNS; images copied from v2 Gemini JPGs into `resources/metv-images/zodiac-*-mnemonic.jpg`).
+- All images now embed as base64 data URIs (`image_data_uri()`) — the deployed gated HTML is fully self-contained (image file refs were 404ing on Netlify since the v2 folder has no resources/).
+- New chapter-body cleanup: strips opener-metadata bleed (hook quote, T-badges incl. mashed `T2AM` forms, icon codes, legend labels, repeated CHAPTER lines) from chapter starts AND mid-body (7A/21A/37A interludes); re-joins orphaned drop-cap letters with their sentences; suppresses in-text duplicates of config hook lines/key reads.
+- Roman-numeral pillar headers (I — Confidence … V — Enjoyment) and Level-scale headers (Level 1 — Burden …) now render as section headers in Ch42.
+- KEY_READS completed to all 42 chapters: CH30/32/33/34 ported from the v2 build config by title match; CH1/2/12/26/27/29/31 newly authored.
+- Generic gold byline rule (`"Title" by Author`), "Chris Michael's Take" added to the Performer's-Note trigger set, numbered-card detection no longer swallows section headers.
+
+**Why:** Chris reported formatting degraded and SVGs/images lost after new content was merged in; release-readiness pass. Rado and Christopher contributed routines that needed inclusion with thanks.
+**Pattern/Lesson:** The designed-PDF→DOCX merge flattens every generator trigger (em-dashes/middots eaten, numbers split from names, infographics dumped as mashed text). After any re-merge, diff the rendered element counts (stage-card, disc-type-card, radar, checklist, key-read, figure) against the last good build — silent zeroes mean eaten triggers, not removed content.
+**Open items:** Ch12 Tell Table's flat 4-column tables still render as stacked lines (needs a dedicated table design pass). "The Architecture of Obedience" chapter (pacing/leading, yes sets, certainty frames, double binds) is absent from the merged DOCX — content drop, needs Chris's decision.

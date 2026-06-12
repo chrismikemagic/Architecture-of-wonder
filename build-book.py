@@ -22,6 +22,27 @@ import re
 import html as html_module
 import os
 import textwrap
+import base64
+import mimetypes
+
+_IMAGE_DATA_URI_CACHE = {}
+
+def image_data_uri(path):
+    """Embed an image file as a base64 data URI so the HTML is fully
+    self-contained (the Netlify deploy ships a single file)."""
+    if path in _IMAGE_DATA_URI_CACHE:
+        return _IMAGE_DATA_URI_CACHE[path]
+    mime, _ = mimetypes.guess_type(path)
+    if mime is None:
+        mime = 'image/svg+xml' if path.lower().endswith('.svg') else 'application/octet-stream'
+    try:
+        with open(path, 'rb') as f:
+            uri = f'data:{mime};base64,' + base64.b64encode(f.read()).decode('ascii')
+    except OSError:
+        print(f'  WARNING: image not found, leaving file reference: {path}')
+        uri = path
+    _IMAGE_DATA_URI_CACHE[path] = uri
+    return uri
 
 # ═══════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -65,6 +86,18 @@ HOOK_LINES = {
 }
 
 KEY_READS = {
+    # Closers added 2026-06-12 (4 ported from v2 build by title match, 7 newly authored)
+    'CHAPTER 1': 'They will forget the method. They will keep what it felt like.',
+    'CHAPTER 2': 'Tell them it is a skill. Then make the skill look like a miracle.',
+    'CHAPTER 12': 'Green means go. Yellow means reframe. Red means leave the route entirely.',
+    'CHAPTER 26': 'The work you do before the room fills is still the work.',
+    'CHAPTER 27': 'Gather early. Reveal late. Let time erase the connection.',
+    'CHAPTER 29': 'Seven stages. One arc. Design backward from the memory you want to leave.',
+    'CHAPTER 30': 'If they are looking for the method, the architecture failed.',
+    'CHAPTER 31': 'Silence is not a gap in the patter. It is the loudest line you have.',
+    'CHAPTER 32': 'Control the sound, and you control the space.',
+    'CHAPTER 33': 'The walk is the show. Everything after is confirmation.',
+    'CHAPTER 34': 'Design the compliance. Then act surprised when they comply.',
     'CHAPTER 3':  'Design the memory, and you design the experience.',
     'CHAPTER 4':  'Salience is not what you show. It is what they cannot ignore.',
     'CHAPTER 5':  'Tension is not the enemy. Boredom is.',
@@ -195,34 +228,28 @@ PATTERN_INTERRUPTS = [
 # ═══════════════════════════════════════════════════════════
 
 FIGURES = {
-    'CHAPTER 19:Brain Wave States Reference Chart': {
-        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
-        'alt': 'Brain wave states: beta, alpha, theta, delta — frequency and function',
-        'caption': 'Figure 19.1 — Brain wave states. Alpha is the state you are working toward in any participant before you deliver a suggestion that matters. The three-step method — close eyes, slow breath, visualize — is covered in The Alpha Shift section below.',
-        'rights': 'From BFW_AllRewrites source document',
-    },
     'CHAPTER 19:What the Brain Is Doing at the Network Level': {
         'src': 'resources/metv-images/hypnosis-brain-networks-shift.png',
         'alt': 'Default mode network quiets while executive control and salience networks coordinate around the suggestion',
-        'caption': 'Figure 19.2 — How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
+        'caption': 'Figure 19.1 — How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 19:The Rainville Finding': {
         'src': 'resources/metv-images/hypnosis-rainville-finding.png',
         'alt': 'The Rainville finding: suggestions targeting unpleasantness activate ACC; suggestions targeting intensity activate somatosensory cortex',
-        'caption': 'Figure 19.3 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
+        'caption': 'Figure 19.2 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 19:The Alpha Shift': {
         'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
         'alt': 'Brain wave state chart with alpha highlighted as target state for hypnotic suggestion',
-        'caption': 'Figure 19.4 — Brain wave states, alpha is your target. Beta is the brain scanning for threats and judging. Alpha is the brain settling in and becoming willing to receive.',
+        'caption': 'Figure 19.3 — Brain wave states, alpha is your target. Beta is the brain scanning for threats and judging. Alpha is the brain settling in and becoming willing to receive.',
         'rights': 'From BFW_AllRewrites source document',
     },
-    'CHAPTER 19:Rapid Inductions': {
-        'src': 'resources/metv-images/hypnosis-fractionation-depth.png',
-        'alt': 'Fractionation cycle depth chart: each re-entry reaches greater depth than the last',
-        'caption': 'Figure 19.5 — Why fractionation works: each cycle reaches greater depth. By cycle three the participant is following a pattern their brain has already confirmed works for them twice in a row. This is also where installing a touch or word trigger pays off most — the brain can return to depth almost immediately on cue.',
+    'CHAPTER 19:Oscillations and Timing': {
+        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
+        'alt': 'Brain wave states: beta, alpha, theta, delta — frequency and function',
+        'caption': 'Figure 19.4 — The full brain wave reference: beta, alpha, theta, delta — each a different firing rhythm, each a different mode of experience. Keep this chart in mind as you read this section.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 24:The Name Chart': {
@@ -233,22 +260,46 @@ FIGURES = {
     },
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 13:The Seven Expressions': {
+    'CHAPTER 14:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 13.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'caption': 'Figure 14.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 13:The Duchenne Smile': {
+    'CHAPTER 14:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
-        'caption': 'Figure 13.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
+        'caption': 'Figure 14.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 12:Lip Compression': {
+    'CHAPTER 13:Lip Compression': {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
-        'caption': 'Figure 12.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'caption': 'Figure 13.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:FIRE SIGNS': {
+        'src': 'resources/metv-images/zodiac-fire-signs-mnemonic.jpg',
+        'alt': 'Fire signs mnemonic: Leo (lion on burning castle), Sagittarius (archers with flaming arrows), Aries (ram)',
+        'caption': 'Fire Signs — Aries, Leo, Sagittarius.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:WATER SIGNS': {
+        'src': 'resources/metv-images/zodiac-water-signs-mnemonic.jpg',
+        'alt': 'Water signs mnemonic: Pisces (fish leaping from ocean), Cancer (crab), Scorpio (scorpion)',
+        'caption': 'Water Signs — Cancer, Scorpio, Pisces.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:EARTH SIGNS': {
+        'src': 'resources/metv-images/zodiac-earth-signs-mnemonic.jpg',
+        'alt': 'Earth signs mnemonic: Capricorn (corn field), Taurus (bull ploughing), Virgo (goddess of agriculture)',
+        'caption': 'Earth Signs — Capricorn, Taurus, Virgo.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:AIR SIGNS': {
+        'src': 'resources/metv-images/zodiac-air-signs-mnemonic.jpg',
+        'alt': 'Air signs mnemonic: Gemini (twins in storm), Libra (scales in wind), Aquarius (water-bearer)',
+        'caption': 'Air Signs — Aquarius, Gemini, Libra.',
         'rights': 'AI-generated illustration',
     },
 }
@@ -2120,7 +2171,8 @@ def process_paragraph(text, part_num=1):
             return gen_five_c_entry(c_word, body)
 
     # Performer's Note — distinct from section headers
-    if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
+    if stripped in ("Performer's Note", "Performer’s Note", "Performers Note",
+                    "Chris Michael's Take", "Chris Michael’s Take", "Chris's Take", "Chris’s Take"):
         return gen_performer_note()
 
     # Warning section headers — stand-out treatment
@@ -2218,6 +2270,10 @@ def process_paragraph(text, part_num=1):
     if stripped.startswith('[ITALIC]') and stripped.endswith('[/ITALIC]'):
         inner = stripped[8:-9].strip()
         return f'<p class="script-italic">{escape(inner)}</p>'
+
+    # Bylines — “Routine Title” by Author Name attribution beneath section headers
+    if re.match(r'^[“"][^”"]+[”"] by [A-Z][A-Za-z’\'. -]+$', stripped) and len(stripped) < 70:
+        return f'<p class="byline-credit">{escape(stripped)}</p>'
 
     # Dialogue lines — standalone paragraphs fully enclosed in quotation marks
     if ((stripped.startswith('\u201c') and stripped.endswith('\u201d')) or
@@ -2552,6 +2608,48 @@ def build_chapter_body(section, global_para_count):
     if not paragraphs:
         return '', global_para_count
 
+    # ── Strip chapter-opener metadata that bleeds into the body from the
+    #    merged DOCX: hook quote, tier badges, icon codes, legend labels,
+    #    and the repeated CHAPTER line. All already rendered in the opener.
+    #    The junk block may sit after a lede line, so scan a leading window. ──
+    if chapter_num > 0:
+        _badge_re = re.compile(r'^(T[1-4]){1,4}$')
+        _iconcode_re = re.compile(r'^[A-Z]{2}$')
+        _chapline_re = re.compile(r'^CHAPTER \d+[A-Z]?\s*[—–-]')
+        _meta_lines = {'SIGNAL CONFIDENCE TIERS', 'OBSERVATION CATEGORIES'}
+
+        def _is_opener_junk(s):
+            return bool(_badge_re.match(s) or _iconcode_re.match(s)
+                        or s in _meta_lines or _chapline_re.match(s))
+
+        def _is_quoted(s):
+            return ((s.startswith('"') or s.startswith('“'))
+                    and (s.endswith('"') or s.endswith('”')))
+
+        _window = min(12, len(paragraphs))
+        _junk_idx = [k for k in range(_window) if _is_opener_junk(paragraphs[k].strip())]
+        if _junk_idx:
+            _last = _junk_idx[-1]
+            paragraphs = [p for k, p in enumerate(paragraphs)
+                          if not (k <= _last and (_is_opener_junk(p.strip()) or _is_quoted(p.strip())))]
+        # Re-join the orphaned drop-cap letter with its first sentence.
+        # Space-join when the letter is a standalone word (A/I) before a real
+        # word, or when the continuation is a header fragment in caps.
+        _STANDALONE_CONTINUATIONS = {
+            'was', 'am', 'strong', 'complete', 'standing', 'few', 'good', 'new',
+            'single', 'simple', 'small', 'short', 'long', 'great', 'note',
+        }
+        for k in range(min(3, len(paragraphs) - 1)):
+            s = paragraphs[k].strip()
+            if re.match(r'^[A-Z]$', s):
+                nxt = paragraphs[k + 1].lstrip()
+                first_word = nxt.split()[0].lower().rstrip('.,:;') if nxt.split() else ''
+                glue = ' ' if (nxt[:1].isupper() or first_word in _STANDALONE_CONTINUATIONS) else ''
+                paragraphs[k:k + 2] = [s + glue + nxt]
+                break
+        if not paragraphs:
+            return '', global_para_count
+
     # Running header
     chapter_id = section.get('chapter_id', str(chapter_num))
     if chapter_num > 0:
@@ -2586,11 +2684,58 @@ def build_chapter_body(section, global_para_count):
     pi_count = 0
     pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
+    def _norm_dupe(s):
+        return ''.join(ch for ch in s.lower() if ch.isalnum())
+    _chapter_dupe_norms = {n for n in (
+        _norm_dupe(HOOK_LINES.get(chapter_key, '')),
+        _norm_dupe(KEY_READS.get(chapter_key, '')),
+    ) if n}
+
     i = 1
     while i < len(paragraphs):
         para = paragraphs[i]
         global_para_count += 1
         stripped = para.strip()
+
+        # Skip in-text duplicates of the config-injected hook line / key read
+        if _chapter_dupe_norms and _norm_dupe(stripped) in _chapter_dupe_norms:
+            i += 1
+            continue
+
+        # ── Roman-numeral pillar headers (I — Confidence … V — Enjoyment) ──
+        if re.match(r'^(I{1,3}|IV|V|VI{0,2})$', stripped) and i + 1 < len(paragraphs):
+            _pn = paragraphs[i + 1].strip()
+            if 0 < len(_pn) < 30 and len(_pn.split()) <= 3 and not _pn.endswith('.') and _pn[:1].isupper():
+                parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)} — {escape(_pn)}</h3>')
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── Level-scale headers (Level 1 / Burden … Level 5 / Signature) ──
+        if re.match(r'^Level [1-5]$', stripped) and i + 1 < len(paragraphs):
+            _ln = paragraphs[i + 1].strip()
+            if 0 < len(_ln) < 30 and len(_ln.split()) <= 3 and not _ln.endswith('.'):
+                parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)} — {escape(_ln)}</h3>')
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── Opener chrome bleed: tier badges (incl. mashed T2AM forms), icon
+        #    codes, legend labels, repeated CHAPTER lines. Appears mid-body
+        #    for the 7A/21A/37A interludes. ──
+        if (re.match(r'^(T[1-4]){1,4}([A-Z]{2})?$', stripped)
+                or stripped in ('SIGNAL CONFIDENCE TIERS', 'OBSERVATION CATEGORIES')
+                or re.match(r'^CHAPTER \d+[A-Z]?\s*[—–-]', stripped)
+                or re.match(r'^[A-Z]{2}$', stripped)):
+            i += 1
+            continue
+
+        # ── Re-join split drop-cap letters mid-body (W + hat the Top…) ──
+        if (re.match(r'^[A-Z]$', stripped) and i + 1 < len(paragraphs)
+                and paragraphs[i + 1].lstrip()[:1].islower()):
+            paragraphs[i + 1] = stripped + paragraphs[i + 1].lstrip()
+            i += 1
+            continue
 
         # ── EXPLICIT PATTERN INTERRUPT TRIGGERS ──
         # ── EXPLICIT KEY PRINCIPLE CALLOUT ──
@@ -2722,7 +2867,8 @@ def build_chapter_body(section, global_para_count):
         checklist_heads = {
             'PRE-SHOW PRIMING', 'ATTENTION ARCHITECTURE', 'TENSION AND RELEASE',
             'BEHAVIORAL PROFILING', 'MEMORY ENCODING',
-            'BEHAVIORS THAT READ AS SAFE AND STRONG'
+            'BEHAVIORS THAT READ AS SAFE AND STRONG',
+            'VOLUNTEERS AND AUDIENCE MANAGEMENT'
         }
         if stripped in checklist_heads and i + 1 < len(paragraphs):
             bullet_para = paragraphs[i + 1].strip()
@@ -3156,7 +3302,7 @@ def build_chapter_body(section, global_para_count):
         _num_m = re.match(r'^(\d+)\.\s+(.+)$', stripped)
         if _num_m and i + 1 < len(paragraphs):
             _body = paragraphs[i + 1].strip()
-            if _body and not re.match(r'^\d+\.', _body):
+            if _body and not re.match(r'^\d+\.', _body) and not is_section_header(_body):
                 parts.append(gen_numbered_card(_num_m.group(1), _num_m.group(2), _body))
                 i += 2
                 global_para_count += 2
@@ -3193,7 +3339,7 @@ def build_chapter_body(section, global_para_count):
             if fig_key in FIGURES:
                 fig = FIGURES[fig_key]
                 parts.append(f'<div class="book-figure" style="text-align:center;margin:2em 0;">')
-                parts.append(f'  <img src="{fig["src"]}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
+                parts.append(f'  <img src="{image_data_uri(fig["src"])}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
                 if fig.get('caption'):
                     parts.append(f'  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">{fig["caption"]}</p>')
                 parts.append(f'</div>')
@@ -3683,6 +3829,13 @@ body{counter-reset:page}
   border-left:3px solid var(--rule);
   margin:1em 0;
   line-height:1.7;
+}
+/* Byline credit — “Routine Title” by Author Name */
+.byline-credit{
+  font-weight:700;
+  font-style:italic;
+  color:var(--gold-dim);
+  margin:0.2em 0 1em;
 }
 /* Failure-label paragraphs — The Nth failure is... */
 .failure-label{
@@ -5901,7 +6054,7 @@ def build_book(manuscript_path, output_path):
             html.append('<article class="chapter-body" style="break-before:page">')
             html.append('<header class="running-header"><span>BUILT FOR WONDER</span><span>ABOUT THE AUTHOR</span></header>')
             html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
-            html.append('<div style="text-align:center;margin:0 auto 2.5em"><img src="resources/metv-images/chris-michael-author.jpg" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
+            html.append(f'<div style="text-align:center;margin:0 auto 2.5em"><img src="{image_data_uri("resources/metv-images/chris-michael-author.jpg")}" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
             for para in section['content']:
                 if para.strip():
                     html.append(f'<p>{escape(para.strip())}</p>')
