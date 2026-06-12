@@ -195,3 +195,19 @@ This file is cumulative — each session appends to it.
 **Why:** Chris reported formatting degraded and SVGs/images lost after new content was merged in; release-readiness pass. Rado and Christopher contributed routines that needed inclusion with thanks.
 **Pattern/Lesson:** The designed-PDF→DOCX merge flattens every generator trigger (em-dashes/middots eaten, numbers split from names, infographics dumped as mashed text). After any re-merge, diff the rendered element counts (stage-card, disc-type-card, radar, checklist, key-read, figure) against the last good build — silent zeroes mean eaten triggers, not removed content.
 **Open items:** Ch12 Tell Table's flat 4-column tables still render as stacked lines (needs a dedicated table design pass). "The Architecture of Obedience" chapter (pacing/leading, yes sets, certainty frames, double binds) is absent from the merged DOCX — content drop, needs Chris's decision.
+
+---
+
+### 2026-06-12 (later) — Full read-through audit: un-mash 80-signal table, design five missing panels, kill placeholders and duplicates
+
+**Change (DOCX via `docx_repair_round3.py`, backup `backups/Architecture-of-Wonder.pre-round3-20260612.docx`):**
+- Ch9: 80-signal observation table was mashed one-line-per-row ("70Pronoun use:...T2CR AM") so the table generator never fired and rows rendered as raw paragraphs. Parsed all 80 rows back into the 5-line format the generator expects — the styled table now renders.
+- Front matter: deleted the "__*note to the editor__" paragraph; `*PLACE HOLDER*` now renders as the reader-name span in the designed build too (gated build's replace no-ops harmlessly).
+- Ch12: removed the four production specs ("Designed insert:" FIVE QUESTIONS PANEL / SIGNAL TABLE / MINI SCENARIOS / QUICK-REFERENCE SHEET); rewired the promise sentences; SIGNAL TABLE spec replaced with a real designed green/yellow/red TELL_TABLE built strictly from signals already classified elsewhere in the book.
+- Ch13: flattened Fruit-to-Fang 4-column table and decision flowchart replaced with FRUIT_TO_FANG_TABLE / FRUIT_TO_FANG_FLOW markers (designed grid + decision ladder); removed duplicate "FRUIT TO FANG" header.
+- Ch17: removed 18 flattened emoji nav/legend lines (🎭🏃👁⚠️ etc.); feedback-signals 4×4 table replaced with FEEDBACK_SIGNALS_TABLE marker (four designed cards).
+- Ch25: ZODIAC_ELEMENT_TABLE marker after "Here is the table you need to know cold:" — the promised element × half-year table now exists (derived from the chapter's own sign lists; the four two-sign cells match the Repeat It Ploy prose).
+- Duplicates removed: Babel closing line (Ch20), "examples" paragraph (Ch21), "One concrete way to train this" paragraph (Ch29), doubled sentences inside the introductions paragraph (Ch36), doubled four-forces lede (Ch37). Typos: THings→Things; "A / standing ovation's are predictable" → "Standing ovations are predictable."; "Level 1Soft Influence" etc. → "Level N — Name".
+
+**Change (`build-book.py`):** MARKER_BLOCKS system (TELL_TABLE, FRUIT_TO_FANG_TABLE/FLOW, FEEDBACK_SIGNALS_TABLE, ZODIAC_ELEMENT_TABLE) + CSS; `*PLACE HOLDER*` span + editor-note strip at output time.
+**Pattern/Lesson:** The pre-existing book CSS already used the `ftf-` class prefix — new marker-block classes were renamed `f2f-*` after a collision rendered the grid single-column. Check class-name collisions when adding CSS to the 6k-line build script. Also: shell cwd persisted into the v2 folder after a deploy commit, which made a round of greps read v2's stale April files — always pin absolute paths when verifying.

@@ -527,6 +527,99 @@ FIVE_CS_HTML = '''
 <div class="section-break">· · ·</div>
 '''
 
+# ═══════════════════════════════════════════════════════════
+# DESIGNED BLOCKS injected at DOCX marker lines (2026-06-12)
+# Each marker is a standalone paragraph in the DOCX; the loop in
+# build_chapter_body swaps it for the designed HTML below.
+# ═══════════════════════════════════════════════════════════
+
+TELL_TABLE_HTML = '''<div class="tell-table">
+  <div class="tt-band tt-green">
+    <div class="tt-band-head">GREEN — THE READ IS LANDING</div>
+    <div class="tt-signals">Head nods · Forward lean · Eyes open, brows lifted · Verbal agreement or sentence completion · A smile that reaches the eyes · Posture settling toward you</div>
+    <div class="tt-move"><strong>The move:</strong> Continue. Build on the thread you are on.</div>
+  </div>
+  <div class="tt-band tt-yellow">
+    <div class="tt-band-head">YELLOW — SOMETHING IS BEING HELD</div>
+    <div class="tt-signals">Lip compression · Eyebrow flash + pause · Delayed response, visible search · Head tilt with narrowed eyes · Self-soothing gestures: neck touch, cuticle picking · Hedged agreement: &ldquo;sort of,&rdquo; &ldquo;kind of&rdquo;</div>
+    <div class="tt-move"><strong>The move:</strong> Reframe before you continue. Widen the frame. Do not defend it.</div>
+  </div>
+  <div class="tt-band tt-red">
+    <div class="tt-band-head">RED — THE FRAME IS REJECTED</div>
+    <div class="tt-signals">One-sided lip corner: contempt · Head turning away · Backward lean, arms closing · Feet or torso orienting toward the exit · The spoken correction arriving</div>
+    <div class="tt-move"><strong>The move:</strong> Reset or pivot. Do not push the same path.</div>
+  </div>
+</div>'''
+
+FRUIT_TO_FANG_TABLE_HTML = '''<div class="f2f-table">
+  <div class="f2f-cell f2f-head">WHAT YOU OBSERVE</div><div class="f2f-cell f2f-head">WHAT IT USUALLY SUGGESTS</div><div class="f2f-cell f2f-head">WHAT YOU DO NEXT</div><div class="f2f-cell f2f-head">WHAT IT MAY INDICATE</div>
+  <div class="f2f-cell">Fruit comes immediately</div><div class="f2f-cell">Easy category access, common answer</div><div class="f2f-cell">Stay with the fruit path</div><div class="f2f-cell"><strong>Likely A or O</strong></div>
+  <div class="f2f-cell">Visible search, no fruit arrives</div><div class="f2f-cell">Harder category access</div><div class="f2f-cell">Offer the animal option</div><div class="f2f-cell">Less likely A or O</div>
+  <div class="f2f-cell">Animal arrives immediately after the shift</div><div class="f2f-cell">Easy animal retrieval once redirected</div><div class="f2f-cell">Move toward a confident reveal</div><div class="f2f-cell"><strong>E</strong> — Eagle / Elephant</div>
+  <div class="f2f-cell">Animal takes a little longer</div><div class="f2f-cell">Narrower, less common animal search</div><div class="f2f-cell">Use a playful test statement</div><div class="f2f-cell"><strong>I</strong></div>
+  <div class="f2f-cell">Strong surprise when you dismiss it as not a real animal</div><div class="f2f-cell">They likely chose something unusual or imaginary</div><div class="f2f-cell">Lean into the reveal</div><div class="f2f-cell"><strong>U</strong></div>
+  <div class="f2f-cell">Mild confusion when challenged</div><div class="f2f-cell">They chose something borderline or category-fuzzy</div><div class="f2f-cell">Reframe and refine</div><div class="f2f-cell"><strong>I</strong> — Iguana or another unusual choice</div>
+</div>'''
+
+FRUIT_TO_FANG_FLOW_HTML = '''<div class="f2f-flow">
+  <div class="ff-step">Think of the first vowel &nbsp;&darr;&nbsp; Think of a fruit with that letter</div>
+  <div class="ff-q">Did it come easily?</div>
+  <div class="ff-branch"><strong>Fruit comes immediately</strong> &rarr; likely common fruit &rarr; think <strong>A / O</strong> — apple or orange.</div>
+  <div class="ff-branch"><strong>No fruit / visible search</strong> &rarr; offer the animal option.</div>
+  <div class="ff-q">Animal ease?</div>
+  <div class="ff-branch"><strong>Animal comes immediately</strong> &rarr; think <strong>E</strong> — Eagle / Elephant. Ask if it feels like a large animal; a confident yes confirms elephant.</div>
+  <div class="ff-branch"><strong>Animal takes longer</strong> &rarr; think <strong>I / U</strong> — watch the quality of the search and the reaction to the challenge.</div>
+  <div class="ff-step">Playful challenge: &ldquo;That&rsquo;s not a real animal.&rdquo;</div>
+  <div class="ff-q">Reaction?</div>
+  <div class="ff-branch"><strong>Mild confusion</strong> &rarr; likely <strong>I</strong> — iguana or another borderline answer.</div>
+  <div class="ff-branch"><strong>Strong surprise</strong> &rarr; likely <strong>U</strong> — unicorn. Watch for the shoulder shrug or head wobble as social protection.</div>
+  <div class="ff-note">A very long search before settling points toward U rather than I — the mind is reaching for a less natural answer.</div>
+</div>'''
+
+FEEDBACK_SIGNALS_TABLE_HTML = '''<div class="fsig-table">
+  <div class="fsig-card">
+    <div class="fsig-name">01 — Lip Compression</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>Suppressed disagreement. They think the read is wrong.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Reframe without defending. Preserve the theme, reverse the direction.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>Instead of &ldquo;You trust people easily,&rdquo; try &ldquo;You want to trust people, but experience has made you careful.&rdquo;</em></div>
+  </div>
+  <div class="fsig-card">
+    <div class="fsig-name">02 — Eyebrow Flash + Pause</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>Uncertainty. The frame did not fit cleanly.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Broaden the statement. Give it more room to land.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>&ldquo;This may not apply in every situation, but there is a pattern around you where&hellip;&rdquo;</em></div>
+  </div>
+  <div class="fsig-card">
+    <div class="fsig-name">03 — Head Turning Away</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>Low recognition. This category has lost traction.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Change topic territory entirely.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>Move from relationships to work, or from work to trust and decision-making.</em></div>
+  </div>
+  <div class="fsig-card">
+    <div class="fsig-name">04 — Microexpression of Contempt</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>They have rejected the frame. They do not buy into this experience you are providing.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Full reset. Do not push further.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>&ldquo;You strike me as someone who does not particularly like being read too quickly.&rdquo; Their resistance becomes your hit.</em></div>
+  </div>
+</div>'''
+
+ZODIAC_ELEMENT_TABLE_HTML = '''<div class="zet-table">
+  <div class="zet-cell zet-head">ELEMENT</div><div class="zet-cell zet-head">FIRST HALF (JAN&ndash;JUN)</div><div class="zet-cell zet-head">SECOND HALF (JUL&ndash;DEC)</div>
+  <div class="zet-cell zet-el">FIRE</div><div class="zet-cell"><strong>Aries</strong></div><div class="zet-cell">Leo or Sagittarius</div>
+  <div class="zet-cell zet-el">WATER</div><div class="zet-cell"><strong>Pisces</strong></div><div class="zet-cell">Cancer or Scorpio</div>
+  <div class="zet-cell zet-el">EARTH</div><div class="zet-cell">Capricorn or Taurus</div><div class="zet-cell"><strong>Virgo</strong></div>
+  <div class="zet-cell zet-el">AIR</div><div class="zet-cell">Aquarius or Gemini</div><div class="zet-cell"><strong>Libra</strong></div>
+</div>
+<p class="zet-note">A bold single sign resolves immediately. The four two-sign cells are the cases the Repeat It Ploy settles.</p>'''
+
+MARKER_BLOCKS = {
+    'TELL_TABLE': TELL_TABLE_HTML,
+    'FRUIT_TO_FANG_TABLE': FRUIT_TO_FANG_TABLE_HTML,
+    'FRUIT_TO_FANG_FLOW': FRUIT_TO_FANG_FLOW_HTML,
+    'FEEDBACK_SIGNALS_TABLE': FEEDBACK_SIGNALS_TABLE_HTML,
+    'ZODIAC_ELEMENT_TABLE': ZODIAC_ELEMENT_TABLE_HTML,
+}
+
 DISC_HTML = '''
 <div class="disc-chart">
   <div class="disc-graphic">
@@ -2702,6 +2795,12 @@ def build_chapter_body(section, global_para_count):
             i += 1
             continue
 
+        # ── DESIGNED BLOCK MARKERS (tell table, fruit-to-fang, etc.) ──
+        if stripped in MARKER_BLOCKS:
+            parts.append(MARKER_BLOCKS[stripped])
+            i += 1
+            continue
+
         # ── Roman-numeral pillar headers (I — Confidence … V — Enjoyment) ──
         if re.match(r'^(I{1,3}|IV|V|VI{0,2})$', stripped) and i + 1 < len(paragraphs):
             _pn = paragraphs[i + 1].strip()
@@ -3830,6 +3929,38 @@ body{counter-reset:page}
   margin:1em 0;
   line-height:1.7;
 }
+/* ═══ DESIGNED MARKER BLOCKS (tell table, fruit-to-fang, zodiac elements) ═══ */
+.tell-table{margin:1.6em 0}
+.tt-band{border:1px solid var(--rule);border-left:6px solid;border-radius:6px;padding:.9em 1.1em;margin:.7em 0}
+.tt-green{border-left-color:#3F7E4E;background:rgba(63,126,78,.06)}
+.tt-yellow{border-left-color:#C9A84C;background:rgba(201,168,76,.07)}
+.tt-red{border-left-color:#A83030;background:rgba(168,48,48,.06)}
+.tt-band-head{font-family:var(--sans);font-weight:700;letter-spacing:.08em;font-size:.78em;margin-bottom:.5em}
+.tt-green .tt-band-head{color:#3F7E4E}
+.tt-yellow .tt-band-head{color:#9A7B2D}
+.tt-red .tt-band-head{color:#A83030}
+.tt-signals{font-size:.95em;line-height:1.65}
+.tt-move{margin-top:.55em;font-size:.92em}
+.f2f-table{display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.5em 0}
+.f2f-cell{padding:.55em .7em;border-bottom:1px solid var(--rule);font-size:.88em;line-height:1.5}
+.f2f-head{font-family:var(--sans);font-weight:700;font-size:.68em;letter-spacing:.07em;background:rgba(0,0,0,.05)}
+.f2f-table .f2f-cell:nth-last-child(-n+4){border-bottom:none}
+.f2f-flow{border-left:3px solid var(--gold-dim);padding:.2em 0 .2em 1.2em;margin:1.5em 0}
+.ff-step{font-weight:600;margin:.6em 0}
+.ff-q{font-family:var(--sans);font-weight:700;color:var(--gold-dim);letter-spacing:.06em;text-transform:uppercase;font-size:.78em;margin:1em 0 .3em}
+.ff-branch{margin:.3em 0 .3em 1em;font-size:.95em;line-height:1.6}
+.ff-note{font-style:italic;font-size:.9em;margin-top:.8em;color:#666}
+.fsig-table{margin:1.5em 0}
+.fsig-card{border:1px solid var(--rule);border-radius:6px;padding:.9em 1.1em;margin:.8em 0}
+.fsig-name{font-family:var(--sans);font-weight:700;color:var(--gold-dim);margin-bottom:.45em;letter-spacing:.04em}
+.fsig-row{font-size:.93em;margin:.3em 0;line-height:1.6}
+.fsig-label{display:inline-block;min-width:7.5em;font-family:var(--sans);font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888}
+.zet-table{display:grid;grid-template-columns:.8fr 1.3fr 1.3fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.4em 0 .4em}
+.zet-cell{padding:.55em .8em;border-bottom:1px solid var(--rule);font-size:.95em}
+.zet-head{font-family:var(--sans);font-weight:700;font-size:.7em;letter-spacing:.08em;background:rgba(0,0,0,.05)}
+.zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-dim)}
+.zet-table .zet-cell:nth-last-child(-n+3){border-bottom:none}
+.zet-note{font-size:.85em;font-style:italic;color:#666;margin:0 0 1.4em}
 /* Byline credit — “Routine Title” by Author Name */
 .byline-credit{
   font-weight:700;
@@ -6077,6 +6208,17 @@ def build_book(manuscript_path, output_path):
     html.append('</body></html>')
 
     full = '\n'.join(html)
+
+    # Personalization placeholder — render as the same span build-gated.py
+    # produces, so the designed copy reads cleanly and the gated build's
+    # string-replace simply no-ops.
+    full = full.replace(
+        '*PLACE HOLDER*',
+        '<span class="reader-name" style="font-style:italic">Reader</span>'
+    )
+    # Defensive: never let the production note reach output.
+    full = re.sub(r'<p>__\*note to the editor:.*?__</p>\n?', '', full, flags=re.DOTALL)
+
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(full)
 
