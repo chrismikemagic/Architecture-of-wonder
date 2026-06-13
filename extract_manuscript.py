@@ -19,7 +19,7 @@ from pathlib import Path
 
 from docx import Document
 
-DOCX_PATH = Path(__file__).parent / "Architecture-of-Wonder.docx"
+DOCX_PATH = Path(__file__).parent / "Built-for-Wonder.docx"
 OUT_PATH  = Path(__file__).parent / "manuscript-extracted.txt"
 
 PART_ORDINALS = ["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT"]

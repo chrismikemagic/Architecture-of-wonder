@@ -6271,5 +6271,5 @@ if __name__ == '__main__':
     _base = _os.path.dirname(_os.path.abspath(__file__))
     build_book(
         _os.path.join(_base, 'manuscript-extracted.txt'),
-        _os.path.join(_base, 'Architecture-of-Wonder-DESIGNED.html')
+        _os.path.join(_base, 'Built-for-Wonder-DESIGNED.html')
     )

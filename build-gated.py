@@ -13,8 +13,8 @@ Run after build-book.py:
 import os
 import re
 
-SOURCE = "Architecture-of-Wonder-DESIGNED.html"
-OUTPUT = "Architecture-of-Wonder-GATED.html"
+SOURCE = "Built-for-Wonder-DESIGNED.html"
+OUTPUT = "Built-for-Wonder-GATED.html"
 
 # ── Gate overlay + personalization JS ──────────────────────────────
 GATE_CSS = """
