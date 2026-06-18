@@ -22,6 +22,27 @@ import re
 import html as html_module
 import os
 import textwrap
+import base64
+import mimetypes
+
+_IMAGE_DATA_URI_CACHE = {}
+
+def image_data_uri(path):
+    """Embed an image file as a base64 data URI so the HTML is fully
+    self-contained (the Netlify deploy ships a single file)."""
+    if path in _IMAGE_DATA_URI_CACHE:
+        return _IMAGE_DATA_URI_CACHE[path]
+    mime, _ = mimetypes.guess_type(path)
+    if mime is None:
+        mime = 'image/svg+xml' if path.lower().endswith('.svg') else 'application/octet-stream'
+    try:
+        with open(path, 'rb') as f:
+            uri = f'data:{mime};base64,' + base64.b64encode(f.read()).decode('ascii')
+    except OSError:
+        print(f'  WARNING: image not found, leaving file reference: {path}')
+        uri = path
+    _IMAGE_DATA_URI_CACHE[path] = uri
+    return uri
 
 # ═══════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -65,6 +86,18 @@ HOOK_LINES = {
 }
 
 KEY_READS = {
+    # Closers added 2026-06-12 (4 ported from v2 build by title match, 7 newly authored)
+    'CHAPTER 1': 'They will forget the method. They will keep what it felt like.',
+    'CHAPTER 2': 'Tell them it is a skill. Then make the skill look like a miracle.',
+    'CHAPTER 12': 'Green means go. Yellow means reframe. Red means leave the route entirely.',
+    'CHAPTER 26': 'The work you do before the room fills is still the work.',
+    'CHAPTER 27': 'Gather early. Reveal late. Let time erase the connection.',
+    'CHAPTER 29': 'Seven stages. One arc. Design backward from the memory you want to leave.',
+    'CHAPTER 30': 'If they are looking for the method, the architecture failed.',
+    'CHAPTER 31': 'Silence is not a gap in the patter. It is the loudest line you have.',
+    'CHAPTER 32': 'Control the sound, and you control the space.',
+    'CHAPTER 33': 'The walk is the show. Everything after is confirmation.',
+    'CHAPTER 34': 'Design the compliance. Then act surprised when they comply.',
     'CHAPTER 3':  'Design the memory, and you design the experience.',
     'CHAPTER 4':  'Salience is not what you show. It is what they cannot ignore.',
     'CHAPTER 5':  'Tension is not the enemy. Boredom is.',
@@ -195,34 +228,28 @@ PATTERN_INTERRUPTS = [
 # ═══════════════════════════════════════════════════════════
 
 FIGURES = {
-    'CHAPTER 19:Brain Wave States Reference Chart': {
-        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
-        'alt': 'Brain wave states: beta, alpha, theta, delta — frequency and function',
-        'caption': 'Figure 19.1 — Brain wave states. Alpha is the state you are working toward in any participant before you deliver a suggestion that matters. The three-step method — close eyes, slow breath, visualize — is covered in The Alpha Shift section below.',
-        'rights': 'From BFW_AllRewrites source document',
-    },
     'CHAPTER 19:What the Brain Is Doing at the Network Level': {
         'src': 'resources/metv-images/hypnosis-brain-networks-shift.png',
         'alt': 'Default mode network quiets while executive control and salience networks coordinate around the suggestion',
-        'caption': 'Figure 19.2 — How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
+        'caption': 'Figure 19.1 — How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 19:The Rainville Finding': {
         'src': 'resources/metv-images/hypnosis-rainville-finding.png',
         'alt': 'The Rainville finding: suggestions targeting unpleasantness activate ACC; suggestions targeting intensity activate somatosensory cortex',
-        'caption': 'Figure 19.3 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
+        'caption': 'Figure 19.2 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 19:The Alpha Shift': {
         'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
         'alt': 'Brain wave state chart with alpha highlighted as target state for hypnotic suggestion',
-        'caption': 'Figure 19.4 — Brain wave states, alpha is your target. Beta is the brain scanning for threats and judging. Alpha is the brain settling in and becoming willing to receive.',
+        'caption': 'Figure 19.3 — Brain wave states, alpha is your target. Beta is the brain scanning for threats and judging. Alpha is the brain settling in and becoming willing to receive.',
         'rights': 'From BFW_AllRewrites source document',
     },
-    'CHAPTER 19:Rapid Inductions': {
-        'src': 'resources/metv-images/hypnosis-fractionation-depth.png',
-        'alt': 'Fractionation cycle depth chart: each re-entry reaches greater depth than the last',
-        'caption': 'Figure 19.5 — Why fractionation works: each cycle reaches greater depth. By cycle three the participant is following a pattern their brain has already confirmed works for them twice in a row. This is also where installing a touch or word trigger pays off most — the brain can return to depth almost immediately on cue.',
+    'CHAPTER 19:Oscillations and Timing': {
+        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
+        'alt': 'Brain wave states: beta, alpha, theta, delta — frequency and function',
+        'caption': 'Figure 19.4 — The full brain wave reference: beta, alpha, theta, delta — each a different firing rhythm, each a different mode of experience. Keep this chart in mind as you read this section.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 24:The Name Chart': {
@@ -233,22 +260,46 @@ FIGURES = {
     },
     # Key: "CHAPTER <num>:<section header text>" → figure data
     # Note: chapter_key comes from parse_manuscript() numbering, not the TOC
-    'CHAPTER 13:The Seven Expressions': {
+    'CHAPTER 14:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 13.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'caption': 'Figure 14.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 13:The Duchenne Smile': {
+    'CHAPTER 14:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
-        'caption': 'Figure 13.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
+        'caption': 'Figure 14.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
         'rights': 'Author-owned photograph',
     },
-    'CHAPTER 12:Lip Compression': {
+    'CHAPTER 13:Lip Compression': {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
-        'caption': 'Figure 12.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'caption': 'Figure 13.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:FIRE SIGNS': {
+        'src': 'resources/metv-images/zodiac-fire-signs-mnemonic.jpg',
+        'alt': 'Fire signs mnemonic: Leo (lion on burning castle), Sagittarius (archers with flaming arrows), Aries (ram)',
+        'caption': 'Fire Signs — Aries, Leo, Sagittarius.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:WATER SIGNS': {
+        'src': 'resources/metv-images/zodiac-water-signs-mnemonic.jpg',
+        'alt': 'Water signs mnemonic: Pisces (fish leaping from ocean), Cancer (crab), Scorpio (scorpion)',
+        'caption': 'Water Signs — Cancer, Scorpio, Pisces.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:EARTH SIGNS': {
+        'src': 'resources/metv-images/zodiac-earth-signs-mnemonic.jpg',
+        'alt': 'Earth signs mnemonic: Capricorn (corn field), Taurus (bull ploughing), Virgo (goddess of agriculture)',
+        'caption': 'Earth Signs — Capricorn, Taurus, Virgo.',
+        'rights': 'AI-generated illustration',
+    },
+    'CHAPTER 25:AIR SIGNS': {
+        'src': 'resources/metv-images/zodiac-air-signs-mnemonic.jpg',
+        'alt': 'Air signs mnemonic: Gemini (twins in storm), Libra (scales in wind), Aquarius (water-bearer)',
+        'caption': 'Air Signs — Aquarius, Gemini, Libra.',
         'rights': 'AI-generated illustration',
     },
 }
@@ -476,6 +527,99 @@ FIVE_CS_HTML = '''
 <div class="section-break">· · ·</div>
 '''
 
+# ═══════════════════════════════════════════════════════════
+# DESIGNED BLOCKS injected at DOCX marker lines (2026-06-12)
+# Each marker is a standalone paragraph in the DOCX; the loop in
+# build_chapter_body swaps it for the designed HTML below.
+# ═══════════════════════════════════════════════════════════
+
+TELL_TABLE_HTML = '''<div class="tell-table">
+  <div class="tt-band tt-green">
+    <div class="tt-band-head">GREEN — THE READ IS LANDING</div>
+    <div class="tt-signals">Head nods · Forward lean · Eyes open, brows lifted · Verbal agreement or sentence completion · A smile that reaches the eyes · Posture settling toward you</div>
+    <div class="tt-move"><strong>The move:</strong> Continue. Build on the thread you are on.</div>
+  </div>
+  <div class="tt-band tt-yellow">
+    <div class="tt-band-head">YELLOW — SOMETHING IS BEING HELD</div>
+    <div class="tt-signals">Lip compression · Eyebrow flash + pause · Delayed response, visible search · Head tilt with narrowed eyes · Self-soothing gestures: neck touch, cuticle picking · Hedged agreement: &ldquo;sort of,&rdquo; &ldquo;kind of&rdquo;</div>
+    <div class="tt-move"><strong>The move:</strong> Reframe before you continue. Widen the frame. Do not defend it.</div>
+  </div>
+  <div class="tt-band tt-red">
+    <div class="tt-band-head">RED — THE FRAME IS REJECTED</div>
+    <div class="tt-signals">One-sided lip corner: contempt · Head turning away · Backward lean, arms closing · Feet or torso orienting toward the exit · The spoken correction arriving</div>
+    <div class="tt-move"><strong>The move:</strong> Reset or pivot. Do not push the same path.</div>
+  </div>
+</div>'''
+
+FRUIT_TO_FANG_TABLE_HTML = '''<div class="f2f-table">
+  <div class="f2f-cell f2f-head">WHAT YOU OBSERVE</div><div class="f2f-cell f2f-head">WHAT IT USUALLY SUGGESTS</div><div class="f2f-cell f2f-head">WHAT YOU DO NEXT</div><div class="f2f-cell f2f-head">WHAT IT MAY INDICATE</div>
+  <div class="f2f-cell">Fruit comes immediately</div><div class="f2f-cell">Easy category access, common answer</div><div class="f2f-cell">Stay with the fruit path</div><div class="f2f-cell"><strong>Likely A or O</strong></div>
+  <div class="f2f-cell">Visible search, no fruit arrives</div><div class="f2f-cell">Harder category access</div><div class="f2f-cell">Offer the animal option</div><div class="f2f-cell">Less likely A or O</div>
+  <div class="f2f-cell">Animal arrives immediately after the shift</div><div class="f2f-cell">Easy animal retrieval once redirected</div><div class="f2f-cell">Move toward a confident reveal</div><div class="f2f-cell"><strong>E</strong> — Eagle / Elephant</div>
+  <div class="f2f-cell">Animal takes a little longer</div><div class="f2f-cell">Narrower, less common animal search</div><div class="f2f-cell">Use a playful test statement</div><div class="f2f-cell"><strong>I</strong></div>
+  <div class="f2f-cell">Strong surprise when you dismiss it as not a real animal</div><div class="f2f-cell">They likely chose something unusual or imaginary</div><div class="f2f-cell">Lean into the reveal</div><div class="f2f-cell"><strong>U</strong></div>
+  <div class="f2f-cell">Mild confusion when challenged</div><div class="f2f-cell">They chose something borderline or category-fuzzy</div><div class="f2f-cell">Reframe and refine</div><div class="f2f-cell"><strong>I</strong> — Iguana or another unusual choice</div>
+</div>'''
+
+FRUIT_TO_FANG_FLOW_HTML = '''<div class="f2f-flow">
+  <div class="ff-step">Think of the first vowel &nbsp;&darr;&nbsp; Think of a fruit with that letter</div>
+  <div class="ff-q">Did it come easily?</div>
+  <div class="ff-branch"><strong>Fruit comes immediately</strong> &rarr; likely common fruit &rarr; think <strong>A / O</strong> — apple or orange.</div>
+  <div class="ff-branch"><strong>No fruit / visible search</strong> &rarr; offer the animal option.</div>
+  <div class="ff-q">Animal ease?</div>
+  <div class="ff-branch"><strong>Animal comes immediately</strong> &rarr; think <strong>E</strong> — Eagle / Elephant. Ask if it feels like a large animal; a confident yes confirms elephant.</div>
+  <div class="ff-branch"><strong>Animal takes longer</strong> &rarr; think <strong>I / U</strong> — watch the quality of the search and the reaction to the challenge.</div>
+  <div class="ff-step">Playful challenge: &ldquo;That&rsquo;s not a real animal.&rdquo;</div>
+  <div class="ff-q">Reaction?</div>
+  <div class="ff-branch"><strong>Mild confusion</strong> &rarr; likely <strong>I</strong> — iguana or another borderline answer.</div>
+  <div class="ff-branch"><strong>Strong surprise</strong> &rarr; likely <strong>U</strong> — unicorn. Watch for the shoulder shrug or head wobble as social protection.</div>
+  <div class="ff-note">A very long search before settling points toward U rather than I — the mind is reaching for a less natural answer.</div>
+</div>'''
+
+FEEDBACK_SIGNALS_TABLE_HTML = '''<div class="fsig-table">
+  <div class="fsig-card">
+    <div class="fsig-name">01 — Lip Compression</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>Suppressed disagreement. They think the read is wrong.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Reframe without defending. Preserve the theme, reverse the direction.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>Instead of &ldquo;You trust people easily,&rdquo; try &ldquo;You want to trust people, but experience has made you careful.&rdquo;</em></div>
+  </div>
+  <div class="fsig-card">
+    <div class="fsig-name">02 — Eyebrow Flash + Pause</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>Uncertainty. The frame did not fit cleanly.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Broaden the statement. Give it more room to land.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>&ldquo;This may not apply in every situation, but there is a pattern around you where&hellip;&rdquo;</em></div>
+  </div>
+  <div class="fsig-card">
+    <div class="fsig-name">03 — Head Turning Away</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>Low recognition. This category has lost traction.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Change topic territory entirely.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>Move from relationships to work, or from work to trust and decision-making.</em></div>
+  </div>
+  <div class="fsig-card">
+    <div class="fsig-name">04 — Microexpression of Contempt</div>
+    <div class="fsig-row"><span class="fsig-label">Means</span>They have rejected the frame. They do not buy into this experience you are providing.</div>
+    <div class="fsig-row"><span class="fsig-label">Adjustment</span>Full reset. Do not push further.</div>
+    <div class="fsig-row"><span class="fsig-label">Pivot to</span><em>&ldquo;You strike me as someone who does not particularly like being read too quickly.&rdquo; Their resistance becomes your hit.</em></div>
+  </div>
+</div>'''
+
+ZODIAC_ELEMENT_TABLE_HTML = '''<div class="zet-table">
+  <div class="zet-cell zet-head">ELEMENT</div><div class="zet-cell zet-head">FIRST HALF (JAN&ndash;JUN)</div><div class="zet-cell zet-head">SECOND HALF (JUL&ndash;DEC)</div>
+  <div class="zet-cell zet-el">FIRE</div><div class="zet-cell"><strong>Aries</strong></div><div class="zet-cell">Leo or Sagittarius</div>
+  <div class="zet-cell zet-el">WATER</div><div class="zet-cell"><strong>Pisces</strong></div><div class="zet-cell">Cancer or Scorpio</div>
+  <div class="zet-cell zet-el">EARTH</div><div class="zet-cell">Capricorn or Taurus</div><div class="zet-cell"><strong>Virgo</strong></div>
+  <div class="zet-cell zet-el">AIR</div><div class="zet-cell">Aquarius or Gemini</div><div class="zet-cell"><strong>Libra</strong></div>
+</div>
+<p class="zet-note">A bold single sign resolves immediately. The four two-sign cells are the cases the Repeat It Ploy settles.</p>'''
+
+MARKER_BLOCKS = {
+    'TELL_TABLE': TELL_TABLE_HTML,
+    'FRUIT_TO_FANG_TABLE': FRUIT_TO_FANG_TABLE_HTML,
+    'FRUIT_TO_FANG_FLOW': FRUIT_TO_FANG_FLOW_HTML,
+    'FEEDBACK_SIGNALS_TABLE': FEEDBACK_SIGNALS_TABLE_HTML,
+    'ZODIAC_ELEMENT_TABLE': ZODIAC_ELEMENT_TABLE_HTML,
+}
+
 DISC_HTML = '''
 <div class="disc-chart">
   <div class="disc-graphic">
@@ -665,7 +809,7 @@ def parse_manuscript(filepath):
 
         # Detect PART headers (standalone line)
         part_match = re.match(r'^PART\s+(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT)\s*$', line)
-        if part_match and i > 143:  # Skip TOC
+        if part_match:
             part_names = {'ONE':1,'TWO':2,'THREE':3,'FOUR':4,'FIVE':5,'SIX':6,'SEVEN':7,'EIGHT':8}
             current_part = part_names.get(part_match.group(1), current_part)
             subtitle = ''
@@ -686,7 +830,7 @@ def parse_manuscript(filepath):
 
         # Detect CHAPTER headers (supports alphanumeric IDs like 19B)
         chapter_match = re.match(r'^CHAPTER\s+(\d+[A-Z]?)\s*$', line)
-        if chapter_match and i > 143:
+        if chapter_match:
             chapter_id = chapter_match.group(1)  # e.g. "19" or "19B"
             chapter_num = int(re.match(r'\d+', chapter_id).group())
             title = ''
@@ -708,8 +852,8 @@ def parse_manuscript(filepath):
                 i += 1
             continue
 
-        # Detect INTRODUCTION (after TOC)
-        if line == 'INTRODUCTION' and i > 143:
+        # Detect INTRODUCTION
+        if line == 'INTRODUCTION':
             subtitle = ''
             if i+1 < len(lines) and lines[i+1].strip():
                 subtitle = lines[i+1].strip()
@@ -726,8 +870,8 @@ def parse_manuscript(filepath):
             i += 2
             continue
 
-        # Detect HOW TO READ THIS BOOK (front matter, after Introduction)
-        if line == 'HOW TO READ THIS BOOK' and i > 143:
+        # Detect HOW TO READ THIS BOOK (front matter)
+        if line == 'HOW TO READ THIS BOOK':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -741,8 +885,8 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Detect ACKNOWLEDGMENTS (early in file)
-        if line == 'ACKNOWLEDGMENTS' and i < 50:
+        # Detect ACKNOWLEDGMENTS (front matter)
+        if line == 'ACKNOWLEDGMENTS':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -756,8 +900,8 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Detect GLOSSARY
-        if line.startswith('GLOSSARY') and i > 2000:
+        # Detect GLOSSARY (back matter)
+        if line.startswith('GLOSSARY') and current_section is not None and current_section.get('chapter_num', 0) > 0:
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -772,7 +916,7 @@ def parse_manuscript(filepath):
             continue
 
         # Detect THE META REVEAL (handled separately via META_REVEAL_HTML; skip manuscript content)
-        if line == 'THE META REVEAL' and i > 2000:
+        if line == 'THE META REVEAL':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -787,7 +931,7 @@ def parse_manuscript(filepath):
             continue
 
         # Detect ABOUT THE AUTHOR
-        if line == 'ABOUT THE AUTHOR' and i > 2000:
+        if line == 'ABOUT THE AUTHOR':
             if current_section:
                 sections.append(current_section)
             current_section = {
@@ -801,13 +945,9 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Skip early front matter before ACKNOWLEDGMENTS
-        if i < 34 and current_section is None:
-            i += 1
-            continue
-
-        # Skip TOC block unconditionally (lines 57–143 are table of contents)
-        if i >= 57 and i <= 143:
+        # Skip lines before any section has started (title page, etc.).
+        # The extractor strips the TOC, so no separate TOC range is needed.
+        if current_section is None:
             i += 1
             continue
 
@@ -2124,7 +2264,8 @@ def process_paragraph(text, part_num=1):
             return gen_five_c_entry(c_word, body)
 
     # Performer's Note — distinct from section headers
-    if stripped in ("Performer's Note", "Performer’s Note", "Performers Note"):
+    if stripped in ("Performer's Note", "Performer’s Note", "Performers Note",
+                    "Chris Michael's Take", "Chris Michael’s Take", "Chris's Take", "Chris’s Take"):
         return gen_performer_note()
 
     # Warning section headers — stand-out treatment
@@ -2222,6 +2363,20 @@ def process_paragraph(text, part_num=1):
     if stripped.startswith('[ITALIC]') and stripped.endswith('[/ITALIC]'):
         inner = stripped[8:-9].strip()
         return f'<p class="script-italic">{escape(inner)}</p>'
+
+    # Five Cs practice lead-ins — "Context—What environment is the behavior occurring in?"
+    _fivec_m = re.match(r'^(Context|Clusters|Congruence|Consistency|Culture)\s*[—–-]\s*(.+\?)$', stripped)
+    if _fivec_m:
+        return f'<p class="fivec-q"><strong>{_fivec_m.group(1)}</strong> — {escape(_fivec_m.group(2))}</p>'
+
+    # Five Cs chain strip — Context › Clusters › … › READ
+    if re.match(r'^Context\s*›\s*Clusters\s*›\s*Congruence\s*›\s*Consistency\s*›\s*Culture\s*›\s*READ$', stripped):
+        return ('<div class="fivec-chain">CONTEXT <span>›</span> CLUSTERS <span>›</span> CONGRUENCE '
+                '<span>›</span> CONSISTENCY <span>›</span> CULTURE <span>›</span> <strong>READ</strong></div>')
+
+    # Bylines — “Routine Title” by Author Name attribution beneath section headers
+    if re.match(r'^[“"][^”"]+[”"] by [A-Z][A-Za-z’\'. -]+$', stripped) and len(stripped) < 70:
+        return f'<p class="byline-credit">{escape(stripped)}</p>'
 
     # Dialogue lines — standalone paragraphs fully enclosed in quotation marks
     if ((stripped.startswith('\u201c') and stripped.endswith('\u201d')) or
@@ -2556,6 +2711,48 @@ def build_chapter_body(section, global_para_count):
     if not paragraphs:
         return '', global_para_count
 
+    # ── Strip chapter-opener metadata that bleeds into the body from the
+    #    merged DOCX: hook quote, tier badges, icon codes, legend labels,
+    #    and the repeated CHAPTER line. All already rendered in the opener.
+    #    The junk block may sit after a lede line, so scan a leading window. ──
+    if chapter_num > 0:
+        _badge_re = re.compile(r'^(T[1-4]){1,4}$')
+        _iconcode_re = re.compile(r'^[A-Z]{2}$')
+        _chapline_re = re.compile(r'^CHAPTER \d+[A-Z]?\s*[—–-]')
+        _meta_lines = {'SIGNAL CONFIDENCE TIERS', 'OBSERVATION CATEGORIES'}
+
+        def _is_opener_junk(s):
+            return bool(_badge_re.match(s) or _iconcode_re.match(s)
+                        or s in _meta_lines or _chapline_re.match(s))
+
+        def _is_quoted(s):
+            return ((s.startswith('"') or s.startswith('“'))
+                    and (s.endswith('"') or s.endswith('”')))
+
+        _window = min(12, len(paragraphs))
+        _junk_idx = [k for k in range(_window) if _is_opener_junk(paragraphs[k].strip())]
+        if _junk_idx:
+            _last = _junk_idx[-1]
+            paragraphs = [p for k, p in enumerate(paragraphs)
+                          if not (k <= _last and (_is_opener_junk(p.strip()) or _is_quoted(p.strip())))]
+        # Re-join the orphaned drop-cap letter with its first sentence.
+        # Space-join when the letter is a standalone word (A/I) before a real
+        # word, or when the continuation is a header fragment in caps.
+        _STANDALONE_CONTINUATIONS = {
+            'was', 'am', 'strong', 'complete', 'standing', 'few', 'good', 'new',
+            'single', 'simple', 'small', 'short', 'long', 'great', 'note',
+        }
+        for k in range(min(3, len(paragraphs) - 1)):
+            s = paragraphs[k].strip()
+            if re.match(r'^[A-Z]$', s):
+                nxt = paragraphs[k + 1].lstrip()
+                first_word = nxt.split()[0].lower().rstrip('.,:;') if nxt.split() else ''
+                glue = ' ' if (nxt[:1].isupper() or first_word in _STANDALONE_CONTINUATIONS) else ''
+                paragraphs[k:k + 2] = [s + glue + nxt]
+                break
+        if not paragraphs:
+            return '', global_para_count
+
     # Running header
     chapter_id = section.get('chapter_id', str(chapter_num))
     if chapter_num > 0:
@@ -2590,11 +2787,67 @@ def build_chapter_body(section, global_para_count):
     pi_count = 0
     pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
+    def _norm_dupe(s):
+        return ''.join(ch for ch in s.lower() if ch.isalnum())
+    _chapter_dupe_norms = {n for n in (
+        _norm_dupe(HOOK_LINES.get(chapter_key, '')),
+        _norm_dupe(KEY_READS.get(chapter_key, '')),
+    ) if n}
+
     i = 1
     while i < len(paragraphs):
         para = paragraphs[i]
         global_para_count += 1
         stripped = para.strip()
+
+        # Skip in-text duplicates of the config-injected hook line / key read.
+        # Exception: the Five Cs trigger sentence must survive — it both
+        # renders as prose and fires the FIVE_CS_HTML grid injection.
+        if (_chapter_dupe_norms and _norm_dupe(stripped) in _chapter_dupe_norms
+                and stripped != 'Context. Clusters. Congruence. Consistency. Culture.'):
+            i += 1
+            continue
+
+        # ── DESIGNED BLOCK MARKERS (tell table, fruit-to-fang, etc.) ──
+        if stripped in MARKER_BLOCKS:
+            parts.append(MARKER_BLOCKS[stripped])
+            i += 1
+            continue
+
+        # ── Roman-numeral pillar headers (I — Confidence … V — Enjoyment) ──
+        if re.match(r'^(I{1,3}|IV|V|VI{0,2})$', stripped) and i + 1 < len(paragraphs):
+            _pn = paragraphs[i + 1].strip()
+            if 0 < len(_pn) < 30 and len(_pn.split()) <= 3 and not _pn.endswith('.') and _pn[:1].isupper():
+                parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)} — {escape(_pn)}</h3>')
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── Level-scale headers (Level 1 / Burden … Level 5 / Signature) ──
+        if re.match(r'^Level [1-5]$', stripped) and i + 1 < len(paragraphs):
+            _ln = paragraphs[i + 1].strip()
+            if 0 < len(_ln) < 30 and len(_ln.split()) <= 3 and not _ln.endswith('.'):
+                parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)} — {escape(_ln)}</h3>')
+                i += 2
+                global_para_count += 2
+                continue
+
+        # ── Opener chrome bleed: tier badges (incl. mashed T2AM forms), icon
+        #    codes, legend labels, repeated CHAPTER lines. Appears mid-body
+        #    for the 7A/21A/37A interludes. ──
+        if (re.match(r'^(T[1-4]){1,4}([A-Z]{2})?$', stripped)
+                or stripped in ('SIGNAL CONFIDENCE TIERS', 'OBSERVATION CATEGORIES')
+                or re.match(r'^CHAPTER \d+[A-Z]?\s*[—–-]', stripped)
+                or re.match(r'^[A-Z]{2}$', stripped)):
+            i += 1
+            continue
+
+        # ── Re-join split drop-cap letters mid-body (W + hat the Top…) ──
+        if (re.match(r'^[A-Z]$', stripped) and i + 1 < len(paragraphs)
+                and paragraphs[i + 1].lstrip()[:1].islower()):
+            paragraphs[i + 1] = stripped + paragraphs[i + 1].lstrip()
+            i += 1
+            continue
 
         # ── EXPLICIT PATTERN INTERRUPT TRIGGERS ──
         # ── EXPLICIT KEY PRINCIPLE CALLOUT ──
@@ -2726,7 +2979,8 @@ def build_chapter_body(section, global_para_count):
         checklist_heads = {
             'PRE-SHOW PRIMING', 'ATTENTION ARCHITECTURE', 'TENSION AND RELEASE',
             'BEHAVIORAL PROFILING', 'MEMORY ENCODING',
-            'BEHAVIORS THAT READ AS SAFE AND STRONG'
+            'BEHAVIORS THAT READ AS SAFE AND STRONG',
+            'VOLUNTEERS AND AUDIENCE MANAGEMENT'
         }
         if stripped in checklist_heads and i + 1 < len(paragraphs):
             bullet_para = paragraphs[i + 1].strip()
@@ -3160,7 +3414,7 @@ def build_chapter_body(section, global_para_count):
         _num_m = re.match(r'^(\d+)\.\s+(.+)$', stripped)
         if _num_m and i + 1 < len(paragraphs):
             _body = paragraphs[i + 1].strip()
-            if _body and not re.match(r'^\d+\.', _body):
+            if _body and not re.match(r'^\d+\.', _body) and not is_section_header(_body):
                 parts.append(gen_numbered_card(_num_m.group(1), _num_m.group(2), _body))
                 i += 2
                 global_para_count += 2
@@ -3197,7 +3451,7 @@ def build_chapter_body(section, global_para_count):
             if fig_key in FIGURES:
                 fig = FIGURES[fig_key]
                 parts.append(f'<div class="book-figure" style="text-align:center;margin:2em 0;">')
-                parts.append(f'  <img src="{fig["src"]}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
+                parts.append(f'  <img src="{image_data_uri(fig["src"])}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
                 if fig.get('caption'):
                     parts.append(f'  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">{fig["caption"]}</p>')
                 parts.append(f'</div>')
@@ -3429,7 +3683,10 @@ def gen_toc(sections):
     parts = ['<nav class="toc"><h2>Contents</h2><div class="toc-list">']
     for s in sections:
         if s['type'] == 'part':
-            parts.append(f'<div class="toc-part">{escape(s["title"])}<span class="toc-sub">{escape(s.get("subtitle",""))}</span></div>')
+            _sub = (s.get('subtitle') or '').strip()
+            if not _sub or _sub.isdigit():
+                continue  # page-chrome part stub, not a real divider
+            parts.append(f'<div class="toc-part">{escape(s["title"])}<span class="toc-sub">{escape(_sub)}</span></div>')
         elif s['type'] == 'chapter':
             ch_num = s.get('chapter_num', 0)
             ch_id  = s.get('chapter_id', str(ch_num))
@@ -3438,7 +3695,10 @@ def gen_toc(sections):
         elif s['type'] == 'glossary':
             parts.append('<div class="toc-part">Glossary</div>')
         elif s['type'] == 'about':
-            parts.append('<div class="toc-part">About the Author</div>')
+            # several about-type sections exist (front-matter note + closing bio);
+            # one TOC label is enough
+            if '<div class="toc-part">About the Author</div>' not in parts:
+                parts.append('<div class="toc-part">About the Author</div>')
     parts.append('</div></nav>')
     return '\n'.join(parts)
 
@@ -3687,6 +3947,54 @@ body{counter-reset:page}
   border-left:3px solid var(--rule);
   margin:1em 0;
   line-height:1.7;
+}
+/* ═══ DESIGNED MARKER BLOCKS (tell table, fruit-to-fang, zodiac elements) ═══ */
+.tell-table{margin:1.6em 0}
+.tt-band{border:1px solid var(--rule);border-left:6px solid;border-radius:6px;padding:.9em 1.1em;margin:.7em 0}
+.tt-green{border-left-color:#3F7E4E;background:rgba(63,126,78,.06)}
+.tt-yellow{border-left-color:#C9A84C;background:rgba(201,168,76,.07)}
+.tt-red{border-left-color:#A83030;background:rgba(168,48,48,.06)}
+.tt-band-head{font-family:var(--sans);font-weight:700;letter-spacing:.08em;font-size:.78em;margin-bottom:.5em}
+.tt-green .tt-band-head{color:#3F7E4E}
+.tt-yellow .tt-band-head{color:#9A7B2D}
+.tt-red .tt-band-head{color:#A83030}
+.tt-signals{font-size:.95em;line-height:1.65}
+.tt-move{margin-top:.55em;font-size:.92em}
+.f2f-table{display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.5em 0}
+.f2f-cell{padding:.55em .7em;border-bottom:1px solid var(--rule);font-size:.88em;line-height:1.5}
+.f2f-head{font-family:var(--sans);font-weight:700;font-size:.68em;letter-spacing:.07em;background:rgba(0,0,0,.05)}
+.f2f-table .f2f-cell:nth-last-child(-n+4){border-bottom:none}
+.f2f-flow{border-left:3px solid var(--gold-dim);padding:.2em 0 .2em 1.2em;margin:1.5em 0}
+.ff-step{font-weight:600;margin:.6em 0}
+.ff-q{font-family:var(--sans);font-weight:700;color:var(--gold-dim);letter-spacing:.06em;text-transform:uppercase;font-size:.78em;margin:1em 0 .3em}
+.ff-branch{margin:.3em 0 .3em 1em;font-size:.95em;line-height:1.6}
+.ff-note{font-style:italic;font-size:.9em;margin-top:.8em;color:#666}
+.fsig-table{margin:1.5em 0}
+.fsig-card{border:1px solid var(--rule);border-radius:6px;padding:.9em 1.1em;margin:.8em 0}
+.fsig-name{font-family:var(--sans);font-weight:700;color:var(--gold-dim);margin-bottom:.45em;letter-spacing:.04em}
+.fsig-row{font-size:.93em;margin:.3em 0;line-height:1.6}
+.fsig-label{display:inline-block;min-width:7.5em;font-family:var(--sans);font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888}
+.zet-table{display:grid;grid-template-columns:.8fr 1.3fr 1.3fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.4em 0 .4em}
+.zet-cell{padding:.55em .8em;border-bottom:1px solid var(--rule);font-size:.95em}
+.zet-head{font-family:var(--sans);font-weight:700;font-size:.7em;letter-spacing:.08em;background:rgba(0,0,0,.05)}
+.zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-dim)}
+.zet-table .zet-cell:nth-last-child(-n+3){border-bottom:none}
+.zet-note{font-size:.85em;font-style:italic;color:#666;margin:0 0 1.4em}
+/* Five Cs practice lead-ins + chain strip */
+.fivec-q{margin:1.3em 0 .35em}
+.fivec-q strong{color:var(--gold-dim);letter-spacing:.03em}
+.fivec-chain{
+  text-align:center;font-family:var(--sans);font-weight:600;
+  font-size:.78em;letter-spacing:.14em;color:#777;margin:1.8em 0;
+}
+.fivec-chain span{color:var(--gold-dim);margin:0 .3em}
+.fivec-chain strong{color:var(--gold-dim);letter-spacing:.14em}
+/* Byline credit — “Routine Title” by Author Name */
+.byline-credit{
+  font-weight:700;
+  font-style:italic;
+  color:var(--gold-dim);
+  margin:0.2em 0 1em;
 }
 /* Failure-label paragraphs — The Nth failure is... */
 .failure-label{
@@ -4781,28 +5089,34 @@ ul.book-list li::before{
 }
 
 /* ═══ TOC ═══ */
-.toc{max-width:480px;margin:0 auto;padding:60px 36px;break-after:page}
+.toc{max-width:560px;margin:0 auto;padding:60px 36px;break-after:page}
 .toc h2{
-  font-family:var(--sans);font-size:.85rem;font-weight:700;
-  letter-spacing:7px;color:var(--gold);text-align:center;margin-bottom:3em;text-transform:uppercase;
+  font-family:var(--sans);font-size:.95rem;font-weight:700;
+  letter-spacing:8px;color:var(--gold);text-align:center;margin-bottom:2.6em;text-transform:uppercase;
 }
 .toc-list{list-style:none}
 .toc-part{
-  font-family:var(--sans);font-size:.62rem;font-weight:700;
-  letter-spacing:3px;color:var(--dim);margin:2em 0 .3em;
-  padding-top:1em;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:.66rem;font-weight:700;
+  letter-spacing:4px;color:var(--gold-dim);margin:2.6em 0 .9em;
+  padding-top:1.5em;border-top:1px solid var(--rule);
+  text-align:center;
 }
-.toc-sub{display:block;font-weight:400;letter-spacing:1px;font-size:.58rem;color:var(--gray-blue);margin-top:2px}
+.toc-sub{
+  display:block;font-family:var(--serif);font-weight:400;font-style:italic;
+  letter-spacing:.5px;font-size:.92rem;color:var(--gray-blue);
+  margin-top:.45em;text-transform:none;
+}
 a.toc-ch{
-  display:flex;align-items:baseline;padding:5px 0 5px 16px;font-size:.82rem;
+  display:flex;align-items:baseline;padding:6px 0;font-size:.8rem;line-height:1.5;
   text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s;
 }
 a.toc-ch:hover{opacity:.7}
-.toc-num{color:var(--gold);font-weight:600;min-width:32px;flex-shrink:0}
-.toc-title{flex-shrink:0}
+.toc-num{color:var(--gold);font-weight:600;min-width:36px;flex-shrink:0;font-size:.74rem}
+.toc-title{flex:0 1 auto;letter-spacing:.4px}
 .toc-dots{
-  flex-grow:1;margin:0 8px;
-  border-bottom:1px dotted var(--rule);min-width:20px;
+  flex:1 1 16px;margin:0 10px;
+  border-bottom:1px dotted var(--rule);min-width:16px;
+  transform:translateY(-3px);
 }
 
 /* ═══ SIGNAL KEY ═══ */
@@ -5801,6 +6115,12 @@ def build_book(manuscript_path, output_path):
 </section>''')
 
         elif stype == 'part':
+            # The merged DOCX carries "PART X / <chapter number>" page chrome
+            # before nearly every chapter — render an opener only for real
+            # part dividers (named subtitle, not a stray number or blank).
+            _psub = (section.get('subtitle') or '').strip()
+            if not _psub or _psub.isdigit():
+                continue
             html.append(gen_part_opener(section))
             # Part body content (Field Notes, NPM) — skip first para (used as part desc in opener)
             # Route through build_chapter_body so all special formatters (stage cards, checklist, etc.) apply
@@ -5905,7 +6225,7 @@ def build_book(manuscript_path, output_path):
             html.append('<article class="chapter-body" style="break-before:page">')
             html.append('<header class="running-header"><span>BUILT FOR WONDER</span><span>ABOUT THE AUTHOR</span></header>')
             html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
-            html.append('<div style="text-align:center;margin:0 auto 2.5em"><img src="resources/metv-images/chris-michael-author.jpg" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
+            html.append(f'<div style="text-align:center;margin:0 auto 2.5em"><img src="{image_data_uri("resources/metv-images/chris-michael-author.jpg")}" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
             for para in section['content']:
                 if para.strip():
                     html.append(f'<p>{escape(para.strip())}</p>')
@@ -5928,6 +6248,17 @@ def build_book(manuscript_path, output_path):
     html.append('</body></html>')
 
     full = '\n'.join(html)
+
+    # Personalization placeholder — render as the same span build-gated.py
+    # produces, so the designed copy reads cleanly and the gated build's
+    # string-replace simply no-ops.
+    full = full.replace(
+        '*PLACE HOLDER*',
+        '<span class="reader-name" style="font-style:italic">Reader</span>'
+    )
+    # Defensive: never let the production note reach output.
+    full = re.sub(r'<p>__\*note to the editor:.*?__</p>\n?', '', full, flags=re.DOTALL)
+
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(full)
 
@@ -5940,5 +6271,5 @@ if __name__ == '__main__':
     _base = _os.path.dirname(_os.path.abspath(__file__))
     build_book(
         _os.path.join(_base, 'manuscript-extracted.txt'),
-        _os.path.join(_base, 'Architecture-of-Wonder-DESIGNED.html')
+        _os.path.join(_base, 'Built-for-Wonder-DESIGNED.html')
     )

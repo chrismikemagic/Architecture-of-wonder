@@ -173,3 +173,57 @@ This file is cumulative — each session appends to it.
 **Terms added:** dopamine, salience network, limbic system, hippocampus, amygdala, visual cortex, orbitofrontal cortex, medial prefrontal regions, basal ganglia, dorsolateral prefrontal cortex, executive control network, primary somatosensory cortex, locus coeruleus, nociceptors, brainstem, thalamus, mirror neurons.
 **Why:** Chris wants readers without a neuroscience background to have the anatomical context at the moment they need it, not in a glossary they have to flip to.
 **Pattern/Lesson:** Already self-described terms (zygomatic major, orbicularis oculi, cortical pyramidal neurons, norepinephrine/acetylcholine functions) do not need additions. Terms already introduced with explicit "you do not need to memorize these" explanations (anterior insula, dorsal anterior cingulate) are also fine.
+
+---
+
+### 2026-06-12 — Release-prep: restore flattened design systems, lost figures, and add two contributed routines
+
+**Change (DOCX, via `docx_update_contributions.py` + `docx_repair_cards.py`, backups in `backups/*20260612*`):**
+- Removed two leaked editorial notes ("CHAPTER ROADMAP — SUGGESTED ADDITION" + advisory paragraphs) from Ch16 and Ch28.
+- Re-added [ITALIC] markers to the three Juke Box Oracle script paragraphs (lost in the merged-DOCX swap).
+- Inserted Rado Sheytanov's "Ephemeris" (complete prop-less star sign divination) and Christopher Parrish's "The Red Dwarf" (+ Group Variation + closing thoughts) into Ch25 ZODIAC DIVINATIONS, each with a narrative thank-you intro and gold byline. Added a joint thank-you paragraph to ACKNOWLEDGMENTS. Sources archived in `resources/rado-ephemeris.txt` and `resources/For-Rado-The-Red-Dwarf.pdf`.
+- Rebuilt flattened card-trigger text the PDF→DOCX merge destroyed: DISC type cards (`D — DIRECT` …), DISC blend cards (`D/C Blend` …), Six-Category Radar (`SIX_AREA_RADAR` + `NN — Name` + signal lines), 10-Second Scan step headers (`01 — SHOES` …), Seven Stages cards (`01 · PRIME` …), Neural Performance Checklist (items joined with ` · `, heading VOLUNTEERS AND AUDIENCE MANAGEMENT uppercased), warning-callout trigger (stripped ⚠ prefix), PATTERN_INTERRUPT_40PCT marker. Fixed five typos (memeber, breath/breathe, th memory, theis, audiences brain).
+
+**Change (`build-book.py`):**
+- FIGURES keys re-anchored after the merge shifted chapters: Lip Compression → CH13, Seven Expressions/Duchenne → CH14; Ch19 figures renumbered 19.1–19.4 (brain-wave chart re-anchored at "Oscillations and Timing"; fractionation figure dropped — its prose no longer exists). Added four zodiac element mnemonic figures (CH25 FIRE/WATER/EARTH/AIR SIGNS; images copied from v2 Gemini JPGs into `resources/metv-images/zodiac-*-mnemonic.jpg`).
+- All images now embed as base64 data URIs (`image_data_uri()`) — the deployed gated HTML is fully self-contained (image file refs were 404ing on Netlify since the v2 folder has no resources/).
+- New chapter-body cleanup: strips opener-metadata bleed (hook quote, T-badges incl. mashed `T2AM` forms, icon codes, legend labels, repeated CHAPTER lines) from chapter starts AND mid-body (7A/21A/37A interludes); re-joins orphaned drop-cap letters with their sentences; suppresses in-text duplicates of config hook lines/key reads.
+- Roman-numeral pillar headers (I — Confidence … V — Enjoyment) and Level-scale headers (Level 1 — Burden …) now render as section headers in Ch42.
+- KEY_READS completed to all 42 chapters: CH30/32/33/34 ported from the v2 build config by title match; CH1/2/12/26/27/29/31 newly authored.
+- Generic gold byline rule (`"Title" by Author`), "Chris Michael's Take" added to the Performer's-Note trigger set, numbered-card detection no longer swallows section headers.
+
+**Why:** Chris reported formatting degraded and SVGs/images lost after new content was merged in; release-readiness pass. Rado and Christopher contributed routines that needed inclusion with thanks.
+**Pattern/Lesson:** The designed-PDF→DOCX merge flattens every generator trigger (em-dashes/middots eaten, numbers split from names, infographics dumped as mashed text). After any re-merge, diff the rendered element counts (stage-card, disc-type-card, radar, checklist, key-read, figure) against the last good build — silent zeroes mean eaten triggers, not removed content.
+**Open items:** Ch12 Tell Table's flat 4-column tables still render as stacked lines (needs a dedicated table design pass). "The Architecture of Obedience" chapter (pacing/leading, yes sets, certainty frames, double binds) is absent from the merged DOCX — content drop, needs Chris's decision.
+
+---
+
+### 2026-06-12 (later) — Full read-through audit: un-mash 80-signal table, design five missing panels, kill placeholders and duplicates
+
+**Change (DOCX via `docx_repair_round3.py`, backup `backups/Architecture-of-Wonder.pre-round3-20260612.docx`):**
+- Ch9: 80-signal observation table was mashed one-line-per-row ("70Pronoun use:...T2CR AM") so the table generator never fired and rows rendered as raw paragraphs. Parsed all 80 rows back into the 5-line format the generator expects — the styled table now renders.
+- Front matter: deleted the "__*note to the editor__" paragraph; `*PLACE HOLDER*` now renders as the reader-name span in the designed build too (gated build's replace no-ops harmlessly).
+- Ch12: removed the four production specs ("Designed insert:" FIVE QUESTIONS PANEL / SIGNAL TABLE / MINI SCENARIOS / QUICK-REFERENCE SHEET); rewired the promise sentences; SIGNAL TABLE spec replaced with a real designed green/yellow/red TELL_TABLE built strictly from signals already classified elsewhere in the book.
+- Ch13: flattened Fruit-to-Fang 4-column table and decision flowchart replaced with FRUIT_TO_FANG_TABLE / FRUIT_TO_FANG_FLOW markers (designed grid + decision ladder); removed duplicate "FRUIT TO FANG" header.
+- Ch17: removed 18 flattened emoji nav/legend lines (🎭🏃👁⚠️ etc.); feedback-signals 4×4 table replaced with FEEDBACK_SIGNALS_TABLE marker (four designed cards).
+- Ch25: ZODIAC_ELEMENT_TABLE marker after "Here is the table you need to know cold:" — the promised element × half-year table now exists (derived from the chapter's own sign lists; the four two-sign cells match the Repeat It Ploy prose).
+- Duplicates removed: Babel closing line (Ch20), "examples" paragraph (Ch21), "One concrete way to train this" paragraph (Ch29), doubled sentences inside the introductions paragraph (Ch36), doubled four-forces lede (Ch37). Typos: THings→Things; "A / standing ovation's are predictable" → "Standing ovations are predictable."; "Level 1Soft Influence" etc. → "Level N — Name".
+
+**Change (`build-book.py`):** MARKER_BLOCKS system (TELL_TABLE, FRUIT_TO_FANG_TABLE/FLOW, FEEDBACK_SIGNALS_TABLE, ZODIAC_ELEMENT_TABLE) + CSS; `*PLACE HOLDER*` span + editor-note strip at output time.
+**Pattern/Lesson:** The pre-existing book CSS already used the `ftf-` class prefix — new marker-block classes were renamed `f2f-*` after a collision rendered the grid single-column. Check class-name collisions when adding CSS to the 6k-line build script. Also: shell cwd persisted into the v2 folder after a deploy commit, which made a round of greps read v2's stale April files — always pin absolute paths when verifying.
+
+---
+
+### 2026-06-12 (third pass) — Five Cs duplication, junk part pages, TOC redesign, excerpt chrome
+
+**Change (DOCX via `docx_repair_round4.py`, backup `backups/Architecture-of-Wonder.pre-round4-20260612.docx`):**
+- Removed the flattened Five Cs card block (17 paragraphs) that duplicated the designed FIVE_CS grid, including the mashed "Context›…›READ" breadcrumb.
+- Part Five intro: joined the split "B/efore You Begin" drop-cap and removed the two standalone-download paragraphs ("If you are reading this as a standalone download…", "The full book that this section is pulled from…") — excerpt-edition chrome that doesn't belong in the full book. The Parts 2–5 recap and the FATE warning stay.
+
+**Change (`build-book.py`):**
+- Part-opener and TOC now skip the "PART X / <number>" page-chrome stubs the merge created before nearly every chapter — 49 part-opener pages reduced to the 5 real dividers; TOC went from ~50 part rows (with stray chapter numbers and an "Intro B" entry) to 5 clean part rows + 42 chapters + Before You Begin.
+- TOC restyled: centered gold part labels with italic serif subtitles, fixed title wrap/leader-dot layout, single About the Author label.
+- Five Cs practice section: "Context—What environment…?" lead-ins render with gold bold C-words (.fivec-q); the "Context › … › READ" chain renders as a centered chain strip (.fivec-chain).
+- Hook/key-read dedup exempts the Five Cs trigger sentence (it fires the grid injection).
+
+**Pattern/Lesson:** The page-chrome "PART X + page number" pairs from the PDF merge created phantom part sections — filter at render time (subtitle empty/numeric), not in the parser, so chapter part-numbering stays intact.
