@@ -4,7 +4,7 @@
 
 **"Built for Wonder: A Mentalist's Guide to Behavioral Science, Psychological Performance, and Astonishment"** by Chris Michael. A non-fiction book teaching behavioral profiling, audience psychology, and performance craft through the lens of mentalism. 42 chapters (plus 37A), 5 parts. The book's design demonstrates its own content — the Meta Reveal chapter shows the reader what was done to them.
 
-> **Title note:** The book was renamed from "The Architecture of Wonder" to "Built for Wonder" on 2026-04-08. As of 2026-06-13 the in-repo pipeline files were also renamed to match (`Built-for-Wonder.docx`, `Built-for-Wonder-DESIGNED.html`, `Built-for-Wonder-GATED.html`). The **deployed** file in the v2 folder is still `Architecture-of-Wonder-GATED.html` because the live Netlify path points at that filename — do not rename the deploy target without updating the Netlify dashboard. Display text everywhere reads "Built for Wonder."
+> **Title note:** The book was renamed from "The Architecture of Wonder" to "Built for Wonder" on 2026-04-08. As of 2026-06-13 the in-repo pipeline files were also renamed to match (`Built-for-Wonder.docx`, `Built-for-Wonder-DESIGNED.html`, `Built-for-Wonder-GATED.html`). As of 2026-06-19 the **deployed** file in the v2 folder is `index.html` (renamed from `Architecture-of-Wonder-GATED.html`) so Netlify serves the gated book at the site root; a `_redirects` file 301s the old path to `/`. Display text everywhere reads "Built for Wonder."
 
 ## The Source of Truth
 
@@ -116,11 +116,11 @@ Update docs regularly. Every structural decision, workflow change, or lesson lea
 
 ## Post-Build Deployment
 
-After every successful build, copy the gated HTML to the v2 folder:
+After every successful build, copy the gated HTML to the v2 folder as `index.html`:
 ```bash
-cp Built-for-Wonder-GATED.html /c/Users/Chris/Architecture-of-wonder-v2/Architecture-of-Wonder-GATED.html
+cp Built-for-Wonder-GATED.html /c/Users/Chris/Architecture-of-wonder-v2/index.html
 ```
-This is the Netlify deployment source.
+This is the Netlify deployment source. (Renamed from `Architecture-of-Wonder-GATED.html` to `index.html` on 2026-06-19 so Netlify serves it at the site root; a `_redirects` file in the v2 repo 301s the old path to `/`. Commit + push the v2 `main` branch to deploy.)
 
 ## Claude Dispatch
 
