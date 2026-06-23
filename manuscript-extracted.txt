@@ -3172,6 +3172,45 @@ Closing Thoughts on The Red Dwarf
 A lot of propless Mentalism is experimental and expensive, so it’s important that if you do take the plunge into learning more about the subject, you have a professional-grade technique to experiment with what you’re learning without your reputation as a mentalist being at risk. The Red Dwarf has been a trusty ally during moments when I woke up feeling bold and wanting to masterfully divine the very thoughts of my participants without needing anything written down or typed into an app.
 By having a trusted safety net ready to go anytime you want to experiment with something bold and not sure-fire, you’ll be able to include such propless Mentalism effects into your performances more often. And, as a result, you’ll be quickly on your way to developing, road-testing, and creating your own style of propless Mentalism that fits your voice, character, and comfort level. That is the power and level of creative freedom techniques like The Red Dwarf offer to mentalists. A way to experiment with new ideas without the risk of giving your participants and audiences an embarrassing and boring experience.
 Always remember, failures can be powerful; they just have to be carefully considered where they can occur in the demonstrations of a real, empathetic, and professional mentalist. At their best, failures increase credibility and make the performer appear more human and relatable to the audience. At their worst, they decrease engagement, cause audiences to not take the performer seriously, and the mentalist comes across as some jackass who THINKS they can read minds. Don’t be the jackass.
+CLOUD NINE
+“Cloud Nine” by Atlas Brookings
+Everything in this chapter so far has been built to reach one thing: the sign. But the sign is only a slice of a larger number. A person’s zodiac is decided entirely by the date they were born, which means if you can read the whole birthdate, you already have the sign sitting inside it. This final method does exactly that, with no props, no anagrams, and no moment where the room hears you miss. Every calculation happens in the spectator’s head. You are only ever comparing their numbers against one number of your own.
+Atlas Brookings calls it Cloud Nine, and he gave me permission to teach it here. It began as an email exchange between Atlas and Andrew Brown about the hidden mathematics of a birth year, and the start, middle, and end-of-month idea you will use to pin the day belongs to Michael Murray. I have rewritten the handling in my own words, but the engine is theirs. Credit them when you perform it.
+The whole system rests on a quirk of the century we live in. Almost everyone you will ever read was born in a year that begins 19 or 20. That single fact is doing all of the work.
+The Frame
+You are going to present this as numerology rather than astrology. Numerology gives you a reason to ask for arithmetic, and arithmetic is what hides the method.
+“For a long time numerologists treated your star sign as a rough sketch. They believed the numbers in your birth date told a sharper story. I want to try the version of that I actually trust. None of this needs to be said out loud. Just do the math in your head and answer with comparisons, not numbers.”
+That instruction — comparisons, not numbers — is the engine. The spectator never tells you a value. They only ever tell you bigger, smaller, or by how much.
+Reading the Year
+Have them picture their birth year as four digits: two on the inside, two on the outside. For someone born in 1987, the inner pair is 9 and 8, the outer pair is 1 and 7.
+“Multiply the two inner digits together. If you land on a two-digit number, add those digits and keep going until you have a single digit.”
+Here is the secret hiding in plain sight. Any pair of inner digits from a 19-something year includes that 9, and any number built on a nine reduces back to nine. So for anyone born last century, the inner number is always 9. You know it before they finish the math. For someone born this century, the inner pair includes a 0, so their inner number is always 0 — more on the young ones in a moment.
+“Now multiply the two outer digits together and reduce the same way.”
+The outer pair is the first digit of the year times the last digit. For a 19-something year the first digit is 1, and anything times 1 is itself. So their outer number is simply the last digit of their birth year, handed to you.
+You do not ask for it. You ask them to compare.
+“Don’t tell me either number. Just tell me — is the first number you made larger or smaller than the second? And by how much?”
+You already know the inner number is 9. If they say it was larger by two, then the outer number is 9 minus 2, which is 7. The last digit of their birth year is 7. You now hold 19_7, and the only thing missing is the decade.
+You get the decade by looking at them. A glance tells you whether 1987 or 1977 or 1997 fits, the same way you have been estimating throughout this whole chapter. Call the third digit and the year is complete. Treat the nine as their dominant number out loud, and tell them it is the only number they need to keep in mind. Every other number will come and go.
+The Day-and-Month Number
+“Take the number of your birth month — January is one, December is twelve — and add it to the day you were born. Reduce that to a single digit.”
+April the 18th gives 4 plus 18, which is 22, which reduces to 4. Again, you do not want the value, you want the comparison.
+“Is that number the same as your dominant number, higher, or lower? And by how much?”
+It cannot be higher than nine, but you play as though it could. If they say lower by five, then their day-and-month number is 9 minus 5, which is 4. Hold onto that four. You will hunt for it shortly.
+Somewhere in here, casually and well before the reveal, ask whether they were born toward the start, the middle, or the end of the month. It draws no attention as a stray question and it saves you later.
+Reading the Month
+“One more. Take your birth-month number again and add it to your dominant number. Reduce it to a single digit. This one is your happiness factor.”
+The happiness-factor line is cover. What you are actually doing is adding nine to the month. And because of how nine behaves, that sum reduces straight back to the month itself for any month from four through nine. Ask for the comparison — lower by five means 9 minus 5, which is 4 — and you read the month directly. April.
+The only soft spot is the low end. Months one, two, and three share their reduced value with October, November, and December. When you land on a one, two, or three, you pump to break the tie: ask whether they have had their birthday yet this year, or talk about the weather, the holidays, or the length of their month. One question settles it.
+Pinning the Exact Day
+You know the month value and the day-and-month number. To find the first candidate date, run this: 9 minus the month value, plus the day-and-month number.
+For April, that is 9 minus 4 plus 4. Work left to right: 9 minus 4 is 5, plus 4 is 9. The 9th of April gives you that day-and-month value. Add nine and add nine again, and you have the only other candidates: the 18th and the 27th. If your starting date comes out higher than nine, subtract nine as well as add it.
+Now the question you already asked pays off. They told you middle of the month. The 9th is early, the 27th is late, the 18th sits in the middle. If two candidates ever fall in the same third of the month, one will be odd and one will be even — a quiet “this isn’t an even date, is it?” separates them.
+April 18th, 1987. You never heard a number, and you never guessed in front of anyone.
+The Young Ones
+For a spectator born this century, the inner pair of their year contains a zero, so their dominant number is 0 instead of 9, and you compare everything against zero rather than nine. The outer pair is 2 times the last digit, so reduce it as they go: even results halve, odd results start at five and climb by one for each step past one. You will rarely need it, but it is there.
+Why It Belongs Here
+This is the cleanest answer to the worry that runs under every bold method in this chapter — what happens when I am wrong? With Cloud Nine, there is no public moment to be wrong in. The spectator does private arithmetic and reports comparisons. If a read of their age or month is off, you adjust inside the same conversation, because nothing has been committed to the room. The tells that confirm you are on the right line are the ones from Part Two; if you need to refresh them, the green, yellow, and red signals on Chris Michael’s tell table apply here exactly as they did to the Repeat It Ploy earlier in this chapter.
+The sign was always the small version of this. Here you take the whole date, and the sign comes free.
 · · ·
 The zodiac is a frame. What you put inside it is the work.
 PART THREE
