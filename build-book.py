@@ -6267,9 +6267,10 @@ def build_book(manuscript_path, output_path):
 
 
 if __name__ == '__main__':
-    import os as _os
+    import os as _os, sys as _sys
     _base = _os.path.dirname(_os.path.abspath(__file__))
-    build_book(
-        _os.path.join(_base, 'manuscript-extracted.txt'),
-        _os.path.join(_base, 'Built-for-Wonder-DESIGNED.html')
-    )
+    # Optional CLI args: [input_manuscript] [output_html]. Defaults preserve the
+    # documented pipeline (manuscript-extracted.txt -> Built-for-Wonder-DESIGNED.html).
+    _in = _sys.argv[1] if len(_sys.argv) > 1 else _os.path.join(_base, 'manuscript-extracted.txt')
+    _out = _sys.argv[2] if len(_sys.argv) > 2 else _os.path.join(_base, 'Built-for-Wonder-DESIGNED.html')
+    build_book(_in, _out)

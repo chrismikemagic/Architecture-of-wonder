@@ -343,4 +343,11 @@ def build():
 
 
 if __name__ == "__main__":
+    import sys
+    # Optional CLI args: [source_designed_html] [output_gated_html]. Defaults
+    # preserve the documented pipeline.
+    if len(sys.argv) > 1:
+        SOURCE = sys.argv[1]
+    if len(sys.argv) > 2:
+        OUTPUT = sys.argv[2]
     build()

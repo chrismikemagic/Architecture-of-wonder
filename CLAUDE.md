@@ -59,6 +59,25 @@ python3 build-book.py
 python3 build-gated.py
 ```
 
+## Two editions: WITH and WITHOUT the Atlas Brookings material
+
+The book ships in two editions. **The WITH edition is the main/deployed version.**
+
+- **Main (WITH Brookings):** `Built-for-Wonder-DESIGNED.html` / `Built-for-Wonder-GATED.html`. The GATED file deploys to v2 as `index.html` (the live site).
+- **No-Brookings:** `Built-for-Wonder-NoBrookings-DESIGNED.html` / `Built-for-Wonder-NoBrookings-GATED.html`. Same book with the Brookings-sourced sections stripped.
+
+Build BOTH editions in one command:
+```bash
+python build_all.py    # extract -> main DESIGNED+GATED -> no-Brookings manuscript -> no-Brookings DESIGNED+GATED
+```
+
+How the no-Brookings edition is produced:
+- `brookings_manifest.py` registers each Brookings section by its exact header line (`start`) and the first line to keep after it (`end_anchor`).
+- `make_no_brookings.py` strips those ranges from `manuscript-extracted.txt`, writing `manuscript-extracted-NoBrookings.txt`.
+- `build-book.py` and `build-gated.py` now accept optional `[input] [output]` CLI args (defaults unchanged), so the no-Brookings manuscript builds through the same scripts.
+
+**To register a NEW Brookings section:** keep it as the last thing before a natural boundary (a `· · ·` separator or a distinct closing line), then add one entry to `BROOKINGS_SECTIONS` in `brookings_manifest.py`. Current entries: Three Eras (Ch1), Imbalanced (Ch24), Cloud Nine (Ch25). Clearance status tracked in `book-assistant/brookings-review/CLEARANCES.md`.
+
 ## The Build Script (`build-book.py`)
 
 Converts extracted text into fully designed HTML. All design configuration lives here:
