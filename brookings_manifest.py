@@ -26,6 +26,12 @@ BROOKINGS_SECTIONS = [
         "end_anchor": "· · ·",
     },
     {
+        "id": "preshow-failure",
+        "chapter": 27,
+        "start": "THE PRE-SHOW THAT LOOKS LIKE A FAILURE",
+        "end_anchor": "· · ·",
+    },
+    {
         "id": "cloud-nine",
         "chapter": 25,
         "start": "CLOUD NINE",
