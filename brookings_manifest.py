@@ -27,7 +27,7 @@ BROOKINGS_SECTIONS = [
     },
     {
         "id": "preshow-failure",
-        "chapter": 27,
+        "chapter": "27A",  # standalone interlude beat (mirrors 7A/21A/37A)
         "start": "THE PRE-SHOW THAT LOOKS LIKE A FAILURE",
         "end_anchor": "· · ·",
     },
