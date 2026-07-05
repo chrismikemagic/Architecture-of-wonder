@@ -8,6 +8,8 @@ This session made two kinds of change to the source `Built-for-Wonder.docx`, the
 
 **2. Mechanical fixes: 76 applied, 7 held back.** From the audit's 83 double-verified candidates, 76 pure spelling/spacing/punctuation/homophone corrections were applied run-aware (inline bold/italic preserved). 7 were held back after a character-level review (see below). No prose was rewritten; every applied change is a mechanical correction.
 
+**3. Build fix — 4 orphaned marker tokens no longer leak to readers (output only; DOCX untouched).** The audit flagged `CH18_DIAGNOSTIC_PANEL` / `CH18_IFYRE_PANEL` as possibly rendering garbled. They were: both appeared in the finished HTML as literal `<h3>` headers. A build check confirmed **four** such orphans were leaking as visible headers — `CH18_DIAGNOSTIC_PANEL`, `CH18_IFYRE_PANEL`, `PERF_ARCH_FRAMEWORK_SVG`, and `PERFORMANCE_MATRIX` (the audit caught the first two). `build-book.py` now drops any unresolved `ALL_CAPS_WITH_UNDERSCORES` token that no handler claimed, as a last-resort guard placed after every real handler so registered tokens like `PATTERN_INTERRUPT_40PCT` and `SIX_AREA_RADAR` are unaffected (their content was verified intact). The tokens still exist in the source DOCX — **you decide** whether to delete them or replace them with real panel content; the build simply stops emitting garbage in the meantime. The other flagged placeholders (`FEEDBACK_SIGNALS_TABLE`, `ZODIAC_ELEMENT_TABLE`, and the Ch3 `*PLACE HOLDER*`) were already correctly substituted or stripped by the build and never reached readers.
+
 ### Applied (76)
 
 | Chapter | Was | Now |

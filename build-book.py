@@ -3436,6 +3436,21 @@ def build_chapter_body(section, global_para_count):
             parts.append(f'<ul class="book-list">{li_html}</ul>')
             continue
 
+        # ── Unresolved build-marker tokens (last-resort guard) ──
+        # By this point every registered marker/handler above has had its turn.
+        # An ALL_CAPS_WITH_UNDERSCORES token still here is an orphaned placeholder
+        # with no handler (e.g. CH18_DIAGNOSTIC_PANEL, CH18_IFYRE_PANEL,
+        # PERF_ARCH_FRAMEWORK_SVG, PERFORMANCE_MATRIX). It is never real prose
+        # (English has no ALL_CAPS_UNDERSCORE words), so drop it instead of
+        # letting process_paragraph render it as a literal <h3> to the reader.
+        # The source DOCX is left untouched; this only keeps garbage out of the
+        # output. Placed AFTER all handlers so tokens WITH handlers (e.g.
+        # PATTERN_INTERRUPT_40PCT, SIX_AREA_RADAR) are never suppressed.
+        if re.match(r'^[A-Z][A-Z0-9]*(_[A-Z0-9]+)+$', stripped):
+            print(f"  [warn] skipped unresolved marker token: {stripped!r}")
+            i += 1
+            continue
+
         processed = process_paragraph(para, part_num)
         if processed:
             parts.append(processed)

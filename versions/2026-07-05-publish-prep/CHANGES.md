@@ -38,6 +38,15 @@ section of `EDITORIAL-AUDIT-2026-07-05.md`.
 
 Apply script: `apply_audit_fixes_20260705.py` (idempotent, backs up first).
 
+### 3. Build fix — orphaned marker tokens no longer leak to readers
+Four unresolved build placeholder tokens were rendering as literal visible
+`<h3>` headers in the finished book: `CH18_DIAGNOSTIC_PANEL`, `CH18_IFYRE_PANEL`,
+`PERF_ARCH_FRAMEWORK_SVG`, `PERFORMANCE_MATRIX`. `build-book.py` now drops any
+unresolved `ALL_CAPS_WITH_UNDERSCORES` token that no handler claimed (last-resort
+guard placed after every real handler, so `PATTERN_INTERRUPT_40PCT` and
+`SIX_AREA_RADAR` content is untouched). Output only — the tokens remain in the
+DOCX for you to delete or fill with real content.
+
 ### 3. Editorial audit report (the "notes for you")
 `EDITORIAL-AUDIT-2026-07-05.md` — 515 findings across all chapters: high-priority
 items, does-not-fit flags (nothing removed — your call), material/structure ideas,
