@@ -227,3 +227,21 @@ This file is cumulative — each session appends to it.
 - Hook/key-read dedup exempts the Five Cs trigger sentence (it fires the grid injection).
 
 **Pattern/Lesson:** The page-chrome "PART X + page number" pairs from the PDF merge created phantom part sections — filter at render time (subtitle empty/numeric), not in the parser, so chapter part-numbering stays intact.
+
+---
+
+### 2026-07-05 — Swinging-watch/REM section + book-wide audit + verified typo sweep
+
+**Change (DOCX via `insert_swinging_watch.py`, backup `backups/Built-for-Wonder-pre-swinging-watch.docx`):**
+- Added a new Ch19 section, "Where the Swinging Watch Comes From," after "The Alpha Shift." Rhythmic light flickering across closed eyes (back-seat car ride, sun through trees, streetlights) echoes REM/hypnagogic eye activity and drives the drowsy relaxed feeling; this is the real mechanism behind the swinging watch. Pays off the chapter's own "no swinging watch" setup and its dream section. Chris's own material (NOT Brookings) → ships in both editions, no `brookings_manifest.py` entry. Renders as an `h3`; 0 lines removed / 8 added; 46 openers intact.
+
+**Change (DOCX via `apply_audit_fixes_20260705.py`, backup `backups/Built-for-Wonder-pre-audit-fixes.docx`):**
+- Applied 76 of 83 double-verified mechanical typo/spacing/punctuation/homophone fixes across Chs 1–32, run-aware so inline bold/italic is preserved. Held back 7 (rewrites, a drop-cap misread that would delete a "T", header em-dash separators, a possibly-intentional repetition). Full record in the report's "Session actions" table and `versions/2026-07-05-publish-prep/mechanical-fixes-apply-log.json`.
+
+**Deliverable:** `docs/EDITORIAL-AUDIT-2026-07-05.md` — a 515-finding, 45-chapter editorial audit (high-priority items, does-not-fit flags with NOTHING removed, material/structure ideas, tone/voice, readability). Produced by a fan-out workflow: one auditor per chapter group → adversarial fix-verification → synthesis. Raw findings in the version snapshot.
+
+**Version snapshot:** `versions/2026-07-05-publish-prep/` — immutable copy of the DOCX, all four HTML outputs, the report, apply-log, and raw findings, so prior versions are preserved. Work done on branch `claude/publish-prep-rem-formatting-20260705`.
+
+**Not done (needs Chris):** live Netlify deploy (GATED not copied to v2/index.html; nothing pushed); the ~12 high-severity content issues the audit flagged (Ch3 placeholder, Ch4 habit contradiction, shaky stats, Ch24/Ch25 worked-system math, build-token placeholders).
+
+**Pattern/Lesson:** The manuscript's plain-text `SIGNAL CONFIDENCE TIERS / OBSERVATION CATEGORIES / T1T2 / AM` lines and single-letter drop-cap splits are design tokens the build consumes — audit agents must be told to ignore them or they drown in false positives. Auto-applying audit fixes is the riskiest step: gate every fix through auditor-flag + adversarial verifier + a char-level diff review, and skip run-spanning replacements in mixed-format paragraphs to avoid clobbering inline styling.
