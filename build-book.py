@@ -3410,6 +3410,46 @@ def build_chapter_body(section, global_para_count):
             global_para_count += 2
             continue
 
+        # ── FIVE FORCES preview list (Ch4) — the lead-in "Five forces that
+        #    control attention" is followed by the five force names, which
+        #    otherwise render as a row of jammed section headers. Render the
+        #    lead-in as a header and the names as a clean list. Keyed to the
+        #    exact lead-in so it only ever fires here. ──
+        if stripped == 'Five forces that control attention':
+            _items = []
+            j = i + 1
+            while j < len(paragraphs):
+                s2 = paragraphs[j].strip()
+                if (s2 and len(s2) < 45 and s2[-1:] not in ('.', '!', '?', ':', ',')
+                        and not re.fullmatch(r'[1-9]', s2) and s2[:1].isupper()):
+                    _items.append(escape(s2))
+                    j += 1
+                else:
+                    break
+            if len(_items) >= 3:
+                parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)}</h3>')
+                parts.append('<ul class="book-list">'
+                             + ''.join(f'<li>{x}</li>' for x in _items) + '</ul>')
+                global_para_count += (j - i)
+                i = j
+                continue
+
+        # ── NUMBERED CARDS (split form) — a lone "N" line, then a short title
+        #    line, then a body paragraph. This is how several frameworks are
+        #    laid out in the DOCX (Ch4 Five Forces, Ch14 micro-expression types,
+        #    Ch42 five pillars). Without this they render as a floating number
+        #    plus a detached heading; here they become a single numbered card. ──
+        if re.fullmatch(r'[1-9]', stripped) and i + 2 < len(paragraphs):
+            _t = paragraphs[i + 1].strip()
+            _b = paragraphs[i + 2].strip()
+            if (_t and _b and len(_t) < 45 and not _t.endswith('.')
+                    and _t[:1].isupper() and not _t.startswith(('CHAPTER', 'PART'))
+                    and not re.fullmatch(r'[1-9]', _t) and len(_b) > 80):
+                parts.append(gen_numbered_card(stripped, _t, _b))
+                i += 3
+                global_para_count += 3
+                continue
+
         # ── NUMBERED CARDS — "N. Title" followed by body paragraph ──
         _num_m = re.match(r'^(\d+)\.\s+(.+)$', stripped)
         if _num_m and i + 1 < len(paragraphs):
@@ -6151,11 +6191,26 @@ def build_book(manuscript_path, output_path):
                 html.append('</article>')
 
         elif stype == 'how_to_read':
-            html.append('<article class="chapter-body how-to-read" data-part="0" style="break-before:page">')
-            body, global_para = build_chapter_body(section, global_para)
-            html.append(body)
-            html.append('<div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>')
-            html.append('</article>')
+            # The tier + category content is already presented, well-designed,
+            # by the hardcoded signal-key block injected after the TOC. Rendering
+            # the raw source here too produced a sparse, header-heavy duplicate.
+            # Keep only the unique "A Note on Sources" passage (not in the signal
+            # key), so it is shown once, cleanly, and the duplication is gone.
+            _c = section.get('content', [])
+            _ni = next((k for k, ln in enumerate(_c)
+                        if ln.strip().lower().startswith('a note on sources')), None)
+            if _ni is not None:
+                # Render the note explicitly as header + body. (Going through
+                # build_chapter_body would drop-cap the first line, i.e. the
+                # heading, which looks wrong.)
+                html.append('<article class="chapter-body how-to-read" data-part="0" style="break-before:page">')
+                html.append(f'<h3 class="section-header sh-standard">{escape(_c[_ni].strip())}</h3>')
+                for _p in _c[_ni + 1:]:
+                    if _p.strip():
+                        _ph = process_paragraph(_p, 0)
+                        html.append(_ph if _ph else f'<p>{escape(_p.strip())}</p>')
+                html.append('<div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>')
+                html.append('</article>')
 
         elif stype == 'chapter':
             html.append(gen_chapter_opener(section))
