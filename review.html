@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Built for Wonder — Editor Review</title>
+<script src="editor-config.js"></script>
+<style>
+  :root{
+    --gold:#c9a84c; --bg:#0e0c08; --panel:#171410; --fg:#efe7d2; --dim:#a99f86;
+    --line:rgba(201,168,76,.22); --ins:#5bbf6a; --del:#d07a7a;
+    --sans:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --serif:'Cormorant Garamond',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.55;-webkit-text-size-adjust:100%}
+  header{position:sticky;top:0;z-index:10;background:#100e09;border-bottom:1px solid var(--line);
+    padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 2px 14px rgba(0,0,0,.4)}
+  header h1{font-size:.95rem;letter-spacing:2px;color:var(--gold);font-weight:700}
+  header h1 small{display:block;font-weight:400;letter-spacing:1px;color:var(--dim);font-size:.6rem}
+  .spacer{flex:1}
+  .pill{font-size:.62rem;letter-spacing:.6px;text-transform:uppercase;padding:5px 10px;border-radius:999px;
+    background:rgba(255,255,255,.05);color:var(--dim);display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .pill .dot{width:8px;height:8px;border-radius:50%}
+  .pill[data-ok="1"] .dot{background:var(--ins)} .pill[data-ok="0"] .dot{background:#c98a4c}
+  .tabs{display:flex;gap:6px}
+  .tab{cursor:pointer;font-family:var(--sans);font-size:.72rem;letter-spacing:.5px;background:transparent;
+    color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+  .tab.active{background:var(--gold);color:#1a1508;border-color:var(--gold);font-weight:700}
+  .tab .n{opacity:.7;margin-left:5px}
+  button.act{cursor:pointer;font-family:var(--sans);font-size:.7rem;background:transparent;color:var(--fg);
+    border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+  button.act:hover{border-color:var(--gold)}
+  main{max-width:920px;margin:0 auto;padding:18px 16px 80px}
+  .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+  .toolbar input[type=search]{flex:1;min-width:160px;background:var(--panel);border:1px solid var(--line);
+    color:var(--fg);border-radius:8px;padding:9px 12px;font:inherit;font-size:.82rem}
+  .toolbar input:focus{outline:none;border-color:var(--gold)}
+  .empty{opacity:.55;text-align:center;padding:60px 20px;line-height:1.7}
+  .chapgroup{margin-bottom:26px}
+  .chapgroup h2{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);
+    border-bottom:1px solid var(--line);padding-bottom:7px;margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:12px}
+  .card .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.58rem;letter-spacing:.4px;
+    text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+  .card .meta .who{color:var(--gold)}
+  .card .meta .idx{background:var(--gold);color:#1a1508;font-weight:700;border-radius:5px;padding:1px 7px}
+  .diff{font-family:var(--serif);font-size:1.06rem;line-height:1.62}
+  .diff ins{background:rgba(91,191,106,.18);color:#cfeccf;text-decoration:none;border-radius:2px;padding:0 1px}
+  .diff del{background:rgba(208,122,122,.16);color:#e7b9b9;border-radius:2px;padding:0 1px}
+  .edited-only{font-family:var(--serif);font-size:1.06rem;line-height:1.62;margin-top:10px;
+    border-left:3px solid var(--ins);padding-left:12px;color:#e9e2cd}
+  .lbl{font-size:.56rem;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin:12px 0 3px}
+  .card .row-actions{display:flex;gap:14px;margin-top:12px}
+  .card .row-actions button{background:none;border:none;color:var(--gold);cursor:pointer;font:inherit;
+    font-size:.7rem;letter-spacing:.3px;opacity:.85;padding:0}
+  .card .row-actions button:hover{opacity:1;text-decoration:underline}
+  .note-quote{font-family:var(--serif);font-style:italic;font-size:1rem;color:#cdc3aa;
+    border-left:2px solid var(--gold);padding-left:10px;margin-bottom:8px}
+  .note-body{font-size:.98rem;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}
+  a.jump{color:var(--gold);text-decoration:none;font-size:.7rem;border:1px solid var(--line);
+    border-radius:999px;padding:5px 10px}
+  a.jump:hover{border-color:var(--gold)}
+  .hint{font-size:.72rem;color:var(--dim);margin-top:6px}
+  @media (max-width:560px){ header h1 small{display:none} .tab .lbl-txt{display:none} }
+</style>
+</head>
+<body>
+<header>
+  <h1>EDITOR REVIEW<small>Built for Wonder</small></h1>
+  <div class="tabs">
+    <button class="tab active" data-view="edits">Edits<span class="n" id="n-edits">0</span></button>
+    <button class="tab" data-view="notes">Notes<span class="n" id="n-notes">0</span></button>
+  </div>
+  <div class="spacer"></div>
+  <span class="pill" id="conn" data-ok="0"><span class="dot"></span><span id="conn-txt">…</span></span>
+  <button class="act" id="refresh">↻ Refresh</button>
+  <button class="act" id="export">⇩ Export</button>
+</header>
+
+<main>
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Filter by text, chapter, or editor name…">
+    <span class="pill" id="count"></span>
+  </div>
+  <div id="content"><div class="empty">Loading…</div></div>
+</main>
+
+<script>
+(function(){
+  var CFG = window.EDITOR_CONFIG || {};
+  var CLOUD = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
+  var BASE = CLOUD ? CFG.supabaseUrl.replace(/\/+$/,'') : '';
+  var view = 'edits', edits = [], notes = [], filter = '';
+
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function hdr(){return {apikey:CFG.supabaseAnonKey,Authorization:'Bearer '+CFG.supabaseAnonKey};}
+  // Where the editor lives relative to this dashboard. Deployed layout: review at
+  // /edit/review.html, editor at /edit/ (index.html) → "./". Override via EDITOR_CONFIG.editorUrl.
+  function editorHref(nodeId){ return (CFG.editorUrl||'./')+'#'+encodeURIComponent(nodeId||''); }
+
+  function setConn(ok,txt){var p=document.getElementById('conn');p.setAttribute('data-ok',ok?1:0);document.getElementById('conn-txt').textContent=txt;}
+
+  function load(){
+    if(CLOUD){
+      setConn(1,'Cloud');
+      Promise.all([
+        fetch(BASE+'/rest/v1/edits?select=*&order=chapter.asc',{headers:hdr()}).then(r=>r.json()),
+        fetch(BASE+'/rest/v1/notes?select=*&order=created_at.asc',{headers:hdr()}).then(r=>r.json())
+      ]).then(function(res){
+        edits = Array.isArray(res[0])?res[0]:[];
+        notes = Array.isArray(res[1])?res[1]:[];
+        render();
+      }).catch(function(e){ setConn(0,'Error'); document.getElementById('content').innerHTML='<div class="empty">Could not reach Supabase.<br>'+esc(e.message)+'</div>'; });
+    } else {
+      setConn(0,'Local');
+      try{ edits = Object.values(JSON.parse(localStorage.getItem('bfw_edits_v1'))||{}); }catch(e){ edits=[]; }
+      try{ notes = JSON.parse(localStorage.getItem('bfw_notes_v1'))||[]; }catch(e){ notes=[]; }
+      render();
+    }
+  }
+
+  // ---- word-level diff (LCS) ----
+  function tokenize(s){ return String(s||'').split(/(\s+)/).filter(function(x){return x!=='';}); }
+  function diff(aStr,bStr){
+    var a=tokenize(aStr), b=tokenize(bStr);
+    var n=a.length,m=b.length;
+    var dp=[]; for(var i=0;i<=n;i++){dp.push(new Array(m+1).fill(0));}
+    for(var i=n-1;i>=0;i--)for(var j=m-1;j>=0;j--)dp[i][j]=a[i]===b[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+    var out='',i=0,j=0;
+    while(i<n&&j<m){
+      if(a[i]===b[j]){out+=esc(a[i]);i++;j++;}
+      else if(dp[i+1][j]>=dp[i][j+1]){out+='<del>'+esc(a[i])+'</del>';i++;}
+      else{out+='<ins>'+esc(b[j])+'</ins>';j++;}
+    }
+    while(i<n){out+='<del>'+esc(a[i])+'</del>';i++;}
+    while(j<m){out+='<ins>'+esc(b[j])+'</ins>';j++;}
+    return out;
+  }
+
+  function match(txt){ return !filter || String(txt||'').toLowerCase().indexOf(filter)!==-1; }
+  function chapLabel(c){ return c.chapter_title || c.chapter || 'Front / unsorted'; }
+
+  function render(){
+    document.getElementById('n-edits').textContent=edits.length;
+    document.getElementById('n-notes').textContent=notes.length;
+    var host=document.getElementById('content');
+    if(view==='edits') renderEdits(host); else renderNotes(host);
+  }
+
+  function renderEdits(host){
+    var rows=edits.filter(function(e){return match(e.edited)||match(e.original)||match(e.chapter_title)||match(e.author);});
+    document.getElementById('count').textContent=rows.length+' edit'+(rows.length===1?'':'s');
+    if(!rows.length){host.innerHTML='<div class="empty">No edits yet.<br>When your editor changes a paragraph, it shows here as a tracked before/after.</div>';return;}
+    var groups={}; rows.forEach(function(e){var k=chapLabel(e);(groups[k]=groups[k]||[]).push(e);});
+    var html='';
+    Object.keys(groups).forEach(function(k){
+      html+='<div class="chapgroup"><h2>'+esc(k)+' · '+groups[k].length+'</h2>';
+      groups[k].forEach(function(e){
+        var when=''; try{when=new Date(e.updated_at).toLocaleString();}catch(x){}
+        html+='<div class="card">'+
+          '<div class="meta"><span class="who">'+esc(e.author||'editor')+'</span><span>'+esc(when)+'</span></div>'+
+          '<div class="lbl">Change (red = removed, green = added)</div>'+
+          '<div class="diff">'+diff(e.original,e.edited)+'</div>'+
+          '<div class="lbl">Clean edited text</div>'+
+          '<div class="edited-only" data-clean>'+esc(e.edited)+'</div>'+
+          '<div class="row-actions"><button data-copy>⧉ Copy edited text</button></div>'+
+        '</div>';
+      });
+      html+='</div>';
+    });
+    host.innerHTML=html;
+    host.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){
+      var txt=b.closest('.card').querySelector('[data-clean]').textContent;
+      navigator.clipboard.writeText(txt).then(function(){b.textContent='✓ Copied';setTimeout(function(){b.textContent='⧉ Copy edited text';},1400);});
+    };});
+  }
+
+  function renderNotes(host){
+    var rows=notes.filter(function(n){return match(n.body)||match(n.quote)||match(n.chapter_title)||match(n.author);});
+    rows.sort(function(a,b){return String(a.created_at||'').localeCompare(String(b.created_at||''));});
+    document.getElementById('count').textContent=rows.length+' note'+(rows.length===1?'':'s');
+    if(!rows.length){host.innerHTML='<div class="empty">No notes yet.<br>Notes your editor leaves will appear here in the order they were added.</div>';return;}
+    var html='';
+    rows.forEach(function(n,i){
+      var when=''; try{when=new Date(n.created_at).toLocaleString();}catch(x){}
+      html+='<div class="card">'+
+        '<div class="meta"><span class="idx">#'+(i+1)+'</span>'+
+        '<span>'+esc(chapLabel(n))+'</span>'+
+        '<span class="who" style="margin-left:auto">'+esc(n.author||'editor')+' · '+esc(when)+'</span></div>'+
+        (n.quote?'<div class="note-quote">“'+esc(n.quote)+'”</div>':'')+
+        '<div class="note-body">'+esc(n.body)+'</div>'+
+        '<div class="row-actions"><a class="jump" href="'+editorHref(n.node_id)+'" target="_blank" rel="noopener">Open in editor ↗</a></div>'+
+      '</div>';
+    });
+    host.innerHTML=html;
+  }
+
+  // export everything as JSON
+  function exportJSON(){
+    var data={exported_at:new Date().toISOString(),edits:edits,notes:notes};
+    var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='built-for-wonder-editor-review.json';a.click();
+  }
+
+  document.querySelectorAll('.tab').forEach(function(t){t.onclick=function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active'); view=t.getAttribute('data-view'); render();
+  };});
+  document.getElementById('q').addEventListener('input',function(e){filter=e.target.value.trim().toLowerCase();render();});
+  document.getElementById('refresh').onclick=load;
+  document.getElementById('export').onclick=exportJSON;
+
+  load();
+})();
+</script>
+</body>
+</html>

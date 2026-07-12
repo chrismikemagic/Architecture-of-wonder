@@ -1,0 +1,263 @@
+/* ============================================================
+   Built for Wonder — Editor layer
+   Injected on top of the designed book. Reuses the book's
+   theme variables (--gold, --sans, --dim) with safe fallbacks.
+   ============================================================ */
+
+:root {
+  --bfw-gold: var(--gold, #c9a84c);
+  --bfw-sans: var(--sans, 'Montserrat', system-ui, sans-serif);
+  --bfw-edit: #4c9fc9;          /* edited-block accent (cool, distinct from gold) */
+  --bfw-edit-bg: rgba(76,159,201,.12);
+  --bfw-note: #d98a3d;          /* note accent (warm) */
+  --bfw-note-bg: rgba(217,138,61,.18);
+  --bfw-bar-bg: #12100b;
+  --bfw-bar-fg: #efe7d2;
+  --bfw-panel-bg: #171410;
+  --bfw-line: rgba(201,168,76,.22);
+  --bfw-topbar-h: 52px;
+}
+
+/* Push the book down so the fixed bar never covers content */
+body.bfw-editor-on { padding-top: var(--bfw-topbar-h) !important; }
+
+/* ---------- Top bar ---------- */
+#bfw-bar{
+  position:fixed; top:0; left:0; right:0; height:var(--bfw-topbar-h);
+  z-index:2147483000;
+  display:flex; align-items:center; gap:10px;
+  padding:0 12px;
+  background:var(--bfw-bar-bg);
+  border-bottom:1px solid var(--bfw-line);
+  color:var(--bfw-bar-fg);
+  font-family:var(--bfw-sans);
+  box-shadow:0 2px 14px rgba(0,0,0,.4);
+}
+#bfw-bar .bfw-brand{
+  font-weight:700; letter-spacing:2px; font-size:.72rem;
+  color:var(--bfw-gold); white-space:nowrap;
+}
+#bfw-bar .bfw-brand small{ display:block; font-weight:400; letter-spacing:1px; color:var(--bfw-bar-fg); opacity:.6; font-size:.55rem; }
+#bfw-bar .bfw-spacer{ flex:1 1 auto; }
+
+.bfw-btn{
+  appearance:none; cursor:pointer;
+  font-family:var(--bfw-sans); font-size:.7rem; letter-spacing:.5px;
+  background:transparent; color:var(--bfw-bar-fg);
+  border:1px solid var(--bfw-line); border-radius:999px;
+  padding:7px 12px; line-height:1; white-space:nowrap;
+  display:inline-flex; align-items:center; gap:6px;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.bfw-btn:hover{ border-color:var(--bfw-gold); color:#fff; }
+.bfw-btn.bfw-primary{ background:var(--bfw-gold); color:#1a1508; border-color:var(--bfw-gold); font-weight:700; }
+.bfw-btn.bfw-primary:hover{ filter:brightness(1.08); color:#000; }
+.bfw-btn .bfw-count{
+  background:var(--bfw-note); color:#1a1508; font-weight:700;
+  border-radius:999px; min-width:17px; height:17px; padding:0 5px;
+  display:inline-flex; align-items:center; justify-content:center; font-size:.62rem;
+}
+
+/* Save-status pill */
+#bfw-status{
+  font-size:.62rem; letter-spacing:.6px; text-transform:uppercase;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:5px 10px; border-radius:999px; white-space:nowrap;
+  background:rgba(255,255,255,.05); color:var(--bfw-bar-fg);
+}
+#bfw-status .dot{ width:8px; height:8px; border-radius:50%; background:#8a8; flex:none; }
+#bfw-status[data-state="saved"]  .dot{ background:#5bbf6a; }
+#bfw-status[data-state="saving"] .dot{ background:var(--bfw-gold); animation:bfw-pulse 1s infinite; }
+#bfw-status[data-state="local"]  .dot{ background:#c98a4c; }
+#bfw-status[data-state="error"]  .dot{ background:#d05656; }
+@keyframes bfw-pulse{ 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* Hide non-essential bar bits on narrow screens */
+@media (max-width:640px){
+  #bfw-bar .bfw-brand small{ display:none; }
+  #bfw-status .bfw-status-text{ display:none; }
+  .bfw-btn .bfw-btn-label{ display:none; }
+  .bfw-btn{ padding:8px 10px; }
+}
+
+/* ---------- Editable prose ---------- */
+.bfw-editable{
+  border-radius:4px;
+  transition:background .12s, box-shadow .12s;
+  outline:none;
+}
+body.bfw-editing .bfw-editable:hover{
+  box-shadow: inset 3px 0 0 rgba(201,168,76,.35);
+}
+body.bfw-editing .bfw-editable:focus{
+  background:rgba(201,168,76,.06);
+  box-shadow: inset 3px 0 0 var(--bfw-gold);
+}
+/* Reading mode: strip all editor affordances */
+body.bfw-reading .bfw-editable{ box-shadow:none !important; background:transparent !important; }
+
+/* A block whose text differs from the original */
+.bfw-modified{
+  background:var(--bfw-edit-bg) !important;
+  box-shadow: inset 3px 0 0 var(--bfw-edit) !important;
+  position:relative;
+}
+.bfw-modified::after{
+  content:"edited"; position:absolute; top:-8px; right:6px;
+  font-family:var(--bfw-sans); font-size:.5rem; letter-spacing:1px; text-transform:uppercase;
+  color:var(--bfw-edit); background:var(--bfw-bar-bg); padding:1px 6px; border-radius:999px;
+  border:1px solid var(--bfw-edit); opacity:.9; pointer-events:none;
+}
+body.bfw-reading .bfw-modified::after{ display:none; }
+
+/* Note-anchored text */
+.bfw-note-anchor{
+  background:var(--bfw-note-bg);
+  border-bottom:2px solid var(--bfw-note);
+  border-radius:2px; cursor:pointer;
+  scroll-margin-top: calc(var(--bfw-topbar-h) + 14px);
+}
+.bfw-note-anchor.bfw-flash{ animation:bfw-flash 1.1s ease; }
+@keyframes bfw-flash{ 0%{ background:var(--bfw-note); color:#1a1508; } 100%{ background:var(--bfw-note-bg); } }
+/* generic flash for jumping to a whole block (e.g. from the dashboard deep-link) */
+.bfw-editable.bfw-flash{ animation:bfw-block-flash 1.3s ease; border-radius:4px; }
+@keyframes bfw-block-flash{ 0%{ background:rgba(201,168,76,.38); } 100%{ background:transparent; } }
+
+/* scroll offset so jumped-to blocks clear the bar */
+[data-eid]{ scroll-margin-top: calc(var(--bfw-topbar-h) + 14px); }
+
+/* ---------- Floating "add note" button (near selection) ---------- */
+#bfw-addnote{
+  position:fixed; z-index:2147483200; display:none;
+  font-family:var(--bfw-sans); font-size:.66rem; font-weight:700; letter-spacing:.5px;
+  background:var(--bfw-note); color:#1a1508; border:none; border-radius:8px;
+  padding:8px 12px; cursor:pointer; box-shadow:0 6px 20px rgba(0,0,0,.45);
+  transform:translate(-50%,-100%); white-space:nowrap;
+}
+#bfw-addnote::after{
+  content:""; position:absolute; left:50%; top:100%; transform:translateX(-50%);
+  border:6px solid transparent; border-top-color:var(--bfw-note);
+}
+
+/* ---------- Note composer ---------- */
+#bfw-composer{
+  position:fixed; z-index:2147483300; inset:auto;
+  bottom:16px; left:50%; transform:translateX(-50%);
+  width:min(520px, calc(100vw - 24px));
+  background:var(--bfw-panel-bg); color:var(--bfw-bar-fg);
+  border:1px solid var(--bfw-line); border-radius:14px;
+  box-shadow:0 18px 50px rgba(0,0,0,.6); padding:14px; display:none;
+  font-family:var(--bfw-sans);
+}
+#bfw-composer h4{ font-size:.7rem; letter-spacing:1px; text-transform:uppercase; color:var(--bfw-gold); margin-bottom:8px; }
+#bfw-composer .bfw-quote{
+  font-size:.8rem; line-height:1.45; color:#d8cfb8;
+  border-left:3px solid var(--bfw-note); padding:6px 10px; margin-bottom:10px;
+  background:rgba(255,255,255,.03); max-height:80px; overflow:auto; border-radius:0 6px 6px 0;
+}
+#bfw-composer textarea{
+  width:100%; min-height:88px; resize:vertical;
+  background:#0e0c08; color:#f2ecda; border:1px solid var(--bfw-line);
+  border-radius:8px; padding:10px; font:inherit; font-size:.85rem; line-height:1.5;
+}
+#bfw-composer textarea:focus{ outline:none; border-color:var(--bfw-gold); }
+#bfw-composer .bfw-composer-actions{ display:flex; gap:8px; justify-content:flex-end; margin-top:10px; }
+
+/* ---------- Notes drawer ---------- */
+#bfw-drawer{
+  position:fixed; top:var(--bfw-topbar-h); right:0; bottom:0;
+  width:min(380px, 92vw); z-index:2147483100;
+  background:var(--bfw-panel-bg); color:var(--bfw-bar-fg);
+  border-left:1px solid var(--bfw-line);
+  transform:translateX(102%); transition:transform .25s ease;
+  display:flex; flex-direction:column; font-family:var(--bfw-sans);
+  box-shadow:-8px 0 30px rgba(0,0,0,.4);
+}
+#bfw-drawer.open{ transform:translateX(0); }
+#bfw-drawer .bfw-drawer-head{
+  display:flex; align-items:center; gap:8px; padding:12px 14px;
+  border-bottom:1px solid var(--bfw-line);
+}
+#bfw-drawer .bfw-drawer-head h3{ font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--bfw-gold); flex:1; }
+#bfw-drawer .bfw-drawer-body{ flex:1; overflow-y:auto; padding:8px 10px 40px; -webkit-overflow-scrolling:touch; }
+#bfw-drawer .bfw-empty{ opacity:.5; font-size:.8rem; text-align:center; padding:36px 16px; line-height:1.6; }
+
+.bfw-note-card{
+  border:1px solid var(--bfw-line); border-radius:10px; padding:11px 12px; margin:9px 2px;
+  background:rgba(255,255,255,.02);
+}
+.bfw-note-card .bfw-note-meta{
+  display:flex; align-items:center; gap:8px; font-size:.58rem; letter-spacing:.4px;
+  text-transform:uppercase; color:var(--bfw-gold); opacity:.85; margin-bottom:6px; flex-wrap:wrap;
+}
+.bfw-note-card .bfw-note-meta .bfw-idx{
+  background:var(--bfw-note); color:#1a1508; font-weight:700; border-radius:5px; padding:1px 6px;
+}
+.bfw-note-card .bfw-note-quote{
+  font-size:.72rem; font-style:italic; color:#cdc3aa; line-height:1.4;
+  border-left:2px solid var(--bfw-note); padding-left:8px; margin-bottom:6px;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.bfw-note-card .bfw-note-body{ font-size:.86rem; line-height:1.5; color:#f0e9d6; white-space:pre-wrap; word-wrap:break-word; }
+.bfw-note-card .bfw-note-actions{ display:flex; gap:14px; margin-top:9px; }
+.bfw-note-card .bfw-note-actions button{
+  background:none; border:none; color:var(--bfw-gold); cursor:pointer;
+  font:inherit; font-size:.68rem; letter-spacing:.4px; padding:0; opacity:.8;
+}
+.bfw-note-card .bfw-note-actions button:hover{ opacity:1; text-decoration:underline; }
+.bfw-note-card .bfw-note-actions .bfw-del{ color:#d07a7a; margin-left:auto; }
+
+/* Mobile: drawer + composer become bottom sheets */
+@media (max-width:640px){
+  #bfw-drawer{
+    top:auto; left:0; right:0; bottom:0; width:100%; height:78vh;
+    border-left:none; border-top:1px solid var(--bfw-line);
+    border-radius:16px 16px 0 0;
+    transform:translateY(102%);
+  }
+  #bfw-drawer.open{ transform:translateY(0); }
+}
+
+/* Backdrop for mobile sheets */
+#bfw-backdrop{
+  position:fixed; inset:0; z-index:2147483050; background:rgba(0,0,0,.45);
+  display:none;
+}
+#bfw-backdrop.show{ display:block; }
+@media (min-width:641px){ #bfw-backdrop{ display:none !important; } }
+
+/* ---------- Name / help modal ---------- */
+#bfw-modal{
+  position:fixed; inset:0; z-index:2147483400; display:none;
+  align-items:center; justify-content:center; background:rgba(0,0,0,.6); padding:16px;
+}
+#bfw-modal.show{ display:flex; }
+#bfw-modal .bfw-modal-card{
+  width:min(440px,100%); background:var(--bfw-panel-bg); color:var(--bfw-bar-fg);
+  border:1px solid var(--bfw-line); border-radius:16px; padding:22px; font-family:var(--bfw-sans);
+  box-shadow:0 24px 60px rgba(0,0,0,.6);
+}
+#bfw-modal h2{ font-size:1rem; color:var(--bfw-gold); letter-spacing:1px; margin-bottom:6px; }
+#bfw-modal p{ font-size:.82rem; line-height:1.55; opacity:.85; margin-bottom:14px; }
+#bfw-modal ul{ font-size:.8rem; line-height:1.7; margin:0 0 14px 18px; opacity:.85; }
+#bfw-modal input{
+  width:100%; background:#0e0c08; color:#f2ecda; border:1px solid var(--bfw-line);
+  border-radius:8px; padding:11px; font:inherit; font-size:.9rem; margin-bottom:14px;
+}
+#bfw-modal input:focus{ outline:none; border-color:var(--bfw-gold); }
+#bfw-modal .bfw-modal-actions{ display:flex; justify-content:flex-end; gap:8px; }
+
+/* Toast */
+#bfw-toast{
+  position:fixed; bottom:16px; left:50%; transform:translateX(-50%) translateY(20px);
+  z-index:2147483500; background:#101010; color:#f2ecda; border:1px solid var(--bfw-line);
+  padding:10px 16px; border-radius:999px; font-family:var(--bfw-sans); font-size:.78rem;
+  opacity:0; transition:opacity .2s, transform .2s; pointer-events:none; box-shadow:0 8px 24px rgba(0,0,0,.5);
+}
+#bfw-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+@media print{
+  #bfw-bar, #bfw-drawer, #bfw-addnote, #bfw-composer, #bfw-backdrop, #bfw-toast, #bfw-modal{ display:none !important; }
+  body.bfw-editor-on{ padding-top:0 !important; }
+  .bfw-modified, .bfw-note-anchor{ background:transparent !important; box-shadow:none !important; }
+}
