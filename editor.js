@@ -21,6 +21,10 @@
     '[class*="-title"],[class*="-head"],[class*="-label"],[class*="-number"],' +
     '.title,.subtitle';
   var EDIT_SELECTOR = 'p,h1,h2,h3,h4,h5,h6,li,blockquote,figcaption,' + HEADING_SELECTOR;
+  // Real graphics that can receive a note via click-to-note. Deliberately NOT
+  // "img,svg" — the book has 600+ tiny inline .margin-icon decorations we must
+  // not clutter. Only full book figures and standalone diagrams qualify.
+  var FIGURE_SELECTOR = '.book-figure,.six-area-radar,.disc-graphic,.disc-chart,figure';
   var LS_EDITS = 'bfw_edits_v1';
   var LS_NOTES = 'bfw_notes_v1';
   var LS_NAME  = 'bfw_editor_name';
@@ -210,6 +214,53 @@
 
   function nodeByEid(eid) { return document.querySelector('[data-eid="' + (window.CSS && CSS.escape ? CSS.escape(eid) : eid.replace(/"/g, '\\"')) + '"]'); }
 
+  // =========================================================
+  //  Graphics / figures: click-to-note (no selectable text)
+  // =========================================================
+  function figCaption(node) {
+    var cap = node.querySelector('figcaption, .fig-caption, .figure-caption, .book-figure-caption, .caption');
+    return cap ? norm(cap.textContent) : '';
+  }
+  // A stable id so a graphic's notes reattach across reloads/devices.
+  function figBasis(node) {
+    var basis = figCaption(node);
+    if (!basis) { var img = node.querySelector('img'); if (img) basis = norm(img.getAttribute('alt') || '') || (img.getAttribute('src') || '').slice(0, 80); }
+    if (!basis) basis = norm(node.className) + '|' + norm(node.textContent).slice(0, 60);
+    return basis || 'figure';
+  }
+  function assignFigureIds() {
+    var scopeCount = {};
+    document.querySelectorAll(FIGURE_SELECTOR).forEach(function (node) {
+      if (node.closest('[data-bfw-ui]')) return;
+      if (node.hasAttribute('data-eid')) return;
+      if (node.parentElement && node.parentElement.closest(FIGURE_SELECTOR)) return; // outer figure wins
+      var info = chapterInfo(node);
+      var scope = info.chapter || 'doc';
+      scopeCount[scope] = (scopeCount[scope] || 0) + 1;
+      node.setAttribute('data-eid', 'fig~' + scope + '~' + scopeCount[scope] + '~' + hash(figBasis(node).slice(0, 160)));
+      node.classList.add('bfw-figure');
+      node._bfwChapter = info;
+      var add = el('button', { 'class': 'bfw-fig-note', 'data-bfw-ui': '1', type: 'button', title: 'Add a note to this graphic' }, '＋ Note');
+      add.addEventListener('mousedown', function (e) { e.preventDefault(); });
+      add.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); openFigureComposer(node); });
+      node.appendChild(add);
+      var badge = el('button', { 'class': 'bfw-fig-badge', 'data-bfw-ui': '1', type: 'button', title: 'View notes on this graphic' });
+      badge.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); openDrawer(true); flashTo(node); });
+      node.appendChild(badge);
+    });
+  }
+  function isFigureNode(node) { return !!(node && node.classList && node.classList.contains('bfw-figure')); }
+  // Outline + count-badge the figures that carry notes
+  function refreshFigureBadges() {
+    document.querySelectorAll('.bfw-figure[data-eid]').forEach(function (fig) {
+      var eid = fig.getAttribute('data-eid');
+      var count = notes.filter(function (n) { return n.node_id === eid; }).length;
+      fig.classList.toggle('bfw-figure-noted', count > 0);
+      var badge = fig.querySelector('.bfw-fig-badge');
+      if (badge) { badge.textContent = count ? (count === 1 ? '1 note' : count + ' notes') : ''; badge.style.display = count ? '' : 'none'; }
+    });
+  }
+
   // Apply stored edits + note highlights to the DOM
   function applyStored() {
     Object.keys(edits).forEach(function (eid) {
@@ -220,13 +271,15 @@
       if ((origText[eid] || '') !== node.textContent.trim()) node.classList.add('bfw-modified');
     });
     notes.forEach(function (n) { rehighlight(n); });
+    refreshFigureBadges();
   }
 
   // Wrap the first occurrence of a note's quote inside its node (best-effort, cross-device)
   function rehighlight(n) {
-    if (!n.quote) return;
     var node = nodeByEid(n.node_id);
     if (!node) return;
+    if (isFigureNode(node)) return;          // graphics are marked with a badge, not a text wrap
+    if (!n.quote) return;
     if (node.querySelector('.bfw-note-anchor[data-note-id="' + n.id + '"]')) return;
     var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
     var q = n.quote.trim(); if (!q) return;
@@ -308,6 +361,21 @@
     btn.style.top = Math.max(rect.top - 8, 46) + 'px';
   }, 120);
 
+  // Show the composer for any context (text selection OR a graphic)
+  function showComposer(ctx) {
+    var comp = document.getElementById('bfw-composer');
+    comp._ctx = ctx;
+    var q = ctx.quote || '';
+    comp.querySelector('h4').textContent = ctx.is_figure ? 'Add a note to this graphic' : 'Add a note';
+    comp.querySelector('.bfw-quote').textContent = ctx.is_figure
+      ? ('🖼 ' + (q ? q : 'Graphic'))
+      : ('“' + (q.length > 240 ? q.slice(0, 240) + '…' : q) + '”');
+    comp.querySelector('textarea').value = '';
+    comp.style.display = 'block';
+    document.getElementById('bfw-addnote').style.display = 'none';
+    setTimeout(function () { comp.querySelector('textarea').focus(); }, 30);
+  }
+
   function openComposer() {
     if (!savedRange) return;
     var text = norm(savedRange.toString());
@@ -315,13 +383,13 @@
     var anchorEl = savedRange.startContainer.nodeType === 3 ? savedRange.startContainer.parentElement : savedRange.startContainer;
     var host = anchorEl.closest('[data-eid]');
     var info = host ? (host._bfwChapter || chapterInfo(host)) : { chapter: '', title: '' };
-    var comp = document.getElementById('bfw-composer');
-    comp._ctx = { quote: text, node_id: host ? host.getAttribute('data-eid') : '', chapter: info.chapter, title: info.title };
-    comp.querySelector('.bfw-quote').textContent = '“' + (text.length > 240 ? text.slice(0, 240) + '…' : text) + '”';
-    comp.querySelector('textarea').value = '';
-    comp.style.display = 'block';
-    document.getElementById('bfw-addnote').style.display = 'none';
-    setTimeout(function () { comp.querySelector('textarea').focus(); }, 30);
+    showComposer({ quote: text, node_id: host ? host.getAttribute('data-eid') : '', chapter: info.chapter, title: info.title });
+  }
+
+  function openFigureComposer(figEl) {
+    if (!figEl) return;
+    var info = figEl._bfwChapter || chapterInfo(figEl);
+    showComposer({ quote: figCaption(figEl).slice(0, 180), node_id: figEl.getAttribute('data-eid'), chapter: info.chapter, title: info.title, is_figure: true });
   }
 
   function saveComposer() {
@@ -334,7 +402,7 @@
         id: 'local-' + uid(), node_id: ctx.node_id, chapter: ctx.chapter, chapter_title: ctx.title,
         quote: ctx.quote, body: body, author: author, created_at: nowISO()
       };
-      Store.addNote(n).then(function () { rehighlight(n); renderNotes(); });
+      Store.addNote(n).then(function () { rehighlight(n); refreshFigureBadges(); renderNotes(); });
       comp.style.display = 'none';
       window.getSelection().removeAllRanges();
       toast('Note added');
@@ -357,25 +425,28 @@
   }
   function renderNotes() {
     updateCount();
+    refreshFigureBadges();
     var body = document.getElementById('bfw-drawer-body');
     if (!body) return;
     var sorted = notes.slice().sort(function (a, b) { return (a.created_at || '').localeCompare(b.created_at || ''); });
     if (!sorted.length) {
-      body.innerHTML = '<div class="bfw-empty">No notes yet.<br>Select any text in the book, then tap <b>＋ Note</b> to leave a comment. Notes appear here in the order you add them.</div>';
+      body.innerHTML = '<div class="bfw-empty">No notes yet.<br>Select any text — or hover a graphic and tap <b>＋ Note</b> — to leave a comment. Notes appear here in the order you add them.</div>';
       return;
     }
     body.innerHTML = '';
     sorted.forEach(function (n, i) {
       var when = '';
       try { when = new Date(n.created_at).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }); } catch (e) {}
+      var onFigure = isFigureNode(nodeByEid(n.node_id));
       var card = el('div', { 'class': 'bfw-note-card' });
       card.innerHTML =
         '<div class="bfw-note-meta"><span class="bfw-idx">#' + (i + 1) + '</span>' +
+        (onFigure ? '<span class="bfw-fig-tag">🖼 Graphic</span>' : '') +
         (n.chapter_title ? '<span>' + esc(n.chapter_title) + '</span>' : '') +
         '<span style="margin-left:auto">' + esc(n.author || '') + (when ? ' · ' + esc(when) : '') + '</span></div>' +
         (n.quote ? '<div class="bfw-note-quote">“' + esc(n.quote) + '”</div>' : '') +
         '<div class="bfw-note-body">' + esc(n.body) + '</div>' +
-        '<div class="bfw-note-actions"><button data-jump="1">Jump to text ↦</button>' +
+        '<div class="bfw-note-actions"><button data-jump="1">' + (onFigure ? 'Jump to graphic ↦' : 'Jump to text ↦') + '</button>' +
         '<button class="bfw-del" data-del="1">Delete</button></div>';
       card.querySelector('[data-jump]').onclick = function () { jumpTo(n); };
       card.querySelector('[data-del]').onclick = function () {
@@ -577,6 +648,7 @@
     document.body.classList.add('bfw-editor-on', 'bfw-editing');
     buildUI();
     assignIds();
+    assignFigureIds();
     refreshStatus();
     Store.load().then(function () {
       applyStored();

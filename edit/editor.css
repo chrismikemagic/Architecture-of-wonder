@@ -139,6 +139,34 @@ body.bfw-reading .bfw-modified::after{ display:none; }
   border:6px solid transparent; border-top-color:var(--bfw-note);
 }
 
+/* ---------- Notes on graphics / figures ---------- */
+.bfw-figure{ position:relative; }
+/* "＋ Note" button that appears on a graphic in edit mode */
+.bfw-fig-note{
+  position:absolute; top:8px; right:8px; z-index:40; display:none;
+  font-family:var(--bfw-sans); font-size:.62rem; font-weight:700; letter-spacing:.5px;
+  background:var(--bfw-note); color:#1a1508; border:none; border-radius:8px;
+  padding:6px 10px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.45);
+  align-items:center; gap:6px;
+}
+body.bfw-editing .bfw-figure:hover .bfw-fig-note,
+body.bfw-editing .bfw-fig-note:focus-visible{ display:inline-flex; }
+/* Touch devices have no hover — keep the button visible while editing */
+@media (hover:none){ body.bfw-editing .bfw-fig-note{ display:inline-flex; opacity:.92; } }
+/* A graphic that carries notes */
+.bfw-figure-noted{ outline:2px solid var(--bfw-note); outline-offset:3px; border-radius:4px; }
+.bfw-fig-badge{
+  position:absolute; top:8px; left:8px; z-index:41; display:none;
+  font-family:var(--bfw-sans); font-size:.6rem; font-weight:700; letter-spacing:.4px;
+  background:var(--bfw-note); color:#1a1508; border:none; border-radius:999px;
+  padding:3px 9px; cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+.bfw-figure-noted .bfw-fig-badge{ display:inline-flex; }
+.bfw-figure.bfw-flash{ animation:bfw-block-flash 1.3s ease; border-radius:6px; }
+/* Drawer chip marking a graphic note */
+.bfw-fig-tag{ background:var(--bfw-note-bg); color:var(--bfw-note); border:1px solid var(--bfw-note);
+  border-radius:5px; padding:0 6px; font-weight:700; }
+
 /* ---------- Note composer ---------- */
 #bfw-composer{
   position:fixed; z-index:2147483300; inset:auto;
@@ -269,7 +297,9 @@ body.bfw-reading .bfw-modified::after{ display:none; }
 #bfw-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 
 @media print{
-  #bfw-bar, #bfw-drawer, #bfw-addnote, #bfw-composer, #bfw-backdrop, #bfw-toast, #bfw-modal, #bfw-help{ display:none !important; }
+  #bfw-bar, #bfw-drawer, #bfw-addnote, #bfw-composer, #bfw-backdrop, #bfw-toast, #bfw-modal, #bfw-help,
+  .bfw-fig-note, .bfw-fig-badge{ display:none !important; }
   body.bfw-editor-on{ padding-top:0 !important; }
   .bfw-modified, .bfw-note-anchor{ background:transparent !important; box-shadow:none !important; }
+  .bfw-figure-noted{ outline:none !important; }
 }
