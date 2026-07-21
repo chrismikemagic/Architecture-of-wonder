@@ -10,7 +10,17 @@
   var CFG = window.EDITOR_CONFIG || {};
   var CLOUD = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
 
-  var EDIT_SELECTOR = 'p, h1, h2, h3, h4, li, blockquote, figcaption';
+  // Blocks that become directly editable + note-able. The book's headers and
+  // subheaders are mostly <div>/<span> with heading CLASSES (e.g.
+  // .sub-header-label, .chapter-number, .nc-title, .section-header) rather than
+  // semantic <h*> tags, so the class-based matches below are what let the editor
+  // edit and annotate every heading/subheader/label — not just body prose.
+  // assignIds() only makes the leaf text block editable, so wrapping containers
+  // that merely hold a matching child stay untouched.
+  var HEADING_SELECTOR =
+    '[class*="-title"],[class*="-head"],[class*="-label"],[class*="-number"],' +
+    '.title,.subtitle';
+  var EDIT_SELECTOR = 'p,h1,h2,h3,h4,h5,h6,li,blockquote,figcaption,' + HEADING_SELECTOR;
   var LS_EDITS = 'bfw_edits_v1';
   var LS_NOTES = 'bfw_notes_v1';
   var LS_NAME  = 'bfw_editor_name';
@@ -180,6 +190,7 @@
     var nodes = document.querySelectorAll(EDIT_SELECTOR);
     nodes.forEach(function (node) {
       if (node.closest('[data-bfw-ui]')) return;               // skip our own UI
+      if (node.closest('nav, a')) return;                      // skip TOC / nav links (keep them clickable)
       if (node.hasAttribute('data-eid')) return;
       if (node.querySelector(EDIT_SELECTOR)) return;            // only leaf text blocks (e.g. <li> holding <p>)
       var txt = norm(node.textContent);
@@ -428,6 +439,13 @@
     m._after = afterSave;
   }
 
+  // Instructions popup — reopenable any time via the "?" button
+  function openHelp(open) {
+    var h = document.getElementById('bfw-help');
+    if (!h) return;
+    h.classList.toggle('show', open !== false);
+  }
+
   // =========================================================
   //  Build the editor UI
   // =========================================================
@@ -483,6 +501,24 @@
       '</div>';
     document.body.appendChild(modal);
 
+    var help = el('div', { id: 'bfw-help', 'data-bfw-ui': '1' });
+    help.innerHTML =
+      '<div class="bfw-modal-card">' +
+      '<button class="bfw-help-x" id="bfw-help-x" aria-label="Close">✕</button>' +
+      '<h2>How to edit this book</h2>' +
+      '<p>This is a live, editable copy of <b>Built for Wonder</b>. Everything you do saves automatically.</p>' +
+      '<ul>' +
+      '<li><b>Edit any text</b> — click into any paragraph, <b>heading, subheader</b>, list item, or caption and just type. Changed blocks turn blue and are marked “edited.”</li>' +
+      '<li><b>Leave a note</b> — select any text (headings and subheaders included), then tap the <b>＋ Note</b> button that pops up. Write your comment and Save. The passage gets highlighted.</li>' +
+      '<li><b>See every note</b> — open the <b>🗒 Notes</b> panel (top right). Jump straight to any passage or delete a note.</li>' +
+      '<li><b>Reading mode</b> — tap <b>📖 Reading mode</b> to turn editing off and just read; tap again to edit.</li>' +
+      '<li><b>Your name</b> — tap <b>👤</b> to set or change the name your edits and notes are signed with.</li>' +
+      '</ul>' +
+      '<p>Reopen these instructions any time with the <b>?</b> button up top.</p>' +
+      '<div class="bfw-modal-actions"><button class="bfw-btn bfw-primary" id="bfw-help-close">Got it</button></div>' +
+      '</div>';
+    document.body.appendChild(help);
+
     var t = el('div', { id: 'bfw-toast', 'data-bfw-ui': '1' });
     document.body.appendChild(t);
 
@@ -497,7 +533,10 @@
     backdrop.onclick = function () { openDrawer(false); };
     document.getElementById('bfw-read-btn').onclick = function () { setReading(!document.body.classList.contains('bfw-reading')); };
     document.getElementById('bfw-name-btn').onclick = function () { showModal(); };
-    document.getElementById('bfw-help-btn').onclick = function () { showModal(); };
+    document.getElementById('bfw-help-btn').onclick = function () { openHelp(true); };
+    help.querySelector('#bfw-help-close').onclick = function () { openHelp(false); };
+    help.querySelector('#bfw-help-x').onclick = function () { openHelp(false); };
+    help.addEventListener('click', function (e) { if (e.target === help) openHelp(false); });
 
     modal.querySelector('#bfw-name-save').onclick = function () {
       var v = modal.querySelector('input').value.trim();
