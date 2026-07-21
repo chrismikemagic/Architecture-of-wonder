@@ -226,26 +226,38 @@ body.bfw-reading .bfw-modified::after{ display:none; }
 #bfw-backdrop.show{ display:block; }
 @media (min-width:641px){ #bfw-backdrop{ display:none !important; } }
 
-/* ---------- Name / help modal ---------- */
-#bfw-modal{
+/* ---------- Name modal + Help popup ---------- */
+#bfw-modal, #bfw-help{
   position:fixed; inset:0; z-index:2147483400; display:none;
   align-items:center; justify-content:center; background:rgba(0,0,0,.6); padding:16px;
 }
-#bfw-modal.show{ display:flex; }
-#bfw-modal .bfw-modal-card{
-  width:min(440px,100%); background:var(--bfw-panel-bg); color:var(--bfw-bar-fg);
+#bfw-modal.show, #bfw-help.show{ display:flex; }
+#bfw-modal .bfw-modal-card, #bfw-help .bfw-modal-card{
+  width:min(460px,100%); max-height:90vh; overflow-y:auto; position:relative;
+  background:var(--bfw-panel-bg); color:var(--bfw-bar-fg);
   border:1px solid var(--bfw-line); border-radius:16px; padding:22px; font-family:var(--bfw-sans);
   box-shadow:0 24px 60px rgba(0,0,0,.6);
 }
-#bfw-modal h2{ font-size:1rem; color:var(--bfw-gold); letter-spacing:1px; margin-bottom:6px; }
-#bfw-modal p{ font-size:.82rem; line-height:1.55; opacity:.85; margin-bottom:14px; }
-#bfw-modal ul{ font-size:.8rem; line-height:1.7; margin:0 0 14px 18px; opacity:.85; }
+#bfw-modal h2, #bfw-help h2{ font-size:1rem; color:var(--bfw-gold); letter-spacing:1px; margin-bottom:6px; }
+#bfw-modal p, #bfw-help p{ font-size:.82rem; line-height:1.55; opacity:.85; margin-bottom:14px; }
+#bfw-modal ul, #bfw-help ul{ font-size:.8rem; line-height:1.7; margin:0 0 14px 18px; opacity:.9; }
+#bfw-help ul li{ margin-bottom:8px; }
 #bfw-modal input{
   width:100%; background:#0e0c08; color:#f2ecda; border:1px solid var(--bfw-line);
   border-radius:8px; padding:11px; font:inherit; font-size:.9rem; margin-bottom:14px;
 }
 #bfw-modal input:focus{ outline:none; border-color:var(--bfw-gold); }
-#bfw-modal .bfw-modal-actions{ display:flex; justify-content:flex-end; gap:8px; }
+#bfw-modal .bfw-modal-actions, #bfw-help .bfw-modal-actions{ display:flex; justify-content:flex-end; gap:8px; }
+/* Help close "✕" in the card corner */
+.bfw-help-x{
+  position:absolute; top:12px; right:12px; width:28px; height:28px; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+  background:transparent; color:var(--bfw-bar-fg); opacity:.6; cursor:pointer;
+  border:1px solid var(--bfw-line); border-radius:999px; font-size:.8rem; font-family:var(--bfw-sans);
+}
+.bfw-help-x:hover{ opacity:1; border-color:var(--bfw-gold); color:#fff; }
+/* Make the "?" bar button read as a clear round help control */
+#bfw-help-btn{ font-weight:700; }
 
 /* Toast */
 #bfw-toast{
@@ -257,7 +269,7 @@ body.bfw-reading .bfw-modified::after{ display:none; }
 #bfw-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 
 @media print{
-  #bfw-bar, #bfw-drawer, #bfw-addnote, #bfw-composer, #bfw-backdrop, #bfw-toast, #bfw-modal{ display:none !important; }
+  #bfw-bar, #bfw-drawer, #bfw-addnote, #bfw-composer, #bfw-backdrop, #bfw-toast, #bfw-modal, #bfw-help{ display:none !important; }
   body.bfw-editor-on{ padding-top:0 !important; }
   .bfw-modified, .bfw-note-anchor{ background:transparent !important; box-shadow:none !important; }
 }
