@@ -634,6 +634,9 @@ ZODIAC_ELEMENT_TABLE_HTML = '''<div class="zet3">
 </div>
 <p class="zet-note">The same element cycle repeats three times: one sign per element in each third of the year.</p>'''
 
+# Work titles rendered in italics wherever they appear in body text
+ITALIC_TITLES = ("America’s Got Talent", "The Magic Way", "Ice Cold")
+
 MARKER_BLOCKS = {
     'TELL_TABLE': TELL_TABLE_HTML,
     'FRUIT_TO_FANG_TABLE': FRUIT_TO_FANG_TABLE_HTML,
@@ -2419,6 +2422,11 @@ def process_paragraph(text, part_num=1):
         return f'<h3 class="section-header {sh_cls}">{escape(stripped)}</h3>'
 
     t = escape(stripped)
+
+    # Italicized work titles (editor pass, Aug 2026)
+    for _title in ITALIC_TITLES:
+        if _title in stripped:
+            t = t.replace(escape(_title), f'<em>{escape(_title)}</em>')
 
     # Tier badges
     t = re.sub(r'\bT1\b', '<span class="badge t1">T1</span>', t)
