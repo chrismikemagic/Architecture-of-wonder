@@ -603,14 +603,36 @@ FEEDBACK_SIGNALS_TABLE_HTML = '''<div class="fsig-table">
   </div>
 </div>'''
 
-ZODIAC_ELEMENT_TABLE_HTML = '''<div class="zet-table">
-  <div class="zet-cell zet-head">ELEMENT</div><div class="zet-cell zet-head">FIRST HALF (JAN&ndash;JUN)</div><div class="zet-cell zet-head">SECOND HALF (JUL&ndash;DEC)</div>
-  <div class="zet-cell zet-el">FIRE</div><div class="zet-cell"><strong>Aries</strong></div><div class="zet-cell">Leo or Sagittarius</div>
-  <div class="zet-cell zet-el">WATER</div><div class="zet-cell"><strong>Pisces</strong></div><div class="zet-cell">Cancer or Scorpio</div>
-  <div class="zet-cell zet-el">EARTH</div><div class="zet-cell">Capricorn or Taurus</div><div class="zet-cell"><strong>Virgo</strong></div>
-  <div class="zet-cell zet-el">AIR</div><div class="zet-cell">Aquarius or Gemini</div><div class="zet-cell"><strong>Libra</strong></div>
+ZODIAC_ELEMENT_TABLE_HTML = '''<div class="zet3">
+  <div class="zet3-block">
+    <div class="zet3-title">BEGINNING OF THE YEAR</div>
+    <div class="zet3-grid">
+      <div class="zet3-col"><div class="zet3-el">EARTH</div><div class="zet3-sign">Capricorn</div></div>
+      <div class="zet3-col"><div class="zet3-el">AIR</div><div class="zet3-sign">Aquarius</div></div>
+      <div class="zet3-col"><div class="zet3-el">WATER</div><div class="zet3-sign">Pisces</div></div>
+      <div class="zet3-col"><div class="zet3-el">FIRE</div><div class="zet3-sign">Aries</div></div>
+    </div>
+  </div>
+  <div class="zet3-block">
+    <div class="zet3-title">MIDDLE OF THE YEAR</div>
+    <div class="zet3-grid">
+      <div class="zet3-col"><div class="zet3-el">EARTH</div><div class="zet3-sign">Taurus</div></div>
+      <div class="zet3-col"><div class="zet3-el">AIR</div><div class="zet3-sign">Gemini</div></div>
+      <div class="zet3-col"><div class="zet3-el">WATER</div><div class="zet3-sign">Cancer</div></div>
+      <div class="zet3-col"><div class="zet3-el">FIRE</div><div class="zet3-sign">Leo</div></div>
+    </div>
+  </div>
+  <div class="zet3-block">
+    <div class="zet3-title">END OF THE YEAR</div>
+    <div class="zet3-grid">
+      <div class="zet3-col"><div class="zet3-el">EARTH</div><div class="zet3-sign">Virgo</div></div>
+      <div class="zet3-col"><div class="zet3-el">AIR</div><div class="zet3-sign">Libra</div></div>
+      <div class="zet3-col"><div class="zet3-el">WATER</div><div class="zet3-sign">Scorpio</div></div>
+      <div class="zet3-col"><div class="zet3-el">FIRE</div><div class="zet3-sign">Sagittarius</div></div>
+    </div>
+  </div>
 </div>
-<p class="zet-note">A bold single sign resolves immediately. The four two-sign cells are the cases the Repeat It Ploy settles.</p>'''
+<p class="zet-note">The same element cycle repeats three times: one sign per element in each third of the year.</p>'''
 
 MARKER_BLOCKS = {
     'TELL_TABLE': TELL_TABLE_HTML,
@@ -756,6 +778,9 @@ def is_section_header(text):
         return False
     # ALL CAPS headers
     if stripped.isupper() and not stripped.startswith('CHAPTER') and not stripped.startswith('PART'):
+        return True
+    # Numbered routine headers — '#1: "Watch Your Figure" by Chris Michael'
+    if re.match(r'^#\d+[:.]\s', stripped) and len(stripped) < 80:
         return True
     # Title Case headers (short, no period at end, most words capitalized)
     words = stripped.rstrip(':').split()
@@ -4035,6 +4060,14 @@ body{counter-reset:page}
 .zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-dim)}
 .zet-table .zet-cell:nth-last-child(-n+3){border-bottom:none}
 .zet-note{font-size:.85em;font-style:italic;color:#666;margin:0 0 1.4em}
+.zet3{margin:1.4em 0 .4em}
+.zet3-block{border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:.55em;break-inside:avoid}
+.zet3-title{font-family:var(--sans);font-weight:700;font-size:.68em;letter-spacing:.1em;background:rgba(0,0,0,.05);padding:.5em .8em;border-bottom:1px solid var(--rule)}
+.zet3-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.zet3-col{padding:.5em .6em;text-align:center}
+.zet3-col+.zet3-col{border-left:1px solid var(--rule)}
+.zet3-el{font-family:var(--sans);font-weight:700;font-size:.62em;letter-spacing:.08em;color:var(--gold-dim);margin-bottom:.15em}
+.zet3-sign{font-size:.95em}
 /* Five Cs practice lead-ins + chain strip */
 .fivec-q{margin:1.3em 0 .35em}
 .fivec-q strong{color:var(--gold-dim);letter-spacing:.03em}
