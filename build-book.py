@@ -1974,31 +1974,71 @@ def gen_toolkit_nav():
     )
 
 
-def gen_cr_summary_table():
-    """Render quick-reference summary table for the Cold Reading Toolkit."""
-    _ROWS = [
-        ('Appearance',          'Immaculate clothing or grooming',  'C',   'Baseline / Stage',   'Every detail is in place. Nothing about you is accidental.'),
-        ('Appearance',          'Bold, eye-catching colors',        'I',   'Stage / Strolling',  'You dress to be seen. Not out of vanity — because ordinary clothes could not contain it.'),
-        ('Movement',            'Purposeful stride, forward lean',  'D',   'Leadership',         'You walk like you have a destination, even when you do not.'),
-        ('Movement',            'Arms crossed, guarded posture',    'S',   'Guarded',            'You cross your arms so naturally you probably do not notice. Trust does not come easily.'),
-        ('Territory',           'Back to wall, exit scanning',      'C/S', 'Security baseline',  'You like a clear view of the room. You do not miss much happening around you.'),
-        ('Territory',           'Sprawls, claims space',            'D',   'Stage / Dominant',   'You quietly own any space you enter.'),
-        ('Social Confidence',   'Initiates warmly, no strangers',   'I',   'Crowd / Stage',      'You have never met a stranger. That warmth makes others feel seen.'),
-        ('Social Confidence',   'Listens quietly, speaks once',     'C',   'Close-up / Intimate','When you speak, everyone goes quiet — because they know it will matter.'),
-        ('Cognitive Processing','Pauses carefully before speaking', 'C',   'Thoughtful',         'That pause is not uncertainty. It is precision.'),
-        ('Cognitive Processing','Rapid, run-on speech',             'I',   'Influence / Crowd',  'Your thoughts race. Even at rest, your mind does not slow down.'),
-        ('Emotional Regulation','Calm in chaos, refuses to panic',  'D',   'Dominant control',   'You do feel panic. You just refuse to feed it.'),
-        ('Emotional Regulation','Smiles or laughs when hurt',       'S',   'Emotional baseline', 'You smile even when you are hurting. The gentleness in your eyes gives it away.'),
-    ]
+# Curated Quick Reference picks: (section name, cue keyword). The cue, type and
+# line come from the DOCX Cue | Line | Type rows at build time, so the summary
+# can never drift from the source tables again. A keyword that matches nothing
+# falls back to the first unused row of that section.
+_CR_SUMMARY_PICKS = [
+    ('Appearance',                   'immaculate clothing'),
+    ('Appearance',                   'eye-catching colors'),
+    ('Movement and Posture',         'purposeful stride'),
+    ('Movement and Posture',         'arms crossed'),
+    ('Territory and Personal Space', 'back to wall'),
+    ('Territory and Personal Space', 'sprawls'),
+    ('Social Confidence',            'initiates conversation'),
+    ('Social Confidence',            'listens quietly'),
+    ('Cognitive Processing',         'pauses carefully'),
+    ('Cognitive Processing',         'rapid, run-on'),
+    ('Emotional Regulation',         'chaos'),
+    ('Emotional Regulation',         'smiles or laughs'),
+]
+
+_CR_SHORT_CAT = {
+    'Movement and Posture':         'Movement',
+    'Territory and Personal Space': 'Territory',
+}
+
+_EMOJI_RE = re.compile('[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u2009]+')
+
+
+def _cr_excerpt(line, min_len=40):
+    """Verbatim opening of a toolkit line: the first sentence, plus the second
+    when the first is very short. Surrounding quote marks and the trailing
+    context symbols are dropped."""
+    text = _EMOJI_RE.sub('', line).strip().strip('"\u201c\u201d').strip()
+    sentences = re.findall(r'[^.!?]+[.!?]+(?:["\u201d])?', text)
+    if not sentences:
+        return text
+    out = sentences[0].strip()
+    if len(out) < min_len and len(sentences) > 1:
+        out += ' ' + sentences[1].strip()
+    return out
+
+
+def gen_cr_summary_table(all_rows):
+    """Render the Cold Reading Toolkit quick-reference table from the buffered
+    (section, cue, line, disc) rows of the six DOCX tables."""
+    used = set()
+    picked = []
+    for sec, key in _CR_SUMMARY_PICKS:
+        hit = next((r for r in all_rows if r[0] == sec and key in r[1].lower()
+                    and id(r) not in used), None)
+        if hit is None:
+            hit = next((r for r in all_rows if r[0] == sec and id(r) not in used), None)
+        if hit is None:
+            continue
+        used.add(id(hit))
+        picked.append(hit)
+    if not picked:
+        return ''
     rows_html = ''.join(
         f'<tr class="crs-{"alt" if idx % 2 else "base"}">'
-        f'<td class="crs-cat">{escape(cat)}</td>'
+        f'<td class="crs-cat">{escape(_CR_SHORT_CAT.get(sec, sec))}</td>'
         f'<td class="crs-cue">{escape(cue)}</td>'
-        f'<td class="crs-disc"><span class="crs-dbadge">{escape(disc)}</span></td>'
-        f'<td class="crs-ctx">{escape(ctx)}</td>'
-        f'<td class="crs-line"><em>{escape(line)}</em></td>'
+        f'<td class="crs-disc"><span class="crs-dbadge">{escape(" / ".join(x.strip() for x in disc.split("/") if x.strip()) or "\xb7")}</span></td>'
+        f'<td class="crs-line"><em>{escape(_cr_excerpt(line))}</em></td>'
         '</tr>'
-        for idx, (cat, cue, disc, ctx, line) in enumerate(_ROWS)
+        for idx, (sec, cue, line, disc) in enumerate(picked)
     )
     return (
         '<div class="cr-summary-table">'
@@ -2008,10 +2048,33 @@ def gen_cr_summary_table():
         '</div>'
         '<table class="crst-table">'
         '<thead><tr>'
-        '<th>Category</th><th>Cue</th><th>Type</th><th>Context</th><th>Opening Line</th>'
+        '<th>Category</th><th>Cue</th><th>Type</th><th>Opening Line</th>'
         '</tr></thead>'
         f'<tbody>{rows_html}</tbody>'
         '</table>'
+        '</div>'
+    )
+
+
+def gen_toolkit_symbol_key():
+    """Legend for the performance-context symbols that trail each toolkit line
+    in the DOCX (stage mask, strolling figure, eye, warning)."""
+    sym_key = [
+        ('\U0001F3AD', 'Stage or crowd'),
+        ('\U0001F3C3', 'Strolling'),
+        ('\U0001F441', 'Close-up or baseline'),
+        ('\u26A0\uFE0F', 'Adjust first'),
+    ]
+    key_html = ''.join(
+        f'<span class="fsr-key-item"><span class="fsr-key-sym">{sym}</span>{escape(label)}</span>'
+        for sym, label in sym_key
+    )
+    return (
+        '<div class="feedback-signals-ref toolkit-symbol-key">'
+        '<div class="fsr-header">'
+        '<span class="fsr-title">Symbol key</span>'
+        f'<span class="fsr-key">{key_html}</span>'
+        '</div>'
         '</div>'
     )
 
@@ -2154,7 +2217,9 @@ def gen_crt_table(rows):
         return ''
     rows_html = ''
     for cue, line, disc, context in rows:
-        disc_clean = disc.strip().replace('/', ' / ')
+        disc_clean = ' / '.join(x.strip() for x in disc.split('/') if x.strip())
+        if disc_clean in ('\u2014', '\u2013', '-'):
+            disc_clean = ''          # "no type" cell: render the dot, not a dash
         disc_cls   = _DISC_CLASS.get(disc.strip(), 'disc-other')
         syms       = _ctx_to_symbols(context)
         sym_html   = f'<span class="crt-syms">{syms}</span>' if syms else ''
@@ -2180,6 +2245,38 @@ def gen_crt_table(rows):
         '</tr></thead>'
         f'<tbody>{rows_html}</tbody>'
         '</table>'
+    )
+
+
+def gen_vowel_grid(header_cells, rows):
+    """Render an ERA x VOWEL lookup grid (Ch23 sitcom titles) from
+    "GRID: ..." / "GRIDROW: ..." marker lines. Styled like the zet3 zodiac
+    blocks: sans labels, page-cream cells, one block that never splits."""
+    _EMPTY = {'', '\u2014', '\u2013', '-'}
+    corner = header_cells[0] if header_cells else ''
+    vowels = header_cells[1:]
+    head_html = f'<th class="vg-corner">{escape(corner)}</th>' + ''.join(
+        f'<th class="vg-vowel">{escape(v)}</th>' for v in vowels
+    )
+    body_html = ''
+    for r in rows:
+        label = r[0] if r else ''
+        cells = list(r[1:]) + [''] * (len(vowels) - (len(r) - 1))
+        cells_html = ''
+        for c in cells[:len(vowels)]:
+            items = [x.strip() for x in c.split(' / ') if x.strip() not in _EMPTY]
+            if items:
+                cells_html += '<td class="vg-cell">' + '<br>'.join(escape(x) for x in items) + '</td>'
+            else:
+                cells_html += '<td class="vg-cell vg-empty">\xb7</td>'
+        body_html += f'<tr><th class="vg-era">{escape(label)}</th>{cells_html}</tr>'
+    return (
+        '<div class="vgrid">'
+        '<table class="vgrid-table">'
+        f'<thead><tr>{head_html}</tr></thead>'
+        f'<tbody>{body_html}</tbody>'
+        '</table>'
+        '</div>'
     )
 
 
@@ -2763,6 +2860,9 @@ def gen_error_card(label, body_text):
 </div>'''
 
 
+_CR_SUMMARY_PLACEHOLDER = '<!--CR_SUMMARY_TABLE-->'
+
+
 def build_chapter_body(section, global_para_count):
     """Build the full body of a chapter with all design elements."""
     content = section.get('content', [])
@@ -2860,6 +2960,8 @@ def build_chapter_body(section, global_para_count):
     _toolkit_section_open = False
     _crt_buffer = []          # rows buffered within current toolkit section
     _current_section_id = ''  # id of open toolkit section
+    _current_section_name = ''
+    _crt_all = []             # every (section, cue, line, disc) row in the chapter
     pi_count = 0
     pi_idx = global_para_count % len(PATTERN_INTERRUPTS)
 
@@ -3369,6 +3471,7 @@ def build_chapter_body(section, global_para_count):
                 parts.append('</div></div>')
             _toolkit_section_open = True
             _current_section_id = sec_id
+            _current_section_name = name
             icon_html = f'<span class="tks-icon">{icon}</span>' if icon else ''
             parts.append(
                 f'<div id="{sec_id}" class="toolkit-section">'
@@ -3387,14 +3490,33 @@ def build_chapter_body(section, global_para_count):
 
         # ── TOOLKIT NAVIGATION PANEL ──
         if stripped == 'TOOLKIT_NAV':
+            # Nav only: the feedback-signals quick reference that used to sit
+            # here duplicates FEEDBACK_SIGNALS_TABLE (The Reading Decision
+            # Tree, same chapter) and its symbol key describes context
+            # symbols the DOCX Cue | Line | Type tables do not carry.
             parts.append(gen_toolkit_nav())
-            parts.append(gen_feedback_signals_ref())
+            parts.append(gen_toolkit_symbol_key())
             i += 1; global_para_count += 1; continue
 
         # ── TOOLKIT SUMMARY TABLE ──
         if stripped == 'CR_SUMMARY_TABLE':
-            parts.append(gen_cr_summary_table())
+            # The summary is built from the CRT rows that follow, so leave a
+            # placeholder here and fill it in once the chapter body is done.
+            parts.append(_CR_SUMMARY_PLACEHOLDER)
             i += 1; global_para_count += 1; continue
+
+        # ── ERA x VOWEL GRID — "GRID: corner | A | E | I | O | U" + "GRIDROW: era | ..." lines ──
+        if stripped.startswith('GRID:'):
+            header_cells = [c.strip() for c in stripped[len('GRID:'):].split('|')]
+            grid_rows = []
+            j = i + 1
+            while j < len(paragraphs) and paragraphs[j].strip().startswith('GRIDROW:'):
+                grid_rows.append([c.strip() for c in paragraphs[j].strip()[len('GRIDROW:'):].split('|')])
+                j += 1
+            parts.append(gen_vowel_grid(header_cells, grid_rows))
+            global_para_count += j - i
+            i = j
+            continue
 
         # ── INVISIBLE ANCHOR for in-page navigation ──
         if stripped.startswith('CRANCHOR:'):
@@ -3411,6 +3533,7 @@ def build_chapter_body(section, global_para_count):
             ctx_t  = parts_h[2] if len(parts_h) > 2 else ''
             line_t = paragraphs[i + 1].strip()
             _crt_buffer.append((cue_t, line_t, disc_t, ctx_t))
+            _crt_all.append((_current_section_name, cue_t, line_t, disc_t))
             i += 2; global_para_count += 2; continue
 
         # ── FEEDBACK CHART — standalone "FEEDBACK_CHART" trigger ──
@@ -3620,6 +3743,11 @@ def build_chapter_body(section, global_para_count):
     kr = KEY_READS.get(chapter_key, '')
     if kr:
         parts.append(gen_key_read(kr))
+
+    # Cold Reading Toolkit quick reference: now that every CRT row is known.
+    if _CR_SUMMARY_PLACEHOLDER in parts:
+        summary = gen_cr_summary_table(_crt_all)
+        parts = [summary if p == _CR_SUMMARY_PLACEHOLDER else p for p in parts]
 
     return '\n'.join(parts), global_para_count
 
@@ -4143,6 +4271,17 @@ body{counter-reset:page}
 .zet3-col+.zet3-col{border-left:1px solid var(--rule)}
 .zet3-el{font-family:var(--sans);font-weight:700;font-size:.62em;letter-spacing:.08em;color:var(--gold-dim);margin-bottom:.15em}
 .zet3-sign{font-size:.95em}
+/* ═══ ERA x VOWEL lookup table (Ch23 sitcom titles, styled after zet3) ═══ */
+.vgrid{margin:1.2em 0 1.4em;border:1px solid var(--rule);border-radius:6px;overflow:hidden;break-inside:avoid;page-break-inside:avoid}
+.vgrid-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.vgrid-table th,.vgrid-table td{padding:.55em .5em;text-align:center;vertical-align:middle;border-left:1px solid var(--rule)}
+.vgrid-table th:first-child,.vgrid-table td:first-child{border-left:none}
+.vgrid-table thead th{font-family:var(--sans);font-weight:700;font-size:.62em;letter-spacing:.1em;color:var(--dim);background:rgba(0,0,0,.05);border-bottom:1px solid var(--rule)}
+.vgrid-table thead th.vg-vowel{color:var(--gold);font-size:.8em}
+.vgrid-table tbody tr+tr th,.vgrid-table tbody tr+tr td{border-top:1px solid var(--rule)}
+.vg-era{font-family:var(--sans);font-weight:700;font-size:.62em;letter-spacing:.08em;color:var(--dim);text-align:left!important;width:19%}
+.vg-cell{font-family:var(--serif);font-size:.95em;line-height:1.3;color:var(--body-color)}
+.vg-empty{color:var(--rule)}
 /* Five Cs practice lead-ins + chain strip */
 .fivec-q{margin:1.3em 0 .35em}
 .fivec-q strong{color:var(--gold-dim);letter-spacing:.03em}
@@ -4379,8 +4518,14 @@ ul.book-list li::before{
 .cr-summary-table{
   margin:1.6em 0;border-radius:6px;overflow:hidden;
   border:1px solid rgba(74,141,181,.3);
-  break-inside:avoid;
 }
+.crst-header{break-after:avoid;}
+.crst-table tr{break-inside:avoid;}
+.crst-table th:nth-child(1),.crst-table td:nth-child(1){width:23%;padding-left:8px;padding-right:6px;}
+.crst-table th:nth-child(2),.crst-table td:nth-child(2){width:26%;}
+.crst-table th:nth-child(3),.crst-table td:nth-child(3){width:10%;padding-left:4px;padding-right:4px;}
+.crst-table td.crs-cat{font-family:var(--sans);}
+.toolkit-symbol-key{margin-top:-.4em;}
 .crst-header{
   background:rgba(74,141,181,.1);
   padding:9px 16px;display:flex;justify-content:space-between;align-items:baseline;
@@ -4395,7 +4540,7 @@ ul.book-list li::before{
   color:rgba(42,37,32,.5);
 }
 .crst-table{
-  width:100%;border-collapse:collapse;font-size:.82rem;
+  width:100%;border-collapse:collapse;font-size:.82rem;table-layout:fixed;
 }
 .crst-table thead tr{
   background:rgba(42,37,32,.04);
@@ -4420,8 +4565,8 @@ ul.book-list li::before{
 .crs-alt td{background:rgba(74,141,181,.03);}
 .crs-cat{
   font-family:var(--sans);font-size:.65rem;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;color:rgba(42,37,32,.6);
-  white-space:nowrap;
+  letter-spacing:.03em;text-transform:uppercase;color:rgba(42,37,32,.6);
+  font-size:.55rem;overflow-wrap:break-word;
 }
 .crs-cue{font-size:.8rem;}
 .crs-disc{text-align:center;white-space:nowrap;}
@@ -4442,8 +4587,9 @@ ul.book-list li::before{
   border:1px solid rgba(74,141,181,.3);
   border-radius:6px;
   overflow:hidden;
-  break-inside:avoid;
 }
+.tks-header{break-after:avoid;}
+.crt-table tr{break-inside:avoid;}
 .tks-header{
   background:linear-gradient(135deg,rgba(74,141,181,.14),rgba(74,141,181,.07));
   padding:10px 18px;
@@ -4472,9 +4618,9 @@ ul.book-list li::before{
   border-right:1px solid rgba(74,141,181,.12);
 }
 .crt-th:last-child{border-right:none;text-align:center;}
-.crt-th-cue{width:26%;}
-.crt-th-line{width:62%;}
-.crt-th-disc{width:12%;text-align:center;}
+.crt-th-cue{width:24%;}
+.crt-th-line{width:66%;}
+.crt-th-disc{width:10%;text-align:center;}
 .crt-table tbody tr{
   border-bottom:1px solid rgba(74,141,181,.1);
   transition:background .12s;
@@ -4483,17 +4629,18 @@ ul.book-list li::before{
 .crt-table tbody tr:nth-child(even){background:rgba(74,141,181,.03);}
 .crt-table tbody tr:hover{background:rgba(74,141,181,.07);}
 .crt-cue-cell{
-  font-family:var(--sans);font-size:.72rem;font-weight:700;
-  letter-spacing:.05em;text-transform:uppercase;
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:.03em;text-transform:uppercase;
   color:var(--body-color);
-  padding:11px 14px;
+  overflow-wrap:break-word;
+  padding:10px 10px;
   vertical-align:top;
   border-right:1px solid rgba(74,141,181,.14);
 }
 .crt-line-cell{
-  font-family:var(--serif);font-size:.88rem;line-height:1.65;
+  font-family:var(--serif);font-size:.84rem;line-height:1.5;
   color:var(--body-color);
-  padding:10px 14px;
+  padding:9px 12px;
   vertical-align:top;
   border-right:1px solid rgba(74,141,181,.09);
 }
@@ -4504,7 +4651,7 @@ ul.book-list li::before{
   opacity:.85;white-space:nowrap;
 }
 .crt-disc-cell{
-  padding:10px 10px;
+  padding:10px 6px;
   vertical-align:middle;text-align:center;
 }
 .crt-disc-badge{

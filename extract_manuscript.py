@@ -11,6 +11,23 @@ Heading-style heuristic for the new "Built for Wonder" merged DOCX:
   - Heading 1 "CONTROLLING THE ROOM" -> interlude, emitted verbatim (no chapter number)
   - Heading 1 "sw" or empty -> junk, skipped
   - Heading 2 / 3 -> emitted verbatim (parser treats them as content / section headers)
+
+Tables: the document body is walked in order (w:p AND w:tbl), so Word tables
+are no longer silently dropped. Each recognised table is emitted as build
+marker lines that build-book.py already understands:
+  - Cue | Line | Type tables (Ch17 Cold Reading Toolkit) ->
+        TOOLKIT_NAV, CR_SUMMARY_TABLE (before the first table), then per table
+        TOOLKIT_SECTION: <radar category>
+        CRT: <cue> | <type>
+        <line>                       (one CRT pair per data row)
+        TOOLKIT_SECTION_END
+  - ERA x VOWEL grids (Ch23 sitcom titles) ->
+        GRID: ERA / VOWEL | A | E | I | O | U
+        GRIDROW: <era> | <cell> ...   (one per data row)
+  - the T1..T4 evidence-tier table (front matter) is intentionally skipped:
+    build-book.py renders it from its own TIER_TABLE_HTML block.
+Any other table emits nothing and prints a [warn] line so it cannot spill raw
+cells into the manuscript unnoticed.
 """
 
 import re
@@ -18,6 +35,9 @@ import sys
 from pathlib import Path
 
 from docx import Document
+from docx.oxml.ns import qn
+from docx.table import Table
+from docx.text.paragraph import Paragraph
 
 DOCX_PATH = Path(__file__).parent / "Built-for-Wonder.docx"
 OUT_PATH  = Path(__file__).parent / "manuscript-extracted.txt"
@@ -60,6 +80,97 @@ UNSTYLED_CHAPTER_TITLES = {
 }
 
 
+# The six Cue | Line | Type tables in Chapter 17 map, in document order, onto
+# the six radar categories. Names must match the _id_map / _SECTION_ICONS keys
+# in build-book.py exactly.
+TOOLKIT_CATEGORIES = [
+    "Appearance",
+    "Movement and Posture",
+    "Territory and Personal Space",
+    "Social Confidence",
+    "Cognitive Processing",
+    "Emotional Regulation",
+]
+
+# Cells the DOCX uses to mean "no entry" in the vowel grids.
+GRID_EMPTY_CELLS = {"", "\u2014", "\u2013", "-"}
+
+
+def iter_body(doc):
+    """Yield ('para', Paragraph) / ('table', Table) for the body's direct
+    children in document order. doc.paragraphs is exactly the 'para' subset,
+    so paragraph handling is unchanged; tables are the only addition."""
+    body = doc.element.body
+    for child in body.iterchildren():
+        if child.tag == qn("w:p"):
+            yield "para", Paragraph(child, doc)
+        elif child.tag == qn("w:tbl"):
+            yield "table", Table(child, doc)
+
+
+def cell_lines(cell):
+    """Non-empty paragraph texts of a table cell, stripped."""
+    return [t for t in (p.text.strip() for p in cell.paragraphs) if t]
+
+
+def table_rows(tbl):
+    """List of rows; each row is a list of cells; each cell a list of lines."""
+    return [[cell_lines(c) for c in r.cells] for r in tbl.rows]
+
+
+def classify_table(rows):
+    """Return one of 'toolkit', 'grid', 'tier', or None (unknown)."""
+    if not rows:
+        return None
+    head = [" ".join(c).strip().lower() for c in rows[0]]
+    if head == ["cue", "line", "type"]:
+        return "toolkit"
+    if len(head) == 6 and head[0] == "" and head[1:] == ["a", "e", "i", "o", "u"]:
+        return "grid"
+    if head and head[0] == "t1":
+        return "tier"
+    return None
+
+
+def emit_toolkit_table(rows, category, out_lines):
+    """Emit TOOLKIT_SECTION / CRT marker lines for one Cue | Line | Type table."""
+    out_lines.append("")
+    out_lines.append(f"TOOLKIT_SECTION: {category}")
+    out_lines.append("")
+    n = 0
+    for r in rows[1:]:
+        if len(r) < 3:
+            continue
+        cue  = " ".join(r[0]).replace("|", "/").strip()
+        line = " ".join(r[1]).strip()
+        typ  = " ".join(r[2]).replace("|", "/").strip()
+        if not cue or not line:
+            continue
+        out_lines.append(f"CRT: {cue} | {typ}")
+        out_lines.append(line)
+        out_lines.append("")
+        n += 1
+    out_lines.append("TOOLKIT_SECTION_END")
+    out_lines.append("")
+    return n
+
+
+def emit_grid_table(rows, out_lines):
+    """Emit GRID / GRIDROW marker lines for one ERA x VOWEL table."""
+    head = ["ERA / VOWEL"] + [" ".join(c).strip() for c in rows[0][1:]]
+    out_lines.append("")
+    out_lines.append("GRID: " + " | ".join(head))
+    for r in rows[1:]:
+        cells = []
+        for c in r:
+            lines = [ln for ln in c if ln not in GRID_EMPTY_CELLS]
+            cells.append(" / ".join(lines).replace("|", "/"))
+        if not any(cells):
+            continue
+        out_lines.append("GRIDROW: " + " | ".join(cells))
+    out_lines.append("")
+
+
 def is_all_caps(text: str) -> bool:
     """True if string contains at least one letter and all letters are uppercase."""
     letters = [c for c in text if c.isalpha()]
@@ -82,7 +193,49 @@ def main():
     promoted_unstyled = set()  # titles already promoted to chapter once
     in_toc = False  # we drop the entire TOC; build-book.py renders its own
 
-    for p in doc.paragraphs:
+    table_index = 0          # 1-based, in document order
+    toolkit_tables = 0       # how many Cue|Line|Type tables seen so far
+    toolkit_rows = 0
+    grid_tables = 0
+    skipped_tables = []      # (index, kind, shape, first cell) for the report
+
+    for kind, item in iter_body(doc):
+        if kind == "table":
+            table_index += 1
+            if in_toc:
+                continue
+            rows = table_rows(item)
+            shape = f"{len(rows)}x{max((len(r) for r in rows), default=0)}"
+            first = " ".join(rows[0][0])[:40] if rows and rows[0] else ""
+            ttype = classify_table(rows)
+            if ttype == "toolkit":
+                if toolkit_tables < len(TOOLKIT_CATEGORIES):
+                    category = TOOLKIT_CATEGORIES[toolkit_tables]
+                else:
+                    category = f"Toolkit {toolkit_tables + 1}"
+                    print(f"  [warn] extract: more Cue|Line|Type tables than radar "
+                          f"categories; table {table_index} emitted as {category!r}")
+                if toolkit_tables == 0:
+                    out_lines.append("")
+                    out_lines.append("TOOLKIT_NAV")
+                    out_lines.append("")
+                    out_lines.append("CR_SUMMARY_TABLE")
+                    out_lines.append("")
+                toolkit_rows += emit_toolkit_table(rows, category, out_lines)
+                toolkit_tables += 1
+            elif ttype == "grid":
+                emit_grid_table(rows, out_lines)
+                grid_tables += 1
+            elif ttype == "tier":
+                # Evidence tiers: build-book.py renders TIER_TABLE_HTML itself.
+                skipped_tables.append((table_index, "tier (rendered by build-book)", shape, first))
+            else:
+                skipped_tables.append((table_index, "UNHANDLED", shape, first))
+                print(f"  [warn] extract: unhandled table {table_index} ({shape}, "
+                      f"first cell {first!r}) emitted nothing")
+            continue
+
+        p = item
         style = p.style.name if p.style else ""
         text  = normalize(p.text)
 
@@ -203,6 +356,11 @@ def main():
     print(f"  Chapters detected: {chapter_counter}")
     print(f"  Parts emitted:     {part_index}")
     print(f"  Total lines:       {len(cleaned):,}")
+    print(f"  Tables walked:     {table_index} "
+          f"(toolkit {toolkit_tables} = {toolkit_rows} CRT rows, "
+          f"grid {grid_tables}, skipped {len(skipped_tables)})")
+    for idx, why, shape, first in skipped_tables:
+        print(f"    table {idx}: {why}, {shape}, first cell {first!r}")
 
 
 if __name__ == "__main__":

@@ -1862,6 +1862,253 @@ Use this toolkit differently depending on context. On stage with a full room, sc
 KEY PRINCIPLE
 Observe. Classify. Translate. Test. Adjust. Every read follows this sequence. Each feedback signal restarts the loop.
 
+TOOLKIT_NAV
+
+CR_SUMMARY_TABLE
+
+
+TOOLKIT_SECTION: Appearance
+
+CRT: Wears well-tailored, immaculate clothing | C
+"Every detail is in place. Nothing about you is accidental. You try to keep life as neatly ordered as your outfit, as if chaos cannot touch you when everything is just right." 🎭 👁
+
+CRT: Worn, sentimental accessory | S
+"You carry your history with you, quietly, like a keepsake hidden in plain sight. The story behind that piece means more to you than any passing trend ever could." 👁
+
+CRT: Bold, eye-catching colors | I
+"You dress to be seen. Not out of vanity, but because you have so much inside that ordinary clothes could not contain it. Every vivid choice is a piece of your voice, expressing what you do not say out loud." 🎭 🏃
+
+CRT: Minimalist, neutral wardrobe | C
+"You do not feel the need to announce yourself. There is a quiet confidence in how simply you present. You trust that those who matter will notice the subtle things others overlook." 👁
+
+CRT: Meticulous grooming despite modest clothing | C
+"You take care of what you have, no matter how simple. The crisp crease and the shine on the shoes tell me you believe dignity is not about luxury. It is about self-respect in the small things." 👁
+
+CRT: Quirky or vintage accessory | I
+"You have a quiet rebellion in your style. That one unique touch is not by accident. It is a sign that you value your individuality over anyone else's expectations." 🎭 🏃
+
+CRT: Bitten nails or scuffed, worn shoes | C
+"From a distance you seem composed, but the small signs hint at the pressure you put on yourself. You move through life fast, always a little on edge, even if you never let it show." 👁
+
+CRT: Dramatic or unconventional hair | D
+"Even your hair makes a statement: you will not be put in a box. It is a flag of independence you fly every day. You decided long ago you would rather turn heads for who you are than stay invisible and comfortable." 🎭
+
+CRT: Heavy tattoos with professional dress or context | D
+"You fought hard to be taken seriously in a world that judged the outside before it heard a word you had to say. At some point you decided to stop editing yourself for other people's comfort. That decision cost you something. You do not regret the choice. You sometimes regret the timing." 👁
+
+CRT: Well-dressed but one worn, personal accessory that does not match the rest | S
+"Everything else is deliberate. That one piece is not about style. There is someone you lost, or a version of yourself you left behind, and that is the thread you kept. Almost nobody knows what it means." 👁
+
+CRT: Bitten or picked nails on an otherwise well-presented person | C
+"From a distance everything is composed. But the pressure has to go somewhere. There is one area of your life, probably a relationship or a situation at work, where you feel genuinely out of control. You have felt that way long enough that it has become physical." ⚠️
+
+CRT: Visible tattoos on someone clearly in a conventional professional environment | I
+"There was a point where the people who were supposed to accept you unconditionally needed time to get there. They got there. But you remember the distance, and so do they." 👁
+
+CRT: Clothing that clearly belongs to a different chapter of their life, slightly off for the current context | S
+"Something shifted for you not long ago. The outside has not fully caught up yet. Most people would not notice. You probably do every time you get dressed." 👁
+
+CRT: Overdressed relative to the occasion or environment | D/C
+"You were not sure how seriously you would be taken here, so you gave yourself every possible advantage before walking in. That habit goes back further than today." 👁
+
+CRT: Clothing slightly too large, as if they recently lost significant weight | D
+"You made a decision at some point that most people talk about and never actually make. Whatever it cost you to get here, you paid it." 👁
+
+CRT: Visible religious symbol worn openly and prominently | S
+"Your faith is not background noise. It is load-bearing. It has carried you through at least one thing that would have broken most people, and you know it." 👁
+
+TOOLKIT_SECTION_END
+
+
+TOOLKIT_SECTION: Movement and Posture
+
+CRT: Straight back, purposeful stride | D
+"You walk like you have a destination, even when you do not. There is a drive in your step and a focus in your eyes, like an arrow already aimed at the next target." 🎭
+
+CRT: Slouches or hunches, avoids eye contact | S
+"You try to make yourself small, as if hoping the world passes by without pressing too hard. That lowered gaze tells me you are used to carrying things alone." ⚠️
+
+CRT: Constant fidgeting | D / I
+"There is a restless energy about you, like a current that cannot quite settle. Even standing still, part of you is always in motion." 🏃
+
+CRT: Slow, deliberate movement | C
+"Every move is controlled, almost calculated. You are never in a frantic rush. You know that patience and precision get you further than any frenzy ever could." 👁
+
+CRT: Leans in close during conversation | I
+"When you talk to someone, you lean in as if nothing else in the world exists for that moment. You have a way of making the person feel like they are the only one in the room." 👁
+
+CRT: Arms crossed | S
+"Even while you laugh, part of you stays guarded. An invisible armor wrapped around your chest. You cross your arms so naturally you probably do not even notice. Trust does not come easily to you." ⚠️
+
+CRT: Hurried pace, weaving through crowds | D
+"You are always in motion, as if running a race with time. Always a step ahead, always moving before others have decided to start."
+
+CRT: Broad, expressive gestures | I
+"You speak with your whole body. Every gesture paints the picture louder than the words. You want others to feel it too. You will not settle for being misunderstood." 🎭
+
+CRT: Visibly fit or athletic but carries themselves quietly, not with arrogance | D
+"The physical discipline did not come from vanity. It came from a specific period when something was completely outside your control. You needed to feel like you owned something. The rest of it came after." 👁
+
+CRT: Laughs quickly but returns to neutral fast, brevity in visible joy | S
+"You learned early that being openly happy made you a target for something. A difficult environment, an unstable person, something that made joy feel unsafe. You still laugh. You just learned not to let it stay where people can see it too long." ⚠️
+
+CRT: Checks phone repeatedly but immediately puts it down without engaging | D/C
+"You are not bored. You are waiting on something specific, and it is taking longer than you would like." 👁
+
+CRT: Pauses briefly at room entrances before committing to entering | C
+"You learned the hard way not to walk into a room without reading it first. That habit saved you at least once." 👁 ⚠️
+
+CRT: Touches neck or face briefly when a specific topic is introduced, otherwise still | S/C
+"The rest of you is composed. That one moment tells me we just touched something that still has some weight on it." 👁
+
+TOOLKIT_SECTION_END
+
+
+TOOLKIT_SECTION: Territory and Personal Space
+
+CRT: Stays on the edges of the room | S
+"You stick to the perimeter, watching everything from just a step away. You like to observe and measure people from a safe distance before you let them in." 👁
+
+CRT: Sprawls or claims significant space | D
+"You naturally claim your territory. You have made yourself comfortable, taking up room. It is like you quietly own any space you enter." 🎭
+
+CRT: Stands or sits physically close to others | I
+"You are not shy about closeness. That nearness pulls people into your world. A touch of intimacy can build trust faster than words." 👁
+
+CRT: Maintains distance even with close companions | C
+"Even with the people you care about, you keep a little distance. You need that breathing room as a reminder that you are still your own, even among those you love." 👁
+
+CRT: Arranges belongings neatly around themselves | C
+"You have staked out your little domain. A place for every item, exactly the way you like it. Keeping things in order is how you carve a sense of control from the world."
+
+CRT: Back to wall, clear sightline to the room | C / S
+"You like a clear view of the room. Sitting with your back exposed is something you avoid instinctively. You do not miss much happening around you." 👁
+
+CRT: Quick, formal greetings, brief physical contact | S
+"You are polite but reserved. Your handshakes are quick, your hugs brief. It tells me you only truly open up with a very select few." ⚠️
+
+CRT: Positions near wall or exit in social settings but is clearly capable when engaged directly | S/C
+"There was a period in your life where you genuinely could not leave a situation you needed to leave. You are fine now. But you have never fully stopped building the exit into every room you walk into." 👁 ⚠️
+
+CRT: Keeps phone or wallet face-down on the table | C
+"There are things you keep private not out of secrecy but out of habit. You learned that not everything needs to be visible to everyone." 👁
+
+CRT: Always selects the seat facing the entrance | C/S
+"You want to see who is coming before they see you. That preference did not come from nowhere." 👁
+
+TOOLKIT_SECTION_END
+
+
+TOOLKIT_SECTION: Social Confidence
+
+CRT: Initiates conversation warmly | I
+"You have never met a stranger. That warmth you carry makes others feel seen. You love making those connections, and people remember it." 🎭
+
+CRT: Listens quietly in groups, speaks purposefully | C
+"You are the calm listener. When you speak, everyone goes quiet, because they know what comes next will matter." 👁
+
+CRT: Interrupts or talks over others | D
+"You cut people off mid-sentence. Not out of rudeness. Your thoughts are already three steps ahead. Slowing down can genuinely frustrate you."
+
+CRT: Downplays compliments, deflects praise | S
+"You laugh off praise or point it elsewhere. Somewhere underneath that, you do crave recognition. You just have not quite learned how to stand in its light." 👁 ⚠️
+
+CRT: Always helping, always accommodating | S
+"You are always asking if others are okay, jumping in to fix small problems. Beautiful trait. Just make sure you are not pouring from an empty cup."
+
+CRT: Hangs back until invited or included | S
+"You hover at the fringe, waiting for the right moment. You never want to impose, even when you sometimes feel left out." ⚠️
+
+CRT: Uses humor to deflect emotional moments | I
+"You are often the life of the room. But when things get real, the humor goes up. There is weight underneath it you do not always let people see." 🎭
+
+CRT: Adapts language and tone to each person | S
+"You shape-shift with each person, adjusting your words and energy to put them at ease. Just make sure you remember who you are when you are alone."
+
+CRT: Apologizes or qualifies before making a reasonable request | S
+"Somewhere along the way you learned that your needs were an inconvenience to someone. You are still carrying that assumption into rooms where it no longer applies." ⚠️
+
+CRT: Speaks generously about rivals or people who might be considered competition | D
+"You have been successful enough long enough that you do not need to make anyone smaller to feel secure. That takes longer to develop than most people admit." 👁
+
+TOOLKIT_SECTION_END
+
+
+TOOLKIT_SECTION: Cognitive Processing
+
+CRT: Pauses carefully before speaking | C
+"You measure your words like each one matters. That pause is not uncertainty. It is precision." 👁
+
+CRT: Rapid, run-on speech | I
+"Your thoughts race, always chasing the next idea. Even at rest, your mind does not fully slow down." 🎭
+
+CRT: Zones out mid-conversation | I
+"Sometimes you drift. Your eyes fix on a distant thought. You are here, but also somewhere else solving a problem no one has asked you to solve yet."
+
+CRT: Asks detailed, clarifying questions | C
+"You will not take things at face value. You need to understand all the pieces first. Some people find that intensity. Most eventually appreciate it." 👁
+
+CRT: Voices what-if scenarios | I
+"Your mind lives in possibilities. That spark in your eyes is imagination doing what it does best."
+
+CRT: Carries a notebook or makes written notes | C
+"Ideas are things you refuse to let escape. Your mind churns constantly, and you respect your own thoughts enough to capture them." 👁
+
+CRT: Finishes others' sentences, visibly impatient | D
+"You have already worked out what they are going to say. Slowing down feels like holding back a tide." 🎭
+
+CRT: Reading glasses kept on top of head rather than in a case | D
+"You move fast and decide quickly. You have quiet impatience with people who need more process time than you do. You are almost certainly better at starting things than finishing them. You already know that." 👁
+
+CRT: Asks what others think before offering their own opinion, even when clearly knowledgeable | C/D
+"You have been told you come on too strong before. Possibly more than once. You have been adjusting for it ever since, and you are not entirely sure it was the right adjustment." 👁
+
+TOOLKIT_SECTION_END
+
+
+TOOLKIT_SECTION: Emotional Regulation
+
+CRT: Slow, deep breath under visible stress | S
+"When things tighten, you take that breath deliberately. In, then out. Calming the current running under the surface."
+
+CRT: Smiles or laughs when visibly hurt | S
+"You smile even when you are hurting. The gentleness in your eyes gives it away. The pain is still there. You have just learned how to carry it standing up." 👁
+
+CRT: Clenches jaw or goes still when angry | S
+"Anger moves through you and you go very still. The fire burns hotter on the inside. You have learned how to master it, usually to keep the peace." ⚠️
+
+CRT: Eyes gloss over but quickly blinks it away | —
+"Your eyes give it away for just a second before you pull it back. You tuck the feeling away. You put on the face. Most people never see the moment between." ⚠️
+
+CRT: Calm and steady when everything around is chaos | D
+"When everything around you is coming apart, you stay composed. People think you do not feel the panic. You do. You just refuse to feed it." 🎭
+
+CRT: Small nervous habits under pressure | C
+"The foot tap, the fingers at the sleeve. Tiny cracks in the surface that tell me more than the words do."
+
+CRT: Apologizes frequently, often unnecessarily | S
+"You are always the first to say sorry, even when it is not yours to carry. You take on everyone else's harmony as if it is your personal responsibility."
+
+CRT: Shows emotions openly and without apology | I
+"What you feel is visible. People know where they stand with you because you have never pretended to be something you are not. That is rarer than people realize."
+
+CRT: Wears a wedding ring with obvious wear but no other jewelry, practical hands | S
+"You built something with someone that most people do not manage to build. It did not look the way either of you expected it to when you started. Most things that last never do." 👁
+
+CRT: Composed in most areas but one visible physical self-soothing habit | C
+"The control is real. So is the one thing you cannot seem to control. Most people who know you would be surprised by which area it is." 👁
+
+CRT: Goes quiet and still when surprised rather than reacting visibly | S/C
+"You learned somewhere that showing a strong reaction had consequences. The stillness is not indifference. It is a very old form of protection." ⚠️
+
+CRT: Over-explains simple personal decisions unprompted | C
+"You have been questioned and second-guessed often enough that you started building the defence before anyone asks for it." 👁 ⚠️
+
+CRT: Smiles slightly before delivering difficult news or feedback | S
+"You use warmth as a landing pad. You learned in an environment where tension needed softening, and you became very good at being the person who did that." 👁
+
+TOOLKIT_SECTION_END
+
 
 Cold Reading in Practice
 Three complete reads from observation to delivery. Each shows the full sequence.
@@ -2625,7 +2872,19 @@ The other great benefit of physical tagging is that you can layer them if and on
 
 MULTIPLE-WORD TITLES
 
+GRID: ERA / VOWEL | A | E | I | O | U
+GRIDROW: CLASSIC | Happy Days |  | I Love Lucy | Golden Girls | 
+GRIDROW: MIDDLE (90s) | Family Matters | Fresh Prince of Bel-Air |  |  | Full House
+GRIDROW: MODERN |  |  | Big Bang Theory | Modern Family | 
+
+
 ONE-WORD TITLES
+
+GRID: ERA / VOWEL | A | E | I | O | U
+GRIDROW: CLASSIC |  | Bewitched / Cheers |  |  | 
+GRIDROW: MIDDLE (90s) |  | Seinfeld |  | Roseanne | 
+GRIDROW: MODERN |  |  | Friends | Office | 
+
 If it's a one-word title then something I recommend is not using fruit to fang as it is traditionally taught but instead adjust it so that you first ask them to think of a planet that begins with the first vowel. If they can then it's obviously Earth and the first vowel will be an E. If they can't think of a planet that begins with this letter then all they have to do is think of an animal. If it takes them a little bit longer to get one and you can tell that they are increasing their cognitive load, then it will be an I for iguana. If it comes immediately then it will be O for octopus. Alternatively because I don't like to use letter guessing or the word at all but rather use the actual thoughts that will come to their mind about the sitcom, I may instead ask them, as a second phase, to concentrate on whether this takes place in a public setting often or if it's almost always in someone's home. If it's in a public space can you grip a little tighter that way I can see more of the stimuli because there will be much more things to take in as opposed to one fairly consistent set they use to film. That can narrow you down to Roseanne and Bewitched pretty quickly if it is a show that takes place  mostly in their private homes. I mention this just to give you an idea that you don't need to use letters or the word itself as binaries. There are tons of categories that you can use to limit the available field of choices it could be. This is a great segue into talking about sensory gates.
 SENSORY GATES
 Some distinctions are available before language. Physical versus conceptual. Large versus hand-held. Warm versus dark. Open versus enclosed. These are strong because the participant can answer them from inside the image or feeling itself, with no translation required. Sensory gates are especially useful at the front of a routine because they create fast separation without making the participant feel managed. They're also theatrical. Revealing the texture of the thought before naming the thought is often more impressive than naming the thought immediately.
