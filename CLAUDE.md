@@ -31,33 +31,26 @@ ET.register_namespace('r', 'http://schemas.openxmlformats.org/officeDocument/200
 
 ### Adding figures/photos
 1. Image file goes in `resources/metv-images/`
-2. Embed in the DOCX using OOXML inline drawing XML (so it's visible in Word/Google Docs)
-3. Add entry to the `FIGURES` dict in `build-book.py` (key format: `"CHAPTER <num>:<section header>"`)
-4. The build script injects the `<img>` tag after the matching section header
-5. Track rights status in the `rights` field of each FIGURES entry
+2. Add an entry to `FIGURES` (after a section header) or `PARAGRAPH_FIGURES` (after a specific paragraph) in `build-book.py`, with alt, a `Figure N.n.` caption and a `rights` value
+3. Rebuild; the build warns if the key never matched
+4. Figures are build-side only as of 2026-08-24: the DOCX is not the figure source of truth (audit M15). Embed into the DOCX only if a publisher needs it
 
 ### After any edit
 ```bash
-# Step 1: Extract text
-python3 -c "
-import zipfile, xml.etree.ElementTree as ET
-with zipfile.ZipFile('Built-for-Wonder.docx', 'r') as z:
-    doc_xml = z.read('word/document.xml')
-ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
-root = ET.fromstring(doc_xml)
-body = root.find('.//w:body', ns)
-with open('manuscript-extracted.txt', 'w') as f:
-    for p in body.findall('.//w:p', ns):
-        text = ''.join(r.text or '' for r in p.findall('.//w:r/w:t', ns))
-        f.write(text + '\n')
-"
-
-# Step 2: Build designed HTML
-python3 build-book.py
-
-# Step 3: Build gated version (ALWAYS run this after build-book.py)
-python3 build-gated.py
+python3 build_all.py      # extract_manuscript.py -> build-book.py -> build-gated.py, both editions
 ```
+`extract_manuscript.py` is the ONLY extractor (it walks paragraphs AND tables in document order and emits the marker lines below). Never hand-roll a paragraph dump: it would spill the Cold Reading Toolkit rows, the sitcom grids and the tier table as raw lines and drop every table-driven graphic.
+
+### Marker conventions the build understands (DOCX text -> designed block)
+- `RECOVERY: Name | when text` + body paragraph: amber recovery-method card (Ch5).
+- `T1 — Name` ... `T4 — Name` + body: evidence tier cards (Ch8). `T4: Name` + THE CLAIM / THE RESEARCH / WHAT REMAINS VALID: T4 signal card (Ch9).
+- `ANTHEM_ARIA: text`: contributor card (Ch17). `Chris Michael's Take` line: performer note.
+- `TOOLKIT_NAV`, `CR_SUMMARY_TABLE`, `TOOLKIT_SECTION: <radar category>`, `CRT: cue | type` + line paragraph, `TOOLKIT_SECTION_END`: emitted by the extractor from the six Word tables in Ch17.
+- `GRID: ERA / VOWEL | A | E | I | O | U` + `GRIDROW: ...`: emitted from the Ch23 Word tables.
+- `SIX_AREA_RADAR`, `PERF_ARCH_FRAMEWORK_SVG`, `TELL_TABLE`, `FRUIT_TO_FANG_TABLE`, `FRUIT_TO_FANG_FLOW`, `FEEDBACK_SIGNALS_TABLE`, `ZODIAC_ELEMENT_TABLE`, `PATTERN_INTERRUPT_40PCT`: standalone marker lines for generated graphics.
+- Still unresolved (need content from Chris): `CH18_DIAGNOSTIC_PANEL` (Ch22 diagnostic questions), `PERFORMANCE_MATRIX` (Ch31 matrix rows). The build prints `[warn] skipped unresolved marker token` for them.
+- Headings the Title Case heuristic rejects (single words, "When ...", "Seconds ...") go in `FORCED_HEADERS`; `Performer:` / `Spectator:` lines are never headers.
+- Figures: `FIGURES` keys on a section header (`"CHAPTER <n>:<header>"`), `PARAGRAPH_FIGURES` keys on the first ~60 characters of the paragraph the image follows. Both render through `gen_figure_block()`; photographs listed in `PHOTO_TRANSCODE` are re-encoded as JPEG q85 at build time. The build prints a `[warn] ... key never matched` line for any `SECTION_BADGES`, `FIGURES` or `PARAGRAPH_FIGURES` key that did not fire, so chapter renumbering can no longer silently drop badges or figures.
 
 ## Two editions: WITH and WITHOUT the Atlas Brookings material
 
@@ -76,7 +69,7 @@ How the no-Brookings edition is produced:
 - `make_no_brookings.py` strips those ranges from `manuscript-extracted.txt`, writing `manuscript-extracted-NoBrookings.txt`.
 - `build-book.py` and `build-gated.py` now accept optional `[input] [output]` CLI args (defaults unchanged), so the no-Brookings manuscript builds through the same scripts.
 
-**To register a NEW Brookings section:** keep it as the last thing before a natural boundary (a `· · ·` separator or a distinct closing line), then add one entry to `BROOKINGS_SECTIONS` in `brookings_manifest.py`. Current entries: Three Eras (Ch1), Imbalanced (Ch24), Cloud Nine (Ch25). Clearance status tracked in `book-assistant/brookings-review/CLEARANCES.md`.
+**To register a NEW Brookings section:** keep it as the last thing before a natural boundary (a `· · ·` separator or a distinct closing line), then add one entry to `BROOKINGS_SECTIONS` in `brookings_manifest.py`. Current entries: Three Eras (Ch1), Imbalanced (Ch24), Cloud Nine (Ch25), Pre-show Failure (Ch27A). Check brookings_manifest.py for the live list. Clearance status tracked in `book-assistant/brookings-review/CLEARANCES.md`.
 
 ## The Build Script (`build-book.py`)
 

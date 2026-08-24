@@ -173,15 +173,27 @@ After inserting or removing elements, re-read `list(body)` before using position
 - Image rights status is tracked in the `rights` field of each FIGURES entry.
 
 ### Current figures
-| Figure | Chapter | Section | File | Rights |
-|--------|---------|---------|------|--------|
-| 10.1 | The Micro-Expression Matrix | The Seven Expressions | `seven-universal-expressions.png` | Author-owned |
-| 24.1 | REFLEX | after "On the empty hand, the thumb..." (PARAGRAPH_FIGURES) | `reflex-two-fists.jpg` | Unconfirmed (from DOCX) |
-| 24.2 | REFLEX | two-up after the Variations paragraph (PARAGRAPH_FIGURES) | `reflex-variation-index.jpg` + `reflex-variation-two-fingers.jpg` | Unconfirmed (from DOCX) + AI-generated (Gemini watermark cropped) |
-| 24.3 | REFLEX | after "The chin tell." (PARAGRAPH_FIGURES) | `reflex-chin-tell.jpg` | AI-generated (Gemini watermark cropped) |
-| 24.4 | REFLEX | The Name Chart | `reflex-name-chart.svg` | Author-created |
 
----
+Generated from `FIGURES` and `PARAGRAPH_FIGURES` in build-book.py on 2026-08-24 (14 figure blocks; the author photo at the back is injected separately). Rights labels were corrected in the 2026-08-24 graphics audit; two items still need Chris: the provenance of the seven-expressions composite and a photographer credit for the author photo.
+
+| Figure | Chapter | Anchor | File | Rights |
+|---|---|---|---|---|
+| 13.1 | CHAPTER 13 | Lip Compression | `lip-compression-example.png` | AI-generated illustration |
+| 14.1 | CHAPTER 14 | The Seven Expressions | `seven-universal-expressions.png` | Author-owned photograph (provenance unconfirmed: matches a widely circulated composite; confirm before print) |
+| 14.2 | CHAPTER 14 | The Duchenne Smile | `duchenne-smile-comparison.jpg` | AI-generated illustration (Gemini, BeFunky edit); not an author-owned photograph |
+| 19.1 | CHAPTER 19 | What the Brain Is Doing at the Network Level | `hypnosis-brain-networks-shift.png` | Author-created diagram (matplotlib render from the BFW_AllRewrites working document) |
+| 19.2 | CHAPTER 19 | The Rainville Finding | `hypnosis-rainville-finding.png` | Author-created diagram (matplotlib render from the BFW_AllRewrites working document) |
+| 19.3 | CHAPTER 19 | Oscillations and Timing | `hypnosis-brain-wave-states.png` | Author-created diagram (matplotlib render from the BFW_AllRewrites working document) |
+| 24.1 | CHAPTER 24 | after paragraph: On the empty hand, the thumb will often rest over ... | `reflex-two-fists.jpg` | Unconfirmed (from DOCX) |
+| 24.2 | CHAPTER 24 | after paragraph: If the thumb is on the knuckle and only the index ... | `reflex-variation-index.jpg + reflex-variation-two-fingers.jpg` | Left: Unconfirmed (from DOCX). Right: AI-generated illustration |
+| 24.3 | CHAPTER 24 | after paragraph: The chin tell.... | `reflex-chin-tell.jpg` | AI-generated illustration |
+| 24.4 | CHAPTER 24 | The Name Chart | `reflex-name-chart.svg` | Author-created chart |
+| 25.1 | CHAPTER 25 | FIRE SIGNS | `zodiac-fire-signs-mnemonic.jpg` | AI-generated illustration |
+| 25.2 | CHAPTER 25 | WATER SIGNS | `zodiac-water-signs-mnemonic.jpg` | AI-generated illustration |
+| 25.3 | CHAPTER 25 | EARTH SIGNS | `zodiac-earth-signs-mnemonic.jpg` | AI-generated illustration |
+| 25.4 | CHAPTER 25 | AIR SIGNS | `zodiac-air-signs-mnemonic.jpg` | AI-generated illustration |
+
+Figures are build-side only: the DOCX carries 1x1 placeholders where the name chart and author photo sit and the five Chapter 24 photos as embedded media. Anyone reading the DOCX in Word will not see the other figures (audit M15). If a publisher needs the DOCX with images, run an OOXML embed pass rather than pasting by hand.
 
 ## Git Workflow
 

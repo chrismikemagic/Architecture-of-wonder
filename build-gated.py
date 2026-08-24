@@ -150,6 +150,19 @@ html.gate-locked body { overflow: hidden; }
 #book-content.visible { display: block; }
 """
 
+import base64 as _b64
+
+
+def _reveal_logo_uri():
+    """Vanishing Inc reveal logo embedded from resources/ (it was hot-linked
+    from i.postimg.cc, audit m8)."""
+    try:
+        with open("resources/w1000-n22219JlqyT2zQoE.jpg", "rb") as _f:
+            return "data:image/jpeg;base64," + _b64.b64encode(_f.read()).decode("ascii")
+    except OSError:
+        return "https://i.postimg.cc/Ghr5HTTC/w1000-n22219Jlqy-T2z-Qo-E.png"
+
+
 GATE_HTML = """
 <div id="gate-overlay">
   <div id="gate-box">
@@ -166,7 +179,7 @@ GATE_HTML = """
 
   </div>
   <div id="name-reveal">
-    <img class="reveal-logo" id="reveal-logo" src="https://i.postimg.cc/Ghr5HTTC/w1000-n22219Jlqy-T2z-Qo-E.png" alt="Vanishing Inc">
+    <img class="reveal-logo" id="reveal-logo" src="__REVEAL_LOGO_URI__" alt="Vanishing Inc">
     <div class="reveal-tagline">presents</div>
   </div>
 </div>
@@ -330,6 +343,8 @@ def build():
     # Close the #book-content div and add JS before </body>
     if "</body>" in html:
         html = html.replace("</body>", "</div>\n" + GATE_JS + "\n</body>", 1)
+
+    html = html.replace("__REVEAL_LOGO_URI__", _reveal_logo_uri())
 
     # 5. Write output
     with open(OUTPUT, "w", encoding="utf-8") as f:

@@ -27,6 +27,38 @@ import mimetypes
 
 _IMAGE_DATA_URI_CACHE = {}
 
+# Photographs stored as oversized PNG/JPEG are re-encoded at build time as
+# progressive JPEG (quality 85, same pixel size) so the single-file book stays
+# small (audit m17). Diagrams, charts and the REFLEX photos stay as-is.
+PHOTO_TRANSCODE = {
+    'resources/metv-images/lip-compression-example.png',
+    'resources/metv-images/seven-universal-expressions.png',
+    'resources/metv-images/duchenne-smile-comparison.jpg',
+    'resources/metv-images/zodiac-fire-signs-mnemonic.jpg',
+    'resources/metv-images/zodiac-water-signs-mnemonic.jpg',
+    'resources/metv-images/zodiac-earth-signs-mnemonic.jpg',
+    'resources/metv-images/zodiac-air-signs-mnemonic.jpg',
+    'resources/metv-images/chris-michael-author.jpg',
+}
+_IMAGE_DIMS_CACHE = {}
+
+
+def image_dims(path):
+    """(width, height) in pixels via Pillow, or None for SVG / unreadable files."""
+    if path in _IMAGE_DIMS_CACHE:
+        return _IMAGE_DIMS_CACHE[path]
+    dims = None
+    if not path.lower().endswith('.svg'):
+        try:
+            from PIL import Image
+            with Image.open(path) as im:
+                dims = im.size
+        except Exception:
+            dims = None
+    _IMAGE_DIMS_CACHE[path] = dims
+    return dims
+
+
 def image_data_uri(path):
     """Embed an image file as a base64 data URI so the HTML is fully
     self-contained (the Netlify deploy ships a single file)."""
@@ -36,8 +68,16 @@ def image_data_uri(path):
     if mime is None:
         mime = 'image/svg+xml' if path.lower().endswith('.svg') else 'application/octet-stream'
     try:
-        with open(path, 'rb') as f:
-            uri = f'data:{mime};base64,' + base64.b64encode(f.read()).decode('ascii')
+        if path in PHOTO_TRANSCODE:
+            from PIL import Image
+            import io
+            with Image.open(path) as im:
+                buf = io.BytesIO()
+                im.convert('RGB').save(buf, format='JPEG', quality=85, progressive=True, optimize=True)
+            uri = 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode('ascii')
+        else:
+            with open(path, 'rb') as f:
+                uri = f'data:{mime};base64,' + base64.b64encode(f.read()).decode('ascii')
     except OSError:
         print(f'  WARNING: image not found, leaving file reference: {path}')
         uri = path
@@ -204,17 +244,17 @@ T4_SIGNALS = [
 ]
 
 WHAT_YOU_JUST_DID = {
-    4: "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat\u2009\u2014\u2009even though the threat is not real. Observation, applied to yourself.",
-    8: "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01\u2009\u2014\u2009handedness indicator. You just demonstrated it without thinking.",
-    16: "Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.",
-    22: "You just turned to this chapter. Before reading a word, you formed an impression of its length by glancing at the page count. That is thin-slicing applied to a book. You do this with people too.",
-    29: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Three taught you this. The book just demonstrated it.",
-    37: "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect\u2009\u2014\u2009your brain knows it is close to the end and is already preparing to consolidate.",
+    'CHAPTER 5': "You have been reading for approximately three minutes. Notice your breathing. It slowed when you hit the section on cortisol. That is your nervous system responding to content about threat\u2009\u2014\u2009even though the threat is not real. Observation, applied to yourself.",
+    'CHAPTER 8': "You have been reading this page for about ninety seconds. Notice which hand is holding the book. That is Observation #01\u2009\u2014\u2009handedness indicator. You just demonstrated it without thinking.",
+    'CHAPTER 16': "Notice your posture right now. Did you lean forward slightly in the last few paragraphs? That is engagement. Your body responded before your mind decided the content was interesting.",
+    'CHAPTER 22': "You just turned to this chapter. Before reading a word, you formed an impression of its length by glancing at the page count. That is thin-slicing applied to a book. You do this with people too.",
+    'CHAPTER 29': "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Three taught you this. The book just demonstrated it.",
+    'CHAPTER 37': "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect\u2009\u2014\u2009your brain knows it is close to the end and is already preparing to consolidate.",
 }
 
 # Chapters whose "What You Just Did" text must sit right after the opening
 # paragraph rather than ~65% through the chapter.
-WYAJD_AT_START = {22}
+WYAJD_AT_START = {'CHAPTER 22'}
 
 PATTERN_INTERRUPTS = [
     {'number': '250', 'unit': 'MILLISECONDS', 'text': 'The time it takes your brain to form a first impression of a stranger.', 'source': 'Willis & Todorov, 2006', 'wyajd': 'You formed yours of this page in less time than that. What did you notice first\u2009\u2014\u2009the number, or the word? That is salience at work.'},
@@ -235,14 +275,14 @@ FIGURES = {
     'CHAPTER 19:What the Brain Is Doing at the Network Level': {
         'src': 'resources/metv-images/hypnosis-brain-networks-shift.png',
         'alt': 'Default mode network quiets while executive control and salience networks coordinate around the suggestion',
-        'caption': 'Figure 19.1 — How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
-        'rights': 'From BFW_AllRewrites source document',
+        'caption': 'Figure 19.1. How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
+        'rights': 'Author-created diagram (matplotlib render from the BFW_AllRewrites working document)',
     },
     'CHAPTER 19:The Rainville Finding': {
         'src': 'resources/metv-images/hypnosis-rainville-finding.png',
         'alt': 'The Rainville finding: suggestions targeting unpleasantness activate ACC; suggestions targeting intensity activate somatosensory cortex',
-        'caption': 'Figure 19.2 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
-        'rights': 'From BFW_AllRewrites source document',
+        'caption': 'Figure 19.2. The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
+        'rights': 'Author-created diagram (matplotlib render from the BFW_AllRewrites working document)',
     },
     # The brain-wave chart is anchored once, at Oscillations and Timing
     # (docs/10-editing-session-log.md). The former "The Alpha Shift" entry
@@ -251,16 +291,17 @@ FIGURES = {
         'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
         'alt': 'Brain wave states chart: delta, theta, alpha, beta, and gamma, with frequency, what each feels like, and what it means for your show. Alpha is marked as the target.',
         'caption': 'Figure 19.3. The full brain wave reference: delta, theta, alpha, beta, and gamma. Each is a different firing rhythm, each a different mode of experience. Alpha, the highlighted row, is the target state for suggestion. Keep this chart in mind as you read this section.',
-        'rights': 'From BFW_AllRewrites source document',
+        'rights': 'Author-created diagram (matplotlib render from the BFW_AllRewrites working document)',
     },
     'CHAPTER 24:The Name Chart': {
         'src': 'resources/metv-images/reflex-name-chart.svg',
+        'inline_svg': True, 'viewbox': '0 0 900 1075',
         'alt': 'REFLEX Name Chart — organized by gender, name length, alphabet half, and first vowel',
         # 24.4: the three photo figures in PARAGRAPH_FIGURES come first in
         # reading order (two fists 24.1, variations pair 24.2, chin tell 24.3).
         # The DOCX still carries a "Figure 24.1 —" caption line under the chart;
         # process_paragraph skips any "Figure N.N —" line, so only this caption renders.
-        'caption': 'Figure 24.4 — REFLEX Name Chart. Cross-reference gender, name length, alphabet half, and first vowel to arrive at the name.',
+        'caption': 'Figure 24.4. REFLEX Name Chart. Cross-reference gender, name length, alphabet half, and first vowel to arrive at the name.',
         'rights': 'Author-created chart',
     },
     # Key: "CHAPTER <num>:<section header text>" → figure data
@@ -268,43 +309,43 @@ FIGURES = {
     'CHAPTER 14:The Seven Expressions': {
         'src': 'resources/metv-images/seven-universal-expressions.png',
         'alt': 'The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt',
-        'caption': 'Figure 14.1 \u2014 The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
-        'rights': 'Author-owned photograph',
+        'caption': 'Figure 14.1. The 7 universal microexpressions: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Contempt.',
+        'rights': 'Author-owned photograph (provenance unconfirmed: matches a widely circulated composite; confirm before print)',
     },
     'CHAPTER 14:The Duchenne Smile': {
         'src': 'resources/metv-images/duchenne-smile-comparison.jpg',
         'alt': 'Duchenne Smile (top) vs non-Duchenne smile (bottom) — the eye crease distinguishes genuine from social smiling',
-        'caption': 'Figure 14.2 \u2014 The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
-        'rights': 'Author-owned photograph',
+        'caption': 'Figure 14.2. The Duchenne Smile (top) engages the orbicularis oculi, producing the eye crease. The non-Duchenne smile (bottom) does not. If the eyes are not involved, the smile is consciously constructed.',
+        'rights': 'AI-generated illustration (Gemini, BeFunky edit); not an author-owned photograph',
     },
     'CHAPTER 13:Lip Compression': {
         'src': 'resources/metv-images/lip-compression-example.png',
         'alt': 'Lip compression — lips pressed together, showing orbicularis oris tension and mentalis chin dimpling',
-        'caption': 'Figure 13.1 \u2014 Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
+        'caption': 'Figure 13.1. Lip compression. Note the slight dimpling at the chin (mentalis activation) and the tension line below the lower lip (orbicularis oris). The mouth has moved into management.',
         'rights': 'AI-generated illustration',
     },
     'CHAPTER 25:FIRE SIGNS': {
         'src': 'resources/metv-images/zodiac-fire-signs-mnemonic.jpg',
         'alt': 'Fire signs mnemonic: Leo (lion on burning castle), Sagittarius (archers with flaming arrows), Aries (ram)',
-        'caption': 'Fire Signs — Aries, Leo, Sagittarius.',
+        'caption': 'Figure 25.1. Fire Signs: Aries, Leo, Sagittarius.',
         'rights': 'AI-generated illustration',
     },
     'CHAPTER 25:WATER SIGNS': {
         'src': 'resources/metv-images/zodiac-water-signs-mnemonic.jpg',
         'alt': 'Water signs mnemonic: Pisces (fish leaping from ocean), Cancer (crab), Scorpio (scorpion)',
-        'caption': 'Water Signs — Cancer, Scorpio, Pisces.',
+        'caption': 'Figure 25.2. Water Signs: Cancer, Scorpio, Pisces.',
         'rights': 'AI-generated illustration',
     },
     'CHAPTER 25:EARTH SIGNS': {
         'src': 'resources/metv-images/zodiac-earth-signs-mnemonic.jpg',
         'alt': 'Earth signs mnemonic: Capricorn (corn field), Taurus (bull ploughing), Virgo (goddess of agriculture)',
-        'caption': 'Earth Signs — Capricorn, Taurus, Virgo.',
+        'caption': 'Figure 25.3. Earth Signs: Capricorn, Taurus, Virgo.',
         'rights': 'AI-generated illustration',
     },
     'CHAPTER 25:AIR SIGNS': {
         'src': 'resources/metv-images/zodiac-air-signs-mnemonic.jpg',
         'alt': 'Air signs mnemonic: Gemini (twins in storm), Libra (scales in wind), Aquarius (water-bearer)',
-        'caption': 'Air Signs — Aquarius, Gemini, Libra.',
+        'caption': 'Figure 25.4. Air Signs: Aquarius, Gemini, Libra.',
         'rights': 'AI-generated illustration',
     },
 }
@@ -361,18 +402,42 @@ def gen_figure_block(fig):
     """Render one book-figure: a single image, or a side-by-side two-up when
     fig has a 'pair', with one shared caption. Used by FIGURES (header-anchored)
     and PARAGRAPH_FIGURES (paragraph-anchored) so both look identical."""
+    def _img(img):
+        d = image_dims(img['src'])
+        wh = f' width="{d[0]}" height="{d[1]}"' if d else ''
+        return f'<img src="{image_data_uri(img["src"])}" alt="{escape(img["alt"])}"{wh} />'
     out = ['<div class="book-figure">']
     if fig.get('pair'):
         out.append('  <div class="figure-pair">')
         for img in (fig, fig['pair']):
-            out.append(f'    <img src="{image_data_uri(img["src"])}" alt="{escape(img["alt"])}" />')
+            out.append('    ' + _img(img))
         out.append('  </div>')
+    elif fig.get('inline_svg'):
+        out.append('  ' + inline_svg(fig))
     else:
-        out.append(f'  <img src="{image_data_uri(fig["src"])}" alt="{escape(fig["alt"])}" />')
+        out.append('  ' + _img(fig))
     if fig.get('caption'):
         out.append(f'  <p class="figure-caption">{escape(fig["caption"])}</p>')
     out.append('</div>')
     return '\n'.join(out)
+
+
+def inline_svg(fig):
+    """Inline an SVG figure so it inherits the page fonts (audit m6): drop the
+    XML prolog, crop the viewBox if the entry gives one, swap the export
+    font for the book's sans, bump sub-13px text, replace em dashes."""
+    with open(fig['src'], encoding='utf-8') as f:
+        svg = f.read()
+    svg = re.sub(r'<\?xml[^>]*\?>', '', svg).strip()
+    if fig.get('viewbox'):
+        svg = re.sub(r'viewBox="[^"]*"', f'viewBox="{fig["viewbox"]}"', svg, count=1)
+    svg = svg.replace('&quot;Anthropic Sans&quot;, sans-serif', 'Montserrat, sans-serif')
+    svg = svg.replace('"Anthropic Sans", sans-serif', 'Montserrat, sans-serif')
+    svg = svg.replace('var(--font-sans,system-ui,sans-serif)', 'Montserrat, sans-serif')
+    svg = re.sub(r'font-size:(\d+)px', lambda m: f'font-size:{max(int(m.group(1)), 13)}px', svg)
+    svg = svg.replace('REFLEX \u2014 NAME CHART', 'REFLEX NAME CHART').replace(' \u2014 ', ' \u00b7 ').replace('\u2014', '-')
+    svg = re.sub(r'<svg ', f'<svg role="img" aria-label="{escape(fig["alt"])}" class="inline-figure" ', svg, count=1)
+    return svg
 
 
 def paragraph_figure_for(stripped):
@@ -407,154 +472,178 @@ _PASSWORD_LINE_RE = re.compile(r'^Password:\s*\S+$')
 
 SECTION_BADGES = {
     # ── CHAPTER 3: Designing for Reality ──
-    'CHAPTER 2:The Setup Is the Performance':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:Expectation Loading':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:Predictive Processing':           {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 2:Cognitive Economy':               {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:The Setup Is the Performance':       {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:Expectation Loading':                {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:Predictive Processing':              {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 3:Cognitive Economy':                  {'tiers': ['t1'],       'cats': ['am']},
     # ── CHAPTER 4: Five Forces of Salience ──
-    'CHAPTER 3:1. Novelty':                      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3:2. Emotional Relevance':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3:3. Social Signal':                {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3:4. Unresolved Uncertainty':       {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3:5. Contrast':                     {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 3:Stacking the Forces':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 4:Stacking the Forces':                {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 5: Tension, Threat and Window ──
-    'CHAPTER 4:The Cortisol Threshold':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 4:Breathing Visibility':            {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 4:Stillness Gradient':              {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 4:The Laughter Signal':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 4:Phone Emergence':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 4:Reading the Audience\'s Cortisol Level': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 5:The Cortisol Threshold':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 5:Breathing Visibility':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 5:Stillness Gradient':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 5:The Laughter Signal':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 5:Phone Emergence':                    {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 6: Art of Anticipation ──
-    'CHAPTER 5:Increasing Dopamine':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 5:Premature Resolution':            {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 5:Intermittent Structure':          {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 6:Increasing Dopamine':                {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 6:Premature Resolution':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 6:Intermittent Structure':             {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 7: Attention as a Weapon ──
-    'CHAPTER 6:The Gorilla Principle':           {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 6:Change Blindness':                {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 6:Psychological Marking':           {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 6:The Effort Inversion':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 7:The Gorilla Principle':              {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 7:Change Blindness':                   {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 7:Psychological Marking':              {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 7:The Effort Inversion':               {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 8: Reading Body Language ──
-    'CHAPTER 7:The Foundation: Baseline First':  {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:The Five Cs':                     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:Reading Deviation':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:The Leakage Window':              {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:Eye Movement and the Baseline Principle': {'tiers': ['t3'], 'cats': ['bp']},
-    'CHAPTER 7:The Three-Signal Rule':           {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:Observation Is Not Lie Detection':{'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 7:Common Observer Errors':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 7:Cultural Calibration in Practice':{'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 8:The Five Cs':                        {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 8:Reading Deviation':                  {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 8:Observation Is Not Lie Detection':   {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 8:Common Observer Errors':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 8:Cultural Calibration in Practice':   {'tiers': ['t2'],       'cats': ['bp']},
     # ── CHAPTER 9: 80-Signal System ──
-    'CHAPTER 8:The Six-Category Radar':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 8:The 10-Second Scan':              {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 8:T4 Signals Removed':              {'tiers': ['t4'],       'cats': ['bp']},
+    'CHAPTER 9:The Six-Category Radar':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:The 10-Second Scan':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 9:T4 Signals Removed':                 {'tiers': ['t4'],       'cats': ['bp']},
     # ── CHAPTER 10: Four Personalities ──
-    'CHAPTER 9:Reading DISC Blends':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 9:DISC and Volunteer Strategy':     {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 10:Reading DISC Blends':               {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 10:DISC and Volunteer Strategy':       {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 11: Volunteer's Brain ──
-    'CHAPTER 10:Seven Volunteer Types':          {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 10:The Volunteer Selection Matrix': {'tiers': ['t3'],       'cats': ['vs']},
-    'CHAPTER 10:Anchoring in Performance':       {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 10:The Neural Selection Circuit':   {'tiers': ['t2'],       'cats': ['vs']},
+    'CHAPTER 11:Seven Volunteer Types':             {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 11:The Volunteer Selection Matrix':    {'tiers': ['t3'],       'cats': ['vs']},
+    'CHAPTER 11:Anchoring in Performance':          {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 13: Eyes, Face ──
-    'CHAPTER 12:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
-    'CHAPTER 12:Fruit to Fang':                   {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 12:Pupil Constriction/Dilation':     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:Social Referencing Glance':       {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:The Eyebrow Flash':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:Lip Compression':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 12:Directional Preference':          {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 12:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
+    'CHAPTER 13:Where the Eyes Go When the Mind Reaches': {'tiers': ['t3'], 'cats': ['bp']},
+    'CHAPTER 13:Fruit to Fang':                     {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13:Pupil Constriction/Dilation':       {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Social Referencing Glance':         {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:The Eyebrow Flash':                 {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Lip Compression':                   {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 13:Directional Preference':            {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 13:Cognitive Load and the Search for the Right Thing': {'tiers': ['t2'], 'cats': ['bp']},
     # ── CHAPTER 14: Micro-Expression Matrix ──
-    'CHAPTER 13:The Seven Expressions':          {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 13:The Duchenne Smile':             {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 13:The Leakage Hierarchy':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 13:Convergence Rule':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 13:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
-    'CHAPTER 13:Microexpressions in Mentalism':  {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 14:The Seven Expressions':             {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 14:The Duchenne Smile':                {'tiers': ['t1'],       'cats': ['bp']},
+    'CHAPTER 14:The Leakage Hierarchy':             {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 14:Convergence Rule':                  {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 14:Reading in Clusters, Not Snapshots': {'tiers': ['t2'],   'cats': ['bp']},
+    'CHAPTER 14:Microexpressions in Mentalism':     {'tiers': ['t2'],       'cats': ['bp']},
     # ── CHAPTER 15: Closing the Barn Door ──
-    'CHAPTER 14:The Memory Problem':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 14:The Language of Preemptive Closure': {'tiers': ['t2'],   'cats': ['am']},
     # ── CHAPTER 17: Cold Reading ──
-    'CHAPTER 16:The Forer Effect':               {'tiers': ['t1'],       'cats': ['cr']},
-    'CHAPTER 16:One Name, Three Different Skills':{'tiers': ['t3'],      'cats': ['cr']},
-    'CHAPTER 16:The Cold-Warm-Hot Spectrum':     {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 16:Thin Slicing':                   {'tiers': ['t2'],       'cats': ['cr']},
-    'CHAPTER 16:The Cold Reading Toolkit':       {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
-    'CHAPTER 16:Collocation. Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
-    'CHAPTER 16:Visual Signals':                 {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 16:Auditory Signals':               {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 16:Kinesthetic Signals':            {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 16:01 \u2014 The Travel Pattern Read': {'tiers': ['t3'],    'cats': ['cr']},
-    'CHAPTER 16:02 \u2014 The Life Pivot Read':  {'tiers': ['t3'],       'cats': ['cr']},
-    'CHAPTER 16:03 \u2014 The Hidden Interest Read': {'tiers': ['t3'],   'cats': ['cr']},
+    'CHAPTER 17:The Forer Effect':                  {'tiers': ['t1'],       'cats': ['cr']},
+    'CHAPTER 17:One Name, Three Different Skills':  {'tiers': ['t3'],      'cats': ['cr']},
+    'CHAPTER 17:Thin Slicing':                      {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 17:The Cold Reading Toolkit':          {'tiers': ['t2', 't3'], 'cats': ['cr', 'bp']},
     # ── CHAPTER 18: Contact Mind Reading ──
-    'CHAPTER 17:Muscle Reading':                 {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 17:The Method':                     {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 17:Focus, Not Clutter':             {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 17:Suggestibility and the Frame':   {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 17:Setting Up the Conditions':      {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 17:The Grip':                       {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 17:Verify, Verify, Verify':         {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 17:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
-    'CHAPTER 17:Framing the Effect':             {'tiers': ['t3'],       'cats': ['bp']},
-    'CHAPTER 17:Intent Cues Beyond the Stage':   {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18:Muscle Reading':                    {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 18:The Method':                        {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 18:Focus, Not Clutter':                {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 18:Suggestibility and the Frame':      {'tiers': ['t2'],       'cats': ['bp']},
+    'CHAPTER 18:Setting Up the Conditions':         {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18:The Grip':                          {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18:Verify, Verify, Verify':            {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18:The Science Behind Contact Mind Reading': {'tiers': ['t1'], 'cats': ['bp']},
+    'CHAPTER 18:Framing the Effect':                {'tiers': ['t3'],       'cats': ['bp']},
+    'CHAPTER 18:Intent Cues Beyond the Stage':      {'tiers': ['t3'],       'cats': ['bp']},
     # ── CHAPTER 19: How Hypnosis Really Works ──
-    'CHAPTER 18:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 18:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 18:The Rainville Finding':          {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 18:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
-    'CHAPTER 18:Down to the Cell Level':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 18:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 19:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 19:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 19:The Rainville Finding':             {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 19:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 19:Down to the Cell Level':            {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 19:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
     # ── CHAPTER 28: The Performance Arc ──
-    'CHAPTER 27:Seven Stages of the Performance Arc':      {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 27:The Neural Performance Checklist':         {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 27:The Performance Architecture Framework':   {'tiers': ['t1', 't2'], 'cats': ['am']},
+    'CHAPTER 29:Seven Stages of the Performance Arc': {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 29:The Neural Performance Checklist':  {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 29:The Performance Architecture Framework': {'tiers': ['t1', 't2'], 'cats': ['am']},
     # ── CHAPTER 29: Method Invisibility ──
-    'CHAPTER 28:Separate Method from Payoff':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 28:Anti-Backtracking Architecture': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 30:Separate Method from Payoff':       {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 30:Anti-Backtracking Architecture':    {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 32: Art of Strolling ──
-    'CHAPTER 31:State Architecture':             {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 31:The 90-Second Set Structure':    {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 31:The Opening Read':               {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 31:The T1 Opener':                  {'tiers': ['t1'],       'cats': ['bp']},
-    'CHAPTER 31:The Behavioral Opener':          {'tiers': ['t2'],       'cats': ['bp']},
-    'CHAPTER 31:The Layered Read':               {'tiers': ['t2'],       'cats': ['cr']},
+    'CHAPTER 33:State Architecture':                {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 33:The 90-Second Set Structure':       {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 31: When the Room Rises ──
-    'CHAPTER 30:Duration Neglect':               {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 30:Peak vs. Close':                 {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 32:Duration Neglect':                  {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 32:Peak vs. Close':                    {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 26: Pre-Show ──
-    'CHAPTER 25:Pre-Show Audio as Emotional Priming': {'tiers': ['t2'],  'cats': ['am']},
-    'CHAPTER 25:Tempo and Trust':                {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 33: Making the Room Say Yes ──
-    'CHAPTER 32:Mirror Neurons and Modeling':    {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 32:The Compliance Arc':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 32:Creepy Collapses the Frame':     {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 34:Mirror Neurons and Modeling':       {'tiers': ['t1'],       'cats': ['am']},
+    'CHAPTER 34:The Compliance Arc':                {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 34:Creepy Collapses the Frame':        {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 37: What the Room Decides Before You Speak ──
-    'CHAPTER 37:The FATE Model':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37:F \u2014 FOCUS':                 {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37:A \u2014 AUTHORITY':             {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 37:T \u2014 TRIBE':                 {'tiers': ['t3'],       'cats': ['am']},
-    'CHAPTER 37:E \u2014 EMOTION':               {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:The FATE Model':                    {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 38: The Ethics of Influence ──
-    'CHAPTER 38:The Consent Test':               {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38:The Transparency Rule':          {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 38:The 100% Plus 1 Principle':      {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:The Consent Test':                  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:The Transparency Rule':             {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 38:The 100% Plus 1 Principle':         {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 39: How Influence Actually Works ──
     'CHAPTER 39:Physical Following Creates Mental Following': {'tiers': ['t2'], 'cats': ['bp']},
     'CHAPTER 39:Five Speech Patterns That Build Instant Authority': {'tiers': ['t2'], 'cats': ['am']},
     # ── CHAPTER 40: Influence Without Authority ──
-    'CHAPTER 40:Compliance vs. Internalization': {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 40:The Skeptic as an Asset':        {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 40:Compliance vs. Internalization':    {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 40:The Skeptic as an Asset':           {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 41: The Authority Frame ──
-    'CHAPTER 41:The Five Authority Signals':     {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 41:The Five Authority Signals':        {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 42: Authority Architecture ──
     'CHAPTER 42:The Five Pillars of Authority Architecture': {'tiers': ['t2'], 'cats': ['am']},
-    'CHAPTER 42:The Self-Assessment':            {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 42:The Self-Assessment':               {'tiers': ['t2'],       'cats': ['am']},
     # ── CHAPTER 41: Authority Architecture ──
-    'CHAPTER 39:The Five Pillars of Authority':  {'tiers': ['t2'],       'cats': ['am']},
-    'CHAPTER 39:Pillar One: Confidence':         {'tiers': ['t3'],       'cats': ['am']},
+
+    # re-added 2026-08-24 after the numbering re-key (headers renamed since the keys were written)
+    'CHAPTER 37:F \u2014 FOCUS': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:A \u2014 AUTHORITY': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 37:T \u2014 TRIBE': {'tiers': ['t3'],       'cats': ['am']},
+    'CHAPTER 37:E \u2014 EMOTION': {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 17:Collocation: Reading How a Person Connects Ideas': {'tiers': ['t3'], 'cats': ['cr']},
+    'CHAPTER 42:The Five Pillars of Authority Architecture': {'tiers': ['t2'],       'cats': ['am']},
 }
+
+# Every SECTION_BADGES / FIGURES / PARAGRAPH_FIGURES key that fired during a
+# build is recorded here; build_book() prints the ones that never matched so
+# chapter renumbering can no longer silently strip badges or figures (audit M9).
+_MATCHED_CONFIG_KEYS = set()
+
+
+def report_unmatched_config_keys():
+    missing = [('SECTION_BADGES', k) for k in SECTION_BADGES if ('SECTION_BADGES', k) not in _MATCHED_CONFIG_KEYS]
+    missing += [('FIGURES', k) for k in FIGURES if ('FIGURES', k) not in _MATCHED_CONFIG_KEYS]
+    missing += [('PARAGRAPH_FIGURES', k) for k in PARAGRAPH_FIGURES if k not in _PARAGRAPH_FIGURES_FIRED]
+    for kind, k in missing:
+        print(f"  [warn] {kind} key never matched a header: {k!r}")
+    return missing
+
+
+def render_author_note(section):
+    """Condensed author note (front signal). The Meta Reveal ("The Author
+    Note") describes one short paragraph before the table of contents: DoD
+    certification, FBI training, Executive Director, twenty industries. It is
+    the DOCX's front ABOUT THE AUTHOR paragraph; the full bio and photo
+    appear once, at the back."""
+    out = ['<section class="author-note-front" style="break-before:page;break-after:page;break-inside:avoid;max-width:640px;margin:4em auto;padding:2em 0;text-align:center;">',
+           '  <p style="font-family:var(--sans);font-size:.65rem;letter-spacing:4px;color:var(--gold);margin-bottom:1.5em">ABOUT THE AUTHOR</p>']
+    for para in section['content']:
+        p = para.strip()
+        if p and not p.isdigit():
+            out.append(f'  <p style="font-size:.9rem;color:#2a2a2a;line-height:1.7;text-align:left">{escape(p)}</p>')
+    out.append('</section>')
+    return '\n'.join(out)
+
+
+def gen_perf_arch_framework():
+    """Ch29 Performance Architecture Framework: four stacked layers, each
+    required before the next (audit m1). Intelligence is the foundation at
+    the bottom; Execution is the visible top layer."""
+    layers = [
+        ('04', 'Execution', 'The actual delivery of each moment: timing, physical control, language, silence. The visible part, and the last layer.'),
+        ('03', 'Calibration', 'What you do in real time as the show unfolds: reading the temperature, adjusting pace, using signals as they appear.'),
+        ('02', 'Architecture', 'How the show is structured to use the intelligence you have: sequencing, where acquisition sits relative to the reveal, the arc.'),
+        ('01', 'Intelligence', 'What you know about the room, the people in it, and the context they arrived from. Everything gathered before you walked in.'),
+    ]
+    rows = ''.join(
+        f'<div class="paf-band paf-{n}"><span class="paf-num">{n}</span>'
+        f'<span class="paf-name">{escape(name)}</span><span class="paf-desc">{escape(desc)}</span></div>'
+        for n, name, desc in layers)
+    return ('<div class="paf-stack"><div class="paf-title">The Performance Architecture Framework</div>'
+            f'{rows}<div class="paf-foot">Each layer is required before the next. Build from the bottom up.</div></div>')
+
 
 def gen_section_badge_strip(tiers, cats):
     """Compact inline tier+category strip shown beneath section headers."""
@@ -1602,7 +1691,7 @@ def gen_six_area_radar():
         ly = cy + (lvl/levels) * r_max * math.sin(ang(0)) - 3
         lvl_labels += (
             f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="8" fill="rgba(42,37,32,.35)"'
-            f' font-family="sans-serif">{lbl}</text>'
+            f' font-family="Montserrat, sans-serif">{html_module.escape(lbl)}</text>'
         )
 
     # ── profile polygons + dots ──
@@ -1635,7 +1724,7 @@ def gen_six_area_radar():
         for j, ln in enumerate(lines):
             cat_labels += (
                 f'<text x="{lx:.1f}" y="{base_y + j*14:.1f}" text-anchor="{anc}"'
-                f' font-size="11" font-weight="700" fill="#2A2520" font-family="sans-serif">{ln}</text>'
+                f' font-size="11" font-weight="700" fill="#2A2520" font-family="Montserrat, sans-serif">{html_module.escape(ln)}</text>'
             )
 
     # ── legend — stacked vertically, centred ──
@@ -1646,9 +1735,9 @@ def gen_six_area_radar():
         legend += (
             f'<rect x="{lx0}" y="{row_y}" width="12" height="12" fill="{color}" rx="2"/>'
             f'<text x="{lx0+18}" y="{row_y+10}" font-size="10.5" font-weight="700"'
-            f' fill="{color}" font-family="sans-serif">{pname}</text>'
+            f' fill="{color}" font-family="Montserrat, sans-serif">{html_module.escape(pname)}</text>'
             f'<text x="{lx0+18}" y="{row_y+23}" font-size="9" fill="rgba(42,37,32,.6)"'
-            f' font-family="sans-serif">{desc}</text>'
+            f' font-family="Montserrat, sans-serif">{html_module.escape(desc)}</text>'
         )
 
     return (
@@ -1657,12 +1746,12 @@ def gen_six_area_radar():
         ' style="width:100%;max-width:540px;display:block;margin:0 auto;">'
         # header
         f'<text x="{SVG_W//2}" y="18" text-anchor="middle" font-size="8" font-weight="700"'
-        ' letter-spacing="2.5" fill="#C9A84C" font-family="sans-serif">'
+        ' letter-spacing="2.5" fill="#C9A84C" font-family="Montserrat, sans-serif">'
         'READING THE WHOLE PERSON AT ONCE</text>'
         f'<text x="{SVG_W//2}" y="40" text-anchor="middle" font-size="18" font-weight="700"'
-        ' fill="#2A2520" font-family="sans-serif">Six Areas to Watch</text>'
+        ' fill="#2A2520" font-family="Montserrat, sans-serif">Six Areas to Watch</text>'
         f'<text x="{SVG_W//2}" y="57" text-anchor="middle" font-size="9" fill="rgba(42,37,32,.55)"'
-        ' font-family="sans-serif">'
+        ' font-family="Montserrat, sans-serif">'
         'Each axis = one dimension of behavior. Farther from center = stronger signal.</text>'
         # radar body
         f'<g transform="translate(0,{HDR_H})">{grid}{spokes}{lvl_labels}{polys}{cat_labels}</g>'
@@ -3510,10 +3599,10 @@ def build_chapter_body(section, global_para_count):
         # "What You Just Did" callout at ~65% through the chapter, except the
         # chapters whose text only makes sense at the top ("You just turned to
         # this chapter…"). Never drop it directly under a section header.
-        if (not wyajd_done and chapter_num in WHAT_YOU_JUST_DID
-                and (i > total * 0.6 or chapter_num in WYAJD_AT_START)
+        if (not wyajd_done and chapter_key in WHAT_YOU_JUST_DID
+                and (i > total * 0.6 or chapter_key in WYAJD_AT_START)
                 and not (parts and parts[-1].startswith('<h3'))):
-            parts.append(gen_wyajd(WHAT_YOU_JUST_DID[chapter_num]))
+            parts.append(gen_wyajd(WHAT_YOU_JUST_DID[chapter_key]))
             wyajd_done = True
 
         # ── FRUIT TO FANG APPLICATION ──
@@ -3789,6 +3878,10 @@ def build_chapter_body(section, global_para_count):
             parts.append(gen_six_area_radar())
             i += 1; global_para_count += 1; continue
 
+        if stripped == 'PERF_ARCH_FRAMEWORK_SVG':
+            parts.append(gen_perf_arch_framework())
+            i += 1; global_para_count += 1; continue
+
         # Spotlight box: find a good quote-like line at ~20-55% through
         if not spotlight_done and i > total * 0.2 and i < total * 0.55:
             if (stripped.startswith(('\u201c', '"', '\u2018')) and len(stripped) < 250 and len(stripped) > 30) or \
@@ -3995,6 +4088,9 @@ def build_chapter_body(section, global_para_count):
             badge_data = SECTION_BADGES.get(fig_key)
             if badge_data:
                 parts.append(gen_section_badge_strip(badge_data['tiers'], badge_data['cats']))
+                _MATCHED_CONFIG_KEYS.add(('SECTION_BADGES', fig_key))
+            if fig_key in FIGURES:
+                _MATCHED_CONFIG_KEYS.add(('FIGURES', fig_key))
 
         i += 1
 
@@ -4014,6 +4110,21 @@ def build_chapter_body(section, global_para_count):
 # ═══════════════════════════════════════════════════════════
 # META REVEAL
 # ═══════════════════════════════════════════════════════════
+
+TITLE_PAGE_HTML = '''<section class="title-page">
+  <div class="tp-brand">DECODE BEHAVIOR</div>
+  <div class="tp-title">BUILT<br>FOR WONDER</div>
+  <div class="tp-subtitle">A Mentalist's Guide to Behavioral Science,<br>Psychological Performance, and Astonishment</div>
+  <div class="tp-edition">EXPANDED EDITION</div>
+  <div class="tp-rule"></div>
+  <div class="tp-author">CHRIS MICHAEL</div>
+  <div class="tp-roles">Behavioral Strategist &middot; Mentalist &middot; Keynote Speaker</div>
+  <div class="tp-roles">Founder, Decode Behavior &middot; Global Institute of Behavior</div>
+  <div class="tp-dots">&middot; &middot; &middot;</div>
+  <div class="tp-quote">&ldquo;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&rdquo;</div>
+  <div class="tp-attribution">&mdash; CHRIS MICHAEL</div>
+</section>'''
+
 
 META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
   <div class="opener-content">
@@ -4492,7 +4603,7 @@ body{counter-reset:page}
 }
 /* ═══ DESIGNED MARKER BLOCKS (tell table, fruit-to-fang, zodiac elements) ═══ */
 .tell-table{margin:1.6em 0}
-.tt-band{border:1px solid var(--rule);border-left:6px solid;border-radius:6px;padding:.9em 1.1em;margin:.7em 0}
+.tt-band{border:1px solid var(--rule);border-left:6px solid;border-radius:6px;padding:.9em 1.1em;margin:.7em 0;break-inside:avoid}
 .tt-green{border-left-color:#3F7E4E;background:rgba(63,126,78,.06)}
 .tt-yellow{border-left-color:#C9A84C;background:rgba(201,168,76,.07)}
 .tt-red{border-left-color:#A83030;background:rgba(168,48,48,.06)}
@@ -4506,7 +4617,7 @@ body{counter-reset:page}
 .f2f-cell{padding:.55em .7em;border-bottom:1px solid var(--rule);font-size:.88em;line-height:1.5}
 .f2f-head{font-family:var(--sans);font-weight:700;font-size:.68em;letter-spacing:.07em;background:rgba(0,0,0,.05)}
 .f2f-table .f2f-cell:nth-last-child(-n+4){border-bottom:none}
-.f2f-flow{border-left:3px solid var(--gold-dim);padding:.2em 0 .2em 1.2em;margin:1.5em 0}
+.f2f-flow{border-left:3px solid var(--gold-dim);padding:.2em 0 .2em 1.2em;margin:1.5em 0;break-inside:avoid}
 .ff-step{font-weight:600;margin:.6em 0}
 .ff-q{font-family:var(--sans);font-weight:700;color:var(--gold-text);letter-spacing:.06em;text-transform:uppercase;font-size:.78em;margin:1em 0 .3em}
 .ff-branch{margin:.3em 0 .3em 1em;font-size:.95em;line-height:1.6}
@@ -4516,11 +4627,9 @@ body{counter-reset:page}
 .fsig-name{font-family:var(--sans);font-weight:700;color:var(--gold-text);margin-bottom:.45em;letter-spacing:.04em}
 .fsig-row{font-size:.93em;margin:.3em 0;line-height:1.6}
 .fsig-label{display:inline-block;min-width:8em;margin-right:.75em;font-family:var(--sans);font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888}
-.zet-table{display:grid;grid-template-columns:.8fr 1.3fr 1.3fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.4em 0 .4em}
 .zet-cell{padding:.55em .8em;border-bottom:1px solid var(--rule);font-size:.95em}
 .zet-head{font-family:var(--sans);font-weight:700;font-size:.7em;letter-spacing:.08em;background:rgba(0,0,0,.05)}
 .zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-text)}
-.zet-table .zet-cell:nth-last-child(-n+3){border-bottom:none}
 .zet-note{font-size:.85em;font-style:italic;color:#666;margin:0 0 1.4em}
 .zet3{margin:1.4em 0 .4em}
 .zet3-block{border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:.55em;break-inside:avoid}
@@ -5354,6 +5463,15 @@ ul.book-list li::before{
   color:rgba(201,168,76,.75);
   font-weight:600;
 }
+.paf-stack{margin:1.6em auto 2em;max-width:560px;break-inside:avoid;page-break-inside:avoid}
+.paf-title{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text);text-align:center;margin-bottom:10px}
+.paf-band{display:grid;grid-template-columns:34px 110px 1fr;gap:10px;align-items:center;margin:0 auto 6px;padding:10px 14px;border-radius:4px;border:1px solid var(--rule);background:var(--page-cream,#f6f1e4)}
+.paf-04{width:70%} .paf-03{width:80%} .paf-02{width:90%} .paf-01{width:100%;border-color:var(--gold);background:rgba(201,168,76,.12)}
+.paf-num{font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--gold)}
+.paf-name{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.paf-desc{font-family:var(--serif);font-size:.84rem;line-height:1.35}
+.paf-foot{font-family:var(--sans);font-size:.6rem;letter-spacing:.08em;color:var(--dim);text-align:center;margin-top:8px}
+@media(max-width:560px){.paf-band{grid-template-columns:28px 1fr;width:100%!important}.paf-desc{grid-column:1/-1}}
 .fcr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.2em 0 1.8em;break-inside:avoid}
 @media(max-width:560px){.fcr-grid{grid-template-columns:1fr}}
 .fcr-card{background:var(--page-cream,#f6f1e4);border:1px solid var(--rule);border-top:3px solid var(--gold);border-radius:4px;padding:12px 14px;break-inside:avoid}
@@ -6146,6 +6264,7 @@ a.toc-ch:hover{opacity:.7}
   break-inside:avoid;page-break-inside:avoid;
 }
 .book-figure img{max-width:100%;height:auto;border-radius:4px;display:inline-block}
+.book-figure svg.inline-figure{width:100%;height:auto;display:block}
 .book-figure .figure-pair{
   display:flex;justify-content:center;align-items:flex-end;gap:4%;
 }
@@ -6607,6 +6726,9 @@ def build_book(manuscript_path, output_path):
   <div class="tagline">D E C O D E \u2003 B E H A V I O R</div>
 </section>''')
 
+    # ── TITLE PAGE (was rendered from the tail of the Acknowledgments) ──
+    html.append(TITLE_PAGE_HTML)
+
     # ── DEFINITIONS ──
     html.append('''<section class="definitions">
   <p class="def-word">wonder</p>
@@ -6619,6 +6741,12 @@ def build_book(manuscript_path, output_path):
   <p class="def-pos">noun</p>
   <p class="def-meaning">The process of constructing something by putting parts together systematically. The deliberate act of assembling knowledge, skill, and experience into a structure that holds under pressure.</p>
 </section>''')
+
+    # ── CONDENSED AUTHOR NOTE: the Meta Reveal says it sits before the TOC ──
+    for _sec in sections:
+        if _sec['type'] == 'author_note':
+            html.append(render_author_note(_sec))
+            break
 
     # ── TOC ──
     html.append(gen_toc(sections))
@@ -6705,35 +6833,10 @@ def build_book(manuscript_path, output_path):
                         t = t.replace(escape(name), f'<span class="ack-name">{escape(name)}</span>')
                     html.append(f'<p>{t}</p>')
             html.append('</section>')
-            # Render the title page block as a styled section
-            if tp_start is not None:
-                html.append('''<section class="title-page">
-  <div class="tp-brand">DECODE BEHAVIOR</div>
-  <div class="tp-title">BUILT<br>FOR WONDER</div>
-  <div class="tp-subtitle">A Mentalist's Guide to Behavioral Science,<br>Psychological Performance, and Astonishment</div>
-  <div class="tp-edition">EXPANDED EDITION</div>
-  <div class="tp-rule"></div>
-  <div class="tp-author">CHRIS MICHAEL</div>
-  <div class="tp-roles">Behavioral Strategist &middot; Mentalist &middot; Keynote Speaker</div>
-  <div class="tp-roles">Founder, Decode Behavior &middot; Global Institute of Behavior</div>
-  <div class="tp-dots">&middot; &middot; &middot;</div>
-  <div class="tp-quote">&ldquo;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&rdquo;</div>
-  <div class="tp-attribution">&mdash; CHRIS MICHAEL</div>
-</section>''')
+            # (the title page is rendered before the TOC from TITLE_PAGE_HTML)
 
         elif stype == 'author_note':
-            # ── CONDENSED AUTHOR NOTE (front signal) ──
-            # The Meta Reveal ("The Author Note") describes this as one short
-            # paragraph: DoD certification, FBI training, Executive Director,
-            # twenty industries. It is the DOCX's front ABOUT THE AUTHOR
-            # paragraph; the full bio and photo appear once, at the back.
-            html.append('<section class="author-note-front" style="break-before:page;break-inside:avoid;max-width:640px;margin:4em auto;padding:2em 0;text-align:center;">')
-            html.append('  <p style="font-family:var(--sans);font-size:.65rem;letter-spacing:4px;color:var(--gold);margin-bottom:1.5em">ABOUT THE AUTHOR</p>')
-            for para in section['content']:
-                p = para.strip()
-                if p and not p.isdigit():
-                    html.append(f'  <p style="font-size:.9rem;color:#2a2a2a;line-height:1.7;text-align:left">{escape(p)}</p>')
-            html.append('</section>')
+            continue  # rendered before the TOC (render_author_note)
 
         elif stype == 'part':
             # The merged DOCX carries "PART X / <chapter number>" page chrome
@@ -6917,6 +7020,7 @@ def build_book(manuscript_path, output_path):
     # Defensive: never let the production note reach output.
     full = re.sub(r'<p>__\*note to the editor:.*?__</p>\n?', '', full, flags=re.DOTALL)
 
+    report_unmatched_config_keys()
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(full)
 
