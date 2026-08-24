@@ -154,14 +154,14 @@ GATE_HTML = """
 <div id="gate-overlay">
   <div id="gate-box">
     <div class="gate-author">CHRIS MICHAEL</div>
-    <div class="gate-title">THE ARCHITECTURE<br>OF WONDER</div>
+    <div class="gate-title">BUILT FOR<br>WONDER</div>
     <div class="gate-subtitle">BEHAVIORAL PROFILING &middot; AUDIENCE PSYCHOLOGY &middot; PERFORMANCE CRAFT</div>
     <div class="gate-rule"></div>
-    <div class="gate-desc">Read the unreleased draft. Enter your name and email to get access.</div>
+    <div class="gate-desc">Enter your name and email to open the book.</div>
     <form id="gate-form" name="readers" method="POST" data-netlify="true">
       <input type="text" id="gate-name" name="name" placeholder="First name" required autocomplete="given-name">
       <input type="email" id="gate-email" name="email" placeholder="Email address" required autocomplete="email">
-      <button type="submit">Read the Draft</button>
+      <button type="submit">Open the Book</button>
     </form>
 
   </div>

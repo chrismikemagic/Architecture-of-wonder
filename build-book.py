@@ -244,16 +244,13 @@ FIGURES = {
         'caption': 'Figure 19.2 — The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
         'rights': 'From BFW_AllRewrites source document',
     },
-    'CHAPTER 19:The Alpha Shift': {
-        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
-        'alt': 'Brain wave state chart with alpha highlighted as target state for hypnotic suggestion',
-        'caption': 'Figure 19.3 — Brain wave states, alpha is your target. Beta is the brain scanning for threats and judging. Alpha is the brain settling in and becoming willing to receive.',
-        'rights': 'From BFW_AllRewrites source document',
-    },
+    # The brain-wave chart is anchored once, at Oscillations and Timing
+    # (docs/10-editing-session-log.md). The former "The Alpha Shift" entry
+    # embedded the same PNG a second time and was removed 2026-08-24 (audit M2).
     'CHAPTER 19:Oscillations and Timing': {
         'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
-        'alt': 'Brain wave states: beta, alpha, theta, delta — frequency and function',
-        'caption': 'Figure 19.4 — The full brain wave reference: beta, alpha, theta, delta — each a different firing rhythm, each a different mode of experience. Keep this chart in mind as you read this section.',
+        'alt': 'Brain wave states chart: delta, theta, alpha, beta, and gamma, with frequency, what each feels like, and what it means for your show. Alpha is marked as the target.',
+        'caption': 'Figure 19.3. The full brain wave reference: delta, theta, alpha, beta, and gamma. Each is a different firing rhythm, each a different mode of experience. Alpha, the highlighted row, is the target state for suggestion. Keep this chart in mind as you read this section.',
         'rights': 'From BFW_AllRewrites source document',
     },
     'CHAPTER 24:The Name Chart': {
@@ -949,6 +946,20 @@ def is_what_you_have_felt(text):
 # PARSER
 # ═══════════════════════════════════════════════════════════
 
+_STRUCTURAL_HEADER_RE = re.compile(
+    r'^(CHAPTER\s+\d+[A-Z]?|PART\s+(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT)'
+    r'|INTRODUCTION|ABOUT THE AUTHOR|GLOSSARY.*|THE META REVEAL)\s*$')
+
+
+def _is_page_chrome_number(lines, i):
+    """True when lines[i] is a bare integer whose next non-blank line is a
+    structural header (CHAPTER n, PART x, ...): a stray DOCX page number."""
+    j = i + 1
+    while j < len(lines) and not lines[j].strip():
+        j += 1
+    return j < len(lines) and bool(_STRUCTURAL_HEADER_RE.match(lines[j].strip()))
+
+
 def parse_manuscript(filepath):
     """Parse the manuscript into structured sections."""
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -1018,7 +1029,7 @@ def parse_manuscript(filepath):
             current_section = {
                 'type': 'chapter',
                 'chapter_num': 0,
-                'part_num': 0,
+                'part_num': current_part,  # "Before You Begin" sits inside Part Five
                 'title': subtitle,
                 'content': [],
                 'chapter_key': 'INTRODUCTION'
@@ -1086,18 +1097,36 @@ def parse_manuscript(filepath):
             i += 1
             continue
 
-        # Detect ABOUT THE AUTHOR
+        # Detect ABOUT THE AUTHOR. The DOCX carries it twice on purpose: a
+        # condensed note after the title block (front signal, rendered as
+        # author-note-front) and the full bio with photo at the back.
         if line == 'ABOUT THE AUTHOR':
+            # A repeated header directly under another (the DOCX once had the
+            # line twice in a row) must not open a second, empty section.
+            if (current_section and current_section['type'] in ('about', 'author_note')
+                    and not any(p.strip() for p in current_section['content'])):
+                i += 1
+                continue
             if current_section:
                 sections.append(current_section)
-            current_section = {
-                'type': 'about',
-                'chapter_num': 100,
-                'part_num': 9,
-                'title': 'About the Author',
-                'content': [],
-                'chapter_key': 'ABOUT'
-            }
+            if not any(s['type'] == 'chapter' for s in sections):
+                current_section = {
+                    'type': 'author_note',
+                    'chapter_num': -3,
+                    'part_num': 0,
+                    'title': 'About the Author',
+                    'content': [],
+                    'chapter_key': 'AUTHOR NOTE'
+                }
+            else:
+                current_section = {
+                    'type': 'about',
+                    'chapter_num': 100,
+                    'part_num': 9,
+                    'title': 'About the Author',
+                    'content': [],
+                    'chapter_key': 'ABOUT'
+                }
             i += 1
             continue
 
@@ -1117,6 +1146,13 @@ def parse_manuscript(filepath):
             if line.startswith('TABLE OF CONTENTS'):
                 while i < len(lines) and '\u2500' not in lines[i]:
                     i += 1
+                i += 1
+                continue
+            # A bare integer sitting directly before the next structural
+            # header is a DOCX page number (page chrome), not body content.
+            # Numbered-card markers ("1" then "Novelty") are never in that
+            # position, so they still reach their generators.
+            if line.isdigit() and _is_page_chrome_number(lines, i):
                 i += 1
                 continue
             current_section['content'].append(lines[i])
@@ -1238,14 +1274,17 @@ def gen_chapter_opener(section):
     legend_data = CHAPTER_LEGEND.get(chapter_key, {})
     legend = _opener_legend(tiers=legend_data.get('tiers'), cats=legend_data.get('cats'))
     ch_id = f'chapter-{ch_id_str}'
+    # Chapters without a HOOK_LINES entry get no hook slot at all: an empty
+    # div between two rules read as a blank on the opener page (audit M11).
+    hook_html = (f'<div class="gold-line thin"></div>\n    <div class="hook-line">{hook}</div>'
+                 if hook.strip() else '')
     return f'''<section class="chapter-opener" id="{ch_id}" data-part="{part_num}">
   <div class="opener-content">
     <div class="part-label">{escape(part_label)}</div>
     <div class="gold-line"></div>
     <div class="chapter-number">{ch_display}</div>
     <h1 class="chapter-title">{escape(title.upper())}</h1>
-    <div class="gold-line thin"></div>
-    <div class="hook-line">{hook}</div>
+    {hook_html}
     {legend}
   </div>
 </section>'''
@@ -4917,6 +4956,8 @@ ul.book-list li::before{
 
 /* ═══ SECTION BREAK ═══ */
 .section-break{text-align:center;color:var(--gold);font-size:1rem;letter-spacing:10px;margin:2.2em 0}
+.about-links{text-align:center;font-family:var(--sans);font-size:.72rem;letter-spacing:2px;margin:1.8em 0 1em;break-inside:avoid}
+.about-links a{display:block;color:var(--gold);text-decoration:none;margin:.55em 0}
 
 /* ═══ GLOSSARY ENTRIES ═══ */
 .gloss-entry{
@@ -6513,10 +6554,16 @@ def build_book(manuscript_path, output_path):
         if stype == 'front_matter':
             html.append(f'<section class="front-matter"><h2>{escape(section["title"].upper())}</h2>')
             content = section['content']
-            # Find where the title page block starts (DECODE BEHAVIOR line)
+            # Find where the DOCX title block starts: "BUILT" directly followed
+            # by "FOR WONDER" (the old "DECODE BEHAVIOR" probe is kept in case
+            # the brand line returns). Everything from there on (subtitle,
+            # author, quote, the "FRONT MATTER" chrome line) is replaced by the
+            # designed title page below.
             tp_start = None
-            for ci, para in enumerate(content):
-                if para.strip() == 'DECODE BEHAVIOR':
+            _stripped = [p.strip() for p in content]
+            for ci, para in enumerate(_stripped):
+                if para == 'DECODE BEHAVIOR' or (
+                        para == 'BUILT' and ci + 1 < len(_stripped) and _stripped[ci + 1] == 'FOR WONDER'):
                     tp_start = ci
                     break
             ack_paras = content[:tp_start] if tp_start is not None else content
@@ -6551,11 +6598,20 @@ def build_book(manuscript_path, output_path):
   <div class="tp-quote">&ldquo;The brain is a prediction machine. Every performance is a negotiation between what the mind expects and what you choose to deliver.&rdquo;</div>
   <div class="tp-attribution">&mdash; CHRIS MICHAEL</div>
 </section>''')
-                # ── CONDENSED AUTHOR NOTE (front signal) ──
-                html.append('''<section class="author-note-front" style="break-before:page;max-width:640px;margin:4em auto;padding:2em 0;text-align:center;">
-  <p style="font-family:var(--sans);font-size:.65rem;letter-spacing:4px;color:var(--gold);margin-bottom:1.5em">ABOUT THE AUTHOR</p>
-  <p style="font-size:.9rem;color:#2a2a2a;line-height:1.7;text-align:left">Chris Michael is a behavioral strategist and corporate mentalist. He holds a DoD-recognized certification in counterintelligence threat assessment, is trained by a founding member of the FBI&rsquo;s Behavioral Analysis Program, and serves as Executive Director of the Global Institute of Behavior. He has delivered behavioral intelligence training for FBI personnel, U.S. Army troops, Fortune 500 organizations, and government defense agencies across more than twenty industries.</p>
-</section>''')
+
+        elif stype == 'author_note':
+            # ── CONDENSED AUTHOR NOTE (front signal) ──
+            # The Meta Reveal ("The Author Note") describes this as one short
+            # paragraph: DoD certification, FBI training, Executive Director,
+            # twenty industries. It is the DOCX's front ABOUT THE AUTHOR
+            # paragraph; the full bio and photo appear once, at the back.
+            html.append('<section class="author-note-front" style="break-before:page;break-inside:avoid;max-width:640px;margin:4em auto;padding:2em 0;text-align:center;">')
+            html.append('  <p style="font-family:var(--sans);font-size:.65rem;letter-spacing:4px;color:var(--gold);margin-bottom:1.5em">ABOUT THE AUTHOR</p>')
+            for para in section['content']:
+                p = para.strip()
+                if p and not p.isdigit():
+                    html.append(f'  <p style="font-size:.9rem;color:#2a2a2a;line-height:1.7;text-align:left">{escape(p)}</p>')
+            html.append('</section>')
 
         elif stype == 'part':
             # The merged DOCX carries "PART X / <chapter number>" page chrome
@@ -6684,12 +6740,31 @@ def build_book(manuscript_path, output_path):
             html.append('<header class="running-header"><span>BUILT FOR WONDER</span><span>ABOUT THE AUTHOR</span></header>')
             html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
             html.append(f'<div style="text-align:center;margin:0 auto 2.5em"><img src="{image_data_uri("resources/metv-images/chris-michael-author.jpg")}" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
+            about_links = []
+
+            def _flush_about_links():
+                if about_links:
+                    html.append('<div class="about-links">' + ''.join(
+                        f'<a href="https://{d}">{escape(d)}</a>' for d in about_links) + '</div>')
+                    about_links.clear()
+
             for para in section['content']:
+                p = para.strip()
                 # The DOCX's Meta Reveal title ("THE STANDING OVATION" + the
                 # diamond) sits at the end of this section; the reveal is
                 # rendered from META_REVEAL_HTML, so drop the stray lines.
-                if para.strip() and para.strip() not in ('THE STANDING OVATION', '\u2726'):
-                    html.append(f'<p>{escape(para.strip())}</p>')
+                if not p or p in ('THE STANDING OVATION', '\u2726') or p.isdigit():
+                    continue
+                # Bare domain lines (decodebehavior.co ...) become one link list.
+                if re.fullmatch(r'[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}', p):
+                    about_links.append(p)
+                    continue
+                _flush_about_links()
+                if is_section_break(p):
+                    html.append('<div class="section-break">\u00b7 \u00b7 \u00b7</div>')
+                    continue
+                html.append(f'<p>{escape(p)}</p>')
+            _flush_about_links()
             html.append('</article>')
 
     # ── META REVEAL ──
