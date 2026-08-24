@@ -2646,10 +2646,11 @@ def process_paragraph(text, part_num=1):
 
     # Numbered step headers: "01 — SHOES", "02 — HANDS", etc.
     # Pattern: 1-2 digits, dash/em-dash, ALL CAPS label (≤4 words)
-    _step_m = re.match(r'^(\d{1,2})\s*[\u2014\u2013\-]+\s*([A-Z][A-Z /]+)$', stripped)
+    _step_m = re.match(r'^(\d{1,2})\s*[\u2014\u2013\-]+\s*([A-Z][A-Z /]+?)\s*(?:\|\s*(.+))?$', stripped)
     if _step_m:
-        _sn, _sl = _step_m.group(1), _step_m.group(2).strip()
-        return f'<div class="step-header"><span class="step-num">{escape(_sn)}</span><span class="step-name">{escape(_sl)}</span></div>'
+        _sn, _sl, _sm = _step_m.group(1), _step_m.group(2).strip(), (_step_m.group(3) or '').strip()
+        _meta = f'<span class="step-meta">{escape(_sm)}</span>' if _sm else ''
+        return f'<div class="step-header"><span class="step-num">{escape(_sn)}</span><span class="step-name">{escape(_sl)}</span>{_meta}</div>'
 
     # Script/italic blocks — [ITALIC]...[/ITALIC] markers from v2 import
     if stripped.startswith('[ITALIC]') and stripped.endswith('[/ITALIC]'):
@@ -3125,6 +3126,15 @@ def build_chapter_body(section, global_para_count):
             i += 1
             continue
 
+        # ── Ch22: "IF YOU REMEMBER NOTHING ELSE" whose panel was never written
+        #    (CH18_IFYRE_PANEL) sits directly above the standard key-read card;
+        #    drop the header with the token (audit m2). ──
+        if (stripped == 'IF YOU REMEMBER NOTHING ELSE' and i + 1 < len(paragraphs)
+                and paragraphs[i + 1].strip() == 'CH18_IFYRE_PANEL'):
+            i += 2
+            global_para_count += 2
+            continue
+
         # ── DESIGNED BLOCK MARKERS (tell table, fruit-to-fang, etc.) ──
         if stripped in MARKER_BLOCKS:
             parts.append(MARKER_BLOCKS[stripped])
@@ -3248,10 +3258,25 @@ def build_chapter_body(section, global_para_count):
         # ── VOLUNTEER SELECTION MATRIX ENTRIES ──
         vm_m = re.match(r'^(High|Low) Confidence \+ (High|Low) Suggestibility$', stripped)
         if vm_m and i + 1 < len(paragraphs):
-            body_para = paragraphs[i + 1].strip()
-            parts.append(gen_volunteer_matrix_entry(stripped, body_para))
-            i += 2
-            global_para_count += 2
+            # DOCX layout per cell: heading / ALL CAPS recommendation / body.
+            # Gather every consecutive cell and lay them out as the 2x2
+            # confidence x suggestibility grid the text describes (audit M5).
+            _cells = []
+            j = i
+            while j < len(paragraphs) and re.match(r'^(High|Low) Confidence \+ (High|Low) Suggestibility$', paragraphs[j].strip()):
+                _head = paragraphs[j].strip()
+                _rec = paragraphs[j + 1].strip() if j + 1 < len(paragraphs) else ''
+                if _rec and _rec == _rec.upper() and len(_rec) < 40 and j + 2 < len(paragraphs):
+                    _body = _rec + '. ' + paragraphs[j + 2].strip()
+                    j += 3
+                else:
+                    _body = _rec
+                    j += 2
+                _cells.append(gen_volunteer_matrix_entry(_head, _body))
+            parts.append('<div class="vm-grid"><div class="vm-axis">CONFIDENCE (rows) \u00d7 SUGGESTIBILITY (columns)</div>'
+                         + ''.join(_cells) + '</div>')
+            global_para_count += (j - i)
+            i = j
             continue
 
         # ── SIX-CATEGORY RADAR CARDS ──
@@ -3305,6 +3330,42 @@ def build_chapter_body(section, global_para_count):
                 parts.append(gen_checklist_section(stripped, bullet_para))
                 i += 2
                 global_para_count += 2
+                continue
+            # Current DOCX form: one short line per item (audit m11).
+            _short = []
+            j = i + 1
+            while j < len(paragraphs):
+                _s = paragraphs[j].strip()
+                if (not _s or len(_s) > 80 or is_section_header(_s) or is_section_break(_s)
+                        or _s.endswith(':') or _s in MARKER_BLOCKS):
+                    break
+                _short.append(_s)
+                j += 1
+            if len(_short) >= 3:
+                parts.append(gen_checklist_section(stripped, ' · '.join(_short)))
+                global_para_count += (j - i)
+                i = j
+                continue
+
+        # ── LEAD-IN LIST: a paragraph ending in ":" followed by 3+ short lines
+        #    ("the best training path is simple:" / "learn the families," ...) ──
+        if stripped.endswith(':') and len(stripped) > 20 and i + 3 < len(paragraphs):
+            _short = []
+            j = i + 1
+            while j < len(paragraphs):
+                _s = paragraphs[j].strip()
+                if (not _s or len(_s) > 60 or is_section_header(_s) or is_section_break(_s) or _s[0] in '\u201c"\u2018'
+                        or _s.startswith(('Performer', 'Spectator')) or _s in MARKER_BLOCKS):
+                    break
+                _short.append(_s)
+                j += 1
+                if _s.endswith('.'):
+                    break
+            if len(_short) >= 3 and all(x[0].islower() or x[-1] in ',.' for x in _short):
+                parts.append(process_paragraph(stripped, part_num))
+                parts.append('<ul class="book-list">' + ''.join(f'<li>{escape(x)}</li>' for x in _short) + '</ul>')
+                global_para_count += (j - i)
+                i = j
                 continue
 
         # ── CERTAINTY FRAME CARDS (Soft/Moderate/Strong/Pinpoint Frame) ──
@@ -3402,7 +3463,7 @@ def build_chapter_body(section, global_para_count):
         context_triggers = ['Stage Context', 'Strolling Context']
         matched_context = None
         for trigger in context_triggers:
-            if stripped == trigger:
+            if stripped.lower().rstrip('.') == trigger.lower():
                 matched_context = trigger
                 break
 
@@ -3426,13 +3487,19 @@ def build_chapter_body(section, global_para_count):
         ]
         matched_error = None
         for trigger in error_triggers:
-            if stripped.startswith(trigger):
+            _tr = trigger.rstrip('.').lower()
+            if stripped.lower().startswith(_tr) and (len(stripped) == len(_tr) or not stripped[len(_tr)].isalpha()):
                 matched_error = trigger.rstrip('.')
                 break
 
         if matched_error:
-            # The rest of the line after the trigger is the body
+            # Legacy form: "Trigger. body" on one line. Current DOCX form: an
+            # ALL CAPS label line with the body on the next paragraph (audit m12).
             body = stripped[len(matched_error) + 1:].strip() if len(stripped) > len(matched_error) + 1 else ''
+            if not body and i + 1 < len(paragraphs) and not is_section_header(paragraphs[i + 1].strip()):
+                body = paragraphs[i + 1].strip()
+                i += 1
+                global_para_count += 1
             parts.append(gen_error_card(matched_error, body))
             i += 1
             continue
@@ -3460,7 +3527,37 @@ def build_chapter_body(section, global_para_count):
         if stripped == 'The Cold-Warm-Hot Spectrum':
             parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)}</h3>')
             parts.append(COLD_WARM_HOT_HTML)
-            i += 1
+            # The DOCX carries the spectrum's source rows (COLD / title / text,
+            # an arrow, WARM ..., HOT ...) right after the header; the graphic
+            # already shows them, so consume them (audit M7).
+            j = i + 1
+            while j < len(paragraphs):
+                _s = paragraphs[j].strip()
+                if _s in ('COLD', 'WARM', 'HOT'):
+                    j += 3
+                elif _s in ('\u2192', '->', '\u2193'):
+                    j += 1
+                else:
+                    break
+            global_para_count += (j - i - 1)
+            i = j
+            continue
+
+        # ── FORCE CATEGORY REFERENCE MAP (Ch21): four heading / value pairs -> 2x2 cards (audit m4) ──
+        if stripped == 'Force Category Reference Map':
+            parts.append(f'<h3 class="section-header sh-standard">{escape(stripped)}</h3>')
+            _cards = []
+            j = i + 1
+            while j + 1 < len(paragraphs):
+                _h = paragraphs[j].strip(); _v = paragraphs[j + 1].strip()
+                if not _h or len(_h) > 40 or '\u00b7' not in _v:
+                    break
+                _items = ''.join(f'<li>{escape(x.strip())}</li>' for x in _v.split('\u00b7') if x.strip())
+                _cards.append(f'<div class="fcr-card"><div class="fcr-head">{escape(_h)}</div><ul>{_items}</ul></div>')
+                j += 2
+            parts.append('<div class="fcr-grid">' + ''.join(_cards) + '</div>')
+            global_para_count += (j - i)
+            i = j
             continue
 
         # ── FOUR PRINCIPLES OF TRANSLATION (collect 4 paras after header) ──
@@ -3488,28 +3585,13 @@ def build_chapter_body(section, global_para_count):
             continue
 
         # ── T4 SIGNAL CARDS / TABLE (SIGNAL N — Name) ──
-        _t4_m = re.match(r'^SIGNAL\s+(\d+)\s*[\u2014\u2013\-]+\s*(.+)$', stripped)
+        # Two heading forms: the legacy "SIGNAL N — Name" and the DOCX's
+        # current "T4: Name" (Ch9 "T4 Signals Removed", four entries). Each is
+        # followed by THE CLAIM / THE RESEARCH / WHAT REMAINS VALID blocks.
+        _t4_m = (re.match(r'^SIGNAL\s+(\d+)\s*[\u2014\u2013\-]+\s*(.+)$', stripped)
+                 or re.match(r'^T4:\s*(?P<t4name>.+)$', stripped))
         if _t4_m and i + 3 < len(paragraphs):
-            sig_num = int(_t4_m.group(1))
-            # In Ch7: inject full T4 table on signal 1, skip all 4 signal blocks
-            if chapter_num == 8:
-                if sig_num == 1:
-                    parts.append(gen_t4_table())
-                # Fast-forward past this signal's CLAIM/RESEARCH/VALID content
-                j = i + 1
-                while j < len(paragraphs):
-                    nxt = paragraphs[j].strip()
-                    # Stop at next SIGNAL marker or a non-T4 section header
-                    if re.match(r'^SIGNAL\s+\d+', nxt):
-                        break
-                    if is_section_header(nxt) and not re.match(r'^(THE CLAIM|THE RESEARCH|WHAT REMAINS)', nxt, re.IGNORECASE):
-                        break
-                    j += 1
-                global_para_count += (j - i)
-                i = j
-                continue
-            # All other chapters (appendix): render detailed card as before
-            sig_name = _t4_m.group(2).strip()
+            sig_name = (_t4_m.group('t4name') if 't4name' in _t4_m.groupdict() else _t4_m.group(2)).strip()
             claim = research = valid = ''
             j = i + 1
             while j < len(paragraphs):
@@ -3541,7 +3623,9 @@ def build_chapter_body(section, global_para_count):
                     j += 1
                     while j < len(paragraphs):
                         cont = paragraphs[j].strip()
-                        if re.match(r'^SIGNAL\s+\d+', cont, re.IGNORECASE):
+                        if re.match(r'^SIGNAL\s+\d+|^T4:', cont, re.IGNORECASE):
+                            break
+                        if is_section_header(cont) or cont in MARKER_BLOCKS:
                             break
                         if cont:
                             valid += ' ' + cont
@@ -3561,6 +3645,29 @@ def build_chapter_body(section, global_para_count):
             parts.append(gen_modality_card(modality, body_para))
             i += 2
             global_para_count += 2
+            continue
+        # Current DOCX form (Ch17 VAK Pacing Framework): a bare "Visual" /
+        # "Auditory" / "Kinesthetic" line followed by label / value pairs
+        # (Language, Eye movement, Gesture, Posture, Breathing) and the odd
+        # unlabeled note ("Often tilts the head"). One card per modality (audit M6).
+        _VAK_LABELS = {'Language', 'Eye movement', 'Gesture', 'Posture', 'Breathing', 'Voice', 'Speech', 'Pace'}
+        if stripped in ('Visual', 'Auditory', 'Kinesthetic') and i + 2 < len(paragraphs) and paragraphs[i + 1].strip() in _VAK_LABELS:
+            _chunks = []
+            j = i + 1
+            while j < len(paragraphs):
+                _s = paragraphs[j].strip()
+                if _s in ('Visual', 'Auditory', 'Kinesthetic') or is_section_header(_s) or len(_s) > 90:
+                    break
+                if _s in _VAK_LABELS and j + 1 < len(paragraphs):
+                    _chunks.append(f'{_s}: {paragraphs[j + 1].strip().rstrip(".")}')
+                    j += 2
+                    continue
+                if _s:
+                    _chunks.append(_s.rstrip('.'))
+                j += 1
+            parts.append(gen_modality_card(stripped, '. '.join(_chunks) + '.'))
+            global_para_count += (j - i)
+            i = j
             continue
 
         # ── BEHAVIORAL READING LINE CARDS (D-Type — Stage/Strolling etc.) ──
@@ -3860,6 +3967,10 @@ def build_chapter_body(section, global_para_count):
 
         processed = process_paragraph(para, part_num)
         if processed:
+            # Never stack two section-break ornaments (audit m14).
+            if 'class="section-break"' in processed and parts and 'class="section-break"' in parts[-1]:
+                i += 1
+                continue
             parts.append(processed)
 
         # ── PARAGRAPH-ANCHORED FIGURES (Ch24 REFLEX photos) — after the anchor paragraph ──
@@ -4151,7 +4262,7 @@ CSS = r'''
 
 :root{
   --navy:#080F1A; --navy2:#0D1E30;
-  --gold:#C9A84C; --gold-dim:rgba(201,168,76,.35);
+  --gold:#C9A84C; --gold-dim:rgba(201,168,76,.35); --gold-text:#8A6B25;
   --blue:#1A8FA8; --cream:#F5F0E8;
   --red:#A83030; --purple:#6B52A0;
   --gray-blue:#8A9AB5; --dim:#3A4A5C;
@@ -4397,18 +4508,18 @@ body{counter-reset:page}
 .f2f-table .f2f-cell:nth-last-child(-n+4){border-bottom:none}
 .f2f-flow{border-left:3px solid var(--gold-dim);padding:.2em 0 .2em 1.2em;margin:1.5em 0}
 .ff-step{font-weight:600;margin:.6em 0}
-.ff-q{font-family:var(--sans);font-weight:700;color:var(--gold-dim);letter-spacing:.06em;text-transform:uppercase;font-size:.78em;margin:1em 0 .3em}
+.ff-q{font-family:var(--sans);font-weight:700;color:var(--gold-text);letter-spacing:.06em;text-transform:uppercase;font-size:.78em;margin:1em 0 .3em}
 .ff-branch{margin:.3em 0 .3em 1em;font-size:.95em;line-height:1.6}
 .ff-note{font-style:italic;font-size:.9em;margin-top:.8em;color:#666}
 .fsig-table{margin:1.5em 0}
 .fsig-card{border:1px solid var(--rule);border-radius:6px;padding:.9em 1.1em;margin:.8em 0}
-.fsig-name{font-family:var(--sans);font-weight:700;color:var(--gold-dim);margin-bottom:.45em;letter-spacing:.04em}
+.fsig-name{font-family:var(--sans);font-weight:700;color:var(--gold-text);margin-bottom:.45em;letter-spacing:.04em}
 .fsig-row{font-size:.93em;margin:.3em 0;line-height:1.6}
 .fsig-label{display:inline-block;min-width:8em;margin-right:.75em;font-family:var(--sans);font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888}
 .zet-table{display:grid;grid-template-columns:.8fr 1.3fr 1.3fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.4em 0 .4em}
 .zet-cell{padding:.55em .8em;border-bottom:1px solid var(--rule);font-size:.95em}
 .zet-head{font-family:var(--sans);font-weight:700;font-size:.7em;letter-spacing:.08em;background:rgba(0,0,0,.05)}
-.zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-dim)}
+.zet-el{font-family:var(--sans);font-weight:700;font-size:.8em;letter-spacing:.06em;color:var(--gold-text)}
 .zet-table .zet-cell:nth-last-child(-n+3){border-bottom:none}
 .zet-note{font-size:.85em;font-style:italic;color:#666;margin:0 0 1.4em}
 .zet3{margin:1.4em 0 .4em}
@@ -4417,7 +4528,7 @@ body{counter-reset:page}
 .zet3-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .zet3-col{padding:.5em .6em;text-align:center}
 .zet3-col+.zet3-col{border-left:1px solid var(--rule)}
-.zet3-el{font-family:var(--sans);font-weight:700;font-size:.62em;letter-spacing:.08em;color:var(--gold-dim);margin-bottom:.15em}
+.zet3-el{font-family:var(--sans);font-weight:700;font-size:.62em;letter-spacing:.08em;color:var(--gold-text);margin-bottom:.15em}
 .zet3-sign{font-size:.95em}
 /* ═══ ERA x VOWEL lookup table (Ch23 sitcom titles, styled after zet3) ═══ */
 .vgrid{margin:1.2em 0 1.4em;border:1px solid var(--rule);border-radius:6px;overflow:hidden;break-inside:avoid;page-break-inside:avoid}
@@ -4432,18 +4543,18 @@ body{counter-reset:page}
 .vg-empty{color:var(--rule)}
 /* Five Cs practice lead-ins + chain strip */
 .fivec-q{margin:1.3em 0 .35em}
-.fivec-q strong{color:var(--gold-dim);letter-spacing:.03em}
+.fivec-q strong{color:var(--gold-text);letter-spacing:.03em}
 .fivec-chain{
   text-align:center;font-family:var(--sans);font-weight:600;
   font-size:.78em;letter-spacing:.14em;color:#777;margin:1.8em 0;
 }
-.fivec-chain span{color:var(--gold-dim);margin:0 .3em}
-.fivec-chain strong{color:var(--gold-dim);letter-spacing:.14em}
+.fivec-chain span{color:var(--gold-text);margin:0 .3em}
+.fivec-chain strong{color:var(--gold-text);letter-spacing:.14em}
 /* Byline credit — “Routine Title” by Author Name */
 .byline-credit{
   font-weight:700;
   font-style:italic;
-  color:var(--gold-dim);
+  color:var(--gold-text);
   margin:0.2em 0 1em;
 }
 /* Failure-label paragraphs — The Nth failure is... */
@@ -5243,6 +5354,14 @@ ul.book-list li::before{
   color:rgba(201,168,76,.75);
   font-weight:600;
 }
+.fcr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.2em 0 1.8em;break-inside:avoid}
+@media(max-width:560px){.fcr-grid{grid-template-columns:1fr}}
+.fcr-card{background:var(--page-cream,#f6f1e4);border:1px solid var(--rule);border-top:3px solid var(--gold);border-radius:4px;padding:12px 14px;break-inside:avoid}
+.fcr-head{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin-bottom:6px}
+.fcr-card ul{list-style:none;margin:0;padding:0}
+.fcr-card li{font-family:var(--sans);font-size:.78rem;padding:3px 0;border-bottom:1px solid var(--rule)}
+.fcr-card li:last-child{border-bottom:none}
+.step-meta{font-family:var(--sans);font-size:.62rem;letter-spacing:.08em;color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
 .step-header{
   display:flex;align-items:center;gap:12px;
   margin:1.6em 0 .6em;
@@ -5557,7 +5676,7 @@ ul.book-list li::before{
 .toc-list{list-style:none}
 .toc-part{
   font-family:var(--sans);font-size:.66rem;font-weight:700;
-  letter-spacing:4px;color:var(--gold-dim);margin:2.6em 0 .9em;
+  letter-spacing:4px;color:var(--gold-text);margin:2.6em 0 .9em;
   padding-top:1.5em;border-top:1px solid var(--rule);
   text-align:center;
 }
@@ -5890,6 +6009,9 @@ a.toc-ch:hover{opacity:.7}
 .vc-works .vc-meta-label{color:var(--blue)}
 .vc-avoid .vc-meta-label{color:#A83030}
 /* ── VOLUNTEER SELECTION MATRIX ── */
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.4em 0 1.8em;break-inside:avoid}
+.vm-axis{grid-column:1/-1;font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--gold-text);text-align:center}
+@media(max-width:560px){.vm-grid{grid-template-columns:1fr}}
 .vm-cell{
   background:var(--vm-bg,linear-gradient(135deg,rgba(42,28,6,.95),rgba(52,36,8,.98)));
   border:1px solid var(--vm-glow,rgba(201,168,76,.15));
@@ -6155,11 +6277,11 @@ a.toc-ch:hover{opacity:.7}
   padding:4px 12px;border-radius:12px;
 }
 [data-c="context"].chain-pill{background:rgba(168,48,48,.18);color:#A83030}
-[data-c="clusters"].chain-pill{background:rgba(232,200,112,.12);color:#E8C870}
+[data-c="clusters"].chain-pill{background:rgba(165,113,26,.16);color:var(--gold-text)}
 [data-c="congruence"].chain-pill{background:rgba(26,143,168,.12);color:var(--blue)}
 [data-c="consistency"].chain-pill{background:rgba(107,82,160,.12);color:var(--purple)}
 [data-c="culture"].chain-pill{background:rgba(201,168,76,.1);color:var(--gold)}
-.chain-read{background:rgba(255,255,255,.08);color:#fff}
+.chain-read{background:var(--body-color,#1B2130);color:var(--page-cream,#F3EEE2)}
 .chain-arrow{color:var(--dim);font-size:.8rem}
 .chain-note{font-size:.65rem;color:var(--gray-blue);margin:0 0 4px;text-indent:0!important;text-align:center!important}
 .chain-note-gold{font-size:.65rem;color:var(--gold);font-style:italic;margin:0;text-indent:0!important;text-align:center!important}
