@@ -164,6 +164,8 @@ After inserting or removing elements, re-read `list(body)` before using position
 - **In the DOCX:** Images are embedded as inline drawings in OOXML format (`word/media/`), with a relationship entry and content type. The image appears in Word/Google Docs.
 - **In the HTML build:** The `FIGURES` dictionary in `build-book.py` maps `"CHAPTER <num>:<section header>"` to figure data. After the build script renders a section header, it checks for a matching figure and injects the `<img>` tag with caption.
 - **Caption deduplication:** The build script skips extracted text lines matching `Figure X.X —` to avoid duplicate captions (one from DOCX extraction, one from the FIGURES config).
+- **Mid-section figures (`PARAGRAPH_FIGURES`, added 2026-08-24):** `FIGURES` only fires after a section header. For an image that sits between body paragraphs (the Chapter 24 REFLEX photos), add an entry to `PARAGRAPH_FIGURES` keyed by the first ~60 characters of the paragraph the image follows. The build emits the figure directly after that paragraph. An optional `pair: {src, alt}` renders a side-by-side two-up (each image max-width 48%) under one shared caption. Every key must fire once per build; a key that never matches prints `[warn] PARAGRAPH_FIGURES anchor never matched`, which is the signal that a DOCX edit rewrote the anchor sentence. Both mechanisms render through `gen_figure_block()`, so they look identical (`.book-figure`, `break-inside:avoid`).
+- **Chapter 24 training-video QR:** the DOCX embeds a "SCAN ME" QR whose payload is a deactivated QR.io redirect, so the build does not ship it and prints `[todo] Ch24: training-video QR not emitted`. The `Password: BuiltForWonder` line renders as a `.video-password` label, not a header. Once Chris supplies the video URL, generate a static QR, save it as `resources/metv-images/reflex-training-qr.png`, and add a `PARAGRAPH_FIGURES` entry keyed on `To help you learn: I have included a QR code`.
 
 ### Important notes
 - The `CHAPTER <num>` in the FIGURES key uses the **parser's chapter number** (from `parse_manuscript()`), not the TOC number. These can differ. When in doubt, run the parser to check.
@@ -174,6 +176,10 @@ After inserting or removing elements, re-read `list(body)` before using position
 | Figure | Chapter | Section | File | Rights |
 |--------|---------|---------|------|--------|
 | 10.1 | The Micro-Expression Matrix | The Seven Expressions | `seven-universal-expressions.png` | Author-owned |
+| 24.1 | REFLEX | after "On the empty hand, the thumb..." (PARAGRAPH_FIGURES) | `reflex-two-fists.jpg` | Unconfirmed (from DOCX) |
+| 24.2 | REFLEX | two-up after the Variations paragraph (PARAGRAPH_FIGURES) | `reflex-variation-index.jpg` + `reflex-variation-two-fingers.jpg` | Unconfirmed (from DOCX) + AI-generated (Gemini watermark cropped) |
+| 24.3 | REFLEX | after "The chin tell." (PARAGRAPH_FIGURES) | `reflex-chin-tell.jpg` | AI-generated (Gemini watermark cropped) |
+| 24.4 | REFLEX | The Name Chart | `reflex-name-chart.svg` | Author-created |
 
 ---
 

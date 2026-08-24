@@ -259,7 +259,11 @@ FIGURES = {
     'CHAPTER 24:The Name Chart': {
         'src': 'resources/metv-images/reflex-name-chart.svg',
         'alt': 'REFLEX Name Chart — organized by gender, name length, alphabet half, and first vowel',
-        'caption': 'Figure 24.1 — REFLEX Name Chart. Cross-reference gender, name length, alphabet half, and first vowel to arrive at the name.',
+        # 24.4: the three photo figures in PARAGRAPH_FIGURES come first in
+        # reading order (two fists 24.1, variations pair 24.2, chin tell 24.3).
+        # The DOCX still carries a "Figure 24.1 —" caption line under the chart;
+        # process_paragraph skips any "Figure N.N —" line, so only this caption renders.
+        'caption': 'Figure 24.4 — REFLEX Name Chart. Cross-reference gender, name length, alphabet half, and first vowel to arrive at the name.',
         'rights': 'Author-created chart',
     },
     # Key: "CHAPTER <num>:<section header text>" → figure data
@@ -307,6 +311,96 @@ FIGURES = {
         'rights': 'AI-generated illustration',
     },
 }
+
+# ═══════════════════════════════════════════════════════════
+# PARAGRAPH-ANCHORED FIGURES
+# FIGURES above fires only after a section header. The Chapter 24 REFLEX
+# photos sit mid-section in the DOCX (inline w:drawing elements that
+# extract_manuscript.py drops), so they are anchored to the exact start of
+# the body paragraph they follow instead.
+#
+# Key: the first ~60 characters of the manuscript paragraph (after strip()).
+#      The figure is emitted directly AFTER that paragraph. Each key fires
+#      once per build; a key that never matches prints a [warn] so a DOCX
+#      edit that rewrites the anchor sentence is caught at build time.
+# Value: {src, alt, caption, rights} for a single image, plus an optional
+#      'pair': {src, alt} to render a side-by-side two-up under one caption.
+# Captions are numbered in reading order within the chapter, so the Name
+# Chart in FIGURES is 24.4.
+# ═══════════════════════════════════════════════════════════
+PARAGRAPH_FIGURES = {
+    # B2: the two fists the text tells the reader to "go look" at.
+    'On the empty hand, the thumb will often rest over the knuckle': {
+        'src': 'resources/metv-images/reflex-two-fists.jpg',
+        'alt': 'Two closed fists side by side: the left fist held lower with the thumb on the side and flat knuckles, the right fist held higher with the thumb resting over the index knuckle and stepped knuckles',
+        'caption': 'Figure 24.1. Find the object. Compare thumb placement (on the side versus over the index knuckle), hand height (which fist sits lower), and knuckle stepping (flat and even versus a staircase). Decide before you read on.',
+        'rights': 'Unconfirmed (from DOCX)',
+    },
+    # B3: the two Variations fists, directly above "Both images above...".
+    'If the thumb is on the knuckle and only the index finger is stepped': {
+        'src': 'resources/metv-images/reflex-variation-index.jpg',
+        'alt': 'A single closed fist with only the index knuckle stepped out from the others',
+        'pair': {
+            'src': 'resources/metv-images/reflex-variation-two-fingers.jpg',
+            'alt': 'A single closed fist with the first and second knuckles stepped out together',
+        },
+        'caption': 'Figure 24.2. Variations of the concealing hand. Left: only the index finger is stepped out, the object is sitting toward the thumb. Right: the first and second fingers are stepped out together. Both profiles are pushed from inside the hand.',
+        'rights': 'Left: Unconfirmed (from DOCX). Right: AI-generated illustration',
+    },
+    # M1: the chin-tell portrait, directly after "The chin tell." sub-header.
+    'The chin tell.': {
+        'src': 'resources/metv-images/reflex-chin-tell.jpg',
+        'alt': 'Seated man with both fists forward on a table, head and eyes tilted slightly away from one hand so the chin points toward the other',
+        'caption': 'Figure 24.3. The chin tell. The top of the head and the eyes tilt slightly away from the concealing hand, which angles the chin off axis. Read the tilt of the head against the line of the two fists.',
+        'rights': 'AI-generated illustration',
+    },
+}
+
+# Keys of PARAGRAPH_FIGURES that fired during the current build (reset per build).
+_PARAGRAPH_FIGURES_FIRED = set()
+
+
+def gen_figure_block(fig):
+    """Render one book-figure: a single image, or a side-by-side two-up when
+    fig has a 'pair', with one shared caption. Used by FIGURES (header-anchored)
+    and PARAGRAPH_FIGURES (paragraph-anchored) so both look identical."""
+    out = ['<div class="book-figure">']
+    if fig.get('pair'):
+        out.append('  <div class="figure-pair">')
+        for img in (fig, fig['pair']):
+            out.append(f'    <img src="{image_data_uri(img["src"])}" alt="{escape(img["alt"])}" />')
+        out.append('  </div>')
+    else:
+        out.append(f'  <img src="{image_data_uri(fig["src"])}" alt="{escape(fig["alt"])}" />')
+    if fig.get('caption'):
+        out.append(f'  <p class="figure-caption">{escape(fig["caption"])}</p>')
+    out.append('</div>')
+    return '\n'.join(out)
+
+
+def paragraph_figure_for(stripped):
+    """Return the PARAGRAPH_FIGURES entry anchored to this paragraph (first
+    match wins, each key fires once per build), or None."""
+    for key, fig in PARAGRAPH_FIGURES.items():
+        if key in _PARAGRAPH_FIGURES_FIRED:
+            continue
+        if stripped.startswith(key):
+            _PARAGRAPH_FIGURES_FIRED.add(key)
+            return fig
+    return None
+
+
+# B1 (graphics audit 2026-08-24): the DOCX embeds a "SCAN ME" QR (word/media/
+# image5.png) after this paragraph, but its payload is a deactivated QR.io
+# redirect (https://qr.link/uXLKtz), so it is deliberately NOT shipped.
+# TODO(Chris): supply the training-video URL (or reactivate the QR.io plan).
+# Then generate a static QR locally, save it as
+# resources/metv-images/reflex-training-qr.png, and add an entry here:
+#   'To help you learn: I have included a QR code': {src, alt, caption, rights}
+# The "Password: BuiltForWonder" line already renders as a .video-password
+# label directly beneath, so nothing else changes.
+_QR_PROMISE_ANCHOR = 'To help you learn: I have included a QR code'
+_PASSWORD_LINE_RE = re.compile(r'^Password:\s*\S+$')
 
 # ═══════════════════════════════════════════════════════════
 # SECTION BADGES — Tier + category badges injected after section headers
@@ -794,6 +888,9 @@ FORCED_HEADERS = {
     'Seconds 10\u201340 \u2014 One Effect',
     'Seconds 40\u201370 \u2014 One Cold Read',
     'Seconds 70\u201390 \u2014 Close With Impossibility, Then Leave',
+    # Ch24 phase-three tells (graphics audit 2026-08-24, M1): short lines that
+    # end in a period, which the heuristic reads as sentences.
+    'The chin tell.', 'The posture reset.',
 }
 
 
@@ -3714,9 +3811,26 @@ def build_chapter_body(section, global_para_count):
             i += 1
             continue
 
+        # ── Ch24 training-video password: a small label, never a header ──
+        # is_section_header would accept "Password: BuiltForWonder" (two Title
+        # Case words). Render it as a centered sans label under the QR promise.
+        if _PASSWORD_LINE_RE.match(stripped):
+            parts.append(f'<p class="video-password">{escape(stripped)}</p>')
+            i += 1
+            continue
+
         processed = process_paragraph(para, part_num)
         if processed:
             parts.append(processed)
+
+        # ── PARAGRAPH-ANCHORED FIGURES (Ch24 REFLEX photos) — after the anchor paragraph ──
+        _pfig = paragraph_figure_for(stripped)
+        if _pfig:
+            parts.append(gen_figure_block(_pfig))
+        if stripped.startswith(_QR_PROMISE_ANCHOR):
+            # See the TODO above PARAGRAPH_FIGURES: no QR ships until Chris supplies the URL.
+            print("  [todo] Ch24: training-video QR not emitted; the DOCX QR points at a deactivated "
+                  "QR.io redirect. Chris must supply the video URL before a QR can be generated.")
 
         # ── FIVE Cs GRAPHIC — inject after first "Context. Clusters. Congruence..." sentence ──
         if not five_cs_injected and stripped == 'Context. Clusters. Congruence. Consistency. Culture.':
@@ -3727,12 +3841,7 @@ def build_chapter_body(section, global_para_count):
         if is_section_header(stripped):
             fig_key = f'{chapter_key}:{stripped}'
             if fig_key in FIGURES:
-                fig = FIGURES[fig_key]
-                parts.append(f'<div class="book-figure" style="text-align:center;margin:2em 0;">')
-                parts.append(f'  <img src="{image_data_uri(fig["src"])}" alt="{fig["alt"]}" style="max-width:100%;height:auto;" />')
-                if fig.get('caption'):
-                    parts.append(f'  <p class="figure-caption" style="font-size:0.85em;color:#666;margin-top:0.5em;font-style:italic;">{fig["caption"]}</p>')
-                parts.append(f'</div>')
+                parts.append(gen_figure_block(FIGURES[fig_key]))
             badge_data = SECTION_BADGES.get(fig_key)
             if badge_data:
                 parts.append(gen_section_badge_strip(badge_data['tiers'], badge_data['cats']))
@@ -5868,6 +5977,29 @@ a.toc-ch:hover{opacity:.7}
   letter-spacing:.08em;text-transform:uppercase;
   color:var(--gold);margin-right:5px;
 }
+/* ── PHOTO FIGURES (FIGURES + PARAGRAPH_FIGURES) ── */
+.book-figure{
+  text-align:center;margin:2em auto;
+  break-inside:avoid;page-break-inside:avoid;
+}
+.book-figure img{max-width:100%;height:auto;border-radius:4px;display:inline-block}
+.book-figure .figure-pair{
+  display:flex;justify-content:center;align-items:flex-end;gap:4%;
+}
+.book-figure .figure-pair img{max-width:48%;flex:0 1 48%;object-fit:contain}
+.book-figure .figure-caption{
+  font-size:.85em;color:var(--dim);font-style:italic;
+  margin:.6em auto 0;max-width:34em;line-height:1.5;
+  text-indent:0!important;text-align:center!important;
+}
+/* Ch24 training-video password: a label, not a header */
+.video-password{
+  font-family:var(--sans);font-size:.62rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  text-align:center!important;text-indent:0!important;
+  margin:.4em 0 1.6em;break-inside:avoid;
+}
+
 /* ── VIDEO EMBEDS ── */
 .video-embed{margin:2em 0;break-inside:avoid}
 .video-label{
@@ -6287,6 +6419,7 @@ def build_book(manuscript_path, output_path):
     print("Parsing manuscript...")
     sections = parse_manuscript(manuscript_path)
     print(f"Found {len(sections)} sections")
+    _PARAGRAPH_FIGURES_FIRED.clear()
 
     html = [f'''<!DOCTYPE html>
 <html lang="en">
@@ -6589,6 +6722,10 @@ def build_book(manuscript_path, output_path):
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(full)
+
+    for _key in PARAGRAPH_FIGURES:
+        if _key not in _PARAGRAPH_FIGURES_FIRED:
+            print(f"  [warn] PARAGRAPH_FIGURES anchor never matched a paragraph: {_key!r}")
 
     print(f"Book written to {output_path}")
     print(f"Size: {len(full):,} chars ({len(full)//1024} KB)")
