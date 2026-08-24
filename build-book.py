@@ -64,7 +64,7 @@ HOOK_LINES = {
     'CHAPTER 14': '"The face performs. The eyes search."',
     'CHAPTER 15': '"The moment after the effect is where the real work happens."',
     'CHAPTER 16': '"Memory is not a recording. It is a story the brain tells itself every time you ask for it."',
-    'CHAPTER 17': '"Partial, rapid, and involuntary: the face tells the truth for a fraction of a second before the managed response arrives."',
+    'CHAPTER 17': '"The experience of being seen by someone who had no reason to see you. That is the target state."',
     'CHAPTER 18': '"You already know more than you think. The trick is knowing what to trust."',
     'CHAPTER 19': '"Hypnosis is not what you think it is. That is why it works."',
     'CHAPTER 20': '"The word they are thinking has not been written down, but you are still about to measure it."',
@@ -211,6 +211,10 @@ WHAT_YOU_JUST_DID = {
     29: "Your eyes moved to this callout before reading the surrounding text. That is the Von Restorff effect\u2009\u2014\u2009your brain prioritized the visually distinct element. Chapter Three taught you this. The book just demonstrated it.",
     37: "You are in the final section. Notice how your reading pace has changed. If it has accelerated, that is the recency effect\u2009\u2014\u2009your brain knows it is close to the end and is already preparing to consolidate.",
 }
+
+# Chapters whose "What You Just Did" text must sit right after the opening
+# paragraph rather than ~65% through the chapter.
+WYAJD_AT_START = {22}
 
 PATTERN_INTERRUPTS = [
     {'number': '250', 'unit': 'MILLISECONDS', 'text': 'The time it takes your brain to form a first impression of a stranger.', 'source': 'Willis & Todorov, 2006', 'wyajd': 'You formed yours of this page in less time than that. What did you notice first\u2009\u2014\u2009the number, or the word? That is salience at work.'},
@@ -733,7 +737,7 @@ DISC_HTML = '''
   <text x="400" y="350" text-anchor="middle" fill="#8A9AB5" font-size="10" letter-spacing="1">DISC</text>
 
   <!-- Footer -->
-  <text x="400" y="610" text-anchor="middle" fill="#3A4A5C" font-size="9">BUILT FOR WONDER  |  CHAPTER 8: THE FOUR PERSONALITIES</text>
+  <text x="400" y="610" text-anchor="middle" fill="#3A4A5C" font-size="9">BUILT FOR WONDER  |  CHAPTER 10: THE FOUR PERSONALITIES</text>
 </svg>
   </div>
 </div>
@@ -771,10 +775,37 @@ def escape(text):
     return t
 
 
+# Exact lines that must render as section headers even though the Title Case
+# heuristic below rejects them (single words, "When …" / "Make …" / "Seconds …"
+# openers, 8+ word titles). Each was flagged as a dropped heading in Spike's
+# 2026-08 editorial pass.
+FORCED_HEADERS = {
+    'Selection', 'One-on-One', 'Consent', 'Variations',
+    'Cheat #1', 'Cheat #2', 'Cheat #3',
+    'Significance-Driven', 'Approval-Driven', 'Acceptance-Driven',
+    'When They Do Not Know Their Element',
+    'When They Know Their Own Figure',
+    'When They Do Not Know Their Own Figure',
+    'When They Actually Know Their Zodiacs',
+    'Make Them Remember the Impossibility, Not What Led You There',
+    'Lines That Make the Thought Feel In-the-Moment Even Though It Is Earlier',
+    'Lines That Redirect the Spectator When They Give You the Wrong Answer',
+    'Seconds 0\u201310 \u2014 Arrive, Scan, Open',
+    'Seconds 10\u201340 \u2014 One Effect',
+    'Seconds 40\u201370 \u2014 One Cold Read',
+    'Seconds 70\u201390 \u2014 Close With Impossibility, Then Leave',
+}
+
+
 def is_section_header(text):
     """Detect if a line is a section header (Title Case or ALL CAPS, short)."""
     stripped = text.strip()
+    if stripped in FORCED_HEADERS:
+        return True
     if not stripped or len(stripped) > 120 or len(stripped) < 4:
+        return False
+    # Script dialogue ("Performer: Deal?") is never a header, however short.
+    if stripped.startswith(('Performer:', 'Spectator:')):
         return False
     # Skip lines that look like regular sentences
     if stripped.endswith('.') and len(stripped) > 60:
@@ -2417,9 +2448,10 @@ def process_paragraph(text, part_num=1):
 
     # Section headers — 2 visual styles based on word count
     if is_section_header(stripped):
-        wc = len(stripped.split())
-        sh_cls = 'sh-section' if wc >= 8 else 'sh-standard'
-        return f'<h3 class="section-header {sh_cls}">{escape(stripped)}</h3>'
+        # One header style regardless of length. The 8+ word "sh-section"
+        # variant (left border, lighter weight) read as inconsistent heading
+        # formatting in editorial review (Spike 2026-08).
+        return f'<h3 class="section-header sh-standard">{escape(stripped)}</h3>'
 
     t = escape(stripped)
 
@@ -2783,6 +2815,11 @@ def build_chapter_body(section, global_para_count):
                 glue = ' ' if (nxt[:1].isupper() or first_word in _STANDALONE_CONTINUATIONS) else ''
                 paragraphs[k:k + 2] = [s + glue + nxt]
                 break
+        # A hook quote that bled into the body with no badge lines around it
+        # (Ch23) survives the junk filter above; the opener already renders
+        # the chapter hook, so drop it.
+        if paragraphs and _is_quoted(paragraphs[0].strip()):
+            paragraphs = paragraphs[1:]
         if not paragraphs:
             return '', global_para_count
 
@@ -2796,6 +2833,12 @@ def build_chapter_body(section, global_para_count):
         header_text = title.upper()
 
     parts.append(f'<header class="running-header"><span>BUILT FOR WONDER</span><span>{escape(header_text)}</span></header>')
+
+    # A body that opens with a section header (Ch25 "A Note Before We Go
+    # Further", Ch28 "WHAT IT FEELS LIKE") renders the header first and
+    # drop-caps the paragraph after it instead of drop-capping the header.
+    while chapter_num > 0 and len(paragraphs) > 1 and is_section_header(paragraphs[0].strip()):
+        parts.append(process_paragraph(paragraphs.pop(0).strip(), part_num))
 
     # First paragraph with drop cap
     first = escape(paragraphs[0].strip())
@@ -2825,6 +2868,9 @@ def build_chapter_body(section, global_para_count):
     _chapter_dupe_norms = {n for n in (
         _norm_dupe(HOOK_LINES.get(chapter_key, '')),
         _norm_dupe(KEY_READS.get(chapter_key, '')),
+        # the DOCX also carries the "What You Just Did" callout text inline;
+        # the build injects the designed callout, so the inline copy is a dupe
+        *[_norm_dupe(t) for t in WHAT_YOU_JUST_DID.values()],
     ) if n}
 
     i = 1
@@ -3068,6 +3114,14 @@ def build_chapter_body(section, global_para_count):
 
         # ── CONCEPT CALLOUT BOXES ──
         # Three-Signal Rule, Foundation: Baseline First, etc.
+        # A bare "KEY CONCEPT" line before one of these duplicates the box's
+        # own label — skip it.
+        if stripped == 'KEY CONCEPT' and i + 1 < len(paragraphs) and any(
+                paragraphs[i + 1].strip().startswith(t) for t in (
+                    'The Three-Signal Rule', 'The Foundation: Baseline First',
+                    'The Leakage Window', 'High-Yield Baseline Signals')):
+            i += 1
+            continue
         concept_triggers = {
             'The Three-Signal Rule': 'CORE RULE',
             'The Foundation: Baseline First': 'FOUNDATION',
@@ -3148,8 +3202,12 @@ def build_chapter_body(section, global_para_count):
         # Auto pattern interrupts DISABLED — use explicit PATTERN_INTERRUPT_40PCT
         # trigger in the manuscript at natural section breaks instead.
 
-        # "What You Just Did" at ~65% through chapter
-        if not wyajd_done and chapter_num in WHAT_YOU_JUST_DID and i > total * 0.6:
+        # "What You Just Did" callout at ~65% through the chapter, except the
+        # chapters whose text only makes sense at the top ("You just turned to
+        # this chapter…"). Never drop it directly under a section header.
+        if (not wyajd_done and chapter_num in WHAT_YOU_JUST_DID
+                and (i > total * 0.6 or chapter_num in WYAJD_AT_START)
+                and not (parts and parts[-1].startswith('<h3'))):
             parts.append(gen_wyajd(WHAT_YOU_JUST_DID[chapter_num]))
             wyajd_done = True
 
@@ -3174,6 +3232,15 @@ def build_chapter_body(section, global_para_count):
             pcount = 0
             while j < len(paragraphs) and pcount < 4:
                 nxt = paragraphs[j].strip()
+                # DOCX layout: "01" / title line / body paragraph, x4
+                if re.fullmatch(r'0?[1-4]', nxt) and j + 2 < len(paragraphs):
+                    _title = paragraphs[j + 1].strip().rstrip('.')
+                    _body = paragraphs[j + 2].strip()
+                    parts.append(gen_principle_card(pcount + 1, f'{_title}. {_body}'))
+                    global_para_count += 3
+                    pcount += 1
+                    j += 3
+                    continue
                 if nxt:
                     parts.append(gen_principle_card(pcount + 1, nxt))
                     global_para_count += 1
@@ -3609,7 +3676,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <p>That was not modesty. That was pre-entry authority architecture. The same principle taught in Chapter 37: the room has already decided something about you before you walk in. The condensed bio planted a credibility signal before a single chapter had a chance to earn it. By the time you reached Part One, your nervous system had already assigned authority status to the voice you were reading. The limbic system does not wait for evidence. It runs on signals. That paragraph was the signal.</p>
 
-  <p>The full About the Author lives at the back. You will find it after this chapter. The front got the signal. The back gets the depth. That structure was deliberate.</p>
+  <p>The full About the Author lives at the back. You read it just before this chapter. The front got the signal. The back gets the depth. That structure was deliberate.</p>
 
   <div class="section-break">· · ·</div>
 
@@ -3663,7 +3730,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <h3 class="section-header meta-header">Your Name</h3>
 
-  <p>In Chapter 4, a sentence started with your first name.</p>
+  <p>In Chapter 3, a sentence started with your first name.</p>
 
   <p>If you are reading the digital edition of this book, you entered your name at the gate. That name was stored and inserted into the text at a specific moment, a moment designed to demonstrate prediction violation at maximum impact. The book teaches that wonder lives in the gap between what the brain expects and what actually occurs. Your brain was predicting the next word in a sentence. It got your own name instead.</p>
 
@@ -3721,7 +3788,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <h3 class="section-header meta-header">This Chapter</h3>
 
-  <p>The book teaches the Peak-End Rule in Chapter 39. Memory of an experience is determined by two moments: the emotional peak and the ending. Duration barely matters. Average emotional level barely matters. Two moments determine what gets carried home.</p>
+  <p>The book teaches the Peak-End Rule in Chapter 37. Memory of an experience is determined by two moments: the emotional peak and the ending. Duration barely matters. Average emotional level barely matters. Two moments determine what gets carried home.</p>
 
   <p>This chapter is the peak. The Meta Reveal, the moment the book turns around and shows you what it did, was placed here because this is where the deepest emotional response occurs. Not at the most technically impressive chapter. Not at the most method-dense section. Here. Where the feeling is strongest.</p>
 
@@ -3936,7 +4003,7 @@ body{counter-reset:page}
 .section-header{
   font-family:var(--sans);font-size:.76rem;font-weight:700;
   letter-spacing:1.5px;color:var(--body-color);
-  display:inline-block;
+  display:block;width:fit-content;
   margin:2.2em 0 .85em;padding-bottom:5px;
   border-bottom:2px solid var(--gold);
 }
@@ -3959,7 +4026,7 @@ body{counter-reset:page}
 
 /* Style B — medium section (4-7 words): standard left-align, bottom border */
 .section-header.sh-standard{
-  display:inline-block;
+  display:block;width:fit-content;
   font-size:.76rem;font-weight:700;letter-spacing:1.5px;
   color:var(--body-color);
   border-bottom:2px solid var(--gold);
@@ -4061,7 +4128,7 @@ body{counter-reset:page}
 .fsig-card{border:1px solid var(--rule);border-radius:6px;padding:.9em 1.1em;margin:.8em 0}
 .fsig-name{font-family:var(--sans);font-weight:700;color:var(--gold-dim);margin-bottom:.45em;letter-spacing:.04em}
 .fsig-row{font-size:.93em;margin:.3em 0;line-height:1.6}
-.fsig-label{display:inline-block;min-width:7.5em;font-family:var(--sans);font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888}
+.fsig-label{display:inline-block;min-width:8em;margin-right:.75em;font-family:var(--sans);font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888}
 .zet-table{display:grid;grid-template-columns:.8fr 1.3fr 1.3fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:1.4em 0 .4em}
 .zet-cell{padding:.55em .8em;border-bottom:1px solid var(--rule);font-size:.95em}
 .zet-head{font-family:var(--sans);font-weight:700;font-size:.7em;letter-spacing:.08em;background:rgba(0,0,0,.05)}
@@ -5160,10 +5227,10 @@ ul.book-list li::before{
 
 .meta-summary{margin:2em 0}
 .meta-row{
-  display:flex;justify-content:space-between;align-items:baseline;
+  display:flex;justify-content:space-between;align-items:baseline;gap:28px;
   padding:9px 0;border-bottom:1px solid rgba(201,168,76,.12);font-size:.88rem;
 }
-.meta-label{font-family:var(--sans);font-size:.58rem;letter-spacing:2px;color:var(--dim);text-transform:uppercase}
+.meta-label{font-family:var(--sans);font-size:.58rem;letter-spacing:2px;color:var(--dim);text-transform:uppercase;text-align:right}
 
 .meta-finale{text-align:center;margin:4.5em 0;padding:45px 20px}
 .finale-1{color:var(--gold);font-size:1.08rem;font-style:italic;margin:0 0 2em!important;text-indent:0!important;text-align:center!important}
@@ -6338,7 +6405,10 @@ def build_book(manuscript_path, output_path):
             html.append('<h3 class="section-header" style="display:block;text-align:center;border:none;padding-bottom:0;margin-bottom:2em">ABOUT THE AUTHOR</h3>')
             html.append(f'<div style="text-align:center;margin:0 auto 2.5em"><img src="{image_data_uri("resources/metv-images/chris-michael-author.jpg")}" alt="Chris Michael" style="max-width:320px;width:100%;border-radius:8px;opacity:.9" /></div>')
             for para in section['content']:
-                if para.strip():
+                # The DOCX's Meta Reveal title ("THE STANDING OVATION" + the
+                # diamond) sits at the end of this section; the reveal is
+                # rendered from META_REVEAL_HTML, so drop the stray lines.
+                if para.strip() and para.strip() not in ('THE STANDING OVATION', '\u2726'):
                     html.append(f'<p>{escape(para.strip())}</p>')
             html.append('</article>')
 
