@@ -6880,7 +6880,7 @@ def build_book(manuscript_path, output_path):
                 'Nadia Ait', 'Lena Sisco', 'Kevin Hamdan', 'Philo',
                 'Jack Thomson', 'Tyler Reed', 'Anthem Flint', 'Michael Carroway',
                 'TJ Tana', 'Ian Rowland', 'Chase Hughes', 'Peter Turner',
-                'Fraser Parker', 'Jerome Finley', 'Ray', 'Pratik',
+                'Fraser Parker', 'Jerome Finley',
             ]
             for para in ack_paras:
                 if para.strip():
