@@ -89,6 +89,11 @@ def image_data_uri(path):
 # ═══════════════════════════════════════════════════════════
 
 HOOK_LINES = {
+    # Interludes (quotes carried by the DOCX openers; audit M10)
+    'CHAPTER 7A':  '"The brain has two voices. One was trained. One was not."',
+    'CHAPTER 21A': '"Most people believe their phone is personal. It is not. That gap is where this works."',
+    'CHAPTER 27A': '"The safest secret is the one they watched you fail to find."',
+    'CHAPTER 37A': '"The room was already yours before you said a word. The question is whether you knew it."',
     'CHAPTER 1':  '"Colin Cloud said something I have not been able to stop thinking about."',
     'CHAPTER 2':  '"What you are about to read was designed to demonstrate its own content. Every page is a performance."',
     'CHAPTER 3':  '"Reality is not what happens. It is what they remember happening."',
@@ -175,6 +180,10 @@ KEY_READS = {
 # tiers: list from ['t1','t2','t3','t4']   cats: list from ['bp','cr','vs','am']
 # BP=Behavioral Profiling  CR=Cold Reading  VS=Verbal/Vocal Signals  AM=Audience Management
 CHAPTER_LEGEND = {
+    'CHAPTER 7A':  {'tiers': ['t1', 't2'],             'cats': ['bp']},
+    'CHAPTER 21A': {'tiers': ['t3'],                   'cats': ['am']},
+    'CHAPTER 27A': {'tiers': ['t1', 't2'],             'cats': ['am']},
+    'CHAPTER 37A': {'tiers': ['t1', 't2', 't3', 't4'], 'cats': ['bp', 'cr', 'vs', 'am']},
     'CHAPTER 1':  {'tiers': ['t1'],             'cats': ['am']},          # The Method Is Not the Point
     'CHAPTER 2':  {'tiers': ['t1'],             'cats': ['am']},          # On Being the Person
     'CHAPTER 3':  {'tiers': ['t1'],             'cats': ['am']},          # Designing for Reality
@@ -1108,6 +1117,46 @@ def parse_manuscript(filepath):
                 i += 1
             continue
 
+        # Detect INTERLUDE CHAPTERS (7A, 21A, 27A, 37A). Unlike numbered
+        # chapters the DOCX has no standalone "CHAPTER 7A" line: the opener is
+        # a bare id or title line, the hook quote and the badge codes, then the
+        # running-header line "CHAPTER 7A — THE LIMBIC SYSTEM". That last line
+        # is the reliable anchor, so open the chapter there and pop the opener
+        # chrome that already landed in the previous section (audit M10).
+        interlude_match = re.match(r'^CHAPTER\s+(\d+[A-Z])\s*[\u2014\u2013-]\s*(.+)$', line)
+        if interlude_match:
+            chapter_id = interlude_match.group(1)
+            chapter_num = int(re.match(r'\d+', chapter_id).group())
+            title = interlude_match.group(2).strip()
+            if current_section is not None:
+                _t = title.strip().lower()
+                _junk = re.compile(
+                    r'^$|^(T[1-4]){1,4}$|^[A-Z]{2}$|^SIGNAL CONFIDENCE TIERS$|^OBSERVATION CATEGORIES$'
+                    r'|^\d+[A-Z]$|^PART [A-Z]+ \u00b7 INTERLUDE$|^INTERLUDE$')
+                while current_section['content']:
+                    _last = current_section['content'][-1].strip()
+                    _is_title = _last.lower() in (_t, f'{chapter_id.lower()} \u2014 {_t}', f'{chapter_id.lower()} - {_t}')
+                    _is_quote = ((_last.startswith('"') or _last.startswith('\u201c'))
+                                 and (_last.endswith('"') or _last.endswith('\u201d')))
+                    _hook = HOOK_LINES.get(f'CHAPTER {chapter_id}', '').strip().strip('"\u201c\u201d').lower()
+                    _is_hook = bool(_hook) and _last.strip('"\u201c\u201d').lower() == _hook
+                    if _junk.match(_last) or _is_title or _is_quote or _is_hook:
+                        current_section['content'].pop()
+                        continue
+                    break
+                sections.append(current_section)
+            current_section = {
+                'type': 'chapter',
+                'chapter_num': chapter_num,
+                'chapter_id': chapter_id,
+                'part_num': current_part,
+                'title': title,
+                'content': [],
+                'chapter_key': f'CHAPTER {chapter_id}',
+            }
+            i += 1
+            continue
+
         # Detect INTRODUCTION
         if line == 'INTRODUCTION':
             subtitle = ''
@@ -1353,6 +1402,10 @@ def gen_chapter_opener(section):
     part_names = {0:'',1:'PART ONE',2:'PART TWO',3:'PART THREE',4:'PART FOUR',
                   5:'PART FIVE',6:'PART SIX',7:'PART SEVEN',8:'PART FIVE'}
     part_label = part_names.get(part_num, '')
+    # 7A / 21A / 27A / 37A are interludes inside their part, and the DOCX
+    # labels 37A's opener "PART FIVE · INTERLUDE"; do that for all four.
+    if part_label and re.match(r'^\d+[A-Z]$', str(section.get('chapter_id', ''))):
+        part_label = f'{part_label} \u00b7 INTERLUDE'
 
     ch_id_str = section.get('chapter_id', str(ch_num))
     if ch_num > 0:
@@ -4344,7 +4397,8 @@ def gen_toc(sections):
             ch_num = s.get('chapter_num', 0)
             ch_id  = s.get('chapter_id', str(ch_num))
             num = 'Intro' if ch_num == 0 else ch_id
-            parts.append(f'<a href="#chapter-{ch_id}" class="toc-ch"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></a>')
+            _cls = 'toc-ch toc-ch-interlude' if re.match(r'^\d+[A-Z]$', str(ch_id)) else 'toc-ch'
+            parts.append(f'<a href="#chapter-{ch_id}" class="{_cls}"><span class="toc-num">{num}</span><span class="toc-title">{escape(s["title"])}</span><span class="toc-dots"></span></a>')
         elif s['type'] == 'glossary':
             parts.append('<div class="toc-part">Glossary</div>')
         elif s['type'] == 'about':
@@ -5792,6 +5846,8 @@ ul.book-list li::before{
   letter-spacing:8px;color:var(--gold);text-align:center;margin-bottom:2.6em;text-transform:uppercase;
 }
 .toc-list{list-style:none}
+.toc-ch-interlude{padding-left:1.6em}
+.toc-ch-interlude .toc-title{font-style:italic}
 .toc-part{
   font-family:var(--sans);font-size:.66rem;font-weight:700;
   letter-spacing:4px;color:var(--gold-text);margin:2.6em 0 .9em;
@@ -6849,11 +6905,20 @@ def build_book(manuscript_path, output_path):
             # Part body content (Field Notes, NPM) — skip first para (used as part desc in opener)
             # Route through build_chapter_body so all special formatters (stage cards, checklist, etc.) apply
             content_paras = [p for p in section['content'] if p.strip()][1:]
+            # Drop the DOCX's part chrome: repeated "PART FIVE" lines and a
+            # second copy of the part subtitle. Without this a part with no real
+            # body renders a page containing only its own title, under two
+            # running headers (build_chapter_body emits its own).
+            _part_re = re.compile(r'^PART\s+(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT)\s*$', re.IGNORECASE)
+            content_paras = [p for p in content_paras
+                             if not _part_re.match(p.strip())
+                             and p.strip().lower() != _psub.lower()]
             if content_paras:
                 part_section_proxy = dict(section)
                 part_section_proxy['content'] = content_paras
+                part_section_proxy['chapter_num'] = -5   # header_text = title.upper()
+                part_section_proxy['title'] = _psub
                 html.append(f'<article class="chapter-body" data-part="{part_num}">')
-                html.append(f'<header class="running-header"><span>BUILT FOR WONDER</span><span>{escape(section.get("subtitle","").upper())}</span></header>')
                 body_html, global_para = build_chapter_body(part_section_proxy, global_para)
                 html.append(body_html)
                 html.append('<div class="page-footer">BUILT FOR WONDER\u2003|\u2003VANISHING INC</div>')
