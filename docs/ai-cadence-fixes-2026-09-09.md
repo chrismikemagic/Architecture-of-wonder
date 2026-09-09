@@ -23,6 +23,8 @@ Source: artifact "Built for Wonder Cadence Pass" (claude.ai/code/artifact/64b040
 
 Reading: the marked fixes remove the audit's named habits (the contrast hammer, fragment stacks, closers, triads) but GPTZero still reads the four dense chapters as fully AI generated, because the sentences outside the flagged spans are the same polished register and the replacements were written by a model too. The one chapter the audit rated as already Chris's voice reads as mostly human. GPTZero returned two different verdicts for the same Ch22 text, so treat any single score as noisy. Pangram (the detector with the best published third-party accuracy) needs an account; the Ch3 text is saved there pending a sign-in by Chris.
 
+Second opinion, QuillBot AI Detector (model v7.1.0, free tier, first 1,120 words of the same Ch3 sample): 0% AI / 100% human-written both before and after the fixes. The two detectors disagree completely on identical text, so neither is a measure of what the audit was fixing.
+
 ## Items the writers flagged for Chris (line numbers are the pre-pass manuscript-extracted.txt)
 
 - 173 (Ch3 Designing for Reality, Ch4 Five Forces): rw rewrote the whole callout; kept only its last sentence since the first sentence is untouched text.
