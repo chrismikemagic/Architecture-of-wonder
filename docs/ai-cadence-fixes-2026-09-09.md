@@ -25,6 +25,8 @@ Reading: the marked fixes remove the audit's named habits (the contrast hammer, 
 
 Second opinion, QuillBot AI Detector (model v7.1.0, free tier, first 1,120 words of the same Ch3 sample): 0% AI / 100% human-written both before and after the fixes. The two detectors disagree completely on identical text, so neither is a measure of what the audit was fixing.
 
+Two control scans after the pass (GPTZero): Chris's own Crystal City stretch in Ch2 (1,000 words, the passage the audit called unmistakably his) scored "uncertain", AI 23% / Mixed 29% / Human 48%. A deliberately loosened, spoken-register model rewrite of the Ch3 opening (873 words, first person, uneven sentence lengths, only in-chapter facts) still scored AI 100%. Conclusion: the detector keys on model-generated text in any register; the passages that pass are the ones built from specifics only Chris has. Style edits by a model will not get there; Chris's own dictated retelling would.
+
 ## Items the writers flagged for Chris (line numbers are the pre-pass manuscript-extracted.txt)
 
 - 173 (Ch3 Designing for Reality, Ch4 Five Forces): rw rewrote the whole callout; kept only its last sentence since the first sentence is untouched text.
