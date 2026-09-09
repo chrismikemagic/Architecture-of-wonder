@@ -245,3 +245,15 @@ This file is cumulative — each session appends to it.
 **Not done (needs Chris):** live Netlify deploy (GATED not copied to v2/index.html; nothing pushed); the ~12 high-severity content issues the audit flagged (Ch3 placeholder, Ch4 habit contradiction, shaky stats, Ch24/Ch25 worked-system math, build-token placeholders).
 
 **Pattern/Lesson:** The manuscript's plain-text `SIGNAL CONFIDENCE TIERS / OBSERVATION CATEGORIES / T1T2 / AM` lines and single-letter drop-cap splits are design tokens the build consumes — audit agents must be told to ignore them or they drown in false positives. Auto-applying audit fixes is the riskiest step: gate every fix through auditor-flag + adversarial verifier + a char-level diff review, and skip run-spanning replacements in mixed-format paragraphs to avoid clobbering inline styling.
+
+
+---
+
+## 2026-09-09: Cadence pass applied
+
+- Read Chris's Fix/Keep marks out of Chrome's localStorage (LevelDB) for the Cadence Pass artifact: 867 Fix, 387 Keep, 344 unmarked.
+- 13 parallel writer agents produced replacements for 861 spans under a truth-first, dash-free rulebook; every output validated for coverage, dashes and drop-cap fit.
+- Applied to the DOCX run-aware (bold key terms preserved where they survive), backup in `backups/Built-for-Wonder.pre-cadence-fixes-2026-09-09.docx`; re-extracted and verified paragraph by paragraph against predictions (0 unexpected changes).
+- Synced build-book.py: 25 hook/key-read entries, Meta Reveal HTML, the Ch9 key-read quote inside the Meta Reveal, the back-blurb dash.
+- Rebuilt both editions; only the two known unresolved markers warn.
+- GPTZero before/after on five chapters: see `docs/ai-cadence-fixes-2026-09-09.md`.

@@ -202,3 +202,16 @@
 ## Content Consolidation (Field Notes)
 
 **Decision:** Consolidated scattered neuroscience content into Part Three (Field Notes) as themed sections rather than numbered chapters. Topics: Attention and Prediction, Neurochemistry and Threat, Memory and Embodiment, Influence and Compliance, Salience and Framing, The Body as Signal.
+
+
+---
+
+## AI-cadence fixes applied (2026-09-09)
+
+**Decision:** Applied every finding Chris marked "Fix" in the Built for Wonder Cadence Pass artifact (867 of 1,599): 861 spans rewritten or cut inside 796 DOCX paragraphs, 15 emptied paragraphs removed, 5 build-script findings applied, hook lines, key reads and the Meta Reveal HTML synced to the new DOCX text. Keep-marked and unmarked findings untouched. Full record, writer notes and the items still needing Chris: `docs/ai-cadence-fixes-2026-09-09.md`.
+
+**Rules the rewrites followed:** no invented facts, names, venues or numbers; no em or en dashes; no exclamation marks; contributor spans got minimal surgery; auditor rewrites used verbatim only where they fit the untouched text around the span.
+
+**Lesson:** The auditor's suggested rewrites were often whole-paragraph rewrites attached to partial spans; used verbatim they would have duplicated untouched sentences. Trim to the span.
+
+**Lesson:** GPTZero still reads the densest chapters as 100% AI before and after span-level fixes; only whole-chapter hand rewriting by Chris would move that needle, and the detector is noisy run to run.

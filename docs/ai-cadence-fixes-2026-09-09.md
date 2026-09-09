@@ -1,0 +1,422 @@
+# AI-cadence fixes applied 2026-09-09
+
+Source: artifact "Built for Wonder Cadence Pass" (claude.ai/code/artifact/64b0401e-53fc-44c0-8cac-d8adcf69c2b5). Chris marked 867 of 1,599 findings Fix, 387 Keep, 344 unmarked (the marks were read from Chrome localStorage key bfw-cadence-marks-v1, partition claude.ai). Only Fix-marked findings were applied. Keep and unmarked findings were left alone.
+
+## What was applied
+
+- 861 flagged spans rewritten inside 796 DOCX paragraphs (36 spans cut outright, 15 of those emptied a whole paragraph, which was removed). 5 build-script-only findings applied in build-book.py (HOOK_LINES Ch42, KEY_READS Ch29 and Ch41; Ch17 hook and Ch18 key read came through their DOCX copies).
+- 504 Fix items had an auditor rewrite; 13 writer agents used those verbatim where they fit and wrote the other 363 from the voice profile and the habit guide (docs/02-voice-and-style-profile.md, review section 2). Rules: no invented facts, names, venues or numbers; no em or en dashes; no exclamation marks; contributor spans got minimal surgery.
+- Bold key terms and italic quotes inside rewritten spans were preserved where the term survived (17 rebuilt, 25 flattened because the term no longer appears).
+- build-book.py synced: 25 HOOK_LINES / KEY_READS entries that mirror changed DOCX lines, 13 Meta Reveal sentences in META_REVEAL_HTML (3 by hand), the Meta Reveal quote of the Ch9 key read, the Meta Reveal duplicate of the Ch37 Peak-End sentence, and the back-blurb em dash (build-generated, so removed under the standing no-dash rule; mirrored into the DOCX line).
+- Manuscript: 145,780 words to 143,390; em dashes in prose 349 to 312 (only the ones inside Fix spans; the global in-book dash pass is still Chris's call).
+- Backup: backups/Built-for-Wonder.pre-cadence-fixes-2026-09-09.docx. Scripts: apply_cadence_fixes_20260909.py, sync_build_config_20260909.py.
+
+## AI-detector check (GPTZero, model 4.9b, free basic scan, 9,300 to 9,800 character prose samples from the start of each chapter)
+
+| Chapter | Before the fixes | After the fixes |
+|---|---|---|
+| Ch1 The Method Is Not the Point | AI 100% | AI 100% |
+| Ch3 Designing for Reality | AI 100% | AI 100% (repeat run: AI 100%) |
+| Ch17 Cold/Warm Reading | AI 100% | AI 100% |
+| Ch22 Making Better Propless Mentalism (control, lowest audit density) | AI 100% first run, AI 21% / Human 73% on a repeat of the identical text | AI 23% / Human 72% |
+| Ch37 What the Room Decides | AI 100% | AI 100% |
+
+Reading: the marked fixes remove the audit's named habits (the contrast hammer, fragment stacks, closers, triads) but GPTZero still reads the four dense chapters as fully AI generated, because the sentences outside the flagged spans are the same polished register and the replacements were written by a model too. The one chapter the audit rated as already Chris's voice reads as mostly human. GPTZero returned two different verdicts for the same Ch22 text, so treat any single score as noisy. Pangram (the detector with the best published third-party accuracy) needs an account; the Ch3 text is saved there pending a sign-in by Chris.
+
+## Items the writers flagged for Chris (line numbers are the pre-pass manuscript-extracted.txt)
+
+- 173 (Ch3 Designing for Reality, Ch4 Five Forces): rw rewrote the whole callout; kept only its last sentence since the first sentence is untouched text.
+- 485 (Ch7A Limbic System, Ch8 Reading Body Language): Dropped rw's first two sentences; the untouched prefix says them. An em dash remains in the untouched prefix of this paragraph ('— calluses, belt wear, shoe condition —').
+- 997 (Ch9 80-Signal System (second half)): rw used verbatim; it restates the 993 rw two paragraphs up, so a human may prefer to cut this closer.
+- 1004 (Ch9 80-Signal System (second half)): No rw; kept the three facts and dropped the countdown shape. A human may prefer to cut the epigraph.
+- 1265 (Ch13 Eyes and Face): Cut. Audit recommends cutting this whole paragraph as a duplicate of the social referencing passage at 1259; that is outside this span, so a human should decide.
+- 1433 (Ch14 Micro-expression Matrix): Adjusted rw: dropped its Here-is-why opener, which is the signposting habit from the guide. Please check.
+- 1437 (Ch14 Micro-expression Matrix): rw verbatim, but the audit notes a fifth of a second contradicts half a second or less at 1350; a human should pick one number.
+- 1532 (Ch15 Closing the Barn Door): rw's 'If the information was' opener would have doubled the untouched 'If you are calling out information that was'; used the rw from 'never written down' onward.
+- 1548 (Ch15 Closing the Barn Door): rw used minus its last two sentences (they duplicate the untouched rest of the paragraph). Added the pre-show example back in a different shape because it is a real example the rw dropped; cut that third sentence if Chris prefers the rw's two.
+- 1553 (Ch15 Closing the Barn Door): Auditor suggested cutting this as a duplicate of Anthem's shower-curtain paragraph at 1494. I could not see 1494, so I folded the staccato into sentences instead; a human should decide whether to cut it outright.
+- 1789 (Ch17 Cold/Warm Reading): auditor asked to verify this is Chase Hughes's own wording before printing it as a quote; I could not verify it
+- 2119 (Ch17 Cold/Warm Reading): vignette is still nameless and venue-less; auditor suggests swapping all three vignettes for real shows, which needs Chris
+- 2233 (Ch18 Contact Mind Reading, Ch19 Hypnosis): Auditor says the original closer (easy vs hunted answers) belongs to another chapter. Replaced with a closer built from this chapter's own points (Trevo's quiet attention, the verify section). Human should confirm or cut.
+- 2336 (Ch18 Contact Mind Reading, Ch19 Hypnosis): Cut per the rw. Closing Thought now ends on the one-line 'That is exactly what makes it so powerful.' from the previous paragraph; human may want to check that still lands.
+- 2689 (Ch21 Psychological Forces (rest), Ch21A Predictive Text): varied the cadence only; the auditor says this list duplicates the die / coin / truth passage a few lines earlier and one of the two should go. Human call.
+- 2739 (Ch22 Making Better Propless Mentalism): KEY PRINCIPLE box kept as a one-liner in flat form; the box itself cannot be removed from this span. Human may prefer to delete the box.
+- 2759 (Ch22 Making Better Propless Mentalism): the auditor also flagged a stitch seam here (the paragraph mentions broadening to 'anything with a unique shape or quality' but the script above never does); outside this span, human call.
+- 2813 (Ch22 Making Better Propless Mentalism): the sentence after this span ('Then have a prepared transition ... keeps you inside the persona') is grammatically broken and outside the span; human should look.
+- 2956 (Ch23 Propless Systems, Ch24 REFLEX (first part)): Trimmed the rw: its last list item duplicated the untouched 'What happens physically...' sentence and 'Rehearse all of it' duplicated the second span's rw.
+- 2959 (Ch23 Propless Systems, Ch24 REFLEX (first part)): Dropped the rw's 'The show is not the arc' half (still the contrast hammer) and named the audience so the pull quote stands alone. Audit says the same line repeats at 2706; a human should check for a build duplication.
+- 2969 (Ch23 Propless Systems, Ch24 REFLEX (first part)): No rw. Replaced the unattributed epigraph with Chris's own line from the chapter, as the auditor suggested. Human should confirm this swap.
+- 3565 (Ch26 Is Pre-show Worth It, Ch27 Pre-show): rw rewrote text outside the span, so used its wording only inside the span. HUMAN CHECK: an em dash sits immediately after this span (' — has no incentive') outside the flagged range and still needs removing by hand.
+- 3807 (Ch27A, Ch28 Digital Pre-show (first part)): Cut: unattributed epigraph in the X-is-the-Y formula and no source to sign it with. If it is Chris's own line, restore it with his name under it.
+- 4383 (Ch32 Room Rises, Ch33 Strolling, Ch34 Room Say Yes): Changed the rw's 'the day before' to 'in advance' because the checklist includes day-of-show items.
+- 4919 (About the Author, Meta Reveal (DOCX copy) + build-book.py META_REVEAL_HTML, HOOK_LINES, KEY_READS + build-gated.py gate copy): HUMAN CHECK: memory decode-behavior.md says the GIB 'Executive Director' title was retracted and stays REMOVED from bios, but this bio, the Likability Paradox paragraph after 4623, and the Meta Reveal at 4953 all state it. Kept it per the truth rule; Chris should confirm.
+- 5035 (About the Author, Meta Reveal (DOCX copy) + build-book.py META_REVEAL_HTML, HOOK_LINES, KEY_READS + build-gated.py gate copy): HUMAN CHECK: rw ('This book read you while you read it. Now you know how.') replaces all three finale lines, but the span is only the first line; the next two ('It was designed to read you while you read it.' and the 'now you know' line) are untouched. Wrote a setup line without 'not just' so the untouched 'It' still has its antecedent. If Chris wants the two-line finale the auditor suggested, cut this line and change the next one to start 'This book was designed...'. Also applies to build-book.py META_REVEAL_HTML .meta-finale.
+- 5040 (About the Author, Meta Reveal (DOCX copy) + build-book.py META_REVEAL_HTML, HOOK_LINES, KEY_READS + build-gated.py gate copy): HUMAN CHECK: rw covers both back-cover sentences but the span is only the first; used the rw's first sentence. The em dash in the untouched second sentence ('the pattern interrupts — all of it was engineered...') is outside the span and still violates the no-dash law, here and in build-book.py line 6423.
+
+## All other writer notes (deviations from the auditor rewrite, mostly trims to avoid repeating untouched text)
+
+- 50: rw restarted with the names, which sit in the untouched text before the span; kept its second sentence and changed 'you guys' to 'these guys' to match the paragraph's third person.
+- 70: no rw; collapsed the mirrored pair into one sentence.
+- 79: rw rewrote the whole paragraph; kept only its middle sentence because the first and last sentences of the paragraph are untouched text.
+- 81: rw's final clause duplicated the untouched text that follows (', performed so completely... inside the bag'); dropped it.
+- 86: rw's first sentence repeated the untouched sentence before the span, and its second could not carry the untouched 'That if you had...' fragment that follows; kept 'belief: that' so the fragment still attaches.
+- 90: rw's opener duplicated the untouched lead-in 'But even before we get there,' and its closing clause duplicated the later untouched 'in the room you're in'; trimmed both and kept a plain 'understand that' so the lead-in still has a verb.
+- 91: rw included the untouched 'And yes...' sentence that follows the span; dropped it.
+- 94: rw restated the untouched 'You wrote something down...' list before the span; kept only the part inside the span.
+- 96: rw opened with the untouched 'No billet, no peek, no fishing.' that precedes the span; dropped it.
+- 97: rw's first two sentences replaced untouched text before the span; kept only its last sentence.
+- 98: rw's third sentence duplicated the untouched 'That is what Colin watched...' sentence after the span; dropped it.
+- 131: rw overlapped the untouched sentences on both sides and named 'the general', who is not in this paragraph or its neighbours; trimmed, used 'everyone else's', and kept 'pathways' so the untouched 'those pathways' still has an antecedent.
+- 132: cut: one-line closer stacked directly on the previous paragraph's punch; nothing else carries the line.
+- 158: rw still carried the 'not X. It is Y' shape; folded it into one sentence.
+- 161: 'twenty minutes ago' in the rw is not in this paragraph or its neighbours; changed to 'earlier'.
+- 162: no rw; folded three closers into two sentences and dropped the 'prediction machine' phrasing.
+- 163: rw's opening 'They' would read as the performers named in the untouched lead-in; changed to 'The audience'.
+- 168: rw's 'they' would attach to 'open loops' in the untouched sentence before; changed to 'the audience'.
+- 169: rw kept the 'is not X. It is Y' shape and used straight quotes; folded into one clause and used curly quotes to match the next paragraph.
+- 176: rw still had the not-just shape; merged its first two sentences and kept 'The room' as the subject so the sentence after 'you reveal it' has an antecedent.
+- 176: rw ended on two stacked fragments; joined them into one sentence.
+- 178: rw's first sentence repeated the untouched 'I have audited over two hundred...' sentence; dropped it.
+- 193: no rw; replaced the generic chapter closer with the chapter's own ring example, as the auditor's why suggested. Worth a look since it is a chapter's last line.
+- 210: rw restated the untouched lead-in and the untouched 'Let me have you read that again.'; kept only the part inside the span.
+- 231: cut: mid-paragraph aphorism; the sentence right after it is the concrete version.
+- 235: rw restated the untouched 'If the room...' lead-in; kept only the part inside the span.
+- 256: No rw; folded the two closers into one sentence and kept the cortisol discharge term.
+- 264: Merged rw's last two fragments with 'but' since the flagged habit was the two-fragment closer.
+- 267: Dropped rw's first sentence, it restated the untouched opener.
+- 285: Dropped rw's 'A prop falls.' (repeats the box header) and its last two sentences (the untouched text says the same thing); 'cortisol modulator' dropped as in rw.
+- 293: rw rewrote the whole paragraph; kept only the part covering the span so the untouched 'But the actual threshold...' still follows. Straight apostrophes to match the paragraph.
+- 302: No source to attribute, so dropped the quote marks per the finding and said the true half once.
+- 309: rw did not keep the drop-cap first word; rewrote to start with 'opamine' and kept rw's second sentence.
+- 310: Dropped rw's first sentence, it restated the untouched 'dominant myth' setup.
+- 321: rw's first two sentences restated the untouched opener; kept its ending, the anticipatory-window term, and the 'experience' idea.
+- 323: Used the habit guide's own example fix for this exact line.
+- 337: Dropped the drop-cap M from rw.
+- 341: Cut; the inattentional blindness definition before it already lands the paragraph.
+- 353: rw overlapped the untouched text on both sides (chapter-title sentence before, 'heavier' sentence after); wrote a one-line bridge that keeps the weapon metaphor instead.
+- 355: Dropped rw's first sentence, it restated the paragraph opener.
+- 370: Folded the fragments; kept the epigraph quote marks for styling. Strip them if 302's are stripped.
+- 377: rw's middle sentence duplicated the untouched tail ('when a person's breathing changes...'); restructured so the tail still attaches.
+- 382: Trimmed rw's tail; the untouched text already says the millions-of-years part.
+- 384: Folded rw's three imperatives into one sentence and dropped its last line; the untouched next sentence says the same thing.
+- 385: Whole one-line transition paragraph cut; remove the empty paragraph.
+- 396: rw rewrote the whole paragraph and added 'a friend's dog', which is not in the text; trimmed to the span and dropped that specific.
+- 417: Adjusted rw's tail so the untouched ', at the exact moment something meaningful appears' still attaches.
+- 422: Trimmed rw's list because the untouched text continues it; kept 'read their every thought' from the original.
+- 423: rw's five fragments folded into three sentences; kept the full term 'Behavioral profiling'.
+- 424: Replaced rw's 'four seconds' (not in the text) with 'a few seconds'.
+- 425: Kept verbatim as the one canonical statement; 445, 480 and 483 reworded so they no longer restate it.
+- 445: Trimmed rw's tail; the untouched text already says 'give you something you can actually act on'.
+- 447: rw's first two sentences restated the armrest example already in the paragraph; kept its closer.
+- 453: Dropped rw's first two sentences; the untouched prefix already says them.
+- 461: Dropped rw's 'The face is rehearsed.'; the untouched 'mask' sentence already says it.
+- 467: Dropped 'NLP' and 'half a second' from rw (neither is in the text) and its first sentence (the untouched text already says not the map).
+- 480: Pull quote reworded as the rule itself so it no longer restates 425.
+- 483: Kept the line the auditor liked and cut the mirror.
+- 486: Dropped rw's first sentence; the untouched 'Notice which hand...' already asks it.
+- 521: Dropped rw's second sentence; the untouched text says it.
+- 935: Trimmed the rw's opening 'Wiseman and his team tested it three ways' because the untouched sentence before already says they tested it.
+- 937: Used only the rw's first two sentences; the rest restated the untouched sentences before and after the span.
+- 944: No rw. Dropped the 'encodes' sentence (the sentence before already says it, and line 951 quotes it as the unsupported claim); trimmed the triple to two.
+- 1011: Adapted the rw to the drop cap (must start with 'eading').
+- 1012: Folded the rw's closing 'Different opener, different pace, different ask' fragment into the sentence to lose the anaphora.
+- 1032: Used only the rw's first sentence; its second restates the untouched sentence that follows.
+- 1033: Swapped the rw's 'getting to the point' for 'being precise' because the paragraph's fourth sentence already says 'when you get to the point'.
+- 1039: Trimmed the rw: its audience-does-not-know and built-for-them sentences restate the untouched second half of the box; swapped C/S and 'first ten seconds' for the S-type, which the chapter itself says to slow down for.
+- 1041: Cut the closing tagline; nothing concrete to land it on and it is the same countdown shape as 977 and 1004.
+- 1055: Adapted the rw to the drop cap (must start with 'he volunteer'); drops 'co-author' as the rw did.
+- 1107: Dropped the rw's first sentence; it restates the untouched opening sentence of the same paragraph (and the 1094 rw).
+- 1119: Used the rw's first sentence only; its other two restate the untouched rest of the paragraph.
+- 1127: Cut; the sentence before it already says the anchor must land when the state peaks, and the previous paragraph closes on the same line.
+- 1132: Dropped the rw's first sentence; the untouched opening of the paragraph already says it.
+- 1150: Reworded the rw's second sentence so it does not repeat the 1147 rw's 'what just happened on their face and what to do about it' three lines earlier.
+- 1151: Cut; one-line restatement of 1150.
+- 1155: Dropped the rw's first sentence; line 1154 directly above already reads 'One signal is noise.'
+- 1159: Cut; the paragraph's first sentence already says each color is paired with a move.
+- 1160: Dropped the rw's first sentence; it restates the two untouched sentences before the span.
+- 1178: Cut. The sentence before it already makes the point, and the same line is reused as the Ch14 epigraph.
+- 1180: Cut instead of using rw: the untouched sentences that follow already say everything the rw says (face = feeling, eyes = thinking, the mentalist cares more about the second), so the rw would double the paragraph.
+- 1190: Adjusted rw: folded its two-sentence not-X-Y pair into one sentence because the flagged pattern was still in it.
+- 1201: Adjusted rw: folded its not-X-Y pair into one flat sentence because the flagged pattern was still in it.
+- 1230: Dropped the rw's third sentence; it duplicated the untouched last sentence of the paragraph (You are using the quality of the search...).
+- 1244: Cut the closer (That lane is closed.).
+- 1246: Adjusted rw: dropped its opener (the untouched sentence before the span already says it) and kept the look-down-when-they-think cue the rw dropped, folded into the second question.
+- 1247: Cut. The previous sentence (the effect has already registered) is the close; the slogan recurs at 1263.
+- 1250: Used only the rw's last two sentences; its first two rewrite the paragraph's opening, which is outside the span.
+- 1255: Cut. The paragraph ends on the concrete thing (a genuine neurological response to that moment).
+- 1259: Adjusted rw: dropped its last sentence (duplicates the untouched next sentence) and kept the original three people without the rw's usually/sometimes ranking, which the text does not support.
+- 1271: Adjusted rw: dropped its first sentence (the untouched sentence before already says the person is containing something) and its last two (they duplicate the untouched closing sentences), re-ended it to fit the mid-sentence span boundary, and un-repeated its could-be triple.
+- 1286: Adjusted rw: folded its three Not/Not/But fragments into one sentence because the flagged anaphora was still in it.
+- 1295: Dropped the rw's second sentence; the untouched sentences after the span already say it (the split, learn to feel it).
+- 1299: Kept a short instruction rather than cutting, because the next paragraph opens with the fragment Not I caught you, which needs this line as its setup.
+- 1302: Adjusted rw: it was written as a whole-paragraph rewrite, but the span starts mid-sentence and the untouched tail already carries its last two sentences, so used its shape inside the span only.
+- 1307: Cut. The rw at 1306 already ends the chapter on Start with the eyes.
+- 1344: Cut. It restates the sentence before it and the Convergence Rule box.
+- 1346: Adjusted rw: reordered and lowercased its two sentences so they follow the colon in the untouched text.
+- 1363: Adjusted rw: folded its You-do-not-need / You-need pair into one sentence because the flagged pattern was still in it.
+- 1371: Trimmed the rw's tail so the untouched clause (and whether it was consistent with the moment that caused it) follows it.
+- 1409: Adjusted rw: un-mirrored its To-the-room / To-you pair because the flagged chiasmus was still in it.
+- 1415: Used only the rw's second sentence; its first restates the untouched Matsumoto and Hwang clause the span hangs off.
+- 1431: Adjusted rw: folded its not-about-X / It-is-about-Y pair into one sentence because the flagged pattern was still in it.
+- 1460: rw used; swapped its 'Ten seconds ago' for the paragraph's own bar detail, since the scene has already moved past ten seconds (applause, three people, the bar).
+- 1464: rw used minus its closing 'because you're building the memory of the event, not just the event' clause, which duplicates the untouched next sentence.
+- 1470: The rw covered the whole paragraph; used its first sentence here and its last sentence in the 191-259 span. Its middle sentence duplicates the untouched middle of the paragraph.
+- 1470: Taken from the 438 rw's closing line, with the 'That's why the recap matters' signpost folded away.
+- 1472: Cut the paired-metaphor runner-up ending; kept the one short closer.
+- 1477: rw used; dropped the word 'conditions' from 'Keep it to three conditions' because the untouched sentence right before already says 'Three well-chosen conditions'.
+- 1481: rw used minus its first sentence ('Speed kills the deduction theory...'), which duplicates the untouched opening of the paragraph.
+- 1484: Whole-paragraph span with no rw; kept the instruction and the structure idea, dropped the architecture/roof maxims.
+- 1496: rw used; kept 'Barn-door work' as the subject instead of 'That's' so the term of art stays and the referent is clear.
+- 1498: rw adjusted: dropped its second sentence (duplicates the untouched closer about forensic reconstruction), removed the 'or' so the untouched trailing fragments ('Comparing... Enjoying themselves.') read as the list continuing, and kept one beat for the 'mentalists fantasize' idea the rw cut.
+- 1499: rw's opening 'Spell out what you could not have done:' did not fit after the untouched 'make it crystal clear that there was'; folded its list into that sentence and kept the rest verbatim.
+- 1519: Contributor span (Kevin Hamdan): removed 'entirely' and cut the three-word closer 'The miss becomes proof.' Nothing else changed; worth Kevin's okay.
+- 1532: rw used minus its first sentence 'It isn't just more material.', which still carries the flagged not-just habit.
+- 1543: rw used minus its third sentence, which duplicates the untouched 'When the experience is strong enough...' sentence that follows.
+- 1549: rw used minus its last sentence, which duplicates the untouched 'None of it produced the answer. But it looks like it could have.'
+- 1570: rw used; reshaped 'If you do the same thing every time' to avoid a fourth consecutive 'If you' opener in the paragraph.
+- 1577: rw used; changed its straight single quotes to the curly double quotes the paragraph uses.
+- 1582: Cut 'Not a speech.' and the 'barn door does not need to be heavy / horse gets out' closer; both restate the previous paragraph (1579), which the auditor flagged as saying the same thing three times.
+- 1584: rw's first sentence duplicates the untouched opening line ('I lost a room once in Austin...'); used only its second sentence.
+- 1584: rw's opening ('The next week I rebuilt my closer around a reveal...') duplicates the untouched text before the span; used its tail and put 'the conditions leading into it' back since the original span carries it.
+- 1588: rw used minus its third sentence ('Get that right and they stop asking how and start asking who'), which duplicates the untouched next sentence.
+- 1591: Cut 'The explanation is the character.'; the untouched sentence before the span ('the method arrives pre-explained') already says it.
+- 1613: rw adjusted so it joins the untouched tail ('and the audience starts telling itself what it believes happened')
+- 1624: rw trimmed: its 'ethical line' clause and 'That is what I am going to try to do here' duplicate the untouched list tail and the next paragraph's opener
+- 1625: cut the mirrored pair; it restated the two sentences before it, kept the closing point
+- 1644: cut the metaphor closer; paragraph now ends on 'more sensitive to framing'
+- 1656: rw folded into one sentence; its two-sentence form kept the 'do not have to X. They just have to Y' shape that was flagged
+- 1688: rw's 'is not just there to clap' kept the not X / Y shape; changed four words
+- 1701: dropped rw's last sentence ('That is really all of it.') because the untouched next paragraph is 'That is enough.'
+- 1706: rw adjusted: folded to one sentence (its 'You are not X. You are Y.' kept the flagged shape) and trimmed so it joins the untouched tail 'for the benefit of the audience's enjoyment and wonder'
+- 1744: rw reordered by three words so the paragraph does not open a third sentence in a row with 'If'
+- 1749: rw trimmed: its first sentence repeated the untouched question before it and its last sentence duplicated the untouched closer after it
+- 1769: rw trimmed: its first and last sentences duplicate the untouched text on either side of the span
+- 1810: rw folded into one sentence (its 'is not cheating. It is' kept the flagged shape) and the term warm reading put back
+- 1819: dropped rw's last sentence; the untouched sentence after the span already says it
+- 1823: contributor span: kept Anthem and Aria's wording, swapped only the abstract-agent clause for the rw's tail. The literal ANTHEM_ARIA: tag is still in the manuscript outside the span (here and at 1826)
+- 1826: contributor span: un-mirrored the because / not because clause, nothing else changed
+- 1831: rw trimmed to fit after the untouched opener that already carries the year and names
+- 1835: dropped the trailing 'is' and comma from the rw; the untouched text after the span begins with ', is that'
+- 1835: rw trimmed: its opening clause repeated the untouched 'What does hold up... is that matching a person's observed communication style' before the span
+- 2120: rw used; capitalized the spoken line after the colon to match how the paragraph renders its other read lines
+- 2130: dropped rw's first sentence; it restated the untouched sentence right before the span
+- 2131: dropped rw's first sentence (the untouched text already says they do not select words randomly) and used 'they' to match the sentence before
+- 2142: rw trimmed to its last sentence; its two CEO sentences restate the untouched text before the span
+- 2144: rw trimmed to its first pair (the rehearse sentences duplicate untouched text after the span) and folded into one sentence
+- 2145: rw restated the untouched opening of the paragraph; used only its new tail idea
+- 2151: cut per rw; the epigraph at 1909 carries the close
+- 2170: Trimmed the rw's last sentence, which repeats the untouched sentence that follows the span.
+- 2172: rw adjusted to fit mid-sentence (span begins after 'a target that was').
+- 2194: Dropped the rw's first sentence: it repeats 'purely mechanical' from the sentence before the span and keeps the hammer.
+- 2197: rw trimmed: 'He is right' is already the previous paragraph, and its tail about accepting the split repeats the untouched sentences after the span.
+- 2201: Folded four 'Someone who' fragments into one; the fifth sits outside the span, so the paragraph keeps two.
+- 2219: rw adjusted: its tail repeats the paragraph's untouched closing sentence, and its opening kept the 'not X. It is Y' hammer.
+- 2224: Dropped the rw's first sentence, which repeats the untouched sentence before the span.
+- 2225: Cut. Third repeat of the 'internal events do not stay internal' aphorism; the tie to the rest of mentalism and the wrist-pressure specific are already in the rewritten 2175, and the section now ends on the 2224 closer.
+- 2250: Reduced to a one-line tie: the previous paragraph already carries the claim, the 'supersedes the external' phrase and the no-script-no-watch list.
+- 2253: rw's opening clause repeats the untouched first sentence of the paragraph; trimmed and kept in third person to match it.
+- 2263: rw adjusted: its first sentence repeats 'trapped between two distortions' before the span, 'It is neither' kept the hammer, and its scanner tail collides with the untouched clause after the span (the span ends mid-sentence).
+- 2286: rw adjusted: its percentage sentence repeats the two untouched sentences before the span, and its opener kept the 'not X. It is Y' hammer. 'Agreeableness predicts almost nothing' comes from the previous paragraph.
+- 2289: Dropped 'measurable' (nothing measured in the paragraph) and 'receiving architecture'.
+- 2338: rw adjusted: dropped the 'Here is what I actually do' signpost and folded its pre-show sentence into the untouched opening sentence, which already says it.
+- 2355: rw folded into one sentence because it still opened on the 'not X. You are Y' hammer.
+- 2365: Cut the one-line pivot paragraph; the rewritten 2366 carries the point and the chapter closer rw restates it ('You set the rhythm, then you count').
+- 2366: rw trimmed: its last two clauses repeat the untouched 'When they take their turn, they follow it' and 'as long as you have not raised their guard'.
+- 2371: Kept short so it does not repeat the 2370 rw, which now says the pace is yours and countable.
+- 2373: Cut the one-line 'the rest is counting' opener; the section starts straight into 'You both close your eyes.'
+- 2400: Used only the rw's last sentence; its first two restate the untouched opening of the box.
+- 2402: rw's 'here is how' signpost swapped for a plain statement.
+- 2437: Used only the rw's middle sentence; its first and last repeat the untouched sentences on either side of the span.
+- 2443: rw lowercased to fit mid-sentence and its 'not planting' half dropped: the paragraph already had four of these hammers.
+- 2443: rw merged into one sentence; dropped 'It is not' and kept 'spontaneous' so 'random' is not said three times with the untouched next sentence.
+- 2443: rw adjusted: dropped 'So' to follow 'In that sense,' and trimmed its last sentence so the untouched closing sentence ('most efficiently cued in that moment') still completes it.
+- 2447: rw adjusted: the span ends mid-sentence, so its speed-up/slow-down clause (already in the untouched tail) was dropped and the sentence left open to run into the original list.
+- 2449: Dropped the rw's first sentence, which repeats the untouched opening sentence of the paragraph.
+- 2522: Dropped the rw's second clause, which repeats the untouched next sentence ('Similar sounds and word-texture can bias retrieval').
+- 2599: cut: the next section reopens on the same framing line, and the paragraph now ends on the participant resisting.
+- 2601: rw adjusted: dropped 'Listen to these two:' because the untouched 'Consider the difference between saying' already introduces the examples, and folded its hardly-ever / It-is pair into one sentence.
+- 2602: rw restated the paragraph's first three sentences; used only its last sentence.
+- 2604: cut: the paragraph already says the force was not wrong, just mismatched, and now ends on the screwdriver picture.
+- 2607: rw adjusted: merged its Some / Some fragment pair into one sentence and dropped the tailing 'not just land'.
+- 2613: rw restated the paragraph's opening and its next sentence; kept only its core so the untouched 'one of those five things' still refers back.
+- 2652: rw adjusted: had to end on 'search' to meet the untouched 'of the group bar singalong category' tail; dropped the Journey line and 'warm' / 'dive', which are not in the paragraph or its neighbours.
+- 2656: no rw; rewrote the epigraph as one flat line.
+- 2663: rw adjusted: dropped 'That is the whole trick.' because the untouched text continues with ', and that gap'.
+- 2664: could not cut outright because the untouched 'and' needs a clause; replaced the inflation with a plain one.
+- 2676: rw rewrote the whole sentence but the span starts mid-sentence after 'personal and individual,'; kept the rw's closing idea as the verb phrase.
+- 2683: rw restated the rest of the paragraph; kept its opener (as 'None of this' to match the list of behaviors) and ended so the untouched ', which is produce...' follows.
+- 2695: rw adjusted: 'every single one of them' already appears in the previous sentence, so the closer says 'they are all'.
+- 2700: cut: standalone poster-line closer; the chapter's real ending is the 'I will be releasing a project' paragraph in the pre-show section.
+- 2705: no rw; epigraph rewritten as one flat line.
+- 2719: rw adjusted to follow the untouched 'and' and to avoid explanations / explaining twice in one sentence.
+- 2720: rw rewrote the whole paragraph; the span is mid-sentence, so used only the rw's phrase for this image.
+- 2727: rw adjusted to follow the untouched comma and to avoid organization / organizing back to back.
+- 2731: rw adjusted: dropped its opening 'They can see you working it out,' which would make a third 'They can see you' in the paragraph.
+- 2732: cut: repeats the section opener seven lines earlier.
+- 2735: rw adjusted: dropped its second sentence because the untouched ', and you need to build it before you build the method' says it.
+- 2740: rw adjusted: folded its two-sentence doesn't-have-to / has-to pair into one sentence.
+- 2741: rw adjusted: dropped its last two sentences because the untouched 'These aren't methods, they're homes for methods' says it.
+- 2742: rw adjusted: 'It' would have pointed at the theory, so named the premise.
+- 2747: rw adjusted: opened with 'Once' instead of a third 'If' in a row.
+- 2747: cut instead of rw: the untouched next sentence ('When the structure is invisible, the choice feels entirely the participant's own') already says what the rw says, and 'rails' would have landed twice in a row.
+- 2765: cut instead of rw: the rw restates the paragraph's own third sentence and the one-line paragraph before it (rapport / humor / logistics), so the cleanest fix was to remove the opener.
+- 2766: rw rewrote the whole paragraph; the span is only the first sentence, so used the rw's first sentence.
+- 2777: rw adjusted: dropped its 'stop looking for the trick' clause because the untouched 'they stop evaluating' sentence follows and would double it.
+- 2778: dropped the mirrored second half; the paragraph already says the correction gives you the data.
+- 2789: rw restated the preceding clause and could not follow the untouched 'and'; kept its meaning as a clause.
+- 2797: rw adjusted: its last clause was replaced with 'is the opposite' so the untouched colon clause ('every statement should be maximally specific...') reads as the elaboration.
+- 2818: rw adjusted: put in past tense to match the untouched sentences around it, and dropped its first and last sentences, which duplicate the untouched opener and closer.
+- 2825: rw adjusted: dropped its last clause because the untouched next sentence ('The audience doesn't separate those two things') says it.
+- 2827: rw trimmed to the span; dropped 'the reason the room felt warm' (not in the paragraph or neighbours) and its closing sentences, which the untouched text covers. The dog is from the previous paragraph.
+- 2832: no rw; 'polite clap' comes from the auditor's note.
+- 2849: cut instead of rw: the rw's content is already in the untouched sentences on both sides and in the paragraph before ('different skills').
+- 2850: rw adjusted: dropped its first sentence because the untouched 'Then two worked systems.' precedes it.
+- 2853: rw adjusted: dropped its 'then work backward' clause because the untouched next sentence says it.
+- 2853: cut: the untouched 'You're no longer trying to simplify...' sentences that follow make the same point without the inflation.
+- 2859: rw rewrote the whole paragraph; used only its sentence for this span since the untouched text around it already carries the rest.
+- 2905: Adjusted the rw's tail to drop the repeated 'fishing' pivot (the flagged habit).
+- 2908: Dropped 'quietly' from the rw (adverb tic) and restored 'or out' from the original.
+- 2921: Dropped the rw's 'patching... see the patch' repeat, which is the same pivot habit as the original.
+- 2922: Dropped the rw's trailing 'That's no good.' because it already follows the span in the untouched text.
+- 2923: The rw covered the whole paragraph; trimmed it to the span. Dropped 'Picture it in detail' since 'in full detail' survives in the untouched last sentence.
+- 2927: The rw folded in the first-names item, which sits in the untouched text after the span; trimmed. The untouched 'A cluster of first names...' now stands as the one clipped beat.
+- 2931: Trimmed the rw to the span boundary; its tail duplicated the untouched 'in a real performance setting... repertoire'.
+- 2939: Trimmed the rw (its last question duplicated the untouched 'What matches the reaction'); made the two questions an indirect statement so they sit with the unpunctuated 'What...' lines that follow outside the span.
+- 2940: No rw. Cut the neighborhood/door mirror; the step now ends on the plain statement.
+- 2953: Un-mirrored the rw's second 'Miss... and you are still fine' sentence and kept the original's 'sensory lane and associated detail'.
+- 3027: Kept 'limbic system' (the term used throughout the chapter) in place of the rw's paraphrase.
+- 3029: Kept 'uncomfortable' from the original; the rw's 'could not hold' overstated it.
+- 3045: Trimmed the rw's final clause; it duplicated the untouched 'which makes the subsequent signals more pronounced'.
+- 3054: Adjusted the rw's first sentence so it follows 'What is worth saying here is that'.
+- 3057: Did not use the rw as written: it dropped the term 'orientation reflex' (the section heading) and duplicated the next untouched sentence.
+- 3068: Wrote 'K to Z' in place of the original's em-dashed 'K—Z'.
+- 3080: Dropped the rw's middle sentence; it duplicated the untouched sentence just before the span.
+- 3089: Trimmed the rw's second clause; it duplicated the untouched 'Compare both hands simultaneously'.
+- 3089: Cut. The rw rewrote the whole entry and everything in it is already covered by the untouched text; the entry now ends on the concrete instruction.
+- 3091: The rw duplicated the untouched sentences before and after the span; kept its middle idea and the term 'orientation reflex'.
+- 3092: Trimmed the rw; its first three sentences duplicated the untouched text.
+- 3118: Dropped the rw's 'Then drop the peek' (duplicated 'stop using it') and folded 'Run it clean' into the sentence.
+- 3122: Trimmed the rw to the span; the rest duplicated the untouched middle sentence and the second span.
+- 3122: No rw. Used the tail of the first span's rw, cut to two items so the triple imperative is gone.
+- 3125: Trimmed the rw; its opening duplicated the untouched first two sentences.
+- 3128: Changed the rw's 'are' to 'will be' to match 'each of them will play a part'.
+- 3131: Cut. Signposting paragraph; the next paragraph starts straight into the engine.
+- 3139: Dropped the rw's first sentence; it duplicated the untouched list.
+- 3173: rw trimmed: its first sentence and last clause duplicate untouched text on either side of the span; kept the original's 'dozens' and the 'blow away magicians' detail.
+- 3174: rw not used: it invented 'the week they filmed it' and 'ten other ways' and kept the 'It is not X. It is Y' hammer. Cut the hammer and the tricolon's filler item instead.
+- 3257: Dropped rw's last sentence: the untouched next sentence already makes the RAISE anagram comparison.
+- 3261: Dropped rw's 'Quick disclaimer before I say this:' because the untouched lead-in 'I want to be clear upfront that' already does that job.
+- 3263: Dropped rw's final clause: it restates the untouched 'They cannot catch a miss...' sentence later in the paragraph.
+- 3290: rw repeated the untouched lead-in 'because those figures are basic animals:', so used its comma list as its own sentence and kept the closing claim.
+- 3331: Dropped rw's third sentence: it duplicates the untouched next paragraph ('Nothing? You continue in the same breath...').
+- 3349: Adjusted rw: dropped its invented 'let's try something' line (not in the manuscript) and its 'That is why' opener, which the previous paragraph does not set up.
+- 3352: rw rewrote the whole paragraph; used only the portion that corresponds to this span.
+- 3390: Contributor span (Rado): removed 'genuinely' and the em dash only; kept 'soul of the routine' as his own phrase.
+- 3458: rw rewrote the whole paragraph; used only the portion that corresponds to this span.
+- 3489: rw verbatim except a curly apostrophe to match the paragraph.
+- 3491: rw's closing clause still had the fact as the agent ('that one fact carries the entire method'); put 'you' back as the subject.
+- 3547: Trimmed rw's second sentence: its lobby/stage detail is not in the paragraph and it restated the untouched next sentence ('They are the same structural idea...').
+- 3561: Dropped rw's first sentence ('They are not ratting you out.'), which kept the contrast hammer.
+- 3564: Contributor card (Colin Cloud): folded the two halves into one sentence, kept both ideas and his wording.
+- 3570: Folded rw's two-sentence hammer into one sentence and kept the original's 'these people' rather than rw's 'forty coworkers'.
+- 3581: Contributor card (Colin Cloud): folded into one sentence, his wording kept.
+- 3588: Cut the closer; the paragraph now ends on 'through craft alone', which already makes the point.
+- 3594: rw not used: 'I have made that bet and lost it' is an anecdote not in the manuscript, and it kept the hammer. Flattened to the true half; 'Bet carefully.' follows untouched.
+- 3596: rw rewrote the whole paragraph; used only the portion that corresponds to this span.
+- 3612: rw's second sentence restated the untouched 'Ideally, the person you spoke to...' sentence that follows; replaced it with the original's intensify idea.
+- 3612: Cut; the paragraph now ends on the concrete 'the audience believes the effect more'.
+- 3613: The em-dash aside earlier in this paragraph ('There are exceptions — ... —') is outside the span and still there.
+- 3615: Dropped rw's second sentence, which restates the untouched sentence right after the span.
+- 3616: Dropped rw's second sentence, which restates the untouched 'lazy pre-show' sentences before the span.
+- 3639: Dropped rw's 'nobody has ever taken it the wrong way', a claim about experience that is not in the manuscript.
+- 3645: Dropped rw's third sentence, which restates the three untouched sentences that follow the span.
+- 3648: Trimmed rw's third item (it duplicated the untouched same-sex partner sentence that follows) and kept the original's 'secret lover' and 'starts an argument' items.
+- 3649: Dropped rw's first sentence ('That is not you being soft.'), which kept the hammer.
+- 3656: rw rewrote sentences outside the span; used only the portion that corresponds to this span.
+- 3657: rw still had the 'not really a method anymore. It is just the show' hammer; kept its true half.
+- 3715: rw rewrote the whole paragraph; used only the portion that corresponds to this span.
+- 3793: rw trimmed: dropped its closing 'if you can.' and the 'now' so it runs into the untouched 'whether you can do now...' clause.
+- 3793: rw kept the 'the one person... the one person' mirror; dropped the second 'the one person'.
+- 3818: rw said 'days before'; kept the original's 'long before' since the lead time is not stated (the Take later in the chapter had thirty minutes).
+- 3824: rw rewrote the whole paragraph; the span is only the last two fragments, so used its closing clause.
+- 3826: rw ended on a period but the untouched 'the couple whose...' clause follows; changed the ending to 'and'. Woman-with-the-program example dropped per the rw.
+- 3839: rw began before the span start; used its tail from 'too specific'.
+- 3841: Cut: mirrored one-line section closer; the previous paragraph now ends on the same point (the craft layer is what no algorithm can do).
+- 3847: rw rewrote the whole paragraph; used its final clause after the untouched opener.
+- 3849: rw dropped the amygdala/hippocampus/prefrontal cortex terms and kept the not-a-trick mirror; kept the terms and glosses (truth rule), folded the three into one sentence, ended on 'being known'.
+- 3853: rw rewrote the whole box; used its last two sentences after the untouched opener, curly quotes to match.
+- 3861: rw verbatim with curly quotes to match the paragraph.
+- 3888: rw's 'Nobody finds that suspicious' did not fit the mid-sentence start; kept the predicate and used the rw's second sentence.
+- 3892: rw covered the whole paragraph; used its first sentence here and its tail for the second span.
+- 3892: No rw of its own; used the tail of the first span's rw, folded 'Every OSINT pro does it. Almost no mentalist does.' into one sentence.
+- 3940: rw rewrote the whole sentence; kept its phrasing inside the relative clause the span covers.
+- 3965: rw covered three sentences; used its middle one, kept 'Instagram' and 'family member's'.
+- 3972: rw kept the It-is-not-X-It-is-Y shape; folded into one sentence with the paragraph's 'don't worry'.
+- 3972: rw's first sentence duplicates the untouched sentence before it; used its second sentence.
+- 3976: rw included the example that sits outside the span; kept 'or a soft statement' so the untouched colon and example still fit.
+- 3979: rw's 'Space it out' and its last sentence do not fit around the untouched colon and tail; kept 'Tier One'.
+- 3980: rw's first sentence duplicates the untouched opener; used its last two.
+- 3983: rw dropped the photograph detail and repeated the untouched next sentence; kept the detail, used the rw's wording otherwise.
+- 3990: rw's 'The same searches' duplicates the untouched subject; used it from 'can be used'.
+- 3992: rw said 'her mom's name'; this paragraph is a general rule, so 'the person they lost'. Kept the paragraph's quoted phrase.
+- 3994: rw's second sentence duplicates the untouched Chapter 15 text; kept 'social door'.
+- 3995: rw's last sentence duplicates the untouched closer; used its first two.
+- 3999: rw's tail duplicates the untouched next sentence; used its first half.
+- 4005: rw's tail duplicates the untouched 'which means...' clause; kept 'The framing is warm'.
+- 4006: rw's last two sentences duplicate the untouched text; 'they' instead of 'people' to avoid 'people... People'.
+- 4008: rw's second sentence duplicates the untouched one and dropped 'five'; kept the numbers.
+- 4010: rw's two sentences folded into one to lose the not-X-Y shape.
+- 4011: Cut: the next paragraph's rw opens with 'Save the name for last', which absorbs this one-line beat.
+- 4012: rw's third sentence says the same as the next span's rw; used its first two.
+- 4012: rw's 'ten times harder' is an invented number; used 'hits way harder' from the previous span's rw.
+- 4014: rw's first two sentences duplicate the untouched text; used its tail folded into one sentence.
+- 4051: Used the rw minus its last sentence, which duplicated the untouched 'easy to understand and follow' tail.
+- 4092: The 'built so that looking at it tells you nothing' idea now lives in the next span's rw, so it is said once instead of twice.
+- 4114: Dropped the rw's first sentence, which restated the untouched opening sentence.
+- 4116: rw verbatim, with curly double quotes to match the manuscript (original had straight single quotes).
+- 4199: Trimmed the rw's opener, which repeated the untouched 'One to three seconds after a Level 4 reveal' line.
+- 4243: Dropped the rw's first sentence, which repeated the untouched sentence right before the span.
+- 4301: Kept the T1 term the rw dropped, and cut the rw's 'saw from across the room' clause since the untouched last sentence already says it.
+- 4307: Dropped the rw's last sentence, which duplicated the untouched closing sentence.
+- 4319: rw still opened with 'not just', so folded its two sentences into one.
+- 4322: Dropped the rw's opening clause, which repeated the untouched sentence before the span.
+- 4325: Kept as a one-liner with a person as the subject. Cut it entirely if you want fewer single-line paragraphs here.
+- 4326: Dropped the rw's first sentence, which repeated the untouched sentence before the span.
+- 4335: Dropped the rw's opening clause, which repeated the untouched sentence before the span.
+- 4380: rw made 'you' the asker, which clashes with the paragraph's 'you' being the one asked; changed to 'the ask'. Kept the term 'compliance architecture' since the chapter reuses it.
+- 4408: Trimmed the rw's 'but they will feel it', which the untouched previous sentence already says.
+- 4424: rw restated the two untouched sentences before the span, so kept only its new ending and cut the construct/maintain closer as the rw did.
+- 4431: Trimmed the rw to fit: dropped its 'The rule:' opener (already in the untouched text) and its last clause, which restates the untouched fourth sentence.
+- 4432: rw kept the 'not X anymore. You are Y' shape, so folded it into one sentence.
+- 4458: Epigraph reworded so it no longer duplicates the body sentence word for word; 'variable' dropped. Drop cap T kept.
+- 4463: Adapted the rw's opener to follow the untouched '60 to 90 seconds because'.
+- 4465: Used only the rw's last sentence; the rest of the rw rewrote untouched text before the span.
+- 4504: rw verbatim with a curly apostrophe to match the paragraph.
+- 4528: Used the rw's middle sentence only; kept the example the rw dropped, and left out the rw's first and last sentences, which restate untouched text on both sides of the span.
+- 4547: Dropped the rw's first sentence (restated the untouched opener) and kept 'pre-show' and 'psychological force' as in the manuscript.
+- 4557: Adapted the rw to follow the untouched 'Every time you scroll' clause; kept 'named, documented' instead of the rw's 'with textbooks'; Firehose of Falsehood made singular per the finding.
+- 4561: Used only the rw's last two sentences; the rest of the rw rewrote untouched text before the span.
+- 4590: Span ends at 'determine'; the closing 'The context changes. The mechanism does not.' hammer is outside the span and untouched.
+- 4599: rw used; folded its first two of three clipped imperatives into one sentence because three in a row is the flagged habit.
+- 4620: rw used; merged its opening 'Nobody touched them. Nobody threatened them.' into one sentence because the No X. No Y. anaphora was the flagged habit.
+- 4627: Amygdala claim kept as a plain statement; no source exists in the paragraph to add.
+- 4664: Item 1576 points at the Meta Reveal copy of this same sentence (the paragraph before line 5013); that copy is not a span in this chunk and still reads the old way.
+- 4713: rw used; changed 'across the tables' to 'across the room' because nothing in the chapter puts this show at tables.
+- 4719: rw used; dropped its last two sentences ('But it has to be real. If you fake it the room can tell.') because the untouched text right after the span already says the conversion has to be real.
+- 4752: rw used; lowercased the start and dropped 'always' because the span begins mid-sentence after 'In almost every position someone holds, however far from yours,'.
+- 4755: rw used; dropped its first sentence because it repeats the untouched sentence before the span ('most people only ever see fragments of').
+- 4764: rw used; leading N omitted because the span starts after it. The auditor says the same dek is repeated as the chapter's opening prose line and again around 4606/4613; those are not spans in this chunk.
+- 4774: rw used; reworded its last clause ('you are not breaking through resistance, the resistance never got built') to remove the not-X-Y contrast.
+- 4779: Cut 'The body leads the mind.'; the auditor notes it is also used as the pull-quote at line 4532, which is not in this chunk.
+- 4802: rw trimmed: its second half repeats the untouched 'You walked in from outside and you are asking a room full of people who have known each other for years' and its 'Good. That is the advantage.' repeats the next paragraph. Kept the drop-cap Y.
+- 4808: Dropped 'Always.'; the auditor says this line is reused as the chapter pull-quote at 4562, which is not in this chunk.
+- 4814: Dropped 'I do not anymore' because the next paragraph makes that turn.
+- 4879: The auditor says the cut sentence is also the Ch41 pull-quote at 4599, which is not in this chunk.
+- 4914: The four-forces-in-a-five-pillars-chapter mismatch the auditor raised cannot be fixed here: the untouched paragraph before this one also says 'These four forces'.
+- 4943: rw used; dropped its first clause ('You felt the cover before you read a word of it') because it repeats the paragraph's first sentence and keeps the flagged 'X before Y' shape.
+- 4953: See the Executive Director note on 4919.
+- 4958: rw covers the whole paragraph but the span is only its first third; used the rw's first sentence. The two remaining 'The colors said:' beats (Parts Three and Four, Part Five) are outside the span and untouched.
+- 4960: Kept the term 'behavioral priming' and broke the 'That is X.' mold; the other ten 'That is X.' closers the auditor lists are not spans in this chunk.
+- 4978: Cut the middle example ('The room that shifted before you spoke'), the vaguest of the three and the one carrying the chapter's repeated 'before' shape.
+- 5009: Cut the mirrored 'used the four forces to teach you the four forces' line; the untouched paragraph before it already says 'It was FATE in action.'
+- 5013: rw adjusted: its 'I put this chapter last on purpose... Because this is where you feel it most' repeats the untouched 'was placed here because this is where the deepest emotional response occurs', and its Not because / Because construction is the habit flagged at 4745 and 4748.

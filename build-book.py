@@ -99,34 +99,34 @@ HOOK_LINES = {
     'CHAPTER 3':  '"Reality is not what happens. It is what they remember happening."',
     'CHAPTER 4':  '"Your audience\u2019s brain is deciding what matters before you open your mouth."',
     'CHAPTER 5':  '"The moment before the reveal is worth more than the reveal itself."',
-    'CHAPTER 6':  '"Dopamine does not reward the outcome. It rewards the anticipation."',
+    'CHAPTER 6':  '"Dopamine rewards the anticipation."',
     'CHAPTER 7':  '"Attention is not given. It is taken."',
     'CHAPTER 8':  '"Authority is not claimed. It is perceived\u2009\u2014\u2009in the first 250 milliseconds."',
     'CHAPTER 9':  '"Every person who walks toward you is already broadcasting."',
-    'CHAPTER 10':  '"Eighty signals. Four tiers. One chain to read them all."',
+    'CHAPTER 10':  '"Eighty signals across four tiers, read as one chain."',
     'CHAPTER 11': '"The volunteer chose you before you chose them."',
     'CHAPTER 13': '"Thought does not stay inside the head. The body has been listening the whole time."',
     'CHAPTER 14': '"The face performs. The eyes search."',
     'CHAPTER 15': '"The moment after the effect is where the real work happens."',
     'CHAPTER 16': '"Memory is not a recording. It is a story the brain tells itself every time you ask for it."',
-    'CHAPTER 17': '"The experience of being seen by someone who had no reason to see you. That is the target state."',
+    'CHAPTER 17': '"The target state is being seen by someone who had no reason to see you."',
     'CHAPTER 18': '"You already know more than you think. The trick is knowing what to trust."',
-    'CHAPTER 19': '"Hypnosis is not what you think it is. That is why it works."',
+    'CHAPTER 19': '"Hypnosis works because it is nothing like the stage version people carry in their heads."',
     'CHAPTER 20': '"The word they are thinking has not been written down, but you are still about to measure it."',
     'CHAPTER 21': '"A free choice is only free until someone designs the menu."',
-    'CHAPTER 22': '"Propless does not mean effortless. It means the work is invisible."',
+    'CHAPTER 22': '"Propless just means the work is invisible."',
     'CHAPTER 23': '"Design backward from the end. The last two minutes are where the hippocampus decides what to keep."',
-    'CHAPTER 24': '"The body reveals what the mind is trying to protect."',
+    'CHAPTER 24': '"Don’t move. Look at your thumbs."',
     'CHAPTER 25': '"The method disappears when the frame is large enough."',
-    'CHAPTER 28': '"The most powerful thing you can know about a person is the thing they never thought to hide."',
+    'CHAPTER 28': '',
     'CHAPTER 35': '"Your introduction is the first frame the audience receives. Control it."',
     'CHAPTER 36': '"The booking was won or lost before you picked up the phone."',
     'CHAPTER 37': '"The room has already decided something about you before you walk in."',
     'CHAPTER 38': '"These tools are genuinely powerful. That makes the question of how they are used more important than how they work."',
-    'CHAPTER 39': '"Novelty plus authority equals influence. And why compliance begins in the body before it reaches the mind."',
+    'CHAPTER 39': '"Novelty plus authority is the whole formula, and compliance starts in the body before the mind has a say."',
     'CHAPTER 40': '"You have no title in this room. That is the design, not the limitation."',
     'CHAPTER 41': '"Authority is not claimed. It is broadcast. Through behavior, pace, and the consistency of every signal you send."',
-    'CHAPTER 42': '"The five pillars of authority. And why the most powerful signal you can broadcast is the one that requires no words."',
+    'CHAPTER 42': '"Authority rests on five pillars, and the strongest signal you can send is the one that needs no words."',
     'GLOSSARY':   '"The language shapes the thinking. Know the words."',
 }
 
@@ -137,42 +137,42 @@ KEY_READS = {
     'CHAPTER 12': 'Green means go. Yellow means reframe. Red means leave the route entirely.',
     'CHAPTER 26': 'The work you do before the room fills is still the work.',
     'CHAPTER 27': 'Gather early. Reveal late. Let time erase the connection.',
-    'CHAPTER 29': 'Seven stages. One arc. Design backward from the memory you want to leave.',
+    'CHAPTER 29': 'Seven stages, one arc, built from the ending backward.',
     'CHAPTER 30': 'If they are looking for the method, the architecture failed.',
     'CHAPTER 31': 'Silence is not a gap in the patter. It is the loudest line you have.',
     'CHAPTER 32': 'Control the sound, and you control the space.',
     'CHAPTER 33': 'The walk is the show. Everything after is confirmation.',
     'CHAPTER 34': 'Design the compliance. Then act surprised when they comply.',
-    'CHAPTER 3':  'Design the memory, and you design the experience.',
-    'CHAPTER 4':  'Salience is not what you show. It is what they cannot ignore.',
+    'CHAPTER 3':  'Hand the ring back early and you have already decided what they will remember about the night.',
+    'CHAPTER 4':  'Salience is whatever the room cannot help looking at. Your job is to be that.',
     'CHAPTER 5':  'Tension is not the enemy. Boredom is.',
-    'CHAPTER 6':  'Delay is not cruelty. It is craft.',
+    'CHAPTER 6':  'Delay is craft.',
     'CHAPTER 7':  'You cannot give someone an experience they were not paying attention for.',
-    'CHAPTER 8':  'Credibility is not what you say. It is what they decide before you say it.',
-    'CHAPTER 9':  'The read is never one signal. The read is the chain.',
-    'CHAPTER 10':  'Eighty signals. Five filters. One practice.',
+    'CHAPTER 8':  'They have already decided whether to believe you before you open your mouth.',
+    'CHAPTER 9':  'One signal is a guess. Three that agree is a read.',
+    'CHAPTER 10':  '',
     'CHAPTER 11': 'Handle the person, not the trick.',
-    'CHAPTER 13': 'Intention is not invisible. It is just smaller than you were looking for.',
-    'CHAPTER 14': 'Seven expressions. One-fifth of a second. That is the window.',
+    'CHAPTER 13': 'Intention is visible, just smaller than you were looking for.',
+    'CHAPTER 14': 'Seven expressions, and you get about a fifth of a second to catch them. That is the whole window you are working with.',
     'CHAPTER 15': 'Close the moment before they close it for you.',
     'CHAPTER 16': 'The memory of the effect matters more than the effect itself.',
     'CHAPTER 17': 'The best cold read is a warm observation delivered cold.',
-    'CHAPTER 18': 'Once you can see the difference between an easy answer and a hunted one, you are no longer just watching thought. You are shaping what the search reveals.',
-    'CHAPTER 19': 'The trance state is not extraordinary. It is the brain doing what it does best.',
-    'CHAPTER 20': 'Influence and counting. That is the whole secret of The Babel Count.',
+    'CHAPTER 18': 'Stay quiet enough to feel the wrist, and check twice before you commit to the reveal.',
+    'CHAPTER 19': 'Trance is just the brain doing what it already does every day.',
+    'CHAPTER 20': 'That is really all The Babel Count is. You set the rhythm, then you count.',
     'CHAPTER 21': 'A psychological force is not a trick. It is an architecture.',
     'CHAPTER 22': 'When there is nothing in your hands, everything in you has to be right.',
-    'CHAPTER 23': 'The arc does not exist in the show. It exists in what the audience carries out with them.',
+    'CHAPTER 23': 'The arc is whatever the audience is still carrying a week later.',
     'CHAPTER 24': 'You can get a lot of information when you use a which hand as the delivery method.',
-    'CHAPTER 25': 'The zodiac is a frame. What you put inside it is the work.',
+    'CHAPTER 25': 'Naming the sign is the easy part. What you say about the person on the way there is the actual show.',
     'CHAPTER 28': 'The reveal that requires no explanation is the one that was built correctly from the beginning.',
     'CHAPTER 35': 'Your biography arrives before you do. Make sure it is doing the right job.',
     'CHAPTER 36': 'The booking is won in the room they never see you in.',
     'CHAPTER 37': 'The show is the last piece of that picture, not the first.',
     'CHAPTER 38': 'The work that requires no ethical attention is the work that is not powerful enough to need it.',
     'CHAPTER 39': 'The body leads the mind.',
-    'CHAPTER 40': 'Design for the second one. Always.',
-    'CHAPTER 41': 'The unexpected moment is the highest-leverage authority broadcast in the show.',
+    'CHAPTER 40': 'Design for the second one.',
+    'CHAPTER 41': 'The unplanned moment is where the room decides you are the real thing.',
     'CHAPTER 42': 'The weakest pillar defines the ceiling.',
 }
 
@@ -4195,7 +4195,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <p class="first-para"><span class="drop-cap">Y</span>ou have been reading a book that demonstrated its own content on every page.</p>
 
-  <p>Not metaphorically. Literally. Every surface of this object, the cover you picked up, the pages you turned, the colors that caught your eye, the sentences that stuck, was designed using the same behavioral science this book teaches you to build with.</p>
+  <p>I mean that literally. The cover, the pages, the colors, the lines that stuck with you: all of it was built with the same psychology this book just taught you.</p>
 
   <p>Let me show you.</p>
 
@@ -4203,7 +4203,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <h3 class="section-header meta-header">The Cover</h3>
 
-  <p>You picked up this book and felt it before you read it. The soft-touch matte lamination created a tactile first impression. People react to texture before processing text. Your fingers registered quality before your eyes registered the title.</p>
+  <p>You picked up this book and felt it before you read it. The soft-touch matte lamination created a tactile first impression. People react to texture before processing text. Your hands had already decided it was a quality book.</p>
 
   <p>Then there was the title itself: embossed, raised from the surface, finished in spot UV that caught the light differently than the matte background. If you tilted the book, you may have noticed a hidden line of text on the back cover, visible only at certain angles. If you found it, you already demonstrated the first lesson: <em class="gold">the trained eye sees what others miss.</em></p>
 
@@ -4223,21 +4223,21 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <h3 class="section-header meta-header">The Author Note</h3>
 
-  <p>Before the table of contents, a short paragraph appeared. Four lines. DoD certification. FBI training. Executive Director. Twenty industries.</p>
+  <p>Before the table of contents, a short paragraph appeared. It was four lines long and it named the DoD certification, the FBI training, the Executive Director title, and the twenty industries.</p>
 
   <p>That was not modesty. That was pre-entry authority architecture. The same principle taught in Chapter 37: the room has already decided something about you before you walk in. The condensed bio planted a credibility signal before a single chapter had a chance to earn it. By the time you reached Part One, your nervous system had already assigned authority status to the voice you were reading. The limbic system does not wait for evidence. It runs on signals. That paragraph was the signal.</p>
 
-  <p>The full About the Author lives at the back. You read it just before this chapter. The front got the signal. The back gets the depth. That structure was deliberate.</p>
+  <p>The full About the Author lives at the back. You read it just before this chapter. The signal went up front and the depth went in the back, and that was on purpose.</p>
 
   <div class="section-break">· · ·</div>
 
   <h3 class="section-header meta-header">The Color Arc</h3>
 
-  <p>Did you notice that the accents in this book changed temperature as you read? Parts One and Two used cool steel blues, clinical, analytical, cerebral. The colors said: <em>you are learning.</em> By Parts Three and Four, gold appeared, warm, authoritative. The colors said: <em>you are applying.</em> By Part Five, deep golds and ambers took over. The colors said: <em>you have arrived.</em></p>
+  <p>Did you notice that the accents in this book changed temperature as you read? Parts One and Two ran cool steel blue because you were still learning. By Parts Three and Four, gold appeared, warm, authoritative. The colors said: <em>you are applying.</em> By Part Five, deep golds and ambers took over. The colors said: <em>you have arrived.</em></p>
 
   <p>You did not notice this consciously. The brain processes color <em class="gold">sixty thousand times faster than text</em>. Your emotional arc was primed by the palette before a single argument landed.</p>
 
-  <p>That is <em class="gold">behavioral priming</em>.</p>
+  <p>The palette was <em class="gold">behavioral priming</em>, and it worked on you the whole way through.</p>
 
   <div class="section-break">· · ·</div>
 
@@ -4262,7 +4262,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <p>Every chapter closed with a single sentence in gold, set between thin lines.</p>
 
-  <blockquote class="pull-quote"><p>“The read is never one signal. The read is the chain.”</p></blockquote>
+  <blockquote class="pull-quote"><p>“One signal is a guess. Three that agree is a read.”</p></blockquote>
   <blockquote class="pull-quote"><p>“Tension is not the enemy. Boredom is.”</p></blockquote>
 
   <p>That is <em class="gold">serial position, recency</em>. The last thing in working memory is the thing that stays.</p>
@@ -4271,7 +4271,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <h3 class="section-header meta-header">What You Have Felt Before</h3>
 
-  <p>Fifteen chapters in this book opened with a section called <em class="gold">What You Have Felt Before</em>. Each one described an experience you have already had, something you recognized in your body before you understood it on the page. The handshake that told you something. The room that shifted before you spoke. The moment a volunteer changed their mind and you saw it happen.</p>
+  <p>Fifteen chapters in this book opened with a section called <em class="gold">What You Have Felt Before</em>. Each one described an experience you have already had, something you recognized in your body before you understood it on the page. Maybe it was a handshake that told you something, or the moment a volunteer changed their mind and you watched it happen.</p>
 
   <p>That was not a stylistic choice. That was <em class="gold">experiential priming</em>. By grounding each chapter in a felt memory, the book activated your episodic recall before introducing the framework. You were not learning a concept cold. You were being given language for something you already knew. That is the difference between information and recognition. Recognition produces trust. Information produces evaluation.</p>
 
@@ -4297,7 +4297,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <p>That was not a guess. It was a <em class="gold">psychological force</em>. The script was designed to constrain your choice through emotional framing, setting cues, and social goal specification until one culturally dominant anthem won the competition in your head. The chapter then explained exactly how the force worked, which emotions were decoys, why the bar setting skewed your selection, and why the jukebox pushed you toward the classics.</p>
 
-  <p>The book performed a psychological force on you while teaching you what psychological forces are. You experienced the method before you understood it. That is the structural pattern this entire book runs on: demonstrate, then explain.</p>
+  <p>So the chapter forced your song and then walked you through how it forced it. You got the method done to you before you got the explanation. That is how the whole book is built.</p>
 
   <div class="section-break">· · ·</div>
 
@@ -4329,19 +4329,19 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
 
   <h3 class="section-header meta-header">The Warning</h3>
 
-  <p>Part Five opened with a warning. Before teaching you the four forces of human behavioral compliance, the book told you what those forces are actually capable of. Milgram. Astroturfing. The firehose of falsehoods. It told you that every documented case of mass compliance follows the same architecture you were about to learn.</p>
+  <p>Part Five opened with a warning. Before teaching you the four forces of human behavioral compliance, the book told you what those forces are actually capable of. It walked you through Milgram, astroturfing, and the firehose of falsehoods, and it told you that every documented case of mass compliance runs on the same four forces you were about to learn.</p>
 
   <p>That warning was not a disclaimer. It was <em class="gold">FATE in action</em>. The warning captured your Focus through novelty and threat. It established Authority by referencing intelligence certifications and classified training contexts. It activated Tribe by placing you inside a group of people who now possess knowledge most people never find. And it flooded Emotion by making you sit with what Milgram’s participants actually did.</p>
 
-  <p>The chapter used the four forces to teach you the four forces. By the time the framework was named, it had already been running on you for three pages.</p>
+  <p>By the time the chapter named the framework, it had already been running on you for three pages.</p>
 
   <div class="section-break">· · ·</div>
 
   <h3 class="section-header meta-header">This Chapter</h3>
 
-  <p>The book teaches the Peak-End Rule in Chapter 37. Memory of an experience is determined by two moments: the emotional peak and the ending. Duration barely matters. Average emotional level barely matters. Two moments determine what gets carried home.</p>
+  <p>The book teaches the Peak-End Rule in Chapter 37. Memory of an experience is determined by two moments: the emotional peak and the ending. How long the show ran barely matters, and neither does the average emotional level, because those two moments are what people carry home.</p>
 
-  <p>This chapter is the peak. The Meta Reveal, the moment the book turns around and shows you what it did, was placed here because this is where the deepest emotional response occurs. Not at the most technically impressive chapter. Not at the most method-dense section. Here. Where the feeling is strongest.</p>
+  <p>This chapter is the peak. The Meta Reveal, the moment the book turns around and shows you what it did, was placed here because this is where the deepest emotional response occurs. Other chapters have more method in them, but this is the one you feel the most, and the feeling is what you carry home.</p>
 
   <p>The book designed its own memory.</p>
 
@@ -4372,7 +4372,7 @@ META_REVEAL_HTML = '''<section class="chapter-opener meta-opener" data-part="6">
   <div class="section-break">· · ·</div>
 
   <div class="meta-finale">
-    <p class="finale-1">This book was not just written.</p>
+    <p class="finale-1">This book was written with a second purpose.</p>
     <p class="finale-2">It was designed to read you while you read it.</p>
     <p class="finale-3">And now you know how.</p>
   </div>
@@ -7065,7 +7065,7 @@ def build_book(manuscript_path, output_path):
   <div class="rule" style="width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:22px 0"></div>
   <div class="title" style="font-family:var(--sans);font-size:1.6rem;font-weight:700;letter-spacing:5px;color:var(--gold);text-align:center;margin:18px 0">BUILT<br>FOR WONDER</div>
   <div class="rule" style="width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);margin:22px 0"></div>
-  <p class="back-blurb">Every design decision in this book demonstrates the psychology it teaches. The colors, the typography, the layout, the pattern interrupts\u2009\u2014\u2009all of it was engineered using the same behavioral architecture you just learned to build.</p>
+  <p class="back-blurb">Every design choice in this book does the thing it teaches. The colors, the typography, the layout, the pattern interrupts: all of it was engineered using the same behavioral architecture you just learned to build.</p>
   <div class="rule" style="width:120px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:18px 0"></div>
   <p class="hidden-text">You\u2019re already reading people. You just proved it.</p>
   <div class="tagline" style="font-family:var(--sans);font-size:.5rem;letter-spacing:6px;color:var(--dim);margin-top:50px">D E C O D E \u2003 B E H A V I O R</div>
