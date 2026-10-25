@@ -3927,7 +3927,8 @@ def build_chapter_body(section, global_para_count):
             i += 1; global_para_count += 1; continue
 
         # Spotlight box: find a good quote-like line at ~20-55% through
-        if not spotlight_done and i > total * 0.2 and i < total * 0.55:
+        # 2026-10-25: never box a section header (Ch19 'Who Responds, ... Is Not ...' was caught by the 'is not' keyword)
+        if not spotlight_done and i > total * 0.2 and i < total * 0.55 and not is_section_header(stripped):
             if (stripped.startswith(('\u201c', '"', '\u2018')) and len(stripped) < 250 and len(stripped) > 30) or \
                (len(stripped) < 200 and len(stripped) > 35 and any(kw in stripped.lower() for kw in ['principle', 'key', 'rule', 'fundamental', 'critical', 'essential', 'never', 'always', 'the real', 'the most important', 'is not', 'does not', 'cannot'])):
                 parts.append(gen_spotlight(escape(stripped)))
