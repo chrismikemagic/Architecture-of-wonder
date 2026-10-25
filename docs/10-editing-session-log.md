@@ -257,3 +257,13 @@ This file is cumulative — each session appends to it.
 - Synced build-book.py: 25 hook/key-read entries, Meta Reveal HTML, the Ch9 key-read quote inside the Meta Reveal, the back-blurb dash.
 - Rebuilt both editions; only the two known unresolved markers warn.
 - GPTZero before/after on five chapters: see `docs/ai-cadence-fixes-2026-09-09.md`.
+
+---
+
+## 2026-10-25: Chapter 19 rewrite applied
+
+- Fact-checked every scientific claim in the hypnosis chapter against sources (`docs/13-hypnosis-fact-check-2026-10-25.md`), rewrote the chapter in Chris's voice, Chris approved.
+- Replaced the chapter body in the DOCX (`apply_ch19_rewrite_20261025.py`, formatting cloned from the chapter's own paragraphs, drop cap preserved); backup `backups/Built-for-Wonder.pre-ch19-rewrite-2026-10-25.docx`.
+- build-book.py: two figures re-keyed with new captions, one retired, five section badges replaced, chapter legend tiers t2/t3.
+- Rebuilt both editions; deployed the gated build as index.html on main.
+- Also filed today: the whole-book rewrite triage (`docs/12-rewrite-triage-2026-10-25.md`).

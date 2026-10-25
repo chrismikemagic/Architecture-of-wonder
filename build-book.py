@@ -202,7 +202,7 @@ CHAPTER_LEGEND = {
     'CHAPTER 16': {'tiers': ['t1', 't2'],       'cats': ['am']},          # Memory Distortion
     'CHAPTER 17': {'tiers': ['t3'],             'cats': ['cr']},          # Cold Reading
     'CHAPTER 18': {'tiers': ['t2'],             'cats': ['bp']},          # Contact Mind Reading
-    'CHAPTER 19': {'tiers': ['t1', 't2'],       'cats': ['am']},          # How Hypnosis Really Works
+    'CHAPTER 19': {'tiers': ['t2', 't3'],       'cats': ['am']},          # How Hypnosis Really Works (rewritten 2026-10-25)
     'CHAPTER 20': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # The Babel Count
     'CHAPTER 21': {'tiers': ['t2', 't3'],       'cats': ['cr']},          # Psychological Forces
     'CHAPTER 22': {'tiers': ['t2', 't3'],       'cats': ['am']},          # Making Better Propless
@@ -281,27 +281,19 @@ PATTERN_INTERRUPTS = [
 # ═══════════════════════════════════════════════════════════
 
 FIGURES = {
-    'CHAPTER 19:What the Brain Is Doing at the Network Level': {
+    'CHAPTER 19:What the Brain Scans Show, and What They Do Not': {
         'src': 'resources/metv-images/hypnosis-brain-networks-shift.png',
         'alt': 'Default mode network quiets while executive control and salience networks coordinate around the suggestion',
-        'caption': 'Figure 19.1. How brain networks shift under hypnosis. The induction is not putting the brain to sleep. It is shifting which networks are in charge of the experience — quieting the self-critical commentary while the goal-holding and priority-sorting systems coordinate more strongly around your suggestion.',
+        'caption': 'Figure 19.1. What one study saw. In Jiang and colleagues (2017), highly hypnotizable people under hypnosis showed the goal-holding and priority-sorting networks coordinating more tightly while the self-commentary network coupled less. This is a picture of that one finding, in that one group, and it is the best replicated of the during-hypnosis results so far.',
         'rights': 'Author-created diagram (matplotlib render from the BFW_AllRewrites working document)',
     },
-    'CHAPTER 19:The Rainville Finding': {
+    'CHAPTER 19:The Wording Decides Which Part of the Brain Does the Work': {
         'src': 'resources/metv-images/hypnosis-rainville-finding.png',
-        'alt': 'The Rainville finding: suggestions targeting unpleasantness activate ACC; suggestions targeting intensity activate somatosensory cortex',
-        'caption': 'Figure 19.2. The Rainville finding: suggestion type determines brain region. “Relax,” “you will feel safe here,” and “let the tension leave your shoulders” are not three ways of saying the same thing. They are routing to different systems. Published in Science, 1997, and replicated across multiple subsequent neuroimaging studies.',
+        'alt': 'The Rainville finding: suggestions targeting unpleasantness change the anterior cingulate; suggestions targeting intensity change the somatosensory cortex',
+        'caption': 'Figure 19.2. The wording chooses the region. Rainville and colleagues (Science, 1997) changed how unpleasant pain felt and the anterior cingulate responded; Hofbauer and colleagues (2001) changed how intense it felt and the somatosensory cortex responded. A suggestion about distress and a suggestion about sensation are doing different jobs in the brain.',
         'rights': 'Author-created diagram (matplotlib render from the BFW_AllRewrites working document)',
     },
-    # The brain-wave chart is anchored once, at Oscillations and Timing
-    # (docs/10-editing-session-log.md). The former "The Alpha Shift" entry
-    # embedded the same PNG a second time and was removed 2026-08-24 (audit M2).
-    'CHAPTER 19:Oscillations and Timing': {
-        'src': 'resources/metv-images/hypnosis-brain-wave-states.png',
-        'alt': 'Brain wave states chart: delta, theta, alpha, beta, and gamma, with frequency, what each feels like, and what it means for your show. Alpha is marked as the target.',
-        'caption': 'Figure 19.3. The full brain wave reference: delta, theta, alpha, beta, and gamma. Each is a different firing rhythm, each a different mode of experience. Alpha, the highlighted row, is the target state for suggestion. Keep this chart in mind as you read this section.',
-        'rights': 'Author-created diagram (matplotlib render from the BFW_AllRewrites working document)',
-    },
+    # hypnosis-brain-wave-states.png retired 2026-10-25: the Alpha Shift section it illustrated was cut (docs/13-hypnosis-fact-check-2026-10-25.md).
     'CHAPTER 24:The Name Chart': {
         'src': 'resources/metv-images/reflex-name-chart.svg',
         'inline_svg': True, 'viewbox': '0 0 900 1075',
@@ -553,12 +545,11 @@ SECTION_BADGES = {
     'CHAPTER 18:Framing the Effect':                {'tiers': ['t3'],       'cats': ['bp']},
     'CHAPTER 18:Intent Cues Beyond the Stage':      {'tiers': ['t3'],       'cats': ['bp']},
     # ── CHAPTER 19: How Hypnosis Really Works ──
-    'CHAPTER 19:The Neuroscience of Hypnosis, Down to the Cell Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 19:What the Brain Is Doing at the Network Level': {'tiers': ['t1'], 'cats': ['am']},
-    'CHAPTER 19:The Rainville Finding':             {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 19:Hypnotic Responsiveness vs. Compliance': {'tiers': ['t2'], 'cats': ['am']},
-    'CHAPTER 19:Down to the Cell Level':            {'tiers': ['t1'],       'cats': ['am']},
-    'CHAPTER 19:Pain as a Model for Understanding Hypnosis': {'tiers': ['t1'], 'cats': ['am']},
+    'CHAPTER 19:Hypnotizability Is the Real Thing':  {'tiers': ['t2'],       'cats': ['am']},
+    'CHAPTER 19:The Wording Decides Which Part of the Brain Does the Work': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 19:What the Brain Scans Show, and What They Do Not': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 19:Why It Feels Like It Is Happening by Itself': {'tiers': ['t2'], 'cats': ['am']},
+    'CHAPTER 19:What This Means for a Stage Show':   {'tiers': ['t3'],       'cats': ['am']},
     # ── CHAPTER 28: The Performance Arc ──
     'CHAPTER 29:Seven Stages of the Performance Arc': {'tiers': ['t1'],       'cats': ['am']},
     'CHAPTER 29:The Neural Performance Checklist':  {'tiers': ['t1'],       'cats': ['am']},

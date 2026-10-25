@@ -215,3 +215,17 @@
 **Lesson:** The auditor's suggested rewrites were often whole-paragraph rewrites attached to partial spans; used verbatim they would have duplicated untouched sentences. Trim to the span.
 
 **Lesson:** GPTZero still reads the densest chapters as 100% AI before and after span-level fixes; only whole-chapter hand rewriting by Chris would move that needle, and the detector is noisy run to run.
+
+---
+
+## Chapter 19 rewritten from the fact-check (2026-10-25)
+
+**Decision:** Chapter 19 (How Hypnosis Really Works) replaced in full with Chris's approved rewrite, drafted in his long-form voice from `docs/13-hypnosis-fact-check-2026-10-25.md`. Draft text: `drafts/ch19-how-hypnosis-really-works-2026-10-25.md`. Applied by `apply_ch19_rewrite_20261025.py`; backup `backups/Built-for-Wonder.pre-ch19-rewrite-2026-10-25.docx`.
+
+**Cut:** the Alpha Shift, the REM explanation of the swinging watch, the cell-level section, neuromodulators, oscillations, the alcohol comparison, the "interrogation circles" paragraph, every use of "limbic". The CIA quote is now introduced as a declassified 1955 memo.
+
+**Added:** the state versus sociocognitive argument and the 2014 APA definition; hypnotizability scales, the one-in-ten figure and the 25-year stability study; absorption as a weak predictor and expectancy as the stronger one; the induction adds little; cold control theory; Raz's Stroop study; the no-brain-signature point; stage hypnosis as hypnotizability plus compliance plus role; the two boundaries (no therapy claims, nothing near interrogation).
+
+**Build:** figures re-keyed to the new headers (networks diagram now captioned as one study, Rainville caption rewritten); `hypnosis-brain-wave-states.png` retired; SECTION_BADGES for the chapter replaced; CHAPTER_LEGEND tiers now t2 and t3. Hook line and key read unchanged.
+
+**Open:** Chris's own show story for the Take (slot held in the draft file, not in the DOCX). Chris may replace the hook line.
