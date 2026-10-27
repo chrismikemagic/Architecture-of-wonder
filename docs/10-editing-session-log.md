@@ -267,3 +267,10 @@ This file is cumulative — each session appends to it.
 - build-book.py: two figures re-keyed with new captions, one retired, five section badges replaced, chapter legend tiers t2/t3.
 - Rebuilt both editions; deployed the gated build as index.html on main.
 - Also filed today: the whole-book rewrite triage (`docs/12-rewrite-triage-2026-10-25.md`).
+
+---
+
+## 2026-10-27: "The new version" pinned
+
+- Chris put a pin in the second-book idea and set the naming: "the new version" or "the new version with changes" means the Navarro-framed performing book, not an edit pass on Built for Wonder. Undecided between rewriting in place (docs/12) and building the new version.
+- Topic map filed at `docs/16-new-version-topic-map-2026-10-27.md`: five parts, a rapport and likability chapter, a neck chapter with the platysmal bands as Chris's own observation, constraints, sources, next step. Nothing drafted; nothing in the DOCX changed.
